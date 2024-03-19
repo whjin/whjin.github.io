@@ -350,7 +350,7 @@ document.addEventListener("DOMContentLoaded", function () {
   /**
    * PhotoFigcaption
    */
-  function addPhotoFigcaption() {
+  function addPhotoFigcaption () {
     document.querySelectorAll("#article-container img").forEach(function (item) {
       const parentEle = item.parentNode;
       const altValue = item.title || item.alt;
@@ -470,8 +470,8 @@ document.addEventListener("DOMContentLoaded", function () {
       ele.forEach(item => {
         item.classList.contains("url")
           ? fetchUrl(item.textContent).then(res => {
-              runJustifiedGallery(item, res);
-            })
+            runJustifiedGallery(item, res);
+          })
           : runJustifiedGallery(item, JSON.parse(item.textContent));
       });
     };
@@ -498,7 +498,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // find the scroll direction
-    function scrollDirection(currentTop) {
+    function scrollDirection (currentTop) {
       const result = currentTop > initTop; // true is down & false is up
       initTop = currentTop;
       return result;
@@ -523,7 +523,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // 页面底部Dom是否存在
     let pageBottomDomFlag = document.getElementById("post-comment") || document.getElementById("footer");
 
-    function percentageScrollFn(currentTop) {
+    function percentageScrollFn (currentTop) {
       // 处理滚动百分比
       let docHeight = $bodyWrap.clientHeight;
       const winHeight = document.documentElement.clientHeight;
@@ -534,7 +534,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const percentage = scrollPercentRounded > 100 ? 100 : scrollPercentRounded <= 0 ? 1 : scrollPercentRounded;
       $percentBtn.textContent = percentage;
 
-      function isInViewPortOfOneNoDis(el) {
+      function isInViewPortOfOneNoDis (el) {
         if (!el) return;
         const elDisplay = window.getComputedStyle(el).getPropertyValue("display");
         if (elDisplay == "none") {
@@ -1181,7 +1181,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // 开始监听
     observer.observe(document.getElementById("post-comment"), config);
 
-    function handleMouseOver(e) {
+    function handleMouseOver (e) {
       if (e.target.tagName == "IMG" && flag) {
         flag = 0;
         // 移入100毫秒后显示盒子
@@ -1207,7 +1207,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    function handleMouseOut(e) {
+    function handleMouseOut (e) {
       // 隐藏盒子
       div.style.display = "none";
       flag = 1;
@@ -1479,7 +1479,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   // 欢迎语
-  function greetingInit() {
+  function greetingInit () {
     const greetingBoxInfo = GLOBAL_CONFIG.greetingBox.list;
     const greetingBoxDefault = GLOBAL_CONFIG.greetingBox.default;
     //- 创建盒子
@@ -1510,7 +1510,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 500);
     }, 3000);
   }
-  function statistics51aInit() {
+  function statistics51aInit () {
     const loadScript = (url, charset = "UTF-8", crossorigin, id) => {
       return new Promise((resolve, reject) => {
         const script = document.createElement("script");
@@ -1551,7 +1551,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 
-  function setInputFocusListener() {
+  function setInputFocusListener () {
     const inputs = document.querySelectorAll("input, textarea");
     const filteredinputs = Array.from(inputs).filter(heading => {
       if (heading.id !== "center-console" || heading.id !== "page-type") {
@@ -1570,10 +1570,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // 是否开启快捷键
-  function executeShortcutKeyFunction() {
+  function executeShortcutKeyFunction () {
     // 是否开启快捷键
     anzhiyu_keyboard = localStorage.getItem("keyboardToggle") ? localStorage.getItem("keyboardToggle") : false;
-    function addKeyShotListener() {
+    function addKeyShotListener () {
       const windowObject = window;
       windowObject.removeEventListener("keydown", keyDownEvent);
       windowObject.removeEventListener("keyup", keyUpEvent);
@@ -1581,7 +1581,7 @@ document.addEventListener("DOMContentLoaded", function () {
       windowObject.addEventListener("keyup", keyUpEvent);
     }
 
-    function keyDownEvent(event) {
+    function keyDownEvent (event) {
       const isEscapeKeyPressed = event.keyCode === 27;
       const isShiftKeyPressed = event.shiftKey;
       const isKeyboardEnabled = anzhiyu_keyboard;
@@ -1644,7 +1644,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("keyboard-tips").classList.remove("show");
     };
 
-    function keyUpEvent(event) {
+    function keyUpEvent (event) {
       anzhiyu_keyUpEvent_timeoutId && clearTimeout(anzhiyu_keyUpEvent_timeoutId);
       anzhiyu_keyUpShiftDelayEvent_timeoutId && clearTimeout(anzhiyu_keyUpShiftDelayEvent_timeoutId);
       if (event.keyCode === 16) {
@@ -1656,7 +1656,7 @@ document.addEventListener("DOMContentLoaded", function () {
     addKeyShotListener();
   }
 
-  function changeDocumentTitle() {
+  function changeDocumentTitle () {
     let leaveTitle = GLOBAL_CONFIG.diytitle.leaveTitle;
     let backTitle = GLOBAL_CONFIG.diytitle.backTitle;
     let OriginTitile = document.title;
@@ -1678,7 +1678,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  function addDarkModeEventListener(elementId, childSelector) {
+  function addDarkModeEventListener (elementId, childSelector) {
     const element = document.getElementById(elementId);
     if (element && childSelector) {
       const childElement = element.querySelector(childSelector);
