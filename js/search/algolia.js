@@ -25,7 +25,6 @@ window.addEventListener("load", () => {
   if (anzhiyu_keyboard) {
     window.addEventListener("keydown", function (event) {
       if (event.keyCode == 83 && event.shiftKey) {
-        console.info(selectTextNow);
         if (selectTextNow) {
           openSearch();
           const t = document.querySelector("#algolia-search-input > div > form > input");
@@ -118,7 +117,6 @@ window.addEventListener("load", () => {
       },
       empty: function (data) {
         const loadingLogo = document.querySelector("#algolia-hits .anzhiyu-spin");
-        console.info(loadingLogo);
         if (loadingLogo) {
           loadingLogo.style.display = "none";
         }

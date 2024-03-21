@@ -7867,7 +7867,7 @@ body[data-type="music"] #web_bg {
   display: none;
 }
 body[data-type="music"] .s-sticker div {
-  color: var(--anzhiyu-white) !important;
+  color: var(--font-color) !important;
 }
 [data-theme="dark"] body[data-type="music"] .page #page-header:before {
   background-color: transparent;
@@ -7898,9 +7898,6 @@ body[data-type="music"] .s-sticker div {
   -o-transition: 0.3s;
   -ms-transition: 0.3s;
   transition: 0.3s;
-}
-body:has(#console.show) #nav-music {
-  display: none !important;
 }
 @media screen and (max-width: 1400px) {
   body #anMusic-page #anMusicSwitching,

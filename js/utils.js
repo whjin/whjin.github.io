@@ -102,7 +102,7 @@ const anzhiyu = {
 
     let start = null;
     pos = +pos;
-    window.requestAnimationFrame(function step(currentTime) {
+    window.requestAnimationFrame(function step (currentTime) {
       start = !start ? currentTime : start;
       const progress = currentTime - start;
       if (currentPos < pos) {
@@ -145,7 +145,7 @@ const anzhiyu = {
   },
 
   animateOut: (ele, text) => {
-    ele.addEventListener("animationend", function f() {
+    ele.addEventListener("animationend", function f () {
       ele.style.display = "";
       ele.style.animation = "";
       ele.removeEventListener("animationend", f);
@@ -295,7 +295,6 @@ const anzhiyu = {
 
   //更改主题色
   changeThemeMetaColor: function (color) {
-    // console.info(`%c ${color}`, `font-size:36px;color:${color};`);
     if (themeColorMeta !== null) {
       themeColorMeta.setAttribute("content", color);
     }
@@ -625,7 +624,7 @@ const anzhiyu = {
   },
 
   // 友链注入预设评论
-  addFriendLink() {
+  addFriendLink () {
     var input = document.getElementsByClassName("el-textarea__inner")[0];
     if (!input) return;
     const evt = new Event("input", { cancelable: true, bubbles: true });
@@ -743,7 +742,7 @@ const anzhiyu = {
     document.getElementById("loading-box").classList.add("loaded");
   },
   // 将音乐缓存播放
-  cacheAndPlayMusic() {
+  cacheAndPlayMusic () {
     let data = localStorage.getItem("musicData");
     if (data) {
       data = JSON.parse(data);
@@ -768,7 +767,7 @@ const anzhiyu = {
       });
   },
   // 播放音乐
-  playMusic(songs) {
+  playMusic (songs) {
     const anMusicPage = document.getElementById("anMusic-page");
     const metingAplayer = anMusicPage.querySelector("meting-js").aplayer;
     const randomIndex = Math.floor(Math.random() * songs.length);
@@ -805,8 +804,6 @@ const anzhiyu = {
         if (palyMusicIndex != -1) metingAplayer.list.switch(palyMusicIndex);
       }
     }
-
-    console.info("已随机歌曲：", selectRandomSong, "本次随机歌曲：", randomSong.name);
   },
   // 音乐节目切换背景
   changeMusicBg: function (isChangeBg = true) {
@@ -889,7 +886,7 @@ const anzhiyu = {
       anMusicPage.querySelector(".aplayer.aplayer-withlist .aplayer-list").style.opacity = "1";
     });
 
-    function anMusicPageMenuAask() {
+    function anMusicPageMenuAask () {
       if (window.location.pathname != "/music/") {
         document.getElementById("menu-mask").removeEventListener("click", anMusicPageMenuAask);
         return;
@@ -1044,17 +1041,17 @@ const anzhiyu = {
     // 将两个值组合成一个字符串
     const name = `${randomAdjective}${randomName}`;
 
-    function dr_js_autofill_commentinfos() {
+    function dr_js_autofill_commentinfos () {
       var lauthor = [
-          "#author",
-          "input[name='comname']",
-          "#inpName",
-          "input[name='author']",
-          "#ds-dialog-name",
-          "#name",
-          "input[name='nick']",
-          "#comment_author",
-        ],
+        "#author",
+        "input[name='comname']",
+        "#inpName",
+        "input[name='author']",
+        "#ds-dialog-name",
+        "#name",
+        "input[name='nick']",
+        "#comment_author",
+      ],
         lmail = [
           "#mail",
           "#email",
@@ -1348,14 +1345,14 @@ const anzhiyuPopupManager = {
   processing: false,
   Jump: false,
 
-  enqueuePopup(title, tip, url, duration = 3000) {
+  enqueuePopup (title, tip, url, duration = 3000) {
     this.queue.push({ title, tip, url, duration });
     if (!this.processing) {
       this.processQueue();
     }
   },
 
-  processQueue() {
+  processQueue () {
     if (this.queue.length > 0 && !this.processing) {
       this.processing = true;
       const { title, tip, url, duration } = this.queue.shift();
@@ -1363,7 +1360,7 @@ const anzhiyuPopupManager = {
     }
   },
 
-  popupShow(title, tip, url, duration) {
+  popupShow (title, tip, url, duration) {
     const popupWindow = document.getElementById("popup-window");
     if (!popupWindow) return;
     const windowTitle = popupWindow.querySelector(".popup-window-title");

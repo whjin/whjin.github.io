@@ -560,7 +560,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (waterfallDom) {
         const waterfallResult = currentTop % document.documentElement.clientHeight; // 卷去一个视口
         if (!scrollBottomFirstFlag && waterfallResult + 100 >= document.documentElement.clientHeight) {
-          console.info(waterfallResult, document.documentElement.clientHeight);
           setTimeout(() => {
             waterfall("#waterfall");
           }, 500);

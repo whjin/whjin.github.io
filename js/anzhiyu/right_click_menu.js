@@ -13,7 +13,6 @@ for (let i = 0; i < aElements.length; i++) {
 
 // 显示菜单
 rm.showRightMenu = function (isTrue, x = 0, y = 0) {
-  console.info(x, y);
   let rightMenu = document.getElementById("rightMenu");
   rightMenu.style.top = x + "px";
   rightMenu.style.left = y + "px";

@@ -239,7 +239,6 @@
       },
       body: JSON.stringify(requestBody),
     };
-    console.info(truncateDescription.length);
     try {
       let animationInterval = null;
       let summary;
