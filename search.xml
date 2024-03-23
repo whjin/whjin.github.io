@@ -30,31 +30,6 @@
     
     <entry>
       <title>Git异常处理</title>
-      <link href="/2023/02/19/technical/Git%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
-      <url>/2023/02/19/technical/Git%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</url>
-      
-        <content type="html"><![CDATA[<h4 id="本地工作区文件恢复"><a href="#本地工作区文件恢复" class="headerlink" title="本地工作区文件恢复"></a>本地工作区文件恢复</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout &lt;filename/dirname&gt;</span><br></pre></td></tr></table></figure><span id="more"></span><h4 id="远程分支删除后，删除本地分支及关联"><a href="#远程分支删除后，删除本地分支及关联" class="headerlink" title="远程分支删除后，删除本地分支及关联"></a>远程分支删除后，删除本地分支及关联</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch --unset-upstream &lt;branchname&gt;</span><br><span class="line"></span><br><span class="line">git branch --unset-upstream feature/test</span><br></pre></td></tr></table></figure><h4 id="修改提交时的备注内容"><a href="#修改提交时的备注内容" class="headerlink" title="修改提交时的备注内容"></a>修改提交时的备注内容</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend</span><br><span class="line"></span><br><span class="line">git log --pretty=online</span><br></pre></td></tr></table></figure><h4 id="修改分支名"><a href="#修改分支名" class="headerlink" title="修改分支名"></a>修改分支名</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch -m &lt;oldbranch&gt; &lt;newbranch&gt;</span><br><span class="line"></span><br><span class="line">git branch -m feature/stor-13711 feature/story-13711</span><br></pre></td></tr></table></figure><h4 id="撤回提交"><a href="#撤回提交" class="headerlink" title="撤回提交"></a>撤回提交</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git reset --soft [&lt;commit-id&gt;/HEAD~n]</span><br><span class="line"></span><br><span class="line">git reset --soft HEAD~1</span><br><span class="line"></span><br><span class="line">git reset --mixed HEAD~1</span><br><span class="line"></span><br><span class="line">git reset --hard HEAD~1</span><br></pre></td></tr></table></figure><h4 id="撤销本地分支合并"><a href="#撤销本地分支合并" class="headerlink" title="撤销本地分支合并"></a>撤销本地分支合并</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git revert &lt;commit-id&gt;</span><br></pre></td></tr></table></figure><h4 id="恢复误删的本地分支"><a href="#恢复误删的本地分支" class="headerlink" title="恢复误删的本地分支"></a>恢复误删的本地分支</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b &lt;branch-name&gt; &lt;commit-id&gt;</span><br><span class="line"></span><br><span class="line">git checkout -b feature/delete HEAD@&#123;2&#125;</span><br></pre></td></tr></table></figure><h4 id="不确定哪个根治有自己提交的commit"><a href="#不确定哪个根治有自己提交的commit" class="headerlink" title="不确定哪个根治有自己提交的commit"></a>不确定哪个根治有自己提交的commit</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch --contains &lt;commit-id&gt;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> 技术 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Git </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Git异常处理</title>
       <link href="/2023/02/19/%E6%8A%80%E6%9C%AF/Git%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
       <url>/2023/02/19/%E6%8A%80%E6%9C%AF/Git%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</url>
       
@@ -202,31 +177,6 @@
             <tag> 前端 </tag>
             
             <tag> 数据库 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>八月新作</title>
-      <link href="/2020/08/23/literature/%E5%85%AB%E6%9C%88%E6%96%B0%E4%BD%9C/"/>
-      <url>/2020/08/23/literature/%E5%85%AB%E6%9C%88%E6%96%B0%E4%BD%9C/</url>
-      
-        <content type="html"><![CDATA[<p>八月新作<br>作者：吴华锦<br>其一<br>云霞消徂暑，江波观游鱼。<br>罡风穷碧落，盈香绕芙蕖。<br>白鹤沙洲渡，红衣陌上行。<br>山昏影重重，归鸟入巢林。</p><p>其二<br>远方无从往，种蔬小庭轩。<br>狂风舞天地，豪雨涨春涧。<br>山静云高洁，水清林悠远。<br>掌灯频顾盼，花开笑清颜。</p><p>好景词穷无奈何，归去读书有所得。<br>悠悠天地人间境，大美不言自相识。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 诗词 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 诗词 </tag>
             
         </tags>
       
