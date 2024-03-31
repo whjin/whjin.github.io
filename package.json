@@ -1,0 +1,33 @@
+{
+  "name": "wjin-blog",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "hexo cl && hexo bangumi -d && hexo cinema -d && hexo bangumi -u && hexo cinema -u && hexo g",
+    "clean": "hexo cl",
+    "deploy": "npm run build && hexo d",
+    "server": "hexo server",
+    "dev": "hexo cl && hexo g && hexo s --open"
+  },
+  "hexo": {
+    "version": "7.1.1"
+  },
+  "dependencies": {
+    "hexo": "^7.0.0",
+    "hexo-algoliasearch": "^2.0.1",
+    "hexo-bilibili-bangumi": "^1.8.9",
+    "hexo-butterfly-envelope": "^1.0.15",
+    "hexo-deployer-git": "^4.0.0",
+    "hexo-generator-archive": "^2.0.0",
+    "hexo-generator-category": "^2.0.0",
+    "hexo-generator-index": "^3.0.0",
+    "hexo-generator-search": "^2.4.3",
+    "hexo-generator-tag": "^2.0.0",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-marked": "^6.0.0",
+    "hexo-renderer-pug": "^3.0.0",
+    "hexo-renderer-stylus": "^3.0.1",
+    "hexo-server": "^3.0.0",
+    "hexo-wordcount": "^6.0.1"
+  }
+}
