@@ -1,6 +1,7 @@
 ---
 title: {{ title }}
 date: {{ date }}
+category:
 tags:
 updated:
 keywords:
@@ -16,8 +17,6 @@ copyright_author:
 copyright_author_href:
 copyright_url:
 copyright_info:
-mathjax:
-katex:
 aplayer:
 highlight_shrink:
 aside:
