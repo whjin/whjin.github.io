@@ -6,7 +6,7 @@ type:
 comments:
 description:
 keywords:
-top_img:
+top_img: false
 aside:
 aplayer:
 highlight_shrink:
