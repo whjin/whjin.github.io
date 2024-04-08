@@ -5,7 +5,7 @@
   buttonLink: /about/
   limit: 30
   home_essay: true
-  top_background: /img/post/top_img.jpg
+  top_background: https://img.qovv.cn/2024/04/06/6610ed6c7cb37.jpg
   essay_list:
     - content: 安知鱼主题指南
       date: 2023/09/09

@@ -1,26 +1,15 @@
 ---
 title: {{ title }}
 date: {{ date }}
-category:
+updated: 
 tags:
-updated:
+category: 
 keywords:
 description:
 top_img: 
-comments:
 cover:
-toc:
-toc_number:
-toc_style_simple:
-copyright:
-copyright_author:
-copyright_author_href:
-copyright_url:
-copyright_info:
-aplayer:
-highlight_shrink:
+comments:
 aside:
-swiper_index: 1
-top_group_index: 1
-background: 
+top_single_background: 
+highlight_shrink:
 ---

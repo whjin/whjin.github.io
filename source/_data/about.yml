@@ -1,6 +1,6 @@
 - class_name: 关于页
   subtitle: 明朝即长路，惜取此时心。✨
-  avatarImg: /img/avatar.jpg
+  avatarImg: https://img.qovv.cn/2024/04/06/6610e9e93f31b.jpg
   avatarSkills:
     left:
       - 🤖️ 科技研究爱好者
@@ -41,8 +41,8 @@
   map:
     title: 我现在住在
     StrengthenTitle: 中国，广州市
-    background: /img/location/scene.jpg
-    backgroundDark: /img/location/scene.jpg
+    background: https://img.qovv.cn/2024/04/06/6610e3624a3b1.jpg
+    backgroundDark: https://img.qovv.cn/2024/04/06/6610e3624a3b1.jpg
   selfInfo:
     selfInfoTips1: 毕业于
     selfInfoContentYear: 2013
@@ -53,7 +53,7 @@
   personalities:
     author_name: 执政官
     personality_type: ESFJ-A
-    photo_url: /img/location/site1.jpg
+    photo_url: https://img.qovv.cn/2024/04/06/6610e3623e691.jpg
     personality_img: https://npm.elemecdn.com/anzhiyu-blog@2.0.8/img/svg/ESFJ-A.svg
     name_url: https://www.16personalities.com/ch/esfj-%E4%BA%BA%E6%A0%BC
   maxim:

@@ -1,7 +1,7 @@
 - class_name: 好物
   description: 实物装备推荐
   tip: 跟 吴华锦 一起享受科技带来的乐趣
-  top_background: /img/location/site2.jpg
+  top_background: https://img.qovv.cn/2024/04/06/6610e362b12f6.jpg
   good_things:
     - title: 生产力
       description: 提升自己生产效率的硬件设备
