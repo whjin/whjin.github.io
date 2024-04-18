@@ -1,9 +1,29 @@
 ---
 title: Git操作文档
 date: 2023-02-18 17:15:19
+updated: 2024-4-14 16:48:36
 category: ["技术"]
-tags: ["Git"]
+tags: ["Git","前端"]
+cover: https://static.cnbetacdn.com/thumb/article/2020/1006/0633dc249b85316.png
+main_color: "#DE4C36"
 ---
+
+|类型|说明|
+|:----:|:----:|
+|`feat`|新特性|
+|`fix(scope)`|修复 `scope` 中的 `Bug`|
+|`feat!:/feat(scope)!:`|`breaking change` / 重构 `API`|
+|`build`|变更影响的是构建系统或者外部依赖 (如: `gulp`, `npm`)|
+|`ci`|修改了 `CI` 配置文件或脚本 (如: `Github Action`, `Travis`)|
+|`chore`|【重要】 变更不影响源代码或测试（如更新了辅助工具、库等)|
+|`docs`|只修改了文档|
+|`feat`|【重要】 一个新特性|
+|`fix`|【重要】 修复了一个 `Bug`|
+|`perf`|增强性能的代码变更|
+|`refactor`|并非修复 `Bug` 或添加新特性的代码变更|
+|`revert`|回退代码|
+|`style`|变更不影响一些有意义的代码 (如: 删除空格、格式化代码、添加分号等)|
+|`test`|添加测试代码或修正已有的测试|
 
 ### 提交（Commit） ###
 

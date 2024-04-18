@@ -1,7 +1,5 @@
 ---
 title: Node.js开发库
-swiper_index: 1
-top_group_index: 1
 date: 2024-04-06 12:18:10
 category: ["技术"]
 tags: ["Node.js","前端"]
