@@ -3,7 +3,9 @@ title: JavaScript常用方法集
 date: 2020-08-23 21:01:36
 category: ["技术"]
 tags: ["前端","JS"]
-comments:
+comments: true
+cover: https://img.qovv.cn/2024/04/25/662a67f9adc5d.jpg
+main_color: "#23D194"
 ---
 
 ### 日期格式化
@@ -519,4 +521,19 @@ export default {
       -webkit-box-orient: vertical;
     }
   }
+```
+
+### 计算传入时间与当前时间相差的秒数 ###
+
+```javascript
+function convertStrToTime (time) {
+  let nowTime = new Date().getTime();
+  let date = new Date();
+  let arr = time.split(":");
+  date.setHours(parseInt(arr[0]));
+  date.setMinutes(parseInt(arr[1]));
+  let endTime = new Date(date).getTime();
+  let ret = Math.ceil((endTime - nowTime) / 1000);
+  return ret;
+}
 ```
