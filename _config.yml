@@ -176,7 +176,7 @@ bangumi: # 追番设置
     lazyload:
       enable: false
 cinema: # 追剧设置
-  enable: false
+  enable: true
   path:
   vmid: 55280837
   title: "追剧列表"
