@@ -4,8 +4,8 @@
 
 # Site
 title: 吴华锦
-subtitle: "明朝即长路，惜取此时心。"
-description: "明朝即长路，惜取此时心。"
+subtitle: "繁花似锦，诗意人生"
+description: "繁花似锦，诗意人生。"
 keywords: "吴华锦，博客，技术，前端，诗词，艺术"
 author: "吴华锦"
 language: zh-CN
@@ -148,8 +148,6 @@ algolia: # 搜索
     - tags
     - title
 
-# 追番插件
-# https://github.com/HCLonely/hexo-bilibili-bangumi
 bangumi: # 追番设置
   enable: true
   source: bili
