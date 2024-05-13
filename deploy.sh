@@ -6,6 +6,9 @@ set -e
 # 构建 && 部署
 npm run deploy
 
+# 删除主题暂存区缓存
+# git rm --cache themes/anzhiyu
+
 # 提交至dev分支
 git add .
 git commit -m "提交更新dev分支"
