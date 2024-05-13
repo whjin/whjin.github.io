@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "hexo cl && hexo bangumi -d && hexo cinema -d && hexo bangumi -u && hexo cinema -u && hexo g",
-    "clean": "hexo cl",
+    "clean": "hexo cl && hexo bangumi -d && hexo cinema -d && hexo bangumi -u && hexo cinema -u",
+    "build": "npm run clean && hexo g",
     "deploy": "npm run build && hexo d",
-    "server": "hexo server",
-    "dev": "npm run build && hexo s --open"
+    "server": "npm run build && hexo s",
+    "dev": "npm run server --open"
   },
   "hexo": {
     "version": "7.1.1"
