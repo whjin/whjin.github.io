@@ -25,7 +25,7 @@ nav:
   enable: true
   travelling: true
   menu:
-    - title: 网页
+    - title: 网页1
       item:
         - name: 博客
           link: https://whjin.github.io/
