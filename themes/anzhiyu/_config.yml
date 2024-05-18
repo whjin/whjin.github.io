@@ -1042,7 +1042,7 @@ css_prefix: true
 home_top:
   enable: true # 开关
   timemode: update #date/updated
-  title: 繁花似锦
+  title: 繁华似锦
   subTitle: 快意人生
   siteText: 繁花似锦，诗意人生。
   category:
