@@ -1,0 +1,56 @@
+var posts=["2019/05/06/技术/CSS团队协作规范/","2019/05/08/技术/CSS的Transition与Animation/","2023/02/19/技术/Git异常处理/","2023/02/18/技术/Git操作文档/","2019/03/13/技术/CSS编程技巧/","2018/11/13/技术/ES6深入研究/","2020/08/23/技术/JavaScript常用方法集/","2019/05/13/技术/React生命周期/","2018/11/13/技术/JavaScript知多少/","2019/04/17/技术/React进阶训练/","2024/04/06/技术/Nodejs开发库/","2019/02/18/技术/Vuejs基础教程/","2019/04/09/技术/React项目详解/","2019/05/14/技术/Redux制作memeGenerator/","2023/01/22/技术/Vue技术点汇总/","2019/02/18/技术/Vue基础教程/","2019/10/12/技术/Vue组件通信/","2019/08/23/技术/Vue技术细节/","2020/08/23/技术/Web-SQL浏览器数据库实例/","2019/10/13/技术/typescript开发环境/","2019/05/08/技术/jQuery选择器/","2019/09/05/技术/vscode配置/","2019/04/11/技术/使用ReactNative构建App/","2018/10/02/技术/基于Node的实时聊天室/","2019/02/23/技术/使用Quasar设计Material和IOS风格的响应式网站/","2023/01/24/技术/功能代码集合/","2019/05/07/技术/前端优化/","2019/05/12/技术/前端插件库/","2018/11/13/技术/数组大概知多少/","2019/02/22/技术/无人点餐收银系统-项目初始化/","2018/11/13/技术/正则表达式手册/","2019/08/29/技术/正则表达式实例/","2019/10/11/技术/清除浮动细节介绍/","2019/08/24/技术/状态管理与Vuex/","2019/02/23/技术/读书笔记Web安全一/","2018/11/13/技术/管中窥Vue/","2019/03/20/技术/网页设计的垂直居中/","2023/06/06/技术/项目总集/","2018/11/13/技术/网络知识面面观/","2018/01/31/诗词/万籁如息/","2017/09/03/诗词/七月作别/","2016/11/04/诗词/今又重阳，岁岁重阳/","2017/11/16/诗词/临窗幕/","2018/03/11/诗词/从军行/","2016/10/21/诗词/仲秋记事/","2017/09/03/诗词/仲夏/","2020/08/23/诗词/八月新作/","2017/09/03/诗词/又见新春/","2017/11/12/诗词/双十一作/","2016/12/03/诗词/初冬闲情/","2016/02/26/诗词/周庄水韵/","2018/04/17/诗词/如梦令/","2016/07/19/诗词/吴山晚登临/","2018/05/24/诗词/孟夏/","2017/10/02/诗词/少年锦时/","2016/08/12/诗词/少年行/","2017/12/19/诗词/层林尽染/","2018/03/23/诗词/岁月神偷/","2017/09/03/诗词/念/","2018/03/21/诗词/春分/","2016/07/24/诗词/归根/","2016/10/11/诗词/怀秋瑾/","2018/01/15/诗词/打油诗/","2018/01/31/诗词/春芳/","2018/05/24/诗词/晓风轻/","2017/09/03/诗词/月影横斜水清浅/","2017/09/03/诗词/月落风荷咏/","2018/05/24/诗词/樊城多锦绣/","2016/07/29/诗词/正月记事/","2017/09/03/诗词/水脉洗春芳/","2016/10/17/诗词/登高楼，怀家老/","2016/07/31/诗词/百字令·投袁大琴南/","2016/10/11/诗词/秋思/","2017/09/03/诗词/粤北明珠·英德/","2017/09/03/诗词/荔园晚风/","2018/05/24/诗词/空山鸟语/","2016/08/28/诗词/苏杭行记/","2016/07/31/诗词/统计十载有所感/","2017/09/03/诗词/蓝色盛夏/","2024/04/01/诗词/踏春/","2017/12/31/诗词/辞岁/","2017/09/03/诗词/醉是流年/","2020/05/16/诗词/远方无从往/","2016/09/02/诗词/醉相逢/","2016/02/26/诗词/逍遥游/","2016/07/27/诗词/锦字华年/","2016/10/01/诗词/雨后说秋/","2016/06/18/诗词/鹧鸪天/","2016/07/31/诗词/随想记/"];function toRandomPost(){
+    pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);
+  };var friend_link_list=[{"name":"Hexo","link":"https://hexo.io/zh-tw/","avatar":"https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg","descr":"快速、简单且强大的网站框架"},{"name":"anzhiyu主题","link":"https://blog.anheyu.com/","avatar":"https://img.qovv.cn/2024/04/06/6610e9e93f31b.jpg","descr":"生活明朗，万物可爱","siteshot":"https://npm.elemecdn.com/anzhiyu-theme-static@1.1.6/img/blog.anheyu.com.jpg"},{"name":"安知鱼","link":"https://blog.anheyu.com/","avatar":"https://img.qovv.cn/2024/04/06/6610e9e93f31b.jpg","descr":"生活明朗，万物可爱","siteshot":"https://npm.elemecdn.com/anzhiyu-theme-static@1.1.6/img/blog.anheyu.com.jpg","color":"vip","tag":"技术"},{"name":"安知鱼","link":"https://blog.anheyu.com/","avatar":"https://img.qovv.cn/2024/04/06/6610e9e93f31b.jpg","descr":"生活明朗，万物可爱","recommend":true}];
+    var refreshNum = 1;
+    function friendChainRandomTransmission() {
+      const randomIndex = Math.floor(Math.random() * friend_link_list.length);
+      const { name, link } = friend_link_list.splice(randomIndex, 1)[0];
+      Snackbar.show({
+        text:
+          "点击前往按钮进入随机一个友链，不保证跳转网站的安全性和可用性。本次随机到的是本站友链：「" + name + "」",
+        duration: 8000,
+        pos: "top-center",
+        actionText: "前往",
+        onActionClick: function (element) {
+          element.style.opacity = 0;
+          window.open(link, "_blank");
+        },
+      });
+    }
+    function addFriendLinksInFooter() {
+      var footerRandomFriendsBtn = document.getElementById("footer-random-friends-btn");
+      if(!footerRandomFriendsBtn) return;
+      footerRandomFriendsBtn.style.opacity = "0.2";
+      footerRandomFriendsBtn.style.transitionDuration = "0.3s";
+      footerRandomFriendsBtn.style.transform = "rotate(" + 360 * refreshNum++ + "deg)";
+      const finalLinkList = [];
+  
+      let count = 0;
+
+      while (friend_link_list.length && count < 3) {
+        const randomIndex = Math.floor(Math.random() * friend_link_list.length);
+        const { name, link, avatar } = friend_link_list.splice(randomIndex, 1)[0];
+  
+        finalLinkList.push({
+          name,
+          link,
+          avatar,
+        });
+        count++;
+      }
+  
+      let html = finalLinkList
+        .map(({ name, link }) => {
+          const returnInfo = "<a class='footer-item' href='" + link + "' target='_blank' rel='noopener nofollow'>" + name + "</a>"
+          return returnInfo;
+        })
+        .join("");
+  
+      html += "<a class='footer-item' href='/link/'>更多</a>";
+
+      document.getElementById("friend-links-in-footer").innerHTML = html;
+
+      setTimeout(()=>{
+        footerRandomFriendsBtn.style.opacity = "1";
+      }, 300)
+    };
