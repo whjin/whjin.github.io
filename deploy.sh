@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
 # 构建 && 部署
+npm run build
 npm run deploy
 
 # 提交至dev分支

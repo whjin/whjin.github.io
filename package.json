@@ -5,9 +5,9 @@
   "scripts": {
     "clean": "hexo cl && hexo bangumi -d && hexo cinema -d && hexo bangumi -u && hexo cinema -u",
     "build": "npm run clean && hexo g",
-    "deploy": "npm run build && hexo d",
+    "deploy": "hexo d",
     "server": "npm run build && hexo s",
-    "dev": "npm run server --open"
+    "dev": "npm run clean && hexo s --open"
   },
   "hexo": {
     "version": "7.1.1"
