@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "clean": "hexo cl && hexo bangumi -d && hexo cinema -d && hexo bangumi -u && hexo cinema -u",
+    "clean": "hexo clean && hexo bangumi -d && hexo cinema -d && hexo bangumi -u && hexo cinema -u",
     "build": "npm run clean && hexo g",
     "deploy": "hexo d",
-    "server": "npm run build && hexo s",
     "dev": "npm run clean && hexo s --open"
   },
   "hexo": {
