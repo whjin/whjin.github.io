@@ -5,7 +5,7 @@ updated:
 category: 
 tags: 
 cover: 
-main_color: ""
+main_color: 
 keywords:
 description:
 top_img: 
