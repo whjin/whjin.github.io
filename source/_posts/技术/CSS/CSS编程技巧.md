@@ -6,6 +6,14 @@ tags: ["前端","CSS"]
 comments:
 ---
 
+# 自动分配宽高 #
+
+```CSS
+justify-content: space-between;
+display: grid;
+grid-template-columns: repeat(auto-fill, 96px);
+```
+
 # CSS-编程技巧 #
 
 - 使用百分比而不是固定的宽度。或者使用相对的宽度：`vw`, `vh`, `vmin`, `vmax`
