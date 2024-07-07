@@ -1,8 +1,9 @@
 ---
-title: typescript开发环境
+title: typescript开发文档
 date: 2019-10-13 21:43:15
+update: 2024-7-7 17:08:33
 category: ["技术"]
-tags: ["前端","TS"]
+tags: ["前端","TypeScript"]
 comments: 
 ---
 

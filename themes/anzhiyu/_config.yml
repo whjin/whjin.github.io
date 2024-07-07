@@ -185,7 +185,7 @@ error_404:
 
 post_meta:
   page: # Home Page
-    date_type: created # created or updated or both 主页文章日期是创建日或者更新日或都显示
+    date_type: both # created or updated or both 主页文章日期是创建日或者更新日或都显示
     date_format: relative # date/relative/simple 显示日期还是相对日期 或者 简单日期
     categories: true # true or false 主页是否显示分类
     tags: true # true or false 主页是否显示标籤
@@ -1044,7 +1044,7 @@ home_top:
   timemode: update #date/updated
   title: 繁华似锦
   subTitle: 快意人生
-  siteText: 繁华似锦，锦绣人生
+  siteText: 繁华似锦 锦绣人生
   category:
     - name: 技术
       path: /categories/技术/
@@ -1212,11 +1212,11 @@ agreementPopup:
 
 # 右键菜单
 rightClickMenu:
-  enable: false
+  enable: true
 
 # 首页随便逛逛people模式 而非技能点模式，关闭后为技能点模式需要配置creativity.yml
 peoplecanvas:
-  enable: false
+  enable: true
   img: https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png
 
 # 动效

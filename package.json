@@ -10,7 +10,7 @@
     "update": "npm update -D hexo-theme-anzhiyu"
   },
   "hexo": {
-    "version": "7.1.1"
+    "version": "7.3.0"
   },
   "dependencies": {
     "hexo": "^7.0.0",
