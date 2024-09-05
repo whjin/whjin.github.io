@@ -4,7 +4,7 @@ date: 2020-08-23 21:01:36
 category: ["技术"]
 tags: ["前端","JS"]
 comments: true
-cover: https://img.qovv.cn/2024/04/25/662a67f9adc5d.jpg
+cover: https://tse1-mm.cn.bing.net/th/id/OIP-C.uRwQhNxRqjyTs9XNP8UoHQHaDt?rs=1&pid=ImgDetMain
 main_color: "#23D194"
 ---
 

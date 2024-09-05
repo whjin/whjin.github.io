@@ -16,7 +16,7 @@ hexo.extend.filter.register(
       social: null,
       favicon: "/favicon.ico",
       avatar: {
-        img: "https://img.qovv.cn/2024/04/06/6610e9e93f31b.jpg",
+        img: "https://segmentfault.com/img/bVdaseX?spec=cover",
         effect: false,
       },
       disable_top_img: false,
@@ -36,7 +36,7 @@ hexo.extend.filter.register(
       },
       error_img: {
         flink: "/img/gif/friend_404.gif",
-        post_page: "https://img.qovv.cn/2024/04/06/6610ed6c7242e.jpg",
+        post_page: "https://segmentfault.com/img/bVdaseX?spec=cover",
       },
       error_404: {
         enable: true,

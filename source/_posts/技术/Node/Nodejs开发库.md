@@ -8,7 +8,7 @@ keywords:
 description:
 top_img:
 comments:
-cover: https://img.qovv.cn/2024/04/06/6610cc66073da.jpg
+cover: https://hbimg.b0.upaiyun.com/831e23b85448e5bcb682456cf865ccc738ff57c747a7-bNIv1S_fw658
 highlight_shrink:
 aside:
 main_color: "#84CC2A"

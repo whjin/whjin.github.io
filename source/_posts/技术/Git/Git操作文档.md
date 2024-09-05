@@ -4,7 +4,7 @@ date: 2023-02-18 17:15:19
 updated: 2024-4-14 16:48:36
 category: ["技术"]
 tags: ["Git","前端"]
-cover: https://static.cnbetacdn.com/thumb/article/2020/1006/0633dc249b85316.png
+cover: https://pic.rmb.bdstatic.com/cms/3a9282f87f892c286c9a9ccebe9c95dd_1679484529_216.png
 main_color: "#DE4C36"
 ---
 

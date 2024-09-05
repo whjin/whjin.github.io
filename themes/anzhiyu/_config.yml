@@ -148,7 +148,7 @@ favicon: /favicon.ico
 
 # Avatar (头像)
 avatar:
-  img: https://img.qovv.cn/2024/04/06/6610e9e93f31b.jpg
+  img: https://avatar-static.segmentfault.com/104/794/1047942597-65425fa2e1be7_huge128
   effect: true
 
 # Disable all banner image
@@ -175,7 +175,7 @@ cover:
 # Replace Broken Images (替换无法显示的图片)
 error_img:
   flink: /img/gif/friend_404.gif
-  post_page: https://img.qovv.cn/2024/04/06/6610ed6c7242e.jpg
+  post_page: https://segmentfault.com/img/bVdaseX?spec=cover
 
 # A simple 404 page
 error_404:
@@ -254,10 +254,10 @@ post_copyright:
 reward:
   enable: true
   QR_code:
-    - img: https://img.qovv.cn/2024/04/06/6610eb3af2935.png
+    - img: https://segmentfault.com/img/bVdaseX?spec=cover
       link:
       text: 微信
-    - img: https://img.qovv.cn/2024/04/06/6610eb3ad9c62.png
+    - img: https://segmentfault.com/img/bVdaseX?spec=cover
       link:
       text: 支付宝
 
@@ -783,7 +783,7 @@ preloader:
   source: 3
   # pace theme (see https://codebyzach.github.io/pace/)
   pace_css_url:
-  avatar: https://img.qovv.cn/2024/04/06/6610e9e93f31b.jpg # 自定加载动画义头像
+  avatar: https://avatar-static.segmentfault.com/104/794/1047942597-65425fa2e1be7_huge128 # 自定加载动画义头像
 
 # aside (侧边栏)
 # --------------------------------------
@@ -1025,9 +1025,9 @@ pwa:
   startup_image_enable: true
   manifest: /manifest.json
   theme_color: var(--anzhiyu-main)
-  mask_icon: https://img.qovv.cn/2024/04/06/6610ed165ea23.png
-  apple_touch_icon: https://img.qovv.cn/2024/04/06/6610ed165ea23.png
-  bookmark_icon: https://img.qovv.cn/2024/04/06/6610ed165ea23.png
+  mask_icon: https://avatar-static.segmentfault.com/104/794/1047942597-65425fa2e1be7_huge128
+  apple_touch_icon: https://avatar-static.segmentfault.com/104/794/1047942597-65425fa2e1be7_huge128
+  bookmark_icon: https://avatar-static.segmentfault.com/104/794/1047942597-65425fa2e1be7_huge128
   favicon_32_32: /img/siteicon/32.png
   favicon_16_16: /img/siteicon/16.png
 
@@ -1078,7 +1078,7 @@ friends_vue:
   vue_js: https://npm.elemecdn.com/anzhiyu-theme-static@1.1.2/friends/index.f9a2b8d2.js
   apiurl: https://friends.anheyu.com/ # 朋友圈后端地址
   top_tips: 使用 友链朋友圈 订阅友链最新文章
-  top_background: https://img.qovv.cn/2024/04/06/6610ed6c7cb37.jpg
+  top_background: https://avatar-static.segmentfault.com/104/794/1047942597-65425fa2e1be7_huge128
 
 # 深色模式粒子效果canvas
 universe:
