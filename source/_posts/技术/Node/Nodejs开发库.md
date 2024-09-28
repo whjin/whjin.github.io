@@ -8,7 +8,7 @@ keywords:
 description:
 top_img:
 comments:
-cover: https://hbimg.b0.upaiyun.com/831e23b85448e5bcb682456cf865ccc738ff57c747a7-bNIv1S_fw658
+cover: https://bkimg.cdn.bcebos.com/pic/738b4710b912c8fcc3cedd1d6e488545d688d53f8b82
 highlight_shrink:
 aside:
 main_color: "#84CC2A"
