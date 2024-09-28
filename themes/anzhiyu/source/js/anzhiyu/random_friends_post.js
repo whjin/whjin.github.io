@@ -96,7 +96,7 @@ var randomPostTips = [
   "游戏的规则就是这么的简单，你听懂了吗？管你听没听懂，快去看",
 ];
 var randomPostClick = 0;
-function fetchRandomPost() {
+function fetchRandomPost () {
   if (!document.getElementById("random-post")) return;
   if (randomPostWorking == false) {
     randomPostWorking = true;
@@ -140,7 +140,6 @@ function fetchRandomPost() {
     document.querySelector(".random-post-start").style.transitionDuration = "0.3s";
     document.querySelector(".random-post-start").style.transform = "rotate(" + randomRotate + "deg)";
 
-    //判断是否饥饿
     if (
       document.getElementById("random-post") &&
       randomPostClick * fdata.hungryFish + fdata.defaultFish < randomPostTimes &&
@@ -150,37 +149,39 @@ function fetchRandomPost() {
         "因为只钓鱼不吃鱼，过分饥饿导致本次钓鱼失败...(点击任意一篇钓鱼获得的文章即可恢复）";
       randomPostWorking = false;
     } else {
-      var fetchUrl = fdata.apiurl + "randompost";
-      fetch(fetchUrl)
-        .then(res => res.json())
-        .then(json => {
-          var title = json.title;
-          var link = json.link;
-          var author = json.author;
-          if (document.getElementById("random-post")) {
-            window.setTimeout(function () {
-              document.getElementById("random-post").innerHTML =
-                randomPostTipsItem +
-                `来自友链 <b>` +
-                author +
-                `</b> 的文章：<a class="random-friends-post" onclick="randomClickLink()" target="_blank" href="` +
-                link +
-                `" rel="external nofollow">` +
-                title +
-                `</a>`;
-              randomPostTimes += 1;
-              localStorage.setItem("randomPostTimes", randomPostTimes);
-              document.querySelector(".random-post-start").style.opacity = "1";
-            }, randomTime);
-          }
-        });
+      if (fdata.apiurl) {
+        var fetchUrl = fdata.apiurl + "randompost";
+        fetch(fetchUrl)
+          .then(res => res.json())
+          .then(json => {
+            var title = json.title;
+            var link = json.link;
+            var author = json.author;
+            if (document.getElementById("random-post")) {
+              window.setTimeout(function () {
+                document.getElementById("random-post").innerHTML =
+                  randomPostTipsItem +
+                  `来自友链 <b>` +
+                  author +
+                  `</b> 的文章：<a class="random-friends-post" onclick="randomClickLink()" target="_blank" href="` +
+                  link +
+                  `" rel="external nofollow">` +
+                  title +
+                  `</a>`;
+                randomPostTimes += 1;
+                localStorage.setItem("randomPostTimes", randomPostTimes);
+                document.querySelector(".random-post-start").style.opacity = "1";
+              }, randomTime);
+            }
+          });
+      }
       randomPostWorking = false;
     }
   }
 }
 
 //初始化检查
-function initRandomPost() {
+function initRandomPost () {
   // 获取已经存储的数据
   if (localStorage.randomPostTimes) {
     randomPostTimes = parseInt(localStorage.randomPostTimes);
@@ -194,13 +195,13 @@ function initRandomPost() {
 initRandomPost();
 
 //添加点击统计
-function randomClickLink() {
+function randomClickLink () {
   randomPostClick += 1;
   localStorage.setItem("randomPostClick", randomPostClick);
 }
 
 // 生成随机数
-function randomNum(minNum, maxNum) {
+function randomNum (minNum, maxNum) {
   switch (arguments.length) {
     case 1:
       return parseInt(Math.random() * minNum + 1, 10);

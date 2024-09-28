@@ -81,7 +81,7 @@ social:
 author_status:
   enable: false
   # 可以是任何图片，建议放表情包或者emoji图片，效果都很好，[表情包速查](https://emotion.xiaokang.me/)
-  statusImg: "https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png"
+  statusImg: 'https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png'
   skills:
     # - 🤖️ 数码科技爱好者
     # - 🔍 分享与热心帮助
@@ -180,7 +180,7 @@ error_img:
 # A simple 404 page
 error_404:
   enable: true
-  subtitle: "请尝试站内搜索寻找文章"
+  subtitle: '请尝试站内搜索寻找文章'
   background: https://bu.dusays.com/2023/05/08/645907596997d.gif
 
 post_meta:
@@ -254,10 +254,10 @@ post_copyright:
 reward:
   enable: true
   QR_code:
-    - img: https://segmentfault.com/img/bVdaseX?spec=cover
+    - img: /img/wx_pay.jpg
       link:
       text: 微信
-    - img: https://segmentfault.com/img/bVdaseX?spec=cover
+    - img: /img/ali_pay.jpg
       link:
       text: 支付宝
 
@@ -351,7 +351,7 @@ valine:
     - xxxxx
   friends:
     - xxxxxx
-  tagMeta: "博主,小伙伴,访客"
+  tagMeta: '博主,小伙伴,访客'
   option:
 
 # waline - A simple comment system with backend support fork from Valine
@@ -552,7 +552,7 @@ footer:
 
 # Baidu Analytics
 # https://tongji.baidu.com/web/welcome/login
-baidu_analytics: "7176d0bc67fb19a89fea168ac922b24e"
+baidu_analytics: '7176d0bc67fb19a89fea168ac922b24e'
 
 # Google Analytics
 # https://analytics.google.com/analytics/web/
@@ -606,22 +606,22 @@ site_verification:
 
 theme_color:
   enable: true
-  main: "#425AEF"
-  dark_main: "#f2b94b"
-  paginator: "#425AEF"
+  main: '#425AEF'
+  dark_main: '#f2b94b'
+  paginator: '#425AEF'
   #   button_hover: "#FF7242"
-  text_selection: "#2128bd"
-  link_color: "var(--anzhiyu-fontcolor)"
-  meta_color: "var(--anzhiyu-fontcolor)"
-  hr_color: "#4259ef23"
-  code_foreground: "#fff"
-  code_background: "var(--anzhiyu-code-stress)"
-  toc_color: "#425AEF"
+  text_selection: '#2128bd'
+  link_color: 'var(--anzhiyu-fontcolor)'
+  meta_color: 'var(--anzhiyu-fontcolor)'
+  hr_color: '#4259ef23'
+  code_foreground: '#fff'
+  code_background: 'var(--anzhiyu-code-stress)'
+  toc_color: '#425AEF'
   #   blockquote_padding_color: "#425AEF"
   #   blockquote_background_color: "#425AEF"
-  scrollbar_color: "var(--anzhiyu-scrollbar)"
-  meta_theme_color_light: "#f7f9fe"
-  meta_theme_color_dark: "#18171d"
+  scrollbar_color: 'var(--anzhiyu-scrollbar)'
+  meta_theme_color_light: '#f7f9fe'
+  meta_theme_color_dark: '#18171d'
 
 # 移动端侧栏
 sidebar:
@@ -684,7 +684,7 @@ canvas_fluttering_ribbon:
 # https://github.com/hustcc/canvas-nest.js
 canvas_nest:
   enable: false
-  color: "0,0,255" #color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
+  color: '0,0,255' #color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
   opacity: 0.7 # the opacity of line (0~1), default: 0.5.
   zIndex: -1 # z-index property of the background, default: -1.
   count: 99 # the number of lines, default: 99.
@@ -729,7 +729,7 @@ beautify:
   enable: true
   field: post # site/post
   title-prefix-icon: '\f0c1'
-  title-prefix-icon-color: "#F47466"
+  title-prefix-icon-color: '#F47466'
 
 # Global font settings
 # Don't modify the following settings unless you know how they work (非必要不要修改)
@@ -871,19 +871,19 @@ translate:
   # The text of a button
   default: 繁
   # Right-click menu default text
-  rightMenuMsgDefault: "轉為繁體"
+  rightMenuMsgDefault: '轉為繁體'
   # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）
   defaultEncoding: 2
   # Time delay
   translateDelay: 0
   # The text of the button when the language is Simplified Chinese
-  msgToTraditionalChinese: "繁"
+  msgToTraditionalChinese: '繁'
   # The text of the button when the language is Traditional Chinese
-  msgToSimplifiedChinese: "简"
+  msgToSimplifiedChinese: '简'
   # Right-click the menu to traditional Chinese
-  rightMenuMsgToTraditionalChinese: "转为繁体"
+  rightMenuMsgToTraditionalChinese: '转为繁体'
   # Right-click menu to simplified Chinese
-  rightMenuMsgToSimplifiedChinese: "转为简体"
+  rightMenuMsgToSimplifiedChinese: '转为简体'
 
 # Read Mode (閲读模式)
 readmode: true
@@ -995,8 +995,8 @@ aplayerInject:
 snackbar:
   enable: true
   position: top-center
-  bg_light: "#425AEF" # The background color of Toast Notification in light mode
-  bg_dark: "#1f1f1f" # The background color of Toast Notification in dark mode
+  bg_light: '#425AEF' # The background color of Toast Notification in light mode
+  bg_dark: '#1f1f1f' # The background color of Toast Notification in dark mode
 
 # https://instant.page/
 # prefetch (预加载)
@@ -1076,7 +1076,7 @@ home_top:
 friends_vue:
   enable: true
   vue_js: https://npm.elemecdn.com/anzhiyu-theme-static@1.1.2/friends/index.f9a2b8d2.js
-  apiurl: https://friends.anheyu.com/ # 朋友圈后端地址
+  apiurl: 
   top_tips: 使用 友链朋友圈 订阅友链最新文章
   top_background: https://avatar-static.segmentfault.com/104/794/1047942597-65425fa2e1be7_huge128
 
@@ -1112,9 +1112,9 @@ comment_barrage_config:
   # 弹幕显示间隔时间ms
   barrageTime: 4000
   # token，在控制台中获取
-  accessToken: ""
+  accessToken: ''
   # 博主邮箱md5值
-  mailMd5: ""
+  mailMd5: ''
 
 # 左下角音乐配置项
 # https://github.com/metowolf/MetingJS
@@ -1132,7 +1132,7 @@ music_page_default: nav_music
 # 评论匿名邮箱
 visitorMail:
   enable: true
-  mail: ""
+  mail: ''
 
 # ptool 文章底部工具
 ptool:
@@ -1203,7 +1203,7 @@ linkPageTop:
   addFriendPlaceholder: "昵称（请勿包含博客等字样）：\n网站地址（要求博客地址，请勿提交个人主页）：\n头像图片url（请提供尽可能清晰的图片，我会上传到我自己的图床）：\n描述：\n站点截图（可选）：\n"
 
 # 缩略图后缀 archive/tag/category 页面单独开启后缀
-pageThumbnailSuffix: "!page_thumbnail"
+pageThumbnailSuffix: '!page_thumbnail'
 
 # 隐私协议弹窗
 agreementPopup:
