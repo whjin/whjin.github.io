@@ -8,7 +8,7 @@ keywords:
 description:
 top_img:
 comments:
-cover: https://bkimg.cdn.bcebos.com/pic/738b4710b912c8fcc3cedd1d6e488545d688d53f8b82
+cover: https://segmentfault.com/img/bVder0y
 highlight_shrink:
 aside:
 main_color: "#84CC2A"
