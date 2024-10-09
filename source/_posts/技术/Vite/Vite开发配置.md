@@ -4,7 +4,7 @@ date: 2024-06-10 11:21:32
 updated: 2024-6-10 11:30:58
 category: ["技术"]
 tags: ["前端","Vite"]
-cover: https://cn.vitejs.dev/logo-with-shadow.png
+cover: https://www.vitejs.net/logo.svg
 main_color: "#FFC820"
 keywords:
 description:
