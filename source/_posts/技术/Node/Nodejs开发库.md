@@ -8,7 +8,7 @@ keywords:
 description:
 top_img:
 comments:
-cover: https://segmentfault.com/img/bVder0y
+cover: https://img1.baidu.com/it/u=1395738484,3377141821&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500
 highlight_shrink:
 aside:
 main_color: "#84CC2A"
