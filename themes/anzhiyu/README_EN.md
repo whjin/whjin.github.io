@@ -14,7 +14,7 @@
 
 <p align="center"><a title="中文" href="/README.md">🇨🇳 中文简体</a> | 🇬🇧 English</p>
 
-Preview: 👍 [AnZhiYu](https://blog.anheyu.com/) || 🤞 [AnZhiYu](https://index.anheyu.com/)
+Preview: 👍 [AnZhiYu](https://wuhuajin.com/) || 🤞 [AnZhiYu](https://wuhuajin.com/)
 
 Document: 📖 [anzhiyu Docs](https://docs.anheyu.com/)
 

@@ -140,12 +140,12 @@ hexo.extend.filter.register(
           enable: false,
           list: [
             {
-              link: "https://hexo.io/",
+              link: "https://wuhuajin.com/",
               shields: "https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg",
               message: "博客框架为Hexo_v5.4.0",
             },
             {
-              link: "https://blog.anheyu.com/",
+              link: "https://wuhuajin.com/",
               shields: "https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg",
               message: "本站使用AnZhiYu主题",
             },

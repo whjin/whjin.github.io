@@ -93,7 +93,7 @@
             each item in i.link_list
               - let color = item.color || ""
               - let tag = item.tag || ""
-              - let siteshot = item.siteshot || `https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/noanimate/${item.link}` || theme.default_img
+              - let siteshot = item.siteshot || `//image.thum.io/get/width/400/crop/800/allowJPG/wait/20/noanimate/${item.link}` || theme.default_img
               .site-card
                 if color == "vip" && tag
                   span.site-card-tag.vip #[=tag]
@@ -117,7 +117,7 @@
             each item in i.link_list
               a.flink-list-card.cf-friends-link(href=url_for(item.link) cf-href=url_for(item.link) target='_blank' data-title=item.descr)
                 .wrapper.cover
-                  - var siteshot = item.siteshot ? url_for(item.siteshot) : 'https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/noanimate/' + item.link
+                  - var siteshot = item.siteshot ? url_for(item.siteshot) : '//image.thum.io/get/width/400/crop/800/allowJPG/wait/20/noanimate/' + item.link
                   if theme.lazyload.enable
                     img.cover.fadeIn(data-lazy-src=siteshot onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.post_page) + `'` alt='cover' )
                   else

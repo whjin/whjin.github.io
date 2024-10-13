@@ -434,10 +434,10 @@ footer:
   bdageitem:
     enable: true
     list:
-      - link: https://hexo.io/ #徽标指向网站链接
+      - link: https://github.com/whjin #徽标指向网站链接
         shields: https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg #徽标API
         message: 博客框架为Hexo_v5.4.0 #徽标提示语
-      - link: https://blog.anheyu.com/
+      - link: https://github.com/whjin
         shields: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg
         message: 本站使用AnZhiYu主题
       - link: https://www.dogecloud.com/
@@ -1078,7 +1078,7 @@ friends_vue:
   vue_js: https://npm.elemecdn.com/anzhiyu-theme-static@1.1.2/friends/index.f9a2b8d2.js
   apiurl: 
   top_tips: 使用 友链朋友圈 订阅友链最新文章
-  top_background: https://segmentfault.com/img/bVder0R
+  top_background: https://segmentfault.com/img/bVdeyw7?spec=cover
 
 # 深色模式粒子效果canvas
 universe:
