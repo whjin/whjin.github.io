@@ -16,7 +16,7 @@ hexo.extend.filter.register(
       social: null,
       favicon: "/favicon.ico",
       avatar: {
-        img: "https://segmentfault.com/img/bVdaseX?spec=cover",
+        img: "/img/pic/top.jpg",
         effect: false,
       },
       disable_top_img: false,
@@ -36,7 +36,7 @@ hexo.extend.filter.register(
       },
       error_img: {
         flink: "/img/gif/friend_404.gif",
-        post_page: "https://segmentfault.com/img/bVdaseX?spec=cover",
+        post_page: "/img/pic/top.jpg",
       },
       error_404: {
         enable: true,

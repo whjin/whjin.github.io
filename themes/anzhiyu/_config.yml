@@ -175,7 +175,7 @@ cover:
 # Replace Broken Images (替换无法显示的图片)
 error_img:
   flink: /img/gif/friend_404.gif
-  post_page: https://segmentfault.com/img/bVdaseX?spec=cover
+  post_page: /img/pic/view.jpeg
 
 # A simple 404 page
 error_404:
@@ -254,10 +254,10 @@ post_copyright:
 reward:
   enable: true
   QR_code:
-    - img: /img/wx_pay.jpg
+    - img: /img/pay/wx_pay.jpg
       link:
       text: 微信
-    - img: /img/ali_pay.jpg
+    - img: /img/pay/ali_pay.jpg
       link:
       text: 支付宝
 
@@ -342,7 +342,7 @@ valine:
   guest_info: nick,mail,link # valine comment header info (nick/mail/link)
   recordIP: false # Record reviewer IP
   serverURLs: https://9nwkq9ds.lc-cn-n1-shared.com # 把xxxxxxxx替换成你自己AppID的前8位字符
-  bg: /img/comment_bg.png # valine background
+  bg: /img/pic/comment_bg.png # valine background
   emojiCDN: //i0.hdslb.com/bfs/emote/ # emoji CDN
   enableQQ: true # enable the Nickname box to automatically get QQ Nickname and QQ Avatar
   requiredFields: nick,mail # required fields (nick/mail)
@@ -1078,7 +1078,7 @@ friends_vue:
   vue_js: https://npm.elemecdn.com/anzhiyu-theme-static@1.1.2/friends/index.f9a2b8d2.js
   apiurl: 
   top_tips: 使用 友链朋友圈 订阅友链最新文章
-  top_background: https://segmentfault.com/img/bVdeyw7?spec=cover
+  top_background: /img/pic/top.jpg
 
 # 深色模式粒子效果canvas
 universe:

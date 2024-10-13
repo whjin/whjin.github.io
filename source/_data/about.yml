@@ -41,8 +41,8 @@
   map:
     title: 我现在住在
     StrengthenTitle: 中国，广州市
-    background: https://segmentfault.com/img/bVder06
-    backgroundDark: https://segmentfault.com/img/bVdaseX?spec=cover
+    background: /img/pic/site.webp
+    backgroundDark: /img/pic/view.jpeg
   selfInfo:
     selfInfoTips1: 毕业于
     selfInfoContentYear: 2013
@@ -53,7 +53,7 @@
   personalities:
     author_name: 执政官
     personality_type: ESFJ-A
-    photo_url: https://segmentfault.com/img/bVder09?spec=cover
+    photo_url: /img/pic/view.jpeg
     personality_img: https://npm.elemecdn.com/anzhiyu-blog@2.0.8/img/svg/ESFJ-A.svg
     name_url: https://www.16personalities.com/ch/esfj-%E4%BA%BA%E6%A0%BC
   maxim:
