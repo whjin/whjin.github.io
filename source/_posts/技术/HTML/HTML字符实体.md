@@ -4,7 +4,7 @@ date: 2024-10-26 20:13:43
 updated:
 category: ["技术"]
 tags: ["前端","HTML","字符"]
-cover: https://segmentfault.com/img/bVdeJn8?spec=cover
+cover: "https://segmentfault.com/img/bVdeJn8?spec=cover"
 main_color: "#FFCF99"
 keywords:
 description:
