@@ -1,50 +1,101 @@
 - class_name: 开启创造力
   creativity_list:
-    - name: Java
-      color: "#fff"
-      icon: https://bu.dusays.com/2023/04/09/643293b1184e9.jpg
-    - name: Docker
-      color: "#57b6e6"
-      icon: https://bu.dusays.com/2023/04/09/643293b0f0abe.png
-    - name: Photoshop
-      color: "#4082c3"
-      icon: https://bu.dusays.com/2022/12/15/639aa3a5c240e.png
+    - name: HTML5
+      color: '#e9572b'
+      icon: https://bu.dusays.com/2022/12/15/639aa3a5c241c.png
+    - name: CSS3
+      color: '#2c51db'
+      icon: https://bu.dusays.com/2022/12/15/639aa3a5c251e.png
+    - name: JavaScript
+      color: '#f7cb4f'
+      icon: https://bu.dusays.com/2023/04/09/643293b121f02.png
+    - name: Axios
+      color: '#fff'
+      icon: https://image-static.segmentfault.com/161/456/1614568004-6738c1d68d4ac_fix732
+    - name: WebRTC
+      color: '#fff'
+      icon: https://image-static.segmentfault.com/296/315/2963155719-6738cc95761c6_fix732
     - name: Node
-      color: "#333"
+      color: '#333'
       icon: https://npm.elemecdn.com/anzhiyu-blog@2.1.1/img/svg/node-logo.svg
+    - name: WebSocket
+      color: '#00C188'
+      icon: https://image-static.segmentfault.com/135/480/1354804279-6738bc8ab0750_fix732
+    - name: SocketIO
+      color: '#333'
+      icon: https://image-static.segmentfault.com/401/473/4014730770-6738c45690b25_fix732
+    - name: Canvas
+      color: '#e9572b'
+      icon: https://image-static.segmentfault.com/865/473/865473181-6738be7b69601_fix732
+    - name: SVG
+      color: '#FEA500'
+      icon: https://image-static.segmentfault.com/296/905/2969056631-6738c30d021d4_fix732
+    - name: Less
+      color: '#254A7B'
+      icon: https://image-static.segmentfault.com/287/398/287398973-6738bfa2e464d_fix732
+    - name: Sass
+      color: '#fff'
+      icon: https://image-static.segmentfault.com/340/410/3404107148-6738c03fdc991_fix732
     - name: Webpack
-      color: "#2e3a41"
+      color: '#2e3a41'
       icon: https://bu.dusays.com/2023/04/09/643293b68026c.png
     - name: Pinia
-      color: "#fff"
+      color: '#fff'
       icon: https://npm.elemecdn.com/anzhiyu-blog@2.0.8/img/svg/pinia-logo.svg
-    - name: Python
-      color: "#fff"
-      icon: https://bu.dusays.com/2023/04/09/643293b1230f7.png
     - name: Vite
-      color: "#937df7"
+      color: '#937df7'
       icon: https://npm.elemecdn.com/anzhiyu-blog@2.0.8/img/svg/vite-logo.svg
-    - name: Flutter
-      color: "#4499e4"
-      icon: https://bu.dusays.com/2023/04/09/643293b1055c2.png
     - name: Vue
-      color: "#b8f0ae"
+      color: '#b8f0ae'
       icon: https://bu.dusays.com/2023/04/09/643293b6788bd.png
+    - name: Element Plus
+      color: '#fff'
+      icon: https://image-static.segmentfault.com/100/984/1009844726-6738c5ec44764_fix732
+    - name: View Design
+      color: '#fff'
+      icon: https://file.iviewui.com/view-design-logo.png
     - name: React
-      color: "#222"
+      color: '#222'
       icon: data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K
-    - name: CSS3
-      color: "#2c51db"
-      icon: https://bu.dusays.com/2022/12/15/639aa3a5c251e.png
-    - name: JS
-      color: "#f7cb4f"
-      icon: https://bu.dusays.com/2023/04/09/643293b121f02.png
-    - name: HTML
-      color: "#e9572b"
-      icon: https://bu.dusays.com/2022/12/15/639aa3a5c241c.png
+    - name: UmiJS
+      color: '#fff'
+      icon: https://gw.alipayobjects.com/zos/bmw-prod/598d14af-4f1c-497d-b579-5ac42cd4dd1f/k7bjua9c_w132_h130.png
+    - name: Redux
+      color: '#fff'
+      icon: https://www.redux.org.cn/images/icon.png
+    - name: Ant Design
+      color: '#fff'
+      icon: https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg
     - name: Git
-      color: "#df5b40"
+      color: '#df5b40'
       icon: https://bu.dusays.com/2023/04/09/643293b10ccdd.webp
     - name: Apifox
-      color: "#e65164"
+      color: '#e65164'
       icon: https://bu.dusays.com/2022/11/19/6378d6458c6b6.png
+    - name: Uni-App
+      color: '#B8F0AE'
+      icon: https://image-static.segmentfault.com/291/228/2912285147-673853bad34de_fix732
+    - name: Android Studio
+      color: '#fff'
+      icon: https://ztc.91gq.cn/uploadfile/2024/1016/20241016031837217.png
+    - name: Flutter
+      color: '#4499e4'
+      icon: https://bu.dusays.com/2023/04/09/643293b1055c2.png
+    - name: Electron
+      color: '#1B1C26'
+      icon: https://www.electronjs.org/zh/assets/img/logo.svg
+    - name: ECharts
+      color: '#fff'
+      icon: https://yoo66.com/app/echarts/doc/asset/img/echarts-logo.png
+    - name: Java
+      color: '#fff'
+      icon: https://bu.dusays.com/2023/04/09/643293b1184e9.jpg
+    - name: Docker
+      color: '#57b6e6'
+      icon: https://bu.dusays.com/2023/04/09/643293b0f0abe.png
+    - name: Photoshop
+      color: '#4082c3'
+      icon: https://bu.dusays.com/2022/12/15/639aa3a5c240e.png
+    - name: Python
+      color: '#fff'
+      icon: https://bu.dusays.com/2023/04/09/643293b1230f7.png

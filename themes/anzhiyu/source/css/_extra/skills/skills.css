@@ -36,11 +36,6 @@
   transform: translate(-60px);
 }
 
-#skills-tags-group-all .etc {
-  margin-right: 10px;
-  margin-top: 10px;
-}
-
 @keyframes rowup {
   0% {
     transform: translateX(0);
