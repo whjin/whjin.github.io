@@ -136,15 +136,12 @@ if site.data.about
       
       .author-content
         .author-content-item.personalities
-          - let {author_name, personality_type, photo_url, personality_img, name_url, personality_type_color} = item.personalities
-          .author-content-item-tips 性格
+          - let {author_name, personality_type, photo_url, personality_img, name_url, personality_type_color, author_email, emial_address} = item.personalities
+          .author-content-item-tips 联系方式
           span.author-content-item-title= author_name
           .title2(style=`color:${personality_type_color ? personality_type_color : "#ac899c"}`)= personality_type
-          .post-tips
-            | 在 
-            a(href='https://www.16personalities.com/', target='_blank', rel='noopener nofollow') 16personalities
-            |  了解更多关于 
-            a(target='_blank', rel='noopener external nofollow', href= name_url)= author_name
+          span.author-content-item-title= author_email
+          .title2(style=`color:${personality_type_color ? personality_type_color : "#ac899c"}`)= emial_address
           .image
             img.no-lightbox(src=url_for(personality_img), alt='人格')
         .author-content-item.myphoto

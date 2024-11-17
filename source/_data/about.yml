@@ -45,20 +45,22 @@
     text: 文章归档
     cover: https://bu.dusays.com/2023/05/01/644f4b037b930.jpg
   map:
-    title: 我现在住在
-    StrengthenTitle: 中国，广州市
+    title: 我的住址：
+    StrengthenTitle: 中国，广州市，荔湾区
     background: /img/pic/site.webp
     backgroundDark: /img/pic/view.jpeg
   selfInfo:
     selfInfoTips1: 毕业于
     selfInfoContentYear: 2013
     selfInfoTips2: 深圳大学
-    selfInfoContent2: 信息工程学院
+    selfInfoContent2: 电子信息工程
     selfInfoTips3: 现在职业
-    selfInfoContent3: 攻城狮
+    selfInfoContent3: 开发工程师
   personalities:
-    author_name: 执政官
-    personality_type: ESFJ-A
+    author_name: 我的电话：
+    personality_type: 13927419410
+    author_email: 我的邮箱：
+    emial_address: wuhuajin09@163.com
     photo_url: /img/pic/view.jpeg
     personality_img: https://npm.elemecdn.com/anzhiyu-blog@2.0.8/img/svg/ESFJ-A.svg
     name_url: https://www.16personalities.com/ch/esfj-%E4%BA%BA%E6%A0%BC
