@@ -13,27 +13,33 @@
       - 团队小组发动机 🧱
       - 壮汉人狠话不多 💢
   name: 吴华锦
-  description: 是一名开发工程师，古典文学阅读者。
+  description: 集科技和文艺于一身。
   aboutsiteTips:
     tips: 追求
     title1: 源于
-    title2: 热爱而去 感受
+    title2: 热爱而去感受
     word:
       - 学习
       - 生活
       - 程序
       - 体验
-  helloAbout: Hello there!
+  helloAbout: Hello World!
   skillsTips:
     tips: 技能
     title: 开启创造力
   careers:
     tips: 生涯
-    title: 无限进步
+    title: 创造价值
     list:
-      - desc: EDU,电子信息工程专业
-        color: "#357ef5"
-    img: https://bu.dusays.com/2023/04/21/644287166329b.png
+      - desc: 2020.06-至今任职于广州市高科通信技术股份有限公司，负责智能终端产品组所有产品前端开发工作，已上线并投产运行产品包括智能终端产品线、远程提讯会见产品线、智能视频行为分析平台；负责实战平台产品组V4版本监室事务管理模块开发。
+        color: '#357ef5'
+      - desc: 负责智能终端产品需求评审、原型评审、UI评审、技术选型、构建项目、功能开发、版本发布、现场部署及上线运维等产品开发流程。参与实战平台产品组V4版本需求评审、原型评审、UI评审、监室事务管理模块开发等产品开发流程。
+        color: '#357ef5'
+      - desc: 主要包括管控主机、仓内屏、仓外屏、移动警务终端、监区移动终端、智能谈话一体机等APP应用，应用于公安监管场所。
+        color: '#357ef5'
+      - desc: 适配昆仑电子、峰火智能、来邦科技、美电贝尔、海康、大华等设备厂商，包括音视频对讲、指纹、刷卡、测温、IO等SDK模块。
+        color: '#357ef5'
+    img:
   statistic:
     link: /archives
     text: 文章归档
@@ -67,7 +73,7 @@
   game:
     game_tips: 爱好游戏
     game_title: 原神
-    game_uid: "UID: 125766904"
+    game_uid: 'UID: 125766904'
     game_bg: https://bu.dusays.com/2023/04/22/64433bf26e25d.webp
   comic:
     comic_tips: 爱好番剧
