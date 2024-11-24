@@ -10,7 +10,7 @@ menu:
     留言板: /comments/ || anzhiyu-icon-envelope
 
   我的:
-    音乐馆: /music/ || anzhiyu-icon-music
+    音乐馆: /music/?id=9181667059&server=tencent || anzhiyu-icon-music
     追番页: /bangumis/ || anzhiyu-icon-bilibili
     相册集: /album/ || anzhiyu-icon-images
 
@@ -1076,7 +1076,7 @@ home_top:
 friends_vue:
   enable: true
   vue_js: https://npm.elemecdn.com/anzhiyu-theme-static@1.1.2/friends/index.f9a2b8d2.js
-  apiurl: 
+  apiurl:
   top_tips: 使用 友链朋友圈 订阅友链最新文章
   top_background: /img/pic/top.jpg
 
@@ -1121,10 +1121,10 @@ comment_barrage_config:
 nav_music:
   enable: true
   console_widescreen_music: true # 宽屏状态控制台显示音乐而不是标签 enable为true 控制台依然会显示
-  id: 9502424204
-  server: netease # netease, tencent, kugou, xiami, baidu
+  id: 9181667059
+  server: tencent # netease, tencent, kugou, xiami, baidu
   volume: 0.5 # 默认音量
-  all_playlist: https://music.163.com/#/my/m/music/playlist?id=9502424204
+  all_playlist: https://y.qq.com/n/ryqq/playlist/9181667059
 
 # 路径为 /music 的音乐页面默认加载的歌单 1. nav_music 2. custom
 music_page_default: nav_music
