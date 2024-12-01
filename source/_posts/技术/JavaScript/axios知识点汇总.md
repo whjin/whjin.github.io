@@ -415,4 +415,83 @@ axios(options);
 
 **自动序列化**
 
-当请求头中的`content-type`是`application/x-www-form-urlencoded`时，
+当请求头中的`content-type`是`application/x-www-form-urlencoded`时，`Axios`将自动地将普通对象序列化成`urlencoded`的格式。
+
+# `Multipart`实体请求
+
+## 使用`multipart/form-data`类型发起`POST`请求
+
+### 使用`FormData API`
+
+**浏览器**
+
+```JS
+const form = new FormData();
+form.append('my_field', 'my value');
+form.append('my_buffer', new Blob([1, 2, 3]));
+form.append('my_file', fileInput.files[0]);
+
+axios.post('https://example.com', form);
+```
+
+`Axios`会将传入数据序列化，因此使用`Axios`提供的`API`可以无需手动处理`FormData`的数据并实现一样的效果：
+
+```JS
+axios.postForm('https://httpbin.org/post', {
+  my_field: 'my value',
+  my_buffer: new Blob([1, 2, 3]),
+  my_file: fileInput.files
+});
+```
+
+`HTML`表单可以直接作为请求内容来进行传输。
+
+**`Node.js`**
+
+```JS
+import axios from 'axios';
+
+const form = new FormData();
+form.append('my_field', 'my value');
+form.append('my_buffer', new Blob(['some content']));
+
+axios.post('https://example.com', form);
+```
+
+**自动序列化**
+
+从`v0.27.0`版本开始，当请求头中的`Content-Type`是`multipart/form-data`时，`Axios`支持自动地将普通对象序列化成一个`FormData`对象。
+
+```JS
+import axios from 'axios';
+
+axios.post('https://httpbin.org/post', {
+  user: {
+    name: 'Dmitriy'
+  },
+  file: fs.createReadStream('/foo/bar.jpg')
+}, {
+  headers: {
+    'Content-Type': 'multipart/form-data'
+  }
+}).then(({ data }) => console.log(data));
+```
+
+`Axios FormData`序列化支持一些特殊的结尾，以执行以下操作：
+
+- `{}`-通过`JSON.stringify`序列化数据
+- `[]`-将`array-like`的对象使用相同的键值来展开为单独的字段
+
+> 默认情况下，展开、扩展操作将在数组和`FileList`对象上使用。
+
+`FormData`序列化支持通过`config.formSerializer:object`这个参数来传递一些额外的选项，以支持一些特殊的情况:
+
+- `visitor: Function`-用户定义的处理函数，将递归调用以安装自定义规则将数据对象序列化为`FormData`对象
+- `dots :boolean = false`-使用点符号而不是括号来序列化数组和对象。
+- `metaTokens: boolean = true`-在`FormData`键值中添加特殊对象。后端的`body-parser`可能会使用此元信息自动将值解析为`JSON`。
+- `indexes: null|false|true = false`-控制如何添加索引到打平的`array-like`对象的展开键值中
+    - `null`-不添加中括号（`arr: 1,arr: 2,arr: 3`）
+    - `false`（默认值）-添加空中括号（`arr[]: 1,arr[]: 2,arr[]: 3`）
+    - `true`-添加带有索引的中括号（`arr[0]: 1,arr[1]: 2,arr[2]: 3`）
+
+`Axios`支持一下别名方法：`postForm`，`putForm`，`patchForm`，这些方法只是对应的`HTTP`方法，其`content-type`头部默认设为`multipart/form-data`。
