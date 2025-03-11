@@ -18,8 +18,7 @@ aside: "#42B883"
 3. [app.config.errorHandler](#errorHandler)
 4. [访问Props](#访问Props)
 
-<a id="nextTick"></a>
-# nextTick()
+# nextTick
 
 等待下一次`DOM`更新刷新的工具方法。
 
@@ -27,8 +26,7 @@ aside: "#42B883"
 
 `nextTick()`可以在状态改变后立即使用，以等待`DOM`更新完成。
 
-<a id="provide"></a>
-# app.provide()
+# provide
 
 提供一个值，可以在应用中的所有后代组件中注入使用。
 
@@ -42,8 +40,8 @@ provide('message', 'hello');
 import { inject } from 'vue';
 inject('message');
 ```
-<a id="errorHandler"></a>
-# app.config.errorHandler
+
+# errorHandler
 
 用于为应用内抛出的未捕获错误指定一个全局处理函数。
 
