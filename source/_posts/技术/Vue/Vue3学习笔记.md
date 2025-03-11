@@ -16,7 +16,7 @@ aside: "#42B883"
 1. [nextTick()](#nextTick)
 2. [app.provide()](#provide)
 3. [app.config.errorHandler](#errorHandler)
-4. [访问Props](#访问Props)
+4. [访问Props](#Props)
 
 # nextTick
 
@@ -45,7 +45,7 @@ inject('message');
 
 用于为应用内抛出的未捕获错误指定一个全局处理函数。
 
-# 访问Props
+# Props
 
 `setup`函数的第一个参数是组件的`props`。和标准的组件一致，一个`setup`函数的`props`是响应式的，并且会在传入新的`props`时同步更新。
 
