@@ -17,6 +17,14 @@ aside: "#42B883"
 2. [app.provide()](#provide)
 3. [app.config.errorHandler](#errorHandler)
 4. [访问Props](#Props)
+5. [setup上下文](#setup)
+6. [expose暴露公共属性](#expose)
+7. [与渲染函数h()一起使用](#h)
+8. [ref()](#ref)
+9. [computed()](#computed)
+10. [reactive()](#reactive)
+11. [readonly()](#readonly)
+12. [watchEffect()](#watchEffect)
 
 # nextTick
 
@@ -32,7 +40,7 @@ aside: "#42B883"
 
 第一个参数应当是注入的`key`，第二个参数则是提供的值。返回应用实例本身。
 
-```javascript
+```js
 import { provide } from 'vue';
 provide('message', 'hello');
 
@@ -53,10 +61,161 @@ inject('message');
 
 如果确实需要解构`props`对象，或需要将某个`props`传到一个外部函数中并保持响应性，那么你可以使用`toRefs()`和`toRef()`这两个工具函数。
 
-```javascript
+```js
 import { toRef, toRefs } from 'vue';
 const props = defindeProps({});
 const { title } = toRefs(props);
 const title = toRef(props, 'title');
 ```
+
+# setup
+
+传入`setup`函数的第二个参数是一个`setup`上下文。
+
+```js
+export default {
+  setup(props, context) {
+    // 透传 Attributes (非响应式的对象，等价于 $attrs)
+    console.log(context.attrs);
+
+    // 插槽（非响应式的对象，等价于 $slot）
+    console.log(context.slots);
+
+    // 触发事件（函数，等价于 $emit）
+    console.log(context.emit);
+
+    // 暴露公共属性（函数）
+    console.log(context.expose);
+  },
+};
+```
+
+该上下文对象是非响应式的，可以安全地解构：
+```js
+export default {
+  setup(props, { attrs, slots, emit, expose }) {},
+};
+```
+`attrs`和`slots`都是有状态的对象，它们总是会随着组件自身的更新而更新。这意味着应当避免解构它们，并始终通过`attrs.x`或`slots.x`的形式使用其中的属性。此外还需注意，和`props`不同，`attrs`和`slots`的属性都不是响应式的。如果想要基于`attrs`或`slots`的改变来执行副作用，那么你应该在`onBeforeUpdate`生命周期狗子中编写相关逻辑。
+
+# expose
+
+`expose`函数用于显示地限制该组件暴露出的属性，当父组件通过模板引用访问该组件的实例时，将仅能访问`expose函数暴露出的内容`：
+
+```js
+export default {
+  setup(props, { expose }) {
+    // 让组件实例处于“关闭状态”
+    // 即不向父组件暴露任何东西
+    expose();
+
+    const publicCount = ref(0);
+    const privateCount = ref(0);
+    // 有选择地暴露局部状态
+    expose({ count: publicCount });
+  },
+};
+```
+
+# h
+
+`setup`也可以返回一个渲染函数，此时在渲染函数中可以直接使用在同一作用域下声明的响应式状态：
+
+```js
+import { h, ref } from 'vue';
+
+export default {
+  setup() {
+    const count = ref(0);
+    return () => h('div', count.value);
+  },
+};
+```
+
+返回一个渲染函数将会阻止我们返回其他东西。对于组件内部来说，这样没问题，但如果我们想通过模板引用将这个组件的方法暴露给父组件，那就有问题了。
+
+可以通过调用`expose()`解决这个问题：
+
+```js
+import { h, ref } from 'vue';
+
+export default {
+  setup(props, { expose }) {
+    const count = ref(0);
+    const increment = () => ++count.value;
+
+    expose({ increment });
+    
+    return () => h('div', count.value);
+  },
+};
+```
+此时父组件可以通过模板引用来访问这个`increment`方法。
+
+# ref
+
+接受一个内部值，返回一个响应式的、可更改的`ref`对象，此对象只有一个指向其内部值的属性`.value`。
+
+如果将一个对象赋值给`ref`，那么这个对象将通过`reactive()`转为具有深层次响应式的对象。这也意味着如果对象中包含了嵌套的`ref`，它们将被深层地解包。
+
+如果要避免这种深层次的转换，请使用`shallowRef()`来替代。
+
+# computed
+
+接受一个`getter`函数，返回一个只读的响应式`ref`对象。该`ref`通过`.value`暴露`getter`函数的返回值。它可以接受一个带有`get`和`set`函数的对象来创建一个可写的`ref`对象。
+
+# reactive
+
+返回一个对象的响应式代理。
+
+响应式转换是“深层”的：它会影响到所有嵌套的属性。一个响应式对象也将深层地解包任何`ref`属性，同时保持响应性。
+
+值得注意的是，当访问到某个响应式数组或`Map`这样的原生集合类型中的`ref`元素时，不会执行`ref`的解包。
+
+若要避免深层响应式转换，只想保留对这个对象顶层次访问的响应性，请使用`shallowReactive()`来替代。
+
+返回的对象以及其中嵌套的对象都会通过`ES Proxy`包裹，因此不等于源对象，建议只使用响应式代理，避免使用原始对象。
+
+注意当访问到某个响应式数组或`Map`这样的原生集合类型中的`ref`元素时，不会执行`ref`的解包：
+
+```js
+import { ref, reactive } from 'vue';
+
+const books = reactive([ref('Vue 3 Guide')]);
+console.log(books[0].value);
+
+const map = reactive(new Map([['count', ref(0)]]));
+console.log(map.get('count').value);
+```
+将一个`ref`赋值给一个`reactive`属性时，该`ref`会被自动解包。
+
+# readonly
+
+接受一个对象（响应式或普通对象）或是一个`ref`，返回一个原值的只读代理。
+
+只读代理师深层的：对任何嵌套属性的访问都将是只读的。它的`ref`解包行为与`reactive`相同，但解包得到的值是只读的。
+
+要避免深层级的转换行为，请使用`shallowReadonly()`来替代。
+
+```js
+import { reactive, readonly,watchEffect() } from 'vue';
+
+const original = reactive({ count: 0 });
+const copy = readonly(original);
+
+watchEffect(()=>{
+  // 用来做响应式追踪
+  console.log(copy.count);
+})
+
+// 更改源属性会触发其依赖的侦听器
+original.count++
+
+// 更改该只读副本将会失败，并会得到一个警告
+copy.count++ // warning!
+```
+
+# watchEffect
+
+立即运行一个函数，同时响应式地追踪其依赖，并在依赖更改时重新执行。
 
