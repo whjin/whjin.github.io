@@ -10,8 +10,8 @@ menu:
     留言板: /comments/ || anzhiyu-icon-envelope
 
   我的:
-    # 音乐馆: /music/?id=9181667059&server=tencent || anzhiyu-icon-music
-    音乐馆: /music/?id=9502424204&server=netease || anzhiyu-icon-music
+    音乐馆: /music/?id=9181667059&server=tencent || anzhiyu-icon-music
+    # 音乐馆: /music/?id=9502424204&server=netease || anzhiyu-icon-music
     追番页: /bangumis/ || anzhiyu-icon-bilibili
     相册集: /album/ || anzhiyu-icon-images
 
@@ -1052,6 +1052,11 @@ home_top:
       shadow: var(--anzhiyu-shadow-blue)
       class: blue
       icon: anzhiyu-icon-dove
+    - name: 文学
+      path: /categories/文学/
+      shadow: var(--anzhiyu-shadow-red)
+      class: red
+      icon: anzhiyu-icon-fire
     - name: 诗词
       path: /categories/诗词/
       shadow: var(--anzhiyu-shadow-red)
@@ -1122,15 +1127,15 @@ comment_barrage_config:
 nav_music:
   enable: true
   console_widescreen_music: true # 宽屏状态控制台显示音乐而不是标签 enable为true 控制台依然会显示
-  # id: 9181667059
-  # server: tencent # netease, tencent, kugou, xiami, baidu
-  # volume: 0.5 # 默认音量
-  # all_playlist: https://y.qq.com/n/ryqq/playlist/9181667059
-
-  id: 9502424204
-  server: netease # netease, tencent, kugou, xiami, baidu
+  id: 9181667059
+  server: tencent # netease, tencent, kugou, xiami, baidu
   volume: 0.5 # 默认音量
-  all_playlist: https://music.163.com/#/playlist?id=9502424204
+  all_playlist: https://y.qq.com/n/ryqq/playlist/9181667059
+
+  # id: 9502424204
+  # server: netease # netease, tencent, kugou, xiami, baidu
+  # volume: 0.5 # 默认音量
+  # all_playlist: https://music.163.com/#/playlist?id=9502424204
 
 # 路径为 /music 的音乐页面默认加载的歌单 1. nav_music 2. custom
 music_page_default: nav_music

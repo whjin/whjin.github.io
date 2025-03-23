@@ -5,12 +5,12 @@ updated: 2025-3-10 23:12:12
 category: ['技术']
 tags: ['前端','Vue3']
 cover: https://image-static.segmentfault.com/351/673/351673032-67cf045cefb8b_cover
-main_color:
+main_color: "#42B883"
 keywords:
 description:
 top_img:
 comments:
-aside: "#42B883"
+aside: 
 ---
 
 1. [nextTick()](#nextTick)
@@ -25,6 +25,7 @@ aside: "#42B883"
 10. [reactive()](#reactive)
 11. [readonly()](#readonly)
 12. [watchEffect()](#watchEffect)
+13. [watch()](#watch)
 
 # nextTick
 
@@ -244,5 +245,39 @@ stop();
 **暂停/恢复侦听器：**
 
 ```js
+const { stop, pause, resume } = watchEffect(() => {});
 
+// 暂停侦听器
+pause();
+// 恢复
+resume();
+// 停止
+stop();
 ```
+
+副作用清理：
+
+```js
+watchEffect(async onCleanUp => {
+  const { response, cancel } = duAsyncWork(newId);
+  // 如果id变化，则调用cancel
+  // 如果之前的请求未完成，则取消该请求
+  onWatcherCleanup(cancel);
+  data.value = await response;
+});
+```
+
+# watch
+
+侦听一个或多个响应式数据源，并在数据源变化时调用所给的回调函数。
+
+`watch`默认是懒侦听的，即仅在侦听源发生变化时才执行回调函数。
+
+第一个参数是侦听器的源。这个来源可以是一下几种：
+
+- 一个函数，返回一个值
+- 一个`ref`
+- 一个响应式对象
+- 有以上类型的值组成的数组
+
+第二个参数是在发生变化时要调用的回调函数。这个回调函数接受三个参数：新值、旧值，以及一个用于注册副作用清理的回调函数。
