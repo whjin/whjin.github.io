@@ -1,5 +1,5 @@
 - class_name: 关于页
-  subtitle: 繁华似锦，快意人生✨
+  subtitle: 明朝即长路，惜取此时心✨
   avatarImg: https://avatar-static.segmentfault.com/104/794/1047942597-65425fa2e1be7_huge128
   avatarSkills:
     left:
@@ -72,8 +72,8 @@
     name_url: https://www.16personalities.com/ch/esfj-%E4%BA%BA%E6%A0%BC
   maxim:
     maxim_tips: 座右铭
-    maxim_top: 繁华似锦，
-    maxim_bottom: 诗意人生。
+    maxim_top: 明朝即长路，
+    maxim_bottom: 惜取此时心。
   buff:
     buff_tips: 特长
     buff_top: 脑回路新奇的 酸菜鱼

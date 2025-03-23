@@ -76,7 +76,7 @@ copy:
 #   name: link || icon
 social:
   Github: https://github.com/whjin || anzhiyu-icon-github
-  BiliBili: https://space.bilibili.com/372204786 || anzhiyu-icon-bilibili
+  BiliBili: https://space.bilibili.com/55280837 || anzhiyu-icon-bilibili
 
 # 作者卡片 状态
 author_status:
@@ -801,23 +801,23 @@ aside:
     category: true
   card_author:
     enable: true
-    description: <div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);"><b style="color:#fff">明朝即长路，惜取此时心。</b><b style="color:#fff">雅致寓于高阁渔舟唱晚，古典悠然；格调外发园林绿树萦绕，馥郁清香。</b></div> # 默认为站点描述
+    description: <div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);"><b style="color:#fff">雅致寓于高阁渔舟唱晚，古典悠然<br/>格调外发园林绿树萦绕，馥郁清香</b></div> # 默认为站点描述
     name_link: /
 
   card_announcement:
     enable: false
-    content: 欢迎来看我的博客鸭~
+    content: 明朝即长路，惜取此时心。
   card_weixin:
     enable: true
     face: https://bu.dusays.com/2023/01/13/63c02edf44033.png
-    backFace: https://bu.dusays.com/2023/05/13/645fa415e8694.png
+    backFace: /img/pay/wechat.png
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
     sort: date # date or updated
     sort_order: # Don't modify the setting unless you know how it works
   card_categories:
-    enable: false
+    enable: true
     limit: 8 # if set 0 will show all
     expand: none # none/true/false
     sort_order: # Don't modify the setting unless you know how it works
@@ -839,7 +839,7 @@ aside:
   card_webinfo:
     enable: true
     post_count: true
-    last_push_date: false
+    last_push_date: true
     sort_order: # Don't modify the setting unless you know how it works
 
 # busuanzi count for PV / UV in site
@@ -1043,9 +1043,9 @@ css_prefix: true
 home_top:
   enable: true # 开关
   timemode: update #date/updated
-  title: 繁华似锦
-  subTitle: 快意人生
-  siteText: 繁华似锦，快意人生
+  title: 明朝即长路
+  subTitle: 惜取此时心
+  siteText: 明朝即长路，惜取此时心。
   category:
     - name: 技术
       path: /categories/技术/
