@@ -13,21 +13,9 @@ comments:
 aside: 
 ---
 
-1. [nextTick()](#nextTick)
-2. [app.provide()](#provide)
-3. [app.config.errorHandler](#errorHandler)
-4. [访问Props](#Props)
-5. [setup上下文](#setup)
-6. [expose暴露公共属性](#expose)
-7. [与渲染函数h()一起使用](#h)
-8. [ref()](#ref)
-9. [computed()](#computed)
-10. [reactive()](#reactive)
-11. [readonly()](#readonly)
-12. [watchEffect()](#watchEffect)
-13. [watch()](#watch)
+# 全局API
 
-# nextTick
+## nextTick
 
 等待下一次`DOM`更新刷新的工具方法。
 
@@ -35,7 +23,7 @@ aside:
 
 `nextTick()`可以在状态改变后立即使用，以等待`DOM`更新完成。
 
-# provide
+## app.provide
 
 提供一个值，可以在应用中的所有后代组件中注入使用。
 
@@ -50,11 +38,11 @@ import { inject } from 'vue';
 inject('message');
 ```
 
-# errorHandler
+## app.config.errorHandler
 
 用于为应用内抛出的未捕获错误指定一个全局处理函数。
 
-# Props
+## 访问Props
 
 `setup`函数的第一个参数是组件的`props`。和标准的组件一致，一个`setup`函数的`props`是响应式的，并且会在传入新的`props`时同步更新。
 
@@ -68,8 +56,9 @@ const props = defindeProps({});
 const { title } = toRefs(props);
 const title = toRef(props, 'title');
 ```
+# 组合式API
 
-# setup
+## setup
 
 传入`setup`函数的第二个参数是一个`setup`上下文。
 
@@ -99,7 +88,7 @@ export default {
 ```
 `attrs`和`slots`都是有状态的对象，它们总是会随着组件自身的更新而更新。这意味着应当避免解构它们，并始终通过`attrs.x`或`slots.x`的形式使用其中的属性。此外还需注意，和`props`不同，`attrs`和`slots`的属性都不是响应式的。如果想要基于`attrs`或`slots`的改变来执行副作用，那么你应该在`onBeforeUpdate`生命周期狗子中编写相关逻辑。
 
-# expose
+## expose
 
 `expose`函数用于显示地限制该组件暴露出的属性，当父组件通过模板引用访问该组件的实例时，将仅能访问`expose函数暴露出的内容`：
 
@@ -118,7 +107,7 @@ export default {
 };
 ```
 
-# h
+## h
 
 `setup`也可以返回一个渲染函数，此时在渲染函数中可以直接使用在同一作用域下声明的响应式状态：
 
@@ -153,7 +142,9 @@ export default {
 ```
 此时父组件可以通过模板引用来访问这个`increment`方法。
 
-# ref
+# 响应式API：核心
+
+## ref
 
 接受一个内部值，返回一个响应式的、可更改的`ref`对象，此对象只有一个指向其内部值的属性`.value`。
 
@@ -161,11 +152,11 @@ export default {
 
 如果要避免这种深层次的转换，请使用`shallowRef()`来替代。
 
-# computed
+## computed
 
 接受一个`getter`函数，返回一个只读的响应式`ref`对象。该`ref`通过`.value`暴露`getter`函数的返回值。它可以接受一个带有`get`和`set`函数的对象来创建一个可写的`ref`对象。
 
-# reactive
+## reactive
 
 返回一个对象的响应式代理。
 
@@ -190,7 +181,7 @@ console.log(map.get('count').value);
 ```
 将一个`ref`赋值给一个`reactive`属性时，该`ref`会被自动解包。
 
-# readonly
+## readonly
 
 接受一个对象（响应式或普通对象）或是一个`ref`，返回一个原值的只读代理。
 
@@ -216,7 +207,7 @@ original.count++
 copy.count++ // warning!
 ```
 
-# watchEffect
+## watchEffect
 
 立即运行一个函数，同时响应式地追踪其依赖，并在依赖更改时重新执行。
 
@@ -267,7 +258,7 @@ watchEffect(async onCleanUp => {
 });
 ```
 
-# watch
+## watch
 
 侦听一个或多个响应式数据源，并在数据源变化时调用所给的回调函数。
 
@@ -280,4 +271,113 @@ watchEffect(async onCleanUp => {
 - 一个响应式对象
 - 有以上类型的值组成的数组
 
-第二个参数是在发生变化时要调用的回调函数。这个回调函数接受三个参数：新值、旧值，以及一个用于注册副作用清理的回调函数。
+第二个参数是在发生变化时要调用的回调函数。这个回调函数接受三个参数：新值、旧值，以及一个用于注册副作用清理的回调函数。该回调函数会在副作用下一次重新执行前调用，可以用来清楚无效的副作用，例如等待中的异步请求。
+
+当侦听多个来源时，回调函数接受两个数组，分别对应来源数组中的新值和旧值。
+
+第三个可选的参数是一个对象，支持以下这些选项：
+
+- `immediate`：在侦听器创建时立即触发回调。第一次调用时旧值是`undefined`。
+- `deep`：如果源时对象，强制深度遍历，以便在深层级变更时触发回调。在`3.5+`中，此参数还可以是指示最大遍历深度的数字。
+- `flush`：调整回调函数的刷新时机。
+- `onTrack/onTrigger`：调试侦听器的依赖。
+- `once`：`3.4+`回调函数只会运行一次。侦听器将在回调函数首次运行后自动停止。
+
+与`watchEffect()`相比，`watch`使我们可以：
+- 懒执行副作用；
+- 更加明确是应该由哪个状态触发侦听器重新执行；
+- 可以访问所侦听状态的前一个值和当前值。
+
+```js
+// 侦听一个getter函数
+const state = reactive({ count: 0 });
+watch(
+  () => state.count,
+  (newVal, oldVal) => {}
+);
+
+// 侦听一个ref
+const count = ref(0);
+watch(
+  () => count,
+  (newVal, oldVal) => {}
+);
+```
+
+当侦听多个来源时，回调函数接受两个数组，分别对应来源数组中的新值和旧值：
+```js
+let foo = ref('foo');
+let bar = ref('bar');
+watch([foo, bar], ([fooNewVal, barNewVal], [fooOldVal, barOldVal]) => {});
+```
+
+当使用`getter`函数作为源时，回调只在此函数的返回值变化时才会触发。如果你想让回调在深层级变更时也能触发，你需要使用`{ deep: true }`强制侦听器进入深层级模式。在深层级模式时，如果回调函数由于深层级的变更而被触发，那么新值和旧值将是同一个对象。
+```js
+const state = reactive({ count: 0 });
+watch(
+  () => state,
+  (newVal, oldVal) => {},
+  { deep: true }
+);
+```
+
+当直接侦听一个响应式对象时，侦听器会自动启用深层模式。
+
+`watch()`和`watchEffect()`享有相同的刷新时机和调试选项：
+```js
+watch(source, callback, {
+  flush: 'post',
+  onTrack(e) {
+    debugger;
+  },
+  onTrigger(e) {
+    debugger;
+  },
+});
+```
+
+停止侦听器：
+```js
+const { stop, pause, resume } = watch(source, callback);
+// 暂停侦听器
+pause();
+// 稍后恢复
+resume();
+// 停止
+stop();
+```
+
+副作用清理：
+```js
+watch(id, async (newId, oldId, onCleanup) => {
+  const { response, cancel } = doAsyncWork(newId);
+  // 当id变化时，cancel将被调用
+  // 取消之前的未完成的请求
+  onCleanup(cancel);
+  data.value = await response;
+});
+
+// 3.5+中副作用清理
+watch(id, async newId => {
+  const { response, cancel } = doAsyncWork(newId);
+  onWatcherCleanup(cancel);
+  data.value = await response;
+});
+```
+
+## onWatcherCleanup() <sup>`3.5+`</sup>
+
+注册一个清理函数，在当前侦听器即将重新运行时执行。只能在`watchEffect`作用函数或`watch`回调函数的同步执行期间调用（即不能在异步函数的`await`语句之后调用）。
+
+# 响应式API：工具
+
+## isRef()
+检查某个值是否为`ref`。
+
+返回值是一个类型板顶，这意味着`isRef`可以被用作类型守卫。
+
+## toRef()
+可以将值、`refs`或`getters`规范化为`refs`(3.3+)。
+
+也可以基于响应式对象上的一个属性，创建一个对应的`ref`。这样创建的`ref`与其源属性保持同步：改变源属性的值将更新`ref`的值，反之亦然。
+
