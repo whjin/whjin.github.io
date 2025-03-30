@@ -447,3 +447,144 @@ const { foo, bar } = useFeatureX();
 
 ## isReactive()
 
+检查一个对象是否是由`reactive()`或`shallowReactive()`创建的代理。
+
+## isReadonly()
+
+检查传入的值是否为只读对象。只读对象的属性可以更改，但它们不能通过传入的对象直接赋值。
+
+通过`readonly()`和`shallowReadonly()`创建的代理都是只读的，类似于没有`set`函数的`computed()`的`ref`。
+
+# 响应式API：进阶
+
+## shallowRef()
+
+`ref（）`的浅层作用形式。
+
+和`ref()`不同，浅层`ref`的内部值将会原样存储和暴露，并且不会被深层递归地转为响应式。只有对`.value`的访问是响应式的。
+
+`shallowRef()`常常用于对大型数据结构的性能优化或是与外部的状态管理系统集成。
+```js
+const state = shallowRef({ count: 1 });
+
+// 不会触发更改
+state.value.count = 2;
+// 会触发更改
+state.value = { count: 2 };
+```
+
+## customRef()
+
+创建一个自定义的`ref`，显式声明对其依赖追踪和更新触发的控制方式。
+
+`customRef()`预期接收一个工厂函数作为参数，这个工厂函数接受`track`和`trigger`两个函数作为参数，并返回一个带有`get`和`set`方法的对象。
+
+一般来说，`track()`应该在`get()`方法中调用，而`trigger()`应该在`set()`中调用。然而事实上，你对何时调用、是否应该调用它们有完全的控制权。
+```js
+import { customRef } from 'vue';
+
+export const useDebouncedRef = (value, delay = 200) => {
+  let timer = null;
+  return customRef((track, trigger) => {
+    return {
+      get() {
+        track();
+        return value;
+      },
+      set(newValue) {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+          value = newValue;
+          trigger();
+        }, delay);
+      },
+    };
+  });
+};
+
+// 在组件中使用
+import { useDebouncedRef } from './deboucedRef';
+const text = useDebouncedRef('hello');
+```
+
+## toRaw()
+
+根据一个`Vue`创建的代理返回其原始对象。
+
+`toRaw()`可以返回由`reactive()`、`readonly()`、`shallowReactive()`或者`shallowReadonly()`创建的代理对应的原始对象。
+
+这是一个可以用于临时读取而不引起代理访问/跟踪开销，或是写入而不触发更改的特殊方法。不建议保存对原始对象的持久引用，请谨慎使用。
+
+## markRaw()
+
+将一个对象标记为不可被转为代理。返回该对象本身。
+
+## effectScope()
+
+创建一个`effect`作用域，可以捕获其中所创建的响应式副作用（即计算属性和侦听器），这样捕获到的副作用可以一起清理。
+```js
+const scope = effectScope();
+
+scope.run(() => {
+  const doudled = computed(() => counter.value * 2);
+  watch(doudled, () => console.log(doudled.value));
+  watchEffect(() => console.log('Count:', doudled.value));
+});
+
+// 处理掉当前作用域内的所有effect
+scope.stop();
+```
+
+## onScopeDispose()
+
+在当前活跃的`effect`作用域上注册一个处理回调函数。当相关的`effect`作用域停止时会调用这个回调函数。
+
+这个方法可以作为可复用的组合式函数中`onUnmounted`的替代品，它并不与组件耦合，因为每一个`Vue`组件的`setup()`函数也是在一个`effect`作用域中调用的。
+
+如果在没有活跃的`effect`作用域的情况下调用此函数，将会抛出警告。在`3.5+`版本中，可以通过将第二个参数设为`true`来消除此警告。
+
+# 组合式API：生命周期钩子
+
+## onMounted()
+
+注册一个回调函数，在组件挂载完成后执行。
+
+组件在以下情况下被视为已挂载：
+
+- 其所有同步子组件都已经被挂载（不包含异步组件或`<Suspense>`树内的组件）。
+- 其自身的`DOM`树已经创建完成并完成插入了父容器中。注意仅当根容器在文档中时，才可以保证组件`DOM`树也在文档中。
+
+这个钩子通常用于执行需要访问组件所渲染的`DOM`树相关的副作用，或是在服务端渲染应用中用于确保`DOM`相关代码仅在客户端执行。
+
+**这个钩子在服务器端渲染期间不会被调用。**
+
+## onUpdated()
+
+注册一个回调函数，在组件因为响应式状态变更而更新其`DOM`树之后调用。
+
+父组件的更新钩子将在其子组件的更新钩子之后调用。
+
+这个钩子会在组件的任意`DOM`更新后被调用，这些更新可能是由不同的状态变更导致的，因为多个状态变更可以在同一个渲染周期中批量执行。如果你需要在某个特定的状态更改后访问更新后的`DOM`，请使用`nextTick`作为替代。
+
+**这个钩子在服务器端渲染期间不会被调用。**
+
+## onUnmounted()
+
+注册一个回调函数，在组件实例被卸载之后调用。
+
+一个组件在以下情况下被视为已卸载：
+
+- 其所有子组件都已经被卸载。
+- 所哟相关的响应式作用（渲染作用以及`setup()`时创建的计算属性和侦听器）都已经停止。
+
+可以在这个钩子中手动清理一些副作用，例如计时器、`DOM`事件监听器或者与服务器的连接。
+
+**这个钩子在服务器端渲染期间不会被调用。**
+
+## onBeforeMount()
+
+注册一个钩子，在组件被挂载之前被调用。
+
+当这个钩子被调用时，组件已经完成了其响应式状态的设置，但还没有创建`DOM`节点。它即将首次执行`DOM`渲染过程。
+
+**这个钩子在服务器端渲染期间不会被调用。**
