@@ -380,4 +380,70 @@ watch(id, async newId => {
 可以将值、`refs`或`getters`规范化为`refs`(3.3+)。
 
 也可以基于响应式对象上的一个属性，创建一个对应的`ref`。这样创建的`ref`与其源属性保持同步：改变源属性的值将更新`ref`的值，反之亦然。
+```js
+const state = reactive({
+  foo: 1,
+  bar: 2,
+});
+
+// 双向ref，会与源属性同步
+const fooRef = toRef(state, 'foo');
+// 更改ref会更新源属性
+fooRef.value++;
+// 更改源属性也会更新该ref
+state.foo++;
+
+// 请注意，这不同于
+const fooRef = ref(state.foo);
+// 这个ref不会和 state.foo保持同步，因为这个ref()接收到的是一个纯数值
+```
+
+`toRef()`这个函数在你想要把一个`props`的`ref`传递给一个组合式函数时会很有用。
+
+当`toRef`与组件`props`结合使用时，关于禁止对`props`做出更改的限制依然有效。尝试将新的值传递给`ref`等效于尝试直接更改`props`，这是不允许的。在这种场景下，你可以考虑使用带有`get`和`set`的`computed`替代。
+
+当使用对象属性签名时，即使源属性当前不存在，`toRef()`也会返回一个可用的`ref`。这让它在处理可选`props`的时候格外实用，相比之下`toRefs()`就不会为可选`props`创建对应的`refs`。
+
+## toRefs()
+
+将一个响应式对象转换为一个普通对象，这个普通对象的每个属性都是指向源对象相应属性的`ref`。每个独立的`ref`都是使用`toRef()`创建的。
+
+```js
+const state = reactive({
+  foo: 1,
+  bar: 2,
+});
+
+const stateAsRefs = toRefs(state);
+/* stateAsRefs 的类型：{
+  foo: Ref<number>,
+  bar: Ref<number>
+} */
+state.foo++;
+stateAsRefs.foo.value++;
+```
+
+当从组合式函数中返回响应式对象时，`toRefs`相当有用。使用它，消费者组件可以解构/展开返回的对象而不会失去响应性。
+```js
+const useFeatureX = () => {
+  const state = reactive({
+    foo: 1,
+    bar: 2,
+  });
+
+  // 基于状态的操作逻辑
+  // 在返回时都转为ref
+  return toRefs(state);
+};
+
+// 可以解构而不会失去响应性
+const { foo, bar } = useFeatureX();
+```
+`toRefs`在调用时只会为源对象上可以枚举的属性创建`ref`。如果要为可能还不存在的属性创建`ref`，请改用`toRef`。
+
+## isProxy()
+
+检查一个对象是否是由`reactive()`、`readonly()`、`shallowReactive()`或`shallowReadonly()`创建的代理。
+
+## isReactive()
 
