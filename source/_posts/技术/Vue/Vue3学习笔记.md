@@ -4,7 +4,7 @@ date: 2025-03-10 23:11:02
 updated: 2025-3-10 23:12:12
 category: ['技术']
 tags: ['前端','Vue3']
-cover: https://image-static.segmentfault.com/351/673/351673032-67cf045cefb8b_cover
+cover: https://s1.imagehub.cc/images/2025/04/09/adec073e7f03b1bd918cde85fc46ad5e.md.webp
 main_color: "#42B883"
 keywords:
 description:
@@ -637,3 +637,85 @@ scope.stop();
 如果这个钩子返回了一个`Promise`，服务端渲染会在渲染该组件前等待该`Promise`完成。
 
 这个钩子仅会在服务端渲染中执行，可以用于执行一些仅存在于服务端的数据抓取过程。
+
+# 组合式API：依赖注入
+
+## provide()
+
+提供一个值，可以被后代组件注入。
+
+`provide()`接受两个参数：第一个参数是要注入的`key`，可以是一个字符串或者一个`symbol`，第二个参数是要注入的值。
+
+当使用`Typescript`时，`key`可以是一个被类型断言为`InjectionKey`的`symbol`。`InjectionKey`是一个`Vue`提供的工具类型，继承自`Symbol`，可以用来同步`provide()`和`inject()`之间值的类型。
+
+与注册生命周期钩子的`API`类型，`provide()`必须在组件的`setup()`阶段同步调用。
+
+## inject()
+
+注入一个由祖先组件或整个应用（通过`app.provide()`）提供的值。
+
+第一个参数是注入的`Key`。`Vue`会遍历父组件链，通过匹配`Key`来确定所提供的值。如果父组件链上多个组件对同一个`Key`提供了值，那么离得更近的组件将会“覆盖”链上更远的组件所提供的值。如果没有能通过`Key`匹配的值，`inject()`将返回`undefined`，除非提供了一个默认值。
+
+第二个参数也可以是一个工厂函数，用来返回某些创建起来比较复杂的值。在这种情况下，你必须将`true`作为第三个参数传入，表面这个函数将作为工厂函数使用，而非值本身。
+
+与注册生命周期钩子的`API`类似，`inject()`必须在组件的`setup()`阶段同步调用。
+
+当使用`TypeScript`时，`Key`可以是一个类型为`InjectionKey`的`Symbol`。`InjectionKey`是一个`Vue`提供的工具类型，继承自`Symbol`，可以用来同步`provide()`和`inject()`之间值的类型。
+
+# 组合式API：辅助
+
+## useAttrs()
+
+从`setup`上下文中返回`attrs`对象，其中包含当前组件的透传`attributes`。这是用于`<script setup>`中的，因为在`<script setup>`中无法获取`setup`上下文对象。
+
+## useSlots()
+
+从`setup`上下文中返回`slots`对象，其中包含父组件传递的插槽。这些插槽为可调用的函数，返回虚拟`DOM`节点。这是用于`<script setup>`中的，因为在`<script setup>`中无法获取`setup`上下文对象。
+
+如果使用`TypeScript`，建议优先使用`defineSlots()`。
+
+## useModel()
+
+这是驱动`defineModel()`的底层辅助函数。如果使用`<script setup>`，应当优先使用`defineModel()`。
+
+仅在`3.4+`版本中可用。
+
+`useModel()`可以用于非单文件组件，例如在使用原始的`setup()`函数时，它预期的第一个参数是`props`对象，第二个参数是`model`名称。可选的第三个参数可以用于为生成的`model ref`声明自定义的`getter`和`setter`。请注意，与`defineModel()`不同，你需要自己声明`props`和`emits`。
+
+## useTemplateRef()<sup>`3.5+`</sup>
+
+返回一个浅层`ref`，其值将与模板中的具有匹配`ref attribute`的元素或组件同步。
+```js
+import { onMounted, useTemplateRef } from 'vue';
+
+const inputRef = useTemplateRef('input');
+
+onMounted(() => {
+  inputRef.value.focus();
+});
+```
+
+## useId()
+
+用于为无障碍属性或表单元素生成每个应用内位移的`ID`。
+```js
+<template>
+  <form>
+    <label :for="id"></label>
+    <input type="text" :id="id" />
+  </form>
+</template>
+
+<script setup name="test">
+import { useId } from 'vue';
+
+const id = useId();
+</script>
+```
+
+`useId()`生成的每个`ID`在每个应用内都是唯一的。它可以用于为表单元素或无障碍属性生成`ID`。在同一个组件中多次调用会生成不同的`ID`；同一个组件的多个实例调用`useId()`也会生成不同的`ID`。
+
+`useId()`生成的`ID`在服务器端和客户端渲染之间时稳定的，因此可以安全地在`SSR`应用中使用，不会导致激活不匹配。
+
+如果同一页面上有多个`Vue`应用实例，可以通过`app.config.idPrefix`为每个应用提供一个`ID`前缀，以避免`ID`冲突。
+

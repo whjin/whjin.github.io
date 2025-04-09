@@ -4,7 +4,7 @@ date: 2024-10-24 22:59:05
 updated: 2024-10-24 23:04:23
 category: ["技术"]
 tags: ["Android","ADB"]
-cover: https://segmentfault.com/img/bVdeH10?spec=cover
+cover: https://s1.imagehub.cc/images/2025/04/09/d6368fce31cf7513d178f346463ccc22.md.webp
 main_color: "#54C276"
 keywords:
 description:
