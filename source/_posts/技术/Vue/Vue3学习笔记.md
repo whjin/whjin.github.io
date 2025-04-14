@@ -883,4 +883,76 @@ computed(vm => vm.a * 2);
 
 有一种场景下`name`必须是已显式声明的：即`<KeepAlive>`通过其`include/exclude``prop`来匹配其需要缓存的组件时。
 
-> 
+> 在`3.2.34`或以上的版本中，使用`<script setup>`的单文件组件会自动根据文件名生成对应的`name`选项，即使是在配合`<KeepAlive>`使用时也无需再手动声明。
+
+## inheritAttrs
+
+用于控制是否启用默认的组件`attribute`透传行为。
+
+默认情况下，父组件传递的，但没有被子组件解析为`props`的`attributes`绑定会被`透传`。这意味着当我们有一个单根节点的子组件时，这些绑定会被作为一个常规的`HTML attribute`应用在子组件的根节点元素上。当你编写的组件想要在一个目标元素或其他组件外面包一层时，可能并不期望这样的行为。我们可以通过设置`inheritAttrs`为`false`来禁用这个默认行为。这些`attributes`可以通过`$attrs`这个实例属性来访问，并且可以通过`v-bind`来显式绑定在一个非根节点的元素上。
+
+```js
+// child.vue
+<template>
+  <view class="container" @click="onMyClick"> </view>
+</template>
+
+<script setup name="child">
+import { useAttrs } from 'vue';
+
+const emits = defineEmits(['onClick']);
+
+const attrs = useAttrs();
+const onMyClick = index => {
+  if (attrs.onBeforeClick) {
+    attrs.onBeforeClick(index, flag => {
+      if (flag) {
+        emit('onClick', index);
+      }
+    });
+  } else {
+    emits('onClick', index);
+  }
+};
+</script>
+
+// parent.vue
+<template>
+  <view class="container" @beforeClick="onBeforeClick" @onClick="onClick"> </view>
+</template>
+
+<script setup name="parent">
+import { useStore } from 'vuex';
+
+const store = useStore();
+
+const onBeforeClick = (index, next) => {
+  if (index == 1) {
+    if (store.state.app.tabState) {
+      next(false);
+    } else {
+      next(false);
+    }
+  } else {
+    next(true);
+  }
+};
+</script>
+```
+在一个使用了`<script setup>`的组件中声明这个选项时，可以使用`defineOptions`宏。
+
+## components
+
+一个对象，用于注册对当前组件实例可用的组件。
+
+## directives
+
+一个对象，用于注册对当前组件实例可用的指令。
+
+# 组件实例
+
+> 本节文档描述了组件公共实例（即`this`）上暴露的内置属性和方法，本节罗列的所有属性，除了`$data`下的嵌套属性之外，都是只读的。
+
+## $data
+
+从`data`选项函数中返回的对象，会被组件赋为响应式。组件实例将会代理对其数据对象的属性访问。
