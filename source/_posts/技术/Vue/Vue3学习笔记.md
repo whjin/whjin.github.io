@@ -1407,4 +1407,216 @@ interface TransitionProps {
     - `@leave-cancelled(v-show only)`
     - `@appear-cancelled`
 
-通过改变`key`属性来强制过渡。
+通过改变`key`属性来强制过渡执行。
+
+```html
+<Transition>
+  <div :key="text">{{ text }}</div>
+</Transition>
+```
+
+动态组件，初始渲染时带有过渡模式+动画出现：
+```html
+<Transition name="fade" mode="out-in" appear>
+  <component :is="view"></component>
+</Transition>
+```
+
+监听过渡事件
+```html
+<Transition @after-enter="onTransitionComplete">
+  <div v-show="ok">toggled content</div>
+</Transition>
+```
+
+## `<TransitionGroup>`
+
+为列表中的**多个**元素或组件提供过渡效果
+
+- `props`
+
+`<TransitionGroup>`拥有与`<Transition>`除了`mode`以外所有的`props`，并增加了两个额外的`props`
+
+默认情况下，`<TransitionGroup>`不会渲染一个容器的`DOM`元素，但是可以通过`tag`prop启用。
+
+注意，每个`<transition-group>`的子节点必须有**独立的`key`**，动画才能正常工作。
+
+`<TransitionGroup>`支持通过`CSS transform`控制移动效果。当一个子节点在屏幕上的位置在更新之后发生变化时，它会被添加一个使其位移的`CSS class`（基于`name attribute`推导，或使用`move-class`prop显式配置）。如果使其位移的`class`被添加时CSS的`transform`属性是“可过渡的”，那么该元素会基于**`FLIP`技巧**平滑地达到动画终点。
+```html
+<TransitionGroup tag="ul" name="slide">
+  <li v-for="item in items" :key="item.id">
+    {{ item.text }}
+  </li>
+</TransitionGroup>
+```
+
+## **`<KeepAlive>`**
+
+缓存包裹在其中的动态切换组件。
+
+`<KeepAlive>`包裹动态组件时，会缓存不活跃的组件实例，而不是销毁它们。
+
+任何时候都只能有一个活跃组件实例作为`<KeepAlive>`的直接子节点。
+
+当一个组件在`<KeepAlive>`中被切换时，它的`activated`和`deactivated`声明周期钩子将被调用，用来替代`mounted`和`unmounted`。这适用于`<KeepAlive>`的直接子节点及其所有子孙节点。
+
+## `<Teleport>`
+
+将其插槽内容渲染到DOM中的另一个位置。
+```html
+<Teleport to="#some-id" />
+<Teleport to=".some-class" />
+<Teleport to="[data-teleport]" />
+```
+
+有条件的禁用：
+```html
+<Teleport to="#popup" :disabled="displayVideoInline">
+  <video src="./my-movie.mp4">
+</Teleport>
+```
+
+延迟目标解析<sup>`3.5+`</sup>
+```html
+<Teleport defer to="#late-div">...</Teleport>
+
+<!-- 稍后出现于模板中的某处 -->
+<div id="late-div"></div>
+```
+
+# 内置特殊元素
+
+> 不是组件
+> `component`、`slot`和`template`具有类似组件的特性，也是模板语法的一部分。但它们并非真正的组件，同时在模板编译期间会被编译掉。因此，它们通常在模板中用小写字母书写。
+
+## `component`
+
+一个用于渲染动态组件或元素的“元组件”。
+
+要渲染的实际组件由`is`prop决定。
+- 当`is`是字符串，它既可以是HTML标签名也可以是组件的注册名
+- 或者，`is`也可以直接绑定到组件的定义
+
+按注册名渲染组件:
+```html
+<template>
+  <div class="home-container">
+    <component :is="view" />
+    <div>
+      <button @click="onChange">change</button>
+    </div>
+  </div>
+</template>
+
+<script setup name="home">
+import { shallowRef } from 'vue';
+import Login from '@/views/login/index.vue';
+import About from '@/views/about/index.vue';
+
+let view = shallowRef(Login);
+const onChange = () => {
+  view.value = About;
+};
+</script>
+```
+
+按定义渲染组件：
+```html
+<template>
+  <component :is="Math.random() > 0.5 ? Login : About" />
+</template>
+
+<script setup name="home">
+import Login from '@/views/login/index.vue';
+import About from '@/views/about/index.vue';
+</script>
+```
+
+**内置组件**都可以传递给`is`，但是如果想通过名称传递则必须先对其进行注册。
+```html
+<template>
+  <component :is="isGroup ? 'TransitionGroup' : 'Transition'"></component>
+</template>
+
+<script setup name="about">
+import { ref } from 'vue';
+import { Transition, TransitionGroup } from 'vue';
+
+let isGroup = ref(false);
+</script>
+```
+
+如果将组件本身传递给`is`而不是其名称，则不需要注册。
+
+如果在`<component>`标签上使用`v-model`，模板编译器会将其扩展为`modelValue`prop和`update:modelValue`事件监听器，就像对任何其他组件一样。因此，在动态创建的原生元素上使用`v-model`将不起作用。
+
+## `<slot>`
+
+表示模板中的插槽内容出口。
+
+`<slot>`元素可以使用`name``attribute`来指定插槽名。当没有指定`name`时，将会渲染默认插槽。传递给插槽元素的附加`attributes`将作为插槽`props`，传递给父级中定义的作用域插槽。
+
+元素本身将被其所匹配的插槽内容替换。
+
+Vue模板里的`<slot>`元素会被编译到JavaScript，因此不要与**原生`<slot>`元素**进行混淆。
+
+## `<template>`
+
+当我们想要使用内置指令而不在DOM中渲染元素时，`<template>`标签可以作为占位符使用。
+
+对`<template>`的特殊处理只有在它与以下任一指令一起使用时才会被触发：
+- `v-if`、`v-else-if`或`v-else`
+- `v-for`
+- `v-slot`
+
+如果这些指令都不存在，那么它将被渲染成一个**原生的`<template>`元素**。
+
+带有`v-for`的`<template>`也可以有一个`key`属性。所有其他的属性和指令都将被丢弃，因为没有相应的元素，它们就没有意义。
+
+单文件组件使用**顶层的`<template>`标签**来包裹整个模板。该顶层标签不是模板本身的一部分，不支持指令等模板语法。
+
+# 内置的特殊Attributes
+
+## `key`
+
+`key`这个特殊的`attribute`主要作为Vue的虚拟DOM算法提示，在比较新旧节点列表时用于识别`vnode`。
+
+在没有`key`的情况下，Vue将使用一种最小化元素移动的算法，并尽可能地就地更新/复用相同类型的元素。如果传了`key`，则将根据`key`的变化顺序来重新排列元素，并且将始终移除/销毁`key`已经不存在的元素。
+
+同一个父元素下的子元素必须具有**唯一的`key`**。重复的`key`将会导致渲染异常。
+
+也可以用于强制替换一个元素/组件而不是复用它。
+- 在适当的时候触发组件的生命周期钩子
+- 触发过渡
+
+```html
+<transition>
+  <span :key="text">{{ text }}</span>
+</transition>
+```
+当`text`变化时，`<span>`总是会被替换而不是更新，因此transition将会被触发。
+
+## `ref`
+
+用于注册模板引用。
+
+`ref`用于注册元素或子组件的引用。
+
+使用选项式API，引用将被注册在组件的`this.$refs`对象里。
+
+使用组合式API，引用将存储在与名字匹配的`ref`里。
+
+如果用于普通DOM元素，引用将是元素本身；如果用于子组件，引用将是子组件的实力。
+
+或者`ref`可以接收一个函数值，用于对存储引用位置的完全控制。
+```html
+<ChildComponent :ref="el => (child = el)" />
+```
+
+关于`ref`注册时机的重要说明：因为`ref`本身是作为渲染函数的结果来创建的，必须等待组件挂载后才能对它进行访问。
+
+`this.$refs`也是非响应式的，因此你不应该尝试在模板中使用它来进行数据绑定。
+
+## `is`
+
+用于绑定**动态组件**。
