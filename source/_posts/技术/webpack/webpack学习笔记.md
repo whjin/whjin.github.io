@@ -79,3 +79,54 @@ module.exports = {
   }
 };
 ```
+
+# loader
+
+`loader`从右到左执行。
+```js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true
+            }
+          },
+          { loader: 'sass-loader' }
+        ]
+      }
+    ]
+  }
+};
+```
+
+**内联方式**
+```js
+import Styles from '!style-loader!css-loader?modules!./style.css';
+```
+
+# plugin
+
+`webpack`插件是一个具有`apply`方法的`JavaScript`对象。`apply`方法会被`webpack compiler`调用，并且在整个编译生命周期都可以访问`compiler`对象。
+
+```js
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+const path = require('path');
+
+module.exports = {
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    }),
+    new webpack.ProgressPlugin()
+  ]
+};
+```
+
+`ProgressPlugin`用于自定义编译过程中的进度报告，`HtmlWebpackPlugin`将生成一个`HTML`文件，并在其中使用`script`引入一个名为`my-first-webpack.bundle.js`的`JS`文件。
