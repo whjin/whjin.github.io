@@ -145,3 +145,8 @@ aside:
 |`adb shell input keyevent 66`|发送按键事件|
 |`adb shell 'logcat --pid=$(pidof -s <package_name>)'`|查看包的日志|
 |`adb devices`<br/>`adb shell ifconfig`<br/>`adb tcpip 5555`<br/>`adb connect 192.168.1.4:5555`|记下`inet addr`后的`IP`地址。<br/>断开`USB`线缆|
+
+# 命令
+```js
+.\adb.exe shell pm list package -3
+```
