@@ -2,7 +2,7 @@
 title: JavaScript知多少
 date: 2018-11-13 07:57:49
 category: ["技术"]
-tags: ["前端","JS"]
+tags: ["前端","javascript"]
 ---
 
 # this与对象原型prototype #
@@ -153,3 +153,32 @@ const throttle = (fn, delay = 500) => {
 - 缩放场景：监控浏览器`resize`
 - 动画：避免短时间内多次触发动画引起性能问题
 
+# 音视频播放器
+
+```javascript
+let source = null;
+const playAudioAsync = async (status, url = '') => {
+  try {
+    if (!source && status === 'start') {
+      const audioContext = new AudioContext();
+      const arrayBuffer = await fetch(url).then((response) =>
+        response.arrayBuffer()
+      );
+      const audioBufferSource = audioContext.decodeAudioData(
+        arrayBuffer,
+        (buffer) => {
+          source = audioContext.createBufferSource();
+          source.buffer = buffer;
+          source.connect(audioContext.destination);
+          source.start(0);
+        }
+      );
+    } else if (status === 'stop') {
+      source.stop(0);
+      source = null;
+    }
+  } catch (err) {
+    console.error(err);
+  }
+};
+```
