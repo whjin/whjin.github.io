@@ -524,7 +524,7 @@ footer:
     linkList:
       - link: https://github.com/anzhiyu-c/hexo-theme-anzhiyu
         text: 主题
-      - link: https://image.anheyu.com
+      - link: https://github.com/whjin
         text: 图床
     subTitle:
       enable: true
