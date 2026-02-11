@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>大数据集Tree组件</title>
+      <link href="/2026/02/11/%E6%8A%80%E6%9C%AF/%E6%9C%AA%E5%AE%8C%E7%BB%93/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%9B%86Tree%E7%BB%84%E4%BB%B6/"/>
+      <url>/2026/02/11/%E6%8A%80%E6%9C%AF/%E6%9C%AA%E5%AE%8C%E7%BB%93/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%9B%86Tree%E7%BB%84%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>虚拟列表：只渲染可视区域元素，通过占位容器模拟滚动条。<br>树的特殊性：需出来层级关系、展开折叠动态变化，二者结合即为虚拟树（Virtual Tree）。</p></blockquote><h3 id="数据结构转化"><a href="#数据结构转化" class="headerlink" title="数据结构转化"></a>数据结构转化</h3><p>递归遍历树节点，转化为线性数组并记录层级、展开状态、父子关系：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">flattenTree</span>(<span class="params">root, level = <span class="number">0</span>, result = []</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> node = &#123; ...root, level, <span class="attr">expanded</span>: <span class="literal">false</span> &#125;;</span><br><span class="line">  result.<span class="title function_">push</span>(node);</span><br><span class="line">  <span class="keyword">if</span> (node.<span class="property">children</span> &amp;&amp; node.<span class="property">expanded</span>) &#123;</span><br><span class="line">    node.<span class="property">children</span>.<span class="title function_">forEach</span>(<span class="function"><span class="params">child</span> =&gt;</span> <span class="title function_">flattenTree</span>(child, level + <span class="number">1</span>, result));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="滚动事件"><a href="#滚动事件" class="headerlink" title="滚动事件"></a>滚动事件</h3><p>通过容器<code>scrollTop</code>动态计算当前可视区域索引：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> startIdx = <span class="title class_">Math</span>.<span class="title function_">floor</span>(scrollTop / itemHeight);</span><br><span class="line"><span class="keyword">const</span> endIdx = startIdx + <span class="title class_">Math</span>.<span class="title function_">ceil</span>(containerHeight / itemHeight);</span><br></pre></td></tr></table></figure><h3 id="动态渲染可视节点"><a href="#动态渲染可视节点" class="headerlink" title="动态渲染可视节点"></a>动态渲染可视节点</h3><p>仅对<code>const visibleNodes = flatData.slice(startIdx, endIdx)</code>执行<code>DOM</code>渲染。</p><h3 id="占位元素模拟滚动条"><a href="#占位元素模拟滚动条" class="headerlink" title="占位元素模拟滚动条"></a>占位元素模拟滚动条</h3><p>设置占位块高度为 <strong>总高度 &#x3D; 节点数 x 单节点高度</strong></p><h3 id="关键问题与解决策略"><a href="#关键问题与解决策略" class="headerlink" title="关键问题与解决策略"></a>关键问题与解决策略</h3><table><thead><tr><th>难点</th><th>原因</th><th>解决方案</th></tr></thead><tbody><tr><td>展开折叠导致高度突变</td><td>子节点隐藏后总高度减少</td><td>①递归更新子节点<code>visible</code>状态 ②重算高度并重置<code>scrollTop</code></td></tr><tr><td>动态节点高度兼容</td><td>内容换行&#x2F;图标差异导致高度不一</td><td>①使用<code>resizeObserver</code>监听高度变化 ②缓存节点实际高度，滚动用高度累加值计算</td></tr><tr><td>搜索&#x2F;定位性能瓶颈</td><td>递归遍历万级节点耗时长</td><td>建立节点索引<code>Map (id -&gt; &#123;node, parent &#125;)</code> + 后端返回节点路径只展开关键分支</td></tr><tr><td>内存占用暴涨</td><td>海量数据转响应式对象开销大</td><td>①<code>Object.freeze</code>冻结非活动数据 ②使用<code>shallowRef</code>替代<code>reactive</code></td></tr><tr><td>浏览器渲染上限</td><td>滚动容器最大高度约1677像素</td><td>分块加载（懒加载 + 虚拟滚动结合）</td></tr></tbody></table><h3 id="性能优化方向"><a href="#性能优化方向" class="headerlink" title="性能优化方向"></a>性能优化方向</h3><p><strong>1、懒加载 + 虚拟滚动</strong></p><ul><li>初始只加载首屏数据</li><li>展开父节点时异步请求子数据，动态插入扁平列表</li><li>已加载节点纳入虚拟滚动管理</li></ul><p><strong>2、渲染性能极限优化</strong></p><ul><li>减少重复渲染：<code>v-once</code> (Vue)或<code>React.memo</code> 缓存静态节点</li><li>GPU加速滚动：<code>transform: translateY()</code>取代<code>top</code>定位</li><li>请求空闲期处理：用<code>requestIdleCallback</code>预计算展开路径</li></ul><blockquote><p>引用原文：<a href="https://juejin.cn/post/7533048503934976009">https://juejin.cn/post/7533048503934976009</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 表格 </tag>
+            
+            <tag> Tree组件 </tag>
+            
+            <tag> 大数据集 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>AI技能、规则和指令</title>
       <link href="/2026/02/10/%E6%8A%80%E6%9C%AF/AI/AI%E6%8A%80%E8%83%BD%E3%80%81%E8%A7%84%E5%88%99%E5%92%8C%E6%8C%87%E4%BB%A4/"/>
       <url>/2026/02/10/%E6%8A%80%E6%9C%AF/AI/AI%E6%8A%80%E8%83%BD%E3%80%81%E8%A7%84%E5%88%99%E5%92%8C%E6%8C%87%E4%BB%A4/</url>
@@ -136,9 +167,9 @@
             
             <tag> uniapp </tag>
             
-            <tag> 项目 </tag>
-            
             <tag> vscode </tag>
+            
+            <tag> 项目 </tag>
             
             <tag> android </tag>
             
@@ -277,9 +308,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> Android </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> uniapp </tag>
             
@@ -630,9 +661,9 @@
       
         <tags>
             
-            <tag> Git </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> Git </tag>
             
         </tags>
       
@@ -2255,7 +2286,7 @@
     
     
     <entry>
-      <title>醉是流年123</title>
+      <title>醉是流年</title>
       <link href="/2017/09/03/%E8%AF%97%E8%AF%8D/%E5%8F%AF%E4%BB%A5%E6%94%BB%E7%8E%89/%E9%86%89%E6%98%AF%E6%B5%81%E5%B9%B4/"/>
       <url>/2017/09/03/%E8%AF%97%E8%AF%8D/%E5%8F%AF%E4%BB%A5%E6%94%BB%E7%8E%89/%E9%86%89%E6%98%AF%E6%B5%81%E5%B9%B4/</url>
       

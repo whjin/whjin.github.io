@@ -7359,6 +7359,7 @@ body[data-type="link"] #page .page-title {
   padding: 0;
   display: inline-block;
   overflow: hidden;
+  margin-bottom: 10px;
 }
 #recent-posts > .recent-post-item >.recent-post-info .sticky-warp {
   line-height: 23px;
