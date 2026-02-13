@@ -6,7 +6,7 @@
     "clean": "hexo clean && hexo bangumi -d && hexo cinema -d && hexo bangumi -u && hexo cinema -u",
     "build": "npm run clean && hexo g",
     "deploy": "hexo d",
-    "dev": "hexo s",
+    "dev": "hexo s --debug",
     "update": "npm update -D hexo-theme-anzhiyu"
   },
   "hexo": {
@@ -16,6 +16,7 @@
     "hexo": "^7.0.0",
     "hexo-algoliasearch": "^2.0.1",
     "hexo-bilibili-bangumi": "^1.8.9",
+    "hexo-browsersync": "^0.3.0",
     "hexo-butterfly-envelope": "^1.0.15",
     "hexo-deployer-git": "^4.0.0",
     "hexo-generator-archive": "^2.0.0",

@@ -1062,8 +1062,8 @@ home_top:
       shadow: var(--anzhiyu-shadow-red)
       class: red
       icon: anzhiyu-icon-fire
-    - name: 生活
-      path: /categories/生活/
+    - name: 商业
+      path: /categories/商业/
       shadow: var(--anzhiyu-shadow-green)
       class: green
       icon: anzhiyu-icon-book
@@ -1333,3 +1333,12 @@ CDN:
     # waterfall:
     # ali_iconfont_css:
     # accesskey_js:
+
+browser_sync:
+  host: localhost
+  post: 4000
+  open: false
+  tunnel: false
+  notify: false
+  watchOptions:
+    interval: 1000
