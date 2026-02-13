@@ -255,8 +255,7 @@ const anzhiyu = {
     const docHeight = ele.clientHeight;
     const winHeight = document.documentElement.clientHeight;
     const headerHeight = ele.offsetTop;
-    const contentMath =
-      docHeight > winHeight ? docHeight - winHeight : document.documentElement.scrollHeight - winHeight;
+    const contentMath = docHeight > winHeight ? docHeight - winHeight : document.documentElement.scrollHeight - winHeight;
     const scrollPercent = (currentTop - headerHeight) / contentMath;
     const scrollPercentRounded = Math.round(scrollPercent * 100);
     const percentage = scrollPercentRounded > 100 ? 100 : scrollPercentRounded <= 0 ? 0 : scrollPercentRounded;
@@ -302,19 +301,11 @@ const anzhiyu = {
 
   //顶栏自适应主题色
   initThemeColor: function () {
-    let themeColor = getComputedStyle(document.documentElement)
-      .getPropertyValue('--anzhiyu-bar-background')
-      .trim()
-      .replace('"', '')
-      .replace('"', '');
+    let themeColor = getComputedStyle(document.documentElement).getPropertyValue('--anzhiyu-bar-background').trim().replace('"', '').replace('"', '');
     const currentTop = window.scrollY || document.documentElement.scrollTop;
     if (currentTop > 26) {
       if (anzhiyu.is_Post()) {
-        themeColor = getComputedStyle(document.documentElement)
-          .getPropertyValue('--anzhiyu-meta-theme-post-color')
-          .trim()
-          .replace('"', '')
-          .replace('"', '');
+        themeColor = getComputedStyle(document.documentElement).getPropertyValue('--anzhiyu-meta-theme-post-color').trim().replace('"', '').replace('"', '');
       }
       if (themeColorMeta.getAttribute('content') === themeColor) return;
       this.changeThemeMetaColor(themeColor);
@@ -401,13 +392,9 @@ const anzhiyu = {
   hideAsideBtn: () => {
     // Hide aside
     const $htmlDom = document.documentElement.classList;
-    $htmlDom.contains('hide-aside')
-      ? saveToLocal.set('aside-status', 'show', 2)
-      : saveToLocal.set('aside-status', 'hide', 2);
+    $htmlDom.contains('hide-aside') ? saveToLocal.set('aside-status', 'show', 2) : saveToLocal.set('aside-status', 'hide', 2);
     $htmlDom.toggle('hide-aside');
-    $htmlDom.contains('hide-aside')
-      ? document.querySelector('#consoleHideAside').classList.add('on')
-      : document.querySelector('#consoleHideAside').classList.remove('on');
+    $htmlDom.contains('hide-aside') ? document.querySelector('#consoleHideAside').classList.add('on') : document.querySelector('#consoleHideAside').classList.remove('on');
   },
   // 热评切换
   switchCommentBarrage: function () {
@@ -705,9 +692,7 @@ const anzhiyu = {
   initConsoleState: function () {
     //初始化隐藏边栏
     const $htmlDomClassList = document.documentElement.classList;
-    $htmlDomClassList.contains('hide-aside')
-      ? document.querySelector('#consoleHideAside').classList.add('on')
-      : document.querySelector('#consoleHideAside').classList.remove('on');
+    $htmlDomClassList.contains('hide-aside') ? document.querySelector('#consoleHideAside').classList.add('on') : document.querySelector('#consoleHideAside').classList.remove('on');
   },
 
   // 显示打赏中控台
@@ -829,10 +814,7 @@ const anzhiyu = {
           anzhiyu.changeMusicBg();
 
           // 暂停nav的音乐
-          if (
-            document.querySelector('#nav-music meting-js').aplayer &&
-            !document.querySelector('#nav-music meting-js').aplayer.audio.paused
-          ) {
+          if (document.querySelector('#nav-music meting-js').aplayer && !document.querySelector('#nav-music meting-js').aplayer.audio.paused) {
             anzhiyu.musicToggle();
           }
         }
@@ -1004,9 +986,7 @@ const anzhiyu = {
     if (!navMusic) return;
     navMusic.addEventListener('click', e => {
       const aplayerList = navMusic.querySelector('.aplayer-list');
-      const listBtn = navMusic.querySelector(
-        'div.aplayer-info > div.aplayer-controller > div.aplayer-time.aplayer-time-narrow > button.aplayer-icon.aplayer-icon-menu svg'
-      );
+      const listBtn = navMusic.querySelector('div.aplayer-info > div.aplayer-controller > div.aplayer-time.aplayer-time-narrow > button.aplayer-icon.aplayer-icon-menu svg');
       if (e.target != listBtn && aplayerList.classList.contains('aplayer-list-hide')) {
         aplayerList.classList.remove('aplayer-list-hide');
       }
@@ -1050,37 +1030,9 @@ const anzhiyu = {
     const name = `${randomAdjective}${randomName}`;
 
     function dr_js_autofill_commentinfos() {
-      var lauthor = [
-          '#author',
-          "input[name='comname']",
-          '#inpName',
-          "input[name='author']",
-          '#ds-dialog-name',
-          '#name',
-          "input[name='nick']",
-          '#comment_author',
-        ],
-        lmail = [
-          '#mail',
-          '#email',
-          "input[name='commail']",
-          '#inpEmail',
-          "input[name='email']",
-          '#ds-dialog-email',
-          "input[name='mail']",
-          '#comment_email',
-        ],
-        lurl = [
-          '#url',
-          "input[name='comurl']",
-          '#inpHomePage',
-          '#ds-dialog-url',
-          "input[name='url']",
-          "input[name='website']",
-          '#website',
-          "input[name='link']",
-          '#comment_url',
-        ];
+      var lauthor = ['#author', "input[name='comname']", '#inpName', "input[name='author']", '#ds-dialog-name', '#name', "input[name='nick']", '#comment_author'],
+        lmail = ['#mail', '#email', "input[name='commail']", '#inpEmail', "input[name='email']", '#ds-dialog-email', "input[name='mail']", '#comment_email'],
+        lurl = ['#url', "input[name='comurl']", '#inpHomePage', '#ds-dialog-url', "input[name='url']", "input[name='website']", '#website', "input[name='link']", '#comment_url'];
       for (var i = 0; i < lauthor.length; i++) {
         var author = document.querySelector(lauthor[i]);
         if (author != null) {
@@ -1219,9 +1171,7 @@ const anzhiyu = {
     const consoleEl = document.getElementById('console');
     //初始化隐藏边栏
     const $htmlDom = document.documentElement.classList;
-    $htmlDom.contains('hide-aside')
-      ? document.querySelector('#consoleHideAside').classList.add('on')
-      : document.querySelector('#consoleHideAside').classList.remove('on');
+    $htmlDom.contains('hide-aside') ? document.querySelector('#consoleHideAside').classList.add('on') : document.querySelector('#consoleHideAside').classList.remove('on');
     if (consoleEl.classList.contains('show')) {
       consoleEl.classList.remove('show');
     } else {
