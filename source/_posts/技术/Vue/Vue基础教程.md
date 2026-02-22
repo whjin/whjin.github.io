@@ -1,8 +1,8 @@
 ---
 title: Vue基础教程
 date: 2019-02-18 23:34:23
-category: ["技术"]
-tags: ["前端","Vue"]
+category: ['技术']
+tags: ['前端', 'Vue']
 ---
 
 开发工具准备：
@@ -11,13 +11,13 @@ tags: ["前端","Vue"]
 2. 安装`git base`和`node.js`；
 3. 安装`vue-cli`，命令`npm i -g @vue/cli`；
 4. 新建`vue-cli`项目：
-    1. 方法一：通过图形界面进行安装`vue ui`；
-    2. 方法二：通过命令行安装`vue create project-name`
+   1. 方法一：通过图形界面进行安装`vue ui`；
+   2. 方法二：通过命令行安装`vue create project-name`
 5. 运行项目`npm run serve`，端口`8080`。
 
 <!--more-->
 
-## 双向绑定v-model ##
+## 双向绑定 v-model
 
 双向绑定大多用于表单事件，通过监听使用者输入的事件来更新内容。
 
@@ -25,45 +25,45 @@ tags: ["前端","Vue"]
 
 ```javascript
 export default {
-    name: 'app',
-    data() {
-        return {
-            title: 'vue.js',
-            myname: '请输入名字'
-        }
-    }
-}
+  name: 'app',
+  data() {
+    return {
+      title: 'vue.js',
+      myname: '请输入名字',
+    };
+  },
+};
 ```
 
-## 去掉空白符.trim ##
+## 去掉空白符.trim
 
 直接在`v-model`后加上`.trim`即可。
 
 ```html
-<input type="text" v-model.trim="name" value="name">
+<input type="text" v-model.trim="name" value="name" />
 ```
 
-## 懒加载.lazy ##
+## 懒加载.lazy
 
 在离开`input`时才更新输入的内容，在`v-model`后加上`.lazy`即可。
 
-## 限定输入数字.number ##
+## 限定输入数字.number
 
 在`v-model`后加上`.number`即可。
 
-## 遍历v-for ##
+## 遍历 v-for
 
 遍历有一个基本的模板：
 
 ```html
 <div id="app">
-    <ul v-for="(item,index) in member" :key="index">
-        <li>{{item}}</li>
-    </ul>
+  <ul v-for="(item,index) in member" :key="index">
+    <li>{{item}}</li>
+  </ul>
 </div>
 ```
 
-## 组件component ##
+## 组件 component
 
 在`App.vue`中引入`components`中的组件：
 
@@ -76,7 +76,7 @@ export default {
 
 <script>
   import Card from './components/Card'
-  
+
   export default {
     components: {
       Card
@@ -85,13 +85,13 @@ export default {
 </script>
 ```
 
-## 数据传递props ##
+## 数据传递 props
 
 ```html
 <template>
-    <div id="app">
-        <Card :cardData="cardData"/>
-    </div>
+  <div id="app">
+    <Card :cardData="cardData" />
+  </div>
 </template>
 ```
 
@@ -106,7 +106,7 @@ export default {
 
 这里解析一下`<div class="card_wall"></div>`包裹`<div class="card"></div>`主要是方便后期应用扩展，以及让应用整体更稳定。
 
-## 生命周期 ##
+## 生命周期
 
 我不喜欢用官网的生命流程图来讲解这个内容，使用文字表达更加让思维清晰。
 
@@ -126,17 +126,17 @@ export default {
 
 生命周期钩子用得最多的是`mounted`，主要用在调用属性、方法的时候，
 
-## 指令 ##
+## 指令
 
-### v-once指令 ###
+### v-once 指令
 
 第一次渲染完成后变为静态内容，其下的所有子元素都是这样的效果。
 
-### v-pre指令 ###
+### v-pre 指令
 
 `v-pre`指令会让指定元素被忽略。
 
-### v-cloak指令 ###
+### v-cloak 指令
 
 `v-cloak`指令用于去除页面渲染数据时出现闪现的情况，使用方法：
 
@@ -149,46 +149,46 @@ export default {
 
 <style>
   [v-cloak] {
-      display: none;
+    display: none;
   }
 </style>
 ```
 
-### v-html指令 ###
+### v-html 指令
 
 `v-html`指令会把`html`标签渲染成`DOM`显示在页面上。
 
 `v-html`指令只能对可信任的用户使用，否则容易受到`XSS`攻击。
 
-## 动画 ##
+## 动画
 
 **Vue**动画一般在真正需要使用的情况下才加入页面，推荐在**CSS**中使用动画。
 
-### 加入渐变的时机 ###
+### 加入渐变的时机
 
 1. `v-if`条件渲染
 2. `v-show`条件显示
 3. 动态组件
 4. 组件的根节点
 
-### 渐变的分类 ###
+### 渐变的分类
 
 1. `v-enter`定义**进入渐变**时**开始**的样式。
-    - 只存在组件插入前，组件插入后就移除。
+   - 只存在组件插入前，组件插入后就移除。
 2. `v-enter-active`定义**进入渐变**的**过程**效果，可以设定渐变过程的时间（`duration`）和速度曲线（`easing curve`）。
-    - 在组件被插入前生效，在完成动画时移除。
+   - 在组件被插入前生效，在完成动画时移除。
 3. `v-enter-to`定义**进入渐变**后**结束**的样式。
-    - 在组件被插入后生效，同时`v-enter`被移除，并在完成**进入渐变**动画时移除。
+   - 在组件被插入后生效，同时`v-enter`被移除，并在完成**进入渐变**动画时移除。
 4. `v-leave`定义**离开渐变**时**开始**的样式。
-    - 在触发组件**离开渐变**时生效，接着马上移除。
+   - 在触发组件**离开渐变**时生效，接着马上移除。
 5. `v-leave-active`定义**离开渐变**的**过程**效果，可以设定渐变过程的时间（`duration`）和速度曲线（`easing curve`）。
-    - 在触发组件**离开渐变**时生效，在完成动画时移除。
+   - 在触发组件**离开渐变**时生效，在完成动画时移除。
 6. `v-leave-to`定义**离开渐变**后**结束**的样式。
-    - 在触发组件**离开渐变**时生效，同时`v-enter`被移除，并在完成**离开渐变**动画时移除。
+   - 在触发组件**离开渐变**时生效，同时`v-enter`被移除，并在完成**离开渐变**动画时移除。
 
 ![](https://vuejs.org/images/transition.png)
 
-### transition自定义名称 ###
+### transition 自定义名称
 
 ```html
 <template>
@@ -204,32 +204,35 @@ export default {
 ```
 
 ```css
-.zoom-enter, .zoom-leave-to {
-width: 0px;
-height: 0px;
+.zoom-enter,
+.zoom-leave-to {
+  width: 0px;
+  height: 0px;
 }
-.zoom-enter-active, .zoom-leave-active {
-transition: width 1s, height 1s;
+.zoom-enter-active,
+.zoom-leave-active {
+  transition: width 1s, height 1s;
 }
 ```
 
-### animation ###
+### animation
 
-可以使用CSS中的`animation`动画设计更为华丽的效果。
+可以使用 CSS 中的`animation`动画设计更为华丽的效果。
 
 ```css
 .zoom-leave-active {
-animation: special_effects 1.5s;
+  animation: special_effects 1.5s;
 }
 
 .zoom-enter-active {
-animation: special_effects 1.5s reverse;
+  animation: special_effects 1.5s reverse;
 }
 
-@keyframes special_effects {}
+@keyframes special_effects {
+}
 ```
 
-### transition自定义动画类别 ###
+### transition 自定义动画类别
 
 除了在`<transition>`中设定`name`自定义前缀（属性），还可以预设动画类别。
 
@@ -242,11 +245,11 @@ animation: special_effects 1.5s reverse;
 
 以上六个自定义属性**优先级别**高于一般渐变类别。
 
-> CSS动画库：[Animation.css](https://daneden.github.io/animate.css/)
+> CSS 动画库：[Animation.css](https://daneden.github.io/animate.css/)
 
-### JavaScript钩子 ###
+### JavaScript 钩子
 
-`<transition>`还可以绑定JavaScriptHooks，除了单独使用，也能结合CSS `transition`和`animations`一起使用。
+`<transition>`还可以绑定 JavaScriptHooks，除了单独使用，也能结合 CSS `transition`和`animations`一起使用。
 
 - `beforeEnter(el)`在**进入渐变或动画**前生效。
 - `enter(el,callback)`在**进入渐变或动画**的组件插入时生效。
@@ -264,14 +267,15 @@ animation: special_effects 1.5s reverse;
   @before-leave="beforeLeave"
   @leave="leave"
   @after-leave="afterLeave"
-  @leave-cancelled="leaveCancelled">
+  @leave-cancelled="leaveCancelled"
+>
   <div v-if="change" class="ant_man_style"></div>
 </transition>
 ```
 
 在`enter`和`leave`中必须使用`done`，不然它们会同时生效，动画也会瞬间完成。
 
-### 设定初始载入时的渐变 ###
+### 设定初始载入时的渐变
 
 如果想要设定一开始载入画面时组件的渐变效果，可以通过设定`appear`属性来实现。
 
@@ -281,16 +285,17 @@ animation: special_effects 1.5s reverse;
 
 ```html
 <transition
-        appear
-        appear-class="show-appear-class"
-        appear-to-class="show-appear-to-class"
-        appear-active-class="show-appear-active-class">
+  appear
+  appear-class="show-appear-class"
+  appear-to-class="show-appear-to-class"
+  appear-active-class="show-appear-active-class"
+>
 </transition>
 ```
 
 先在`<transition>`标签内加入`appear`，接着类似自定义动画可以给`class name`命名。
 
-### 初始载入JavaScript Hooks ###
+### 初始载入 JavaScript Hooks
 
 - `beforeAppear`载入前
 - `appear`载入时
@@ -304,40 +309,40 @@ animation: special_effects 1.5s reverse;
     @before-appear="beforeAppear"
     @appear="appear"
     @after-appear="afterAppear"
-    @appear-cancelled="appearCancelled">
+    @appear-cancelled="appearCancelled"
+  >
     <div v-if="change" class="ant_man_style"></div>
   </transition>
 </div>
 ```
 
-### key ###
+### key
 
 对相同的标签元素使用`key`进行区分。
 
-### 渐变模式in-out和out-in ###
+### 渐变模式 in-out 和 out-in
 
-#### in-out模式 ####
+#### in-out 模式
 
 1. 新加入的元素做渐变进入。
 2. 渐变进入结束后，原存在的元素再渐变离开。
 
-#### out-in模式 ####
+#### out-in 模式
 
 1. 原存在的元素渐变离开。
 2. 渐变离开结束后，新元素再渐变进入。
 
 ```html
-<transition mode="out-in"></transition>
-<transition mode="in-out"></transition>
+<transition mode="out-in"></transition> <transition mode="in-out"></transition>
 ```
 
-### 列表过渡 ###
+### 列表过渡
 
 - `<transition-group>`会渲染出一个`html`标签，预设是`<span>`，也可以选择自定义`tag`为其他标签。
 - 无法使用（渐变模式`in-out`和`out-in`），因为不再是元素之间来回切换。
 - 每个元素需要设定一个`key`值，不能重复。
 
-### 列表乱数排序 ###
+### 列表乱数排序
 
 `<transition-group>`能够改变数组的排序，使用前需要先安装`shuffle`
 
@@ -347,20 +352,15 @@ npm i --save lodash.shuffle
 let shuffle = require('lodash.shuffle')
 ```
 
-## 过滤器filter ##
+## 过滤器 filter
 
-### filters串联 ###
+### filters 串联
 
 `filter`可以同时串联多个`filter`函数。
 
-### filters参数 ###
+### filters 参数
 
-## $emit ##
+## $emit
 
 1. 父组件可以使用`props`把数据传递给子组件。
 2. 子组件可以使用`$emit`触发父组件的自定义事件。
-
-
-
-
-

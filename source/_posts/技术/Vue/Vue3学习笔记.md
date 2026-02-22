@@ -3,25 +3,23 @@ title: Vue3学习笔记
 date: 2025-03-10 23:11:02
 updated: 2025-3-10 23:12:12
 category: ['技术']
-tags: ['前端','Vue3']
+tags: ['前端', 'Vue3']
 cover: https://s1.imagehub.cc/images/2025/04/09/adec073e7f03b1bd918cde85fc46ad5e.md.webp
-main_color: "#42B883"
+main_color: '#42B883'
 keywords:
 description:
 top_img:
 comments: true
-aside: 
+aside:
 ---
 
-# 全局API
+# 全局 API
 
 ## nextTick
 
-等待下一次`DOM`更新刷新的工具方法。
+等待下一次`DOM`更新后刷新 UI。
 
 在`Vue`中更改响应式状态时，最终的`DOM`更新并不是同步生效，而是由`Vue`将它们缓存在一个队列中，直到下一个`tick`才一起执行。这样是为了确保每个组件无论发生多少状态改变，都仅执行一次更新。
-
-`nextTick()`可以在状态改变后立即使用，以等待`DOM`更新完成。
 
 ## app.provide
 
@@ -42,7 +40,7 @@ inject('message');
 
 用于为应用内抛出的未捕获错误指定一个全局处理函数。
 
-## 访问Props
+## 访问 Props
 
 `setup`函数的第一个参数是组件的`props`。和标准的组件一致，一个`setup`函数的`props`是响应式的，并且会在传入新的`props`时同步更新。
 
@@ -56,7 +54,8 @@ const props = defindeProps({});
 const { title } = toRefs(props);
 const title = toRef(props, 'title');
 ```
-# 组合式API
+
+# 组合式 API
 
 ## setup
 
@@ -81,11 +80,13 @@ export default {
 ```
 
 该上下文对象是非响应式的，可以安全地解构：
+
 ```js
 export default {
   setup(props, { attrs, slots, emit, expose }) {},
 };
 ```
+
 `attrs`和`slots`都是有状态的对象，它们总是会随着组件自身的更新而更新。这意味着应当避免解构它们，并始终通过`attrs.x`或`slots.x`的形式使用其中的属性。此外还需注意，和`props`不同，`attrs`和`slots`的属性都不是响应式的。如果想要基于`attrs`或`slots`的改变来执行副作用，那么你应该在`onBeforeUpdate`生命周期狗子中编写相关逻辑。
 
 ## expose
@@ -135,14 +136,15 @@ export default {
     const increment = () => ++count.value;
 
     expose({ increment });
-    
+
     return () => h('div', count.value);
   },
 };
 ```
+
 此时父组件可以通过模板引用来访问这个`increment`方法。
 
-# 响应式API：核心
+# 响应式 API：核心
 
 ## ref
 
@@ -179,6 +181,7 @@ console.log(books[0].value);
 const map = reactive(new Map([['count', ref(0)]]));
 console.log(map.get('count').value);
 ```
+
 将一个`ref`赋值给一个`reactive`属性时，该`ref`会被自动解包。
 
 ## readonly
@@ -284,6 +287,7 @@ watchEffect(async onCleanUp => {
 - `once`：`3.4+`回调函数只会运行一次。侦听器将在回调函数首次运行后自动停止。
 
 与`watchEffect()`相比，`watch`使我们可以：
+
 - 懒执行副作用；
 - 更加明确是应该由哪个状态触发侦听器重新执行；
 - 可以访问所侦听状态的前一个值和当前值。
@@ -305,6 +309,7 @@ watch(
 ```
 
 当侦听多个来源时，回调函数接受两个数组，分别对应来源数组中的新值和旧值：
+
 ```js
 let foo = ref('foo');
 let bar = ref('bar');
@@ -312,6 +317,7 @@ watch([foo, bar], ([fooNewVal, barNewVal], [fooOldVal, barOldVal]) => {});
 ```
 
 当使用`getter`函数作为源时，回调只在此函数的返回值变化时才会触发。如果你想让回调在深层级变更时也能触发，你需要使用`{ deep: true }`强制侦听器进入深层级模式。在深层级模式时，如果回调函数由于深层级的变更而被触发，那么新值和旧值将是同一个对象。
+
 ```js
 const state = reactive({ count: 0 });
 watch(
@@ -324,6 +330,7 @@ watch(
 当直接侦听一个响应式对象时，侦听器会自动启用深层模式。
 
 `watch()`和`watchEffect()`享有相同的刷新时机和调试选项：
+
 ```js
 watch(source, callback, {
   flush: 'post',
@@ -337,6 +344,7 @@ watch(source, callback, {
 ```
 
 停止侦听器：
+
 ```js
 const { stop, pause, resume } = watch(source, callback);
 // 暂停侦听器
@@ -348,6 +356,7 @@ stop();
 ```
 
 副作用清理：
+
 ```js
 watch(id, async (newId, oldId, onCleanup) => {
   const { response, cancel } = doAsyncWork(newId);
@@ -369,17 +378,20 @@ watch(id, async newId => {
 
 注册一个清理函数，在当前侦听器即将重新运行时执行。只能在`watchEffect`作用函数或`watch`回调函数的同步执行期间调用（即不能在异步函数的`await`语句之后调用）。
 
-# 响应式API：工具
+# 响应式 API：工具
 
 ## isRef()
+
 检查某个值是否为`ref`。
 
 返回值是一个类型板顶，这意味着`isRef`可以被用作类型守卫。
 
 ## toRef()
+
 可以将值、`refs`或`getters`规范化为`refs`(3.3+)。
 
 也可以基于响应式对象上的一个属性，创建一个对应的`ref`。这样创建的`ref`与其源属性保持同步：改变源属性的值将更新`ref`的值，反之亦然。
+
 ```js
 const state = reactive({
   foo: 1,
@@ -424,6 +436,7 @@ stateAsRefs.foo.value++;
 ```
 
 当从组合式函数中返回响应式对象时，`toRefs`相当有用。使用它，消费者组件可以解构/展开返回的对象而不会失去响应性。
+
 ```js
 const useFeatureX = () => {
   const state = reactive({
@@ -439,6 +452,7 @@ const useFeatureX = () => {
 // 可以解构而不会失去响应性
 const { foo, bar } = useFeatureX();
 ```
+
 `toRefs`在调用时只会为源对象上可以枚举的属性创建`ref`。如果要为可能还不存在的属性创建`ref`，请改用`toRef`。
 
 ## isProxy()
@@ -455,7 +469,7 @@ const { foo, bar } = useFeatureX();
 
 通过`readonly()`和`shallowReadonly()`创建的代理都是只读的，类似于没有`set`函数的`computed()`的`ref`。
 
-# 响应式API：进阶
+# 响应式 API：进阶
 
 ## shallowRef()
 
@@ -464,6 +478,7 @@ const { foo, bar } = useFeatureX();
 和`ref()`不同，浅层`ref`的内部值将会原样存储和暴露，并且不会被深层递归地转为响应式。只有对`.value`的访问是响应式的。
 
 `shallowRef()`常常用于对大型数据结构的性能优化或是与外部的状态管理系统集成。
+
 ```js
 const state = shallowRef({ count: 1 });
 
@@ -480,6 +495,7 @@ state.value = { count: 2 };
 `customRef()`预期接收一个工厂函数作为参数，这个工厂函数接受`track`和`trigger`两个函数作为参数，并返回一个带有`get`和`set`方法的对象。
 
 一般来说，`track()`应该在`get()`方法中调用，而`trigger()`应该在`set()`中调用。然而事实上，你对何时调用、是否应该调用它们有完全的控制权。
+
 ```js
 import { customRef } from 'vue';
 
@@ -522,6 +538,7 @@ const text = useDebouncedRef('hello');
 ## effectScope()
 
 创建一个`effect`作用域，可以捕获其中所创建的响应式副作用（即计算属性和侦听器），这样捕获到的副作用可以一起清理。
+
 ```js
 const scope = effectScope();
 
@@ -543,7 +560,7 @@ scope.stop();
 
 如果在没有活跃的`effect`作用域的情况下调用此函数，将会抛出警告。在`3.5+`版本中，可以通过将第二个参数设为`true`来消除此警告。
 
-# 组合式API：生命周期钩子
+# 组合式 API：生命周期钩子
 
 **这些钩子在服务器端渲染期间不会被调用。**
 
@@ -638,7 +655,7 @@ scope.stop();
 
 这个钩子仅会在服务端渲染中执行，可以用于执行一些仅存在于服务端的数据抓取过程。
 
-# 组合式API：依赖注入
+# 组合式 API：依赖注入
 
 ## provide()
 
@@ -662,7 +679,7 @@ scope.stop();
 
 当使用`TypeScript`时，`Key`可以是一个类型为`InjectionKey`的`Symbol`。`InjectionKey`是一个`Vue`提供的工具类型，继承自`Symbol`，可以用来同步`provide()`和`inject()`之间值的类型。
 
-# 组合式API：辅助
+# 组合式 API：辅助
 
 ## useAttrs()
 
@@ -685,6 +702,7 @@ scope.stop();
 ## useTemplateRef()<sup>`3.5+`</sup>
 
 返回一个浅层`ref`，其值将与模板中的具有匹配`ref attribute`的元素或组件同步。
+
 ```js
 import { onMounted, useTemplateRef } from 'vue';
 
@@ -698,6 +716,7 @@ onMounted(() => {
 ## useId()
 
 用于为无障碍属性或表单元素生成每个应用内位移的`ID`。
+
 ```js
 <template>
   <form>
@@ -769,6 +788,7 @@ props: {
 ```
 
 ## computed
+
 用于声明要在组件实例上暴露的计算属性。
 
 该选项接收一个对象，其中键是计算属性的名称，值是一个计算属性`getter`，或一个具有`get`和`set`方法的对象（用于声明可写的计算属性）。
@@ -776,6 +796,7 @@ props: {
 所有的`getters`和`setters`会将它们的`this`上下文自动绑定为组件实例。
 
 注意，如果你为一个计算属性使用了箭头函数，则`this`不会指向该组件实例，不过你仍然可以通过该函数的第一个参数来访问实例。
+
 ```js
 computed(vm => vm.a * 2);
 ```
@@ -834,10 +855,9 @@ computed(vm => vm.a * 2);
 
 用于声明组件的字符串模板。
 
-通过`template`选项提供的模板将会在运行时即时编译。这仅在使用了包含模板编译器的`Vue`构建版本的情况下支持。文件名中带有`runtime`的`Vue`构建版本**未包含**模板编译器，例如`vue.runtime.esm-bundler.js`。   
+通过`template`选项提供的模板将会在运行时即时编译。这仅在使用了包含模板编译器的`Vue`构建版本的情况下支持。文件名中带有`runtime`的`Vue`构建版本**未包含**模板编译器，例如`vue.runtime.esm-bundler.js`。
 
 如果该字符以`#`开头，它将被用作`querySelector`的选择器，并使用所选中元素的`innerHTML`作为模板字符串。这让我们能够使用原生`<template>`元素来书写源模板。
-
 
 如果`render`选项也同时存在于该组件中，`template`将被忽略。
 
@@ -881,7 +901,7 @@ computed(vm => vm.a * 2);
 
 使用`name`选项使你可以覆盖推导出的名称，或是在没有推导出名字时显式提供一个。（例如没有使用构建工具时，或是一个内联的非单文件组件）
 
-有一种场景下`name`必须是已显式声明的：即`<KeepAlive>`通过其`include/exclude``prop`来匹配其需要缓存的组件时。
+有一种场景下`name`必须是已显式声明的：即`<KeepAlive>`通过其` include/exclude``prop `来匹配其需要缓存的组件时。
 
 > 在`3.2.34`或以上的版本中，使用`<script setup>`的单文件组件会自动根据文件名生成对应的`name`选项，即使是在配合`<KeepAlive>`使用时也无需再手动声明。
 
@@ -939,6 +959,7 @@ const onBeforeClick = (index, next) => {
 };
 </script>
 ```
+
 在一个使用了`<script setup>`的组件中声明这个选项时，可以使用`defineOptions`宏。
 
 ## components
@@ -968,6 +989,7 @@ const onBeforeClick = (index, next) => {
 该组件实例管理的`DOM`根节点。
 
 `$el`直到组件挂载完成`mounted`之前都会是`undefined`。
+
 - 对于单一根元素的组件，`$el`将会指向该跟元素。
 - 对于以文本节点为根的组件，`$el`将会指向该文本节点。
 - 对于以多个元素为根的组件，`$el`将是一个仅作占位符的`DOM`节点，`Vue`使用它来跟踪组件在`DOM`中的位置（文本节点或`SSR`激活模式下的注释节点）。
@@ -979,6 +1001,7 @@ const onBeforeClick = (index, next) => {
 已解析的用于实例化当前组件的组件选项。
 
 这个`$options`对象暴露了当前组件的已解析选项，并且会是以下几种可能来源的合并结果：
+
 - 全局`mixin`
 - 组件`extends`的基组件
 - 组件级`mixin`
@@ -1022,6 +1045,7 @@ const onBeforeClick = (index, next) => {
 第一个参数是侦听来源。可以是一个组件的属性名的字符串，一个简单的由点分隔的路径字符串，或是一个`getter`函数。
 
 第二个参数是回调函数。它接收的参数分别是侦听来源的新值、旧值。
+
 - `immediate`：指定在侦听器创建时是否立即触发回调。在第一次调用时旧值为`undefined`。
 - `deep`：指定在侦听来源时一个对象时，是否强制深度遍历，这样回调函数就会在深层级发生变更时被触发。
 - `flush`：指定回调函数的刷新时机。
@@ -1048,6 +1072,7 @@ const onBeforeClick = (index, next) => {
 ## v-text
 
 更新元素的文本内容。
+
 - **期望的绑定值类型：**`string`
 
 `v-text`通过设置元素的`textContent`属性来工作，因此它将覆盖元素中所有现有的内容。如果你需要更新`textContent`的部分，应该使用`mustache interpolations`代替。
@@ -1066,7 +1091,7 @@ const onBeforeClick = (index, next) => {
 
 **期望的绑定值类型：**`key`
 
-- `v-show`通过设置内联样式的`display``CSS`属性来工作，当元素可见时将使用初始`display`值。当条件改变时，也会触发过渡效果。
+- `v-show`通过设置内联样式的` display``CSS `属性来工作，当元素可见时将使用初始`display`值。当条件改变时，也会触发过渡效果。
 
 ## v-if
 
@@ -1115,16 +1140,16 @@ const onBeforeClick = (index, next) => {
 - **期望的绑定值类型：**`Function|Inline Statement|Object（不带参数）`
 - **参数：**`event`（使用对象发则为可选项）
 - 修饰符
-    - `.stop`-调用`event.stopPropagation()`
-    - `.prevent`-调用`event.preventDefault()`
-    - `.capture`-在捕获模式添加事件监听器
-    - `.self`-只有事件从元素本身发出才触发处理函数
-    - `.{keyAliase}`-只在某些按键下触发处理函数
-    - `.once`-最多触发一次处理函数
-    - `.left`-只在鼠标左键事件触发处理函数
-    - `.right`-只在鼠标右键事件触发处理函数
-    - `.middle`-只在鼠标中键事件触发处理函数
-    - `.passive`-通过`{passive: true}`附加一个`DOM`事件
+  - `.stop`-调用`event.stopPropagation()`
+  - `.prevent`-调用`event.preventDefault()`
+  - `.capture`-在捕获模式添加事件监听器
+  - `.self`-只有事件从元素本身发出才触发处理函数
+  - `.{keyAliase}`-只在某些按键下触发处理函数
+  - `.once`-最多触发一次处理函数
+  - `.left`-只在鼠标左键事件触发处理函数
+  - `.right`-只在鼠标右键事件触发处理函数
+  - `.middle`-只在鼠标中键事件触发处理函数
+  - `.passive`-通过`{passive: true}`附加一个`DOM`事件
 
 事件类型由参数来指定。表达式可以是一个方法名，一个内联声明，如果由修饰符则可省略。
 
@@ -1172,17 +1197,18 @@ const onBeforeClick = (index, next) => {
 动态的绑定一个或多个`attribute`，也可以是组件的`prop`。
 
 **缩写：**
+
 - `:`或者`.`（当使用`.prop`修饰符）
 - 值可以省略（当`attribute`和绑定的值同名时，需要`3.4+`版本）
 - **期望：**`any（带参数）|Object（不带参数）`
 - **参数：**`attrOrProp（可选的）`
 - **修饰符**
-    - `.camel`-将短横线命名的`attribute`转变为驼峰式命名。
-    - `.prop`-强制绑定为`DOM property(3.2+)`。
-    - `.attr`-强制绑定为`DOM attribute(3.2+)`。
-- **用途**    
+  - `.camel`-将短横线命名的`attribute`转变为驼峰式命名。
+  - `.prop`-强制绑定为`DOM property(3.2+)`。
+  - `.attr`-强制绑定为`DOM attribute(3.2+)`。
+- **用途**
 
-当用于绑定`class`或`style``attribute`，`v-bind`支持额外的值类型如数组或对象。
+当用于绑定`class`或` style``attribute `，`v-bind`支持额外的值类型如数组或对象。
 
 在处理绑定时，`Vue`默认会利用`in`操作符来检查该元素上是否定义了和绑定的`key`同名的`DOM property`。如果存在同名的`property`，则`Vue`会将它作为`DOM property`赋值，而不是作为`attribute`设置。这个行为大多数情况都符合期望的绑定值类型，但是你也可以显式用`.prop`和`.attr`修饰符来强制绑定方式。有时这是必要的，特别是在和**自定义元素**打交道时。
 
@@ -1221,13 +1247,15 @@ const onBeforeClick = (index, next) => {
 ```
 
 `prop`修饰符也有专门的缩写，`.`：
+
 ```html
 <div :someProperty.prop="someObject"></div>
 <!-- 等同于 -->
 <div .someProperty="someObject"></div>
 ```
 
-当在`DOM`内模板使用`.camel`修饰符，可以驼峰化`v-bind``attribute`的名称，例如`viewBox``attribute`：
+当在`DOM`内模板使用`.camel`修饰符，可以驼峰化` v-bind``attribute `的名称，例如` viewBox``attribute `：
+
 ```html
 <svg :view-box.camel="viewBox"></svg>
 ```
@@ -1240,14 +1268,14 @@ const onBeforeClick = (index, next) => {
 
 - **期望的绑定值类型：**根据表单输入元素或组件输出的值而变化
 - **仅限：**
-    - `<input>`
-    - `<select>`
-    - `<textarea>`
-    - `components`
+  - `<input>`
+  - `<select>`
+  - `<textarea>`
+  - `components`
 - **修饰符**
-    - `.lazy`-监听`change`事件而不是`input`
-    - `.number`-将输入的合法字符串转为数字
-    - `.trim`-移除输入内容两端空格
+  - `.lazy`-监听`change`事件而不是`input`
+  - `.number`-将输入的合法字符串转为数字
+  - `.trim`-移除输入内容两端空格
 
 ## v-slot
 
@@ -1257,22 +1285,22 @@ const onBeforeClick = (index, next) => {
 - 期望的绑定值类型：能够合法在函数参数位置使用的`JavaScript`表达式。支持解构语法。绑定值是可选的——只有在给作用域插槽传递`props`才需要。
 - **参数：**插槽名（可选，默认是`default`）
 - **仅限：**
-    - `<template>`
-    - `component`（用于带有`prop`的单个默认插槽）
+  - `<template>`
+  - `component`（用于带有`prop`的单个默认插槽）
 
 ```html
 <!-- 具名插槽 -->
 <BaseLayout>
-    <template v-slot:header>Header content</template>
-    <template v-slot:default>Default slot content</template>
-    <template v-slot:footer>Footer content</template>
-  </BaseLayout>
+  <template v-slot:header>Header content</template>
+  <template v-slot:default>Default slot content</template>
+  <template v-slot:footer>Footer content</template>
+</BaseLayout>
 <!-- 接收prop的具名插槽 -->
 <InfiniteScroll>
-    <template v-slot:item="slotProps">
-      <div class="item">{{ slotProps.item.text }}</div>
-    </template>
-  </InfiniteScroll>
+  <template v-slot:item="slotProps">
+    <div class="item">{{ slotProps.item.text }}</div>
+  </template>
+</InfiniteScroll>
 <!-- 接收prop的默认插槽，并解构 -->
 <Mouse v-slot="{ x, y }">Mouse position: {{ x }},{{ y }}</Mouse>
 ```
@@ -1284,6 +1312,7 @@ const onBeforeClick = (index, next) => {
 - **无需传入**
 
 元素内具有`v-pre`，所有`Vue`模板语法都会被保留并按原样渲染。最常见的用例就是显式原始双大括号标签及内容。
+
 ```html
 <span v-pre>{{ this will not be compiled }}</span>
 ```
@@ -1304,6 +1333,7 @@ const onBeforeClick = (index, next) => {
 - **期望的绑定值类型：**`any[]`
 
 缓存一个模板的子树。在元素和组件上都可以使用。为了实现缓存，该指令需要传入一个固定长度的依赖值数组进行比较。如果数组里的每个值都与最后一次的渲染相同，那么整个子树的更新将被跳过。
+
 ```html
 <div v-memo="[valueA, valueB]"></div>
 ```
@@ -1315,10 +1345,9 @@ const onBeforeClick = (index, next) => {
 **与`v-for`一起使用**
 
 `v-memo`仅用于性能至上场景中的微小优化，应该很少需要。最常见的情况可能是有助于渲染海量`v-for`列表（长度超过`1000`的情况）。
+
 ```html
-<div v-for="item in list" :key="item.id" v-memo="[item.id === selected]">
-  {{ item.content }}
-</div>
+<div v-for="item in list" :key="item.id" v-memo="[item.id === selected]">{{ item.content }}</div>
 ```
 
 当组件的`selected`状态改变，默认会重新创建大量的`vnode`，尽管绝大部分都跟之前是一模一样的。`v-memo`用在这里本质上是在说“只有当该项的被选中状态改变时才需要更新”。这使得每个选中状态没有变的项能完全重用之前的`vnode`并跳过差异比较。注意这里`memo`依赖数组中并不需要包含`item.id`，因为`Vue`也会根据`item`的`:key`进行判断。
@@ -1337,12 +1366,11 @@ const onBeforeClick = (index, next) => {
 当使用直接在`DOM`中书写的模板时，可能会出现一种叫做“为编译模板闪现”的情况：用户可能先看到的是还没编译完成的双大括号标签，直到挂载的组件将它们替换为时机渲染的内容。
 
 `v-cloak`会保留在所绑定的元素上，直到相关组件实例被挂载后才移除。配合像`[v-cloak] {display: none}`这样的`CSS`规则，它可以在组件编译完毕前隐藏原始模板。
+
 ```html
 <div v-cloak>{{ message }}</div>
 
-[v-cloak] {
-  display: none;
-}
+[v-cloak] { display: none; }
 ```
 
 # 内置组件
@@ -1395,17 +1423,17 @@ interface TransitionProps {
 ```
 
 - **事件**
-    - `@before-enter`
-    - `@before-leave`
-    - `@enter`
-    - `@leave`
-    - `@appear`
-    - `@after-enter`
-    - `@after-leave`
-    - `@after-appear`
-    - `@enter-cancelled`
-    - `@leave-cancelled(v-show only)`
-    - `@appear-cancelled`
+  - `@before-enter`
+  - `@before-leave`
+  - `@enter`
+  - `@leave`
+  - `@appear`
+  - `@after-enter`
+  - `@after-leave`
+  - `@after-appear`
+  - `@enter-cancelled`
+  - `@leave-cancelled(v-show only)`
+  - `@appear-cancelled`
 
 通过改变`key`属性来强制过渡执行。
 
@@ -1416,6 +1444,7 @@ interface TransitionProps {
 ```
 
 动态组件，初始渲染时带有过渡模式+动画出现：
+
 ```html
 <Transition name="fade" mode="out-in" appear>
   <component :is="view"></component>
@@ -1423,6 +1452,7 @@ interface TransitionProps {
 ```
 
 监听过渡事件
+
 ```html
 <Transition @after-enter="onTransitionComplete">
   <div v-show="ok">toggled content</div>
@@ -1437,16 +1467,15 @@ interface TransitionProps {
 
 `<TransitionGroup>`拥有与`<Transition>`除了`mode`以外所有的`props`，并增加了两个额外的`props`
 
-默认情况下，`<TransitionGroup>`不会渲染一个容器的`DOM`元素，但是可以通过`tag`prop启用。
+默认情况下，`<TransitionGroup>`不会渲染一个容器的`DOM`元素，但是可以通过`tag`prop 启用。
 
 注意，每个`<transition-group>`的子节点必须有**独立的`key`**，动画才能正常工作。
 
-`<TransitionGroup>`支持通过`CSS transform`控制移动效果。当一个子节点在屏幕上的位置在更新之后发生变化时，它会被添加一个使其位移的`CSS class`（基于`name attribute`推导，或使用`move-class`prop显式配置）。如果使其位移的`class`被添加时CSS的`transform`属性是“可过渡的”，那么该元素会基于**`FLIP`技巧**平滑地达到动画终点。
+`<TransitionGroup>`支持通过`CSS transform`控制移动效果。当一个子节点在屏幕上的位置在更新之后发生变化时，它会被添加一个使其位移的`CSS class`（基于`name attribute`推导，或使用`move-class`prop 显式配置）。如果使其位移的`class`被添加时 CSS 的`transform`属性是“可过渡的”，那么该元素会基于**`FLIP`技巧**平滑地达到动画终点。
+
 ```html
 <TransitionGroup tag="ul" name="slide">
-  <li v-for="item in items" :key="item.id">
-    {{ item.text }}
-  </li>
+  <li v-for="item in items" :key="item.id">{{ item.text }}</li>
 </TransitionGroup>
 ```
 
@@ -1462,7 +1491,8 @@ interface TransitionProps {
 
 ## `<Teleport>`
 
-将其插槽内容渲染到DOM中的另一个位置。
+将其插槽内容渲染到 DOM 中的另一个位置。
+
 ```html
 <Teleport to="#some-id" />
 <Teleport to=".some-class" />
@@ -1470,6 +1500,7 @@ interface TransitionProps {
 ```
 
 有条件的禁用：
+
 ```html
 <Teleport to="#popup" :disabled="displayVideoInline">
   <video src="./my-movie.mp4">
@@ -1477,6 +1508,7 @@ interface TransitionProps {
 ```
 
 延迟目标解析<sup>`3.5+`</sup>
+
 ```html
 <Teleport defer to="#late-div">...</Teleport>
 
@@ -1493,11 +1525,13 @@ interface TransitionProps {
 
 一个用于渲染动态组件或元素的“元组件”。
 
-要渲染的实际组件由`is`prop决定。
-- 当`is`是字符串，它既可以是HTML标签名也可以是组件的注册名
+要渲染的实际组件由`is`prop 决定。
+
+- 当`is`是字符串，它既可以是 HTML 标签名也可以是组件的注册名
 - 或者，`is`也可以直接绑定到组件的定义
 
 按注册名渲染组件:
+
 ```html
 <template>
   <div class="home-container">
@@ -1509,62 +1543,65 @@ interface TransitionProps {
 </template>
 
 <script setup name="home">
-import { shallowRef } from 'vue';
-import Login from '@/views/login/index.vue';
-import About from '@/views/about/index.vue';
+  import { shallowRef } from 'vue';
+  import Login from '@/views/login/index.vue';
+  import About from '@/views/about/index.vue';
 
-let view = shallowRef(Login);
-const onChange = () => {
-  view.value = About;
-};
+  let view = shallowRef(Login);
+  const onChange = () => {
+    view.value = About;
+  };
 </script>
 ```
 
 按定义渲染组件：
+
 ```html
 <template>
   <component :is="Math.random() > 0.5 ? Login : About" />
 </template>
 
 <script setup name="home">
-import Login from '@/views/login/index.vue';
-import About from '@/views/about/index.vue';
+  import Login from '@/views/login/index.vue';
+  import About from '@/views/about/index.vue';
 </script>
 ```
 
 **内置组件**都可以传递给`is`，但是如果想通过名称传递则必须先对其进行注册。
+
 ```html
 <template>
   <component :is="isGroup ? 'TransitionGroup' : 'Transition'"></component>
 </template>
 
 <script setup name="about">
-import { ref } from 'vue';
-import { Transition, TransitionGroup } from 'vue';
+  import { ref } from 'vue';
+  import { Transition, TransitionGroup } from 'vue';
 
-let isGroup = ref(false);
+  let isGroup = ref(false);
 </script>
 ```
 
 如果将组件本身传递给`is`而不是其名称，则不需要注册。
 
-如果在`<component>`标签上使用`v-model`，模板编译器会将其扩展为`modelValue`prop和`update:modelValue`事件监听器，就像对任何其他组件一样。因此，在动态创建的原生元素上使用`v-model`将不起作用。
+如果在`<component>`标签上使用`v-model`，模板编译器会将其扩展为`modelValue`prop 和`update:modelValue`事件监听器，就像对任何其他组件一样。因此，在动态创建的原生元素上使用`v-model`将不起作用。
 
 ## `<slot>`
 
 表示模板中的插槽内容出口。
 
-`<slot>`元素可以使用`name``attribute`来指定插槽名。当没有指定`name`时，将会渲染默认插槽。传递给插槽元素的附加`attributes`将作为插槽`props`，传递给父级中定义的作用域插槽。
+`<slot>`元素可以使用` name``attribute `来指定插槽名。当没有指定`name`时，将会渲染默认插槽。传递给插槽元素的附加`attributes`将作为插槽`props`，传递给父级中定义的作用域插槽。
 
 元素本身将被其所匹配的插槽内容替换。
 
-Vue模板里的`<slot>`元素会被编译到JavaScript，因此不要与**原生`<slot>`元素**进行混淆。
+Vue 模板里的`<slot>`元素会被编译到 JavaScript，因此不要与**原生`<slot>`元素**进行混淆。
 
 ## `<template>`
 
-当我们想要使用内置指令而不在DOM中渲染元素时，`<template>`标签可以作为占位符使用。
+当我们想要使用内置指令而不在 DOM 中渲染元素时，`<template>`标签可以作为占位符使用。
 
 对`<template>`的特殊处理只有在它与以下任一指令一起使用时才会被触发：
+
 - `v-if`、`v-else-if`或`v-else`
 - `v-for`
 - `v-slot`
@@ -1575,17 +1612,18 @@ Vue模板里的`<slot>`元素会被编译到JavaScript，因此不要与**原生
 
 单文件组件使用**顶层的`<template>`标签**来包裹整个模板。该顶层标签不是模板本身的一部分，不支持指令等模板语法。
 
-# 内置的特殊Attributes
+# 内置的特殊 Attributes
 
 ## `key`
 
-`key`这个特殊的`attribute`主要作为Vue的虚拟DOM算法提示，在比较新旧节点列表时用于识别`vnode`。
+`key`这个特殊的`attribute`主要作为 Vue 的虚拟 DOM 算法提示，在比较新旧节点列表时用于识别`vnode`。
 
-在没有`key`的情况下，Vue将使用一种最小化元素移动的算法，并尽可能地就地更新/复用相同类型的元素。如果传了`key`，则将根据`key`的变化顺序来重新排列元素，并且将始终移除/销毁`key`已经不存在的元素。
+在没有`key`的情况下，Vue 将使用一种最小化元素移动的算法，并尽可能地就地更新/复用相同类型的元素。如果传了`key`，则将根据`key`的变化顺序来重新排列元素，并且将始终移除/销毁`key`已经不存在的元素。
 
 同一个父元素下的子元素必须具有**唯一的`key`**。重复的`key`将会导致渲染异常。
 
 也可以用于强制替换一个元素/组件而不是复用它。
+
 - 在适当的时候触发组件的生命周期钩子
 - 触发过渡
 
@@ -1594,7 +1632,8 @@ Vue模板里的`<slot>`元素会被编译到JavaScript，因此不要与**原生
   <span :key="text">{{ text }}</span>
 </transition>
 ```
-当`text`变化时，`<span>`总是会被替换而不是更新，因此transition将会被触发。
+
+当`text`变化时，`<span>`总是会被替换而不是更新，因此 transition 将会被触发。
 
 ## `ref`
 
@@ -1602,13 +1641,14 @@ Vue模板里的`<slot>`元素会被编译到JavaScript，因此不要与**原生
 
 `ref`用于注册元素或子组件的引用。
 
-使用选项式API，引用将被注册在组件的`this.$refs`对象里。
+使用选项式 API，引用将被注册在组件的`this.$refs`对象里。
 
-使用组合式API，引用将存储在与名字匹配的`ref`里。
+使用组合式 API，引用将存储在与名字匹配的`ref`里。
 
-如果用于普通DOM元素，引用将是元素本身；如果用于子组件，引用将是子组件的实力。
+如果用于普通 DOM 元素，引用将是元素本身；如果用于子组件，引用将是子组件的实力。
 
 或者`ref`可以接收一个函数值，用于对存储引用位置的完全控制。
+
 ```html
 <ChildComponent :ref="el => (child = el)" />
 ```
