@@ -529,7 +529,7 @@ hexo.extend.filter.register(
         per_page: true,
       },
       mermaid: {
-        enable: false,
+        enable: true,
         theme: {
           light: 'default',
           dark: 'dark',

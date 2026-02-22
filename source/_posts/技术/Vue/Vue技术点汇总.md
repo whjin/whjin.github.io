@@ -51,34 +51,35 @@ tags: ['前端', 'Vue']
 
 # Teleport 渲染流程
 
-```mermaid
+{% mermaid %}
 graph TB
-     A[&lt;Teleport to=&quot;body&quot;&gt;]
-    B[编译生成 VNode]
-    C[识别为特殊类型 TeleportImpl]
-    D[Renderer调用 TeleportImpl.process]
-    E[解析 props.to，获取目标DOM节点]
-    F[初次挂载or更新子节点到目标DOM]
-    G[保持响应式、生命周期、事件绑定]
-    H1[真实DOM显示在目标位置]
-    H2[虚拟节点仍存在原组件树中]
+A[Teleport 组件]
+B[编译生成]
+C[识别为特殊类型]
+D[Renderer 调用]
+E[解析获取目标 DOM 节点]
+F[初次挂载 or 更新子节点到目标 DOM]
+G[保持响应式生命周期事件绑定]
+H1[真实 DOM 显示在目标位置]
+H2[虚拟节点仍存在原组件树中]
 
-    A --> B
-    B --> C
-    C --> D
-    D --> E
-    E --> F
-    F --> G
-    G --> H1
-    G --> H2
+A --> B
+B --> C
+C --> D
+D --> E
+E --> F
+F --> G
+G --> H1
+G --> H2
 
-    style A fill:#3a7bd5,stroke:#2d5fa0,stroke-width:3px,color:#fff,font-weight:bold
-    style B fill:#4a8be5,stroke:#2d5fa0,stroke-width:2px,color:#fff
-    style C fill:#5a9cf5,stroke:#2d5fa0,stroke-width:2px,color:#fff
-    style D fill:#6aadff,stroke:#2d5fa0,stroke-width:2px,color:#333
-    style E fill:#7abeff,stroke:#2d5fa0,stroke-width:2px,color:#333
-    style F fill:#8acfff,stroke:#2d5fa0,stroke-width:2px,color:#333
-    style G fill:#9ae0ff,stroke:#2d5fa0,stroke-width:2px,color:#333
-    style H1 fill:#00d2ff,stroke:#00a8cc,stroke-width:3px,color:#333
-    style H2 fill:#00d2ff,stroke:#00a8cc,stroke-width:3px,color:#333
-```
+style A fill:#3a7bd5,stroke:#2d5fa0,stroke-width:2px,color:#fff,font-weight:bold
+style B fill:#4a8be5,stroke:#2d5fa0,stroke-width:2px,color:#fff
+style C fill:#5a9cf5,stroke:#2d5fa0,stroke-width:2px,color:#fff
+style D fill:#6aadff,stroke:#2d5fa0,stroke-width:2px,color:#333
+style E fill:#7abeff,stroke:#2d5fa0,stroke-width:2px,color:#333
+style F fill:#8acfff,stroke:#2d5fa0,stroke-width:2px,color:#333
+style G fill:#9ae0ff,stroke:#2d5fa0,stroke-width:2px,color:#333
+style H1 fill:#00d2ff,stroke:#00a8cc,stroke-width:3px,color:#333
+style H2 fill:#00d2ff,stroke:#00a8cc,stroke-width:3px,color:#333
+
+{% endmermaid %}
