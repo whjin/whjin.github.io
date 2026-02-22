@@ -9,7 +9,7 @@ main_color: "#42B883"
 keywords:
 description:
 top_img:
-comments:
+comments: true
 aside: 
 ---
 
