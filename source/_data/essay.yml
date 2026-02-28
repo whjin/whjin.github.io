@@ -7,6 +7,10 @@
   home_essay: true
   top_background: /img/pic/top.jpg
   essay_list:
+    - content: 今天完成了简历第一版，部署了线上版，更新了Boss直聘的简历。写简历真的不容易，很费神。到了我这个阶段，不太想着用Boss这类招聘网站找工作，感叹行情已经不是10年前，内推机会很多，业界信息也多。
+      link: https://wuhuajin.com/resume/
+      link_title: 我的简历
+      date: 2026/02/28 16:38:36
     - content: 江流碧水载浮沉，茂竹疏影两闲人。
       date: 2026/02/22 15:50:10
     - content: 新春快乐
