@@ -2,7 +2,6 @@
 
 # 构建
 npm run build
-echo "构建完成"
 
 # 部署
 npm run deploy
