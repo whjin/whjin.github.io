@@ -8,6 +8,7 @@ echo "构建完成"
 npm run deploy
 
 # 提交至dev分支
+git pull origin dev
 git add .
 read -p "请输入提交信息：" msg
 git commit -m "$msg"
