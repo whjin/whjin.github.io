@@ -10,8 +10,7 @@ npm run deploy
 # 提交至dev分支
 git pull origin dev
 git add .
-read -p "请输入提交信息：" msg
-git commit -m "$msg"
+git commit -m "更新dev分支"
 git push origin dev
 
 # 按任意键关闭
