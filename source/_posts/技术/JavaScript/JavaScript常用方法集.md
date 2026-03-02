@@ -79,51 +79,50 @@ function timeDiffer(beginTime, endTime) {
 let { differHour, differMinute, differSecond } = timeDiffer(beginTime, endTime);
 ```
 
-# (数组/对象)(深/浅)拷贝
+# 深拷贝和浅拷贝
+
+**浅拷贝**
+
+- 只拷贝一层
+- 引用类型拷贝内存地址
 
 ```javascript
-let list = [{ name: 'o' }];
-let obj = { stu: { name: 'o' } };
+Object.assign
+Array.prototype.slice()
+Array.prototype.concat()
+扩展运算符
+```
 
-// 数组浅拷贝
-let listCopy1 = [].concat(list);
-let listCopy2 = list.slice();
-let listCopy3 = Array.from(list);
-let listCopy4 = [...list];
+**深拷贝**
+```javascript
+_.cloneDeep() lodash 深拷贝函数
+jQuery.extend() jquery 深拷贝函数
+JSON.stringify() 存在弊端 忽略 undefined Symbol
+手写循环递归
 
-// 对象浅拷贝
-let objCopy1 = Object.assign({}, obj);
-let objCopy2 = { ...obj };
-
-// 数组|对象深拷贝
-let listCopy = JSON.parse(JSON.stringify(list));
-let objCopy = JSON.parse(JSON.stringify(obj));
-
-// 深拷贝，即复制并独立一份数据，操作不影响原数据
 function deepCopy(obj) {
   if (typeof obj !== 'object') {
-    return obj;
+    return new Error('类型错误');
   }
   let result = Array.isArray(obj) ? [] : {};
-  for (let i in obj) {
-    if (obj.hasOwnProperty(i)) {
-      if (typeof obj[i] === 'object' && obj[i] !== null) {
-        result[i] = deepCopy(obj[i]);
-      } else {
-        result[i] = obj[i];
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      if (typeof obj[key] === 'object' && obj[key] !== null) {
+        resultp[key] = deepCopy(obj[key]);
       }
+    } else {
+      result[key] = obj[key];
     }
   }
   return result;
 }
 
-// 深拷贝
-function deepClone(obj) {
+function deepCopy(obj) {
   let copyObj = null;
   if (typeof obj === 'object' && obj !== null) {
     copyObj = Array.isArray(obj) ? [] : {};
-    for (let i in obj) {
-      copyObj[i] = deepClone(obj[i]);
+    for (let key in obj) {
+      copyObj[key] = deepCopy(obj[key]);
     }
   } else {
     copyObj = obj;
