@@ -83,3 +83,14 @@ style H1 fill:#00d2ff,stroke:#00a8cc,stroke-width:3px,color:#333
 style H2 fill:#00d2ff,stroke:#00a8cc,stroke-width:3px,color:#333
 
 {% endmermaid %}
+
+# Object.defineProperty 与 Proxy 的区别
+
+1. `Object.defineProperty`
+    - 不能监听数组变化
+    - 必须遍历对象的每个属性`Object.keys(obj)`
+    - 必须深层遍历嵌套的对象
+2. `Proxy`
+    - 针对整个对象
+    - 解决了无法劫持数组的问题
+    - 有更多的拦截方法，有助于性能的提升
