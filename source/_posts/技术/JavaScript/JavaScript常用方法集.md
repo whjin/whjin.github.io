@@ -1,14 +1,15 @@
 ---
 title: JavaScript常用方法集
 date: 2020-08-23 21:01:36
-category: ["技术"]
-tags: ["前端","JS"]
+uopdated: 2026-03-02 18:16:14
+category: ['技术']
+tags: ['前端', 'JavaScript']
 comments: true
 cover: https://s1.imagehub.cc/images/2025/04/09/b244ec49ec6e38102144b0a44e1c0b6b.md.jpg
-main_color: "#23D194"
+main_color: '#FBA552'
 ---
 
-### 日期格式化
+# 日期格式化
 
 ```JavaScript
 // 格式化日期类型,fmt格式可选择
@@ -34,9 +35,11 @@ function dateFormat(fmt, date) {
 let date = new Date();
 let fDate = dateFormat("YYYY-MM-DD hh:mm:ss.ms", new Date(date));
 ```
+
 <!--more-->
 
-### 时间转换（秒数转时分秒）
+# 时间转换（秒数转时分秒）
+
 ```JavaScript
 function timeFormat (sec) {
     let minite = Math.floor((sec / 60 % 60)) < 10 ? '0' + Math.floor((sec / 60 % 60)) : Math.floor((sec / 60 % 60));
@@ -50,7 +53,8 @@ function timeFormat (sec) {
 }
 ```
 
-### 计算时分秒差值
+# 计算时分秒差值
+
 ```JavaScript
 // 计算时分秒差值
 function timeDiffer(beginTime, endTime) {
@@ -75,10 +79,11 @@ function timeDiffer(beginTime, endTime) {
 let { differHour, differMinute, differSecond } = timeDiffer(beginTime, endTime);
 ```
 
-### (数组/对象)(深/浅)拷贝
+# (数组/对象)(深/浅)拷贝
+
 ```javascript
-let list = [{ name: "o" }];
-let obj = { stu: { name: "o" } };
+let list = [{ name: 'o' }];
+let obj = { stu: { name: 'o' } };
 
 // 数组浅拷贝
 let listCopy1 = [].concat(list);
@@ -96,13 +101,13 @@ let objCopy = JSON.parse(JSON.stringify(obj));
 
 // 深拷贝，即复制并独立一份数据，操作不影响原数据
 function deepCopy(obj) {
-  if (typeof obj !== "object") {
+  if (typeof obj !== 'object') {
     return obj;
   }
   let result = Array.isArray(obj) ? [] : {};
   for (let i in obj) {
     if (obj.hasOwnProperty(i)) {
-      if (typeof obj[i] === "object" && obj[i] !== null) {
+      if (typeof obj[i] === 'object' && obj[i] !== null) {
         result[i] = deepCopy(obj[i]);
       } else {
         result[i] = obj[i];
@@ -115,7 +120,7 @@ function deepCopy(obj) {
 // 深拷贝
 function deepClone(obj) {
   let copyObj = null;
-  if (typeof obj === "object" && obj !== null) {
+  if (typeof obj === 'object' && obj !== null) {
     copyObj = Array.isArray(obj) ? [] : {};
     for (let i in obj) {
       copyObj[i] = deepClone(obj[i]);
@@ -127,7 +132,8 @@ function deepClone(obj) {
 }
 ```
 
-### 数组去重
+# 数组去重
+
 ```javascript
 // ES6最简方法
 let result = [];
@@ -172,7 +178,8 @@ function unique(arr) {
 }
 ```
 
-### 数组对象去重
+# 数组对象去重
+
 ```JavaScript
 function uniqueArr(arr) {
   if (!Array.isArray(arr)) {
@@ -188,7 +195,8 @@ function uniqueArr(arr) {
 }
 ```
 
-### 数组对象排序
+# 数组对象排序
+
 ```JavaScript
 // 数组对象排序，比较两个字符串
 list.sort((a, b) => {
@@ -196,7 +204,8 @@ list.sort((a, b) => {
 });
 ```
 
-### 获取上/下个月日期
+# 获取上/下个月日期
+
 ```JavaScript
 // 下个月
 let date = new Date(this.startDate);
@@ -207,7 +216,8 @@ this.endDate = dateFormat("YYYY-MM-DD", new Date(nextMonthDate));
 let lastMonthDate = date.setMonth(date.getMonth() - 1);
 ```
 
-### 获取前/后7天日期
+# 获取前/后7天日期
+
 ```JavaScript
 // 前7天
 let date = new Date(this.startDate);
@@ -218,21 +228,23 @@ this.endDate = dateFormat("YYYY-MM-DD", new Date(afterDate));
 let afterDate = date.setDate(date.getDate() - 6);
 ```
 
-### 一周日期
+# 一周日期
+
 ```javascript
-let weeks=["周一","周二","周三","周四","周五","周六","周日"];
-for (let i = 0; i<7; i++){
+let weeks = ['周一', '周二', '周三', '周四', '周五', '周六', '周日'];
+for (let i = 0; i < 7; i++) {
   let date = new Date();
-  let index = date.getDay() ? date.getDay() - 1 : 6;
+  let index = date.getDay() ? date.getDay() - 1 : 6;
   let nowDate = date.setDate(date.getDate() - index + i);
-  let formatDate = dateFormat("MM-DD", new Date(nowDate));
-  let week = weeks[i]; 
+  let formatDate = dateFormat('MM-DD', new Date(nowDate));
+  let week = weeks[i];
   let weekDate = `${formatDate}(${week})`;
   this.weekDateColumns.push(weekDate);
 }
 ```
 
-### 点击内容切换
+# 点击内容切换
+
 ```javascript
 let len = this.assistList.length - 1;
 if (this.index < len) {
@@ -244,32 +256,35 @@ if (this.index < len) {
 }
 ```
 
-### 时分秒
+# 时分秒
+
 ```javascript
 时：`parseInt(count/60/60)`
 分：`parseInt(count/60)%60`
 秒：`parseInt(count%60)`
 ```
 
-### 当月第一天和最后一天
+# 当月第一天和最后一天
+
 ```javascript
 // 第一天
 let date = new Date();
 date.setDate(1);
-console.log(dateFormat("YYYY-MM-DD", date));
+console.log(dateFormat('YYYY-MM-DD', date));
 
 // 最后一天
 let date = new Date();
 let lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
-console.log(dateFormat("YYYY-MM-DD", lastDay));
+console.log(dateFormat('YYYY-MM-DD', lastDay));
 ```
 
-### fetch接口请求
+# fetch接口请求
+
 ```javascript
-let api = "https://api.com";
+let api = 'https://api.com';
 let headerConfig = {
   headers: {
-    Accept: "application/json",
+    Accept: 'application/json',
   },
 };
 async function request() {
@@ -278,23 +293,24 @@ async function request() {
 }
 ```
 
-### 按键处理方法
+# 按键处理方法
+
 ```javascript
-window.addEventListener("keydown", (e) => {
-  let container = document.querySelector("#container");
+window.addEventListener('keydown', (e) => {
+  let container = document.querySelector('#container');
   let { key, keyCode, code } = e;
-  let template = "";
+  let template = '';
   [
     {
-      title: "e.key",
-      content: key == " " ? "Space" : key,
+      title: 'e.key',
+      content: key == ' ' ? 'Space' : key,
     },
     {
-      title: "e.keyCode",
+      title: 'e.keyCode',
       content: keyCode,
     },
     {
-      title: "e.code",
+      title: 'e.code',
       content: code,
     },
   ].forEach((item) => {
@@ -304,7 +320,8 @@ window.addEventListener("keydown", (e) => {
 });
 ```
 
-### 返回顶部
+# 返回顶部
+
 ```css
 html,
 body {
@@ -316,14 +333,16 @@ body {
   top: -110px;
   margin-top: -50px;
   border-radius: 50%;
-  background: url("") center no-repeat dodgerblue;
+  background: url('') center no-repeat dodgerblue;
   background-size: 50%;
   width: 50px;
   height: 50px;
   transform: translateY(calc(100vh + 50px));
 }
 ```
-### 自适应内部元素
+
+# 自适应内部元素
+
 ```css
 figure {
   max-width: 300px;
@@ -335,7 +354,8 @@ figure > img {
 }
 ```
 
-### iview封装菜单menu
+# iview封装菜单menu
+
 ```vue
 <template>
   <i-submenu :name="menuList.name">
@@ -384,15 +404,17 @@ export default {
     </Content>
 </Layout>
 ```
-### 图片懒加载
+
+# 图片懒加载
+
 ```javascript
-const images = document.querySelectorAll("img");
+const images = document.querySelectorAll('img');
 const callback = (entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       const image = entry.target;
-      const data_src = image.getAttribute("data-src");
-      image.setAttribute("src", data_src);
+      const data_src = image.getAttribute('data-src');
+      image.setAttribute('src', data_src);
       ResizeObserver.unobserver(image);
     }
   });
@@ -403,7 +425,8 @@ images.forEach((image) => {
 });
 ```
 
-### CSS多行文本省略
+# CSS多行文本省略
+
 ```css
 p {
   overflow: hidden;
@@ -413,40 +436,49 @@ p {
 }
 ```
 
-### Vue字符串换行
+# Vue字符串换行
+
 ```vue
 1. 添加`white-space:pre`
 2. 使用`<pre>`标签替换
 ```
 
-### 封装iView无限层级菜单
+# 封装iView无限层级菜单
+
 ```vue
 // 子组件
 <template>
   <i-submenu :name="menuList.name">
     <!-- 父级菜单 -->
-    <template slot="title">{{menuList.title}}</template>
-    <template v-for="(item,index) in menuList.children">
+    <template slot="title">{{ menuList.title }}</template>
+    <template v-for="(item, index) in menuList.children">
       <!-- 如果还要子集，继续调用 -->
-      <left-menu-nav v-if="item.children&&item.children.length" :menuList="item" :key="item.index"></left-menu-nav>
+      <left-menu-nav
+        v-if="item.children && item.children.length"
+        :menuList="item"
+        :key="item.index"
+      ></left-menu-nav>
       <!-- 子菜单 -->
-      <i-menu-item :key="item.id" :name="item.name">{{item.title}}</i-menu-item>
+      <i-menu-item :key="item.id" :name="item.name">{{
+        item.title
+      }}</i-menu-item>
     </template>
   </i-submenu>
 </template>
 
 <script>
 export default {
-  name: "leftMenuNav",
+  name: 'leftMenuNav',
   props: {
     menuList: {
       type: Object,
-      default: () => { }
-    }
-  }
-}
+      default: () => {},
+    },
+  },
+};
 </script>
 ```
+
 ```
 // 父组件
 <i-menu :active-name="selectItem" :open-names="menuOpenName" @on-select="changeSelectItem">
@@ -461,7 +493,8 @@ export default {
 </i-menu>
 ```
 
-### 上传文件
+# 上传文件
+
 ```css
 <div class="upload">
   <button id="btn" class="btn">上传文件</button>
@@ -494,46 +527,60 @@ export default {
 }
 ```
 
-### CSS控制禁止点击
+# CSS控制禁止点击
+
 `pointer-events: none; //（禁止鼠标点击事件）`
 
-### 单行居中，多行顶部对齐
+# 单行居中，多行顶部对齐
+
 ```css
 .table-item {
-    height: 100%;
-    box-sizing: border-box;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  font-size: 16upx;
+  text-align: justify;
+  font-weight: 600;
+  span {
+    width: 125upx;
+    height: 65upx;
+    overflow: auto;
     display: flex;
-    flex: 1;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    font-size: 16upx;
-    text-align: justify;
-    font-weight: 600;
-    span {
-      width: 125upx;
-      height: 65upx;
-      overflow: auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-    }
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
   }
+}
 ```
 
-### 计算传入时间与当前时间相差的秒数 ###
+# 计算传入时间与当前时间相差的秒数
 
 ```javascript
-function convertStrToTime (time) {
+function convertStrToTime(time) {
   let nowTime = new Date().getTime();
   let date = new Date();
-  let arr = time.split(":");
+  let arr = time.split(':');
   date.setHours(parseInt(arr[0]));
   date.setMinutes(parseInt(arr[1]));
   let endTime = new Date(date).getTime();
   let ret = Math.ceil((endTime - nowTime) / 1000);
   return ret;
+}
+```
+
+# 提取URL的参数
+
+```javascript
+function queryURLParams(url) {
+  let str = url.split('?')[1];
+  const urlSearchParams = new URLSearchParams(str);
+  const params = Object.fromEntries(urlSearchParams.entries());
+
+  return params;
 }
 ```
