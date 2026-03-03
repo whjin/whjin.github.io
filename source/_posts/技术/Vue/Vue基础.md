@@ -1,21 +1,36 @@
 ---
-title: Vue基础教程
+title: Vue基础
 date: 2019-02-18 23:34:23
+updated: 2026-03-03 10:24:21
 category: ['技术']
 tags: ['前端', 'Vue']
+cover: https://s1.imagehub.cc/images/2026/03/03/8e4f1f01d22dbc77372423dbbb68f8e0.md.jpeg
+main_color: '#42B883'
 ---
 
-开发工具准备：
+# 生命周期
 
-1. 根据个人喜欢选择`IDE`，我使用的是`WebStorm`，推荐使用`Atom`和`VSCode`；
-2. 安装`git base`和`node.js`；
-3. 安装`vue-cli`，命令`npm i -g @vue/cli`；
-4. 新建`vue-cli`项目：
-   1. 方法一：通过图形界面进行安装`vue ui`；
-   2. 方法二：通过命令行安装`vue create project-name`
-5. 运行项目`npm run serve`，端口`8080`。
+Vue中实例 在创建 --> 销毁
 
-<!--more-->
+1. 创建
+2. 初始化数据
+3. 编译`template`
+4. 挂载`DOM`
+5. 渲染
+6. 更新渲染
+7. 卸载
+
+- `beforeCreate`：实例创建之初 初始化插件
+- `created`组件已经创建完成 异步请求获取 `DOM` 并没有生成
+- `beforeMount`：组件挂载之前
+- `mounted`：组件挂载之后 异步请求获取 `render` `dom` 更新 页面变化
+- `beforeUpdate`：数据发生变化 更新之前
+- `updated`：数据发生变化更新后
+- `beforeDestroy`： 实例销毁前
+- `destroyed`：销毁后
+- `activated`： `keep-alive` 组件激活
+- `deactivated`：`keep-alive` 组件停用
+- `errorCaptured`： 捕获实例的错误
 
 ## 双向绑定 v-model
 
@@ -106,26 +121,6 @@ export default {
 
 这里解析一下`<div class="card_wall"></div>`包裹`<div class="card"></div>`主要是方便后期应用扩展，以及让应用整体更稳定。
 
-## 生命周期
-
-我不喜欢用官网的生命流程图来讲解这个内容，使用文字表达更加让思维清晰。
-
-1. **初始化**：设置数据监听，编译模板，挂载到`DOM`并在数据变化时更新`DOM`等；
-2. 生命周期钩子：其实就是一个过程处理，类似于服务站。
-
-**生命周期钩子简介**
-
-1. `beforeCreate`：实例初始化
-2. `created`：实例建立完成（可以取得`$data`）
-3. `beforeMount`：模板挂载之前（还没有生成`html`）
-4. `mounted`：模板挂载完成
-5. `beforeUpdate`：如果`data`发生变化，触发组件更新，重新渲染
-6. `updated`：更新完成
-7. `beforeDestroy`：实例销毁之前（实例还可以使用）
-8. `destroyed`：实例已销毁（所有绑定被解除、所有事件监听器被移除、所有子实例被移除）
-
-生命周期钩子用得最多的是`mounted`，主要用在调用属性、方法的时候，
-
 ## 指令
 
 ### v-once 指令
@@ -211,7 +206,9 @@ export default {
 }
 .zoom-enter-active,
 .zoom-leave-active {
-  transition: width 1s, height 1s;
+  transition:
+    width 1s,
+    height 1s;
 }
 ```
 

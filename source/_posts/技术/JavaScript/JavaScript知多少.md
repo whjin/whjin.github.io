@@ -1,8 +1,10 @@
 ---
 title: JavaScript知多少
 date: 2018-11-13 07:57:49
+updated: 2026-03-03 10:24:15
 category: ['技术']
-tags: ['前端', 'javascript']
+tags: ['前端', 'JavaScript']
+cover: https://s1.imagehub.cc/images/2025/04/09/b244ec49ec6e38102144b0a44e1c0b6b.md.jpg
 ---
 
 # 异步编程有哪些实现方式
