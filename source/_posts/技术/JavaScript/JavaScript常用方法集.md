@@ -9,6 +9,20 @@ cover: https://s1.imagehub.cc/images/2025/04/09/b244ec49ec6e38102144b0a44e1c0b6b
 main_color: '#FBA552'
 ---
 
+# 两数之和
+
+```javascript
+function twoSum(nums, target) {
+  for (let i = 0; i < nums.length; i++) {
+    let num = nums[i];
+    let targetIndex = nums.indexOf(target - num);
+    if (targetIndex !== -1 && targetIndex !== i) {
+      return [i, targetIndex];
+    }
+  }
+}
+```
+
 # 日期格式化
 
 ```JavaScript
@@ -87,13 +101,14 @@ let { differHour, differMinute, differSecond } = timeDiffer(beginTime, endTime);
 - 引用类型拷贝内存地址
 
 ```javascript
-Object.assign
-Array.prototype.slice()
-Array.prototype.concat()
-扩展运算符
+Object.assign;
+Array.prototype.slice();
+Array.prototype.concat();
+扩展运算符;
 ```
 
 **深拷贝**
+
 ```javascript
 _.cloneDeep() lodash 深拷贝函数
 jQuery.extend() jquery 深拷贝函数
@@ -582,4 +597,12 @@ function queryURLParams(url) {
 
   return params;
 }
+```
+
+# 使用迭代的方式实现flatten函数
+
+```javascript
+const flatten = function (arr) {
+  return [].concat(...arr.map((v) => (Array.isArray(v) ? flatten(v) : v)));
+};
 ```

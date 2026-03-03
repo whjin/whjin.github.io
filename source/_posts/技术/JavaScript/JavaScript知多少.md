@@ -1,13 +1,20 @@
 ---
 title: JavaScript知多少
 date: 2018-11-13 07:57:49
-category: ["技术"]
-tags: ["前端","javascript"]
+category: ['技术']
+tags: ['前端', 'javascript']
 ---
 
-# this与对象原型prototype #
+# 异步编程有哪些实现方式
 
-# hoisting状态提升 #
+- 回调函数：存在问题，回调地狱、代码耦合度高、不利于代码维护
+- `Promise`:链式调用
+- `generator`：同步顺序书写 函数控制权转移回来 自动执行机制 co函数
+- `async/await`：`generator` `promise` 自动执行的语法糖 内部自带执行器 `await` 等待 `Promise` 变成 `resolve` 异步逻辑转化为同步顺序 自动执行
+
+# this与对象原型prototype
+
+# hoisting状态提升
 
 在程序执行前，编译器先由上到下逐行将代码转为机器可读的命令，然后再执行编译后的指令。
 
@@ -17,19 +24,19 @@ tags: ["前端","javascript"]
 
 ```javascript
 function isPrimeNumber(m) {
-    if (m <= 1 || m % 1 !== 0) {
-        return false;
+  if (m <= 1 || m % 1 !== 0) {
+    return false;
+  }
+  var n = 2;
+  while (n < m) {
+    if (m % n === 0) {
+      return false;
+    } else {
+      n++;
+      continue;
     }
-    var n = 2;
-    while (n < m) {
-        if (m % n === 0) {
-            return false;
-        } else {
-            n++;
-            continue;
-        }
-    }
-    return true;
+  }
+  return true;
 }
 ```
 
@@ -53,7 +60,7 @@ function isPrimeNumber(m) {
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-# 事件处理 #
+# 事件处理
 
 ```html
 <span onmouseover="over(this)" onmouseout="out(this)">Test</span>
@@ -62,66 +69,59 @@ function isPrimeNumber(m) {
 
 ```javascript
 function over(element) {
-  element.style.color = 'red'
+  element.style.color = 'red';
 }
 
 function out(element) {
-  element.style.color = 'blue'
+  element.style.color = 'blue';
 }
 ```
 
-# jsonp实现代码 #
+# jsonp实现代码
 
 ```javascript
-function JSONP({
-    url,
-    params,
-    callbackKey,
-    callback
-}) {
-    // 在参数里制定callback的名字
-    params = params || {}
-    params[callbackKey] = 'jsonpCallback'
-    // 预留callback
-    window.jsonpCallback = callback
-    // 拼接参数字符串
-    const paramKeys = Object.keys(params)
-    const paramString = paramKeys
-        .map(key => `${key}=${params[key]}`)
-        .join('&')
-    // 插入DOM元素
-    const script = document.createElement('script');
-    script.setAttribute('src', `${url}?${paramString}`)
-    document.body.appendChild(script)
+function JSONP({ url, params, callbackKey, callback }) {
+  // 在参数里制定callback的名字
+  params = params || {};
+  params[callbackKey] = 'jsonpCallback';
+  // 预留callback
+  window.jsonpCallback = callback;
+  // 拼接参数字符串
+  const paramKeys = Object.keys(params);
+  const paramString = paramKeys.map((key) => `${key}=${params[key]}`).join('&');
+  // 插入DOM元素
+  const script = document.createElement('script');
+  script.setAttribute('src', `${url}?${paramString}`);
+  document.body.appendChild(script);
 }
 
 JSON({
-    url: "http://s.weibo.com/ajax/jsonp/suggestion",
-    params: {
-        key: 'test'
-    },
-    callbackKey: '_cb',
-    callback(result) {
-        console.log(result.data)
-    }
-})
+  url: 'http://s.weibo.com/ajax/jsonp/suggestion',
+  params: {
+    key: 'test',
+  },
+  callbackKey: '_cb',
+  callback(result) {
+    console.log(result.data);
+  },
+});
 ```
 
-# 实现防抖函数 #
+# 实现防抖函数
 
 防抖函数原理：在事件被触发`n`秒后再执行回调，如果在这`n`秒内又被触发，则重新计时。
 
 ```javascript
 // 防抖函数
 const debounce = (fn, delay) => {
-    let timer = null;
-    return (...args) => {
-        clearTimeout(timer)
-        timer = setTimeout(() => {
-            fn.args(this, args)
-        }, delay)
-    }
-}
+  let timer = null;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      fn.args(this, args);
+    }, delay);
+  };
+};
 ```
 
 适用场景：
@@ -129,22 +129,22 @@ const debounce = (fn, delay) => {
 - 按钮提交：防止多次提交按钮，只执行最后提交的一次
 - 服务端验证：表单验证需要服务端配合，只执行一段连续的输入事件的最后一次，还有搜索联想词的功能类似
 
-# 实现节流函数 #
+# 实现节流函数
 
-节流函数原理：规定在一个单位时间内，只能触发一次函数。如果这个单位时间内触发多次函数，只有一次生效。  
+节流函数原理：规定在一个单位时间内，只能触发一次函数。如果这个单位时间内触发多次函数，只有一次生效。
 
 ```javascript
 // 节流函数
 const throttle = (fn, delay = 500) => {
-    let flag = true;
-    return (...args) => {
-        if (!flag) return;
-        setTimeout(() => {
-            fn.apply(this, args)
-            flag = true
-        }, delay)
-    }
-}
+  let flag = true;
+  return (...args) => {
+    if (!flag) return;
+    setTimeout(() => {
+      fn.apply(this, args);
+      flag = true;
+    }, delay);
+  };
+};
 ```
 
 适用场景：
@@ -162,7 +162,7 @@ const playAudioAsync = async (status, url = '') => {
     if (!source && status === 'start') {
       const audioContext = new AudioContext();
       const arrayBuffer = await fetch(url).then((response) =>
-        response.arrayBuffer()
+        response.arrayBuffer(),
       );
       const audioBufferSource = audioContext.decodeAudioData(
         arrayBuffer,
@@ -171,7 +171,7 @@ const playAudioAsync = async (status, url = '') => {
           source.buffer = buffer;
           source.connect(audioContext.destination);
           source.start(0);
-        }
+        },
       );
     } else if (status === 'stop') {
       source.stop(0);
