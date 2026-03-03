@@ -1,19 +1,39 @@
 ---
 title: Vite开发配置
 date: 2024-06-10 11:21:32
-updated: 2024-6-10 11:30:58
-category: ["技术"]
-tags: ["前端","Vite"]
+updated: 2026-03-03 21:20:30
+category: ['技术']
+tags: ['前端', 'Vite']
 cover: https://www.vitejs.net/logo.svg
-main_color: "#FFC820"
+main_color: '#FFC820'
 keywords:
 description:
-top_img: 
+top_img:
 comments:
-aside: 
+aside:
 ---
 
-## package.json ##
+# 解决Vue部署 404 问题
+
+```javascript
+server {
+  listent 80
+  server_name www.example.com
+
+  location / {
+    index /dist/index.html
+    try_files $uri /index.html
+  }
+}
+
+const router = new VueRouter({
+  routers:[
+    { path: '*', component: NotFound }
+  ]
+})
+```
+
+## package.json
 
 ```json
 {
@@ -43,7 +63,7 @@ aside:
 }
 ```
 
-## vite.config.js ##
+## vite.config.js
 
 ```javascript
 import { fileURLToPath, URL } from 'node:url';
@@ -56,7 +76,7 @@ import vue from '@vitejs/plugin-vue';
 import basicSSL from '@vitejs/plugin-basic-ssl';
 
 export default defineConfig({
-  base: "./",
+  base: './',
   plugins: [
     vue(),
     AutoImport({
@@ -65,21 +85,21 @@ export default defineConfig({
     Components({
       resolvers: [ElementPlusResolver()],
     }),
-    basicSSL()
+    basicSSL(),
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
   },
   server: {
     host: '0.0.0.0',
-    https: true
-  }
+    https: true,
+  },
 });
 ```
 
-## nginx config ##
+## nginx config
 
 ```nginx
 server {
@@ -101,9 +121,9 @@ server {
     #location / {
     #    root C:/SmartTerminal/terminal/webrtc-dev/dist;
     #    try_files $uri $uri/ /index.html;
-    #} 
+    #}
     location / {
-        proxy_pass https://192.168.66.199:5173; 
+        proxy_pass https://192.168.66.199:5173;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
@@ -111,7 +131,7 @@ server {
         proxy_cache_bypass $http_upgrade;
     }
 
-    location /terminal {        
+    location /terminal {
         proxy_redirect off;
         proxy_pass http://localhost:8080;      # 转发
         proxy_set_header Host $host;
@@ -124,18 +144,18 @@ server {
 }
 ```
 
-## public/config.js ##
+## public/config.js
 
 ```javascript
 window.g = {
-  websocketUrl: "wss://192.168.66.199:1443/terminal?code=",
+  websocketUrl: 'wss://192.168.66.199:1443/terminal?code=',
 };
 ```
 
-## src/assets/js/comlib.js ##
+## src/assets/js/comlib.js
 
 ```javascript
 window.g = {
-  websocketUrl: "wss://192.168.66.199:1443/terminal?code=",
+  websocketUrl: 'wss://192.168.66.199:1443/terminal?code=',
 };
 ```
