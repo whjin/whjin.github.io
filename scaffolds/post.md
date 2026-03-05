@@ -1,14 +1,15 @@
 ---
-title: {{ title }}
-date: {{ date }}
-updated: 
-category: 
-tags: 
-cover: 
-main_color: 
+title: { { title } }
+date: { { date } }
+updated:
+category:
+tags:
+cover:
+main_color:
 keywords:
 description:
-top_img: 
+top_img:
 comments:
 aside:
+sticky:
 ---
