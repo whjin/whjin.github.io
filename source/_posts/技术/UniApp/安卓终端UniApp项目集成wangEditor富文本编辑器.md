@@ -3,7 +3,7 @@ title: 安卓UniApp集成wangEditor富文本编辑器
 date: 2025-04-13 23:43:31
 updated: 2025-4-13 23:44:54
 category: ['技术']
-tags: ['前端','Android','uniapp','富文本','wangEditor']
+tags: ['前端','Android','UniApp','富文本','wangEditor']
 cover: https://s1.imagehub.cc/images/2025/04/14/355778dd2c7ae824ab980b5bf1dddce8.png
 main_color: '#3C7BEE'
 keywords:
