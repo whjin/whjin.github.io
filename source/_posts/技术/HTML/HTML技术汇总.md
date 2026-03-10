@@ -3,7 +3,7 @@ title: HTML技术汇总
 date: 2024-10-26 20:13:43
 updated: 2026-03-10 18:19:22
 category: ['技术']
-tags: ['前端', 'HTML', '字符', '浏览器']
+tags: ['前端', 'HTML', '字符', '浏览器', '音视频']
 cover: https://www.2008php.com/2012_Website_appreciate/2012-09-08/20120908125451BSxvnBSxvn.jpg
 main_color: '#FFCF99'
 keywords:
@@ -12,6 +12,14 @@ top_img:
 comments:
 aside:
 ---
+
+# 音视频
+
+音视频元素的事件可分为三大核心类别：
+
+- 加载类：`loadstart`、`progress`、`abort`、`error`、`loadeddata`、`loadedmetadata`
+- 播放控制类：`play`、`pause`、`playing`、`ended`、`ratechange`、`volumechange`
+- 进度类：`timeupdate`、`seeking`、`seeked`、`waiting`、`stalled`
 
 # 浏览器渲染流程
 
