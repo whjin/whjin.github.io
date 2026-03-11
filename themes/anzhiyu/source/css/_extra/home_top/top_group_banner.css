@@ -13,6 +13,7 @@
   position: relative;
   align-content: space-between;
 }
+
 .topGroup .todayCard {
   position: absolute;
   width: calc(600px + 1rem);
@@ -50,6 +51,7 @@
   font-weight: bold;
   line-height: 36px;
 }
+
 .topGroup .todayCard .todayCard-cover {
   position: absolute;
   min-width: 100%;
@@ -89,16 +91,19 @@
   width: 125px;
   justify-content: center;
 }
+
 .topGroup .banner-button-group .banner-button .banner-button-text {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .topGroup .banner-button i,
 .topGroup .banner-button svg {
   margin-right: 8px;
   font-size: 22px;
 }
+
 .topGroup .todayCard::after {
   position: absolute;
   content: "";
@@ -113,6 +118,7 @@
   opacity: 0;
   pointer-events: none;
 }
+
 .topGroup .todayCard img {
   object-fit: cover;
   width: 100%;
@@ -120,6 +126,7 @@
   background: var(--anzhiyu-secondbg);
   border-radius: 12px 12px 0 0;
 }
+
 .topGroup .recent-post-item:nth-child(4),
 .topGroup .recent-post-item:nth-child(5),
 .topGroup .recent-post-item:nth-child(6) {
@@ -147,17 +154,21 @@
   margin-bottom: 0.5rem;
   cursor: pointer;
 }
+
 .topGroup .recent-post-item:hover .recent-post-info .article-title {
   color: var(--anzhiyu-main);
 }
+
 .topGroup .recent-post-item .post_cover {
   width: 100%;
 }
+
 .topGroup .recent-post-item .post_cover a {
   height: 100px;
   overflow: hidden;
   display: flex;
 }
+
 .topGroup span.recent-post-top-text {
   position: absolute;
   top: 0;
@@ -179,10 +190,12 @@
   background: var(--anzhiyu-secondbg);
   border-radius: 12px 12px 0 0;
 }
+
 .topGroup .recent-post-item .recent-post-info {
   padding: 0.3rem 0.5rem 0.3rem 0.5rem;
   transition: 0.3s;
 }
+
 .topGroup .recent-post-item .recent-post-info .article-title {
   -webkit-line-clamp: 2;
   overflow: hidden;
@@ -219,10 +232,12 @@
   .categoryGroup .categoryItem:nth-child(3) {
     display: none;
   }
+
   .categoryGroup {
     flex-direction: column;
     height: 95%;
   }
+
   .topGroup {
     display: flex;
     flex-wrap: nowrap;
@@ -248,9 +263,11 @@
     min-width: 200px;
     box-shadow: none !important;
   }
+
   .categoryGroup {
     display: flex !important;
   }
+
   #bbTimeList {
     margin: 0 1.5rem;
     max-width: 100%;

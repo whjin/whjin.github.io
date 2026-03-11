@@ -1,7 +1,7 @@
 ---
 title: HTML技术汇总
 date: 2024-10-26 20:13:43
-updated: 2026-03-10 18:19:22
+updated: 2026-03-11 14:55:45
 category: ['技术']
 tags: ['前端', 'HTML', '字符', '浏览器', '音视频']
 cover: https://www.2008php.com/2012_Website_appreciate/2012-09-08/20120908125451BSxvnBSxvn.jpg

@@ -151,7 +151,7 @@ favicon: /favicon.ico
 # Avatar (头像)
 avatar:
   img: https://avatar-static.segmentfault.com/104/794/1047942597-65425fa2e1be7_huge128
-  effect: true
+  effect: false
 
 # Disable all banner image
 disable_top_img: false
@@ -1074,10 +1074,10 @@ home_top:
     swiper_css: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css #swiper css依赖
     swiper_js: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js #swiper js依赖
   banner:
-    tips: 新品主题
-    title: Theme-AnZhiYu
-    image: https://bu.dusays.com/2023/05/13/645fa3cf90d70.webp
-    link: https://docs.anheyu.com/
+    tips: 最新文章
+    title: 我的简历
+    image: /img/pic/view.jpeg
+    link: https://wuhuajin.com/resume/
 
 # 朋友圈配置
 friends_vue:
