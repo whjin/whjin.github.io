@@ -1060,7 +1060,7 @@ home_top:
       icon: anzhiyu-icon-fire
     - name: 诗词
       path: /categories/诗词/
-      shadow: var(--anzhiyu-shadow-red)
+      shadow: var(--anzhiyu-shadow-purple)
       class: red
       icon: anzhiyu-icon-fire
     - name: 商业
