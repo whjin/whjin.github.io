@@ -12,9 +12,11 @@
   transition: 0.3s;
   box-shadow: var(--anzhiyu-shadow-border);
 }
+
 #topPostGroup .post_cover {
   width: 100%;
 }
+
 #topPostGroup .post_cover img {
   object-fit: cover;
   width: 100%;
@@ -44,6 +46,7 @@ span.top-group-text {
   transition: 0.3s;
   cursor: pointer;
 }
+
 .top-group-list-item:hover span.top-group-text {
   left: 0;
 }
@@ -81,6 +84,7 @@ span.top-group-text {
 .top-group-list-none {
   width: calc(100% / 4 - 5px);
 }
+
 #topPostGroup .topPostGroupTime {
   font-size: 12px;
 }
@@ -90,12 +94,14 @@ span.top-group-text {
     width: calc(100% / 4 - 20px) !important;
   }
 }
+
 @media screen and (max-width: 768px) {
   #topPostGroup .top-group-list-item {
     width: calc(100% / 2 - 5px) !important;
     margin: 2px;
   }
 }
+
 @media screen and (max-width: 768px) {
   #topGroup {
     display: none;

@@ -1052,22 +1052,22 @@ home_top:
       path: /categories/技术/
       shadow: var(--anzhiyu-shadow-blue)
       class: blue
-      icon: anzhiyu-icon-dove
-    - name: 文学
-      path: /categories/文学/
-      shadow: var(--anzhiyu-shadow-red)
-      class: red
-      icon: anzhiyu-icon-fire
+      icon: anzhiyu-icon-github
+    - name: 生活
+      path: /categories/生活/
+      shadow: var(--anzhiyu-shadow-orangered)
+      class: orangered
+      icon: anzhiyu-icon-tiktok
     - name: 诗词
       path: /categories/诗词/
-      shadow: var(--anzhiyu-shadow-purple)
-      class: red
-      icon: anzhiyu-icon-fire
-    - name: 商业
-      path: /categories/商业/
       shadow: var(--anzhiyu-shadow-green)
       class: green
       icon: anzhiyu-icon-book
+    - name: 投资
+      path: /categories/投资/
+      shadow: var(--anzhiyu-shadow-firebrick)
+      class: firebrick
+      icon: anzhiyu-icon-fire
   default_descr: 再怎么看我也不知道怎么描述它的啦！
   swiper:
     enable: false
