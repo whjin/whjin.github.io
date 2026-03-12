@@ -1,19 +1,24 @@
 ---
 title: 使用React Native构建App
 date: 2019-04-11 21:02:03
-category: ["技术"]
-tags: ["前端","RN"]
+updated: 2026-03-12 10:11:07
+category: ['技术']
+tags: ['前端', 'React Native', 'App']
+cover: https://s1.imagehub.cc/images/2026/03/12/1e8140f9aefd953a873f92df833d2031.md.png
+main_color: '#61DAFB'
+keywords:
+description:
+top_img:
+comments:
+aside:
+sticky:
 ---
 
-> 本文重点记录使用`React Native`构建双平台`App`的过程，同时进一步掌握构建过程中运用的技术。
-
-<!--more-->
-
-# 搭建开发环境 #
+# 搭建开发环境
 
 **安装`react-native-cli`**：`npm i -g react-native-cli`
 
-## Android SDK ##
+## Android SDK
 
 安装Android SDK并启动进行配置：
 
@@ -31,7 +36,7 @@ export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 ```
 
-## Android 虚拟机 ##
+## Android 虚拟机
 
 设定[Genymotion](https://www.genymotion.com/download/)的Android SDK 位置（Android SDK 的路径可以在 SDK Manager 上找到）。
 
@@ -39,7 +44,7 @@ export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 
 ![](https://ithelp.ithome.com.tw/upload/images/20161218/20103341ErBtdBNvuw.jpg)
 
-## 模拟器 ##
+## 模拟器
 
 有多款模拟器可供选择，Android Studio自带，Genymotion和夜神模拟器，推荐选择夜神模拟器。
 
@@ -56,7 +61,7 @@ export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 3. 把夜神模拟器下的`nox_adb.exe`拷贝到Android SDK目录下，并更名为`adb.exe`；
 4. 运行`adb connect 127.0.0.1:62001`。
 
-# 新建React Native项目 #
+## 新建React Native项目
 
 1. 运行`react-native init project-name`，进入`project-name`文件夹安装依赖`npm i`并运行`react-native run-android`或`react-native run-ios`构建`App`。
 2. 以Android App为例，在Android Studio打开`Android`文件夹（**注意：此处是`Android`文件夹，不是`project-name`项目文件夹**）。
@@ -66,21 +71,13 @@ export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 ![](https://github.com/whjin/images-save/blob/master/react-native/gradle1.jpg?raw=true)
 ![](https://github.com/whjin/images-save/blob/master/react-native/gradle2.jpg?raw=true)
 
-# 运行项目 #
+## 运行项目
 
-1. **这一步很关键**，配置java的环境变量，首先是**JAVA_HOME**和**ANDROID_HOME**：
-    1. **JAVA_HOME**，变量值为`D:\Android\sdk`；
-    2. **ANDROID_HOME**，变量值为`D:\Android\sdk`；
-    3. 然后在`Path`项中添加`jdk`和`jre`下的`bin`目录；
-    4. 以上是用户变量配置，下面进行系统变量配置：
-        - 在`Path`项中添加下图中变量：
-![](https://github.com/whjin/images-save/blob/master/react-native/set-system-val.jpg?raw=true)
+1. **这一步很关键**，配置java的环境变量，首先是**JAVA_HOME**和**ANDROID_HOME**：1. **JAVA_HOME**，变量值为`D:\Android\sdk`；2. **ANDROID_HOME**，变量值为`D:\Android\sdk`；3. 然后在`Path`项中添加`jdk`和`jre`下的`bin`目录；4. 以上是用户变量配置，下面进行系统变量配置：- 在`Path`项中添加下图中变量：
+   ![](https://github.com/whjin/images-save/blob/master/react-native/set-system-val.jpg?raw=true)
 
 2. 同时打开Android Studio、Nox并在AS中打开项目中的`Android`文件夹。
 3. 运行`nox_adb.exe connect 127.0.0.1:62001`连接AS和Nox，然后再运行`react-native run-android`，此时就会构建Android App，
-![](https://github.com/whjin/images-save/blob/master/react-native/node-run-android.jpg?raw=true)
+   ![](https://github.com/whjin/images-save/blob/master/react-native/node-run-android.jpg?raw=true)
 
 > 关闭端口冲突：`lsof -n -i4TCP:8081`，`kill -9 <PID>`
-
-
-

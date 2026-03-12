@@ -1,7 +1,7 @@
 ---
 title: Vue3最佳实践
 date: 2025-03-10 23:11:02
-updated: 2026-03-11 23:48:45
+updated: 2026-03-12 19:12:08
 category: ['技术']
 tags: ['前端', 'Vue3']
 cover: https://s1.imagehub.cc/images/2025/04/09/adec073e7f03b1bd918cde85fc46ad5e.md.webp
@@ -12,6 +12,16 @@ top_img:
 comments: true
 aside:
 ---
+
+# 批量清理副作用
+
+`effectScopt`是Vue3官方推出的API，核心能力就是 **批量捕获并管理作用域内创建的所有响应式副作用**（包括 `watch`、`watchEffect`、`computed`等），可以通过一次 `stop` 调用统一停止所有副作用，专门解决大型应用中多副作用的繁琐管理、遗漏清理导致的内存泄漏问题。
+
+# 异步组件
+
+Vue3提供的 `Suspense` 内置组件，原生支持处理异步组件的加载状态，可通过 `default` 插槽渲染异步组件，`fallback`插槽渲染加载中的兜底内容，是Vue官方推荐的异步加载状态处理方案。
+
+异步组件的核心设计目标就是 **代码分割（`Code Splitting`）**，使用动态 `import()`引入的异步组件，在项目构建时会被打包工具（`webpack/vite`）拆分为独立的 `chunk` 文件，不会被打包到主 `chunk` 中，以此实现按需加载、减小首屏包体积的优化效果。
 
 # 路由
 
