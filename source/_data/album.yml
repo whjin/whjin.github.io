@@ -3,7 +3,7 @@
   type: 2
   description: 因为到不了世界各地，所以请网友们发来了各地的夕阳与风景🌇。
   cover: https://bu.dusays.com/2023/04/09/64329399d1175.jpg
-  top_background: /img/pic/view.jpeg
+  top_background: https://s1.imagehub.cc/images/2026/03/18/9224323daa7b5ac25a859e03a6c15408.md.jpeg
   rowHeight: 220
   limit: 10
   lazyload: true
@@ -32,7 +32,7 @@
   description: 这里存放的是有关我自己的一些沙雕生活与有趣的事情。
   top_link: /album
   top_btn_text: 返回
-  top_background: /img/pic/view.jpeg
+  top_background: https://s1.imagehub.cc/images/2026/03/18/9224323daa7b5ac25a859e03a6c15408.md.jpeg
   cover: https://bu.dusays.com/2023/04/09/64329399cea5a.webp
   album_list:
     - date: 2022-10-24

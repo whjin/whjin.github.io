@@ -53,8 +53,8 @@
   map:
     title: 我的住址：
     StrengthenTitle: 中国，广州市，荔湾区
-    background: /img/pic/site.webp
-    backgroundDark: /img/pic/view.jpeg
+    background: https://s1.imagehub.cc/images/2026/03/18/753eb15b210a7a586615bd0f4680f62f.md.webp
+    backgroundDark: https://s1.imagehub.cc/images/2026/03/18/9224323daa7b5ac25a859e03a6c15408.md.jpeg
   selfInfo:
     selfInfoTips1: 毕业于
     selfInfoContentYear: 2013
@@ -67,7 +67,7 @@
     personality_type: 13927419410
     author_email: 我的邮箱：
     emial_address: wuhuajin09@163.com
-    photo_url: /img/pic/view.jpeg
+    photo_url: https://s1.imagehub.cc/images/2026/03/18/9224323daa7b5ac25a859e03a6c15408.md.jpeg
     personality_img: https://npm.elemecdn.com/anzhiyu-blog@2.0.8/img/svg/ESFJ-A.svg
     name_url: https://www.16personalities.com/ch/esfj-%E4%BA%BA%E6%A0%BC
   maxim:
@@ -79,17 +79,17 @@
     buff_top: 脑回路新奇的 酸菜鱼
     buff_bottom: 二次元指数 MAX
   game:
-    game_tips: 爱好游戏
-    game_title: 原神
-    game_uid: 'UID: 125766904'
-    game_bg: https://bu.dusays.com/2023/04/22/64433bf26e25d.webp
+    game_tips: 爱好技术
+    game_title: 前端
+    game_uid: 产品开发
+    game_bg: https://s1.imagehub.cc/images/2025/05/10/40acb611009b8ef86dea6dfea881475b.md.webp
   comic:
-    comic_tips: 爱好番剧
-    comic_title: 追番
+    comic_tips: 爱好写作
+    comic_title: 诗词
     comic_list:
-      - name: 约定的梦幻岛
-        href: https://www.bilibili.com/bangumi/media/md5267750/?spm_id_from=666.25.b_6d656469615f6d6f64756c65.1
-        cover: https://bu.dusays.com/2023/05/27/647166c44b414.webp
+      - name: 古典文学
+        href: https://wuhuajin.com/
+        cover: https://s1.imagehub.cc/images/2026/02/11/19d8f6912c4622629b8a365257a430b1.md.png
   like:
     like_tips: 关注偏好
     like_title: 数码科技

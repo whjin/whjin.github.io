@@ -1,6 +1,6 @@
 - class_name: 框架
   flink_style: flexcard
-  hundredSuffix: ""
+  hundredSuffix: ''
   link_list:
     - name: Hexo
       link: https://wuhuajin.com/
@@ -14,11 +14,11 @@
 
 - class_name: 推荐博客
   flink_style: telescopic
-  hundredSuffix: ""
+  hundredSuffix: ''
   link_list:
     - name: 吴华锦
       link: https://wuhuajin.com/
-      avatar: /img/pic/circle.jpg
+      avatar: /img/pic/wechat.png
       descr: 生活明朗，万物可爱
       siteshot: https://npm.elemecdn.com/anzhiyu-theme-static@1.1.6/img/blog.anheyu.com.jpg
       color: vip
@@ -27,10 +27,10 @@
 - class_name: 小伙伴
   class_desc: 那些人，那些事
   flink_style: anzhiyu
-  hundredSuffix: ""
+  hundredSuffix: ''
   link_list:
     - name: 吴华锦
       link: https://wuhuajin.com/
-      avatar: /img/pic/circle.jpg
+      avatar: /img/pic/wechat.png
       descr: 生活明朗，万物可爱
       recommend: true

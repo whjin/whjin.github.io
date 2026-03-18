@@ -5,7 +5,7 @@
   buttonLink: /about/
   limit: 30
   home_essay: true
-  top_background: /img/pic/top.jpg
+  top_background: https://s1.imagehub.cc/images/2026/03/18/3146463db5cf001020bfefa7d0e1585d.md.jpg
   essay_list:
     - content: 天高云淡，望断南飞雁。不到长城非好汉，屈指行程二万。六盘山上高峰，红旗漫卷西风。今日长缨在手，何日缚住苍龙。
       date: 2026/03/17 16:19:05

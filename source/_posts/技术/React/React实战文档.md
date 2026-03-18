@@ -1,7 +1,7 @@
 ---
 title: React实战文档
 date: 2026-03-12 10:08:37
-updated: 2026-03-16 15:26:20
+updated: 2026-03-18 10:32:41
 category: ['技术']
 tags: ['前端', 'React', '实战']
 cover: https://s1.imagehub.cc/images/2026/03/12/aa2d27c9b2e55158adcf4d4d7909f94b.md.png
@@ -10,9 +10,15 @@ keywords:
 description:
 top_img:
 comments:
-aside:
+aside: false
 sticky:
 ---
+
+# React Fiber
+
+React Fiber是React 16引入的新协调引擎。它将渲染过程拆分成多个小的工作单元（`Fiber`），让React可以暂停、恢复、并根据优先级执行更新，从而实现流程的、非阻塞的UI。它也为**并发渲染**（Concurrent Rendering）和`Suspense`等特性打下基础。
+
+每个Fiber节点都代表React树中的一个元素，并保存对父节点、子节点和兄弟节点的引用。React利用这种链式结构高效地进行Diff和UI更新。
 
 # useCallback
 

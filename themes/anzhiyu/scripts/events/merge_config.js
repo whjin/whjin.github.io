@@ -16,7 +16,7 @@ hexo.extend.filter.register(
       social: null,
       favicon: '/favicon.ico',
       avatar: {
-        img: '/img/pic/top.jpg',
+        img: 'https://s1.imagehub.cc/images/2026/03/18/3146463db5cf001020bfefa7d0e1585d.md.jpg',
         effect: false,
       },
       disable_top_img: false,
@@ -36,7 +36,7 @@ hexo.extend.filter.register(
       },
       error_img: {
         flink: '/img/gif/friend_404.gif',
-        post_page: '/img/pic/top.jpg',
+        post_page: 'https://s1.imagehub.cc/images/2026/03/18/3146463db5cf001020bfefa7d0e1585d.md.jpg',
       },
       error_404: {
         enable: true,
