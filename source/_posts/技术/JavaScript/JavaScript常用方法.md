@@ -1,10 +1,9 @@
 ---
-title: JavaScript常用方法集
+title: JavaScript常用方法
 date: 2020-08-23 21:01:36
 uopdated: 2026-03-02 18:16:14
 category: ['技术']
 tags: ['前端', 'JavaScript']
-comments: true
 cover: https://s1.imagehub.cc/images/2025/04/09/b244ec49ec6e38102144b0a44e1c0b6b.md.jpg
 main_color: '#FBA552'
 ---
@@ -467,15 +466,9 @@ p {
     <template slot="title">{{ menuList.title }}</template>
     <template v-for="(item, index) in menuList.children">
       <!-- 如果还要子集，继续调用 -->
-      <left-menu-nav
-        v-if="item.children && item.children.length"
-        :menuList="item"
-        :key="item.index"
-      ></left-menu-nav>
+      <left-menu-nav v-if="item.children && item.children.length" :menuList="item" :key="item.index"></left-menu-nav>
       <!-- 子菜单 -->
-      <i-menu-item :key="item.id" :name="item.name">{{
-        item.title
-      }}</i-menu-item>
+      <i-menu-item :key="item.id" :name="item.name">{{ item.title }}</i-menu-item>
     </template>
   </i-submenu>
 </template>

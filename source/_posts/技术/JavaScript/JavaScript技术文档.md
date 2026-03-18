@@ -2,15 +2,16 @@
 title: JavaScript技术文档
 date: 2018-11-13 07:57:49
 updated: 2026-03-18 15:25:51
-category: ['技术']
-tags: ['前端', 'JavaScript']
+category: ["技术"]
+tags: ["前端", "JavaScript"]
 cover: https://s1.imagehub.cc/images/2025/04/09/b244ec49ec6e38102144b0a44e1c0b6b.md.jpg
 ---
 
 # 对象方法
 
-|           方法           | 功能                                                                                                                                                 |
+|           方法           | 说明                                                                                                                                                 |
 | :----------------------: | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+|   **Object.hasOwb()**    | <ul style="display: flex; align-items:center;"><li style="margin-right: 16px;">安全地检查属性</li><li>避免原型链带来的问题</li></ul>                 |
 |   **Object.hasOwb()**    | <ul style="display: flex; align-items:center;"><li style="margin-right: 16px;">安全地检查属性</li><li>避免原型链带来的问题</li></ul>                 |
 |   **Object.groupBy()**   | <ul style="display: flex; align-items:center;"><li style="margin-right: 16px;">将数组数据分组为对象</li><li>比 `reduce()` 更简洁的替代方案</li></ul> |
 |   **Object.create()**    | <ul style="display: flex; align-items:center;"><li style="margin-right: 16px;">基于原型的继承</li><li>在不使用构造函数的情况下创建对象</li></ul>     |
