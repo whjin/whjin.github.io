@@ -108,7 +108,7 @@ export default longpress;
 
 ### 图片懒加载 `v-lazyLoad`
 
-```jaavascript
+```javascript
 const lazyLoad = {
   install(Vue, options) {
     const defaultSrc = options.default;
@@ -183,7 +183,6 @@ const lazyLoad = {
   },
 };
 export default lazyLoad;
-
 ```
 
 ### 权限校验指令 `v-premission`
