@@ -6,7 +6,7 @@
     "clean": "hexo clean && hexo bangumi -d && hexo cinema -d && hexo bangumi -u && hexo cinema -u",
     "build": "npm run clean && hexo generate",
     "deploy": "hexo d",
-    "dev": "hexo s --debug --open",
+    "dev": "hexo s --debug",
     "update": "npm update -D hexo-theme-anzhiyu"
   },
   "hexo": {
