@@ -14,7 +14,7 @@ hexo.extend.filter.register(
       highlight_height_limit: false,
       code_word_wrap: false,
       social: null,
-      favicon: '/logo.png',
+      favicon: '/favicon.ico',
       avatar: {
         img: 'https://s1.imagehub.cc/images/2026/03/18/3146463db5cf001020bfefa7d0e1585d.md.jpg',
         effect: false,
@@ -36,7 +36,8 @@ hexo.extend.filter.register(
       },
       error_img: {
         flink: '/img/gif/friend_404.gif',
-        post_page: 'https://s1.imagehub.cc/images/2026/03/18/3146463db5cf001020bfefa7d0e1585d.md.jpg',
+        post_page:
+          'https://s1.imagehub.cc/images/2026/03/18/3146463db5cf001020bfefa7d0e1585d.md.jpg',
       },
       error_404: {
         enable: true,
@@ -120,7 +121,8 @@ hexo.extend.filter.register(
         limit_day: 365,
         position: 'top',
         message_prev: 'It has been',
-        message_next: 'days since the last update, the content of the article may be outdated.',
+        message_next:
+          'days since the last update, the content of the article may be outdated.',
       },
       footer: {
         owner: {
@@ -131,9 +133,11 @@ hexo.extend.filter.register(
         runtime: {
           enable: false,
           launch_time: '04/01/2021 00:00:00',
-          work_img: 'https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-上班摸鱼中.svg',
+          work_img:
+            'https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-上班摸鱼中.svg',
           work_description: '距离月入25k也就还差一个大佬带我~',
-          offduty_img: 'https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-下班啦.svg',
+          offduty_img:
+            'https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-下班啦.svg',
           offduty_description: '下班了就该开开心心的玩耍，嘿嘿~',
         },
         bdageitem: {
@@ -141,12 +145,14 @@ hexo.extend.filter.register(
           list: [
             {
               link: 'https://wuhuajin.com/',
-              shields: 'https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg',
+              shields:
+                'https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg',
               message: '博客框架为Hexo_v5.4.0',
             },
             {
               link: 'https://wuhuajin.com/',
-              shields: 'https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg',
+              shields:
+                'https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg',
               message: '本站使用AnZhiYu主题',
             },
           ],
@@ -680,5 +686,5 @@ hexo.extend.filter.register(
 
     hexo.theme.config = Object.assign(defaultConfig, hexo.theme.config);
   },
-  1
+  1,
 );

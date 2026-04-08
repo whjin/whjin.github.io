@@ -31,10 +31,10 @@ nav:
       item:
         - name: 博客
           link: https://whjin.github.io/
-          icon: /img/logo.png
+          icon: /img/favicon.ico
         - name: 个人主页
           link: https://whjin.github.io/
-          icon: /img/logo.png
+          icon: /img/favicon.ico
         - name: GITHUB
           link: https://github.com/whjin/
           icon: /img/icons/github.png
@@ -146,7 +146,7 @@ katex:
 # --------------------------------------
 
 # Favicon（网站图标）
-favicon: /logo.png
+favicon: /favicon.ico
 
 # Avatar (头像)
 avatar:
