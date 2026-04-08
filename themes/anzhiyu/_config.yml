@@ -1074,10 +1074,10 @@ home_top:
     swiper_css: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css #swiper css依赖
     swiper_js: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js #swiper js依赖
   banner:
-    tips: 最新文章
-    title: 我的简历
-    image: https://s1.imagehub.cc/images/2026/03/18/9224323daa7b5ac25a859e03a6c15408.md.jpeg
-    link: https://wuhuajin.com/resume/
+    tips: 技术站点
+    title: 开发文档
+    image: https://s1.imagehub.cc/images/2026/04/08/2294c235ac5662625fcb6a66e72feea7.md.jpg
+    link: https://wuhuajin.com/docs
 
 # 朋友圈配置
 friends_vue:
