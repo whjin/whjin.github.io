@@ -14,7 +14,7 @@ hexo.extend.filter.register(
       highlight_height_limit: false,
       code_word_wrap: false,
       social: null,
-      favicon: '/favicon.ico',
+      favicon: '/img/favicon.ico',
       avatar: {
         img: 'https://s1.imagehub.cc/images/2026/03/18/3146463db5cf001020bfefa7d0e1585d.md.jpg',
         effect: false,

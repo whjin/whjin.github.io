@@ -146,11 +146,11 @@ katex:
 # --------------------------------------
 
 # Favicon（网站图标）
-favicon: /favicon.ico
+favicon: /img/favicon.ico
 
 # Avatar (头像)
 avatar:
-  img: /img/pic/wechat.png
+  img: /img/favicon.ico
   effect: false
 
 # Disable all banner image
@@ -249,7 +249,7 @@ post_copyright:
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
   avatarSinks: false # hover时头像下沉
   copyright_author_img_back:
-  copyright_author_img_front:
+  copyright_author_img_front: 
   copyright_author_link: /
 
 # Sponsor/reward
@@ -785,7 +785,7 @@ preloader:
   source: 3
   # pace theme (see https://codebyzach.github.io/pace/)
   pace_css_url:
-  avatar: https://avatar-static.segmentfault.com/104/794/1047942597-65425fa2e1be7_huge128 # 自定加载动画义头像
+  avatar: https://s1.imagehub.cc/images/2026/04/09/d91a17b11ee6bd3f93c9c16a79108f36.md.png # 自定加载动画义头像
 
 # aside (侧边栏)
 # --------------------------------------
