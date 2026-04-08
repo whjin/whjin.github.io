@@ -4,7 +4,7 @@ date: 2024-06-10 11:21:32
 updated: 2026-03-03 21:20:30
 category: ['技术']
 tags: ['前端', 'Vite']
-cover: https://www.vitejs.net/logo.svg
+cover: https://s1.imagehub.cc/images/2026/03/18/3146463db5cf001020bfefa7d0e1585d.md.jpg
 main_color: '#FFC820'
 keywords:
 description:
