@@ -1063,8 +1063,8 @@ home_top:
       shadow: var(--anzhiyu-shadow-green)
       class: green
       icon: anzhiyu-icon-book
-    - name: 投资
-      path: /categories/投资/
+    - name: 商业
+      path: /categories/商业/
       shadow: var(--anzhiyu-shadow-firebrick)
       class: firebrick
       icon: anzhiyu-icon-fire
