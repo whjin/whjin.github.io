@@ -10,10 +10,6 @@
   animation: slide-in 0.6s 0.2s backwards;
 }
 
-.categoryItem:last-child {
-  margin-right: 0;
-}
-
 .categoryItem {
   width: calc(100% / 3 - 0.33rem);
   height: 100%;
