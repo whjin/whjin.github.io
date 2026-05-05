@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Viewer</title>
+    <link rel="icon" href="../images/favicon.png" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../css/github-dark.min.css" />
+    <link rel="stylesheet" href="../components/render/index.css" />
+    <link rel="stylesheet" href="../components/loading/index.css" />
+    <link rel="stylesheet" href="../components/navigation/index.css" />
+  </head>
+  <body>
+    <div class="nav-container"></div>
+    <div class="layout-container">
+      <main id="markdown-content" class="markdown-content content-area viewer"></main>
+      <aside class="sidebar-area">
+        <div class="sidebar-title">文章目录</div>
+        <nav id="toc-nav" class="toc-nav"></nav>
+      </aside>
+    </div>
+    <script src="../components/loading/index.js"></script>
+    <script src="../components/navigation/index.js"></script>
+    <script src="../js/marked.min.js"></script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/marked-highlight.min.js"></script>
+    <script src="../js/pdf.min.js"></script>
+    <script src="../components/render/index.js"></script>
+    <script src="../components/render/viewer.js"></script>
+    <div class="scroll-top opacity">
+      <span class="arrow-icon" title="回到顶部"></span>
+    </div>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../components/scroll/index.js"></script>
+  </body>
+</html>
