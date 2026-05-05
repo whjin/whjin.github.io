@@ -110,7 +110,7 @@ details summary {
   font-weight: 500;
 }
 
-details ul li{
+details ul li {
   line-height: 1.6;
 }
 
@@ -132,7 +132,7 @@ code {
 
 blockquote {
   height: fit-content;
-  max-height: 200px;
+  max-height: 300px;
   background: #e9ecef;
   border-left: 6px solid #e83e8c;
   border-radius: 6px;
