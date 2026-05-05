@@ -110,6 +110,10 @@ details summary {
   font-weight: 500;
 }
 
+details ul li{
+  line-height: 1.6;
+}
+
 .markdown-content img {
   max-width: 100%;
 }
