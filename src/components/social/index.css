@@ -21,7 +21,7 @@
 
 .modal-overlay {
   position: absolute;
-  top: 50px;
+  top: 40px;
   right: 0;
   display: none;
   z-index: 9;

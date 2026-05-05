@@ -1,4 +1,11 @@
 <details>
+<summary>诗词</summary>
+
+- [原创诗词](src/template/viewer.html?诗词_原创诗词)
+
+</details>
+
+<details>
 <summary>Git</summary>
 
 - [Git文档](src/template/viewer.html?Git_Git文档)
