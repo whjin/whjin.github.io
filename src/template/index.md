@@ -1,4 +1,18 @@
 <details>
+<summary>Git</summary>
+
+- [Git文档](src/template/viewer.html?Git_Git文档)
+
+</details>
+
+<details>
+<summary>Android</summary>
+
+- [ADB命令集合](src/template/viewer.html?Android_ADB命令集合)
+
+</details>
+
+<details>
 <summary>React Native</summary>
 
 - [Hermes引擎文档](src/template/viewer.html?RN_Hermes引擎文档)
@@ -76,6 +90,7 @@
 <details>
 <summary>JavaScript</summary>
 
+- [功能代码集合](src/template/viewer.html?JavaScript_功能代码集合)
 - [设计模式文档](src/template/viewer.html?JavaScript_设计模式文档)
 - [ECMAScript文档](src/template/viewer.html?JavaScript_ECMAScript文档)
 
