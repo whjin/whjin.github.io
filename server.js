@@ -128,37 +128,7 @@ const server = http.createServer((req, res) => {
         'Cache-Control': 'no-cache, no-store, must-revalidate',
       });
 
-      // 如果是 HTML 文件，注入 WebSocket 客户端代码以实现实时刷新
-      if (extname === '.html') {
-        const htmlContent = content.toString();
-        const wsScript = `
-          <script>
-            (function() {
-              const socket = new WebSocket('ws://' + window.location.host);
-              
-              socket.addEventListener('open', () => {});
-              
-              socket.addEventListener('message', (event) => {
-                if (event.data === 'reload') {
-                  window.location.reload();
-                }
-              });
-              
-              socket.addEventListener('error', (err) => {
-                console.warn('[Live Server] WebSocket 连接失败，自动刷新功能不可用');
-              });
-              
-              socket.addEventListener('close', () => {});
-            })();
-          </script>
-        `;
-
-        // 将 WebSocket 脚本注入到 HTML 的 head 结束之前
-        const injectedContent = htmlContent.replace('</head>', wsScript + '\n</head>');
-        res.end(injectedContent);
-      } else {
-        res.end(content);
-      }
+      res.end(content);
     }
   });
 });
