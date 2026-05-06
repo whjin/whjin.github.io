@@ -97,6 +97,11 @@ div object {
   margin-left: -1.5em;
 }
 
+.entry li,
+.viewer li {
+  line-height: 1.8;
+}
+
 .viewer blockquote li {
   margin-left: -1.5em;
 }
@@ -108,10 +113,6 @@ details {
 details summary {
   font-size: 18px;
   font-weight: 500;
-}
-
-details ul li {
-  line-height: 1.6;
 }
 
 .markdown-content img {

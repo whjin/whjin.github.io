@@ -61,6 +61,7 @@
 
   let qrcodeLink = null;
 
+  const fragment = document.createDocumentFragment();
   socialList.forEach((s) => {
     const aEl = document.createElement('a');
     const imgEl = document.createElement('img');
@@ -76,7 +77,7 @@
     imgEl.width = imgEl.height = s.icon;
 
     aEl.appendChild(imgEl);
-    socialEl.appendChild(aEl);
+    fragment.appendChild(aEl);
 
     if (s.name === 'wechat') {
       qrcodeLink = aEl;
@@ -84,6 +85,7 @@
       aEl.style.cursor = 'pointer';
     }
   });
+  socialEl.appendChild(fragment);
   titleEl.after(socialEl);
 
   const headerEl = document.querySelector('.header');
@@ -105,11 +107,12 @@
   fullscreenOverlayEl.appendChild(fullscreenImgEl);
   document.body.appendChild(fullscreenOverlayEl);
 
+  const fragment1 = document.createDocumentFragment();
   qrcodeList.forEach((q) => {
     const imgEl = document.createElement('img');
     imgEl.src = q.src;
     imgEl.alt = imgEl.title = q.title;
-    containerEl.appendChild(imgEl);
+    fragment1.appendChild(imgEl);
 
     imgEl.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -119,6 +122,7 @@
       document.body.style.overflow = 'hidden';
     });
   });
+  containerEl.appendChild(fragment1);
 
   function calcTrianglePosition() {
     if (!qrcodeLink) return;

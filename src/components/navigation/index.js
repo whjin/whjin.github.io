@@ -15,6 +15,7 @@
   const navContainer = document.querySelector('.nav-container');
   let isMobileDevice = isMobile();
 
+  const fragment = document.createDocumentFragment();
   navImgs.forEach((img, index) => {
     const imgEl = document.createElement('img');
     imgEl.src = img.src;
@@ -28,8 +29,9 @@
         imgEl.classList.add('hidden');
       }
     }
-    navContainer.appendChild(imgEl);
+    fragment.appendChild(imgEl);
   });
+  navContainer.appendChild(fragment);
 
   const navToc = document.querySelector('.nav-toc');
   const navBack = document.querySelector('.nav-back');
