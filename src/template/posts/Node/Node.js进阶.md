@@ -35,7 +35,6 @@
 const { exec } = reqwuire('child_process');
 exec('find . -type f | wc -l', (err, stdout, stderr) => {
   if (err) return console.log(err);
-  console.log(stdout);
 });
 ```
 

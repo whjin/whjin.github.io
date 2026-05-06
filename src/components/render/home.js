@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', (e) => {
-  loadMarkdown('markdown-content', 'src/template/index.md')
+  loadMarkdown('markdown-content', 'src/template/index.html')
     .then(() => {
-      // generateCard();
+      generateCard();
       generateTOC();
     })
     .catch((error) => {

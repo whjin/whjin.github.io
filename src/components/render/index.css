@@ -53,8 +53,7 @@ h6 {
 }
 ::-webkit-scrollbar-thumb {
   background: #a09f9f;
-  border-radius: 6px;
-  cursor: pointer;
+  border-radius: 0.25em;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #808080;
@@ -79,7 +78,7 @@ div object {
 }
 
 .markdown-content.entry {
-  padding: 40px 1em;
+  padding: 40px 0;
 }
 .markdown-content.viewer {
   padding: 1em;
@@ -97,7 +96,6 @@ div object {
   margin-left: -1.5em;
 }
 
-.entry li,
 .viewer li {
   line-height: 1.8;
 }
@@ -299,11 +297,15 @@ blockquote::-webkit-scrollbar {
 }
 
 .entry ~ .sidebar-area {
-  height: calc(100vh - 100px);
+  height: calc(100vh - 80px);
   max-height: 100%;
   top: 40px;
   box-sizing: border-box;
   overflow: auto;
+}
+
+.sidebar-area::-webkit-scrollbar {
+  width: 0.5em;
 }
 
 .toc-nav {
