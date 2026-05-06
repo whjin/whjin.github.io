@@ -33,9 +33,7 @@
 ```js
 // 统计当前目录下的文件数量
 const { exec } = reqwuire('child_process');
-exec('find . -type f | wc -l', (err, stdout, stderr) => {
-  if (err) return console.log(err);
-});
+exec('find . -type f | wc -l', (err, stdout, stderr) => {});
 ```
 
 `exec` 会新建一个子进程，然后缓存它的运行结果，运行结束后调用回调函数。

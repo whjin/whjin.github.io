@@ -8,7 +8,6 @@ const menuData = [
         href: 'src/template/viewer.html?诗词_原创诗词',
       },
     ],
-    sticky: false,
   },
   {
     title: 'Git',
@@ -19,7 +18,6 @@ const menuData = [
         href: 'src/template/viewer.html?Git_Git文档',
       },
     ],
-    sticky: false,
   },
   {
     title: 'Android',
@@ -30,7 +28,6 @@ const menuData = [
         href: 'src/template/viewer.html?Android_ADB命令集合',
       },
     ],
-    sticky: false,
   },
   {
     title: 'React Native',
@@ -41,7 +38,6 @@ const menuData = [
         href: 'src/template/viewer.html?RN_Hermes引擎文档',
       },
     ],
-    sticky: false,
   },
   {
     title: 'AI',
@@ -60,7 +56,6 @@ const menuData = [
         href: 'src/template/viewer.html?AI_AI视频制作',
       },
     ],
-    sticky: false,
   },
   {
     title: 'TypeScript',
@@ -71,7 +66,6 @@ const menuData = [
         href: 'src/template/viewer.html?TypeScript_TypeScript与类型系统',
       },
     ],
-    sticky: false,
   },
   {
     title: '网络',
@@ -82,7 +76,6 @@ const menuData = [
         href: 'src/template/viewer.html?网络_HTTP文档',
       },
     ],
-    sticky: false,
   },
   {
     title: 'Node.js',
@@ -101,7 +94,6 @@ const menuData = [
         href: 'src/template/viewer.html?Node_Node.js文档',
       },
     ],
-    sticky: false,
   },
   {
     title: '小程序',
@@ -112,7 +104,6 @@ const menuData = [
         href: 'src/template/viewer.html?小程序_小程序文档',
       },
     ],
-    sticky: false,
   },
   {
     title: 'Web3',
@@ -131,7 +122,6 @@ const menuData = [
         href: 'src/template/viewer.html?Web3_Web3钱包',
       },
     ],
-    sticky: false,
   },
   {
     title: 'GIS',
@@ -142,11 +132,11 @@ const menuData = [
         href: 'src/template/viewer.html?GIS_Cesium文档',
       },
     ],
-    sticky: false,
   },
   {
     title: '简历',
     tagName: 'ul',
+    sticky: true,
     items: [
       {
         text: '简历文档',
@@ -177,7 +167,6 @@ const menuData = [
         href: 'src/template/viewer.html?简历_英文简历PDF&format=pdf',
       },
     ],
-    sticky: false,
   },
   {
     title: 'JavaScript',
@@ -196,7 +185,6 @@ const menuData = [
         href: 'src/template/viewer.html?JavaScript_ECMAScript文档',
       },
     ],
-    sticky: false,
   },
   {
     title: '工程化',
@@ -215,7 +203,6 @@ const menuData = [
         href: 'src/template/viewer.html?工程化_Vite与Webpack对比',
       },
     ],
-    sticky: false,
   },
   {
     title: '文档',
@@ -234,7 +221,6 @@ const menuData = [
         href: 'src/template/viewer.html?文档_领域适配性分析',
       },
     ],
-    sticky: false,
   },
   {
     title: 'WebRTC',
@@ -245,6 +231,5 @@ const menuData = [
         href: 'src/template/viewer.html?WebRTC_WebRTC性能优化',
       },
     ],
-    sticky: false,
   },
 ];

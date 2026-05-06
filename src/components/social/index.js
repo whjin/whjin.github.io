@@ -131,7 +131,6 @@
 
     const wechatRect = wechatEl.getBoundingClientRect();
     const offsetRight = window.innerWidth - wechatRect.right;
-
     modalEl.style.setProperty('--offset-right', `${offsetRight}px`);
   }
 

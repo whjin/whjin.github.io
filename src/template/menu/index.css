@@ -30,6 +30,11 @@
   padding: 0 0.5em;
 }
 
+.sticky-mark::before {
+  content: '*';
+  color: #f00;
+}
+
 .card-list {
   flex: 1;
   box-sizing: border-box;
@@ -38,4 +43,8 @@
 
 .card-list::-webkit-scrollbar {
   display: none;
+}
+
+.card-list li:not(:last-child) {
+  margin-bottom: 0.3em;
 }
