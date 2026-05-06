@@ -1,4 +1,7 @@
-function creatCard() {
+function generateCard() {
   const containerEl = document.querySelector('.card-container');
-  console.log(containerEl);
+  console.log(menuData);
+  menuData.forEach(menu => {
+
+  });
 }
