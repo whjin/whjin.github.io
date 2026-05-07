@@ -11,6 +11,7 @@ function generateCard() {
       const headerEl = document.createElement('div');
       headerEl.className = 'card-title';
       headerEl.innerText = m.title;
+
       if (m.sticky) {
         headerEl.classList.add('sticky-mark');
       }
@@ -23,8 +24,7 @@ function generateCard() {
         const aEl = document.createElement('a');
         aEl.rel = 'noopener noreferrer';
         aEl.target = '_blank';
-        aEl.title = i.text;
-        aEl.innerText = i.text;
+        aEl.innerText = aEl.title = i.text;
         aEl.href = i.href;
 
         liEl.appendChild(aEl);
@@ -37,6 +37,8 @@ function generateCard() {
     }
   });
   containerEl.appendChild(fragment);
+
+  setCardHeight();
 }
 
 function processMenuData(originalData) {
@@ -44,4 +46,24 @@ function processMenuData(originalData) {
   const stickyItems = copyData.filter((m) => !!m.sticky);
   const normalItems = copyData.filter((m) => !m.sticky);
   return stickyItems.length > 0 ? [...stickyItems, ...normalItems] : copyData;
+}
+
+function setCardHeight() {
+  const cardItems = document.querySelectorAll('.card-item');
+  if (cardItems.length > 0) {
+    let maxHeight = 0;
+    cardItems.forEach((card) => {
+      card.style.height = 'auto';
+      const currentHeight = card.offsetHeight;
+      if (currentHeight > maxHeight) {
+        maxHeight = currentHeight;
+      }
+    });
+
+    const finalHeight = Math.min(maxHeight, 200);
+
+    cardItems.forEach((card) => {
+      card.style.height = `${finalHeight}px`;
+    });
+  }
 }
