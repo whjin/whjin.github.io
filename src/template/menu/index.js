@@ -45,7 +45,7 @@ async function generateCard() {
 
 async function fetchData() {
   try {
-    const response = await fetch('menu/data.json');
+    const response = await fetch('src/template/menu/data.json');
 
     if (!response.ok) {
       throw new Error(`文件加载失败: ${response.status}`);
