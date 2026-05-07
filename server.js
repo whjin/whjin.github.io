@@ -88,7 +88,9 @@ const server = http.createServer((req, res) => {
                 });
                 res.end(`<h1>404 - 文件未找到</h1><p>尝试读取文件时出错: ${err.message}</p>`);
               } else {
-                res.writeHead(200, { 'Content-Type': contentType });
+                res.writeHead(200, {
+                  'Content-Type': contentType
+                });
                 res.end(data);
               }
             });
@@ -98,7 +100,9 @@ const server = http.createServer((req, res) => {
         }
 
         if (!fileFound) {
-          res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
+          res.writeHead(404, {
+            'Content-Type': 'text/html; charset=utf-8'
+          });
           res.end(`
             <html>
               <head><title>404 - 文件未找到</title></head>
@@ -134,7 +138,9 @@ const server = http.createServer((req, res) => {
 });
 
 // 2. 创建 WebSocket 服务器
-const wss = new WebSocket.Server({ server });
+const wss = new WebSocket.Server({
+  server
+});
 
 // 3. 使用 chokidar 监视项目根目录下的文件变化
 const watcher = chokidar.watch(rootDir, {
@@ -148,7 +154,7 @@ let reloadTimer = null;
 const triggerReload = (filePath) => {
   clearTimeout(reloadTimer);
   reloadTimer = setTimeout(() => {
-    if (path.extname(filePath).match(/\.(html|md|js|css)$/)) {
+    if (path.extname(filePath).match(/\.(html|md|js|css|json)$/)) {
       // 向所有已连接的 WebSocket 客户端发送刷新指令
       wss.clients.forEach((client) => {
         if (client.readyState === WebSocket.OPEN) {

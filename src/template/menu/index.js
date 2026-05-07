@@ -1,8 +1,10 @@
-function generateCard() {
-  const containerEl = document.querySelector('.card-container');
-
-  const fragment = document.createDocumentFragment();
+async function generateCard() {
+  const menuData = await fetchData();
   const finalMenuData = processMenuData(menuData);
+
+  const containerEl = document.querySelector('.card-container');
+  const fragment = document.createDocumentFragment();
+
   finalMenuData.forEach((m) => {
     if (m.items.length > 0) {
       const cardEl = document.createElement('div');
@@ -41,11 +43,46 @@ function generateCard() {
   setCardHeight();
 }
 
+async function fetchData() {
+  try {
+    const response = await fetch('menu/data.json');
+
+    if (!response.ok) {
+      throw new Error(`文件加载失败: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('读取文件失败：', error.message);
+  }
+}
+
 function processMenuData(originalData) {
+  if (!originalData || !Array.isArray(originalData)) return [];
+
   const copyData = JSON.parse(JSON.stringify(originalData));
-  const stickyItems = copyData.filter((m) => !!m.sticky);
-  const normalItems = copyData.filter((m) => !m.sticky);
-  return stickyItems.length > 0 ? [...stickyItems, ...normalItems] : copyData;
+
+  const getTimeStamp = (dateStr) => {
+    if (!dateStr) return 0;
+
+    const normalizedDate = dateStr.replace(/-/g, '/');
+    return new Date(normalizedDate).getTime() || 0;
+  };
+
+  copyData.sort((a, b) => {
+    const stickyA = a.sticky || Infinity;
+    const stickyB = b.sticky || Infinity;
+    if (stickyA !== stickyB) {
+      return stickyA - stickyB;
+    }
+
+    const timeA = getTimeStamp(a.updated);
+    const timeB = getTimeStamp(b.updated);
+    return timeB - timeA;
+  });
+
+  return copyData;
 }
 
 function setCardHeight() {
@@ -60,7 +97,7 @@ function setCardHeight() {
       }
     });
 
-    const finalHeight = Math.min(maxHeight, 200);
+    const finalHeight = Math.min(maxHeight, 300);
 
     cardItems.forEach((card) => {
       card.style.height = `${finalHeight}px`;
