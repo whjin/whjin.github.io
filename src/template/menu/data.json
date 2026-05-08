@@ -142,24 +142,12 @@
     "tagName": "ul",
     "items": [
       {
-        "text": "简历文档",
-        "href": "src/template/viewer.html?简历_简历文档"
+        "text": "中文简历",
+        "href": "src/template/viewer.html?简历_中文简历"
       },
       {
-        "text": "简历文档PDF",
-        "href": "src/template/viewer.html?简历_简历文档PDF&format=pdf"
-      },
-      {
-        "text": "简历文档详解",
-        "href": "src/template/viewer.html?简历_简历文档详解"
-      },
-      {
-        "text": "简历精简版",
-        "href": "src/template/viewer.html?简历_简历精简版"
-      },
-      {
-        "text": "简历精简版PDF",
-        "href": "src/template/viewer.html?简历_简历精简版PDF&format=pdf"
+        "text": "中文简历PDF",
+        "href": "src/template/viewer.html?简历_中文简历PDF&format=pdf"
       },
       {
         "text": "英文简历",
