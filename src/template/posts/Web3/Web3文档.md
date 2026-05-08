@@ -1,3 +1,7 @@
+## 技术路线
+
+> `React + TypeScript + Viem + Wagmi + Foundry + Scaffold-ETH2` (`2026`年行业标准栈)
+
 ## Web3基础
 
 1、基础密码学
