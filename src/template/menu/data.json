@@ -1,6 +1,28 @@
 [
   {
-    "sticky": 3,
+    "sticky": 1,
+    "title": "AI",
+    "tagName": "ul",
+    "items": [
+      {
+        "text": "AI项目文档",
+        "href": "src/template/viewer.html?AI_AI项目文档"
+      },
+      {
+        "text": "AI大模型文档",
+        "href": "src/template/viewer.html?AI_AI大模型文档"
+      },
+      {
+        "text": "AI前端",
+        "href": "src/template/viewer.html?AI_AI前端"
+      },
+      {
+        "text": "AI视频制作",
+        "href": "src/template/viewer.html?AI_AI视频制作"
+      }
+    ]
+  },
+  {
     "title": "诗词",
     "tagName": "ul",
     "items": [
@@ -11,7 +33,7 @@
     ]
   },
   {
-    "sticky": 2,
+    "sticky": 3,
     "updated": "2026-5-7 15:38:37",
     "title": "Web3",
     "tagName": "ul",
@@ -57,24 +79,6 @@
       {
         "text": "Hermes引擎文档",
         "href": "src/template/viewer.html?RN_Hermes引擎文档"
-      }
-    ]
-  },
-  {
-    "title": "AI",
-    "tagName": "ul",
-    "items": [
-      {
-        "text": "AI大模型文档",
-        "href": "src/template/viewer.html?AI_AI大模型文档"
-      },
-      {
-        "text": "AI前端",
-        "href": "src/template/viewer.html?AI_AI前端"
-      },
-      {
-        "text": "AI视频制作",
-        "href": "src/template/viewer.html?AI_AI视频制作"
       }
     ]
   },
@@ -137,7 +141,7 @@
     ]
   },
   {
-    "sticky": 1,
+    "sticky": 2,
     "title": "简历",
     "tagName": "ul",
     "items": [
