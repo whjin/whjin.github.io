@@ -1,6 +1,16 @@
 [
   {
-    "sticky": 1,
+    "title": "Python",
+    "tagName": "ol",
+    "items": [
+      {
+        "text": "Python文档",
+        "href": "src/template/viewer.html?Python_Python文档"
+      }
+    ],
+    "updated": "2026-5-12 20:57:18"
+  },
+  {
     "title": "AI",
     "tagName": "ul",
     "items": [
@@ -33,8 +43,6 @@
     ]
   },
   {
-    "sticky": 3,
-    "updated": "2026-5-7 15:38:37",
     "title": "Web3",
     "tagName": "ul",
     "items": [
@@ -141,7 +149,7 @@
     ]
   },
   {
-    "sticky": 2,
+    "sticky": 1,
     "title": "简历",
     "tagName": "ul",
     "items": [
