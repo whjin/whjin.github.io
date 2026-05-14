@@ -129,9 +129,14 @@
     ]
   },
   {
+    "updated": "2026-5-14 15:19:29",
     "title": "小程序",
     "tagName": "ul",
     "items": [
+      {
+        "text": "实战项目文档",
+        "href": "src/template/viewer.html?小程序_实战项目文档"
+      },
       {
         "text": "小程序文档",
         "href": "src/template/viewer.html?小程序_小程序文档"
@@ -149,7 +154,6 @@
     ]
   },
   {
-    "sticky": 1,
     "title": "简历",
     "tagName": "ul",
     "items": [
