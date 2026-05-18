@@ -25,3 +25,13 @@
 - `react-redux`
 - `redux-thunk`
 - 自定义中间件
+
+## `React`方法
+
+- `setState`参数：`setState((prevState, nextProps)=>{},callback)`
+
+## 生命周期
+
+- 初始化：构建函数 -> `getDerivedStateFromProps` -> `render()`渲染 `UI` -> `componentDidMount`
+- 更新：`getDrivedStateFromProps` -> `shouldComponentUpdate` -> `render`渲染 `UI` -> `componentDidUpdate`
+- 销毁：`componentWillUnmount`
