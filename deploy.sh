@@ -2,7 +2,7 @@
 
 # commin信息格式：时间戳 + 提交信息
 
-COMMIT_FILE="commit.md"
+COMMIT_FILE="Commit.md"
 DEFAULT_MESSAGE="提交更新"
 TMP_COMMIT=$(mktemp -t commit.XXXXXX 2>/dev/null || mktemp)
 TIME_THRESHOLD=600  # 10分钟的秒数

@@ -35,3 +35,9 @@
 - 初始化：构建函数 -> `getDerivedStateFromProps` -> `render()`渲染 `UI` -> `componentDidMount`
 - 更新：`getDrivedStateFromProps` -> `shouldComponentUpdate` -> `render`渲染 `UI` -> `componentDidUpdate`
 - 销毁：`componentWillUnmount`
+
+## `Hooks`
+
+- `useEffect`: `useEffect(()=>{..., return ()=>{...}},[])`
+- 只在最顶层使用 `Hooks`
+- 只在 `React` 函数中调用 `Hooks`
