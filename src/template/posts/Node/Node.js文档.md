@@ -154,7 +154,7 @@ module.exports = (options) => async (ctx, next) => {
 2. **`Web Worker`隔离计算密集型人物**：将语音后处理（断句、标点修正、敏感词过滤）移到 `Worker`，主线程仅负责渲染
 3. **分片处理 + 时间切片**：大段转写文本用 `requestIdleCallback` 分片渲染，每次处理不超过 `16ms`，避免阻塞主线程
 4. **批量 `DOM`更新**：使用 `DocumentFragment`或虚拟 `DOM`批量更新字幕，减少重排重绘次数
-5. 
+5. **`React`调度优化**：使用 `useTransition`将字幕渲染标记为第优先级，保证用户交互优先响应
 
 ## 性能 + 监控 + 优化
 

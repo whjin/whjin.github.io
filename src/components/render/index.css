@@ -46,7 +46,6 @@ h6 {
 
 .markdown-content {
   width: 100%;
-  text-align: justify;
 }
 
 ::-webkit-scrollbar {
@@ -142,7 +141,6 @@ blockquote {
 
 blockquote p {
   margin: 0;
-  text-align: justify;
   line-height: 1.6;
 }
 
@@ -311,7 +309,6 @@ blockquote::-webkit-scrollbar {
 
 .toc-nav {
   font-size: 1em;
-  text-align: justify;
 }
 
 .toc-nav p {
