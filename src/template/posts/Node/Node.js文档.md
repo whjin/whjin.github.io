@@ -141,6 +141,21 @@ module.exports = (options) => async (ctx, next) => {
 - 每个阶段，都会执行对应的队列
 - `process.nextTick`
 
+**`JavaScript`事件循环机制与异步阻塞优化**
+
+- `JS`单线程，事件循环负责协调同步代码、异步任务和 `UI`渲染
+- **宏任务**：`script`整体、`setTimeout`、`setInterval`、`I/O`、`UI`渲染、`fetch`，执行时机在每次 `UI`渲染之后
+- **微任务**：`Promise.then/catch/finally`、`async/await`、`queueMicrotask`、`MutationObserver`，执行时机在同步代码完成后、`UI`渲染前
+- 执行顺序：同步代码 -> 所有微任务 -> `UI`渲染 -> 一个宏任务，循环往复
+
+**流式语音转写场景优化**
+
+1. **微任务优先处理高频小数据**：流式转写的每个 `chunk` 用 `queueMicrotask` 包裹解析，保证在 `UI`渲染前完成，字幕无延迟
+2. **`Web Worker`隔离计算密集型人物**：将语音后处理（断句、标点修正、敏感词过滤）移到 `Worker`，主线程仅负责渲染
+3. **分片处理 + 时间切片**：大段转写文本用 `requestIdleCallback` 分片渲染，每次处理不超过 `16ms`，避免阻塞主线程
+4. **批量 `DOM`更新**：使用 `DocumentFragment`或虚拟 `DOM`批量更新字幕，减少重排重绘次数
+5. 
+
 ## 性能 + 监控 + 优化
 
 - `CPU`：负载 使用率
@@ -170,7 +185,11 @@ const sysTotal = os.totalmem();
 - `multiparty`：文件上传 `"content-type": "multipart/form-data"`
 
 ```js
-<form action="http://localhost:8080/api/upload" method="post" enctype="multipart/form-data">
+<form
+  action="http://localhost:8080/api/upload"
+  method="post"
+  enctype="multipart/form-data"
+>
   <input type="file" name="file" id="file" value="" multiple="multiple" />
   <input type="submit" value="提交" />
 </form>;
