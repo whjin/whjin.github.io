@@ -16,4 +16,12 @@ window.addEventListener('load', () => {
     link.setAttribute('rel', 'noopener noreferrer');
   });
   hideLoading();
+
+  const savedScrollTop = localStorage.getItem('scrollPosition_home');
+  if (savedScrollTop) {
+    window.scrollTo({
+      top: parseInt(savedScrollTop, 10),
+      behavior: 'auto',
+    });
+  }
 });

@@ -27,20 +27,26 @@ function handler(targetId, filePath, callback) {
     })
     .catch((error) => {
       console.error('渲染失败:', error);
-      document.getElementById(targetId).innerHTML = `<div style="color: red;">加载失败：${error.message}</div>`;
+      document.getElementById(targetId).innerHTML =
+        `<div style="color: red;">加载失败：${error.message}</div>`;
       callback && callback();
     });
 }
 
 async function loadMarkdown(targetId, filePath) {
   return new Promise((resolve, reject) => {
-    const scrollKey = `scrollPosition_${encodeURIComponent(filePath)}`;
+    const key = filePath.includes('home') ? 'home' : 'posts';
+    const Func = {
+      home: localStorage,
+      posts: sessionStorage,
+    };
+    const scrollKey = `scrollPosition_${key}`;
     window.addEventListener('scroll', () => {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      sessionStorage.setItem(scrollKey, scrollTop);
+      Func[key].setItem(scrollKey, scrollTop);
     });
     handler(targetId, filePath, () => {
-      const savedScrollTop = sessionStorage.getItem(scrollKey);
+      const savedScrollTop = Func[key].getItem(scrollKey);
       if (savedScrollTop) {
         window.scrollTo({
           top: parseInt(savedScrollTop, 10),
