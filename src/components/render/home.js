@@ -18,8 +18,10 @@ window.addEventListener('load', () => {
   hideLoading();
 
   const savedScrollTop = localStorage.getItem('scrollPosition_home');
-  window.scrollTo({
-    top: savedScrollTop ? parseInt(savedScrollTop, 10) : 0,
-    behavior: 'auto',
-  });
+  if (savedScrollTop) {
+    window.scrollTo({
+      top: parseInt(savedScrollTop, 10),
+      behavior: 'auto',
+    });
+  }
 });
