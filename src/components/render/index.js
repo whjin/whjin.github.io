@@ -47,12 +47,10 @@ async function loadMarkdown(targetId, filePath) {
     });
     handler(targetId, filePath, () => {
       const savedScrollTop = Func[key].getItem(scrollKey);
-      if (savedScrollTop) {
-        window.scrollTo({
-          top: parseInt(savedScrollTop, 10),
-          behavior: 'auto',
-        });
-      }
+      window.scrollTo({
+        top: savedScrollTop ? parseInt(savedScrollTop, 10) : 0,
+        behavior: 'auto',
+      });
       resolve();
     });
   });
