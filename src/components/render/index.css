@@ -84,11 +84,6 @@ div object {
   padding: 1em;
 }
 
-.viewer li strong {
-  display: inline-block;
-  margin-bottom: 0.5em;
-}
-
 .entry li ul,
 .entry li ol,
 .viewer li ul,
@@ -137,6 +132,11 @@ blockquote {
   border-radius: 6px;
   padding: 0.5em 0.8em;
   overflow: auto;
+}
+
+ul li p,
+ol li p {
+  margin-bottom: 0;
 }
 
 blockquote p {
