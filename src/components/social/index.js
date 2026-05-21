@@ -7,6 +7,12 @@
       icon: 24,
     },
     {
+      href: '',
+      title: '打赏',
+      name: 'reward',
+      icon: 26,
+    },
+    {
       href: 'https://weibo.com/u/1710899102',
       title: '微博',
       name: 'weibo',
@@ -32,7 +38,7 @@
     },
   ];
 
-  const qrcodeList = [
+  const wechatList = [
     {
       src: 'src/images/social/wechat.jpg',
       title: '微信',
@@ -45,6 +51,8 @@
       src: 'src/images/social/wechat_video.jpg',
       title: '微信视频号',
     },
+  ];
+  const rewardList = [
     {
       src: 'src/images/social/wx_pay.jpg',
       title: '微信支付',
@@ -55,11 +63,11 @@
     },
   ];
 
+  let qrcodeLink = null;
+
   const titleEl = document.querySelector('.title');
   const socialEl = document.createElement('nav');
   socialEl.className = 'social';
-
-  let qrcodeLink = null;
 
   const fragment = document.createDocumentFragment();
   socialList.forEach((s) => {
@@ -74,13 +82,13 @@
 
     imgEl.src = `src/images/icons/${s.name}.png`;
     imgEl.alt = s.title;
+    imgEl.className = `img-${s.name}`;
     imgEl.width = imgEl.height = s.icon;
 
     aEl.appendChild(imgEl);
     fragment.appendChild(aEl);
 
-    if (s.name === 'wechat') {
-      qrcodeLink = aEl;
+    if (['wechat', 'reward'].includes(s.name)) {
       aEl.removeAttribute('href');
       aEl.style.cursor = 'pointer';
     }
@@ -107,40 +115,55 @@
   fullscreenOverlayEl.appendChild(fullscreenImgEl);
   document.body.appendChild(fullscreenOverlayEl);
 
-  const fragment1 = document.createDocumentFragment();
-  qrcodeList.forEach((q) => {
-    const imgEl = document.createElement('img');
-    imgEl.src = q.src;
-    imgEl.alt = imgEl.title = q.title;
-    fragment1.appendChild(imgEl);
+  function renderQrcodeList(list) {
+    containerEl.innerHTML = '';
+    const fragment1 = document.createDocumentFragment();
+    list.forEach((q) => {
+      const imgEl = document.createElement('img');
+      imgEl.src = q.src;
+      imgEl.alt = imgEl.title = q.title;
+      fragment1.appendChild(imgEl);
 
-    imgEl.addEventListener('click', (e) => {
-      e.stopPropagation();
-      fullscreenImgEl.src = q.src;
-      fullscreenImgEl.alt = fullscreenImgEl.title = q.title;
-      fullscreenOverlayEl.classList.add('show');
-      document.body.style.overflow = 'hidden';
+      imgEl.addEventListener('click', (e) => {
+        e.stopPropagation();
+        fullscreenImgEl.src = q.src;
+        fullscreenImgEl.alt = fullscreenImgEl.title = q.title;
+        fullscreenOverlayEl.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      });
     });
-  });
-  containerEl.appendChild(fragment1);
+    containerEl.appendChild(fragment1);
+  }
 
   function calcTrianglePosition() {
     if (!qrcodeLink) return;
     const modalEl = document.querySelector('.modal-container');
-    const wechatEl = document.querySelector('.icon-wechat');
 
-    const wechatRect = wechatEl.getBoundingClientRect();
-    const offsetRight = window.innerWidth - wechatRect.right;
+    const linkRect = qrcodeLink.getBoundingClientRect();
+
+    const offsetRight = window.innerWidth - linkRect.right - 8;
     modalEl.style.setProperty('--offset-right', `${offsetRight}px`);
   }
 
-  if (qrcodeLink) {
-    qrcodeLink.addEventListener('click', (e) => {
-      e.stopPropagation();
-      overlayEl.classList.add('show');
-      calcTrianglePosition();
-    });
-  }
+  socialEl.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const targetA = e.target.closest('a');
+    if (!targetA) return;
+
+    const className = targetA.className;
+    if (className.includes('icon-wechat')) {
+      qrcodeLink = targetA;
+      renderQrcodeList(wechatList);
+    } else if (className.includes('icon-reward')) {
+      qrcodeLink = targetA;
+      renderQrcodeList(rewardList);
+    } else {
+      return;
+    }
+
+    overlayEl.classList.add('show');
+    calcTrianglePosition();
+  });
 
   document.addEventListener('click', () => {
     overlayEl.classList.remove('show');
@@ -149,26 +172,25 @@
     e.stopPropagation();
   });
 
+  function hideQrcode(e) {
+    e.stopPropagation();
+    fullscreenOverlayEl.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+
   fullscreenOverlayEl.addEventListener('click', (e) => {
     if (e.target === fullscreenOverlayEl) {
       hideQrcode(e);
     }
   });
 
-  fullscreenImgEl.addEventListener('click', (e) => {
-    hideQrcode(e);
-  });
+  fullscreenImgEl.addEventListener('click', hideQrcode);
 
   document.addEventListener('keydown', (e) => {
-    let flag = e.key === 'Escape' && fullscreenOverlayEl.classList.contains('show');
+    let flag =
+      e.key === 'Escape' && fullscreenOverlayEl.classList.contains('show');
     if (flag) {
       hideQrcode(e);
     }
   });
-
-  function hideQrcode(e) {
-    e.stopPropagation();
-    fullscreenOverlayEl.classList.remove('show');
-    document.body.style.overflow = '';
-  }
 })();
