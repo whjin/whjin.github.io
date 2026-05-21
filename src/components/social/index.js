@@ -10,7 +10,7 @@
       href: '',
       title: '打赏',
       name: 'reward',
-      icon: 26,
+      icon: 28,
     },
     {
       href: 'https://weibo.com/u/1710899102',
