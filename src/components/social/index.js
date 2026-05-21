@@ -141,7 +141,8 @@
 
     const linkRect = qrcodeLink.getBoundingClientRect();
 
-    const offsetRight = window.innerWidth - linkRect.right - 8;
+    const offset = isMobile() ? -5 : 3;
+    const offsetRight = window.innerWidth - linkRect.right - offset;
     modalEl.style.setProperty('--offset-right', `${offsetRight}px`);
   }
 
