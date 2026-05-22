@@ -6,7 +6,7 @@
 }
 
 .aplayer.aplayer-withlist .aplayer-list {
-  height: 200px;
+  height: 300px;
   overflow: auto;
 }
 .aplayer.aplayer-fixed .aplayer-lrc {
