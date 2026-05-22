@@ -1,14 +1,16 @@
-async function generateAPlayer(func) {
-  const audioData = await func('src/components/aplayer/audio.json');
+async function generateAPlayer() {
+  const audioData = await fetchData('src/components/aplayer/audio.json');
   const ap = new APlayer({
     container: document.querySelector('.aplayer-container'),
-    theme: '#e9e9e9',
     fixed: true,
     mini: true,
     listFolded: true,
     lrcType: 3,
     audio: audioData,
   });
+
+  window.ap = ap;
+
 
   // const colorThief = new ColorThief();
   // const image = new Image();
@@ -34,5 +36,4 @@ async function generateAPlayer(func) {
   //   setTheme(index);
   // });
 
-  window.ap = ap;
 }

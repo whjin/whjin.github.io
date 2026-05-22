@@ -30,3 +30,7 @@
 14. 增加首页卡片置顶和日期排序功能
 15. 增加 `APlayer` 音乐播放器，通过社交导航音乐图标进行开关切换
 16. 增加文章赞赏功能和付费阅读功能
+
+## 问题解决
+
+- `APlayer`切换下一曲播放时报错 `classList`为 `undefined`，在 `APlayer.min.js`依赖查找`classList.add("aplayer-lrc-current")`改为 `?.classList.add("aplayer-lrc-current")`即可解决问题。
