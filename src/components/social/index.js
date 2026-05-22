@@ -171,9 +171,9 @@
       if (window.ap) {
         const footerEl = document.querySelector('.footer-content');
         if (aplayerEl.classList.contains('show')) {
-          window.ap.pause();
           footerEl.style.visibility = 'hidden';
         } else {
+          window.ap.pause();
           footerEl.style.visibility = 'visible';
         }
       }
