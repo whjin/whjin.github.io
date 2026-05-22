@@ -3,6 +3,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     .then(() => {
       generateCard();
       generateTOC();
+      generateAPlayer(fetchData);
     })
     .catch((error) => {
       console.error('加载 Markdown 失败：', error);

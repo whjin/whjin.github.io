@@ -2,9 +2,73 @@
     {
         "name": "若问",
         "artist": "吴涤清",
-        "url": "https://videotourl.com/audio/1779407030957-1e74d331-a2d1-4a2c-8188-27fcd9acae88.mp3",
-        "cover": "https://s1.imagehub.cc/images/2025/05/02/d9fb2497fd1348a411f69b3059e22f24.md.webp",
-        "lrc": "https://cn-south-17-aplayer-46154810.oss.dogecdn.com/hikarunara.lrc",
+        "url": "https://videotourl.com/audio/1779426651962-5849d301-d156-421a-80ad-ae68af846bdd.mp3",
+        "cover": "src/components/aplayer/music/吴涤清/若问.jpg",
+        "lrc": "src/components/aplayer/music/吴涤清/若问.lrc",
+        "theme": "#ebd0c2"
+    },
+    {
+        "name": "年华似水",
+        "artist": "黄磊",
+        "url": "https://videotourl.com/audio/1779426682063-cca089db-2fc9-424c-8851-483210263ed2.mp3",
+        "cover": "src/components/aplayer/music/黄磊/年华似水.jpg",
+        "lrc": "src/components/aplayer/music/黄磊/年华似水.lrc",
+        "theme": "#ebd0c2"
+    },
+    {
+        "name": "花恋火",
+        "artist": "应豪",
+        "url": "https://videotourl.com/audio/1779426783364-1d58a91e-8e22-434d-92e9-dff6a50c2de4.mp3",
+        "cover": "src/components/aplayer/music/红粉世家/应豪-花恋火.jpg",
+        "lrc": "src/components/aplayer/music/红粉世家/应豪-花恋火.lrc",
+        "theme": "#ebd0c2"
+    },
+    {
+        "name": "暗香",
+        "artist": "沙宝亮",
+        "url": "https://videotourl.com/audio/1779426808995-953b7ec0-3647-4df7-a164-5b7054cacc2f.mp3",
+        "cover": "src/components/aplayer/music/金粉世家/沙宝亮-暗香.jpg",
+        "lrc": "src/components/aplayer/music/金粉世家/沙宝亮-暗香.lrc",
+        "theme": "#ebd0c2"
+    },
+    {
+        "name": "西游记",
+        "artist": "张卫健",
+        "url": "https://videotourl.com/audio/1779426832872-d38f23ee-b95b-4b69-ad02-6cd24ffa94e5.mp3",
+        "cover": "src/components/aplayer/music/张卫健/西游记.jpg",
+        "lrc": "src/components/aplayer/music/张卫健/西游记.lrc",
+        "theme": "#ebd0c2"
+    },
+    {
+        "name": "把酒狂歌",
+        "artist": "张卫健",
+        "url": "https://videotourl.com/audio/1779426856262-3b77f40e-6fba-4a38-ba5e-73451b5c7b3f.mp3",
+        "cover": "src/components/aplayer/music/张卫健/西游记.jpg",
+        "lrc": "src/components/aplayer/music/张卫健/把酒狂歌.lrc",
+        "theme": "#ebd0c2"
+    },
+    {
+        "name": "你爱我像谁",
+        "artist": "张卫健",
+        "url": "https://videotourl.com/audio/1779426884491-2a4bcc9e-1065-417d-a6b8-f29a7a771396.mp3",
+        "cover": "src/components/aplayer/music/张卫健/张卫健.jpg",
+        "lrc": "src/components/aplayer/music/张卫健/你爱我像谁.lrc",
+        "theme": "#ebd0c2"
+    },
+    {
+        "name": "孤独不苦",
+        "artist": "张卫健",
+        "url": "https://videotourl.com/audio/1779426915315-bba188fe-55a8-4db4-8aa0-3a15b0f10deb.mp3",
+        "cover": "src/components/aplayer/music/张卫健/孤独不苦.jpg",
+        "lrc": "src/components/aplayer/music/张卫健/孤独不苦.lrc",
+        "theme": "#ebd0c2"
+    },
+    {
+        "name": "法术乌魔多",
+        "artist": "张卫健",
+        "url": "https://videotourl.com/audio/1779426948762-645fd9a9-0dfa-4b8b-8ffb-a702b86d5b56.mp3",
+        "cover": "src/components/aplayer/music/张卫健/西游记.jpg",
+        "lrc": "src/components/aplayer/music/张卫健/法术乌魔多.lrc",
         "theme": "#ebd0c2"
     }
 ]

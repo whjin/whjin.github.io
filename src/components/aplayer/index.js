@@ -3,13 +3,17 @@ async function generateAPlayer(func) {
   const ap = new APlayer({
     container: document.querySelector('.aplayer-container'),
     fixed: true,
+    mini: true,
     autoplay: false,
     loop: 'all',
     preload: 'auto',
     volume: 0.7,
     mutex: true,
-    listFolded: false,
+    listFolded: true,
     listMaxHeight: 300,
+    lrcType: 3,
     audio: audioData,
   });
+
+  window.ap = ap;
 }

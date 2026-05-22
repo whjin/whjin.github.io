@@ -41,9 +41,6 @@ async function generateCard() {
   containerEl.appendChild(fragment);
 
   setCardHeight();
-
-  // APlayer 音乐播放器
-  generateAPlayer(fetchData);
 }
 
 async function fetchData(filePath) {

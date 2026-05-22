@@ -1,0 +1,17 @@
+.aplayer-container {
+  display: none;
+}
+.aplayer-container.show {
+  display: block;
+}
+
+.aplayer.aplayer-withlist .aplayer-list {
+  height: 200px;
+  overflow: auto;
+}
+.aplayer.aplayer-fixed .aplayer-lrc {
+  bottom: 4px;
+}
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  color: #007bff;
+}

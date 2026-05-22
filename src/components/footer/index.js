@@ -1,5 +1,6 @@
 (function () {
   const html = `
+    <div class="footer-content">
       <span>&copy;${isMobile() ? '' : '2013-'}${new Date().getFullYear()}</span>
       <a
         href="https://wuhuajin.com"
@@ -24,7 +25,8 @@
         >
           <span id="busuanzi_value_site_pv"></span>
         </a>次
-      </span>
+      </span>    
+    </div>
     `;
   const footerEl = document.querySelector('.footer');
   footerEl.innerHTML = html;

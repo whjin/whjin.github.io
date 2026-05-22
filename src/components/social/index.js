@@ -4,7 +4,7 @@
       href: '',
       title: '微信',
       name: 'wechat',
-      icon: 24,
+      icon: 26,
     },
     {
       href: '',
@@ -13,28 +13,34 @@
       icon: 28,
     },
     {
+      href: '',
+      title: '音乐',
+      name: 'music',
+      icon: 28,
+    },
+    {
       href: 'https://weibo.com/u/1710899102',
       title: '微博',
       name: 'weibo',
-      icon: 24,
+      icon: 26,
     },
     {
       href: 'https://wuhuajin.com',
       title: '博客',
       name: 'blog',
-      icon: 24,
+      icon: 26,
     },
     {
       href: 'mailto:wuhuajin09@163.com',
       title: '邮箱',
       name: 'email',
-      icon: 24,
+      icon: 26,
     },
     {
       href: 'https://github.com/whjin',
       title: 'Github',
       name: 'github',
-      icon: 24,
+      icon: 26,
     },
   ];
 
@@ -88,7 +94,7 @@
     aEl.appendChild(imgEl);
     fragment.appendChild(aEl);
 
-    if (['wechat', 'reward'].includes(s.name)) {
+    if (['wechat', 'reward', 'music'].includes(s.name)) {
       aEl.removeAttribute('href');
       aEl.style.cursor = 'pointer';
     }
@@ -158,6 +164,21 @@
     } else if (className.includes('icon-reward')) {
       qrcodeLink = targetA;
       renderQrcodeList(rewardList);
+    } else if (className.includes('icon-music')) {
+      const aplayerEl = document.querySelector('.aplayer-container');
+      aplayerEl.classList.toggle('show');
+
+      if (window.ap) {
+        const footerEl = document.querySelector('.footer-content');
+        if (aplayerEl.classList.contains('show')) {
+          window.ap.pause();
+          footerEl.style.visibility = 'hidden';
+        } else {
+          footerEl.style.visibility = 'visible';
+        }
+      }
+
+      return;
     } else {
       return;
     }
