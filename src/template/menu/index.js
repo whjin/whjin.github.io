@@ -1,5 +1,5 @@
 async function generateCard() {
-  const menuData = await fetchData();
+  const menuData = await fetchData('src/template/menu/data.json');
   const finalMenuData = processMenuData(menuData);
 
   const containerEl = document.querySelector('.card-container');
@@ -41,11 +41,14 @@ async function generateCard() {
   containerEl.appendChild(fragment);
 
   setCardHeight();
+
+  // APlayer 音乐播放器
+  generateAPlayer(fetchData);
 }
 
-async function fetchData() {
+async function fetchData(filePath) {
   try {
-    const response = await fetch('src/template/menu/data.json');
+    const response = await fetch(filePath);
 
     if (!response.ok) {
       throw new Error(`文件加载失败: ${response.status}`);
