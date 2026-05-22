@@ -170,11 +170,14 @@
 
       if (window.ap) {
         const footerEl = document.querySelector('.footer-content');
+        const menuEl = document.querySelector('.card-container');
         if (aplayerEl.classList.contains('show')) {
           footerEl.style.visibility = 'hidden';
+          menuEl.style.paddingBottom = '2em';
         } else {
           window.ap.pause();
           footerEl.style.visibility = 'visible';
+          menuEl.style.paddingBottom = '1em';
         }
       }
 
