@@ -7,6 +7,7 @@
   z-index: 10;
   max-width: calc(100% - 100px);
   overflow: auto;
+  padding-right: 1em;
 }
 .social::-webkit-scrollbar {
   display: none;
@@ -14,8 +15,8 @@
 
 .social a {
   cursor: pointer;
-  margin-right: 1em;
   display: inline-block;
+  margin-left: 0.5em;
 }
 
 .social img {
