@@ -5,10 +5,6 @@
   display: block;
 }
 
-.aplayer.aplayer-withlist .aplayer-list {
-  height: 300px;
-  overflow: auto;
-}
 .aplayer.aplayer-fixed .aplayer-lrc {
   bottom: 4px;
 }
