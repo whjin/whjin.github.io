@@ -1,7 +1,6 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const url = require('url');
 const chokidar = require('chokidar');
 const WebSocket = require('ws');
 
@@ -11,10 +10,10 @@ const DEBOUNCE_DELAY = 100;
 // 静态文件服务器的根目录
 const rootDir = process.cwd();
 
-// 1. 创建 HTTP 静态文件服务器
 const server = http.createServer((req, res) => {
-  // 使用 url 模块解析请求的 URL
-  const parsedUrl = url.parse(req.url, true);
+  // 使用 new URL 解析请求的 URL 全路径
+  let url = `https://${req.headers.host}${req.url}`;
+  const parsedUrl = new URL(url);
   let pathname = parsedUrl.pathname;
   // 对 URL 进行解码，处理中文字符
   pathname = decodeURIComponent(pathname);
@@ -70,7 +69,7 @@ const server = http.createServer((req, res) => {
           path.join(rootDir, 'src', 'template', pathname),
           // 尝试去掉开头的 /src/template
           pathname.startsWith('/src/template/') ? path.join(rootDir, pathname.slice('/src/template'.length)) : null,
-        ].filter((p) => p && p !== filePath);
+        ].filter(p => p && p !== filePath);
 
         // 检查可能的路径
         let fileFound = false;
@@ -89,7 +88,7 @@ const server = http.createServer((req, res) => {
                 res.end(`<h1>404 - 文件未找到</h1><p>尝试读取文件时出错: ${err.message}</p>`);
               } else {
                 res.writeHead(200, {
-                  'Content-Type': contentType
+                  'Content-Type': contentType,
                 });
                 res.end(data);
               }
@@ -101,7 +100,7 @@ const server = http.createServer((req, res) => {
 
         if (!fileFound) {
           res.writeHead(404, {
-            'Content-Type': 'text/html; charset=utf-8'
+            'Content-Type': 'text/html; charset=utf-8',
           });
           res.end(`
             <html>
@@ -139,7 +138,7 @@ const server = http.createServer((req, res) => {
 
 // 2. 创建 WebSocket 服务器
 const wss = new WebSocket.Server({
-  server
+  server,
 });
 
 // 3. 使用 chokidar 监视项目根目录下的文件变化
@@ -151,12 +150,12 @@ const watcher = chokidar.watch(rootDir, {
 
 // 防抖刷新函数
 let reloadTimer = null;
-const triggerReload = (filePath) => {
+const triggerReload = filePath => {
   clearTimeout(reloadTimer);
   reloadTimer = setTimeout(() => {
     if (path.extname(filePath).match(/\.(html|md|js|css|json)$/)) {
       // 向所有已连接的 WebSocket 客户端发送刷新指令
-      wss.clients.forEach((client) => {
+      wss.clients.forEach(client => {
         if (client.readyState === WebSocket.OPEN) {
           client.send('reload');
         }
@@ -169,7 +168,7 @@ watcher
   .on('add', triggerReload)
   .on('change', triggerReload)
   .on('unlink', triggerReload)
-  .on('error', (error) => console.error('[Live Server] 监听错误:', error));
+  .on('error', error => console.error('[Live Server] 监听错误:', error));
 
 server.listen(PORT, () => {
   console.log('🚀 Live Server 正在运行: http://localhost:' + PORT);
