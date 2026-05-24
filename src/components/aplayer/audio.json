@@ -1,9 +1,41 @@
 [
     {
+        "name": "你笑起来真好看",
+        "artist": "李昕融",
+        "url": "https://videotourl.com/audio/1779666130883-29309f6f-8f6b-4a9f-8313-5a35538bb4f1.mp3",
+        "cover": "https://img4.kuwo.cn/star/albumcover/500/s4s14/74/267013878.jpg",
+        "lrc": "src/components/aplayer/music/儿歌/你笑起来真好看.lrc",
+        "theme": "#ebd0c2"
+    },
+    {
+        "name": "听我说谢谢你",
+        "artist": "李昕融",
+        "url": "https://videotourl.com/audio/1779665783593-a56e30c7-8ba9-4b16-9ea2-faf9c2e64d5b.mp3",
+        "cover": "https://img3.kuwo.cn/star/albumcover/500/s4s13/42/51907171.jpg",
+        "lrc": "src/components/aplayer/music/儿歌/听我说谢谢你.lrc",
+        "theme": "#ebd0c2"
+    },
+    {
+        "name": "上心",
+        "artist": "郑欣宜",
+        "url": "https://videotourl.com/audio/1779665552685-1bc7f47a-8c56-4473-8c05-d5cf06fbe561.mp3",
+        "cover": "https://img4.kuwo.cn/star/albumcover/500/s4s34/12/64232164.jpg",
+        "lrc": "src/components/aplayer/music/郑欣宜/上心.lrc",
+        "theme": "#ebd0c2"
+    },
+    {
+        "name": "南龙北凤",
+        "artist": "周华健&莫文蔚",
+        "url": "https://videotourl.com/audio/1779665232677-a23714ea-c14b-4949-b008-cf59a353c2ba.mp3",
+        "cover": "https://img3.kuwo.cn/star/albumcover/500/s4s83/65/3621769999.jpg",
+        "lrc": "src/components/aplayer/music/周华健/南龙北凤.lrc",
+        "theme": "#ebd0c2"
+    },
+    {
         "name": "若问",
         "artist": "吴涤清",
         "url": "https://videotourl.com/audio/1779426651962-5849d301-d156-421a-80ad-ae68af846bdd.mp3",
-        "cover": "src/components/aplayer/music/吴涤清/若问.jpg",
+        "cover": "https://img1.kuwo.cn/star/albumcover/500/s4s21/56/3491521342.jpg",
         "lrc": "src/components/aplayer/music/吴涤清/若问.lrc",
         "theme": "#ebd0c2"
     },
@@ -11,7 +43,7 @@
         "name": "年华似水",
         "artist": "黄磊",
         "url": "https://videotourl.com/audio/1779426682063-cca089db-2fc9-424c-8851-483210263ed2.mp3",
-        "cover": "src/components/aplayer/music/黄磊/年华似水.jpg",
+        "cover": "https://img3.kuwo.cn/star/albumcover/500/s4s99/46/1094557119.jpg",
         "lrc": "src/components/aplayer/music/黄磊/年华似水.lrc",
         "theme": "#ebd0c2"
     },
@@ -19,7 +51,7 @@
         "name": "花恋火",
         "artist": "应豪",
         "url": "https://videotourl.com/audio/1779426783364-1d58a91e-8e22-434d-92e9-dff6a50c2de4.mp3",
-        "cover": "src/components/aplayer/music/红粉世家/应豪-花恋火.jpg",
+        "cover": "https://img1.kuwo.cn/star/albumcover/500/s4s95/36/3321778721.jpg",
         "lrc": "src/components/aplayer/music/红粉世家/应豪-花恋火.lrc",
         "theme": "#ebd0c2"
     },
@@ -27,7 +59,7 @@
         "name": "暗香",
         "artist": "沙宝亮",
         "url": "https://videotourl.com/audio/1779426808995-953b7ec0-3647-4df7-a164-5b7054cacc2f.mp3",
-        "cover": "src/components/aplayer/music/金粉世家/沙宝亮-暗香.jpg",
+        "cover": "https://img3.kuwo.cn/star/albumcover/500/69/0/3471739171.jpg",
         "lrc": "src/components/aplayer/music/金粉世家/沙宝亮-暗香.lrc",
         "theme": "#ebd0c2"
     },
@@ -35,7 +67,7 @@
         "name": "西游记",
         "artist": "张卫健",
         "url": "https://videotourl.com/audio/1779426832872-d38f23ee-b95b-4b69-ad02-6cd24ffa94e5.mp3",
-        "cover": "src/components/aplayer/music/张卫健/西游记.jpg",
+        "cover": "https://img3.kuwo.cn/star/albumcover/500/s4s79/46/2786732840.jpg",
         "lrc": "src/components/aplayer/music/张卫健/西游记.lrc",
         "theme": "#ebd0c2"
     },
@@ -43,7 +75,7 @@
         "name": "把酒狂歌",
         "artist": "张卫健",
         "url": "https://videotourl.com/audio/1779426856262-3b77f40e-6fba-4a38-ba5e-73451b5c7b3f.mp3",
-        "cover": "src/components/aplayer/music/张卫健/西游记.jpg",
+        "cover": "https://img3.kuwo.cn/star/albumcover/500/s4s79/46/2786732840.jpg",
         "lrc": "src/components/aplayer/music/张卫健/把酒狂歌.lrc",
         "theme": "#ebd0c2"
     },
@@ -51,7 +83,7 @@
         "name": "你爱我像谁",
         "artist": "张卫健",
         "url": "https://videotourl.com/audio/1779426884491-2a4bcc9e-1065-417d-a6b8-f29a7a771396.mp3",
-        "cover": "src/components/aplayer/music/张卫健/张卫健.jpg",
+        "cover": "https://img1.kuwo.cn/star/albumcover/500/s4s11/10/1770238950.jpg",
         "lrc": "src/components/aplayer/music/张卫健/你爱我像谁.lrc",
         "theme": "#ebd0c2"
     },
@@ -59,7 +91,7 @@
         "name": "孤独不苦",
         "artist": "张卫健",
         "url": "https://videotourl.com/audio/1779426915315-bba188fe-55a8-4db4-8aa0-3a15b0f10deb.mp3",
-        "cover": "src/components/aplayer/music/张卫健/孤独不苦.jpg",
+        "cover": "https://img3.kuwo.cn/star/albumcover/500/47/73/663290942.jpg",
         "lrc": "src/components/aplayer/music/张卫健/孤独不苦.lrc",
         "theme": "#ebd0c2"
     },
@@ -67,7 +99,7 @@
         "name": "法术乌魔多",
         "artist": "张卫健",
         "url": "https://videotourl.com/audio/1779426948762-645fd9a9-0dfa-4b8b-8ffb-a702b86d5b56.mp3",
-        "cover": "src/components/aplayer/music/张卫健/西游记.jpg",
+        "cover": "https://img3.kuwo.cn/star/albumcover/500/s4s79/46/2786732840.jpg",
         "lrc": "src/components/aplayer/music/张卫健/法术乌魔多.lrc",
         "theme": "#ebd0c2"
     }
