@@ -8,24 +8,11 @@
         rel="noopener noreferrer"
         title="博客"
       >
-        &nbsp;吴华锦
-      </a>&nbsp;|
-      <span id="busuanzi_container_site_pv" style="display: inline">&nbsp;访问
-        <a
-          href="https://www.busuanzi.cc/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span id="busuanzi_value_site_uv"></span>
-        </a>人        
-        <a
-          href="https://www.busuanzi.cc/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span id="busuanzi_value_site_pv"></span>
-        </a>次
-      </span>    
+        吴华锦  
+      </a>
+      |&nbsp;访问 
+        <span id="vercount_value_site_uv" class="count"></span>人               
+        <span id="vercount_value_site_pv" class="count"></span>次        
     </div>
     `;
   const footerEl = document.querySelector('.footer');

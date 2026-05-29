@@ -225,6 +225,9 @@ a:hover {
   white-space: nowrap;
   overflow: auto;
 }
+.footer-content .count {
+  color: #007bff;
+}
 
 .footer::-webkit-scrollbar,
 pre::-webkit-scrollbar,
