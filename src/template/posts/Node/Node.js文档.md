@@ -3,6 +3,7 @@
 - 开源的 `JS` 运行环境
 - `Chrome V8`引擎 非阻塞 异步 `IO` 服务端
 - 事件驱动：事件队列 异步事件 任务队列
+- 适合处理高并发请求
 
 ## 优缺点
 
@@ -19,6 +20,8 @@
 - 后台管理 实时交互系统 高并发
 - `canvas` 多人协作
 - 单页面浏览器应用创建服务
+- 开发服务器端的中间层（`BFF`）
+- 开发前端方向的各种工具
 
 ## `fs` 模块
 
@@ -114,6 +117,12 @@ const server = http.createServer((req, res) => {
 - `ctx`：`request`、`response`
 - `next`：执行下一次中间件的函数
 - 每个中间件足够清晰，职责单一，可组合
+- 接受客户端请求
+- 渲染 `HTML` 页面
+- `Bigpipe`、`Comet`、`Socket`
+- 合并接口请求
+- 路由定制
+- 数据缓存
 
 ```js
 module.exports = (options) => async (ctx, next) => {

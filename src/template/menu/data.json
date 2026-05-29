@@ -103,12 +103,13 @@
     ]
   },
   {
+    "updated": "2026-5-29 08:36:11",
     "title": "TypeScript",
     "tagName": "ul",
     "items": [
       {
-        "text": "TypeScript与类型系统",
-        "href": "src/template/viewer.html?TypeScript_TypeScript与类型系统"
+        "text": "类型系统",
+        "href": "src/template/viewer.html?TypeScript_类型系统"
       }
     ]
   },
@@ -124,6 +125,7 @@
     ]
   },
   {
+    "updated": "2026-5-28 23:26:51",
     "title": "Node.js",
     "tagName": "ul",
     "items": [
@@ -167,6 +169,7 @@
     ]
   },
   {
+    "sticky": 2,
     "title": "简历",
     "tagName": "ul",
     "items": [
