@@ -44,9 +44,14 @@
     ]
   },
   {
+    "updated": "2026-5-30 20:56:43",
     "title": "Web3",
     "tagName": "ul",
     "items": [
+      {
+        "text": "NFT智能合约",
+        "href": "src/template/viewer.html?Web3_NFT智能合约"
+      },
       {
         "text": "Web3文档",
         "href": "src/template/viewer.html?Web3_Web3文档"
