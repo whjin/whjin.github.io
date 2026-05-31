@@ -13,6 +13,9 @@
   - 整数 枚举 布尔 `address` `contract` `fixed-size byte array`
 - 引用类型 `reference type`
   - 数组 `struct` `mapping`
+- 引用类型，变量本身域变量指向的数据块分离，赋值操作是引用拷贝，数据块不受影响
+- 通常的面向对象语言中所有引用类型变量之间赋值操作，都是引用拷贝
+- 这一点在 `solidity`的引用类型中不再成立：`solidity`的引用类型的变量之间可能发生值拷贝
 
 **`integer(int/uint)`**
 
@@ -71,12 +74,13 @@
 
 **映射 `mapping`**
 
-- 声明形式：`mapping(key type=>value type)`
+- 声明形式：`mapping(key type=>value type)` `mapping(string=>uint8) ages;` `mapping(string => uint8) storage _ages = ages;`
 - `keytype`可以是任何基本类型，包括 `bytes`和 `string`，不包括用户自定义的复杂类型——合约、枚举、结构、映射
 - `value type`可以是包括 `mapping`在内的任何类型
 - 可以作为状态变量、`storage`型局部变量、库函数的参数；不能作为共有函数的参数或返回值
 - `public`的 `mapping`会自动生成 `getter`；嵌套的 `mapping`生成的 `mapper`会有多个参数
 - `mapping`无法遍历 `storage layout`
+- `public`函数参数或返回值不可能出现 `mapping`类型
 
 **合约的基本结果**
 
@@ -86,6 +90,9 @@
 
 **函数可见性**
 默认值变化 `private` `public` `internal` `external`
+
+- `public` - `memory`
+- `internal` - `storage` 成员变量 定义时需要赋值
 
 **合约函数的交易属性**
 
