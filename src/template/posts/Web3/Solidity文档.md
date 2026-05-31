@@ -10,10 +10,9 @@
 **数据类型**
 
 - 值类型 `value type`
-  - 整数 枚举 布尔
-  - `address` `contract`
-  - `fixed` `byte` `array`
+  - 整数 枚举 布尔 `address` `contract` `fixed-size byte array`
 - 引用类型 `reference type`
+  - 数组 `struct` `mapping`
 
 **`integer(int/uint)`**
 
@@ -38,6 +37,46 @@
   - 可转换为 `unit160`和 `bytes20`
   - 合约账户地址与外部账户地址 `EOA External Owner Account`
   - `call` `balance` 很大程度上 `address`并不只是一个数据类型
+
+**`contract`**
+
+- 合约可以隐式转换为它的父合约（多态）
+- 可以显式转换为地址类型 `address`
+- 不支持任何运算符
+- 从合约变量（实例）调用合约函数
+- 可用 `new`操作符部署另一合约
+
+**`fiexed-size byte array`**
+
+- 从 `bytes1`到 `bytes32`
+- 通过下标访问元素
+- 通过 `length`读取长度
+
+**`location`**
+
+- `EVM`从三个地方访问数据：`memory` `storage` `calldata`，这三个地方就是变量的 `location`
+- `calldata`实际上是 `Transation`的数据字段
+
+**数组`array`**
+
+- 与 `location`不同，完全是两种类型
+- `storage`和 `memory`中的动态数组
+- 数组元素的类型限制
+
+**结构 `struct`**
+
+- 结构如同 `contract`和 `enum`，用来自定义数据类型
+- 状态变量、局部变量、参数与返回值均可用结构
+- 结构可放在 `mapping`和数组中，结构的成员可以是 `mapping`或数组
+
+**映射 `mapping`**
+
+- 声明形式：`mapping(key type=>value type)`
+- `keytype`可以是任何基本类型，包括 `bytes`和 `string`，不包括用户自定义的复杂类型——合约、枚举、结构、映射
+- `value type`可以是包括 `mapping`在内的任何类型
+- 可以作为状态变量、`storage`型局部变量、库函数的参数；不能作为共有函数的参数或返回值
+- `public`的 `mapping`会自动生成 `getter`；嵌套的 `mapping`生成的 `mapper`会有多个参数
+- `mapping`无法遍历 `storage layout`
 
 **合约的基本结果**
 
