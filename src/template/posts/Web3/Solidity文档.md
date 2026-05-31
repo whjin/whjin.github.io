@@ -7,6 +7,38 @@
 
 所有的标识符（合约名、函数名和变量名）都只能使用 `ASCII` 字符集。`UTF-8` 编码的数据可以用字符串变量的形式存储。
 
+**数据类型**
+
+- 值类型 `value type`
+  - 整数 枚举 布尔
+  - `address` `contract`
+  - `fixed` `byte` `array`
+- 引用类型 `reference type`
+
+**`integer(int/uint)`**
+
+- 以 `8` 位字长递增
+- 对于整形数类型 `x`，可以用 `type(x)min()`和 `type(x)max()`取这个类型的最大值或最小值
+- 以太坊虚拟机是 `256`位的机器
+
+**`enum type`**
+
+- 枚举是用户创建自定义类型的一种方法 `contract` `struct` `enum`
+- 可以与整形数显式转换（隐式不行）
+- 整形到枚举的转换会检查是否越界
+- 枚举最少一个成员，最多 `256`个成员（`uint8`），默认值是第一个成员
+- 从 `0`开始的无符号整形数
+
+**`address`**
+
+- `20`个字节长度
+- 关于可支付：
+  - `address payable`可支付，有成员函数 `transfer`和 `send`
+  - `address payable`可转换为 `address`，反之需要显式转换
+  - 可转换为 `unit160`和 `bytes20`
+  - 合约账户地址与外部账户地址 `EOA External Owner Account`
+  - `call` `balance` 很大程度上 `address`并不只是一个数据类型
+
 **合约的基本结果**
 
 - 合约中的成员变量
