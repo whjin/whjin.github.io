@@ -26,6 +26,11 @@
 - `redux-thunk`
 - 自定义中间件
 
+**`redux-thunk`中间件处理异步操作**
+
+- `dispatch`默认只支持对象字面量，通过 `redux-thunk`可以让它支持回调函数
+- 通过 `applyMiddleware`方法，让中间件生效
+
 ## `React`方法
 
 - `setState`参数：`setState((prevState, nextProps)=>{},callback)`
