@@ -48,3 +48,12 @@ Set-Cookie: id=a3fWa; Expires=Thu, 18 Dec 2013 12:00:00 GMT; Secure; HttpOnly;
 `SameSite Cokie`允许服务器要求某个 `cookie`在跨站请求时不会被发送，可以阻止跨站请求伪造攻击（`Cross-Site Request Forgery`，简称 `CSRF`）。
 
 `None` `Stict` `Lax`
+
+## 授权和认证
+
+- 授权 `Authorization` 认证 `Authentication`
+- **用户认证**指的是使用用户名、密码来验证当前用户的身份
+  - 用户登录
+  - 错误状态码 `401 Unauthorized` 未授权
+- **用户授权**指当前用户有足够的权限访问特定的资源
+  - 错误状态码 `403 Forbidden` 禁止访问
