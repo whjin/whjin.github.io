@@ -116,6 +116,8 @@ pre {
   height: fit-content;
   max-height: 300px;
   border-radius: 6px;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 code {
