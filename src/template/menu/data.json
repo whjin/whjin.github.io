@@ -160,10 +160,14 @@
     ]
   },
   {
-    "updated": "2026-5-21 17:19:21",
+    "updated": "2026-6-4 22:45:43",
     "title": "小程序",
     "tagName": "ul",
     "items": [
+      {
+        "text": "Taro小程序文档",
+        "href": "src/template/viewer.html?小程序_Taro小程序文档"
+      },
       {
         "text": "实战项目文档",
         "href": "src/template/viewer.html?小程序_实战项目文档"
