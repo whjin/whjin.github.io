@@ -327,7 +327,7 @@ a:hover {
 
 @media screen and (max-width: 768px) {
   .header .title {
-    margin-left: 0.5em;
+    margin-left: 0.3em;
   }
 
   .row .col-md-2,
