@@ -1,7 +1,11 @@
-.aplayer-container {
+.aplayer-container,
+.qqmusic-container,
+.netmusic-container {
   display: none;
 }
-.aplayer-container.show {
+.aplayer-container.show,
+.qqmusic-container.show,
+.netmusic-container.show {
   display: block;
 }
 

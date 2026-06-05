@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="src/css/font-awesome.min.css" />
     <link rel="stylesheet" href="src/css/github-dark.min.css" />
     <link rel="stylesheet" href="src/components/render/index.css" />
+    <link rel="stylesheet" href="src/components/footer/index.css" />
     <link rel="stylesheet" href="src/components/social/index.css" />
     <link rel="stylesheet" href="src/components/loading/index.css" />
     <link rel="stylesheet" href="src/template/menu/index.css" />
@@ -45,11 +46,34 @@
     <div class="scroll-top opacity">
       <span class="arrow-icon" title="回到顶部"></span>
     </div>
+    <div class="aplayer-container"></div>
+    <meting-js
+      class="qqmusic-container"
+      server="tencent"
+      type="playlist"
+      id="3807090840"
+      fixed="true"
+      mini="true"
+      volume="1.0"
+      autoplay="false"
+      theme="#ff6700"
+    ></meting-js>
+    <meting-js
+      class="netmusic-container"
+      server="netease"
+      type="playlist"
+      id="18016359252"
+      fixed="true"
+      mini="true"
+      volume="1.0"
+      autoplay="false"
+      theme="#42b983"
+    ></meting-js>
     <script src="src/js/jquery.min.js"></script>
     <script src="src/components/scroll/index.js"></script>
     <script src="src/js/color-thief.js"></script>
-    <div class="aplayer-container"></div>
     <script src="src/js/APlayer.min.js"></script>
+    <script src="src/js/Meting.min.js"></script>
     <script src="src/components/aplayer/index.js"></script>
   </body>
 </html>

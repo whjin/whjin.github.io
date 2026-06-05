@@ -14,27 +14,39 @@
     },
     {
       href: '',
-      title: '音乐',
+      title: '我的音乐',
       name: 'music',
+      icon: 30,
+    },
+    {
+      href: '',
+      title: 'QQ音乐',
+      name: 'qqmusic',
+      icon: 28,
+    },
+    {
+      href: '',
+      title: '网易云音乐',
+      name: 'netmusic',
       icon: 28,
     },
     {
       href: 'https://weibo.com/u/1710899102',
       title: '微博',
       name: 'weibo',
-      icon: 26,
+      icon: 28,
     },
     {
       href: 'https://wuhuajin.com',
       title: '博客',
       name: 'blog',
-      icon: 26,
+      icon: 28,
     },
     {
       href: 'mailto:wuhuajin09@163.com',
       title: '邮箱',
       name: 'email',
-      icon: 26,
+      icon: 28,
     },
     {
       href: 'https://github.com/whjin',
@@ -94,7 +106,7 @@
     aEl.appendChild(imgEl);
     fragment.appendChild(aEl);
 
-    if (['wechat', 'reward', 'music'].includes(s.name)) {
+    if (['wechat', 'reward', 'music', 'qqmusic', 'netmusic'].includes(s.name)) {
       aEl.removeAttribute('href');
       aEl.style.cursor = 'pointer';
     }
@@ -144,12 +156,61 @@
   function calcTrianglePosition() {
     if (!qrcodeLink) return;
     const modalEl = document.querySelector('.modal-container');
-
     const linkRect = qrcodeLink.getBoundingClientRect();
-
     const offset = isMobile() ? -5 : 3;
     const offsetRight = window.innerWidth - linkRect.right - offset;
     modalEl.style.setProperty('--offset-right', `${offsetRight}px`);
+  }
+
+  function togglePlayer(activeSelector) {
+    const playerConfigs = [
+      {
+        selector: '.aplayer-container',
+        pause: () => {
+          if (window.ap) {
+            window.ap.pause();
+          }
+        },
+      },
+      {
+        selector: '.qqmusic-container',
+        pause: () => {
+          const metingEl = document.querySelector('.qqmusic-container');
+          if (metingEl?.aplayer) {
+            metingEl.aplayer.pause();
+          }
+        },
+      },
+      {
+        selector: '.netmusic-container',
+        pause: () => {
+          const metingEl = document.querySelector('.netmusic-container');
+          if (metingEl?.aplayer) {
+            metingEl.aplayer.pause();
+          }
+        },
+      },
+    ];
+
+    const footerEl = document.querySelector('.footer-content');
+    const menuEl = document.querySelector('.card-container');
+    let isActiveShow = false;
+
+    playerConfigs.forEach(({ selector, pause }) => {
+      const playerEl = document.querySelector(selector);
+      if (selector === activeSelector) {
+        playerEl.classList.toggle('show');
+        isActiveShow = playerEl.classList.contains('show');
+
+        if (!isActiveShow) pause();
+      } else {
+        pause();
+        playerEl.classList.remove('show');
+      }
+    });
+
+    footerEl.style.visibility = isActiveShow ? 'hidden' : 'visible';
+    menuEl.style.paddingBottom = isActiveShow ? '2em' : '1em';
   }
 
   socialEl.addEventListener('click', (e) => {
@@ -165,22 +226,16 @@
       qrcodeLink = targetA;
       renderQrcodeList(rewardList);
     } else if (className.includes('icon-music')) {
-      const aplayerEl = document.querySelector('.aplayer-container');
-      aplayerEl.classList.toggle('show');
-
-      if (window.ap) {
-        const footerEl = document.querySelector('.footer-content');
-        const menuEl = document.querySelector('.card-container');
-        if (aplayerEl.classList.contains('show')) {
-          footerEl.style.visibility = 'hidden';
-          menuEl.style.paddingBottom = '2em';
-        } else {
-          window.ap.pause();
-          footerEl.style.visibility = 'visible';
-          menuEl.style.paddingBottom = '1em';
-        }
-      }
-
+      // 我的音乐
+      togglePlayer('.aplayer-container');
+      return;
+    } else if (className.includes('icon-qqmusic')) {
+      // QQ音乐
+      togglePlayer('.qqmusic-container');
+      return;
+    } else if (className.includes('icon-netmusic')) {
+      // 网易云音乐
+      togglePlayer('.netmusic-container');
       return;
     } else {
       return;
@@ -212,8 +267,7 @@
   fullscreenImgEl.addEventListener('click', hideQrcode);
 
   document.addEventListener('keydown', (e) => {
-    let flag =
-      e.key === 'Escape' && fullscreenOverlayEl.classList.contains('show');
+    let flag = e.key === 'Escape' && fullscreenOverlayEl.classList.contains('show');
     if (flag) {
       hideQrcode(e);
     }
