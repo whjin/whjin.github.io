@@ -155,7 +155,6 @@ blockquote p {
   align-items: center;
   position: fixed;
   top: 0;
-  padding: 0 1em;
 }
 
 .header .title {
@@ -327,6 +326,10 @@ a:hover {
 }
 
 @media screen and (max-width: 768px) {
+  .header .title {
+    margin-left: 0.5em;
+  }
+
   .row .col-md-2,
   .row .col-md-3 {
     border-right: none;

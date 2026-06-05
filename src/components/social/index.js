@@ -54,6 +54,24 @@
       name: 'github',
       icon: 26,
     },
+    {
+      href: 'https://wuhuajin.com',
+      title: '博客',
+      name: 'blog',
+      icon: 28,
+    },
+    {
+      href: 'mailto:wuhuajin09@163.com',
+      title: '邮箱',
+      name: 'email',
+      icon: 28,
+    },
+    {
+      href: 'https://github.com/whjin',
+      title: 'Github',
+      name: 'github',
+      icon: 26,
+    },
   ];
 
   const wechatList = [
