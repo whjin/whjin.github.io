@@ -7,7 +7,7 @@
     },
     {
       src: '../images/icons/back.png',
-      alt: '返回首页',
+      alt: '回到首页',
       class: 'nav-back',
     },
   ];

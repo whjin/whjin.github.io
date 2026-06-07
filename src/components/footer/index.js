@@ -11,10 +11,8 @@
       吴华锦  
       </a>
       |&nbsp;访问
-      <span id="busuanzi_container_site_pv" style="display: inline">
-        <span id="busuanzi_value_site_uv" class="count"></span>人        
-        <span id="busuanzi_value_site_pv" class="count"></span>次
-      </span>           
+      <span id="vercount_value_site_uv" class="count"></span>人   
+      <span id="vercount_value_site_pv" class="count"></span>次            
     </div>
     `;
   const footerEl = document.querySelector('.footer');

@@ -230,7 +230,7 @@
     ]
   },
   {
-    "updated": "2026-6-1 20:57:16",
+    "updated": "2026-6-7 16:34:55",
     "title": "工程化",
     "tagName": "ol",
     "items": [
@@ -239,8 +239,8 @@
         "href": "src/template/viewer.html?工程化_Web加密"
       },
       {
-        "text": "封装接口请求",
-        "href": "src/template/viewer.html?工程化_封装接口请求"
+        "text": "工程实例文档",
+        "href": "src/template/viewer.html?工程化_工程实例文档"
       },
       {
         "text": "Vite与Webpack对比",
