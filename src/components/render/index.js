@@ -12,7 +12,7 @@ function handler(targetId, filePath, callback) {
         }
         return hljs.highlightAuto(code).value;
       },
-    }),
+    })
   );
 
   fetch(filePath)
@@ -36,17 +36,13 @@ function handler(targetId, filePath, callback) {
 async function loadMarkdown(targetId, filePath) {
   return new Promise((resolve, reject) => {
     const key = filePath.includes('home') ? 'home' : 'posts';
-    const Func = {
-      home: localStorage,
-      posts: sessionStorage,
-    };
     const scrollKey = `scrollPosition_${key}`;
     window.addEventListener('scroll', () => {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      Func[key].setItem(scrollKey, scrollTop);
+      localStorage.setItem(scrollKey, scrollTop);
     });
     handler(targetId, filePath, () => {
-      const savedScrollTop = Func[key].getItem(scrollKey);
+      const savedScrollTop = localStorage.getItem(scrollKey);
       if (savedScrollTop) {
         window.scrollTo({
           top: parseInt(savedScrollTop, 10),
