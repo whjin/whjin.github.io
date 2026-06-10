@@ -72,6 +72,18 @@ function generateTOC() {
     return;
   }
 
+  const getFontWeight = (level) => {
+    switch (level) {
+      case 'h1':
+      case 'h2':
+        return '700';
+      case 'h3':
+        return '600';
+      default:
+        return '500';
+    }
+  };
+
   let tocHTML = '<ul>';
   const set = new Set();
   headings.forEach((heading, index) => {
@@ -84,7 +96,7 @@ function generateTOC() {
 
     tocHTML += `
       <li style="
-        font-weight: ${['h1', 'h2'].includes(level) ? '600' : '500'};
+        font-weight: ${getFontWeight(level)};
         padding-left: ${idx * 0.8}em;
       ">
         <a href="#${headingId}" title="${text}">${text}</a>

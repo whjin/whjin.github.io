@@ -260,11 +260,12 @@ a:hover {
 }
 
 .sidebar-area {
-  width: 180px;
-  max-width: 20%;
+  width: fit-content;
+  max-width: 15%;
+  min-width: 180px;
   height: 100vh;
   box-sizing: border-box;
-  border-left: 1px solid #e9ecef;
+  border-left: 2px solid #e9ecef;
   overflow: auto;
   position: sticky;
   top: 0;
@@ -273,8 +274,8 @@ a:hover {
 .sidebar-area .sidebar-title {
   font-size: 1.2em;
   font-weight: bold;
-  border-bottom: 1px solid #e9ecef;
-  padding: 0.5em 0.8em;
+  border-bottom: 2px solid #e9ecef;
+  padding: 0.5em;
 }
 
 .entry ~ .sidebar-area {
@@ -300,7 +301,7 @@ a:hover {
 
 .toc-nav ul {
   list-style: none;
-  padding: 0 0.5em 0 1em;
+  padding: 0 0.5em;
 }
 
 .viewer blockquote dl,

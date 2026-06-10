@@ -1,24 +1,17 @@
 > `Solidity`面向合约、为实现智能合约而创建的高级编程语言。受到了 `C++`，`Python` 和 `JavaScript` 语言的影响，设计的目的是能在以太坊虚拟机（`EVM`）上运行。  
 > `Solidity` 是静态类型语言，支持集成、库和复杂的用户定义类型等特性。
 
-## 智能合约
+# 智能合约
 
 关键字 `pragma` (编译指令)是告知编译器如何处理源代码的指令。`Solidity` 中的合约就是一组代码和数据，它们位于以太坊区块链的一个特定地址上。
 
 所有的标识符（合约名、函数名和变量名）都只能使用 `ASCII` 字符集。`UTF-8` 编码的数据可以用字符串变量的形式存储。
 
-### 数据类型
+## 数据类型
 
-**值类型 `value type`**
+### 值类型 `value type`
 
 - 整数 枚举 布尔 `address` `contract` `fixed-size byte array`
-
-**引用类型 `reference type`**
-
-- 数组 `struct` `mapping`
-- 引用类型，变量本身域变量指向的数据块分离，赋值操作是引用拷贝，数据块不受影响
-- 通常的面向对象语言中所有引用类型变量之间赋值操作，都是引用拷贝
-- 这一点在 `solidity`的引用类型中不再成立：`solidity`的引用类型的变量之间可能发生值拷贝
 
 #### `integer(int/uint)`
 
@@ -59,7 +52,19 @@
 - 通过下标访问元素
 - 通过 `length`读取长度
 
-### 合约函数定义
+### 引用类型 `reference type`
+
+- 数组 `struct` `mapping`
+- 引用类型，变量本身域变量指向的数据块分离，赋值操作是引用拷贝，数据块不受影响
+- 通常的面向对象语言中所有引用类型变量之间赋值操作，都是引用拷贝
+- 这一点在 `solidity`的引用类型中不再成立：`solidity`的引用类型的变量之间可能发生值拷贝
+
+#### `location`
+
+- `EVM`从三个地方访问数据：`memory` `storage` `calldata`，这三个地方就是变量的 `location`
+- `calldata`实际上是 `Transation`的数据字段
+
+## 合约函数定义
 
 `function fname`（[参数]）[可见性][交易相关] `returns`(返回值) `{}`
 
@@ -78,11 +83,6 @@
 - `view` 合约状态读操作
 - `pure` 与合约状态无关的函数
 - 默认是写操作 全网广播，共识确认
-
-**`location`**
-
-- `EVM`从三个地方访问数据：`memory` `storage` `calldata`，这三个地方就是变量的 `location`
-- `calldata`实际上是 `Transation`的数据字段
 
 **数组`array`**
 
@@ -117,7 +117,7 @@
 - 合约函数的背后是 `transaction`，上下文变量访问的是 `transaction`中的信息
 - 两个上下文变量：`tx`和 `msg`
 
-### 子货币（`Subcurrency`）
+## 子货币（`Subcurrency`）
 
 ## 安全
 
