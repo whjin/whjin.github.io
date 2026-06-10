@@ -6,7 +6,7 @@ async function generateCard() {
   const fragment = document.createDocumentFragment();
 
   finalMenuData.forEach((m) => {
-    if (m.items.length > 0) {
+    if (m.items.length > 0 && !m.hide) {
       const cardEl = document.createElement('div');
       cardEl.className = 'card-item';
 

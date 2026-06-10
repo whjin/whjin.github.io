@@ -189,7 +189,7 @@
     ]
   },
   {
-    "sticky": 2,
+    "hide": false,
     "title": "简历",
     "tagName": "ul",
     "items": [

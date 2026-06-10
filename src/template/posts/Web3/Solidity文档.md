@@ -64,7 +64,29 @@
 - `EVM`从三个地方访问数据：`memory` `storage` `calldata`，这三个地方就是变量的 `location`
 - `calldata`实际上是 `Transation`的数据字段
 
-## 合约函数定义
+#### 数组`array`
+
+- 与 `location`不同，完全是两种类型
+- `storage`和 `memory`中的动态数组
+- 数组元素的类型限制
+
+#### 结构 `struct`
+
+- 结构如同 `contract`和 `enum`，用来自定义数据类型
+- 状态变量、局部变量、参数与返回值均可用结构
+- 结构可放在 `mapping`和数组中，结构的成员可以是 `mapping`或数组
+
+#### 映射 `mapping`
+
+- 声明形式：`mapping(key type=>value type)` `mapping(string=>uint8) ages;` `mapping(string => uint8) storage _ages = ages;`
+- `keytype`可以是任何基本类型，包括 `bytes`和 `string`，不包括用户自定义的复杂类型——合约、枚举、结构、映射
+- `value type`可以是包括 `mapping`在内的任何类型
+- 可以作为状态变量、`storage`型局部变量、库函数的参数；不能作为共有函数的参数或返回值
+- `public`的 `mapping`会自动生成 `getter`；嵌套的 `mapping`生成的 `mapper`会有多个参数
+- `mapping`无法遍历 `storage layout`
+- `public`函数参数或返回值不可能出现 `mapping`类型
+
+## 合约函数
 
 `function fname`（[参数]）[可见性][交易相关] `returns`(返回值) `{}`
 
@@ -83,28 +105,6 @@
 - `view` 合约状态读操作
 - `pure` 与合约状态无关的函数
 - 默认是写操作 全网广播，共识确认
-
-**数组`array`**
-
-- 与 `location`不同，完全是两种类型
-- `storage`和 `memory`中的动态数组
-- 数组元素的类型限制
-
-**结构 `struct`**
-
-- 结构如同 `contract`和 `enum`，用来自定义数据类型
-- 状态变量、局部变量、参数与返回值均可用结构
-- 结构可放在 `mapping`和数组中，结构的成员可以是 `mapping`或数组
-
-**映射 `mapping`**
-
-- 声明形式：`mapping(key type=>value type)` `mapping(string=>uint8) ages;` `mapping(string => uint8) storage _ages = ages;`
-- `keytype`可以是任何基本类型，包括 `bytes`和 `string`，不包括用户自定义的复杂类型——合约、枚举、结构、映射
-- `value type`可以是包括 `mapping`在内的任何类型
-- 可以作为状态变量、`storage`型局部变量、库函数的参数；不能作为共有函数的参数或返回值
-- `public`的 `mapping`会自动生成 `getter`；嵌套的 `mapping`生成的 `mapper`会有多个参数
-- `mapping`无法遍历 `storage layout`
-- `public`函数参数或返回值不可能出现 `mapping`类型
 
 **合约的基本结果**
 
