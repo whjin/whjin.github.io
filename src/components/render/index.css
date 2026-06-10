@@ -318,6 +318,7 @@ a:hover {
   color: #333;
   text-decoration: none;
   transition: color 0.2s;
+  word-break: break-all;
 }
 
 .toc-nav a:hover {
