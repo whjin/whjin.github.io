@@ -17,6 +17,19 @@
 - 通常的面向对象语言中所有引用类型变量之间赋值操作，都是引用拷贝
 - 这一点在 `solidity`的引用类型中不再成立：`solidity`的引用类型的变量之间可能发生值拷贝
 
+**合约函数定义**
+
+`function fname`（[参数]）[可见性][交易相关] `returns`(返回值) `{}`
+- 函数签名：`fname`(参数)
+- 返回值：`returns`(返回值)
+
+**函数可见性**
+默认值变化 `private` `public` `internal` `external`
+
+- `public` - `memory` 完全可见
+- `private` 对本合约可见
+- `internal` - `storage` 成员变量 定义时需要赋值 对继承自合约可见
+
 **`integer(int/uint)`**
 
 - 以 `8` 位字长递增
@@ -87,12 +100,6 @@
 - 合约中的成员变量
 - 合约中的成员函数
 - `event` `modifier` `constructor`
-
-**函数可见性**
-默认值变化 `private` `public` `internal` `external`
-
-- `public` - `memory`
-- `internal` - `storage` 成员变量 定义时需要赋值
 
 **合约函数的交易属性**
 
