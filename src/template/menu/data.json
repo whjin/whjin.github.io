@@ -179,9 +179,14 @@
     ]
   },
   {
+    "updated": "2026-6-11 17:50:35",
     "title": "GIS",
     "tagName": "ul",
     "items": [
+      {
+        "text": "Web GIS文档",
+        "href": "src/template/viewer.html?GIS_Web GIS文档"
+      },
       {
         "text": "Cesium文档",
         "href": "src/template/viewer.html?GIS_Cesium文档"
