@@ -194,11 +194,7 @@ const sysTotal = os.totalmem();
 - `multiparty`：文件上传 `"content-type": "multipart/form-data"`
 
 ```js
-<form
-  action="http://localhost:8080/api/upload"
-  method="post"
-  enctype="multipart/form-data"
->
+<form action="http://localhost:8080/api/upload" method="post" enctype="multipart/form-data">
   <input type="file" name="file" id="file" value="" multiple="multiple" />
   <input type="submit" value="提交" />
 </form>;
@@ -230,4 +226,23 @@ const upload = multer({ storage });
 const fileRouter = new Router();
 fileRouter.post('/upload', upload.single('file'), async (ctx, next) => {});
 app.use(fileRouter.routes());
+```
+
+## `NVM`配置
+
+```sh
+NVM_HOME "C:\Program Files\nvm"
+NVM_SYMLINK "C:\Program Files\nvm\nodejs"
+PATH  %NVM_HOME% %NVM_SYMLINK%
+
+// nvm/settings.txt
+root: C:\Software\nvm
+path: C:\Software\nvm\nodejs
+arch: 64
+proxy: none
+
+// 终端
+cd C:\Software\nvm
+rmdir /s /q nodejs
+mklink /D nodejs v24.16.0
 ```
