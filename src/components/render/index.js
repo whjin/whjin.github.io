@@ -76,7 +76,6 @@ function generateTOC() {
     switch (level) {
       case 'h1':
       case 'h2':
-        return '700';
       case 'h3':
         return '600';
       default:

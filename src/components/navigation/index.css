@@ -58,8 +58,7 @@
     border-radius: 0 0 0 100%;
   }
 
-  .nav-toc,
-  .sidebar-area {
+  .nav-toc {
     display: none;
   }
 

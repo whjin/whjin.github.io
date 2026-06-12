@@ -151,6 +151,11 @@
 2. 直接被外部账号调用使用的 `message`可以认为是 `transaction`的一个拷贝
 3. `message`在合约间调用时新产生。调用链条中，合约内部调用看到的是一个 `message`，不同合约看到不同的 `message`。
 
+### `external`
+
+- 函数 `should`应该只被外部函数调用
+- 可以被内部调用，但是这种内部调用也有外部调用机制，即新产生 `message`
+
 ## 子货币（`Subcurrency`）
 
 ## 安全
