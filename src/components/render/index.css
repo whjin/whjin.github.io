@@ -324,6 +324,7 @@ a:hover {
 
 .toc-nav a:hover {
   color: #007bff;
+  font-weight: bold;
   background-color: transparent;
 }
 
