@@ -163,6 +163,25 @@
 - `call`是 `address`的方法
 - `call`返回值 `(bool success, bytes data)`
 - **忽视返回值 `success`，会造成严重问题**
+- `call`函数是运行时动态生成 `calldata`，并未用到静态 `ABI`数据，但 `encodeWithSignature`中函数签名字符串和参数列表信息，与 `ABI`、接口等价、等量。
+
+#### `calldata`结构
+
+- `call`参数是 `calldata`
+- `calldata`的前四个字节是 `selector`，剩下的是参数编码
+- `selector = bytes4(keccak256(<sig>))`
+- `keccak256`：哈希 `sha3->256`
+
+#### `Abi`工具函数
+
+- `calldata = abi.encodeWithSignature(sig, ps)`
+- 返回值解码 `abi.decode(bytes)`
+
+#### `fallback`
+
+- 动态调用 `call`绕过类型检查，或者自定义一个接口函数，但是这个函数并不存在，`fallback`才有机会起作用
+- `proxy`模式中有重要应用：`delegatecall` 支持合约升级
+- 转账功能中有重要作用
 
 ## 子货币（`Subcurrency`）
 
@@ -170,7 +189,7 @@
 
 - **重入攻击（`Reentrancy`）-最高危**
 
-**问题本质：**向外部合约转账/调用时，控制权会转移给对方，恶意合约可在原函数执行完成前回调，重复执行敏感逻辑（如多次提款）
+**问题本质：** 向外部合约转账/调用时，控制权会转移给对方，恶意合约可在原函数执行完成前回调，重复执行敏感逻辑（如多次提款）
 
 ## 问题汇总
 
