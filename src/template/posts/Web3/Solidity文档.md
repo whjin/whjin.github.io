@@ -156,6 +156,14 @@
 - 函数 `should`应该只被外部函数调用
 - 可以被内部调用，但是这种内部调用也有外部调用机制，即新产生 `message`
 
+### `call`函数
+
+`(bool success, bytes data) = <address>.call(bytes calldata)`
+
+- `call`是 `address`的方法
+- `call`返回值 `(bool success, bytes data)`
+- **忽视返回值 `success`，会造成严重问题**
+
 ## 子货币（`Subcurrency`）
 
 ## 安全

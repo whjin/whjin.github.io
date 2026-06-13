@@ -44,10 +44,14 @@
     ]
   },
   {
-    "updated": "2026-6-10 10:38:05",
+    "updated": "2026-6-13 07:51:14",
     "title": "Web3",
     "tagName": "ul",
     "items": [
+      {
+        "text": "Solidity文档",
+        "href": "src/template/viewer.html?Web3_Solidity文档"
+      },
       {
         "text": "NFT智能合约",
         "href": "src/template/viewer.html?Web3_NFT智能合约"
@@ -55,10 +59,6 @@
       {
         "text": "Web3文档",
         "href": "src/template/viewer.html?Web3_Web3文档"
-      },
-      {
-        "text": "Solidity文档",
-        "href": "src/template/viewer.html?Web3_Solidity文档"
       },
       {
         "text": "Web3钱包",
