@@ -213,10 +213,28 @@
 - `<address>.delegatecall(bytes calldata)`
 - 调用别的合约的代码，访问自己的成员
 
-#### 上下文变量
+#### 上下文变化
 
 - `contractB`完全运行在 `contractA`的上下文中，`this msg.sender msg.value`均无变化，`msg`就是 `contractA`的调用者产生的 `message`
 - 合约调用链条中，`delegatecall`是调用者合约管辖范围的扩大
+
+#### 代理模式工作机制
+
+1. 调用者调用 `proxy`的 `setX()`
+2. `proxy`的 `setX()`不存在，`fallback()`触发
+3. `fallback`使用 `delegatecall`调用 `logic`，将 `setX()`调用的 `calldata`传入
+4. `logic`的 `setX()`被执行，但访问的是 `proxy`的 `x`成员
+
+#### 升级
+
+1. 代理模式中，`proxy`负责数据存储，`logic`负责数据的逻辑处理
+2. 升级就是 `proxy`将它的 `logic`成员变量切换到一个新的处理逻辑
+
+### `unstructured`
+
+1. `proxy`提供空白存储，对存储的解释权完全由 `logic`负责，数据与逻辑分离
+2. 让 `proxy`中的 `logic`不参与 `storage`成员的堆叠，也就不必在 `logic`中出现 `placeholder`
+3. `proxy`成为通用的、纯粹的代理，只安排代理控制逻辑，跟具体业务无关，而 `logic`成为纯粹干净的业务逻辑，跟代理机制无关
 
 ## 子货币（`Subcurrency`）
 
