@@ -1,12 +1,12 @@
 [
   {
     "sticky": 1,
-    "title": "诗词",
+    "title": "文学",
     "tagName": "ul",
     "items": [
       {
         "text": "原创诗词",
-        "href": "src/template/viewer.html?诗词_原创诗词"
+        "href": "src/template/viewer.html?文学_原创诗词"
       }
     ]
   },
