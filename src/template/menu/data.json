@@ -205,7 +205,7 @@
     ]
   },
   {
-    "hide": false,
+    "hide": true,
     "title": "简历",
     "tagName": "ul",
     "items": [
