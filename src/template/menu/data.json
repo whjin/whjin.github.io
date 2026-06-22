@@ -1,6 +1,59 @@
 [
   {
     "sticky": 1,
+    "title": "网站",
+    "tagName": "ol",
+    "items": [
+      {
+        "text": "Hello 算法",
+        "href": "https://www.hello-algo.com/"
+      },
+      {
+        "text": "张鑫旭博客",
+        "href": "https://www.zhangxinxu.com/"
+      },
+      {
+        "text": "LeetCode热题",
+        "href": "https://leetcode.cn/studyplan/top-100-liked/"
+      },
+      {
+        "text": "【AI】 Hermes Agent 中文社区",
+        "href": "https://hermesagent.org.cn/"
+      },
+      {
+        "text": "【AI】 OpenAI 教程",
+        "href": "https://developers.openai.ac.cn/"
+      },
+      {
+        "text": "【AI】 Mastra 中文网",
+        "title": "使用现代 TypeScript 技术栈 构建 Agent\r\nMastra 是一个用于构建 AI 驱动的应用和智能代理的一体化框架。",
+        "href": "https://mastra.nodejs.cn/"
+      },
+      {
+        "text": "【AI】 CC Switch 官方网站",
+        "title": "CC Switch 官方网站 - AI 编程工具统一管理平台",
+        "href": "https://ccswitch.io/zh/"
+      },
+      {
+        "text": "【Remote】 Jobanni",
+        "href": "https://jobanni.com/search?q=frontend"
+      },
+      {
+        "text": "【Remote】 hnhiring",
+        "href": "https://hnhiring.com/"
+      },
+      {
+        "text": "【Remote】 workatastartup",
+        "href": "https://www.workatastartup.com/"
+      },
+      {
+        "text": "【Remote】 himalayas",
+        "href": "https://himalayas.app/jobs"
+      }
+    ]
+  },
+  {
+    "sticky": 2,
     "title": "文学",
     "tagName": "ul",
     "items": [
@@ -205,7 +258,7 @@
     ]
   },
   {
-    "hide": true,
+    "hide": false,
     "title": "简历",
     "tagName": "ul",
     "items": [

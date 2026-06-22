@@ -155,11 +155,29 @@
 
   function calcTrianglePosition() {
     if (!qrcodeLink) return;
-    const modalEl = document.querySelector('.modal-container');
+    const modalOverlayEl = document.querySelector('.modal-overlay');
+    const modalContainerEl = document.querySelector('.modal-container');
+
     const linkRect = qrcodeLink.getBoundingClientRect();
-    const offset = isMobile() ? -5 : 3;
-    const offsetRight = window.innerWidth - linkRect.right - offset;
-    modalEl.style.setProperty('--offset-right', `${offsetRight}px`);
+    const parentEl = document.querySelector('.header');
+    const parentRect = parentEl.getBoundingClientRect();
+
+    const linkCenterX = linkRect.left + linkRect.width / 2;
+    const linkCenterRelative = linkCenterX - parentRect.left;
+
+    const modalWidth = modalContainerEl.offsetWidth;
+    const safeGap = 8;
+
+    let finalLeft = linkCenterRelative - modalWidth / 2;
+
+    const minLeft = safeGap;
+    const maxLeft = parentRect.width - modalWidth - safeGap;
+    finalLeft = Math.max(minLeft, Math.min(finalLeft, maxLeft));
+
+    const triangleLeft = linkCenterRelative - finalLeft;
+
+    modalOverlayEl.style.left = `${finalLeft}px`;
+    modalContainerEl.style.setProperty('--triangle-left', `${triangleLeft}px`);
   }
 
   function togglePlayer(activeSelector) {
@@ -242,7 +260,9 @@
     }
 
     overlayEl.classList.add('show');
-    calcTrianglePosition();
+    requestAnimationFrame(() => {
+      calcTrianglePosition();
+    });
   });
 
   document.addEventListener('click', () => {
@@ -272,4 +292,20 @@
       hideQrcode(e);
     }
   });
+
+  window.addEventListener('resize', () => {
+    if (overlayEl.classList.contains('show')) {
+      calcTrianglePosition();
+    }
+  });
+
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (overlayEl.classList.contains('show')) {
+        calcTrianglePosition();
+      }
+    },
+    true
+  );
 })();

@@ -12,13 +12,11 @@
 .social::-webkit-scrollbar {
   display: none;
 }
-
 .social a {
   cursor: pointer;
   display: inline-block;
   margin-left: 1em;
 }
-
 .social img {
   color: #000;
   display: inline-block;
@@ -27,13 +25,18 @@
 .modal-overlay {
   position: absolute;
   top: 40px;
-  right: 0;
+  left: 0;
+  max-width: calc(100% - 16px);
   display: none;
   z-index: 9;
+}
+.modal-overlay.show {
+  display: block;
 }
 
 .modal-container {
   width: fit-content;
+  max-width: 100%;
   height: fit-content;
   box-sizing: border-box;
   background-color: #fff;
@@ -42,17 +45,18 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: 1em;
+  padding: 0.5em;
   position: relative;
-  border-radius: 0 0 0 8px;
-  gap: 1em;
+  border-radius: 8px;
+  gap: 0.5em;
 }
 
 .modal-container::before {
   content: '';
   position: absolute;
   top: -8px;
-  right: var(--offset-right, 50%);
+  left: var(--triangle-left, 50%);
+  transform: translateX(-50%);
   width: 0;
   height: 0;
   border-left: 8px solid transparent;
@@ -67,10 +71,6 @@
   cursor: pointer;
 }
 
-.modal-overlay.show {
-  display: block;
-}
-
 .fullscreen-modal-overlay {
   position: fixed;
   top: 0;
@@ -83,11 +83,9 @@
   align-items: center;
   justify-content: center;
 }
-
 .fullscreen-modal-overlay.show {
   display: flex;
 }
-
 .fullscreen-modal-img {
   max-width: 356px;
   max-height: 356px;
@@ -97,14 +95,17 @@
 
 @media screen and (max-width: 768px) {
   .modal-container {
-    border-radius: 0;
+    border-radius: 8px;
+  }
+
+  .modal-overlay {
+    max-width: calc(100vw - 16px);
   }
 
   .fullscreen-modal-img {
     max-width: 356px;
     max-height: 356px;
   }
-
   .social {
     margin-right: 0.5em;
   }

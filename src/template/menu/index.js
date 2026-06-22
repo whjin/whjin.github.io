@@ -26,7 +26,8 @@ async function generateCard() {
         const aEl = document.createElement('a');
         aEl.rel = 'noopener noreferrer';
         aEl.target = '_blank';
-        aEl.innerText = aEl.title = i.text;
+        aEl.innerText = i.text;
+        aEl.title = i.title || i.text;
         aEl.href = i.href;
 
         liEl.appendChild(aEl);

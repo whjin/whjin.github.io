@@ -42,9 +42,22 @@
 }
 
 .card-list::-webkit-scrollbar {
-  display: none;
+  width: 0.3em;
+}
+.card-list::-webkit-scrollbar-thumb {
+  background: #a09f9f;
+  border-radius: 0.25em;
+}
+.card-list::-webkit-scrollbar-thumb:hover {
+  background: #808080;
 }
 
 .card-list li:not(:last-child) {
   margin-bottom: 0.3em;
+}
+
+@media screen and (max-width: 768px) {
+  .card-list::-webkit-scrollbar {
+    display: none;
+  }
 }
