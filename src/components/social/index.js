@@ -82,10 +82,18 @@
   ];
 
   let qrcodeLink = null;
+  let prevIsMobile = isMobile();
 
   const titleEl = document.querySelector('.title');
   const socialEl = document.createElement('nav');
   socialEl.className = 'social';
+
+  const barsEl = document.createElement('img');
+  barsEl.className = 'social-bars';
+  barsEl.src = 'src/images/icons/bars.png';
+  barsEl.title = barsEl.alt = '展开';
+  barsEl.width = barsEl.height = 26;
+  titleEl.after(barsEl);
 
   const fragment = document.createDocumentFragment();
   socialList.forEach((s) => {
@@ -113,9 +121,7 @@
   });
   socialEl.appendChild(fragment);
   titleEl.after(socialEl);
-
-  const headerEl = document.querySelector('.header');
-  headerEl.style.justifyContent = isMobile() ? 'flex-start' : 'center';
+  titleEl.innerText = isMobile() ? '吴华锦' : '吴华锦的个人主页';
 
   const overlayEl = document.createElement('div');
   overlayEl.className = 'modal-overlay';
@@ -231,6 +237,35 @@
     menuEl.style.paddingBottom = isActiveShow ? '2em' : '1em';
   }
 
+  function toggleSocial(type) {
+    if (isMobile()) {
+      const isSocialShow = socialEl.classList.contains('show');
+      barsEl.style.display = isSocialShow ? 'none' : 'block';
+    } else {
+      socialEl.classList.add('show');
+      barsEl.style.display = 'none';
+    }
+  }
+  toggleSocial();
+
+  barsEl.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isShow = socialEl.classList.toggle('show');
+    barsEl.style.display = isShow ? 'none' : 'block';
+
+    if (!isShow) {
+      overlayEl.classList.remove('show');
+    }
+  });
+  titleEl.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (!isMobile()) return;
+
+    socialEl.classList.remove('show');
+    overlayEl.classList.remove('show');
+    barsEl.style.display = 'block';
+  });
+
   socialEl.addEventListener('click', (e) => {
     e.stopPropagation();
     const targetA = e.target.closest('a');
@@ -278,6 +313,16 @@
     document.body.style.overflow = '';
   }
 
+  function debounce(func, delay = 150) {
+    let timer = null;
+    return function (...args) {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        func.apply(this, args);
+      }, delay);
+    };
+  }
+
   fullscreenOverlayEl.addEventListener('click', (e) => {
     if (e.target === fullscreenOverlayEl) {
       hideQrcode(e);
@@ -293,19 +338,19 @@
     }
   });
 
-  window.addEventListener('resize', () => {
+  const handleResize = debounce(() => {
+    const currentIsMobile = isMobile();
+    if (currentIsMobile !== prevIsMobile) {
+      prevIsMobile = currentIsMobile;
+      window.location.reload();
+      return;
+    }
+
     if (overlayEl.classList.contains('show')) {
       calcTrianglePosition();
     }
+    toggleSocial();
   });
 
-  window.addEventListener(
-    'scroll',
-    () => {
-      if (overlayEl.classList.contains('show')) {
-        calcTrianglePosition();
-      }
-    },
-    true
-  );
+  window.addEventListener('resize', handleResize);
 })();

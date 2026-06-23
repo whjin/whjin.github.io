@@ -5,7 +5,7 @@
   position: absolute;
   right: 0;
   z-index: 10;
-  max-width: calc(100% - 70px);
+  max-width: calc(100% - 96px);
   overflow: auto;
   margin-right: 1em;
 }
@@ -20,6 +20,19 @@
 .social img {
   color: #000;
   display: inline-block;
+}
+
+.social-bars {
+  cursor: pointer;
+  display: none;
+  width: 26px;
+  height: 26px;
+  margin-right: 0.5em;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 11;
 }
 
 .modal-overlay {
@@ -106,7 +119,16 @@
     max-width: 356px;
     max-height: 356px;
   }
+
   .social {
     margin-right: 0.5em;
+    display: none;
+  }
+  .social.show {
+    display: flex;
+  }
+
+  .social-bars {
+    display: block;
   }
 }

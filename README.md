@@ -33,6 +33,7 @@
 17. 更换网站访问统计插件 `busuanzi` -> `vercount`
 18. 增加 `Meting.js` 播放器插件，禁止首页手动缩放
 
-## 问题解决
+## 功能优化
 
 - `APlayer`切换下一曲播放时报错 `classList`为 `undefined`，在 `APlayer.min.js`依赖查找`classList.add("aplayer-lrc-current")`改为 `?.classList.add("aplayer-lrc-current")`即可解决问题。
+- 优化社交图标栏显示隐藏切换功能，适配移动端设计
