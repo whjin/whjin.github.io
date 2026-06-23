@@ -1,6 +1,28 @@
 [
   {
     "sticky": 1,
+    "title": "文学",
+    "tagName": "ul",
+    "items": [
+      {
+        "text": "原创",
+        "href": "src/template/viewer.html?文学_原创诗词"
+      }
+    ]
+  },
+  {
+    "sticky": 2,
+    "title": "生活",
+    "tagName": "ul",
+    "items": [
+      {
+        "text": "育儿",
+        "href": "src/template/viewer.html?生活_育儿经"
+      }
+    ]
+  },
+  {
+    "sticky": 3,
     "title": "技术站点",
     "tagName": "ol",
     "items": [
@@ -19,51 +41,8 @@
     ]
   },
   {
-    "sticky": 1,
-    "title": "AI社区",
-    "tagName": "ol",
-    "items": [
-      {
-        "text": "Hermes Agent 中文社区",
-        "href": "https://hermesagent.org.cn/"
-      },
-      {
-        "text": "OpenAI 教程",
-        "href": "https://developers.openai.ac.cn/"
-      },
-      {
-        "text": "Mastra 中文网",
-        "title": "使用现代 TypeScript 技术栈 构建 Agent\r\nMastra 是一个用于构建 AI 驱动的应用和智能代理的一体化框架。",
-        "href": "https://mastra.nodejs.cn/"
-      },
-      {
-        "text": "CC Switch 官方网站",
-        "title": "CC Switch 官方网站 - AI 编程工具统一管理平台",
-        "href": "https://ccswitch.io/zh/"
-      },
-      {
-        "text": "Hermes Agent 中文社区",
-        "href": "https://hermesagent.org.cn/"
-      },
-      {
-        "text": "OpenAI 教程",
-        "href": "https://developers.openai.ac.cn/"
-      },
-      {
-        "text": "Mastra 中文网",
-        "title": "使用现代 TypeScript 技术栈 构建 Agent\r\nMastra 是一个用于构建 AI 驱动的应用和智能代理的一体化框架。",
-        "href": "https://mastra.nodejs.cn/"
-      },
-      {
-        "text": "CC Switch 官方网站",
-        "title": "CC Switch 官方网站 - AI 编程工具统一管理平台",
-        "href": "https://ccswitch.io/zh/"
-      }
-    ]
-  },
-  {
-    "sticky": 1,
-    "title": "Remote Job",
+    "sticky": 3,
+    "title": "Remote",
     "tagName": "ol",
     "items": [
       {
@@ -81,28 +60,6 @@
       {
         "text": "himalayas",
         "href": "https://himalayas.app/jobs"
-      }
-    ]
-  },
-  {
-    "sticky": 2,
-    "title": "文学",
-    "tagName": "ul",
-    "items": [
-      {
-        "text": "原创诗词",
-        "href": "src/template/viewer.html?文学_原创诗词"
-      }
-    ]
-  },
-  {
-    "updated": "2026-6-14 00:05:46",
-    "title": "生活",
-    "tagName": "ul",
-    "items": [
-      {
-        "text": "育儿经",
-        "href": "src/template/viewer.html?生活_育儿经"
       }
     ]
   },
@@ -136,6 +93,24 @@
       {
         "text": "AI视频制作",
         "href": "src/template/viewer.html?AI_AI视频制作"
+      },
+      {
+        "text": "【站点】 Hermes Agent 中文社区",
+        "href": "https://hermesagent.org.cn/"
+      },
+      {
+        "text": "【站点】 OpenAI 教程",
+        "href": "https://developers.openai.ac.cn/"
+      },
+      {
+        "text": "【站点】 Mastra 中文网",
+        "title": "使用现代 TypeScript 技术栈 构建 Agent\r\nMastra 是一个用于构建 AI 驱动的应用和智能代理的一体化框架。",
+        "href": "https://mastra.nodejs.cn/"
+      },
+      {
+        "text": "【站点】 CC Switch 官方网站",
+        "title": "CC Switch 官方网站 - AI 编程工具统一管理平台",
+        "href": "https://ccswitch.io/zh/"
       }
     ]
   },
@@ -275,7 +250,7 @@
     ]
   },
   {
-    "updated": "2026-6-11 17:50:35",
+    "updated": "2026-6-23 11:28:35",
     "title": "GIS",
     "tagName": "ul",
     "items": [
@@ -286,6 +261,15 @@
       {
         "text": "Cesium文档",
         "href": "src/template/viewer.html?GIS_Cesium文档"
+      },
+      {
+        "text": "【站点】 cesium 中文网",
+        "href": "https://cesium.xin/"
+      },
+      {
+        "text": "【站点】 Cesium 中文官网",
+        "tite": "3D 地理空间平台\r\nCesium 是一个开放平台，旨在为释放 3D 数据潜力的软件应用程序提供支持。",
+        "href": "https://cesium.xin/"
       }
     ]
   },
