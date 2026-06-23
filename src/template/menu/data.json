@@ -190,13 +190,46 @@
     ]
   },
   {
-    "updated": "2026-6-2 23:09:55",
+    "updated": "2026-6-23 13:26:30",
+    "title": "JavaScript",
+    "tagName": "ol",
+    "items": [
+      {
+        "text": "功能代码集合",
+        "href": "src/template/viewer.html?JavaScript_功能代码集合"
+      },
+      {
+        "text": "设计模式文档",
+        "href": "src/template/viewer.html?JavaScript_设计模式文档"
+      },
+      {
+        "text": "ECMAScript文档",
+        "href": "src/template/viewer.html?JavaScript_ECMAScript文档"
+      },
+      {
+        "text": "【站点】 Lodash 中文网",
+        "title": "Lodash\r\n实用工具库\r\n提供一致性、模块化、高性能、以及额外功能",
+        "href": "https://lodash.nodejs.cn/"
+      }
+    ]
+  },
+  {
+    "updated": "2026-6-23 12:49:20",
     "title": "TypeScript",
-    "tagName": "ul",
+    "tagName": "ol",
     "items": [
       {
         "text": "类型系统",
         "href": "src/template/viewer.html?TypeScript_类型系统"
+      },
+      {
+        "text": "【站点】 TypeScript 中文网",
+        "href": "https://ts.nodejs.cn/"
+      },
+      {
+        "text": "【站点】 Better Auth 中文网",
+        "title": "适用于 TypeScript 的最全面认证框架。",
+        "href": "https://better-auth.nodejs.cn/"
       }
     ]
   },
@@ -312,7 +345,7 @@
       },
       {
         "text": "【站点】 ArcGIS Online",
-        "title": "使用 ArcGIS Online (Esri 的基于 web 的制图软件) 构建交互式 Web 地图。 在地图上与数据交互、放大和搜索时获取新视角和增强细节。 使用智能、数据驱动的制图样式和直观的分析工具来获取位置情报。 ",
+        "title": "使用 ArcGIS Online (Esri 的基于 web 的制图软件) 构建交互式 Web 地图。 在地图上与数据交互、放大和搜索时获取新视角和增强细节。 使用智能、数据驱动的制图样式和直观的分析工具来获取位置情报。",
         "href": "https://www.arcgis.com/home/index.html"
       }
     ]
@@ -337,24 +370,6 @@
       {
         "text": "英文简历PDF",
         "href": "src/template/viewer.html?简历_英文简历PDF&format=pdf"
-      }
-    ]
-  },
-  {
-    "title": "JavaScript",
-    "tagName": "ul",
-    "items": [
-      {
-        "text": "功能代码集合",
-        "href": "src/template/viewer.html?JavaScript_功能代码集合"
-      },
-      {
-        "text": "设计模式文档",
-        "href": "src/template/viewer.html?JavaScript_设计模式文档"
-      },
-      {
-        "text": "ECMAScript文档",
-        "href": "src/template/viewer.html?JavaScript_ECMAScript文档"
       }
     ]
   },

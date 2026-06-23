@@ -31,16 +31,19 @@
 }
 
 .count-badge {
+  font-size: 12px;
+  margin-left: 2px;
+  color: red;
+}
+.count-badge.normal {
   display: inline-block;
+  text-align: center;
   width: 18px;
   height: 18px;
   line-height: 18px;
-  text-align: center;
   border-radius: 50%;
-  font-size: 12px;
   background-color: red;
   color: #fff;
-  margin-left: 2px;
 }
 
 .sticky-mark::before {

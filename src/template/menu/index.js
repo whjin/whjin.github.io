@@ -21,8 +21,13 @@ async function generateCard() {
 
       if (m.items.length > 8) {
         const countBadge = document.createElement('sup');
-        countBadge.className = 'count-badge';
         countBadge.textContent = m.items.length;
+        countBadge.className = 'count-badge';
+        if (m.items.length > 99) {
+          countBadge.classList.remove('normal');
+        } else {
+          countBadge.classList.add('normal');
+        }
         headerEl.appendChild(countBadge);
       }
 
@@ -146,7 +151,6 @@ function restoreCardScroll() {
   if (!savedTitle || savedTop === null) return;
 
   const targetList = document.querySelector(`.card-list[data-card-list-title="${savedTitle}"]`);
-  console.log(targetList);
   if (targetList) {
     targetList.scrollTop = Number(savedTop);
   }
