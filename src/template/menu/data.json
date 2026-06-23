@@ -210,6 +210,49 @@
         "text": "【站点】 Lodash 中文网",
         "title": "Lodash\r\n实用工具库\r\n提供一致性、模块化、高性能、以及额外功能",
         "href": "https://lodash.nodejs.cn/"
+      },
+      {
+        "text": "【站点】 D3 中文网",
+        "title": "用于定制数据可视化的 JavaScript 库",
+        "href": "https://d3.nodejs.cn/"
+      },
+      {
+        "text": "【站点】 PixiJS 中文网",
+        "title": "HTML5 创作引擎\r\n使用最快、最灵活的 2D WebGL 渲染器创建精美的数字内容。",
+        "href": "https://pixi.nodejs.cn/"
+      },
+      {
+        "text": "【站点】 Babel 中文网",
+        "title": "Babel 是一个 JavaScript 编译器。",
+        "href": "https://babel.nodejs.cn/"
+      },
+      {
+        "text": "【站点】 Chart.js 中文网",
+        "title": "Chart.js\r\n用于现代网络的简单而灵活的 JavaScript 图表库",
+        "href": "https://chart.nodejs.cn/"
+      },
+      {
+        "text": "【站点】 Marked 中文网",
+        "href": "https://marked.nodejs.cn/"
+      },
+      {
+        "text": "【站点】 Day.js 中文网",
+        "title": "Day.js 中文网\r\n快速且体积只有 2kB 的 Moment.js 替代者，具有同样现代的 API",
+        "href": "https://day.nodejs.cn/"
+      },
+      {
+        "text": "【站点】 Milkdown 中文网",
+        "title": "一个插件驱动的框架，用于构建所见即所得的 Markdown 编辑器。",
+        "href": "https://milkdown.nodejs.cn/"
+      },
+      {
+        "text": "【站点】 clipboard.js 中文网",
+        "title": "将文本复制到剪贴板的现代方法\r\n没有 Flash。没有框架。只有 3kb gzip 压缩包",
+        "href": "https://clipboard.nodejs.cn/"
+      },
+      {
+        "text": "【站点】 Redis 中文网",
+        "href": "https://redis.nodejs.cn/"
       }
     ]
   },
@@ -245,7 +288,7 @@
     ]
   },
   {
-    "updated": "2026-5-28 23:26:51",
+    "updated": "2026-6-23 14:47:41",
     "title": "Node.js",
     "tagName": "ul",
     "items": [

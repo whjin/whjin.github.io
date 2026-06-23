@@ -19,7 +19,7 @@ async function generateCard() {
       headerEl.className = 'card-title';
       headerEl.innerText = m.title;
 
-      if (m.items.length > 8) {
+      if (m.items.length > 7) {
         const countBadge = document.createElement('sup');
         countBadge.textContent = m.items.length;
         countBadge.className = 'count-badge';
