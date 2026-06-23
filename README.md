@@ -32,10 +32,8 @@
 16. 增加文章赞赏功能和付费阅读功能
 17. 更换网站访问统计插件 `busuanzi` -> `vercount`
 18. 增加 `Meting.js` 播放器插件，禁止首页手动缩放
-
-## 功能优化
-
-- `APlayer`切换下一曲播放时报错 `classList`为 `undefined`，在 `APlayer.min.js`依赖查找`classList.add("aplayer-lrc-current")`改为 `?.classList.add("aplayer-lrc-current")`即可解决问题。
-- 优化社交图标栏显示隐藏切换功能，适配移动端设计。
-- 主页卡片 `PC`端鼠标 `hover` 时显示滚动条，鼠标移出隐藏滚动条。
-- 卡片高度内容自适应处理，提升空间利用率。
+19. `APlayer`切换下一曲播放时报错 `classList`为 `undefined`，在 `APlayer.min.js`依赖查找`classList.add("aplayer-lrc-current")`改为 `?.classList.add("aplayer-lrc-current")`即可解决问题。
+20. 优化社交图标栏显示隐藏切换功能，适配移动端设计。
+21. 主页卡片 `PC`端鼠标 `hover` 时显示滚动条，鼠标移出隐藏滚动条。
+22. 卡片高度内容自适应处理，提升空间利用率。
+23. 增加首页卡片滚动条记忆功能。

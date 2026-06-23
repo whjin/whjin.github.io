@@ -25,4 +25,8 @@ window.addEventListener('load', () => {
       behavior: 'auto',
     });
   }
+
+  if (typeof restoreCardScroll === 'function') {
+    restoreCardScroll();
+  }
 });

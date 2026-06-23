@@ -5,10 +5,15 @@ async function generateCard() {
   const containerEl = document.querySelector('.card-container');
   const fragment = document.createDocumentFragment();
 
+  const validTitles = finalMenuData
+    .filter((m) => !m.hide && m.items.length > 0)
+    .map((m) => m.title);
+
   finalMenuData.forEach((m) => {
     if (!m.hide && m.items.length > 0) {
       const cardEl = document.createElement('div');
       cardEl.className = 'card-item';
+      cardEl.dataset.cardTitle = m.title;
 
       const headerEl = document.createElement('div');
       headerEl.className = 'card-title';
@@ -27,6 +32,7 @@ async function generateCard() {
 
       const listEl = document.createElement(m.tagName);
       listEl.className = 'card-list';
+      listEl.dataset.cardListTitle = m.title;
 
       m.items.forEach((i) => {
         const liEl = document.createElement('li');
@@ -49,6 +55,11 @@ async function generateCard() {
   containerEl.appendChild(fragment);
 
   setCardHeight();
+
+  // 绑定滚动监听（仅更新当前操作卡片）
+  bindCardScroll();
+  // 恢复上次滚动卡片位置
+  restoreCardScroll();
 }
 
 async function fetchData(filePath) {
@@ -110,5 +121,33 @@ function setCardHeight() {
     cardItems.forEach((card) => {
       card.style.height = `${finalHeight}px`;
     });
+  }
+}
+
+function bindCardScroll() {
+  const cardLists = document.querySelectorAll('.card-list');
+  cardLists.forEach((list) => {
+    let debounceTimer = null;
+    list.addEventListener('scroll', () => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        const title = list.dataset.cardListTitle;
+        const scrollVal = list.scrollTop;
+        localStorage.setItem('lastScrollCardTitle', title);
+        localStorage.setItem('lastScrollCardTop', scrollVal);
+      }, 100);
+    });
+  });
+}
+
+function restoreCardScroll() {
+  const savedTitle = localStorage.getItem('lastScrollCardTitle');
+  const savedTop = localStorage.getItem('lastScrollCardTop');
+  if (!savedTitle || savedTop === null) return;
+
+  const targetList = document.querySelector(`.card-list[data-card-list-title="${savedTitle}"]`);
+  console.log(targetList);
+  if (targetList) {
+    targetList.scrollTop = Number(savedTop);
   }
 }
