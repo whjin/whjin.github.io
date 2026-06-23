@@ -22,37 +22,53 @@
     ]
   },
   {
-    "updated": "2026-6-23 18:57:27",
+    "sticky": 1,
+    "title": "个人站点",
+    "tagName": "ol",
+    "items": [
+      {
+        "text": "whjin-Gitee.com",
+        "title": "寒青 (whjin) - Gitee 码云",
+        "href": "https://gitee.com/whjin"
+      },
+      {
+        "text": "有趣的开源社区 - HelloGitHub",
+        "href": "https://hellogithub.com/"
+      }
+    ]
+  },
+  {
+    "updated": "2026-6-23 19:12:07",
     "title": "技术站点",
     "tagName": "ol",
     "items": [
       {
-        "text": "【站点】 Hello 算法",
+        "text": "Hello 算法",
         "href": "https://www.hello-algo.com/"
       },
       {
-        "text": "【站点】 张鑫旭博客",
+        "text": "张鑫旭博客",
         "href": "https://www.zhangxinxu.com/"
       },
       {
-        "text": "【站点】 LeetCode热题",
+        "text": "LeetCode热题",
         "href": "https://leetcode.cn/studyplan/top-100-liked/"
       },
       {
-        "text": "【站点】 CS自学指南",
+        "text": "CS自学指南",
         "href": "https://csdiy.wiki/"
       },
       {
-        "text": "【站点】 egghead.io",
+        "text": "egghead.io",
         "title": "Learn Web Development from Expert Developers",
         "href": "https://egghead.io/"
       },
       {
-        "text": "【站点】 现代 JavaScript 教程",
+        "text": "现代 JavaScript 教程",
         "href": "https://zh.javascript.info/"
       },
       {
-        "text": "【站点】 全栈公开课",
+        "text": "全栈公开课",
         "href": "https://fullstackopen.com/zh/"
       }
     ]
@@ -66,6 +82,17 @@
         "text": "【站点】 Mongoose 中文网",
         "title": "优雅的 MongoDB 对象建模，适用于 Node.js",
         "href": "https://mongoose.nodejs.cn/"
+      }
+    ]
+  },
+  {
+    "updated": "2026-6-23 19:09:24",
+    "title": "CSS",
+    "tagName": "ol",
+    "items": [
+      {
+        "text": "【站点】 Sass 中文网",
+        "href": "https://sass.nodejs.cn/"
       }
     ]
   },
@@ -394,9 +421,9 @@
     ]
   },
   {
-    "updated": "2026-6-4 22:45:43",
+    "updated": "2026-6-23 22:11:34",
     "title": "小程序",
-    "tagName": "ul",
+    "tagName": "ol",
     "items": [
       {
         "text": "Taro小程序文档",
@@ -409,6 +436,14 @@
       {
         "text": "小程序文档",
         "href": "src/template/viewer.html?小程序_小程序文档"
+      },
+      {
+        "text": "【站点】 Taro 多端统一开发解决方案",
+        "href": "https://taro.js.org/"
+      },
+      {
+        "text": "【站点】 awesome-wechat-weapp",
+        "href": "https://github.com/justjavac/awesome-wechat-weapp"
       }
     ]
   },

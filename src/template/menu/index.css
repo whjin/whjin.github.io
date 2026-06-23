@@ -56,6 +56,7 @@
   flex: 1;
   box-sizing: border-box;
   overflow: auto;
+  padding-right: 0.5em;
 }
 
 .card-list::-webkit-scrollbar {
@@ -70,7 +71,7 @@
   background: #808080;
 }
 .card-item:hover .card-list::-webkit-scrollbar {
-  width: 0.3em;
+  width: 0.5em;
 }
 
 .card-list li:not(:last-child) {

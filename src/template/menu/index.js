@@ -35,7 +35,7 @@ async function generateCard() {
         headerEl.classList.add('sticky-mark');
       }
 
-      const listEl = document.createElement(m.tagName);
+      const listEl = document.createElement(m.tagName || 'ul');
       listEl.className = 'card-list';
       listEl.dataset.cardListTitle = m.title;
 
