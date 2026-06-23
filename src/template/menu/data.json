@@ -22,21 +22,50 @@
     ]
   },
   {
-    "updated": "2026-6-23 12:07:18",
+    "updated": "2026-6-23 18:57:27",
     "title": "技术站点",
     "tagName": "ol",
     "items": [
       {
-        "text": "Hello 算法",
+        "text": "【站点】 Hello 算法",
         "href": "https://www.hello-algo.com/"
       },
       {
-        "text": "张鑫旭博客",
+        "text": "【站点】 张鑫旭博客",
         "href": "https://www.zhangxinxu.com/"
       },
       {
-        "text": "LeetCode热题",
+        "text": "【站点】 LeetCode热题",
         "href": "https://leetcode.cn/studyplan/top-100-liked/"
+      },
+      {
+        "text": "【站点】 CS自学指南",
+        "href": "https://csdiy.wiki/"
+      },
+      {
+        "text": "【站点】 egghead.io",
+        "title": "Learn Web Development from Expert Developers",
+        "href": "https://egghead.io/"
+      },
+      {
+        "text": "【站点】 现代 JavaScript 教程",
+        "href": "https://zh.javascript.info/"
+      },
+      {
+        "text": "【站点】 全栈公开课",
+        "href": "https://fullstackopen.com/zh/"
+      }
+    ]
+  },
+  {
+    "updated": "2026-6-23 18:49:22",
+    "title": "数据库",
+    "tagName": "ol",
+    "items": [
+      {
+        "text": "【站点】 Mongoose 中文网",
+        "title": "优雅的 MongoDB 对象建模，适用于 Node.js",
+        "href": "https://mongoose.nodejs.cn/"
       }
     ]
   },
@@ -253,6 +282,16 @@
       {
         "text": "【站点】 Redis 中文网",
         "href": "https://redis.nodejs.cn/"
+      },
+      {
+        "text": "【站点】 Anime.js 中文网",
+        "title": "一体化动画引擎.\r\n一个快速且灵活的 JavaScript 库。",
+        "href": "https://anime.nodejs.cn/"
+      },
+      {
+        "text": "【站点】 Mermaid 中文网",
+        "title": "Mermaid 图表工具\r\n基于 JavaScript 的图表工具，可渲染 Markdown 启发的文本定义以动态创建和修改图表。",
+        "href": "https://mermaid.nodejs.cn/"
       }
     ]
   },
@@ -288,8 +327,8 @@
     ]
   },
   {
-    "updated": "2026-6-23 14:47:41",
-    "title": "Node.js",
+    "updated": "2026-6-23 18:51:25",
+    "title": "Nodejs",
     "tagName": "ol",
     "items": [
       {
@@ -332,6 +371,25 @@
         "text": "【站点】 Fastify 中文网",
         "title": "Fastify 中文网\r\n快速且低开销的 Node.js Web 框架",
         "href": "https://fastify.nodejs.cn/"
+      },
+      {
+        "text": "【站点】 Socket.IO 中文网",
+        "title": "适用于每个平台的双向且低延迟的通信",
+        "href": "https://socket.nodejs.cn/"
+      },
+      {
+        "text": "【站点】 dotenv 中文网",
+        "title": "dotenv 环境变量工具\r\n从 .env 文件加载环境变量",
+        "href": "https://dotenv.nodejs.cn/"
+      },
+      {
+        "text": "【站点】 GraphQL 中文网",
+        "title": "一种用于 API 的查询语言",
+        "href": "https://graphql.cn/"
+      },
+      {
+        "text": "【站点】 PM2 官网",
+        "href": "https://pm2.keymetrics.io/"
       }
     ]
   },
