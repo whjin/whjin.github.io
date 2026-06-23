@@ -17,8 +17,8 @@
 }
 
 .card-title {
-  height: 32px;
-  line-height: 32px;
+  height: 40px;
+  line-height: 40px;
   text-align: center;
   font-size: 1em;
   font-weight: 600;
@@ -30,9 +30,23 @@
   padding: 0 0.5em;
 }
 
+.count-badge {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 12px;
+  background-color: red;
+  color: #fff;
+  margin-left: 2px;
+}
+
 .sticky-mark::before {
   content: '*';
   color: #f00;
+  margin-right: 2px;
 }
 
 .card-list {

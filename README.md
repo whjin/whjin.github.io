@@ -36,4 +36,6 @@
 ## 功能优化
 
 - `APlayer`切换下一曲播放时报错 `classList`为 `undefined`，在 `APlayer.min.js`依赖查找`classList.add("aplayer-lrc-current")`改为 `?.classList.add("aplayer-lrc-current")`即可解决问题。
-- 优化社交图标栏显示隐藏切换功能，适配移动端设计
+- 优化社交图标栏显示隐藏切换功能，适配移动端设计。
+- 主页卡片 `PC`端鼠标 `hover` 时显示滚动条，鼠标移出隐藏滚动条。
+- 卡片高度内容自适应处理，提升空间利用率。

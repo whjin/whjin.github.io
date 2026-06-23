@@ -14,6 +14,13 @@ async function generateCard() {
       headerEl.className = 'card-title';
       headerEl.innerText = m.title;
 
+      if (m.items.length > 8) {
+        const countBadge = document.createElement('sup');
+        countBadge.className = 'count-badge';
+        countBadge.textContent = m.items.length;
+        headerEl.appendChild(countBadge);
+      }
+
       if (m.sticky) {
         headerEl.classList.add('sticky-mark');
       }
@@ -98,7 +105,7 @@ function setCardHeight() {
       }
     });
 
-    const finalHeight = Math.min(maxHeight, 300);
+    const finalHeight = Math.min(maxHeight, 'fit-content');
 
     cardItems.forEach((card) => {
       card.style.height = `${finalHeight}px`;
