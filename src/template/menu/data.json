@@ -290,7 +290,7 @@
   {
     "updated": "2026-6-23 14:47:41",
     "title": "Node.js",
-    "tagName": "ul",
+    "tagName": "ol",
     "items": [
       {
         "text": "Node.js实战",
@@ -303,6 +303,35 @@
       {
         "text": "Node.js文档",
         "href": "src/template/viewer.html?Node_Node.js文档"
+      },
+      {
+        "text": "【站点】 NestJS 中文文档",
+        "title": "NestJS 中文文档\r\n高效、可扩展的 Node.js 服务器端应用框架",
+        "href": "https://docs.nestjs.cn/"
+      },
+      {
+        "text": "【站点】 NestJS 中文网",
+        "href": "https://nest.nodejs.cn/"
+      },
+      {
+        "text": "【站点】 Express 中文网",
+        "title": "基于 Node.js 平台的 web 应用开发框架 - Express中文文档 | Express中文网",
+        "href": "https://www.expressjs.com.cn/"
+      },
+      {
+        "text": "【站点】 Puppeteer 中文网",
+        "title": "Puppeteer 是一个 JavaScript 库，提供了一个高级 API，用于通过 DevTools 协议 或 WebDriver BiDi 控制 Chrome 或 Firefox。 Puppeteer 默认在无头模式（无可见 UI）下运行",
+        "href": "https://pptr.nodejs.cn/"
+      },
+      {
+        "text": "【站点】 Hono 中文网",
+        "title": "Hono\r\nWeb 应用框架\r\n快速、轻量、基于 Web 标准构建。支持任何 JavaScript 运行时。",
+        "href": "https://hono.nodejs.cn/"
+      },
+      {
+        "text": "【站点】 Fastify 中文网",
+        "title": "Fastify 中文网\r\n快速且低开销的 Node.js Web 框架",
+        "href": "https://fastify.nodejs.cn/"
       }
     ]
   },
