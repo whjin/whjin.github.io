@@ -32,13 +32,14 @@
         "href": "https://gitee.com/whjin"
       },
       {
-        "text": "有趣的开源社区 - HelloGitHub",
-        "href": "https://hellogithub.com/"
+        "text": "Vercount - 网站流量计数器",
+        "title": "网站流量计数器，简单、快速、可靠 Go + Redis 驱动计数后端，Next.js 负责后台",
+        "href": "https://www.vercount.one/"
       }
     ]
   },
   {
-    "updated": "2026-6-23 19:12:07",
+    "updated": "2026-6-23 22:57:56",
     "title": "技术站点",
     "tagName": "ol",
     "items": [
@@ -47,8 +48,20 @@
         "href": "https://www.hello-algo.com/"
       },
       {
+        "text": "有趣的开源社区 - HelloGitHub",
+        "href": "https://hellogithub.com/"
+      },
+      {
         "text": "张鑫旭博客",
         "href": "https://www.zhangxinxu.com/"
+      },
+      {
+        "text": "张洪Heo - 分享设计与科技生活",
+        "href": "https://blog.zhheo.com/"
+      },
+      {
+        "text": "阮一峰的网络日志",
+        "href": "https://www.ruanyifeng.com/blog/"
       },
       {
         "text": "LeetCode热题",
@@ -421,7 +434,7 @@
     ]
   },
   {
-    "updated": "2026-6-23 22:11:34",
+    "updated": "2026-6-23 23:13:36",
     "title": "小程序",
     "tagName": "ol",
     "items": [
@@ -444,6 +457,23 @@
       {
         "text": "【站点】 awesome-wechat-weapp",
         "href": "https://github.com/justjavac/awesome-wechat-weapp"
+      },
+      {
+        "text": "【站点】 uni-app 官网",
+        "href": "https://uniapp.dcloud.net.cn/"
+      },
+      {
+        "text": "【站点】 uni-app 开发者中心",
+        "href": "https://dev.dcloud.net.cn/pages/app/list"
+      },
+      {
+        "text": "【站点】 HTML5+ API Reference",
+        "title": "HTML5+ 规范",
+        "href": "https://www.html5plus.org/doc/h5p.html"
+      },
+      {
+        "text": "【文章】 uni-app 实现离线打包",
+        "href": "https://blog.csdn.net/u012551928/article/details/84331339"
       }
     ]
   },

@@ -71,7 +71,7 @@
   background: #808080;
 }
 .card-item:hover .card-list::-webkit-scrollbar {
-  width: 0.5em;
+  width: 0.3em;
 }
 
 .card-list li:not(:last-child) {
