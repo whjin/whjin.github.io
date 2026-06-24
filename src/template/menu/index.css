@@ -34,6 +34,8 @@
   font-size: 12px;
   margin-left: 2px;
   color: red;
+  position: relative;
+  z-index: -1;
 }
 .count-badge.normal {
   display: inline-block;

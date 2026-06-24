@@ -39,7 +39,7 @@
     ]
   },
   {
-    "updated": "2026-6-23 22:57:56",
+    "updated": "2026-6-24 08:48:01",
     "title": "技术站点",
     "tagName": "ol",
     "items": [
@@ -83,6 +83,11 @@
       {
         "text": "全栈公开课",
         "href": "https://fullstackopen.com/zh/"
+      },
+      {
+        "text": "Online Tools",
+        "title": "在线工具提供了多种功能，如哈希、编码、解码、加密、解密、格式化、生成等。常见示例包括MD5、SHA-256、SHA-512、SHA-3、Keccak、Base64、Base32、JSON、XML以及二维码相关工具。",
+        "href": "https://emn178.github.io/online-tools/"
       }
     ]
   },
@@ -106,6 +111,142 @@
       {
         "text": "【站点】 Sass 中文网",
         "href": "https://sass.nodejs.cn/"
+      }
+    ]
+  },
+  {
+    "updated": "2026-6-24 09:25:42",
+    "title": "工具",
+    "tagName": "ol",
+    "items": [
+      {
+        "text": "【站点】 PDF.js 官网",
+        "title": "PDF.js 是 Mozilla 社区所开发的一个开源的浏览器 PDF 渲染引擎。",
+        "href": "https://mozilla.github.io/pdf.js/"
+      },
+      {
+        "text": "【站点】 在线 PS",
+        "title": "在线PS - 在线照片处理编辑器 - 在线photoshop",
+        "href": "https://ps.bmcx.com/"
+      },
+      {
+        "text": "【站点】 PS 网页版",
+        "title": "在线ps/在线p图/ps网页版/ps在线图片处理工具",
+        "href": "https://www.nuanque.com/ps/"
+      },
+      {
+        "text": "【站点】 iconfont-阿里巴巴矢量图标库",
+        "href": "https://www.iconfont.cn/?spm=a313x.collections_index.i3.d4d0a486a.5e7a3a81TIxl6y"
+      },
+      {
+        "text": "【站点】 iconfont-anzhiyu主题",
+        "href": "https://www.iconfont.cn/collections/detail?cid=44481"
+      },
+      {
+        "text": "【站点】 FontAwesome 字体图标中文Icon",
+        "title": "Font Awesome\r\n中文同步更新 · 代码随时复制 · 使用更加方便",
+        "href": "https://fontawesome.com.cn/"
+      },
+      {
+        "text": "【站点】 Font图标大全",
+        "title": "Font图标大全-CSS控制的矢量小图标-字体图标编码对照表",
+        "href": "http://www.yinhuafeng.cn/daohang/font/"
+      },
+      {
+        "text": "【站点】 Ionicons矢量图标官网",
+        "href": "https://ionic.io/ionicons"
+      },
+      {
+        "text": "【站点】 前端技术栈图标",
+        "title": "前端技术栈图标 - 200+ SVG 下载 | 开发者工具箱",
+        "href": "https://devtool.tech/fe-logo"
+      },
+      {
+        "text": "【站点】 在线制作ico图标",
+        "title": "在线制作ico图标 | 在线ico图标转换工具",
+        "href": "https://www.bitbug.net/"
+      },
+      {
+        "text": "【站点】 Icon Maker",
+        "title": "Icon Maker by Raycast",
+        "href": "https://ray.so/icon"
+      },
+      {
+        "text": "【站点】 文件转换工具",
+        "title": "在线转换文档，图像，视频，音频文件",
+        "href": "https://www.aconvert.com/cn/"
+      },
+      {
+        "text": "【站点】 MP3转链接免费工具",
+        "title": "免费MP3转链接工具\r\n秒级获取音频直链",
+        "href": "https://www.videotourl.com/zh/tools/mp3-to-url"
+      },
+      {
+        "text": "【站点】 在线视频压缩",
+        "title": "视频压缩，在线视频压缩",
+        "href": "https://www.shipinyasuo.com/?2&b_scene_zt=1"
+      }
+    ]
+  },
+  {
+    "updated": "2026-6-24 19:06:47",
+    "title": "素材",
+    "tagName": "ol",
+    "items": [
+      {
+        "text": "【站点】 爱给网",
+        "title": "爱给网_音效配乐_3D模型_视频素材_免费下载",
+        "href": "https://www.aigei.com/"
+      },
+      {
+        "text": "【站点】 易听音乐网",
+        "title": "易听音乐网-MP3音乐免费下载,MP4下载,歌词大全,流行音乐,网络新歌",
+        "href": "https://www.eev3.com/"
+      }
+    ]
+  },
+  {
+    "updated": "2026-6-24 19:28:11",
+    "title": "设计",
+    "tagName": "ol",
+    "items": [
+      {
+        "text": "【站点】 RGB颜色值与十六进制颜色码转换工具",
+        "href": "https://www.sioe.cn/yingyong/yanse-rgb-16/"
+      },
+      {
+        "text": "【站点】 RGB颜色对照表",
+        "href": "https://tool.oschina.net/commons?type=3"
+      },
+      {
+        "text": "【站点】 Web安全色",
+        "href": "https://www.bootcss.com/p/websafecolors/"
+      }
+    ]
+  },
+  {
+    "updated": "2026-6-24 19:18:26",
+    "title": "CDN",
+    "tagName": "ol",
+    "items": [
+      {
+        "text": "【站点】 UNPKG",
+        "href": "https://unpkg.com/"
+      },
+      {
+        "text": "【站点】 cdnjs",
+        "title": "Simple. Fast. Reliable.\r\nContent delivery at its finest.",
+        "href": "https://cdnjs.com/"
+      },
+      {
+        "text": "【站点】 BootCDN",
+        "title": "BootCDN - Bootstrap 中文网开源项目免费 CDN 加速服务\r\n稳定、快速、免费的前端开源项目 CDN 加速服务",
+        "href": "https://www.bootcdn.cn/"
+      },
+      {
+        "text": "【站点】 jsDelivr",
+        "title": "jsDelivr - A free, fast, and reliable CDN for JS and open source",
+        "href": "https://www.jsdelivr.com/"
       }
     ]
   },
