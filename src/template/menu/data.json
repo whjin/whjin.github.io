@@ -434,7 +434,7 @@
     ]
   },
   {
-    "updated": "2026-6-23 23:13:36",
+    "updated": "2026-6-24 07:48:26",
     "title": "小程序",
     "tagName": "ol",
     "items": [
@@ -470,6 +470,21 @@
         "text": "【站点】 HTML5+ API Reference",
         "title": "HTML5+ 规范",
         "href": "https://www.html5plus.org/doc/h5p.html"
+      },
+      {
+        "text": "【站点】 uCharts官网 - 跨平台图表库",
+        "title": "uCharts - 高性能跨平台图标库\r\nPC、H5、APP、小程序、Vue、Taro",
+        "href": "https://www.ucharts.cn/v2/#/"
+      },
+      {
+        "text": "【框架】 mescroll 下拉刷新和上拉加载",
+        "title": "mescroll -- 精致的下拉刷新和上拉加载js框架",
+        "href": "https://www.mescroll.com/"
+      },
+      {
+        "text": "【插件】 image-tools - DCloud 插件市场",
+        "title": "图像转换工具，可用于图像和base64的转换",
+        "href": "https://ext.dcloud.net.cn/plugin?id=123"
       },
       {
         "text": "【文章】 uni-app 实现离线打包",

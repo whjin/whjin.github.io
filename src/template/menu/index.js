@@ -115,7 +115,7 @@ function setCardHeight() {
     let maxHeight = 0;
     cardItems.forEach((card) => {
       card.style.height = 'auto';
-      const currentHeight = card.offsetHeight;
+      const currentHeight = card.clientHeight;
       if (currentHeight > maxHeight) {
         maxHeight = currentHeight;
       }

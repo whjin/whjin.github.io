@@ -58,13 +58,15 @@
   overflow: auto;
   white-space: pre-wrap;
   word-break: break-word;
-  padding-left: 2em;
-  padding-right: 1em;
+  padding-right: 10px;
 }
 
 .card-list::-webkit-scrollbar {
   width: 0;
   transition: width 0.2s ease;
+}
+.card-list::-webkit-scrollbar-track {
+  background: transparent;
 }
 .card-list::-webkit-scrollbar-thumb {
   background: #a09f9f;
@@ -82,6 +84,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .card-list {
+    padding-right: 1em;
+  }
+
   .card-list::-webkit-scrollbar {
     display: none;
   }
