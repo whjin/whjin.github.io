@@ -451,7 +451,7 @@
         "href": "src/template/viewer.html?小程序_小程序文档"
       },
       {
-        "text": "【站点】 Taro 多端统一开发解决方案",
+        "text": "【站点】 Taro 多端统一开发",
         "href": "https://taro.js.org/"
       },
       {
@@ -472,7 +472,7 @@
         "href": "https://www.html5plus.org/doc/h5p.html"
       },
       {
-        "text": "【站点】 uCharts官网 - 跨平台图表库",
+        "text": "【站点】 uCharts 官网",
         "title": "uCharts - 高性能跨平台图标库\r\nPC、H5、APP、小程序、Vue、Taro",
         "href": "https://www.ucharts.cn/v2/#/"
       },
@@ -489,6 +489,15 @@
       {
         "text": "【文章】 uni-app 实现离线打包",
         "href": "https://blog.csdn.net/u012551928/article/details/84331339"
+      },
+      {
+        "text": "【文章】 解决gif图片只渲染一次的问题",
+        "title": "微信小程序：解决gif图片只渲染一次的问题",
+        "href": "https://www.jianshu.com/p/96f4ed883a24"
+      },
+      {
+        "text": "【文章】 uniapp富文本图片预览",
+        "href": "https://blog.csdn.net/zt199718/article/details/132555943"
       }
     ]
   },

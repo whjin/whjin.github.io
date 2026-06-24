@@ -58,25 +58,26 @@
   overflow: auto;
   white-space: pre-wrap;
   word-break: break-word;
-  padding-right: 10px;
+  padding-right: 0.5em;
 }
 
 .card-list::-webkit-scrollbar {
-  width: 0;
+  width: 0.3em;
   transition: width 0.2s ease;
 }
 .card-list::-webkit-scrollbar-track {
   background: transparent;
 }
 .card-list::-webkit-scrollbar-thumb {
-  background: #a09f9f;
+  background: transparent;
   border-radius: 0.25em;
+  transition: background 0.2s ease;
 }
-.card-list::-webkit-scrollbar-thumb:hover {
+.card-item:hover .card-list::-webkit-scrollbar-thumb {
   background: #808080;
 }
-.card-item:hover .card-list::-webkit-scrollbar {
-  width: 0.3em;
+.card-list::-webkit-scrollbar-thumb:hover {
+  background: #666;
 }
 
 .card-list li:not(:last-child) {
@@ -85,7 +86,7 @@
 
 @media screen and (max-width: 768px) {
   .card-list {
-    padding-right: 1em;
+    padding-right: 0.5em;
   }
 
   .card-list::-webkit-scrollbar {
