@@ -125,7 +125,7 @@
     ]
   },
   {
-    "updated": "2026-6-24 19:44:57",
+    "updated": "2026-6-25 10:09:48",
     "title": "工具",
     "tagName": "ol",
     "items": [
@@ -135,45 +135,66 @@
         "href": "https://mozilla.github.io/pdf.js/"
       },
       {
-        "text": "【站点】 在线 PS",
+        "text": "【PS】 在线 PS",
         "title": "在线PS - 在线照片处理编辑器 - 在线photoshop",
         "href": "https://ps.bmcx.com/"
       },
       {
-        "text": "【站点】 PS 网页版",
+        "text": "【PS】 PS 网页版",
         "title": "在线ps/在线p图/ps网页版/ps在线图片处理工具",
         "href": "https://www.nuanque.com/ps/"
       },
       {
-        "text": "【站点】 文件转换工具",
+        "text": "【文件转换】 文件转换工具",
         "title": "在线转换文档，图像，视频，音频文件",
         "href": "https://www.aconvert.com/cn/"
       },
       {
-        "text": "【站点】 MP3转链接免费工具",
+        "text": "【MP3外链】 MP3转链接免费工具",
         "title": "免费MP3转链接工具\r\n秒级获取音频直链",
         "href": "https://www.videotourl.com/zh/tools/mp3-to-url"
       },
       {
-        "text": "【站点】 在线视频压缩",
+        "text": "【视频压缩】 在线视频压缩",
         "title": "视频压缩，在线视频压缩",
         "href": "https://www.shipinyasuo.com/?2&b_scene_zt=1"
       },
       {
-        "text": "【站点】 脚本之家在线工具",
+        "text": "【在线工具】 脚本之家在线工具",
         "href": "https://tools.jb51.net/"
       },
       {
-        "text": "【站点】  菜鸟工具 - 不止于工具",
+        "text": "【在线工具】  菜鸟工具",
         "href": "https://www.jyshare.com/"
       },
       {
-        "text": "【站点】 在线JSON校验格式化工具",
+        "text": "【在线工具】  Web 工具集",
+        "href": "https://xianyu110.github.io/web-tools-suite/"
+      },
+      {
+        "text": "【JSON格式化】 在线JSON校验格式化工具",
         "href": "https://www.bejson.com/"
       },
       {
-        "text": "【站点】 在线实时HTML和JavaScript编辑器",
+        "text": "【JSON格式化】 JSON在线解析格式化验证",
+        "href": "https://www.json.cn/"
+      },
+      {
+        "text": "【在线编辑器】 在线实时HTML和JavaScript编辑器",
         "href": "https://zh.infobyip.com/htmlandjavascripteditor.php"
+      },
+      {
+        "text": "【代码压缩】 HTML minifier",
+        "href": "https://kangax.github.io/html-minifier/"
+      },
+      {
+        "text": "【代码压缩】 JS压缩",
+        "title": "JS压缩、解压、格式化、混淆加密、解密",
+        "href": "https://www.css-js.com/"
+      },
+      {
+        "text": "【进制转换】 在线进制转换",
+        "href": "https://tool.oschina.net/hexconvert/"
       },
       {
         "text": "【站点】 IT Tools",
@@ -204,21 +225,6 @@
         "text": "【加密】 Bcrypt在线校验工具",
         "title": "Bcrypt在线校验工具--验证输入的密码或密钥和存储的crypt加密结果是否匹配",
         "href": "https://config.net.cn/tools/BCrypt-Verify.html"
-      },
-      {
-        "text": "【正则】 Regex Tester",
-        "title": "Regex Tester - Javascript, PCRE, PHP",
-        "href": "https://www.regexpal.com/"
-      },
-      {
-        "text": "【正则】 Regulex",
-        "title": "Regulex：JavaScript Regular Expression Visualizer",
-        "href": "https://jex.im/regulex/#!flags=&re=%5E(a%7Cb)*%3F%24"
-      },
-      {
-        "text": "【正则】 Rubular",
-        "title": "Rubular: a Ruby regular expression editor",
-        "href": "https://rubular.com/"
       }
     ]
   },
@@ -246,6 +252,31 @@
         "text": "【图片】 Free Stock Photos and Images",
         "title": "Free Stock Photos and Images - StockSnap.io",
         "href": "https://stocksnap.io/"
+      },
+      {
+        "text": "【图片】 免费素材图片",
+        "title": "才华横溢的摄影作者在这里免费分享最精彩的素材图片和视频。",
+        "href": "https://www.pexels.com/zh-cn/"
+      },
+      {
+        "text": "【图片】 Beautiful Free Images",
+        "title": "Beautiful Free Images & Pictures | Unsplash",
+        "href": "https://unsplash.com/"
+      },
+      {
+        "text": "【图片】 High Resolution Stock Photos",
+        "title": "Best Free High Resolution Stock Photos & Videos | ISO Republic",
+        "href": "https://isorepublic.com/"
+      },
+      {
+        "text": "【图片】 Gratisography",
+        "title": "Gratisography - Free High-Resolution Stock Photos",
+        "href": "https://gratisography.com/"
+      },
+      {
+        "text": "【图片】 VisualHunt",
+        "title": "VisualHunt",
+        "href": "https://visualhunt.com/"
       },
       {
         "text": "【图标】 iconfont-阿里巴巴矢量图标库",
@@ -366,7 +397,7 @@
   },
   {
     "updated": "2026-6-24 19:18:26",
-    "title": "API",
+    "title": "数据",
     "tagName": "ol",
     "items": [
       {
@@ -390,8 +421,17 @@
       },
       {
         "text": "【数据】 随机图片数据",
-        "title": " Lorem Picsum\r\nThe Lorem Ipsum for photos.",
+        "title": "Lorem Picsum\r\nThe Lorem Ipsum for photos.",
         "href": "https://picsum.photos/"
+      },
+      {
+        "text": "【数据】 中国大陆手机号码生成器",
+        "title": "中国大陆手机号码生成器 - 在线随机手机号码生成工具\r\n中国大陆 手机号码生成器支持在线大批量随机生成中国大陆手机号码，单次最多生成10万个不重复号码，工具完全免费。",
+        "href": "https://phonenumbertools.com/zh-cn/generator-cn/"
+      },
+      {
+        "text": "【数据】 身份证号码生成器",
+        "href": "https://zuoyinyun.com/tool/id-card"
       }
     ]
   },
@@ -618,6 +658,21 @@
         "text": "【站点】 Mermaid 中文网",
         "title": "Mermaid 图表工具\r\n基于 JavaScript 的图表工具，可渲染 Markdown 启发的文本定义以动态创建和修改图表。",
         "href": "https://mermaid.nodejs.cn/"
+      },
+      {
+        "text": "【正则】 Regex Tester",
+        "title": "Regex Tester - Javascript, PCRE, PHP",
+        "href": "https://www.regexpal.com/"
+      },
+      {
+        "text": "【正则】 Regulex",
+        "title": "Regulex：JavaScript Regular Expression Visualizer",
+        "href": "https://jex.im/regulex/#!flags=&re=%5E(a%7Cb)*%3F%24"
+      },
+      {
+        "text": "【正则】 Rubular",
+        "title": "Rubular: a Ruby regular expression editor",
+        "href": "https://rubular.com/"
       }
     ]
   },
