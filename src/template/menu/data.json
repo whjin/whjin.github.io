@@ -52,6 +52,16 @@
         "href": "https://hellogithub.com/"
       },
       {
+        "text": "Quick Reference",
+        "title": "中文开发者整理的技术栈速查清单",
+        "href": "https://devtool.tech/"
+      },
+      {
+        "text": "开发者武器库",
+        "title": "发现、使用和收藏专为开发者打造的高效工具，提升您的开发效率。",
+        "href": "https://wangchujiang.com/reference/index.html"
+      },
+      {
         "text": "张鑫旭博客",
         "href": "https://www.zhangxinxu.com/"
       },
@@ -115,7 +125,7 @@
     ]
   },
   {
-    "updated": "2026-6-24 09:25:42",
+    "updated": "2026-6-24 19:44:57",
     "title": "工具",
     "tagName": "ol",
     "items": [
@@ -185,6 +195,87 @@
         "text": "【站点】 在线视频压缩",
         "title": "视频压缩，在线视频压缩",
         "href": "https://www.shipinyasuo.com/?2&b_scene_zt=1"
+      },
+      {
+        "text": "【站点】 脚本之家在线工具",
+        "href": "https://tools.jb51.net/"
+      },
+      {
+        "text": "【站点】  菜鸟工具 - 不止于工具",
+        "href": "https://www.jyshare.com/"
+      },
+      {
+        "text": "【站点】 在线JSON校验格式化工具",
+        "href": "https://www.bejson.com/"
+      },
+      {
+        "text": "【站点】 在线实时HTML和JavaScript编辑器",
+        "href": "https://zh.infobyip.com/htmlandjavascripteditor.php"
+      },
+      {
+        "text": "【图片】 Base64 解码 编码",
+        "title": "Base64 解码 编码 图片 在线工具",
+        "href": "https://feling.net/base64/"
+      },
+      {
+        "text": "【图片】 TinyPNG",
+        "title": "TinyPNG – 智能压缩您的WebP、JPEG和PNG图片",
+        "href": "https://tinify.cn/"
+      },
+      {
+        "text": "【图片】 base64图片在线转换工具",
+        "title": "base64图片在线转换工具 - 站长工具",
+        "href": "https://tool.chinaz.com/tools/imgtobase/"
+      },
+      {
+        "text": "【图片】 Base64 在线编码解码",
+        "title": "Base64 在线编码解码 | Base64 加密解密 - Base64.us",
+        "href": "https://base64.us/"
+      },
+      {
+        "text": "【站点】 IT Tools",
+        "title": "IT Tools - Handy online tools for developers",
+        "href": "https://it-tools.tech/"
+      },
+      {
+        "text": "【站点】 MD5在线加密",
+        "title": "MD5在线加密 - 站长工具",
+        "href": "https://tool.chinaz.com/tools/md5.aspx?qq-pf-to=pcqq.c2c"
+      },
+      {
+        "text": "【加密】 JSON Web Tokens",
+        "title": "JSON Web Token (JWT) Debugger",
+        "href": "https://www.jwt.io/"
+      },
+      {
+        "text": "【加密】 md5在线解密破解",
+        "title": "md5在线解密破解",
+        "href": "https://www.cmd5.com/"
+      },
+      {
+        "text": "【加密】 md5加密、解密",
+        "title": "md5加密、解密-BeJSON.com",
+        "href": "https://www.bejson.com/enc/md5/"
+      },
+      {
+        "text": "【加密】 Bcrypt在线校验工具",
+        "title": "Bcrypt在线校验工具--验证输入的密码或密钥和存储的crypt加密结果是否匹配",
+        "href": "https://config.net.cn/tools/BCrypt-Verify.html"
+      },
+      {
+        "text": "【正则】 Regex Tester",
+        "title": "Regex Tester - Javascript, PCRE, PHP",
+        "href": "https://www.regexpal.com/"
+      },
+      {
+        "text": "【正则】 Regulex",
+        "title": "Regulex：JavaScript Regular Expression Visualizer",
+        "href": "https://jex.im/regulex/#!flags=&re=%5E(a%7Cb)*%3F%24"
+      },
+      {
+        "text": "【正则】 Rubular",
+        "title": "Rubular: a Ruby regular expression editor",
+        "href": "https://rubular.com/"
       }
     ]
   },
@@ -202,6 +293,11 @@
         "text": "【站点】 易听音乐网",
         "title": "易听音乐网-MP3音乐免费下载,MP4下载,歌词大全,流行音乐,网络新歌",
         "href": "https://www.eev3.com/"
+      },
+      {
+        "text": "【站点】 Cool Backgrounds",
+        "title": "自定义背景图片",
+        "href": "https://coolbackgrounds.io/"
       }
     ]
   },
@@ -219,8 +315,17 @@
         "href": "https://tool.oschina.net/commons?type=3"
       },
       {
+        "text": "【站点】 中国色官网",
+        "title": "中国色官网 － 传统颜色",
+        "href": "https://zhongguose.com/"
+      },
+      {
         "text": "【站点】 Web安全色",
         "href": "https://www.bootcss.com/p/websafecolors/"
+      },
+      {
+        "text": "【站点】 在线调色板",
+        "href": "https://www.bejson.com/ui/getcolor/"
       }
     ]
   },
