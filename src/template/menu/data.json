@@ -33,12 +33,23 @@
         "href": "https://wuhuajin.com/"
       },
       {
+        "marked": true,
+        "text": "whjin-github.com",
+        "title": "whjin - Github 欢迎关注",
+        "href": "https://github.com/whjin"
+      },
+      {
         "text": "whjin-Gitee.com",
         "title": "寒青 (whjin) - Gitee 码云",
         "href": "https://gitee.com/whjin"
       },
       {
-        "text": "Vercount - 网站流量计数器",
+        "text": "github/next-ai-core",
+        "title": "https://github.com/whjin/next-ai-core",
+        "href": "https://next-ai-core.wuhuajin.com/"
+      },
+      {
+        "text": "【站点】 Vercount - 网站流量计数器",
         "title": "网站流量计数器，简单、快速、可靠 Go + Redis 驱动计数后端，Next.js 负责后台",
         "href": "https://www.vercount.one/"
       }
@@ -127,6 +138,26 @@
         "text": "【破解】 Navicat 激活",
         "title": "快速激活Navicat Premium 12",
         "href": "https://baijiahao.baidu.com/s?id=1644169351506023288&wfr=spider&for=pc"
+      },
+      {
+        "text": "【官网】 Sequelize 中文网",
+        "title": "Sequelize 是适用于 Oracle、Postgres、MySQL、MariaDB、SQLite 和 SQL Server 等的现代 TypeScript 和 Node.js ORM。 具有可靠的事务支持、关系、预先和延迟加载、读取复制等。",
+        "href": "https://sequelize.nodejs.cn/"
+      }
+    ]
+  },
+  {
+    "updated": "2026-6-25 18:24:28",
+    "title": "游戏开发",
+    "tagName": "ol",
+    "items": [
+      {
+        "text": "【站点】 异星专注 - 拜岛科技出品",
+        "href": "https://byland.work/exocus/index.html"
+      },
+      {
+        "text": "【站点】 GCORES 机核",
+        "href": "https://www.gcores.com/"
       }
     ]
   },
@@ -345,6 +376,14 @@
         "text": "【图标】 Feather",
         "title": "Feather – Simply beautiful open source icons",
         "href": "https://feathericons.com/"
+      },
+      {
+        "text": "【图标】 React Icons",
+        "href": "https://react-icons.github.io/react-icons/"
+      },
+      {
+        "text": "【图标】 Lucide 中文网",
+        "href": "https://lucide.nodejs.cn/"
       }
     ]
   },
@@ -653,6 +692,16 @@
       {
         "text": "【生成器】 身份证号码生成器",
         "href": "https://zuoyinyun.com/tool/id-card"
+      },
+      {
+        "text": "【API】 JSONPlaceholder",
+        "title": "JSONPlaceholder - Free Fake REST API",
+        "href": "https://jsonplaceholder.typicode.com/"
+      },
+      {
+        "text": "【API】 Dog API",
+        "title": "The internet's biggest collection of open source dog pictures.",
+        "href": "https://dog.ceo/dog-api/"
       }
     ]
   },
@@ -752,6 +801,11 @@
         "href": "https://abetterweb3.notion.site/"
       },
       {
+        "text": "【职位】 电鸭社区",
+        "title": "电鸭社区-专注远程工作招聘交流-远程工作，从电鸭开始",
+        "href": "https://eleduck.com/"
+      },
+      {
         "text": "【攻略】 Web3 + AI 远程攻略",
         "title": "web3+AI远程攻略（持续更新...） - 飞书云文档",
         "href": "https://wcngrtwsafnt.feishu.cn/wiki/GYzHwA1Ctim5Xske5iScdRWDnZf"
@@ -798,6 +852,7 @@
     ]
   },
   {
+    "updated": "2026-6-25 18:30:24",
     "title": "AI",
     "tagName": "ul",
     "items": [
@@ -818,6 +873,11 @@
         "href": "src/template/viewer.html?AI_AI视频制作"
       },
       {
+        "text": "【官网】 AI工具集官网",
+        "title": "AI工具集官网 | 1000+ AI工具集合，国内外AI工具集导航大全",
+        "href": "https://ai-bot.cn/"
+      },
+      {
         "text": "【站点】 Hermes Agent 中文社区",
         "href": "https://hermesagent.org.cn/"
       },
@@ -834,6 +894,16 @@
         "text": "【站点】 CC Switch 官方网站",
         "title": "CC Switch 官方网站 - AI 编程工具统一管理平台",
         "href": "https://ccswitch.io/zh/"
+      },
+      {
+        "text": "【合集】 AI项目合集",
+        "title": "zdoc | 一个免费的工具，可将 GitHub 的 README 翻译成多种语言，并保持同步。",
+        "href": "https://www.zdoc.app/zh"
+      },
+      {
+        "text": "【合集】 精选 LLM 应用集",
+        "title": "100 多个 AI Agent 和 RAG 应用，真正可运行——克隆、定制、发布。\r\nAI Agents · 常驻 Agent · 多 Agent 团队 · MCP Agents · RAG · 语音 Agent · Agent 技能 · 微调",
+        "href": "https://www.zdoc.app/zh/Shubhamsaboo/awesome-llm-apps"
       }
     ]
   },
@@ -1048,13 +1118,42 @@
     ]
   },
   {
-    "updated": "2026-6-9 10:25:52",
+    "updated": "2026-6-25 17:46:35",
     "title": "React",
-    "tagName": "ul",
+    "tagName": "ol",
     "items": [
       {
         "text": "React文档",
         "href": "src/template/viewer.html?React_React文档"
+      },
+      {
+        "text": "【官网】 React 官方中文文档",
+        "href": "https://zh-hans.react.dev/"
+      },
+      {
+        "text": "【官网】 Redux 中文网",
+        "title": "Redux 中文网\r\n用于可预测和可维护的全局状态管理的 JS 库",
+        "href": "https://redux.nodejs.cn/"
+      },
+      {
+        "text": "【官网】 Zustand 中文网",
+        "title": "Zustand\r\nReact 状态管理\r\n小型、快速、可扩展",
+        "href": "https://zustand.nodejs.cn/"
+      },
+      {
+        "text": "【官网】 useHooks",
+        "title": "useHooks – The React Hooks Library",
+        "href": "https://usehooks.com/"
+      },
+      {
+        "text": "【官网】 Next.js 中文网",
+        "title": "Next.js - React 应用开发框架 | Next.js中文网",
+        "href": "https://www.nextjs.cn/"
+      },
+      {
+        "text": "【官网】 Vercel 的 Next.js",
+        "title": "Vercel 的 Next.js - React 框架 框架",
+        "href": "https://nextjs.net.cn/"
       }
     ]
   },
@@ -1065,6 +1164,22 @@
       {
         "text": "Hermes引擎文档",
         "href": "src/template/viewer.html?RN_Hermes引擎文档"
+      },
+      {
+        "text": "【官网】 React Native 中文网",
+        "title": "React Native 中文网 · 使用React来编写原生应用的框架",
+        "href": "https://www.react-native.cn/"
+      }
+    ]
+  },
+  {
+    "title": "UI框架",
+    "tagName": "ol",
+    "items": [
+      {
+        "text": "【官网】 Ant Design",
+        "title": "Ant Design - 一套企业级 UI 设计语言和 React 组件库",
+        "href": "https://ant.design/index-cn"
       }
     ]
   },
@@ -1427,7 +1542,7 @@
     ]
   },
   {
-    "updated": "2026-6-7 16:34:55",
+    "updated": "2026-6-25 18:17:25",
     "title": "工程化",
     "tagName": "ol",
     "items": [
@@ -1442,6 +1557,10 @@
       {
         "text": "Vite与Webpack对比",
         "href": "src/template/viewer.html?工程化_Vite与Webpack对比"
+      },
+      {
+        "text": "【测试】 Selenium 浏览器自动化工具",
+        "href": "https://selenium.net.cn/"
       }
     ]
   },
