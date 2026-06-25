@@ -125,19 +125,138 @@
     ]
   },
   {
-    "updated": "2026-6-25 11:09:29",
+    "updated": "2026-6-25 11:31:17",
     "title": "SVG",
     "tagName": "ol",
     "items": [
       {
-        "text": "【编辑器】 SVG在线查看器和编辑器",
-        "title": "优雅的 MongoDB 对象建模，适用于 Node.js",
-        "href": "https://mongoose.nodejs.cn/"
+        "text": "【SVG编辑器】 SVG在线查看器和编辑器",
+        "href": "https://www.rapidtables.org/zh-CN/web/tools/svg-viewer-editor.html"
+      },
+      {
+        "text": "【SVG转换】 ICO转SVG",
+        "title": "ICO转SVG - 免费在线将ICO文件转换成SVG",
+        "href": "https://cdkm.com/cn/ico-to-svg"
+      },
+      {
+        "text": "【SVG转换】 SVG to JPEG/PNG",
+        "href": "https://tools.simonwillison.net/svg-render?url=https://gist.githubusercontent.com/simonw/aedecb93564af13ac1596810d40cac3c/raw/83e7f3be5b65bba61124684700fa7925d37c36c3/tiger.svg"
       }
     ]
   },
   {
-    "updated": "2026-6-25 11:12:26",
+    "updated": "2026-6-25 11:50:58",
+    "title": "浏览器",
+    "tagName": "ol",
+    "items": [
+      {
+        "text": "Edge 实验性配置",
+        "href": "edge://flags/#unsafely-treat-insecure-origin-as-secure"
+      },
+      {
+        "text": "【插件】 极简插件官网",
+        "title": "极简插件官网_Chrome插件下载_Chrome浏览器应用商店",
+        "href": "https://chrome.zzzmh.cn/index"
+      }
+    ]
+  },
+  {
+    "updated": "2026-6-25 11:26:47",
+    "title": "图标",
+    "tagName": "ol",
+    "items": [
+      {
+        "text": "【图标】 iconfont-阿里巴巴矢量图标库",
+        "href": "https://www.iconfont.cn/?spm=a313x.collections_index.i3.d4d0a486a.5e7a3a81TIxl6y"
+      },
+      {
+        "text": "【图标】 iconfont-anzhiyu主题",
+        "href": "https://www.iconfont.cn/collections/detail?cid=44481"
+      },
+      {
+        "text": "【图标】 FontAwesome 字体图标中文Icon",
+        "title": "Font Awesome\r\n中文同步更新 · 代码随时复制 · 使用更加方便",
+        "href": "https://fontawesome.com.cn/"
+      },
+      {
+        "text": "【图标】 Font图标大全",
+        "title": "Font图标大全-CSS控制的矢量小图标-字体图标编码对照表",
+        "href": "http://www.yinhuafeng.cn/daohang/font/"
+      },
+      {
+        "text": "【图标】 Ionicons矢量图标官网",
+        "href": "https://ionic.io/ionicons"
+      },
+      {
+        "text": "【图标】 前端技术栈图标",
+        "title": "前端技术栈图标 - 200+ SVG 下载 | 开发者工具箱",
+        "href": "https://devtool.tech/fe-logo"
+      },
+      {
+        "text": "【图标】 在线制作ico图标",
+        "title": "在线制作ico图标 | 在线ico图标转换工具",
+        "href": "https://www.bitbug.net/"
+      },
+      {
+        "text": "【图标】 Icon Maker",
+        "title": "Icon Maker by Raycast",
+        "href": "https://ray.so/icon"
+      },
+      {
+        "text": "【图标】 Feather",
+        "title": "Feather – Simply beautiful open source icons",
+        "href": "https://feathericons.com/"
+      }
+    ]
+  },
+  {
+    "updated": "2026-6-25 11:24:45",
+    "title": "图片",
+    "tagName": "ol",
+    "items": [
+      {
+        "text": "【图片】 Cool Backgrounds",
+        "title": "自定义背景图片",
+        "href": "https://coolbackgrounds.io/"
+      },
+      {
+        "text": "【图片】 Free Stock Photos and Images",
+        "title": "Free Stock Photos and Images - StockSnap.io",
+        "href": "https://stocksnap.io/"
+      },
+      {
+        "text": "【图片】 免费素材图片",
+        "title": "才华横溢的摄影作者在这里免费分享最精彩的素材图片和视频。",
+        "href": "https://www.pexels.com/zh-cn/"
+      },
+      {
+        "text": "【图片】 Beautiful Free Images",
+        "title": "Beautiful Free Images & Pictures | Unsplash",
+        "href": "https://unsplash.com/"
+      },
+      {
+        "text": "【图片】 High Resolution Stock Photos",
+        "title": "Best Free High Resolution Stock Photos & Videos | ISO Republic",
+        "href": "https://isorepublic.com/"
+      },
+      {
+        "text": "【图片】 Gratisography",
+        "title": "Gratisography - Free High-Resolution Stock Photos",
+        "href": "https://gratisography.com/"
+      },
+      {
+        "text": "【图片】 VisualHunt",
+        "title": "VisualHunt",
+        "href": "https://visualhunt.com/"
+      },
+      {
+        "text": "【图片】 Share Icon",
+        "href": "https://www.shareicon.net/"
+      }
+    ]
+  },
+  {
+    "updated": "2026-6-25 11:57:28",
     "title": "工具",
     "tagName": "ol",
     "items": [
@@ -218,9 +337,14 @@
         "href": "https://tool.oschina.net/hexconvert/"
       },
       {
-        "text": "【进制转换】 图像文件在线编辑工具",
+        "text": "【图片编辑】 图像文件在线编辑工具",
         "title": "iLoveIMG | 图像文件在线编辑工具",
         "href": "https://www.iloveimg.com/zh-cn"
+      },
+      {
+        "text": "【播放器】 VLC：官方网站",
+        "title": "VLC media player\r\nVLC 是一款自由、开源的跨平台多媒体播放器及框架，可播放大多数多媒体文件，以及 DVD、音频 CD、VCD 及各类流媒体协议。",
+        "href": "https://www.videolan.org/"
       }
     ]
   },
@@ -270,78 +394,6 @@
         "text": "【音乐】 易听音乐网",
         "title": "易听音乐网-MP3音乐免费下载,MP4下载,歌词大全,流行音乐,网络新歌",
         "href": "https://www.eev3.com/"
-      },
-      {
-        "text": "【图片】 Cool Backgrounds",
-        "title": "自定义背景图片",
-        "href": "https://coolbackgrounds.io/"
-      },
-      {
-        "text": "【图片】 Free Stock Photos and Images",
-        "title": "Free Stock Photos and Images - StockSnap.io",
-        "href": "https://stocksnap.io/"
-      },
-      {
-        "text": "【图片】 免费素材图片",
-        "title": "才华横溢的摄影作者在这里免费分享最精彩的素材图片和视频。",
-        "href": "https://www.pexels.com/zh-cn/"
-      },
-      {
-        "text": "【图片】 Beautiful Free Images",
-        "title": "Beautiful Free Images & Pictures | Unsplash",
-        "href": "https://unsplash.com/"
-      },
-      {
-        "text": "【图片】 High Resolution Stock Photos",
-        "title": "Best Free High Resolution Stock Photos & Videos | ISO Republic",
-        "href": "https://isorepublic.com/"
-      },
-      {
-        "text": "【图片】 Gratisography",
-        "title": "Gratisography - Free High-Resolution Stock Photos",
-        "href": "https://gratisography.com/"
-      },
-      {
-        "text": "【图片】 VisualHunt",
-        "title": "VisualHunt",
-        "href": "https://visualhunt.com/"
-      },
-      {
-        "text": "【图标】 iconfont-阿里巴巴矢量图标库",
-        "href": "https://www.iconfont.cn/?spm=a313x.collections_index.i3.d4d0a486a.5e7a3a81TIxl6y"
-      },
-      {
-        "text": "【图标】 iconfont-anzhiyu主题",
-        "href": "https://www.iconfont.cn/collections/detail?cid=44481"
-      },
-      {
-        "text": "【图标】 FontAwesome 字体图标中文Icon",
-        "title": "Font Awesome\r\n中文同步更新 · 代码随时复制 · 使用更加方便",
-        "href": "https://fontawesome.com.cn/"
-      },
-      {
-        "text": "【图标】 Font图标大全",
-        "title": "Font图标大全-CSS控制的矢量小图标-字体图标编码对照表",
-        "href": "http://www.yinhuafeng.cn/daohang/font/"
-      },
-      {
-        "text": "【图标】 Ionicons矢量图标官网",
-        "href": "https://ionic.io/ionicons"
-      },
-      {
-        "text": "【图标】 前端技术栈图标",
-        "title": "前端技术栈图标 - 200+ SVG 下载 | 开发者工具箱",
-        "href": "https://devtool.tech/fe-logo"
-      },
-      {
-        "text": "【图标】 在线制作ico图标",
-        "title": "在线制作ico图标 | 在线ico图标转换工具",
-        "href": "https://www.bitbug.net/"
-      },
-      {
-        "text": "【图标】 Icon Maker",
-        "title": "Icon Maker by Raycast",
-        "href": "https://ray.so/icon"
       },
       {
         "text": "【表情包】 emoji表情列表",
@@ -429,7 +481,7 @@
     ]
   },
   {
-    "updated": "2026-6-24 19:18:26",
+    "updated": "2026-6-25 12:02:02",
     "title": "数据",
     "tagName": "ol",
     "items": [
@@ -458,12 +510,22 @@
         "href": "https://picsum.photos/"
       },
       {
-        "text": "【数据】 中国大陆手机号码生成器",
+        "text": "【数据】 接口大全",
+        "title": "接口大全-免费API,收集所有免费的API",
+        "href": "https://www.free-api.com/"
+      },
+      {
+        "text": "【数据】 免费API",
+        "title": "免费API - 提供免费接口调用平台",
+        "href": "https://api.aa1.cn/"
+      },
+      {
+        "text": "【生成器】 中国大陆手机号码生成器",
         "title": "中国大陆手机号码生成器 - 在线随机手机号码生成工具\r\n中国大陆 手机号码生成器支持在线大批量随机生成中国大陆手机号码，单次最多生成10万个不重复号码，工具完全免费。",
         "href": "https://phonenumbertools.com/zh-cn/generator-cn/"
       },
       {
-        "text": "【数据】 身份证号码生成器",
+        "text": "【生成器】 身份证号码生成器",
         "href": "https://zuoyinyun.com/tool/id-card"
       }
     ]
