@@ -162,7 +162,7 @@
     ]
   },
   {
-    "updated": "2026-6-25 12:43:53",
+    "updated": "2026-6-25 13:22:42",
     "title": "浏览器",
     "tagName": "ol",
     "items": [
@@ -201,6 +201,16 @@
         "text": "【证件照】 证件照大师",
         "title": "证件照大师 - 免费在线证件照制作_智能抠图换底色_一寸二寸证件照",
         "href": "https://id-photo.cn/"
+      },
+      {
+        "text": "【代码编辑器】 CodePen",
+        "title": "CodePen: Online Code Editor and Front End Web Developer Community",
+        "href": "https://codepen.io/"
+      },
+      {
+        "text": "【代码编辑器】 JS在线编辑器",
+        "title": "小闪电 - JSRUN可以用手机写代码的JS在线编辑器网站",
+        "href": "https://jsrun.net/"
       }
     ]
   },
@@ -600,23 +610,28 @@
   },
   {
     "updated": "2026-6-25 12:02:02",
-    "title": "数据",
+    "title": "数据接口",
     "tagName": "ol",
     "items": [
       {
-        "text": "【数据】 随机图片数据",
+        "text": "【接口】 随机图片数据",
         "title": "Lorem Picsum\r\nThe Lorem Ipsum for photos.",
         "href": "https://picsum.photos/"
       },
       {
-        "text": "【数据】 接口大全",
+        "text": "【接口】 接口大全",
         "title": "接口大全-免费API,收集所有免费的API",
         "href": "https://www.free-api.com/"
       },
       {
-        "text": "【数据】 免费API",
+        "text": "【接口】 免费API",
         "title": "免费API - 提供免费接口调用平台",
         "href": "https://api.aa1.cn/"
+      },
+      {
+        "text": "【接口】 Apifox API",
+        "title": "API 设计、开发、测试一体化协作平台\r\nApifox = Postman + Swagger + Mock + JMeter",
+        "href": "https://apifox.com/"
       },
       {
         "text": "【生成器】 中国大陆手机号码生成器",
@@ -630,25 +645,40 @@
     ]
   },
   {
-    "updated": "2026-6-23 12:06:58",
+    "updated": "2026-6-25 14:15:07",
     "title": "Remote",
     "tagName": "ol",
     "items": [
       {
-        "text": "Jobanni",
+        "text": "【Job】 Jobanni",
         "href": "https://jobanni.com/search?q=frontend"
       },
       {
-        "text": "hnhiring",
+        "text": "【Job】 hnhiring",
         "href": "https://hnhiring.com/"
       },
       {
-        "text": "workatastartup",
+        "text": "【Job】 workatastartup",
         "href": "https://www.workatastartup.com/"
       },
       {
-        "text": "himalayas",
+        "text": "【Job】 himalayas",
         "href": "https://himalayas.app/jobs"
+      },
+      {
+        "text": "【Job】 Web3 Career Build",
+        "title": "构建可信的 Web3 人才高速路\r\n通过学习、实践与链上 Profile，连接优质人才与真实机会",
+        "href": "https://web3career.build/zh"
+      },
+      {
+        "text": "【Job】 Remote.co",
+        "title": "Remote Work: Jobs, Companies & Virtual Teams - Remote.co",
+        "href": "https://remote.co/"
+      },
+      {
+        "text": "【Job】 Remote Jobs",
+        "title": "Remote Jobs: Design, Marketing, Programming, Writing & More",
+        "href": "https://justremote.co/"
       }
     ]
   },
@@ -704,7 +734,7 @@
     ]
   },
   {
-    "updated": "2026-6-13 07:51:14",
+    "updated": "2026-6-25 13:43:26",
     "title": "Web3",
     "tagName": "ul",
     "items": [
@@ -723,6 +753,48 @@
       {
         "text": "Web3钱包",
         "href": "src/template/viewer.html?Web3_Web3钱包"
+      },
+      {
+        "text": "【教程】 Solidity教程",
+        "href": "https://solidity-cn.readthedocs.io/zh/develop/index.html"
+      },
+      {
+        "text": "【教程】 Hardhat 官网",
+        "title": "Hardhat 3: Rust-powered Solidity tests\r\nEthereum development environment for professionals",
+        "href": "https://hardhat.org/"
+      },
+      {
+        "text": "【教程】 HackQuest 官网",
+        "title": "Web3 programming for everyone - HackQuest",
+        "href": "https://www.hackquest.io/zh-cn"
+      },
+      {
+        "text": "【教程】 拓展学习资料链接",
+        "href": "https://ethpanda.notion.site/32fbbd63be8780fdaa72ce556af4d5ec"
+      },
+      {
+        "text": "【教程】 Viem 官网",
+        "title": "Viem · Ethereum 的 TypeScript 接口 Viem 中文文档 | 登链社区\r\n构建可靠的应用程序和库，使用与 Ethereum 接口的 轻量级、可组合 和 类型安全 模块",
+        "href": "https://learnblockchain.cn/docs/viem"
+      },
+      {
+        "text": "【教程】 OpenZeppelin 中文文档 - 登链社区",
+        "title": "文档 - OpenZeppelin 中文文档 - 登链社区",
+        "href": "https://learnblockchain.cn/docs/openzeppelin/"
+      },
+      {
+        "text": "【社区】 登链社区 - 探索未来技术",
+        "href": "https://learnblockchain.cn/"
+      },
+      {
+        "text": "【社区】 WTF Academy",
+        "title": "WTF Academy 是一个 Web3 开源大学",
+        "href": "https://www.wtf.academy/zh"
+      },
+      {
+        "text": "【公开课】 公开课《区块链技术与应用》",
+        "title": "北京大学肖臻老师《区块链技术与应用》公开课",
+        "href": "https://www.bilibili.com/video/BV1Vt411X7JF?spm_id_from=333.788.videopod.episodes&vd_source=ebded8b3137534584af2d6a112cb0da6"
       }
     ]
   },
