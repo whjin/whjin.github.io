@@ -764,15 +764,38 @@
     ]
   },
   {
+    "updated": "2026-6-25 16:59:19",
     "title": "Python",
     "tagName": "ol",
     "items": [
       {
         "text": "Python文档",
         "href": "src/template/viewer.html?Python_Python文档"
+      },
+      {
+        "text": "【电子书】 Python编程：从入门到实践（第3版）",
+        "href": "https://dk-plus.com/assets/electronicBook/Python%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89.pdf"
+      },
+      {
+        "text": "【电子书】 《动手学深度学习》",
+        "title": "《动手学深度学习》 — 动手学深度学习 2.0.0 documentation",
+        "href": "https://zh-v2.d2l.ai/"
+      },
+      {
+        "text": "【教程】 Python 教程",
+        "title": "Python 教程 — Python 3.14.6 文档",
+        "href": "https://docs.python.org/zh-cn/3/tutorial/"
+      },
+      {
+        "text": "【社区】 scikit-learn中文社区",
+        "href": "https://scikit-learn.org.cn/"
+      },
+      {
+        "text": "【文档】 scikit-learn (sklearn) 官方文档中文版",
+        "title": "scikit-learn (sklearn) 官方文档中文版 - sklearn",
+        "href": "https://scikitlearn.com.cn/"
       }
-    ],
-    "updated": "2026-5-12 20:57:18"
+    ]
   },
   {
     "title": "AI",
