@@ -44,7 +44,8 @@ async function generateCard() {
         const aEl = document.createElement('a');
         aEl.rel = 'noopener noreferrer';
         aEl.target = '_blank';
-        aEl.innerText = i.text;
+        let markedHtml = '<span class="marked">*</span>';
+        aEl.innerHTML = i.marked ? `${markedHtml}${i.text}` : i.text;
         aEl.title = i.title || i.text;
         aEl.href = i.href;
 

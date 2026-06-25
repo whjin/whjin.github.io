@@ -27,6 +27,12 @@
     "tagName": "ol",
     "items": [
       {
+        "marked": true,
+        "text": "吴华锦的个人主页",
+        "title": "吴华锦的个人主页 « 吴华锦",
+        "href": "https://wuhuajin.com/"
+      },
+      {
         "text": "whjin-Gitee.com",
         "title": "寒青 (whjin) - Gitee 码云",
         "href": "https://gitee.com/whjin"
@@ -716,6 +722,10 @@
         "href": "https://www.defi.jobs/"
       },
       {
+        "text": "【Job】 Cryptocurrency Jobs and Blockchain Jobs",
+        "href": "https://cryptojobslist.com/"
+      },
+      {
         "text": "【职位】 DeJob 专注于Web3、远程招聘",
         "title": "DeJob 专注于Web3、远程招聘",
         "href": "https://dejob.ai/"
@@ -739,6 +749,11 @@
         "text": "【攻略】 Web3 + AI 远程攻略",
         "title": "web3+AI远程攻略（持续更新...） - 飞书云文档",
         "href": "https://wcngrtwsafnt.feishu.cn/wiki/GYzHwA1Ctim5Xske5iScdRWDnZf"
+      },
+      {
+        "text": "【攻略】 Web3 远程工作攻略",
+        "title": "关于远程工作你想知道的都在这 - 飞书云文档",
+        "href": "https://wcngrtwsafnt.feishu.cn/wiki/Nl7rwvxypiIVa7kOXVScZLranbg"
       }
     ]
   },
@@ -794,7 +809,7 @@
     ]
   },
   {
-    "updated": "2026-6-25 13:43:26",
+    "updated": "2026-6-25 15:31:30",
     "title": "Web3",
     "tagName": "ul",
     "items": [
@@ -813,6 +828,11 @@
       {
         "text": "Web3钱包",
         "href": "src/template/viewer.html?Web3_Web3钱包"
+      },
+      {
+        "text": "【IDE】 Remix IDE",
+        "title": "Remix IDE - Smart Contract Development",
+        "href": "https://remix.ethereum.org/"
       },
       {
         "text": "【教程】 Solidity教程",
@@ -847,6 +867,11 @@
         "href": "https://learnblockchain.cn/"
       },
       {
+        "marked": true,
+        "text": "【社区】 BinSchool Web3开发者社区",
+        "href": "https://binschool.org/"
+      },
+      {
         "text": "【社区】 WTF Academy",
         "title": "WTF Academy 是一个 Web3 开源大学",
         "href": "https://www.wtf.academy/zh"
@@ -860,6 +885,15 @@
         "text": "【网站】 Foresight News 官网",
         "title": "Foresight News｜洞悉 Web3 行业趋势：聚合区块链专业资讯、行业深度解析与投研价值发现",
         "href": "https://foresightnews.pro/"
+      },
+      {
+        "text": "【网站】 以太坊 官网",
+        "title": "以太坊 - 来自 Ethereum.org 的完整指南",
+        "href": "https://ethereum.org/zh/"
+      },
+      {
+        "text": "【网站】 以太坊经典",
+        "href": "https://ethereumclassic.org/zh/"
       }
     ]
   },

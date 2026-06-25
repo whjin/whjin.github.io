@@ -3,10 +3,10 @@
     <div class="footer-content">
       <span>&copy;${isMobile() ? '' : '2013-'}${new Date().getFullYear()}</span>
       <a
-        href="https://wuhuajin.com"
+        href="https://github.com/whjin"
         target="_blank"
         rel="noopener noreferrer"
-        title="博客"
+        title="Github"
       >
       吴华锦  
       </a>
