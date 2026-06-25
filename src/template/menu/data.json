@@ -161,6 +161,54 @@
     ]
   },
   {
+    "updated": "2026-6-25 12:11:31",
+    "title": "PDF工具",
+    "tagName": "ol",
+    "items": [
+      {
+        "text": "【站点】 PDF.js 官网",
+        "title": "PDF.js 是 Mozilla 社区所开发的一个开源的浏览器 PDF 渲染引擎。",
+        "href": "https://mozilla.github.io/pdf.js/"
+      },
+      {
+        "text": "【站点】 PDF24 工具箱",
+        "title": "PDF24 Tools: 免费且易于使用的在线PDF工具",
+        "href": "https://tools.pdf24.org/zh/"
+      },
+      {
+        "text": "【站点】 PDF压缩工具",
+        "title": "PDF压缩工具 – 在线压缩PDF文件",
+        "href": "https://pdfcompressor.com/zh/"
+      }
+    ]
+  },
+  {
+    "updated": "2026-6-25 12:15:42",
+    "title": "CDN",
+    "tagName": "ol",
+    "items": [
+      {
+        "text": "【站点】 UNPKG",
+        "href": "https://unpkg.com/"
+      },
+      {
+        "text": "【站点】 cdnjs",
+        "title": "Simple. Fast. Reliable.\r\nContent delivery at its finest.",
+        "href": "https://cdnjs.com/"
+      },
+      {
+        "text": "【站点】 BootCDN",
+        "title": "BootCDN - Bootstrap 中文网开源项目免费 CDN 加速服务\r\n稳定、快速、免费的前端开源项目 CDN 加速服务",
+        "href": "https://www.bootcdn.cn/"
+      },
+      {
+        "text": "【站点】 jsDelivr",
+        "title": "jsDelivr - A free, fast, and reliable CDN for JS and open source",
+        "href": "https://www.jsdelivr.com/"
+      }
+    ]
+  },
+  {
     "updated": "2026-6-25 11:26:47",
     "title": "图标",
     "tagName": "ol",
@@ -277,14 +325,14 @@
         "href": "UU在线工具 - UU工具箱 - 便捷实用的工具集合站"
       },
       {
-        "text": "【站点】 PDF.js 官网",
-        "title": "PDF.js 是 Mozilla 社区所开发的一个开源的浏览器 PDF 渲染引擎。",
-        "href": "https://mozilla.github.io/pdf.js/"
-      },
-      {
         "text": "【PS】 在线 PS",
         "title": "在线PS - 在线照片处理编辑器 - 在线photoshop",
         "href": "https://ps.bmcx.com/"
+      },
+      {
+        "text": "【UML图】 UML图开源工具",
+        "title": "使用简单的文字描述画UML图的开源工具。",
+        "href": "https://plantuml.com/zh/"
       },
       {
         "text": "【PS】 PS 网页版",
@@ -485,25 +533,6 @@
     "title": "数据",
     "tagName": "ol",
     "items": [
-      {
-        "text": "【CDN】 UNPKG",
-        "href": "https://unpkg.com/"
-      },
-      {
-        "text": "【CDN】 cdnjs",
-        "title": "Simple. Fast. Reliable.\r\nContent delivery at its finest.",
-        "href": "https://cdnjs.com/"
-      },
-      {
-        "text": "【CDN】 BootCDN",
-        "title": "BootCDN - Bootstrap 中文网开源项目免费 CDN 加速服务\r\n稳定、快速、免费的前端开源项目 CDN 加速服务",
-        "href": "https://www.bootcdn.cn/"
-      },
-      {
-        "text": "【CDN】 jsDelivr",
-        "title": "jsDelivr - A free, fast, and reliable CDN for JS and open source",
-        "href": "https://www.jsdelivr.com/"
-      },
       {
         "text": "【数据】 随机图片数据",
         "title": "Lorem Picsum\r\nThe Lorem Ipsum for photos.",
