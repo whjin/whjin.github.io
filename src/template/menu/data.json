@@ -110,6 +110,23 @@
         "text": "【站点】 Mongoose 中文网",
         "title": "优雅的 MongoDB 对象建模，适用于 Node.js",
         "href": "https://mongoose.nodejs.cn/"
+      },
+      {
+        "text": "【破解】 Navicat 激活",
+        "title": "快速激活Navicat Premium 12",
+        "href": "https://baijiahao.baidu.com/s?id=1644169351506023288&wfr=spider&for=pc"
+      }
+    ]
+  },
+  {
+    "updated": "2026-6-25 12:52:08",
+    "title": "Github",
+    "tagName": "ol",
+    "items": [
+      {
+        "text": "【加速器】 瓦特工具箱(Steam++官网) - Watt Toolkit",
+        "title": "「Watt Toolkit」是一个开源跨平台的多功能 Steam 工具箱。",
+        "href": "https://steampp.net/"
       }
     ]
   },
@@ -145,24 +162,51 @@
     ]
   },
   {
-    "updated": "2026-6-25 11:50:58",
+    "updated": "2026-6-25 12:43:53",
     "title": "浏览器",
     "tagName": "ol",
     "items": [
       {
-        "text": "Edge 实验性配置",
+        "text": "【Edge】 Edge 实验性配置",
         "href": "edge://flags/#unsafely-treat-insecure-origin-as-secure"
       },
       {
         "text": "【插件】 极简插件官网",
         "title": "极简插件官网_Chrome插件下载_Chrome浏览器应用商店",
         "href": "https://chrome.zzzmh.cn/index"
+      },
+      {
+        "text": "【插件】 GitHub Corners",
+        "href": "https://tholman.com/github-corners/"
+      },
+      {
+        "text": "【YouTube】 YouTube Video Download",
+        "title": "YouTube Video Download - SSYouTube.com | Fast & Free",
+        "href": "https://en.ssyoutube.com/1ab/"
+      },
+      {
+        "text": "【投屏】 Vysor 官网",
+        "href": "https://www.vysor.io/"
+      },
+      {
+        "text": "【投屏】 Vysor_2.1.2破解，及安装包",
+        "href": "https://www.cnblogs.com/slade-sun/p/10598209.html"
+      },
+      {
+        "text": "【投屏】 极限投屏",
+        "title": "极限投屏更新日志（QuickMirror update log） - 飞书云文档",
+        "href": "https://my.feishu.cn/docx/WuMld1xKvoT4H8xlZHdcMP53nMf"
+      },
+      {
+        "text": "【证件照】 证件照大师",
+        "title": "证件照大师 - 免费在线证件照制作_智能抠图换底色_一寸二寸证件照",
+        "href": "https://id-photo.cn/"
       }
     ]
   },
   {
     "updated": "2026-6-25 12:11:31",
-    "title": "PDF工具",
+    "title": "PDF",
     "tagName": "ol",
     "items": [
       {
@@ -179,32 +223,57 @@
         "text": "【站点】 PDF压缩工具",
         "title": "PDF压缩工具 – 在线压缩PDF文件",
         "href": "https://pdfcompressor.com/zh/"
+      },
+      {
+        "text": "【站点】 PDF压缩工具",
+        "title": "PDF压缩工具 – 在线压缩PDF文件",
+        "href": "https://pdfcompressor.com/zh/"
       }
     ]
   },
   {
-    "updated": "2026-6-25 12:15:42",
-    "title": "CDN",
+    "updated": "2026-6-25 12:31:53",
+    "title": "文件转换",
     "tagName": "ol",
     "items": [
       {
-        "text": "【站点】 UNPKG",
+        "text": "【文件转换】 文件转换工具",
+        "title": "在线转换文档，图像，视频，音频文件",
+        "href": "https://www.aconvert.com/cn/"
+      },
+      {
+        "text": "【文件转换】 Convertio — 文件转换器",
+        "href": "https://convertio.co/zh/"
+      }
+    ]
+  },
+  {
+    "updated": "2026-6-25 13:05:54",
+    "title": "服务",
+    "tagName": "ol",
+    "items": [
+      {
+        "text": "【CDN】 UNPKG",
         "href": "https://unpkg.com/"
       },
       {
-        "text": "【站点】 cdnjs",
+        "text": "【CDN】 cdnjs",
         "title": "Simple. Fast. Reliable.\r\nContent delivery at its finest.",
         "href": "https://cdnjs.com/"
       },
       {
-        "text": "【站点】 BootCDN",
+        "text": "【CDN】 BootCDN",
         "title": "BootCDN - Bootstrap 中文网开源项目免费 CDN 加速服务\r\n稳定、快速、免费的前端开源项目 CDN 加速服务",
         "href": "https://www.bootcdn.cn/"
       },
       {
-        "text": "【站点】 jsDelivr",
+        "text": "【CDN】 jsDelivr",
         "title": "jsDelivr - A free, fast, and reliable CDN for JS and open source",
         "href": "https://www.jsdelivr.com/"
+      },
+      {
+        "text": "【镜像站】 npmmirror 镜像站",
+        "href": "https://www.npmmirror.com/"
       }
     ]
   },
@@ -322,7 +391,13 @@
       },
       {
         "text": "【在线工具】 UU在线工具",
-        "href": "UU在线工具 - UU工具箱 - 便捷实用的工具集合站"
+        "title": "UU在线工具 - UU工具箱 - 便捷实用的工具集合站",
+        "href": "https://uutool.cn/"
+      },
+      {
+        "text": "【在线工具】 独特工具箱",
+        "title": "独特工具箱，提供免费在线工具",
+        "href": "https://www.dute.org/"
       },
       {
         "text": "【PS】 在线 PS",
@@ -338,11 +413,6 @@
         "text": "【PS】 PS 网页版",
         "title": "在线ps/在线p图/ps网页版/ps在线图片处理工具",
         "href": "https://www.nuanque.com/ps/"
-      },
-      {
-        "text": "【文件转换】 文件转换工具",
-        "title": "在线转换文档，图像，视频，音频文件",
-        "href": "https://www.aconvert.com/cn/"
       },
       {
         "text": "【MP3外链】 MP3转链接免费工具",
@@ -821,13 +891,22 @@
     ]
   },
   {
-    "updated": "2026-5-21 06:50:21",
+    "updated": "2026-6-25 12:59:46",
     "title": "网络",
     "tagName": "ul",
     "items": [
       {
         "text": "HTTP文档",
         "href": "src/template/viewer.html?网络_HTTP文档"
+      },
+      {
+        "text": "【WebSocket】 WebSocket 在线测试工具",
+        "title": "websocket/ws/wss在线调试测试工具",
+        "href": "https://wstool.jackxiang.com/"
+      },
+      {
+        "text": "【WebSocket】 websocket在线测试",
+        "href": "http://www.websocket-test.com/"
       }
     ]
   },
