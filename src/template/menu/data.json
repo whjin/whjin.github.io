@@ -1519,11 +1519,13 @@
     ]
   },
   {
+    "updated": "2026-6-25 18:51:30",
     "hide": false,
     "title": "简历",
-    "tagName": "ul",
+    "tagName": "ol",
     "items": [
       {
+        "marked": true,
         "text": "中文简历",
         "href": "src/template/viewer.html?简历_中文简历"
       },
