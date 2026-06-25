@@ -11,13 +11,17 @@
     ]
   },
   {
-    "updated": "2026-6-23 12:06:19",
+    "updated": "2026-6-25 20:01:00",
     "title": "生活",
     "tagName": "ul",
     "items": [
       {
         "text": "育儿",
         "href": "src/template/viewer.html?生活_育儿经"
+      },
+      {
+        "text": "基金持仓",
+        "href": "src/template/viewer.html?生活_基金持仓"
       }
     ]
   },
