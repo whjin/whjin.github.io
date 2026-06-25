@@ -1001,13 +1001,49 @@
     ]
   },
   {
-    "updated": "2026-6-3 08:39:06",
+    "updated": "2026-6-25 17:15:06",
     "title": "Vue",
-    "tagName": "ul",
+    "tagName": "ol",
     "items": [
       {
         "text": "Vue文档",
         "href": "src/template/viewer.html?Vue_Vue文档"
+      },
+      {
+        "text": "【站点】 Vue.js 官网",
+        "title": "渐进式JavaScript 框架\r\n易学易用，性能出色，适用场景丰富的 Web 前端框架。",
+        "href": "https://cn.vuejs.org/"
+      },
+      {
+        "text": "【站点】 Vue Router 官网",
+        "href": "https://router.vuejs.org/zh/"
+      },
+      {
+        "text": "【站点】 Vue CLI 官网",
+        "href": "https://cli.vuejs.org/zh/"
+      },
+      {
+        "text": "【站点】 Pinia 官网",
+        "href": "https://pinia.web3doc.top/"
+      },
+      {
+        "text": "【站点】 Vue Loader 官网",
+        "href": "https://vue-loader.vuejs.org/zh/"
+      },
+      {
+        "text": "【站点】 VueUse 中文网",
+        "title": "VueUse Vue\r\n组合式工具集\r\n基础 Vue 组合式工具的集合",
+        "href": "https://vueuse.nodejs.cn/"
+      },
+      {
+        "text": "【站点】 Vite 官网",
+        "title": "面向 Web 的构建工具\r\nVite 是一款速度极快的前端构建工具为下一代 Web 应用程序提供支持",
+        "href": "https://cn.vite.dev/"
+      },
+      {
+        "text": "【站点】 Nuxt 中文网",
+        "title": "渐进式 Web 框架\r\n使用 Nuxt 创建高质量的 Web 应用，Nuxt 是一个开源框架，它使使用 Vue.js 进行全栈开发变得直观。",
+        "href": "https://nuxt.nodejs.cn/"
       }
     ]
   },
