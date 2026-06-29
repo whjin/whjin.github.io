@@ -46,10 +46,27 @@
         "text": "whjin-Gitee.com",
         "title": "寒青 (whjin) - Gitee 码云",
         "href": "https://gitee.com/whjin"
+      }
+    ]
+  },
+  {
+    "sticky": 2,
+    "title": "个人项目",
+    "tagName": "ol",
+    "items": [
+      {
+        "text": "https://github.com/whjin/calculateApp",
+        "title": "简易计算器",
+        "href": "https://wuhuajin.com/calculateApp/"
       },
       {
-        "text": "github/next-ai-core",
-        "title": "https://github.com/whjin/next-ai-core",
+        "text": "https://github.com/whjin/gis-vue",
+        "title": "GIS Vue3 项目",
+        "href": "https://wuhuajin.com/gis-vue/"
+      },
+      {
+        "text": "https://github.com/whjin/next-ai-core",
+        "title": "Next AI Core",
         "href": "https://next-ai-core.wuhuajin.com/"
       },
       {
