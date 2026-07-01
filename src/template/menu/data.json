@@ -5,7 +5,7 @@
     "tagName": "ul",
     "items": [
       {
-        "text": "原创",
+        "text": "原创诗词",
         "href": "src/template/viewer.html?文学_原创诗词"
       }
     ]
