@@ -29,6 +29,21 @@ async function generateCard() {
           countBadge.classList.add('normal');
         }
         headerEl.appendChild(countBadge);
+
+        const expandBtn = document.createElement('span');
+        expandBtn.className = 'card-expand-btn';
+        expandBtn.title = '展开';
+
+        const expandImg = document.createElement('img');
+        expandImg.src = 'src/images/icons/zoomout.png';
+        expandImg.alt = '展开';
+        expandBtn.appendChild(expandImg);
+
+        expandBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          openModal(m.title, m.items);
+        });
+        cardEl.appendChild(expandBtn);
       }
 
       if (m.sticky) {
@@ -155,4 +170,81 @@ function restoreCardScroll() {
   if (targetList) {
     targetList.scrollTop = Number(savedTop);
   }
+}
+
+let modalMask = null;
+
+function initModal() {
+  if (modalMask) return;
+
+  modalMask = document.createElement('div');
+  modalMask.className = 'modal-mask';
+
+  const modalContent = document.createElement('div');
+  modalContent.className = 'modal-content';
+
+  const closeBtn = document.createElement('span');
+  closeBtn.className = 'modal-close';
+
+  const closeImg = document.createElement('img');
+  closeImg.src = 'src/images/icons/zoomin.png';
+  closeImg.alt = '关闭';
+  closeBtn.appendChild(closeImg);
+
+  closeBtn.addEventListener('click', closeModal);
+
+  const modalTitle = document.createElement('div');
+  modalTitle.className = 'modal-title';
+
+  const modalList = document.createElement('ul');
+  modalList.className = 'modal-list';
+
+  modalContent.appendChild(closeBtn);
+  modalContent.appendChild(modalTitle);
+  modalContent.appendChild(modalList);
+  modalMask.appendChild(modalContent);
+
+  modalMask.addEventListener('click', (e) => {
+    if (e.target === modalMask) closeModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalMask.classList.contains('show')) {
+      closeModal();
+    }
+  });
+
+  document.body.appendChild(modalMask);
+}
+
+function openModal(title, items) {
+  if (!modalMask) initModal();
+
+  const titleEl = modalMask.querySelector('.modal-title');
+  const listEl = modalMask.querySelector('.modal-list');
+
+  titleEl.innerText = title;
+  listEl.innerHTML = '';
+
+  items.forEach((item) => {
+    const liEl = document.createElement('li');
+    const aEl = document.createElement('a');
+    aEl.rel = 'noopener noreferrer';
+    aEl.target = '_blank';
+    const markedHtml = '<span class="marked">*</span>';
+    aEl.innerHTML = item.marked ? `${markedHtml}${item.text}` : item.text;
+    aEl.title = item.title || item.text;
+    aEl.href = item.href;
+    liEl.appendChild(aEl);
+    listEl.appendChild(liEl);
+  });
+
+  modalMask.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  if (!modalMask) return;
+  modalMask.classList.remove('show');
+  document.body.style.overflow = '';
 }
