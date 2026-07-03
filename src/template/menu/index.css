@@ -92,9 +92,9 @@
   box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1em;
+  gap: 1em 2em;
   overflow: auto;
-  padding: 1em 2em 0 4em;
+  padding: 1em 2em 0 3em;
 }
 .modal-list li {
   line-height: 1.5;
