@@ -5,10 +5,64 @@
     "tagName": "ol",
     "items": [
       {
-        "marked": true,
         "text": "蛙蛙写作",
         "title": "蛙蛙写作——超级AI智能写作助手",
         "href": "https://wawawriter.cgref.cn/s/59ngw1oer2"
+      },
+      {
+        "text": "咔片",
+        "title": "咔片PPT-AI一键生成PPT-PPT在线智能制作网站",
+        "href": "https://cappt.cgref.cn/s/xpn8zrznzw"
+      },
+      {
+        "text": "Seko",
+        "title": "Seko - World Class AI Video Generation Platform",
+        "href": "https://seko.cgref.cn/s/2znr3vznr7"
+      },
+      {
+        "text": "星流",
+        "title": "星流 - 新一代设计Agent",
+        "href": "https://xingliu.cgref.cn/s/ogewx7wkp2"
+      },
+      {
+        "text": "LiblibAI",
+        "title": "LiblibAI-哩布哩布AI - 中国领先的AI创作平台",
+        "href": "https://liblib.cgref.cn/s/4onyr06kjx"
+      },
+      {
+        "text": "Atoms",
+        "title": "Atoms：用 AI 构建网站与应用，无需编码",
+        "href": "https://atoms.cgref.cn/s/20epqjjkw1"
+      },
+      {
+        "text": "LibTV",
+        "title": "LibTV - 专业视频创作工具",
+        "href": "https://libtv.cgref.cn/s/j7n63dqn1g"
+      },
+      {
+        "text": "墨刀AI",
+        "title": "墨刀AI - 激发无限创造力",
+        "href": "https://modao.cgref.cn/s/5ln1o0mkrw"
+      },
+      {
+        "text": "超级简历WonderCV",
+        "title": "超级简历WonderCV - AI智能简历制作工具,HR推荐专业中英文简历模板免费下载",
+        "href": "https://wondercv.cgref.cn/s/50k9g23ng6"
+      },
+      {
+        "text": "UP 简历",
+        "title": "AI简历生成在线制作工具_简历模板免费下载使用-UP简历",
+        "href": "https://upcv.cgref.cn/s/1zn5mdykqm"
+      },
+      {
+        "text": "火山引擎",
+        "title": "方舟 Agent Plan",
+        "href": "https://volcengine.cgref.cn/s/59ngwxoer2"
+      },
+      {
+        "text": "讯飞智作",
+        "title": "讯飞智作-AI虚拟数字人视频制作-一键创作口播视频-文字转视频-数字分身定制",
+        "href": "https://xfzhizuo.cgref.cn/s/rpexmw9k90"
       },
       {
         "text": "音述AI",
@@ -26,6 +80,11 @@
         "href": "https://aibrm.cgref.cn/s/l41evd6ev8"
       },
       {
+        "text": "AstronClaw",
+        "title": "讯飞星辰Agent平台 - 一站式智能体开发平台",
+        "href": "https://astron-claw.cgref.cn/s/20epq01kw1"
+      },
+      {
         "text": "AiPPT插件",
         "title": "AiPPT 插件-AI智能PPT制作软件，一键生成/美化/排版，高效PPT工具",
         "href": "https://aippt-plugin.cgref.cn/s/3rpe3p9k05"
@@ -36,34 +95,24 @@
         "href": "https://islide.cgref.cn/s/dp3kqd7eol"
       },
       {
-        "text": "JoyPix AI",
-        "title": "AI视频生成，自研顶级Motion-2图片驱动图片模型 & 全球顶级视频模型集成 & 40+视频生成模版 & 免费头像生成 & 免费语音克隆 & AI对口型 ｜ 让故事讲述更简单与有趣 - JoyPix.ai",
-        "href": "https://joypixai.cgref.cn/s/31le04okoq"
+        "text": "沁言学术",
+        "title": "学术超级智能体",
+        "href": "https://qinyanai.cgref.cn/s/rpexmw3k90"
       },
       {
-        "text": "UP 简历",
-        "title": "AI简历生成在线制作工具_简历模板免费下载使用-UP简历",
-        "href": "https://upcv.cgref.cn/s/1zn5mdykqm"
+        "text": "爱派AiPy",
+        "title": "AiPy，超级AI牛马智能体工厂，爱派AiPy软件官网",
+        "href": "https://aipyaipy.cgref.cn/s/3mnzz45no1"
       },
       {
-        "text": "墨刀AI",
-        "title": "墨刀AI - 激发无限创造力",
-        "href": "https://modao.cgref.cn/s/5ln1o0mkrw"
+        "text": "码上飞",
+        "title": "码上飞 - 说中文，做应用 | AI生成微信小程序/鸿蒙/APP/H5网站",
+        "href": "https://codeflying.cgref.cn/s/59ngw0xer2"
       },
       {
-        "text": "Seko",
-        "title": "Seko - World Class AI Video Generation Platform",
-        "href": "https://seko.cgref.cn/s/2znr3vznr7"
-      },
-      {
-        "text": "火山引擎",
-        "title": "方舟 Agent Plan",
-        "href": "https://volcengine.cgref.cn/s/59ngwxoer2"
-      },
-      {
-        "text": "AstronClaw",
-        "title": "讯飞星辰Agent平台 - 一站式智能体开发平台",
-        "href": "https://astron-claw.cgref.cn/s/20epq01kw1"
+        "text": "01Agent",
+        "title": "01Agent - 会协作、能执行、可交付的 AI 创作智能体",
+        "href": "https://01agent.cgref.cn/s/1oe7l5pn23"
       }
     ]
   },
