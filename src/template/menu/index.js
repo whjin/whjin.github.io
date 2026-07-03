@@ -189,6 +189,7 @@ function initModal(m) {
 
   const closeImg = document.createElement('img');
   closeImg.src = 'src/images/icons/zoomin.png';
+  closeImg.alt = '关闭';
   closeImg.title = '关闭';
 
   const fragment = document.createDocumentFragment();

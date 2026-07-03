@@ -189,7 +189,12 @@
     padding-right: 0.5em;
   }
 
-  .card-list::-webkit-scrollbar {
+  .card-expand-btn {
+    display: block;
+  }
+
+  .card-list::-webkit-scrollbar,
+  .modal-list::-webkit-scrollbar {
     display: none;
   }
 }
