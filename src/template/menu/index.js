@@ -41,7 +41,7 @@ async function generateCard() {
 
         expandBtn.addEventListener('click', (e) => {
           e.stopPropagation();
-          openModal(m.title, m.items);
+          openModal(m);
         });
         cardEl.appendChild(expandBtn);
       }
@@ -77,9 +77,7 @@ async function generateCard() {
 
   setCardHeight();
 
-  // 绑定滚动监听（仅更新当前操作卡片）
   bindCardScroll();
-  // 恢复上次滚动卡片位置
   restoreCardScroll();
 }
 
@@ -174,7 +172,7 @@ function restoreCardScroll() {
 
 let modalMask = null;
 
-function initModal() {
+function initModal(m) {
   if (modalMask) return;
 
   modalMask = document.createElement('div');
@@ -183,24 +181,27 @@ function initModal() {
   const modalContent = document.createElement('div');
   modalContent.className = 'modal-content';
 
-  const closeBtn = document.createElement('span');
-  closeBtn.className = 'modal-close';
-
-  const closeImg = document.createElement('img');
-  closeImg.src = 'src/images/icons/zoomin.png';
-  closeImg.alt = '关闭';
-  closeBtn.appendChild(closeImg);
-
-  closeBtn.addEventListener('click', closeModal);
+  const modalHeaderEl = document.createElement('div');
+  modalHeaderEl.className = 'modal-close';
 
   const modalTitle = document.createElement('div');
   modalTitle.className = 'modal-title';
 
-  const modalList = document.createElement('ul');
+  const closeImg = document.createElement('img');
+  closeImg.src = 'src/images/icons/zoomin.png';
+  closeImg.title = '关闭';
+
+  const fragment = document.createDocumentFragment();
+  fragment.appendChild(modalTitle);
+  fragment.appendChild(closeImg);
+  modalHeaderEl.appendChild(fragment);
+
+  closeImg.addEventListener('click', closeModal);
+
+  const modalList = document.createElement(m.tagName || 'ul');
   modalList.className = 'modal-list';
 
-  modalContent.appendChild(closeBtn);
-  modalContent.appendChild(modalTitle);
+  modalContent.appendChild(modalHeaderEl);
   modalContent.appendChild(modalList);
   modalMask.appendChild(modalContent);
 
@@ -217,24 +218,24 @@ function initModal() {
   document.body.appendChild(modalMask);
 }
 
-function openModal(title, items) {
-  if (!modalMask) initModal();
+function openModal(m) {
+  if (!modalMask) initModal(m);
 
   const titleEl = modalMask.querySelector('.modal-title');
   const listEl = modalMask.querySelector('.modal-list');
 
-  titleEl.innerText = title;
+  titleEl.innerText = m.title;
   listEl.innerHTML = '';
 
-  items.forEach((item) => {
+  m.items.forEach((v) => {
     const liEl = document.createElement('li');
     const aEl = document.createElement('a');
     aEl.rel = 'noopener noreferrer';
     aEl.target = '_blank';
     const markedHtml = '<span class="marked">*</span>';
-    aEl.innerHTML = item.marked ? `${markedHtml}${item.text}` : item.text;
-    aEl.title = item.title || item.text;
-    aEl.href = item.href;
+    aEl.innerHTML = v.marked ? `${markedHtml}${v.text}` : v.text;
+    aEl.title = v.title || v.text;
+    aEl.href = v.href;
     liEl.appendChild(aEl);
     listEl.appendChild(liEl);
   });
