@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     document.querySelector('.sidebar-area').style.display = 'none';
     nacContainer.classList.add('hide-toc');
 
-    renderPDF(contentEl, `posts/${dir}/${splits[0]}.${splits[1]}`).then(() => {
+    renderPDF(document.getElementById('view-container'), `posts/${dir}/${splits[0]}.${splits[1]}`).then(() => {
       hideLoading();
     });
   } else {
