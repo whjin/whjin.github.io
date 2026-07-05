@@ -6,7 +6,7 @@
         href="https://wuhuajin.com"
         target="_blank"
         rel="noopener noreferrer"
-        title="博客"
+        title="吴华锦的个人主页"
       >
       吴华锦  
       </a>

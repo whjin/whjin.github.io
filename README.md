@@ -1,4 +1,4 @@
-# 博客
+# 吴华锦的个人主页
 
 - [个人主页](https://wuhuajin.com)
 - [讨论站点](https://github.com/whjin/whjin.github.io/issues)

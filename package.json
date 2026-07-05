@@ -1,7 +1,7 @@
 {
   "name": "blog",
   "version": "1.0.0",
-  "description": "- [博客](https://wuhuajin.com)\r - [讨论站点](https://github.com/whjin/whjin.github.io/issues)",
+  "description": "- [吴华锦的个人主页](https://wuhuajin.com)\r - [讨论站点](https://github.com/whjin/whjin.github.io/issues)",
   "main": "server.js",
   "scripts": {
     "dev": "node server.js"
