@@ -1,15 +1,12 @@
 function isMobile() {
   const userAgent = navigator.userAgent.toLowerCase();
-  const mobileRegex =
-    /iphone|android|ipad|ipod|mobile|webos|blackberry|iemobile|opera mini/i;
+  const mobileRegex = /iphone|android|ipad|ipod|mobile|webos|blackberry|iemobile|opera mini/i;
   return mobileRegex.test(userAgent) || window.innerWidth <= 768;
 }
 
 function productionMode() {
   const locations = ['localhost', '127.0.0.1', '8080'];
-  return !locations.some((location) =>
-    window.location.origin.includes(location),
-  );
+  return !locations.some((location) => window.location.origin.includes(location));
 }
 
 const isProduction = productionMode();
@@ -60,7 +57,6 @@ if (!isProduction) {
 
   socket.addEventListener('open', () => {});
 
-  // 当收到服务器发来的reload消息时，刷新页面
   socket.addEventListener('message', (event) => {
     if (event.data === 'reload') {
       window.location.reload();

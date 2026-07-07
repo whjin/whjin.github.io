@@ -37,17 +37,18 @@ async function loadMarkdown(targetId, filePath) {
   return new Promise((resolve, reject) => {
     const key = filePath.includes('home') ? 'home' : 'posts';
     const scrollKey = `scrollPosition_${key}`;
-    window.addEventListener('scroll', () => {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    const scrollContainer = document.querySelector('.content-area');
+
+    scrollContainer.addEventListener('scroll', () => {
+      const scrollTop = scrollContainer.scrollTop;
       localStorage.setItem(scrollKey, scrollTop);
     });
+
     handler(targetId, filePath, () => {
       const savedScrollTop = localStorage.getItem(scrollKey);
-      if (savedScrollTop) {
-        window.scrollTo({
-          top: parseInt(savedScrollTop, 10),
-          behavior: 'auto',
-        });
+      if (savedScrollTop && scrollContainer) {
+        scrollContainer.scrollTop = parseInt(savedScrollTop, 10);
       }
       resolve();
     });
@@ -113,9 +114,15 @@ function generateTOC() {
       e.preventDefault();
       const targetId = link.getAttribute('href').slice(1);
       const targetEl = document.getElementById(targetId);
-      if (targetEl) {
-        targetEl.scrollIntoView({
-          top: targetEl.offsetTop - 60,
+      const scrollContainer = document.querySelector('.content-area');
+
+      if (targetEl && scrollContainer) {
+        const containerRect = scrollContainer.getBoundingClientRect();
+        const targetRect = targetEl.getBoundingClientRect();
+        const offsetTop = targetRect.top - containerRect.top + scrollContainer.scrollTop;
+        const finalTop = Math.max(offsetTop - 60, 0);
+        scrollContainer.scrollTo({
+          top: finalTop,
           behavior: 'smooth',
         });
       }
