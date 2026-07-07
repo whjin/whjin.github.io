@@ -286,7 +286,7 @@
   },
   {
     "updated": "2026-6-25 18:24:28",
-    "title": "游戏开发",
+    "title": "游戏",
     "tagName": "ol",
     "items": [
       {
@@ -1283,17 +1283,6 @@
     ]
   },
   {
-    "title": "UI框架",
-    "tagName": "ol",
-    "items": [
-      {
-        "text": "【官网】 Ant Design",
-        "title": "Ant Design - 一套企业级 UI 设计语言和 React 组件库",
-        "href": "https://ant.design/index-cn"
-      }
-    ]
-  },
-  {
     "updated": "2026-6-23 13:26:30",
     "title": "JavaScript",
     "tagName": "ol",
@@ -1578,16 +1567,6 @@
         "href": "https://cesium.xin/"
       },
       {
-        "text": "【站点】 Cesium 中文官网",
-        "title": "3D 地理空间平台\r\nCesium 是一个开放平台，旨在为释放 3D 数据潜力的软件应用程序提供支持。",
-        "href": "https://cesium.net.cn/"
-      },
-      {
-        "text": "【站点】 Leaflet 交互式地图",
-        "title": "一个开源并且对移动端友好的交互式地图 JavaScript 库",
-        "href": "https://leafletjs.cn/"
-      },
-      {
         "text": "【站点】 Mapbox GL JS Cookbook",
         "title": "地理信息可视化",
         "href": "https://www.naivemap.com/mapbox-gl-js-cookbook/"
@@ -1595,36 +1574,6 @@
       {
         "text": "【站点】 WebGL 理论基础",
         "href": "https://webglfundamentals.org/webgl/lessons/zh_cn/"
-      },
-      {
-        "text": "【站点】 WebGL - Web API",
-        "title": "WebGL：web 中的 2D 的 3D 图形 - Web API | MDN",
-        "href": "https://developer.mozilla.org/zh-CN/docs/Web/API/WebGL_API"
-      },
-      {
-        "text": "【站点】 ArcGis中文网",
-        "title": "ArcGis For Javascript中文网站。",
-        "href": "https://arcgis.fenxianglu.cn/"
-      },
-      {
-        "text": "【站点】 Three.js 中文网",
-        "title": "Web3D可视化\r\n🚀提供图文、视频等学习资源",
-        "href": "https://webgl3d.cn/"
-      },
-      {
-        "text": "【站点】 Threejs 指南",
-        "title": "🚀 从零开始，掌握 WebGL 3D 编程的艺术\r\n全面的 Three.js 学习平台 • 丰富的交互式示例 • 深入的着色器教程 • 系统性的 GLSL 文档 • 实战项目指导",
-        "href": "https://threejs-learning.com/zh/"
-      },
-      {
-        "text": "【站点】 GIS 制图和空间分析",
-        "title": "地理空间 AI 实现更大规模的深度洞察\r\n各领域领导者正在使用富含 AI 的地理空间技术，从而加速自动化、预测和优化。",
-        "href": "https://www.esri.com/zh-cn/home"
-      },
-      {
-        "text": "【站点】 ArcGIS Online",
-        "title": "使用 ArcGIS Online (Esri 的基于 web 的制图软件) 构建交互式 Web 地图。 在地图上与数据交互、放大和搜索时获取新视角和增强细节。 使用智能、数据驱动的制图样式和直观的分析工具来获取位置情报。",
-        "href": "https://www.arcgis.com/home/index.html"
       }
     ]
   },
