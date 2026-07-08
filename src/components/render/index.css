@@ -16,6 +16,9 @@ body {
   overflow: hidden;
   margin: 0;
   padding: 0;
+  background: #e3ffe7;
+  background: linear-gradient(90deg, rgba(227, 255, 231, 1) 0%, rgba(217, 231, 255, 1) 50%);
+  background-size: cover;
 }
 
 h1,
@@ -110,15 +113,15 @@ pre {
 }
 
 code {
-  background-color: #e9ecef;
+  background-color: #f8f8f9;
   padding: 2px 6px;
   border-radius: 6px;
 }
 
 blockquote {
   height: fit-content;
-  max-height: 300px;
-  background: #e9ecef;
+  max-height: 500px;
+  background: #f8f8f9;
   border-left: 6px solid #e83e8c;
   border-radius: 6px;
   padding: 0.5em 0.8em;
@@ -139,7 +142,7 @@ blockquote p {
   width: 100%;
   height: 40px;
   box-sizing: border-box;
-  background: #e9ecef;
+  background: #f8f8f9;
   display: flex;
   align-items: center;
   position: sticky;
@@ -169,7 +172,7 @@ a:link {
 }
 
 a:hover {
-  background-color: #e9ecef;
+  background-color: #f8f8f9;
   color: #bd4147;
 }
 
@@ -277,14 +280,14 @@ a:hover {
   max-width: 15%;
   height: 100%;
   box-sizing: border-box;
-  border-left: 2px solid #e9ecef;
+  border-left: 2px solid #b1c8cd;
   overflow: auto;
 }
 
 .sidebar-area .sidebar-title {
   font-size: 1.2em;
   font-weight: bold;
-  border-bottom: 2px solid #e9ecef;
+  border-bottom: 2px solid #b1c8cd;
   padding-left: 0.5em;
   height: 50px;
   line-height: 50px;

@@ -10,7 +10,7 @@
 .card-item {
   max-height: 300px;
   border-radius: 6px;
-  border: 2px solid #d1d9e0;
+  border: 2px solid #b1c8cd;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -61,6 +61,9 @@
   background: #fff;
   border-radius: 8px;
   position: relative;
+  background: #e3ffe7;
+  background: linear-gradient(90deg, rgba(227, 255, 231, 1) 0%, rgba(217, 231, 255, 1) 50%);
+  background-size: cover;
 }
 .modal-close {
   width: 100%;
@@ -69,7 +72,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #eee;
+  border-bottom: 2px solid #b1c8cd;
   user-select: none;
   padding: 1em;
   cursor: pointer;
@@ -115,7 +118,7 @@
   text-align: center;
   font-size: 1em;
   font-weight: 600;
-  border-bottom: 1px solid #d1d9e0;
+  border-bottom: 2px solid #b1c8cd;
   flex-shrink: 0;
   white-space: nowrap;
   text-overflow: ellipsis;
