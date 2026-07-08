@@ -285,7 +285,9 @@ a:hover {
   font-size: 1.2em;
   font-weight: bold;
   border-bottom: 2px solid #e9ecef;
-  padding: 0.5em;
+  padding-left: 0.5em;
+  height: 50px;
+  line-height: 50px;
 }
 
 .entry ~ .sidebar-area {
