@@ -295,21 +295,6 @@
     ]
   },
   {
-    "updated": "2026-6-25 18:24:28",
-    "title": "游戏",
-    "tagName": "ol",
-    "items": [
-      {
-        "text": "【站点】 异星专注 - 拜岛科技出品",
-        "href": "https://byland.work/exocus/index.html"
-      },
-      {
-        "text": "【站点】 GCORES 机核",
-        "href": "https://www.gcores.com/"
-      }
-    ]
-  },
-  {
     "updated": "2026-6-25 12:52:08",
     "title": "Github",
     "tagName": "ol",
@@ -961,40 +946,6 @@
     ]
   },
   {
-    "updated": "2026-6-25 16:59:19",
-    "title": "Python",
-    "tagName": "ol",
-    "items": [
-      {
-        "text": "Python文档",
-        "href": "src/template/viewer.html?Python_Python文档"
-      },
-      {
-        "text": "【电子书】 Python编程：从入门到实践（第3版）",
-        "href": "https://dk-plus.com/assets/electronicBook/Python%E7%BC%96%E7%A8%8B%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89.pdf"
-      },
-      {
-        "text": "【电子书】 《动手学深度学习》",
-        "title": "《动手学深度学习》 — 动手学深度学习 2.0.0 documentation",
-        "href": "https://zh-v2.d2l.ai/"
-      },
-      {
-        "text": "【教程】 Python 教程",
-        "title": "Python 教程 — Python 3.14.6 文档",
-        "href": "https://docs.python.org/zh-cn/3/tutorial/"
-      },
-      {
-        "text": "【社区】 scikit-learn中文社区",
-        "href": "https://scikit-learn.org.cn/"
-      },
-      {
-        "text": "【文档】 scikit-learn (sklearn) 官方文档中文版",
-        "title": "scikit-learn (sklearn) 官方文档中文版 - sklearn",
-        "href": "https://scikitlearn.com.cn/"
-      }
-    ]
-  },
-  {
     "updated": "2026-6-29 21:40:55",
     "title": "AI",
     "tagName": "ol",
@@ -1442,47 +1393,14 @@
         "href": "https://docs.nestjs.cn/"
       },
       {
-        "text": "【站点】 NestJS 中文网",
-        "href": "https://nest.nodejs.cn/"
-      },
-      {
-        "text": "【站点】 Express 中文网",
-        "title": "基于 Node.js 平台的 web 应用开发框架 - Express中文文档 | Express中文网",
-        "href": "https://www.expressjs.com.cn/"
-      },
-      {
-        "text": "【站点】 Puppeteer 中文网",
-        "title": "Puppeteer 是一个 JavaScript 库，提供了一个高级 API，用于通过 DevTools 协议 或 WebDriver BiDi 控制 Chrome 或 Firefox。 Puppeteer 默认在无头模式（无可见 UI）下运行",
-        "href": "https://pptr.nodejs.cn/"
-      },
-      {
         "text": "【站点】 Hono 中文网",
         "title": "Hono\r\nWeb 应用框架\r\n快速、轻量、基于 Web 标准构建。支持任何 JavaScript 运行时。",
         "href": "https://hono.nodejs.cn/"
       },
       {
-        "text": "【站点】 Fastify 中文网",
-        "title": "Fastify 中文网\r\n快速且低开销的 Node.js Web 框架",
-        "href": "https://fastify.nodejs.cn/"
-      },
-      {
-        "text": "【站点】 Socket.IO 中文网",
-        "title": "适用于每个平台的双向且低延迟的通信",
-        "href": "https://socket.nodejs.cn/"
-      },
-      {
-        "text": "【站点】 dotenv 中文网",
-        "title": "dotenv 环境变量工具\r\n从 .env 文件加载环境变量",
-        "href": "https://dotenv.nodejs.cn/"
-      },
-      {
         "text": "【站点】 GraphQL 中文网",
         "title": "一种用于 API 的查询语言",
         "href": "https://graphql.cn/"
-      },
-      {
-        "text": "【站点】 PM2 官网",
-        "href": "https://pm2.keymetrics.io/"
       }
     ]
   },
