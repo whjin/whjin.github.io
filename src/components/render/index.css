@@ -16,12 +16,12 @@ body {
   overflow: hidden;
   margin: 0;
   padding: 0;
-  background: #d5e8f5;
+  background: #d8e8f2;
   background: linear-gradient(
     90deg,
-    rgba(213, 232, 245, 1) 15%,
-    rgba(213, 231, 242, 1) 30%,
-    rgba(210, 225, 250, 1) 50%
+    rgba(216, 232, 242, 1) 25%,
+    rgba(206, 221, 240, 1) 50%,
+    rgba(210, 225, 250, 1) 75%
   );
   background-size: cover;
 }
