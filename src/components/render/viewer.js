@@ -105,12 +105,6 @@ async function renderPDF(container, url) {
       const context = canvas.getContext('2d');
       canvas.width = displayViewport.width * dpr;
       canvas.height = displayViewport.height * dpr;
-
-      canvas.style.width = `${displayViewport.width}px`;
-      canvas.style.height = `${displayViewport.height}px`;
-      canvas.style.display = 'block';
-      canvas.style.margin = '0 auto 16px auto';
-
       container.appendChild(canvas);
 
       await page.render({

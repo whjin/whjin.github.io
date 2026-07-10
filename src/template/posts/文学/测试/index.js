@@ -1,1 +1,2 @@
-export const a = 123;
+export const a = 'test';
+console.log(a);

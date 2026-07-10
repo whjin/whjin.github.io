@@ -195,10 +195,10 @@ a:hover {
 
 .scroll-top {
   cursor: pointer;
-  position: sticky; /* 从 fixed 改为粘性定位 */
+  position: sticky;
   float: right;
   margin-right: 20px;
-  bottom: 60px; /* 距离内容区可视底部60px */
+  bottom: 60px;
   width: 40px;
   height: 40px;
   padding: 5px;
@@ -379,6 +379,24 @@ a:hover {
   }
 }
 
+#view-container {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  padding: 0;
+  margin: 0;
+}
+#view-container canvas {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: block;
+  margin: 0 auto 16px;
+}
+#view-container canvas:last-child {
+  margin-bottom: 0;
+}
+
 @media print {
   html,
   body {
@@ -440,5 +458,22 @@ a:hover {
     display: table;
     width: 100%;
     white-space: normal;
+  }
+
+  #view-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  #view-container canvas {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  #view-container canvas:last-child {
+    margin-bottom: 0;
   }
 }
