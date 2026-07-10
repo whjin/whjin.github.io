@@ -58,11 +58,15 @@
   width: 90%;
   height: 90%;
   box-sizing: border-box;
-  background: #fff;
   border-radius: 8px;
   position: relative;
-  background: #e3ffe7;
-  background: linear-gradient(90deg, rgba(227, 255, 231, 1) 0%, rgba(217, 231, 255, 1) 50%);
+  background: #d5e8f5;
+  background: linear-gradient(
+    90deg,
+    rgba(213, 232, 245, 1) 15%,
+    rgba(213, 231, 242, 1) 30%,
+    rgba(210, 225, 250, 1) 50%
+  );
   background-size: cover;
 }
 .modal-close {

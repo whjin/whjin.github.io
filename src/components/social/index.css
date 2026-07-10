@@ -52,7 +52,7 @@
   max-width: 100%;
   height: fit-content;
   box-sizing: border-box;
-  background-color: #fff;
+  background: #f8f8f9;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-wrap: wrap;

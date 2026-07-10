@@ -46,7 +46,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
         hideLoading();
       })
       .catch((err) => {
-        contentEl.innerHTML = `<p class="load-fail">HTML页面加载失败，请检查文件路径<br>错误信息：${err.message}</p>`;
+        contentEl.innerHTML = `<p class="load-fail">
+        HTML页面加载失败，请检查文件路径<br>错误信息：${err.message}
+        </p>`;
         hideLoading();
       });
   } else if (formatType === 'pdf') {

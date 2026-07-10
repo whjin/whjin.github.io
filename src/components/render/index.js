@@ -20,9 +20,31 @@ function handler(targetId, filePath, callback) {
       if (!response.ok) throw new Error(`文件加载失败: ${filePath}`);
       return response.text();
     })
-    .then((markdownContent) => {
-      const htmlContent = marked.parse(markdownContent);
-      document.getElementById(targetId).innerHTML = htmlContent;
+    .then((content) => {
+      const targetEl = document.getElementById(targetId);
+      let htmlContent;
+
+      if (filePath.endsWith('.html')) {
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = content;
+        const bodyContent = tempDiv.querySelector('body');
+        htmlContent = bodyContent ? bodyContent.innerHTML : content;
+      } else {
+        htmlContent = marked.parse(content);
+      }
+
+      targetEl.innerHTML = htmlContent;
+
+      const scripts = targetEl.querySelectorAll('script');
+      scripts.forEach((script) => {
+        const newScript = document.createElement('script');
+        Array.from(script.attributes).forEach((attr) => {
+          newScript.setAttribute(attr.name, attr.value);
+        });
+        newScript.textContent = script.textContent;
+        script.parentNode.replaceChild(newScript, script);
+      });
+
       callback && callback();
     })
     .catch((error) => {
