@@ -342,6 +342,11 @@ a:hover {
   color: #007bff;
   background-color: transparent;
 }
+.load-fail {
+  text-align: center;
+  padding: 40px;
+  color: red;
+}
 
 @media screen and (max-width: 768px) {
   .header .title {

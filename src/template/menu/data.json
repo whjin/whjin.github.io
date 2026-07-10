@@ -185,6 +185,10 @@
       {
         "text": "原创诗词",
         "href": "src/template/viewer.html?文学_原创诗词"
+      },
+      {
+        "text": "测试HTML",
+        "href": "src/template/viewer.html?文学_测试_测试HTML&format=html"
       }
     ]
   },
