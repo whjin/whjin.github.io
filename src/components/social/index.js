@@ -235,6 +235,12 @@
 
     footerEl.style.visibility = isActiveShow ? 'hidden' : 'visible';
     menuEl.style.paddingBottom = isActiveShow ? '2em' : '1em';
+
+    if (isActiveShow) {
+      document.body.classList.add('player-show');
+    } else {
+      document.body.classList.remove('player-show');
+    }
   }
 
   function toggleSocial(type) {
