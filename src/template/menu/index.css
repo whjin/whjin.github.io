@@ -60,13 +60,8 @@
   box-sizing: border-box;
   border-radius: 8px;
   position: relative;
-  background: #d8e8f2;
-  background: linear-gradient(
-    90deg,
-    rgba(216, 232, 242, 1) 25%,
-    rgba(206, 221, 240, 1) 50%,
-    rgba(210, 225, 250, 1) 75%
-  );
+  background: #e7fbe9;
+  background: linear-gradient(90deg, rgba(231, 251, 233, 1) 0%, rgba(224, 238, 255, 1) 100%);
   background-size: cover;
 }
 .modal-close {

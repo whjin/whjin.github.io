@@ -34,7 +34,6 @@ const server = http.createServer((req, res) => {
     case '.md':
       contentType = 'text/markdown;charset=utf-8';
       break;
-
     case '.png':
       contentType = 'image/png';
       break;
@@ -68,8 +67,10 @@ const server = http.createServer((req, res) => {
           // 尝试在 src/template 目录下查找
           path.join(rootDir, 'src', 'template', pathname),
           // 尝试去掉开头的 /src/template
-          pathname.startsWith('/src/template/') ? path.join(rootDir, pathname.slice('/src/template'.length)) : null,
-        ].filter(p => p && p !== filePath);
+          pathname.startsWith('/src/template/')
+            ? path.join(rootDir, pathname.slice('/src/template'.length))
+            : null,
+        ].filter((p) => p && p !== filePath);
 
         // 检查可能的路径
         let fileFound = false;
@@ -150,12 +151,12 @@ const watcher = chokidar.watch(rootDir, {
 
 // 防抖刷新函数
 let reloadTimer = null;
-const triggerReload = filePath => {
+const triggerReload = (filePath) => {
   clearTimeout(reloadTimer);
   reloadTimer = setTimeout(() => {
     if (path.extname(filePath).match(/\.(html|md|js|css|json)$/)) {
       // 向所有已连接的 WebSocket 客户端发送刷新指令
-      wss.clients.forEach(client => {
+      wss.clients.forEach((client) => {
         if (client.readyState === WebSocket.OPEN) {
           client.send('reload');
         }
@@ -168,7 +169,7 @@ watcher
   .on('add', triggerReload)
   .on('change', triggerReload)
   .on('unlink', triggerReload)
-  .on('error', error => console.error('[Live Server] 监听错误:', error));
+  .on('error', (error) => console.error('[Live Server] 监听错误:', error));
 
 server.listen(PORT, () => {
   console.log('🚀 Live Server 正在运行: http://localhost:' + PORT);
