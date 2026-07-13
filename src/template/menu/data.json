@@ -1234,11 +1234,6 @@
       {
         "text": "Hermes引擎文档",
         "href": "src/template/viewer.html?RN_Hermes引擎文档"
-      },
-      {
-        "text": "【官网】 React Native 中文网",
-        "title": "React Native 中文网 · 使用React来编写原生应用的框架",
-        "href": "https://www.react-native.cn/"
       }
     ]
   },
@@ -1342,15 +1337,6 @@
       {
         "text": "类型系统",
         "href": "src/template/viewer.html?TypeScript_类型系统"
-      },
-      {
-        "text": "【站点】 TypeScript 中文网",
-        "href": "https://ts.nodejs.cn/"
-      },
-      {
-        "text": "【站点】 Better Auth 中文网",
-        "title": "适用于 TypeScript 的最全面认证框架。",
-        "href": "https://better-auth.nodejs.cn/"
       }
     ]
   },
