@@ -1,5 +1,5 @@
 async function generateCard() {
-  const menuData = await fetchData('src/template/menu/data.json');
+  const menuData = await fetchData('src/template/menu/menu.json');
   const finalMenuData = processMenuData(menuData);
 
   const containerEl = document.querySelector('.card-container');

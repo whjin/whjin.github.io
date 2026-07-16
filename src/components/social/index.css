@@ -20,6 +20,8 @@
 .social img {
   color: #000;
   display: inline-block;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .social-bars {

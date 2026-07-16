@@ -31,6 +31,12 @@
       icon: 28,
     },
     {
+      href: 'https://ifdian.net/a/whjin',
+      title: '爱发电',
+      name: 'aifadian',
+      icon: 28,
+    },
+    {
       href: 'https://weibo.com/u/1710899102',
       title: '微博',
       name: 'weibo',

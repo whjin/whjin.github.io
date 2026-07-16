@@ -1,0 +1,185 @@
+{
+    "categoryConfig": {
+        "技术": "tech",
+        "发电": "power",
+        "生活": "life"
+    },
+    "powering": {
+        "show": true,
+        "title": "正在发电",
+        "subtitle": "在爱发电中赞助博主的朋友们",
+        "list": [
+            {
+                "id": 1,
+                "category": "技术",
+                "cover": "https://picsum.photos/seed/caodong/400/300",
+                "avatar": "https://picsum.photos/seed/caodong-avatar/100",
+                "name": "草东日记",
+                "desc": "独立思考，勿乱引导",
+                "url": "https://www.baidu.com"
+            },
+            {
+                "id": 2,
+                "category": "技术",
+                "cover": "https://picsum.photos/seed/adil/400/300",
+                "avatar": "https://picsum.photos/seed/adil-avatar/100",
+                "name": "Adil",
+                "desc": "BW/HANA顾问，BI工程师，数据分析",
+                "url": "https://www.baidu.com"
+            },
+            {
+                "id": 3,
+                "category": "技术",
+                "cover": "https://picsum.photos/seed/haoup/400/300",
+                "avatar": "https://picsum.photos/seed/haoup-avatar/100",
+                "name": "HaoUp",
+                "desc": "学习网络知识、积累兴趣的地方",
+                "url": "https://www.baidu.com/haoup"
+            },
+            {
+                "id": 4,
+                "category": "技术",
+                "cover": "https://picsum.photos/seed/jizhi/400/300",
+                "avatar": "https://picsum.photos/seed/jizhi-avatar/100",
+                "name": "极致本源",
+                "desc": "一个 Key 接入 200+ 主流 API",
+                "url": "https://www.baidu.com/jizhi"
+            },
+            {
+                "id": 5,
+                "category": "技术",
+                "cover": "https://picsum.photos/seed/mystic/400/300",
+                "avatar": "https://picsum.photos/seed/mystic-avatar/100",
+                "name": "MysticStars",
+                "desc": "Discover Infinity",
+                "url": "https://www.baidu.com/mystic"
+            },
+            {
+                "id": 6,
+                "category": "技术",
+                "cover": "https://picsum.photos/seed/tempmail/400/300",
+                "avatar": "https://picsum.photos/seed/tempmail-avatar/100",
+                "name": "Temp Mail",
+                "desc": "你的临时电子邮件地址",
+                "url": "https://www.baidu.com/tempmail"
+            },
+            {
+                "id": 7,
+                "category": "技术",
+                "cover": "https://picsum.photos/seed/haozhuji/400/300",
+                "avatar": "https://picsum.photos/seed/haozhuji-avatar/100",
+                "name": "好主机",
+                "desc": "国内外虚拟主机",
+                "url": "https://www.baidu.com/haozhuji"
+            },
+            {
+                "id": 8,
+                "category": "发电",
+                "cover": "https://picsum.photos/seed/diyi/400/300",
+                "avatar": "https://picsum.photos/seed/diyi-avatar/100",
+                "name": "狄伊",
+                "desc": "春至花如锦·夏近叶成帷",
+                "url": "https://www.baidu.com/diyi"
+            },
+            {
+                "id": 9,
+                "category": "技术",
+                "cover": "https://picsum.photos/seed/webfem/400/300",
+                "avatar": "https://picsum.photos/seed/webfem-avatar/100",
+                "name": "webfem",
+                "desc": "做有价值的博客",
+                "url": "https://www.baidu.com/webfem"
+            },
+            {
+                "id": 10,
+                "category": "生活",
+                "cover": "https://picsum.photos/seed/lanyiyun/400/300",
+                "avatar": "https://picsum.photos/seed/lanyiyun-avatar/100",
+                "name": "蓝易云CDN",
+                "desc": "高防CDN 全球安全加速服务",
+                "url": "https://www.baidu.com/lanyiyun"
+            },
+            {
+                "id": 11,
+                "category": "生活",
+                "cover": "https://picsum.photos/seed/xifeng/400/300",
+                "avatar": "https://picsum.photos/seed/xifeng-avatar/100",
+                "name": "西风往事",
+                "desc": "永远相信 美好的事情即将发生",
+                "url": "https://www.baidu.com/xifeng"
+            },
+            {
+                "id": 12,
+                "category": "生活",
+                "cover": "https://picsum.photos/seed/blogagg/400/300",
+                "avatar": "https://picsum.photos/seed/blogagg-avatar/100",
+                "name": "中文独立博主聚合",
+                "desc": "又一个博客聚合站",
+                "url": "https://www.baidu.com/blogagg"
+            }
+        ]
+    },
+    "recommend": {
+        "show": true,
+        "title": "推荐",
+        "subtitle": "参与本站开发、提供设计灵感、捐助本站的优秀博主",
+        "list": [
+            {
+                "id": 1,
+                "avatar": "https://picsum.photos/seed/zhanghong/100",
+                "name": "张洪Heo",
+                "desc": "产品设计师，独立开发者，设计与科技创作者",
+                "url": "https://www.baidu.com"
+            },
+            {
+                "id": 2,
+                "avatar": "https://picsum.photos/seed/fengji/100",
+                "name": "风记星辰",
+                "desc": "设计师，有着优秀设计与交互的记录生活博客",
+                "url": "https://www.baidu.com"
+            },
+            {
+                "id": 3,
+                "avatar": "https://picsum.photos/seed/sining/100",
+                "name": "思宁小椭圆",
+                "desc": "设计师，记录生活的博客",
+                "url": "https://www.baidu.com/sining"
+            },
+            {
+                "id": 4,
+                "avatar": "https://picsum.photos/seed/qingxiao/100",
+                "name": "轻笑Chuckle",
+                "desc": "前端开发工程师，Butterfly魔改专家前端开发工程师，Butterfly魔改专家前端开发工程师，Butterfly魔改专家",
+                "url": "https://www.baidu.com/qingxiao"
+            },
+            {
+                "id": 5,
+                "avatar": "https://picsum.photos/seed/shanyue/100",
+                "name": "山岳库博",
+                "desc": "开发学习启发性二刺螈",
+                "url": "https://www.baidu.com/shanyue"
+            },
+            {
+                "id": 6,
+                "avatar": "https://picsum.photos/seed/xiaobing/100",
+                "name": "小冰",
+                "desc": "冰糖红茶组织发起 Butterfly魔改开发者",
+                "url": "https://www.baidu.com/xiaobing"
+            },
+            {
+                "id": 7,
+                "avatar": "https://picsum.photos/seed/imaegoo/100",
+                "name": "iMaeGoo",
+                "desc": "开发工程师，Twikoo评论作者",
+                "url": "https://www.baidu.com/imaegoo"
+            },
+            {
+                "id": 8,
+                "avatar": "https://picsum.photos/seed/tianli/100",
+                "name": "Tianli",
+                "desc": "全栈开发工程师， TianliCDN 公益项目",
+                "url": "https://www.baidu.com/tianli"
+            }
+        ]
+    }
+}

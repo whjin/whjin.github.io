@@ -5,6 +5,11 @@
     "tagName": "ol",
     "items": [
       {
+        "text": "二狗PPT",
+        "title": "二狗PPT - DeepSeek驱动的AI PPT生成器｜国企汇报·乙方方案·无AI痕迹",
+        "href": "https://2dogppt.cgref.cn/s/rpe3j29k05"
+      },
+      {
         "text": "updream官网",
         "title": "updream官网-AI视频创作助手",
         "href": "https://updream.cgref.cn/s/2znrpo9er7"
@@ -175,8 +180,8 @@
         "href": "src/template/viewer.html?文学_原创诗词"
       },
       {
-        "text": "测试HTML",
-        "href": "src/template/viewer.html?文学_测试_测试HTML&format=html"
+        "text": "友链",
+        "href": "src/template/viewer.html?友链_友链&format=html"
       }
     ]
   },
