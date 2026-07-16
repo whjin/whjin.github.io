@@ -1,10 +1,16 @@
 (function () {
   const socialList = [
     {
+      href: 'src/template/viewer.html?友链_友链&format=html',
+      title: '友链',
+      name: 'link',
+      icon: 28,
+    },
+    {
       href: '',
       title: '微信',
       name: 'wechat',
-      icon: 26,
+      icon: 28,
     },
     {
       href: '',
@@ -58,7 +64,7 @@
       href: 'https://github.com/whjin',
       title: 'Github',
       name: 'github',
-      icon: 26,
+      icon: 28,
     },
   ];
 
