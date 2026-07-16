@@ -1,4 +1,4 @@
-(function () {
+function handleNavigation() {
   const navImgs = [
     {
       src: '../images/icons/toc.png',
@@ -13,21 +13,18 @@
   ];
 
   const navContainer = document.querySelector('.nav-container');
-  let isMobileDevice = isMobile();
+  if (!navContainer) return;
 
+  let isMobileDevice = isMobile();
   const fragment = document.createDocumentFragment();
+
   navImgs.forEach((img, index) => {
     const imgEl = document.createElement('img');
     imgEl.src = img.src;
     imgEl.alt = imgEl.title = img.alt;
     imgEl.className = img.class;
-
     if (index === 0) {
-      if (isMobileDevice) {
-        imgEl.classList.add('hide');
-      } else {
-        imgEl.classList.add('hidden');
-      }
+      imgEl.classList.add(isMobileDevice ? 'hide' : 'hidden');
     }
     fragment.appendChild(imgEl);
   });
@@ -37,6 +34,26 @@
   const navBack = document.querySelector('.nav-back');
   const sidebarArea = document.querySelector('.sidebar-area');
 
+  function checkIsLinkPage() {
+    if (document.querySelector('.link-container')) return true;
+    const pathname = window.location.pathname.toLowerCase();
+    const search = decodeURIComponent(window.location.search);
+    return pathname.includes('viewer.html') && search.includes('友链');
+  }
+
+  const isLinkPage = checkIsLinkPage();
+  const hasNavigateFlag = localStorage.getItem('navigateToLink');
+
+  if (isLinkPage) {
+    if (hasNavigateFlag) {
+      navContainer.style.display = '';
+      navContainer.dataset.forceHidden = 'false';
+    } else {
+      navContainer.style.display = 'none';
+      navContainer.dataset.forceHidden = 'true';
+    }
+  }
+
   if (!isMobileDevice && navToc) {
     navContainer.addEventListener('mouseenter', () => {
       navToc.classList.remove('hidden');
@@ -44,21 +61,19 @@
     navContainer.addEventListener('mouseleave', () => {
       navToc.classList.add('hidden');
     });
-
     navToc.addEventListener('click', () => {
-      if (sidebarArea) {
-        const isHidden = sidebarArea.style.display === 'none';
-        sidebarArea.style.display = isHidden ? 'block' : 'none';
-        navToc.alt = navToc.title = isHidden ? '隐藏目录' : '显示目录';
-      }
+      if (!sidebarArea) return;
+      const isHidden = sidebarArea.style.display === 'none';
+      sidebarArea.style.display = isHidden ? 'block' : 'none';
+      navToc.alt = navToc.title = isHidden ? '隐藏目录' : '显示目录';
     });
   }
 
   if (navBack) {
     navBack.addEventListener('click', (e) => {
       e.stopPropagation();
-      const origin = window.location.origin;
-      window.location.href = origin;
+      localStorage.removeItem('navigateToLink');
+      window.location.href = window.location.origin;
     });
   }
 
@@ -69,4 +84,6 @@
       window.location.reload();
     }
   });
-})();
+}
+
+document.addEventListener('DOMContentLoaded', handleNavigation);

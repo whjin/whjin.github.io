@@ -137,12 +137,15 @@
     "tagName": "ol",
     "items": [
       {
+        "marked": true,
         "text": "友链",
         "title": "友链 - 一站式AI应用平台",
         "href": "src/template/viewer.html?友链_友链&format=html"
       },
       {
+        "marked": true,
         "text": "原创诗词",
+        "title": "雅致寓于高阁渔舟唱晚，古典悠然；\r\n格调外发园林绿树萦绕，馥郁清香。",
         "href": "src/template/viewer.html?文学_原创诗词"
       },
       {
@@ -473,11 +476,6 @@
     "title": "工具",
     "tagName": "ol",
     "items": [
-      {
-        "text": "加密工具集合",
-        "title": "在线工具提供了多种功能，如哈希、编码、解码、加密、解密、格式化、生成等。常见示例包括MD5、SHA-256、SHA-512、SHA-3、Keccak、Base64、Base32、JSON、XML以及二维码相关工具。",
-        "href": "https://emn178.github.io/online-tools/"
-      },
       {
         "text": "开发者武器库",
         "title": "中文开发者整理的技术栈速查清单",

@@ -1,13 +1,43 @@
+const MARKED_HTML = '<span class="marked">*</span>';
+const STORAGE_KEYS = {
+  lastScrollCardTitle: 'lastScrollCardTitle',
+  lastScrollCardTop: 'lastScrollCardTop',
+  navigateToLink: 'navigateToLink',
+};
+
+function debounce(func, delay = 100) {
+  let timer = null;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => func.apply(this, args), delay);
+  };
+}
+
+function createMenuItem(item) {
+  const liEl = document.createElement('li');
+  const aEl = document.createElement('a');
+
+  aEl.rel = 'noopener noreferrer';
+  aEl.target = '_blank';
+  aEl.innerHTML = item.marked ? `${MARKED_HTML}${item.text}` : item.text;
+  aEl.title = item.title || item.text;
+  aEl.href = item.href;
+
+  if (item.text === '友链') {
+    aEl.addEventListener('click', () => {
+      localStorage.setItem(STORAGE_KEYS.navigateToLink, true);
+    });
+  }
+
+  liEl.appendChild(aEl);
+  return liEl;
+}
+
 async function generateCard() {
   const menuData = await fetchData('src/template/menu/menu.json');
   const finalMenuData = processMenuData(menuData);
-
   const containerEl = document.querySelector('.card-container');
   const fragment = document.createDocumentFragment();
-
-  const validTitles = finalMenuData
-    .filter((m) => !m.hide && m.items.length > 0)
-    .map((m) => m.title);
 
   finalMenuData.forEach((m) => {
     if (!m.hide && m.items.length > 0) {
@@ -23,22 +53,16 @@ async function generateCard() {
         const countBadge = document.createElement('sup');
         countBadge.textContent = m.items.length;
         countBadge.className = 'count-badge';
-        if (m.items.length > 99) {
-          countBadge.classList.remove('normal');
-        } else {
-          countBadge.classList.add('normal');
-        }
+        countBadge.classList.toggle('normal', m.items.length <= 99);
         headerEl.appendChild(countBadge);
 
         const expandBtn = document.createElement('span');
         expandBtn.className = 'card-expand-btn';
         expandBtn.title = '展开';
-
         const expandImg = document.createElement('img');
         expandImg.src = 'src/images/icons/zoomout.png';
         expandImg.alt = '展开';
         expandBtn.appendChild(expandImg);
-
         expandBtn.addEventListener('click', (e) => {
           e.stopPropagation();
           openModal(m);
@@ -53,19 +77,8 @@ async function generateCard() {
       const listEl = document.createElement(m.tagName || 'ul');
       listEl.className = 'card-list';
       listEl.dataset.cardListTitle = m.title;
-
-      m.items.forEach((i) => {
-        const liEl = document.createElement('li');
-        const aEl = document.createElement('a');
-        aEl.rel = 'noopener noreferrer';
-        aEl.target = '_blank';
-        let markedHtml = '<span class="marked">*</span>';
-        aEl.innerHTML = i.marked ? `${markedHtml}${i.text}` : i.text;
-        aEl.title = i.title || i.text;
-        aEl.href = i.href;
-
-        liEl.appendChild(aEl);
-        listEl.appendChild(liEl);
+      m.items.forEach((item) => {
+        listEl.appendChild(createMenuItem(item));
       });
 
       cardEl.appendChild(headerEl);
@@ -73,10 +86,9 @@ async function generateCard() {
       fragment.appendChild(cardEl);
     }
   });
+
   containerEl.appendChild(fragment);
-
   setCardHeight();
-
   bindCardScroll();
   restoreCardScroll();
 }
@@ -84,13 +96,10 @@ async function generateCard() {
 async function fetchData(filePath) {
   try {
     const response = await fetch(filePath);
-
     if (!response.ok) {
       throw new Error(`文件加载失败: ${response.status}`);
     }
-
-    const data = await response.json();
-    return data;
+    return await response.json();
   } catch (error) {
     console.error('读取文件失败：', error.message);
   }
@@ -98,12 +107,10 @@ async function fetchData(filePath) {
 
 function processMenuData(originalData) {
   if (!originalData || !Array.isArray(originalData)) return [];
-
   const copyData = JSON.parse(JSON.stringify(originalData));
 
   const getTimeStamp = (dateStr) => {
     if (!dateStr) return 0;
-
     const normalizedDate = dateStr.replace(/-/g, '/');
     return new Date(normalizedDate).getTime() || 0;
   };
@@ -111,13 +118,8 @@ function processMenuData(originalData) {
   copyData.sort((a, b) => {
     const stickyA = a.sticky || Infinity;
     const stickyB = b.sticky || Infinity;
-    if (stickyA !== stickyB) {
-      return stickyA - stickyB;
-    }
-
-    const timeA = getTimeStamp(a.updated);
-    const timeB = getTimeStamp(b.updated);
-    return timeB - timeA;
+    if (stickyA !== stickyB) return stickyA - stickyB;
+    return getTimeStamp(b.updated) - getTimeStamp(a.updated);
   });
 
   return copyData;
@@ -125,43 +127,36 @@ function processMenuData(originalData) {
 
 function setCardHeight() {
   const cardItems = document.querySelectorAll('.card-item');
-  if (cardItems.length > 0) {
-    let maxHeight = 0;
-    cardItems.forEach((card) => {
-      card.style.height = 'auto';
-      const currentHeight = card.clientHeight;
-      if (currentHeight > maxHeight) {
-        maxHeight = currentHeight;
-      }
-    });
+  if (cardItems.length === 0) return;
 
-    const finalHeight = Math.min(maxHeight, 'fit-content');
+  let maxHeight = 0;
+  cardItems.forEach((card) => {
+    card.style.height = 'auto';
+    maxHeight = Math.max(maxHeight, card.clientHeight);
+  });
 
-    cardItems.forEach((card) => {
-      card.style.height = `${finalHeight}px`;
-    });
-  }
+  const finalHeight = maxHeight;
+  cardItems.forEach((card) => {
+    card.style.height = `${finalHeight}px`;
+  });
 }
 
 function bindCardScroll() {
   const cardLists = document.querySelectorAll('.card-list');
   cardLists.forEach((list) => {
-    let debounceTimer = null;
-    list.addEventListener('scroll', () => {
-      clearTimeout(debounceTimer);
-      debounceTimer = setTimeout(() => {
-        const title = list.dataset.cardListTitle;
-        const scrollVal = list.scrollTop;
-        localStorage.setItem('lastScrollCardTitle', title);
-        localStorage.setItem('lastScrollCardTop', scrollVal);
-      }, 100);
+    const handleScroll = debounce(() => {
+      const title = list.dataset.cardListTitle;
+      const scrollVal = list.scrollTop;
+      localStorage.setItem(STORAGE_KEYS.lastScrollCardTitle, title);
+      localStorage.setItem(STORAGE_KEYS.lastScrollCardTop, scrollVal);
     });
+    list.addEventListener('scroll', handleScroll);
   });
 }
 
 function restoreCardScroll() {
-  const savedTitle = localStorage.getItem('lastScrollCardTitle');
-  const savedTop = localStorage.getItem('lastScrollCardTop');
+  const savedTitle = localStorage.getItem(STORAGE_KEYS.lastScrollCardTitle);
+  const savedTop = localStorage.getItem(STORAGE_KEYS.lastScrollCardTop);
   if (!savedTitle || savedTop === null) return;
 
   const targetList = document.querySelector(`.card-list[data-card-list-title="${savedTitle}"]`);
@@ -174,7 +169,6 @@ let modalMask = null;
 
 function initModal(m) {
   if (modalMask) return;
-
   modalMask = document.createElement('div');
   modalMask.className = 'modal-mask';
 
@@ -183,10 +177,8 @@ function initModal(m) {
 
   const modalHeaderEl = document.createElement('div');
   modalHeaderEl.className = 'modal-close';
-
   const modalTitle = document.createElement('div');
   modalTitle.className = 'modal-title';
-
   const closeImg = document.createElement('img');
   closeImg.src = 'src/images/icons/zoomin.png';
   closeImg.alt = '关闭';
@@ -196,7 +188,6 @@ function initModal(m) {
   fragment.appendChild(modalTitle);
   fragment.appendChild(closeImg);
   modalHeaderEl.appendChild(fragment);
-
   closeImg.addEventListener('click', closeModal);
 
   const modalList = document.createElement(m.tagName || 'ul');
@@ -209,7 +200,6 @@ function initModal(m) {
   modalMask.addEventListener('click', (e) => {
     if (e.target === modalMask) closeModal();
   });
-
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modalMask.classList.contains('show')) {
       closeModal();
@@ -224,21 +214,11 @@ function openModal(m) {
 
   const titleEl = modalMask.querySelector('.modal-title');
   const listEl = modalMask.querySelector('.modal-list');
-
   titleEl.innerText = m.title;
   listEl.innerHTML = '';
 
-  m.items.forEach((v) => {
-    const liEl = document.createElement('li');
-    const aEl = document.createElement('a');
-    aEl.rel = 'noopener noreferrer';
-    aEl.target = '_blank';
-    const markedHtml = '<span class="marked">*</span>';
-    aEl.innerHTML = v.marked ? `${markedHtml}${v.text}` : v.text;
-    aEl.title = v.title || v.text;
-    aEl.href = v.href;
-    liEl.appendChild(aEl);
-    listEl.appendChild(liEl);
+  m.items.forEach((item) => {
+    listEl.appendChild(createMenuItem(item));
   });
 
   modalMask.classList.add('show');

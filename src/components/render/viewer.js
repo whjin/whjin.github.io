@@ -7,12 +7,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
   const folderPath = pathArr.join('/');
 
   let contentEl = document.getElementById('markdown-content');
-  const nacContainer = document.querySelector('.nav-container');
+  const navContainer = document.querySelector('.nav-container');
 
   if (formatType === 'html') {
     document.title = `${fileName} \u00AB 吴华锦`;
     document.querySelector('.sidebar-area').style.display = 'none';
-    nacContainer.classList.add('hide-toc');
+    navContainer.classList.add('hide-toc');
     contentEl.innerHTML = '';
     const htmlUrl = `posts/${folderPath}/${fileName}.html`;
     fetch(htmlUrl)
@@ -54,7 +54,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
   } else if (formatType === 'pdf') {
     document.title = `${fileName} \u00AB 吴华锦`;
     document.querySelector('.sidebar-area').style.display = 'none';
-    nacContainer.classList.add('hide-toc');
+    navContainer.classList.add('hide-toc');
     const pdfUrl = `posts/${folderPath}/${fileName}.pdf`;
     renderPDF(document.getElementById('view-container'), pdfUrl).then(() => {
       hideLoading();
@@ -66,7 +66,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
       generateTOC();
       const headings = contentEl.querySelectorAll('h1, h2, h3, h4, h5, h6');
       if (headings.length === 0 || isMobile()) {
-        nacContainer.classList.add('hide-toc');
+        navContainer.classList.add('hide-toc');
       }
       hideLoading();
     });

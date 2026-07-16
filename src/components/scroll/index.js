@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+function handleScroll() {
   const IDLE_TIME = 6000;
   let idleTimer = null;
   let scrollDebounceTimer = null;
@@ -18,16 +18,13 @@ document.addEventListener('DOMContentLoaded', function () {
   function fadeIn(element, duration = 500) {
     if (element.dataset.visible === 'true') return;
     clearTransition(element);
-
     element.dataset.visible = 'true';
     element.style.display = 'block';
     element.style.opacity = '0';
     element.style.transition = `opacity ${duration}ms ease`;
-
     requestAnimationFrame(() => {
       element.style.opacity = '1';
     });
-
     const onEnd = () => {
       element.style.opacity = '';
       element.style.transition = '';
@@ -41,15 +38,12 @@ document.addEventListener('DOMContentLoaded', function () {
   function fadeOut(element, duration = 500) {
     if (element.dataset.visible === 'false') return;
     clearTransition(element);
-
     element.dataset.visible = 'false';
     element.style.opacity = '1';
     element.style.transition = `opacity ${duration}ms ease`;
-
     requestAnimationFrame(() => {
       element.style.opacity = '0';
     });
-
     const onEnd = () => {
       element.style.display = 'none';
       element.style.opacity = '';
@@ -65,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const startScrollTop = container.scrollTop;
     if (startScrollTop === 0) return;
     const startTime = performance.now();
-
     function step(currentTime) {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
@@ -81,11 +74,9 @@ document.addEventListener('DOMContentLoaded', function () {
   function resetIdleTimer() {
     if (!scrollTopBtn) return;
     if (idleTimer) clearTimeout(idleTimer);
-
     if (scrollTopBtn.dataset.visible === 'true') {
       scrollTopBtn.style.opacity = '1';
       scrollTopBtn.style.transition = 'opacity 500ms ease';
-
       idleTimer = setTimeout(() => {
         scrollTopBtn.style.opacity = '0';
       }, IDLE_TIME);
@@ -102,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function handleScroll() {
     const scrollTop = scrollContainer.scrollTop;
 
-    if (navContainer) {
+    if (navContainer && navContainer.dataset.forceHidden !== 'true') {
       if (scrollTop > 100) {
         fadeOut(navContainer);
       } else {
@@ -123,7 +114,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   scrollContainer.addEventListener('scroll', function () {
     wakeUpButton();
-
     if (scrollDebounceTimer) clearTimeout(scrollDebounceTimer);
     scrollDebounceTimer = setTimeout(handleScroll, 50);
   });
@@ -132,17 +122,17 @@ document.addEventListener('DOMContentLoaded', function () {
     scrollTopBtn.addEventListener('click', function () {
       smoothScrollToTop(scrollContainer);
     });
-
     scrollTopBtn.addEventListener('mouseenter', function () {
       if (idleTimer) clearTimeout(idleTimer);
       this.style.transition = 'opacity 150ms ease';
       this.style.opacity = '1';
     });
-
     scrollTopBtn.addEventListener('mouseleave', function () {
       resetIdleTimer();
     });
   }
 
   handleScroll();
-});
+}
+
+document.addEventListener('DOMContentLoaded', handleScroll);

@@ -255,7 +255,7 @@
     }
   }
 
-  function toggleSocial(type) {
+  function toggleSocial() {
     if (isMobile()) {
       const isSocialShow = socialEl.classList.contains('show');
       barsEl.style.display = isSocialShow ? 'none' : 'block';
@@ -309,6 +309,9 @@
       togglePlayer('.netmusic-container');
       return;
     } else {
+      if (className.includes('icon-link')) {
+        localStorage.setItem('navigateToLink', true);
+      }
       return;
     }
 
