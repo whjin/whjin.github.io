@@ -1,10 +1,11 @@
-function handleScroll() {
+function scrollControls() {
   const IDLE_TIME = 6000;
   let idleTimer = null;
   let scrollDebounceTimer = null;
   const scrollTopBtn = document.querySelector('.scroll-top');
   const navContainer = document.querySelector('.nav-container');
   const scrollContainer = document.querySelector('.content-area');
+
   if (!scrollContainer) return;
 
   function clearTransition(element) {
@@ -72,19 +73,24 @@ function handleScroll() {
   }
 
   function resetIdleTimer() {
-    if (!scrollTopBtn) return;
+    if (!scrollTopBtn || scrollTopBtn.dataset.visible !== 'true') return;
     if (idleTimer) clearTimeout(idleTimer);
-    if (scrollTopBtn.dataset.visible === 'true') {
-      scrollTopBtn.style.opacity = '1';
-      scrollTopBtn.style.transition = 'opacity 500ms ease';
-      idleTimer = setTimeout(() => {
-        scrollTopBtn.style.opacity = '0';
-      }, IDLE_TIME);
-    }
+    scrollTopBtn.style.opacity = '1';
+    scrollTopBtn.style.transition = 'opacity 500ms ease';
+    idleTimer = setTimeout(() => {
+      scrollTopBtn.style.opacity = '0';
+    }, IDLE_TIME);
   }
 
   function wakeUpButton() {
-    if (!scrollTopBtn || scrollTopBtn.dataset.visible !== 'true') return;
+    if (!scrollTopBtn) return;
+    const scrollTop = scrollContainer.scrollTop;
+    if (scrollTop <= 100) {
+      fadeOut(scrollTopBtn);
+      if (idleTimer) clearTimeout(idleTimer);
+      return;
+    }
+    if (scrollTopBtn.dataset.visible !== 'true') return;
     if (idleTimer) clearTimeout(idleTimer);
     scrollTopBtn.style.transition = 'opacity 150ms ease';
     scrollTopBtn.style.opacity = '1';
@@ -123,6 +129,8 @@ function handleScroll() {
       smoothScrollToTop(scrollContainer);
     });
     scrollTopBtn.addEventListener('mouseenter', function () {
+      const scrollTop = scrollContainer.scrollTop;
+      if (scrollTop <= 100) return;
       if (idleTimer) clearTimeout(idleTimer);
       this.style.transition = 'opacity 150ms ease';
       this.style.opacity = '1';
@@ -135,4 +143,4 @@ function handleScroll() {
   handleScroll();
 }
 
-document.addEventListener('DOMContentLoaded', handleScroll);
+document.addEventListener('DOMContentLoaded', scrollControls);
