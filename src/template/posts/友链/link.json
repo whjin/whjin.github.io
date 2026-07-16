@@ -4,6 +4,188 @@
         "发电": "power",
         "生活": "life"
     },
+    "recommend": {
+        "show": true,
+        "title": "推荐",
+        "subtitle": "一站式AI应用平台",
+        "list": [
+            {
+                "id": 1,
+                "avatar": "https://oss.2dogppt.com/static/logo.svg",
+                "name": "二狗PPT",
+                "desc": "二狗PPT - DeepSeek驱动的AI PPT生成器｜国企汇报·乙方方案·无AI痕迹",
+                "url": "https://2dogppt.cgref.cn/s/rpe3j29k05"
+            },
+            {
+                "id": 2,
+                "avatar": "//s1.hdslb.com/bfs/static/jinkela/ai-tool/icon.png",
+                "name": "updream官网",
+                "desc": "updream官网-AI视频创作助手",
+                "url": "https://updream.cgref.cn/s/2znrpo9er7"
+            },
+            {
+                "id": 3,
+                "avatar": "https://laper.ai/logo_png_public.png",
+                "name": "Laper",
+                "desc": "剧作软件的进化终点。以剧为本。在 Laper 中协作制片。",
+                "url": "https://laper.cgref.cn/s/zdkjq78n1r"
+            },
+            {
+                "id": 4,
+                "avatar": "https://wawawriter.com/app/assets/wawa-qwUtEkkq.svg",
+                "name": "蛙蛙写作",
+                "desc": "蛙蛙写作——超级AI智能写作助手",
+                "url": "https://wawawriter.cgref.cn/s/59ngw1oer2"
+            },
+            {
+                "id": 5,
+                "avatar": "https://www.cappt.cc/favicon.ico",
+                "name": "咔片",
+                "desc": "咔片PPT-AI一键生成PPT-PPT在线智能制作网站",
+                "url": "https://cappt.cgref.cn/s/xpn8zrznzw"
+            },
+            {
+                "id": 6,
+                "avatar": "https://seko.sensetime.com/logo-48x48.svg",
+                "name": "Seko",
+                "desc": "Seko - World Class AI Video Generation Platform",
+                "url": "https://seko.cgref.cn/s/2znr3vznr7"
+            },
+            {
+                "id": 7,
+                "avatar": "https://picsum.photos/seed/ai07/100",
+                "name": "星流",
+                "desc": "星流 - 新一代设计Agent",
+                "url": "https://xingliu.cgref.cn/s/ogewx7wkp2"
+            },
+            {
+                "id": 8,
+                "avatar": "https://picsum.photos/seed/ai08/100",
+                "name": "LiblibAI",
+                "desc": "LiblibAI-哩布哩布AI - 中国领先的AI创作平台",
+                "url": "https://lib.cgref.cn/s/4onyr06kjx"
+            },
+            {
+                "id": 9,
+                "avatar": "https://picsum.photos/seed/ai09/100",
+                "name": "Atoms",
+                "desc": "Atoms：用 AI 构建网站与应用，无需编码",
+                "url": "https://atoms.cgref.cn/s/20epqjjkw1"
+            },
+            {
+                "id": 10,
+                "avatar": "https://picsum.photos/seed/ai10/100",
+                "name": "LibTV",
+                "desc": "LibTV - 专业视频创作工具",
+                "url": "https://libtv.cgref.cn/s/j7n63dqn1g"
+            },
+            {
+                "id": 11,
+                "avatar": "https://picsum.photos/seed/ai11/100",
+                "name": "墨刀AI",
+                "desc": "墨刀AI - 激发无限创造力",
+                "url": "https://modao.cgref.cn/s/5ln1o0mkrw"
+            },
+            {
+                "id": 12,
+                "avatar": "https://picsum.photos/seed/ai12/100",
+                "name": "超级简历WonderCV",
+                "desc": "超级简历WonderCV - AI智能简历制作工具,HR推荐专业中英文简历模板免费下载",
+                "url": "https://wondercv.cgref.cn/s/50k9g23ng6"
+            },
+            {
+                "id": 13,
+                "avatar": "https://picsum.photos/seed/ai13/100",
+                "name": "UP 简历",
+                "desc": "AI简历生成在线制作工具_简历模板免费下载使用-UP简历",
+                "url": "https://upcv.cgref.cn/s/1zn5mdykqm"
+            },
+            {
+                "id": 14,
+                "avatar": "https://picsum.photos/seed/ai14/100",
+                "name": "火山引擎",
+                "desc": "方舟 Agent Plan",
+                "url": "https://volcengine.cgref.cn/s/59ngwxoer2"
+            },
+            {
+                "id": 15,
+                "avatar": "https://picsum.photos/seed/ai15/100",
+                "name": "讯飞智作",
+                "desc": "讯飞智作-AI虚拟数字人视频制作-一键创作口播视频-文字转视频-数字分身定制",
+                "url": "https://xfzhizuo.cgref.cn/s/rpexmw9k90"
+            },
+            {
+                "id": 16,
+                "avatar": "https://picsum.photos/seed/ai16/100",
+                "name": "音述AI",
+                "desc": "音述 - 全球前沿专业级中文AI音乐创作平台 | 永久免费在线AI写歌 | 音述AI音乐社区",
+                "url": "https://yinshu.cgref.cn/s/9qyk4xoe87"
+            },
+            {
+                "id": 17,
+                "avatar": "https://picsum.photos/seed/ai17/100",
+                "name": "SpeedAI科研小助手",
+                "desc": "SpeedAI科研小助手【官网】- AI降重降AI率 | 知网维普万方",
+                "url": "https://speedai.cgref.cn/s/q50k978ng6"
+            },
+            {
+                "id": 18,
+                "avatar": "https://picsum.photos/seed/ai18/100",
+                "name": "白日梦AI",
+                "desc": "白日梦AI-领先的AI视频创作类AIGC创作平台",
+                "url": "https://aibrm.cgref.cn/s/l41evd6ev8"
+            },
+            {
+                "id": 19,
+                "avatar": "https://picsum.photos/seed/ai19/100",
+                "name": "AstronClaw",
+                "desc": "讯飞星辰Agent平台 - 一站式智能体开发平台",
+                "url": "https://astron-claw.cgref.cn/s/20epq01kw1"
+            },
+            {
+                "id": 20,
+                "avatar": "https://picsum.photos/seed/ai20/100",
+                "name": "AiPPT插件",
+                "desc": "AiPPT 插件-AI智能PPT制作软件，一键生成/美化/排版，高效PPT工具",
+                "url": "https://aippt-plugin.cgref.cn/s/3rpe3p9k05"
+            },
+            {
+                "id": 21,
+                "avatar": "https://picsum.photos/seed/ai21/100",
+                "name": "iSlide PPT",
+                "desc": "iSlide- 让PPT设计简单起来 | PPT模板下载平台",
+                "url": "https://islide.cgref.cn/s/dp3kqd7eol"
+            },
+            {
+                "id": 22,
+                "avatar": "https://picsum.photos/seed/ai22/100",
+                "name": "沁言学术",
+                "desc": "学术超级智能体",
+                "url": "https://qinyanai.cgref.cn/s/rpexmw3k90"
+            },
+            {
+                "id": 23,
+                "avatar": "https://picsum.photos/seed/ai23/100",
+                "name": "爱派AiPy",
+                "desc": "AiPy，超级AI牛马智能体工厂，爱派AiPy软件官网",
+                "url": "https://aipyaipy.cgref.cn/s/3mnzz45no1"
+            },
+            {
+                "id": 24,
+                "avatar": "https://picsum.photos/seed/ai24/100",
+                "name": "码上飞",
+                "desc": "码上飞 - 说中文，做应用 | AI生成微信小程序/鸿蒙/APP/H5网站",
+                "url": "https://codeflying.cgref.cn/s/59ngw0xer2"
+            },
+            {
+                "id": 25,
+                "avatar": "https://picsum.photos/seed/ai25/100",
+                "name": "01Agent",
+                "desc": "01Agent - 会协作、能执行、可交付的 AI 创作智能体",
+                "url": "https://01agent.cgref.cn/s/1oe7l5pn23"
+            }
+        ]
+    },
     "powering": {
         "show": true,
         "title": "正在发电",
@@ -57,7 +239,7 @@
             {
                 "id": 6,
                 "category": "技术",
-                "cover": "https://picsum.photos/seed/tempmail/400/300",
+                "cover": "https://picsum.photos/seed/tempmail/400",
                 "avatar": "https://picsum.photos/seed/tempmail-avatar/100",
                 "name": "Temp Mail",
                 "desc": "你的临时电子邮件地址",
@@ -116,69 +298,6 @@
                 "name": "中文独立博主聚合",
                 "desc": "又一个博客聚合站",
                 "url": "https://www.baidu.com/blogagg"
-            }
-        ]
-    },
-    "recommend": {
-        "show": true,
-        "title": "推荐",
-        "subtitle": "参与本站开发、提供设计灵感、捐助本站的优秀博主",
-        "list": [
-            {
-                "id": 1,
-                "avatar": "https://picsum.photos/seed/zhanghong/100",
-                "name": "张洪Heo",
-                "desc": "产品设计师，独立开发者，设计与科技创作者",
-                "url": "https://www.baidu.com"
-            },
-            {
-                "id": 2,
-                "avatar": "https://picsum.photos/seed/fengji/100",
-                "name": "风记星辰",
-                "desc": "设计师，有着优秀设计与交互的记录生活博客",
-                "url": "https://www.baidu.com"
-            },
-            {
-                "id": 3,
-                "avatar": "https://picsum.photos/seed/sining/100",
-                "name": "思宁小椭圆",
-                "desc": "设计师，记录生活的博客",
-                "url": "https://www.baidu.com/sining"
-            },
-            {
-                "id": 4,
-                "avatar": "https://picsum.photos/seed/qingxiao/100",
-                "name": "轻笑Chuckle",
-                "desc": "前端开发工程师，Butterfly魔改专家前端开发工程师，Butterfly魔改专家前端开发工程师，Butterfly魔改专家",
-                "url": "https://www.baidu.com/qingxiao"
-            },
-            {
-                "id": 5,
-                "avatar": "https://picsum.photos/seed/shanyue/100",
-                "name": "山岳库博",
-                "desc": "开发学习启发性二刺螈",
-                "url": "https://www.baidu.com/shanyue"
-            },
-            {
-                "id": 6,
-                "avatar": "https://picsum.photos/seed/xiaobing/100",
-                "name": "小冰",
-                "desc": "冰糖红茶组织发起 Butterfly魔改开发者",
-                "url": "https://www.baidu.com/xiaobing"
-            },
-            {
-                "id": 7,
-                "avatar": "https://picsum.photos/seed/imaegoo/100",
-                "name": "iMaeGoo",
-                "desc": "开发工程师，Twikoo评论作者",
-                "url": "https://www.baidu.com/imaegoo"
-            },
-            {
-                "id": 8,
-                "avatar": "https://picsum.photos/seed/tianli/100",
-                "name": "Tianli",
-                "desc": "全栈开发工程师， TianliCDN 公益项目",
-                "url": "https://www.baidu.com/tianli"
             }
         ]
     }

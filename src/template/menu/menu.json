@@ -137,6 +137,15 @@
     "tagName": "ol",
     "items": [
       {
+        "text": "友链",
+        "title": "友链 - 一站式AI应用平台",
+        "href": "src/template/viewer.html?友链_友链&format=html"
+      },
+      {
+        "text": "原创诗词",
+        "href": "src/template/viewer.html?文学_原创诗词"
+      },
+      {
         "marked": true,
         "text": "吴华锦的个人主页",
         "title": "吴华锦的个人主页 « 吴华锦",
@@ -174,14 +183,6 @@
         "text": "【音乐】 易听音乐网",
         "title": "易听音乐网-MP3音乐免费下载,MP4下载,歌词大全,流行音乐,网络新歌",
         "href": "https://www.eev3.com/"
-      },
-      {
-        "text": "原创诗词",
-        "href": "src/template/viewer.html?文学_原创诗词"
-      },
-      {
-        "text": "友链",
-        "href": "src/template/viewer.html?友链_友链&format=html"
       }
     ]
   },

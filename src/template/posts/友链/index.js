@@ -38,6 +38,18 @@ async function loadData() {
       });
     };
 
+    // 推荐
+    const recommendCardTemplate = (item) => `
+      <div class="recommend-card" data-url="${item.url || '#'}">
+        <img src="${item.avatar}" alt="${item.name}" class="card-avatar">
+        <div class="card-info">
+          <div class="card-name">${item.name}</div>
+          <div class="card-desc" title="${item.desc}">${item.desc}</div>
+        </div>
+      </div>
+    `;
+
+    // 爱发电
     const poweringCardTemplate = (item) => `
       <div class="powering-card" data-url="${item.url || '#'}">
         <span class="card-tag ${categoryMap[item.category] || ''}">${item.category}</span>
@@ -52,26 +64,16 @@ async function loadData() {
       </div>
     `;
 
-    const recommendCardTemplate = (item) => `
-      <div class="recommend-card" data-url="${item.url || '#'}">
-        <img src="${item.avatar}" alt="${item.name}" class="card-avatar">
-        <div class="card-info">
-          <div class="card-name">${item.name}</div>
-          <div class="card-desc" title="${item.desc}">${item.desc}</div>
-        </div>
-      </div>
-    `;
-
     linkContainer.innerHTML =
-      buildSectionSkeleton(data.powering, 'powering') +
-      buildSectionSkeleton(data.recommend, 'recommend');
+      buildSectionSkeleton(data.recommend, 'recommend') +
+      buildSectionSkeleton(data.powering, 'powering');
 
     if (data.powering?.show) renderGrid('poweringGrid', data.powering.list, poweringCardTemplate);
     if (data.recommend?.show)
       renderGrid('recommendGrid', data.recommend.list, recommendCardTemplate);
 
-    bindCardJump('poweringGrid');
     bindCardJump('recommendGrid');
+    bindCardJump('poweringGrid');
 
     restoreScrollPosition();
     const scrollContainer = getScrollContainer();
