@@ -42,7 +42,8 @@ function handleNavigation() {
   }
 
   const isLinkPage = checkIsLinkPage();
-  const hasNavigateFlag = localStorage.getItem('navigateToLink');
+  const SHOW_NAV = true; // 是否显示导航栏
+  const hasNavigateFlag = localStorage.getItem('navigateToLink') || SHOW_NAV;
 
   if (isLinkPage) {
     if (hasNavigateFlag) {
