@@ -109,12 +109,6 @@ function processMenuData(originalData) {
   if (!originalData || !Array.isArray(originalData)) return [];
   const copyData = JSON.parse(JSON.stringify(originalData));
 
-  const getTimeStamp = (dateStr) => {
-    if (!dateStr) return 0;
-    const normalizedDate = dateStr.replace(/-/g, '/');
-    return new Date(normalizedDate).getTime() || 0;
-  };
-
   copyData.sort((a, b) => {
     const stickyA = a.sticky || Infinity;
     const stickyB = b.sticky || Infinity;

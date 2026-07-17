@@ -48,6 +48,12 @@ function hideLoading() {
   }, delay);
 }
 
+function getTimeStamp(dateStr) {
+  if (!dateStr) return 0;
+  const normalizedDate = dateStr.replace(/年|月/g, '/').replace('日', ' ');
+  return new Date(normalizedDate).getTime() || 0;
+}
+
 window.addEventListener('DOMContentLoaded', () => {
   isProduction && showLoading();
 });

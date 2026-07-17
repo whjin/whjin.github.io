@@ -5,6 +5,21 @@
     "tagName": "ol",
     "items": [
       {
+        "text": "潮际好麦",
+        "title": "潮际好麦，专业级AI电商营销内容创作平台",
+        "href": "https://chaojihaomai.cgref.cn/s/dqndm2rn2z"
+      },
+      {
+        "text": "立刻MV",
+        "title": "立刻MV（LickMV） - AI 音乐视频生成器与 MV 创作工具",
+        "href": "https://lickmv.cgref.cn/s/rpe3j8jk05"
+      },
+      {
+        "text": "切问学术",
+        "title": "切问学术搜索 - AI 文献发现与深度检索",
+        "href": "https://qiewenpaper.cgref.cn/s/41evw43kv8"
+      },
+      {
         "text": "二狗PPT",
         "title": "二狗PPT - DeepSeek驱动的AI PPT生成器｜国企汇报·乙方方案·无AI痕迹",
         "href": "https://2dogppt.cgref.cn/s/rpe3j29k05"
@@ -217,7 +232,7 @@
     ]
   },
   {
-    "updated": "2026-6-25 20:01:00",
+    "updated": "2026-7-17 13:31:52",
     "title": "生活",
     "tagName": "ul",
     "items": [

@@ -1,5 +1,4 @@
 loadData();
-
 async function loadData() {
   try {
     const response = await fetch('./link.json');
@@ -7,6 +6,17 @@ async function loadData() {
     const data = await response.json();
     const linkContainer = document.querySelector('.link-container');
     const categoryMap = data.categoryConfig || {};
+
+    const sortListByUpdated = (list) => {
+      return [...list].sort((a, b) => {
+        const tsA = getTimeStamp(a.updated);
+        const tsB = getTimeStamp(b.updated);
+        if (tsA > 0 && tsB > 0) return tsB - tsA;
+        if (tsA > 0) return -1;
+        if (tsB > 0) return 1;
+        return 0;
+      });
+    };
 
     const buildSectionSkeleton = (sectionData, prefix) => {
       if (!sectionData?.show) return '';
@@ -19,13 +29,11 @@ async function loadData() {
         </section>
       `;
     };
-
     const renderGrid = (gridId, list, cardTemplate) => {
       const gridEl = document.getElementById(gridId);
       if (!gridEl) return;
       gridEl.innerHTML = list.map(cardTemplate).join('');
     };
-
     const bindCardJump = (gridId) => {
       const gridEl = document.getElementById(gridId);
       if (!gridEl) return;
@@ -63,18 +71,21 @@ async function loadData() {
         </div>
       </div>
     `;
-
     linkContainer.innerHTML =
       buildSectionSkeleton(data.recommend, 'recommend') +
       buildSectionSkeleton(data.powering, 'powering');
 
-    if (data.powering?.show) renderGrid('poweringGrid', data.powering.list, poweringCardTemplate);
-    if (data.recommend?.show)
-      renderGrid('recommendGrid', data.recommend.list, recommendCardTemplate);
+    if (data.powering?.show) {
+      const sortedPowerList = sortListByUpdated(data.powering.list);
+      renderGrid('poweringGrid', sortedPowerList, poweringCardTemplate);
+    }
+    if (data.recommend?.show) {
+      const sortedRecList = sortListByUpdated(data.recommend.list);
+      renderGrid('recommendGrid', sortedRecList, recommendCardTemplate);
+    }
 
     bindCardJump('recommendGrid');
     bindCardJump('poweringGrid');
-
     restoreScrollPosition();
     const scrollContainer = getScrollContainer();
     scrollContainer.addEventListener('scroll', saveScrollPosition);
@@ -84,7 +95,6 @@ async function loadData() {
       '<p class="load-fail">内容加载失败，请检查link.json文件是否存在</p>';
   }
 }
-
 function throttle(fn, delay = 150) {
   let timer = null;
   return function (...args) {
@@ -95,17 +105,14 @@ function throttle(fn, delay = 150) {
     }, delay);
   };
 }
-
 function getScrollContainer() {
   return document.querySelector('.content-area') || window;
 }
-
 const saveScrollPosition = throttle(() => {
   const container = getScrollContainer();
   const scrollY = container === window ? window.scrollY : container.scrollTop;
   localStorage.setItem('scrollPosition_link', String(scrollY));
 });
-
 function restoreScrollPosition() {
   const savedY = localStorage.getItem('scrollPosition_link');
   if (savedY === null) return;
