@@ -1,7 +1,8 @@
 window.addEventListener('DOMContentLoaded', (e) => {
-  const rawSearch = decodeURIComponent(window.location.search.slice(1));
-  let [pathPart, queryParam] = rawSearch.split('&format=');
-  const formatType = queryParam || '';
+  const params = new URLSearchParams(window.location.search);
+  const pathPart = params.get('path') || '';
+  const formatType = params.get('format') || '';
+
   const pathArr = pathPart.split('_');
   const fileName = pathArr.pop();
   const folderPath = pathArr.join('/');
