@@ -72,7 +72,7 @@
       {
         "text": "LiblibAI",
         "title": "LiblibAI-哩布哩布AI - 中国领先的AI创作平台",
-        "href": "https://liblib.cgref.cn/s/4onyr06kjx"
+        "href": "https://www.liblib.art/?sourceid=005904&utm=cg&cgv=4onyr06kjx"
       },
       {
         "text": "LibTV",
@@ -366,59 +366,6 @@
     ]
   },
   {
-    "updated": "2026-6-25 13:22:42",
-    "title": "浏览器",
-    "tagName": "ol",
-    "items": [
-      {
-        "text": "【Edge】 Edge 实验性配置",
-        "href": "edge://flags/#unsafely-treat-insecure-origin-as-secure"
-      },
-      {
-        "text": "【插件】 极简插件官网",
-        "title": "极简插件官网_Chrome插件下载_Chrome浏览器应用商店",
-        "href": "https://chrome.zzzmh.cn/index"
-      },
-      {
-        "text": "【插件】 GitHub Corners",
-        "href": "https://tholman.com/github-corners/"
-      },
-      {
-        "text": "【YouTube】 YouTube Video Download",
-        "title": "YouTube Video Download - SSYouTube.com | Fast & Free",
-        "href": "https://en.ssyoutube.com/1ab/"
-      },
-      {
-        "text": "【投屏】 Vysor 官网",
-        "href": "https://www.vysor.io/"
-      },
-      {
-        "text": "【投屏】 Vysor_2.1.2破解，及安装包",
-        "href": "https://www.cnblogs.com/slade-sun/p/10598209.html"
-      },
-      {
-        "text": "【投屏】 极限投屏",
-        "title": "极限投屏更新日志（QuickMirror update log） - 飞书云文档",
-        "href": "https://my.feishu.cn/docx/WuMld1xKvoT4H8xlZHdcMP53nMf"
-      },
-      {
-        "text": "【证件照】 证件照大师",
-        "title": "证件照大师 - 免费在线证件照制作_智能抠图换底色_一寸二寸证件照",
-        "href": "https://id-photo.cn/"
-      },
-      {
-        "text": "【代码编辑器】 CodePen",
-        "title": "CodePen: Online Code Editor and Front End Web Developer Community",
-        "href": "https://codepen.io/"
-      },
-      {
-        "text": "【代码编辑器】 JS在线编辑器",
-        "title": "小闪电 - JSRUN可以用手机写代码的JS在线编辑器网站",
-        "href": "https://jsrun.net/"
-      }
-    ]
-  },
-  {
     "updated": "2026-6-25 12:11:31",
     "title": "PDF",
     "tagName": "ol",
@@ -492,100 +439,6 @@
     ]
   },
   {
-    "updated": "2026-7-14 15:35:36",
-    "title": "工具",
-    "tagName": "ol",
-    "items": [
-      {
-        "text": "开发者武器库",
-        "title": "中文开发者整理的技术栈速查清单",
-        "href": "https://devtool.tech/"
-      },
-      {
-        "text": "【在线工具】 脚本之家在线工具",
-        "href": "https://tools.jb51.net/"
-      },
-      {
-        "text": "【在线工具】 菜鸟工具",
-        "href": "https://www.jyshare.com/"
-      },
-      {
-        "text": "【在线工具】 Web 工具集",
-        "href": "https://xianyu110.github.io/web-tools-suite/"
-      },
-      {
-        "text": "【在线工具】 UU在线工具",
-        "title": "UU在线工具 - UU工具箱 - 便捷实用的工具集合站",
-        "href": "https://uutool.cn/"
-      },
-      {
-        "text": "【在线工具】 独特工具箱",
-        "title": "独特工具箱，提供免费在线工具",
-        "href": "https://www.dute.org/"
-      },
-      {
-        "text": "【PS】 在线 PS",
-        "title": "在线PS - 在线照片处理编辑器 - 在线photoshop",
-        "href": "https://ps.bmcx.com/"
-      },
-      {
-        "text": "【UML图】 UML图开源工具",
-        "title": "使用简单的文字描述画UML图的开源工具。",
-        "href": "https://plantuml.com/zh/"
-      },
-      {
-        "text": "【MP3外链】 MP3转链接免费工具",
-        "title": "免费MP3转链接工具\r\n秒级获取音频直链",
-        "href": "https://www.videotourl.com/zh/tools/mp3-to-url"
-      },
-      {
-        "text": "【视频压缩】 在线视频压缩",
-        "title": "视频压缩，在线视频压缩",
-        "href": "https://www.shipinyasuo.com/?2&b_scene_zt=1"
-      },
-      {
-        "text": "【站点】 IT Tools",
-        "title": "IT Tools - Handy online tools for developers",
-        "href": "https://it-tools.tech/"
-      },
-      {
-        "text": "【JSON格式化】 在线JSON校验格式化工具",
-        "href": "https://www.bejson.com/"
-      },
-      {
-        "text": "【JSON格式化】 JSON在线解析格式化验证",
-        "href": "https://www.json.cn/"
-      },
-      {
-        "text": "【在线编辑器】 在线实时HTML和JavaScript编辑器",
-        "href": "https://zh.infobyip.com/htmlandjavascripteditor.php"
-      },
-      {
-        "text": "【代码压缩】 HTML minifier",
-        "href": "https://kangax.github.io/html-minifier/"
-      },
-      {
-        "text": "【代码压缩】 JS压缩",
-        "title": "JS压缩、解压、格式化、混淆加密、解密",
-        "href": "https://www.css-js.com/"
-      },
-      {
-        "text": "【进制转换】 在线进制转换",
-        "href": "https://tool.oschina.net/hexconvert/"
-      },
-      {
-        "text": "【图片编辑】 图像文件在线编辑工具",
-        "title": "iLoveIMG | 图像文件在线编辑工具",
-        "href": "https://www.iloveimg.com/zh-cn"
-      },
-      {
-        "text": "【播放器】 VLC：官方网站",
-        "title": "VLC media player\r\nVLC 是一款自由、开源的跨平台多媒体播放器及框架，可播放大多数多媒体文件，以及 DVD、音频 CD、VCD 及各类流媒体协议。",
-        "href": "https://www.videolan.org/"
-      }
-    ]
-  },
-  {
     "updated": "2026-6-25 10:09:48",
     "title": "编解码",
     "tagName": "ol",
@@ -618,10 +471,15 @@
     ]
   },
   {
-    "updated": "2026-7-14 15:25:54",
+    "updated": "2026-7-22 22:46:38",
     "title": "设计",
     "tagName": "ol",
     "items": [
+      {
+        "text": "【PS】 在线 PS",
+        "title": "在线PS - 在线照片处理编辑器 - 在线photoshop",
+        "href": "https://ps.bmcx.com/"
+      },
       {
         "text": "【图片】 Cool Backgrounds",
         "title": "自定义背景图片",
@@ -630,10 +488,6 @@
       {
         "text": "【图标】 iconfont-阿里巴巴矢量图标库",
         "href": "https://www.iconfont.cn/?spm=a313x.collections_index.i3.d4d0a486a.5e7a3a81TIxl6y"
-      },
-      {
-        "text": "【图片】 Share Icon",
-        "href": "https://www.shareicon.net/"
       },
       {
         "text": "【图片】 TinyPNG",
@@ -663,11 +517,6 @@
         "text": "【表情包】 Emoji大全",
         "title": "Emoji大全 | Emoji表情符号词典 📓 | Emojiall简体中文官方网站",
         "href": "https://www.emojiall.com/zh-hans"
-      },
-      {
-        "text": "【字体】 Google Fonts",
-        "title": "Google Fonts | 谷歌字体中文版 | GoogleFonts",
-        "href": "https://www.font.im/english?selection.family=Hanalei+Fill"
       },
       {
         "text": "【图标】 React Icons",
