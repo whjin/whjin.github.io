@@ -201,11 +201,6 @@
       {
         "text": "英文简历PDF",
         "href": "src/template/viewer.html?path=简历_英文简历PDF&format=pdf"
-      },
-      {
-        "text": "【音乐】 易听音乐网",
-        "title": "易听音乐网-MP3音乐免费下载,MP4下载,歌词大全,流行音乐,网络新歌",
-        "href": "https://www.eev3.com/"
       }
     ]
   },
@@ -248,6 +243,11 @@
       {
         "text": "基金持仓",
         "href": "src/template/viewer.html?path=生活_基金持仓"
+      },
+      {
+        "text": "【音乐】 易听音乐网",
+        "title": "易听音乐网-MP3音乐免费下载,MP4下载,歌词大全,流行音乐,网络新歌",
+        "href": "https://www.eev3.com/"
       }
     ]
   },

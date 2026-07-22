@@ -364,11 +364,6 @@ a:hover {
     z-index: 9;
   }
 
-  .markdown-content table {
-    display: block;
-    white-space: nowrap;
-  }
-
   .sidebar-area {
     display: none;
   }
@@ -447,12 +442,6 @@ a:hover {
   blockquote {
     max-height: none;
     overflow: visible;
-  }
-
-  .markdown-content table {
-    display: table;
-    width: 100%;
-    white-space: normal;
   }
 
   #view-container {
