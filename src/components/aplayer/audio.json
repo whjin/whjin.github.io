@@ -1,5 +1,13 @@
 [
     {
+        "name": "慢时光",
+        "artist": "吴华锦",
+        "url": "src/components/aplayer/music/原创/慢时光.mp3",
+        "cover": "https://s1.imagehub.cc/images/2026/07/22/ff33a74adf756b3bc06b1f3afcf57b30.md.jpg",
+        "lrc": "src/components/aplayer/music/原创/慢时光.lrc",
+        "theme": "#ffbc6d"
+    },
+    {
         "name": "你笑起来真好看",
         "artist": "李昕融",
         "url": "https://videotourl.com/audio/1779666130883-29309f6f-8f6b-4a9f-8313-5a35538bb4f1.mp3",
