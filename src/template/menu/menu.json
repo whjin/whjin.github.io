@@ -153,7 +153,7 @@
   },
   {
     "sticky": 2,
-    "title": "个人站点",
+    "title": "我的",
     "tagName": "ol",
     "items": [
       {
@@ -201,6 +201,18 @@
       {
         "text": "英文简历PDF",
         "href": "src/template/viewer.html?path=简历_英文简历PDF&format=pdf"
+      },
+      {
+        "text": "育儿",
+        "href": "src/template/viewer.html?path=生活_育儿经"
+      },
+      {
+        "text": "基金持仓2026-7-23",
+        "href": "src/template/viewer.html?path=生活_基金持仓2026-7-23"
+      },
+      {
+        "text": "基金持仓2026-6-25",
+        "href": "src/template/viewer.html?path=生活_基金持仓2026-6-25"
       }
     ]
   },
@@ -232,21 +244,6 @@
     ]
   },
   {
-    "updated": "2026-7-17 13:31:52",
-    "title": "生活",
-    "tagName": "ul",
-    "items": [
-      {
-        "text": "育儿",
-        "href": "src/template/viewer.html?path=生活_育儿经"
-      },
-      {
-        "text": "基金持仓",
-        "href": "src/template/viewer.html?path=生活_基金持仓"
-      }
-    ]
-  },
-  {
     "updated": "2026-7-23 08:04:58",
     "title": "教程",
     "tagName": "ol",
@@ -254,10 +251,6 @@
       {
         "text": "Hello 算法",
         "href": "https://www.hello-algo.com/"
-      },
-      {
-        "text": "阮一峰的网络日志",
-        "href": "https://www.ruanyifeng.com/blog/"
       },
       {
         "text": "LeetCode热题",
