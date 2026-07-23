@@ -243,16 +243,11 @@
       {
         "text": "基金持仓",
         "href": "src/template/viewer.html?path=生活_基金持仓"
-      },
-      {
-        "text": "【音乐】 易听音乐网",
-        "title": "易听音乐网-MP3音乐免费下载,MP4下载,歌词大全,流行音乐,网络新歌",
-        "href": "https://www.eev3.com/"
       }
     ]
   },
   {
-    "updated": "2026-7-14 15:32:42",
+    "updated": "2026-7-23 08:04:58",
     "title": "教程",
     "tagName": "ol",
     "items": [
@@ -263,11 +258,6 @@
       {
         "text": "有趣的开源社区 - HelloGitHub",
         "href": "https://hellogithub.com/"
-      },
-      {
-        "text": "技术栈速查清单",
-        "title": "发现、使用和收藏专为开发者打造的高效工具，提升您的开发效率。",
-        "href": "https://wangchujiang.com/reference/index.html"
       },
       {
         "text": "张鑫旭博客",
@@ -301,121 +291,18 @@
     ]
   },
   {
-    "updated": "2026-6-23 18:49:22",
-    "title": "数据库",
+    "updated": "2026-7-22 22:46:38",
+    "title": "工具",
     "tagName": "ol",
     "items": [
       {
-        "text": "【站点】 Mongoose 中文网",
-        "title": "优雅的 MongoDB 对象建模，适用于 Node.js",
-        "href": "https://mongoose.nodejs.cn/"
+        "text": "【PS】 在线 PS",
+        "title": "在线PS - 在线照片处理编辑器 - 在线photoshop",
+        "href": "https://ps.bmcx.com/"
       },
       {
-        "text": "【破解】 Navicat 激活",
-        "title": "快速激活Navicat Premium 12",
-        "href": "https://baijiahao.baidu.com/s?id=1644169351506023288&wfr=spider&for=pc"
-      },
-      {
-        "text": "【官网】 Sequelize 中文网",
-        "title": "Sequelize 是适用于 Oracle、Postgres、MySQL、MariaDB、SQLite 和 SQL Server 等的现代 TypeScript 和 Node.js ORM。 具有可靠的事务支持、关系、预先和延迟加载、读取复制等。",
-        "href": "https://sequelize.nodejs.cn/"
-      }
-    ]
-  },
-  {
-    "updated": "2026-6-25 12:52:08",
-    "title": "Github",
-    "tagName": "ol",
-    "items": [
-      {
-        "text": "【加速器】 瓦特工具箱(Steam++官网) - Watt Toolkit",
-        "title": "「Watt Toolkit」是一个开源跨平台的多功能 Steam 工具箱。",
-        "href": "https://steampp.net/"
-      }
-    ]
-  },
-  {
-    "updated": "2026-6-23 19:09:24",
-    "title": "CSS",
-    "tagName": "ol",
-    "items": [
-      {
-        "text": "【站点】 Sass 中文网",
-        "href": "https://sass.nodejs.cn/"
-      }
-    ]
-  },
-  {
-    "updated": "2026-6-25 11:31:17",
-    "title": "SVG",
-    "tagName": "ol",
-    "items": [
-      {
-        "text": "【SVG编辑器】 SVG在线查看器和编辑器",
-        "href": "https://www.rapidtables.org/zh-CN/web/tools/svg-viewer-editor.html"
-      },
-      {
-        "text": "【SVG转换】 ICO转SVG",
-        "title": "ICO转SVG - 免费在线将ICO文件转换成SVG",
-        "href": "https://cdkm.com/cn/ico-to-svg"
-      },
-      {
-        "text": "【SVG转换】 SVG to JPEG/PNG",
-        "href": "https://tools.simonwillison.net/svg-render?url=https://gist.githubusercontent.com/simonw/aedecb93564af13ac1596810d40cac3c/raw/83e7f3be5b65bba61124684700fa7925d37c36c3/tiger.svg"
-      }
-    ]
-  },
-  {
-    "updated": "2026-6-25 12:11:31",
-    "title": "PDF",
-    "tagName": "ol",
-    "items": [
-      {
-        "text": "【站点】 PDF.js 官网",
-        "title": "PDF.js 是 Mozilla 社区所开发的一个开源的浏览器 PDF 渲染引擎。",
-        "href": "https://mozilla.github.io/pdf.js/"
-      },
-      {
-        "text": "【站点】 PDF24 工具箱",
-        "title": "PDF24 Tools: 免费且易于使用的在线PDF工具",
-        "href": "https://tools.pdf24.org/zh/"
-      },
-      {
-        "text": "【站点】 PDF压缩工具",
-        "title": "PDF压缩工具 – 在线压缩PDF文件",
-        "href": "https://pdfcompressor.com/zh/"
-      },
-      {
-        "text": "【站点】 PDF压缩工具",
-        "title": "PDF压缩工具 – 在线压缩PDF文件",
-        "href": "https://pdfcompressor.com/zh/"
-      }
-    ]
-  },
-  {
-    "updated": "2026-6-25 12:31:53",
-    "title": "文件转换",
-    "tagName": "ol",
-    "items": [
-      {
-        "text": "【文件转换】 文件转换工具",
-        "title": "在线转换文档，图像，视频，音频文件",
-        "href": "https://www.aconvert.com/cn/"
-      },
-      {
-        "text": "【文件转换】 Convertio — 文件转换器",
-        "href": "https://convertio.co/zh/"
-      }
-    ]
-  },
-  {
-    "updated": "2026-6-25 13:05:54",
-    "title": "服务",
-    "tagName": "ol",
-    "items": [
-      {
-        "text": "【CDN】 UNPKG",
-        "href": "https://unpkg.com/"
+        "text": "【图标】 iconfont-阿里巴巴矢量图标库",
+        "href": "https://www.iconfont.cn/?spm=a313x.collections_index.i3.d4d0a486a.5e7a3a81TIxl6y"
       },
       {
         "text": "【CDN】 cdnjs",
@@ -428,75 +315,9 @@
         "href": "https://www.bootcdn.cn/"
       },
       {
-        "text": "【CDN】 jsDelivr",
-        "title": "jsDelivr - A free, fast, and reliable CDN for JS and open source",
-        "href": "https://www.jsdelivr.com/"
-      },
-      {
-        "text": "【镜像站】 npmmirror 镜像站",
-        "href": "https://www.npmmirror.com/"
-      }
-    ]
-  },
-  {
-    "updated": "2026-6-25 10:09:48",
-    "title": "编解码",
-    "tagName": "ol",
-    "items": [
-      {
-        "text": "【加密】 MD5在线加密",
-        "title": "MD5在线加密 - 站长工具",
-        "href": "https://tool.chinaz.com/tools/md5.aspx?qq-pf-to=pcqq.c2c"
-      },
-      {
-        "text": "【加密】 JSON Web Tokens",
-        "title": "JSON Web Token (JWT) Debugger",
-        "href": "https://www.jwt.io/"
-      },
-      {
-        "text": "【加密】 md5在线解密破解",
-        "title": "md5在线解密破解",
-        "href": "https://www.cmd5.com/"
-      },
-      {
-        "text": "【加密】 md5加密、解密",
-        "title": "md5加密、解密-BeJSON.com",
-        "href": "https://www.bejson.com/enc/md5/"
-      },
-      {
-        "text": "【加密】 Bcrypt在线校验工具",
-        "title": "Bcrypt在线校验工具--验证输入的密码或密钥和存储的crypt加密结果是否匹配",
-        "href": "https://config.net.cn/tools/BCrypt-Verify.html"
-      }
-    ]
-  },
-  {
-    "updated": "2026-7-22 22:46:38",
-    "title": "设计",
-    "tagName": "ol",
-    "items": [
-      {
-        "text": "【PS】 在线 PS",
-        "title": "在线PS - 在线照片处理编辑器 - 在线photoshop",
-        "href": "https://ps.bmcx.com/"
-      },
-      {
-        "text": "【图片】 Cool Backgrounds",
-        "title": "自定义背景图片",
-        "href": "https://coolbackgrounds.io/"
-      },
-      {
-        "text": "【图标】 iconfont-阿里巴巴矢量图标库",
-        "href": "https://www.iconfont.cn/?spm=a313x.collections_index.i3.d4d0a486a.5e7a3a81TIxl6y"
-      },
-      {
         "text": "【图片】 TinyPNG",
         "title": "TinyPNG – 智能压缩您的WebP、JPEG和PNG图片",
         "href": "https://tinify.cn/"
-      },
-      {
-        "text": "【颜色】 Web安全色",
-        "href": "https://www.bootcss.com/p/websafecolors/"
       },
       {
         "text": "【图床】 ImageHub 图仓",
@@ -504,98 +325,24 @@
         "href": "https://www.imagehub.cc/"
       },
       {
-        "text": "【图床】 PICUI 图床",
-        "title": "PICUI图床 - PICUI免费图床服务,在线上传图片,免费图床,公益图床",
-        "href": "https://picui.cn/"
-      },
-      {
-        "text": "【图床】 路过图床",
-        "title": "路过图床 - 免费图片上传, 专业图片外链, 免费公共图床",
-        "href": "https://imgchr.com/"
-      },
-      {
-        "text": "【表情包】 Emoji大全",
-        "title": "Emoji大全 | Emoji表情符号词典 📓 | Emojiall简体中文官方网站",
-        "href": "https://www.emojiall.com/zh-hans"
-      },
-      {
-        "text": "【图标】 React Icons",
-        "href": "https://react-icons.github.io/react-icons/"
-      },
-      {
-        "text": "【图标】 Feather",
-        "title": "Feather – Simply beautiful open source icons",
-        "href": "https://feathericons.com/"
-      },
-      {
-        "text": "【图标】 Icon Maker",
+        "text": "【图标】 Icon图标制作",
         "title": "Icon Maker by Raycast",
         "href": "https://ray.so/icon"
       },
       {
-        "text": "【图标】 在线制作ico图标",
-        "title": "在线制作ico图标 | 在线ico图标转换工具",
-        "href": "https://www.bitbug.net/"
+        "text": "【音乐】 易听音乐网",
+        "title": "易听音乐网-MP3音乐免费下载,MP4下载,歌词大全,流行音乐,网络新歌",
+        "href": "https://www.eev3.com/"
       },
       {
-        "text": "【图标】 前端技术栈图标",
-        "title": "前端技术栈图标 - 200+ SVG 下载 | 开发者工具箱",
-        "href": "https://devtool.tech/fe-logo"
+        "text": "【加速器】 瓦特工具箱(Steam++官网) - Watt Toolkit",
+        "title": "「Watt Toolkit」是一个开源跨平台的多功能 Steam 工具箱。",
+        "href": "https://steampp.net/"
       },
       {
-        "text": "【图标】 Ionicons矢量图标官网",
-        "href": "https://ionic.io/ionicons"
-      },
-      {
-        "text": "【图标】 Font图标大全",
-        "title": "Font图标大全-CSS控制的矢量小图标-字体图标编码对照表",
-        "href": "http://www.yinhuafeng.cn/daohang/font/"
-      }
-    ]
-  },
-  {
-    "updated": "2026-6-25 12:02:02",
-    "title": "数据接口",
-    "tagName": "ol",
-    "items": [
-      {
-        "text": "【接口】 随机图片数据",
-        "title": "Lorem Picsum\r\nThe Lorem Ipsum for photos.",
-        "href": "https://picsum.photos/"
-      },
-      {
-        "text": "【接口】 接口大全",
-        "title": "接口大全-免费API,收集所有免费的API",
-        "href": "https://www.free-api.com/"
-      },
-      {
-        "text": "【接口】 免费API",
-        "title": "免费API - 提供免费接口调用平台",
-        "href": "https://api.aa1.cn/"
-      },
-      {
-        "text": "【接口】 Apifox API",
-        "title": "API 设计、开发、测试一体化协作平台\r\nApifox = Postman + Swagger + Mock + JMeter",
-        "href": "https://apifox.com/"
-      },
-      {
-        "text": "【生成器】 中国大陆手机号码生成器",
-        "title": "中国大陆手机号码生成器 - 在线随机手机号码生成工具\r\n中国大陆 手机号码生成器支持在线大批量随机生成中国大陆手机号码，单次最多生成10万个不重复号码，工具完全免费。",
-        "href": "https://phonenumbertools.com/zh-cn/generator-cn/"
-      },
-      {
-        "text": "【生成器】 身份证号码生成器",
-        "href": "https://zuoyinyun.com/tool/id-card"
-      },
-      {
-        "text": "【API】 JSONPlaceholder",
-        "title": "JSONPlaceholder - Free Fake REST API",
-        "href": "https://jsonplaceholder.typicode.com/"
-      },
-      {
-        "text": "【API】 Dog API",
-        "title": "The internet's biggest collection of open source dog pictures.",
-        "href": "https://dog.ceo/dog-api/"
+        "text": "【站点】 在线PDF工具",
+        "title": "PDF24 Tools: 免费且易于使用的在线PDF工具",
+        "href": "https://tools.pdf24.org/zh/"
       }
     ]
   },
@@ -1083,26 +830,6 @@
     ]
   },
   {
-    "updated": "2026-6-25 12:59:46",
-    "title": "网络",
-    "tagName": "ul",
-    "items": [
-      {
-        "text": "HTTP文档",
-        "href": "src/template/viewer.html?path=网络_HTTP文档"
-      },
-      {
-        "text": "【WebSocket】 WebSocket 在线测试工具",
-        "title": "websocket/ws/wss在线调试测试工具",
-        "href": "https://wstool.jackxiang.com/"
-      },
-      {
-        "text": "【WebSocket】 websocket在线测试",
-        "href": "http://www.websocket-test.com/"
-      }
-    ]
-  },
-  {
     "updated": "2026-6-23 18:51:25",
     "title": "Nodejs",
     "tagName": "ol",
@@ -1243,6 +970,10 @@
       {
         "text": "Vite与Webpack对比",
         "href": "src/template/viewer.html?path=工程化_Vite与Webpack对比"
+      },
+      {
+        "text": "HTTP文档",
+        "href": "src/template/viewer.html?path=网络_HTTP文档"
       }
     ]
   },
@@ -1276,22 +1007,6 @@
       {
         "text": "WebRTC性能优化",
         "href": "src/template/viewer.html?path=WebRTC_WebRTC性能优化"
-      }
-    ]
-  },
-  {
-    "title": "正则表达式",
-    "tagName": "ol",
-    "items": [
-      {
-        "text": "【正则】 Regex Tester",
-        "title": "Regex Tester - Javascript, PCRE, PHP",
-        "href": "https://www.regexpal.com/"
-      },
-      {
-        "text": "【正则】 Regulex",
-        "title": "Regulex：JavaScript Regular Expression Visualizer",
-        "href": "https://jex.im/regulex/#!flags=&re=%5E(a%7Cb)*%3F%24"
       }
     ]
   }
