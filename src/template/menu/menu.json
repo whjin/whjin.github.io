@@ -439,28 +439,14 @@
     ]
   },
   {
-    "updated": "2026-7-11 09:06:12",
+    "updated": "2026-7-24 06:48:02",
     "title": "Web3",
     "tagName": "ul",
     "items": [
       {
-        "text": "【教程】 Solidity教程",
-        "href": "https://solidity-cn.readthedocs.io/zh/develop/index.html"
-      },
-      {
-        "text": "【教程】 Solidity 实例",
+        "text": "【教程】 Solidity实例",
         "title": "Solidity by Example",
         "href": "https://solidity-by-example.org/"
-      },
-      {
-        "text": "【教程】 Speedrun Ethereum",
-        "title": "Speedrun Ethereum: Learn Solidity Development Through Interactive Challenges",
-        "href": "https://speedrunethereum.com/"
-      },
-      {
-        "text": "【教程】 Hardhat 官网",
-        "title": "Hardhat 3: Rust-powered Solidity tests\r\nEthereum development environment for professionals",
-        "href": "https://hardhat.org/"
       },
       {
         "text": "【教程】 HackQuest 官网",
@@ -468,18 +454,9 @@
         "href": "https://www.hackquest.io/zh-cn"
       },
       {
-        "text": "【教程】 拓展学习资料链接",
-        "href": "https://ethpanda.notion.site/32fbbd63be8780fdaa72ce556af4d5ec"
-      },
-      {
-        "text": "【教程】 Viem 官网",
+        "text": "【教程】 Viem官网",
         "title": "Viem · Ethereum 的 TypeScript 接口 Viem 中文文档 | 登链社区\r\n构建可靠的应用程序和库，使用与 Ethereum 接口的 轻量级、可组合 和 类型安全 模块",
         "href": "https://learnblockchain.cn/docs/viem"
-      },
-      {
-        "text": "【教程】 OpenZeppelin 中文文档 - 登链社区",
-        "title": "文档 - OpenZeppelin 中文文档 - 登链社区",
-        "href": "https://learnblockchain.cn/docs/openzeppelin/"
       },
       {
         "text": "【社区】 登链社区 - 探索未来技术",
@@ -501,62 +478,9 @@
         "href": "https://aiweb3.school/"
       },
       {
-        "text": "【社区】 Chainlink Faucets",
-        "title": "Chainlink Faucets - Get Testnet Tokens",
-        "href": "https://faucets.chain.link/"
-      },
-      {
         "text": "【公开课】 公开课《区块链技术与应用》",
         "title": "北京大学肖臻老师《区块链技术与应用》公开课",
         "href": "https://www.bilibili.com/video/BV1Vt411X7JF?spm_id_from=333.788.videopod.episodes&vd_source=ebded8b3137534584af2d6a112cb0da6"
-      },
-      {
-        "text": "【资讯】 Foresight News 官网",
-        "title": "Foresight News｜洞悉 Web3 行业趋势：聚合区块链专业资讯、行业深度解析与投研价值发现",
-        "href": "https://foresightnews.pro/"
-      },
-      {
-        "text": "【资讯】 TechFlow 深潮 官网",
-        "title": "全球资产价值发现平台，洞察 Web3、AI、黄金、美股与宏观趋势 - 科技财经媒体 - 财经新闻资讯 - 投资趋势 - 深潮TechFlow",
-        "href": "https://www.techflowpost.com/"
-      },
-      {
-        "text": "【资讯】 吴说 官网",
-        "title": "吴说 - 区块链快讯与深度内容平台",
-        "href": "https://www.wublock123.com/"
-      },
-      {
-        "text": "【资讯】 ChainCatcher 链捕手 官网",
-        "title": "链捕手 ChainCatcher｜专业的 Crypto 与 Fintech 资讯与研究平台",
-        "href": "https://www.chaincatcher.com/"
-      },
-      {
-        "text": "【资讯】 PinWeb3 官网",
-        "title": "PinWeb3 | 区块链知识学习与Web3应用导航",
-        "href": "https://pinweb3.com/"
-      },
-      {
-        "text": "【资讯】 BlockBeats 官网",
-        "title": "BlockBeats - 新闻，更早出现在BlockBeats",
-        "href": "https://www.theblockbeats.info/"
-      },
-      {
-        "text": "【网站】 以太坊 官网",
-        "title": "以太坊 - 来自 Ethereum.org 的完整指南",
-        "href": "https://ethereum.org/zh/"
-      },
-      {
-        "text": "【网站】 以太坊经典",
-        "href": "https://ethereumclassic.org/zh/"
-      },
-      {
-        "text": "【网站】 Wagmi 官网",
-        "title": "Wagmi | Reactivity for Ethereum apps",
-        "href": "https://2.x.wagmi.sh/"
-      },
-      {
-        "text": "【钱包】 Arweave Wallet 官网",
-        "href": "https://arweave.app/welcome"
       }
     ]
   },
@@ -891,26 +815,6 @@
       {
         "text": "【文章】 uniapp富文本图片预览",
         "href": "https://blog.csdn.net/zt199718/article/details/132555943"
-      }
-    ]
-  },
-  {
-    "updated": "2026-7-3 07:24:28",
-    "title": "GIS",
-    "tagName": "ol",
-    "items": [
-      {
-        "text": "【站点】 cesium 中文网",
-        "href": "https://cesium.xin/"
-      },
-      {
-        "text": "【站点】 Mapbox GL JS Cookbook",
-        "title": "地理信息可视化",
-        "href": "https://www.naivemap.com/mapbox-gl-js-cookbook/"
-      },
-      {
-        "text": "【站点】 WebGL 理论基础",
-        "href": "https://webglfundamentals.org/webgl/lessons/zh_cn/"
       }
     ]
   }
