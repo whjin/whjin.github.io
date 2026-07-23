@@ -256,37 +256,12 @@
         "href": "https://www.hello-algo.com/"
       },
       {
-        "text": "有趣的开源社区 - HelloGitHub",
-        "href": "https://hellogithub.com/"
-      },
-      {
-        "text": "张鑫旭博客",
-        "href": "https://www.zhangxinxu.com/"
-      },
-      {
-        "text": "张洪Heo - 分享设计与科技生活",
-        "href": "https://blog.zhheo.com/"
-      },
-      {
         "text": "阮一峰的网络日志",
         "href": "https://www.ruanyifeng.com/blog/"
       },
       {
         "text": "LeetCode热题",
         "href": "https://leetcode.cn/studyplan/top-100-liked/"
-      },
-      {
-        "text": "CS自学指南",
-        "href": "https://csdiy.wiki/"
-      },
-      {
-        "text": "egghead.io",
-        "title": "Learn Web Development from Expert Developers",
-        "href": "https://egghead.io/"
-      },
-      {
-        "text": "现代 JavaScript 教程",
-        "href": "https://zh.javascript.info/"
       }
     ]
   },
