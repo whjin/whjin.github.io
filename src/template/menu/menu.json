@@ -176,18 +176,22 @@
       },
       {
         "marked": true,
-        "text": "whjin-github.com",
-        "title": "whjin - Github 欢迎关注",
+        "text": "Github",
         "href": "https://github.com/whjin"
+      },
+      {
+        "marked": true,
+        "text": "技术文章集合",
+        "href": "src/template/viewer.html?path=文章_article&format=html"
+      },
+      {
+        "text": "IT工具合集",
+        "href": "src/template/viewer.html?path=工具_tool&format=html"
       },
       {
         "text": "whjin-Gitee.com",
         "title": "寒青 (whjin) - Gitee 码云",
         "href": "https://gitee.com/whjin"
-      },
-      {
-        "text": "IT工具合集",
-        "href": "src/template/viewer.html?path=工具_tool&format=html"
       },
       {
         "text": "https://github.com/whjin/calculateApp",

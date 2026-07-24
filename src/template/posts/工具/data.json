@@ -633,19 +633,5 @@
                 "url": "https://ifdian.net/a/whjin"
             }
         ]
-    },
-    "document": {
-        "mode": "recommend",
-        "show": true,
-        "title": "技术文档",
-        "subtitle": "精选前端技术文档",
-        "list": [
-            {
-                "avatar": "https://picsum.photos/seed/caodong-avatar/100",
-                "name": "MDN Web Docs",
-                "desc": "Web 开发权威文档",
-                "url": "https://developer.mozilla.org"
-            }
-        ]
     }
 }

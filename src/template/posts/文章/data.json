@@ -1,0 +1,182 @@
+{
+    "categoryConfig": {
+        "技术": "#007bff",
+        "发电": "#8b5cf6",
+        "生活": "#fd5a58",
+        "设计": "#10b981",
+        "产品": "#f59e0b"
+    },
+    "recommend": {
+        "show": true,
+        "title": "文章",
+        "subtitle": "",
+        "mode": "recommend",
+        "list": [
+            {
+                "avatar": "https://picsum.photos/seed/AI项目文档/100",
+                "name": "AI项目文档",
+                "url": "/src/template/viewer.html?path=AI_AI项目文档"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/AI大模型文档/100",
+                "name": "AI大模型文档",
+                "url": "/src/template/viewer.html?path=AI_AI大模型文档"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/AI前端/100",
+                "name": "AI前端",
+                "url": "/src/template/viewer.html?path=AI_AI前端"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/功能代码集合/100",
+                "name": "功能代码集合",
+                "url": "/src/template/viewer.html?path=JavaScript_功能代码集合"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/设计模式文档/100",
+                "name": "设计模式文档",
+                "url": "/src/template/viewer.html?path=JavaScript_设计模式文档"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/ECMAScript文档/100",
+                "name": "ECMAScript文档",
+                "url": "/src/template/viewer.html?path=JavaScript_ECMAScript文档"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/TypeScript类型系统/100",
+                "name": "TypeScript类型系统",
+                "url": "/src/template/viewer.html?path=TypeScript_类型系统"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/Taro小程序文档/100",
+                "name": "Taro小程序文档",
+                "url": "/src/template/viewer.html?path=小程序_Taro小程序文档"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/实战项目文档/100",
+                "name": "实战项目文档",
+                "url": "/src/template/viewer.html?path=小程序_实战项目文档"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/小程序文档/100",
+                "name": "小程序文档",
+                "url": "/src/template/viewer.html?path=小程序_小程序文档"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/WebRTC性能优化/100",
+                "name": "WebRTC性能优化",
+                "url": "/src/template/viewer.html?path=WebRTC_WebRTC性能优化"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/Hermes引擎文档/100",
+                "name": "Hermes引擎文档",
+                "url": "/src/template/viewer.html?path=RN_Hermes引擎文档"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/ADB命令集合/100",
+                "name": "ADB命令集合",
+                "url": "/src/template/viewer.html?path=Android_ADB命令集合"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/Git文档/100",
+                "name": "Git文档",
+                "url": "/src/template/viewer.html?path=Git_Git文档"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/操作系统文档/100",
+                "name": "操作系统文档",
+                "url": "/src/template/viewer.html?path=文档_操作系统文档"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/新趋势/100",
+                "name": "新趋势",
+                "url": "/src/template/viewer.html?path=文档_新趋势"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/帮助文档/100",
+                "name": "帮助文档",
+                "url": "/src/template/viewer.html?path=文档_帮助文档"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/领域适配性分析/100",
+                "name": "领域适配性分析",
+                "url": "/src/template/viewer.html?path=文档_领域适配性分析"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/Node.js实战/100",
+                "name": "Node.js实战",
+                "url": "/src/template/viewer.html?path=Node_Node.js实战"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/Node.js进阶/100",
+                "name": "Node.js进阶",
+                "url": "/src/template/viewer.html?path=Node_Node.js进阶"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/Node.js文档/100",
+                "name": "Node.js文档",
+                "url": "/src/template/viewer.html?path=Node_Node.js文档"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/Web加密/100",
+                "name": "Web加密",
+                "url": "/src/template/viewer.html?path=工程化_Web加密"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/工程实例文档/100",
+                "name": "工程实例文档",
+                "url": "/src/template/viewer.html?path=工程化_工程实例文档"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/Vue文档/100",
+                "name": "Vue文档",
+                "url": "/src/template/viewer.html?path=Vue_Vue文档"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/React文档/100",
+                "name": "React文档",
+                "url": "/src/template/viewer.html?path=React_React文档"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/Vite与Webpack对比/100",
+                "name": "Vite与Webpack对比",
+                "url": "/src/template/viewer.html?path=工程化_Vite与Webpack对比"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/Web GIS文档/100",
+                "name": "Web GIS文档",
+                "url": "/src/template/viewer.html?path=GIS_Web GIS文档"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/Cesium文档/100",
+                "name": "Cesium文档",
+                "url": "/src/template/viewer.html?path=GIS_Cesium文档"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/HTTP文档/100",
+                "name": "HTTP文档",
+                "url": "/src/template/viewer.html?path=网络_HTTP文档"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/Solidity文档/100",
+                "name": "Solidity文档",
+                "url": "/src/template/viewer.html?path=Web3_Solidity文档"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/智能合约/100",
+                "name": "智能合约",
+                "url": "/src/template/viewer.html?path=Web3_智能合约"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/Web3文档/100",
+                "name": "Web3文档",
+                "url": "/src/template/viewer.html?path=Web3_Web3文档"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/Web3钱包/100",
+                "name": "Web3钱包",
+                "url": "/src/template/viewer.html?path=Web3_Web3钱包"
+            }
+        ]
+    }
+}
