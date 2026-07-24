@@ -1,8 +1,10 @@
 {
     "categoryConfig": {
-        "技术": "tech",
-        "发电": "power",
-        "生活": "life"
+        "技术": "#007bff",
+        "发电": "#8b5cf6",
+        "生活": "#fd5a58",
+        "设计": "#10b981",
+        "产品": "#f59e0b"
     },
     "recommend": {
         "show": true,
@@ -629,6 +631,20 @@
                 "name": "草东日记",
                 "desc": "独立思考，勿乱引导",
                 "url": "https://ifdian.net/a/whjin"
+            }
+        ]
+    },
+    "document": {
+        "mode": "recommend",
+        "show": true,
+        "title": "技术文档",
+        "subtitle": "精选前端技术文档",
+        "list": [
+            {
+                "avatar": "https://picsum.photos/seed/caodong-avatar/100",
+                "name": "MDN Web Docs",
+                "desc": "Web 开发权威文档",
+                "url": "https://developer.mozilla.org"
             }
         ]
     }

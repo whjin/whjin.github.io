@@ -1,8 +1,10 @@
 {
     "categoryConfig": {
-        "技术": "tech",
-        "发电": "power",
-        "生活": "life"
+        "技术": "#007bff",
+        "发电": "#8b5cf6",
+        "生活": "#fd5a58",
+        "设计": "#10b981",
+        "产品": "#f59e0b"
     },
     "recommend": {
         "show": true,
@@ -120,7 +122,7 @@
             {
                 "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/1nakky01000di0dqcuoyrci2rb0vdf56.webp",
                 "name": "讯飞智作",
-                "desc": "讯飞智作-AI虚拟数字人视频制作-一键创作口播视频-文字转视频-数字分身定制",
+                "desc": "讯飞智作-AI虚拟数字人视频制作-一键创作口播视频-数字分身定制",
                 "url": "https://xfzhizuo.cgref.cn/s/rpexmw9k90"
             },
             {
