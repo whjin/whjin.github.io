@@ -28,8 +28,7 @@
       const parts = pathParam.split('_');
       pathPart = parts[1] || parts[0] || 'link';
     }
-    const pagePath = window.location.pathname.replace(/[\/\.]/g, '_');
-    return `scrollPosition_${pagePath}_${pathPart}`;
+    return `scrollPosition_${pathPart}`;
   }
 
   const defaultAvatar = 'https://picsum.photos/seed/jizhi-avatar/100';
