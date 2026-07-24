@@ -160,7 +160,7 @@
         "marked": true,
         "text": "一站式AI应用平台",
         "title": "友链 - 一站式AI应用平台",
-        "href": "src/template/viewer.html?path=友链_友链&format=html"
+        "href": "src/template/viewer.html?path=友链_index&format=html"
       },
       {
         "marked": true,
@@ -628,6 +628,10 @@
     "title": "文章",
     "tagName": "ol",
     "items": [
+      {
+        "text": "IT工具合集",
+        "href": "src/template/viewer.html?path=工具_index&format=html"
+      },
       {
         "text": "AI项目文档",
         "href": "src/template/viewer.html?path=AI_AI项目文档"

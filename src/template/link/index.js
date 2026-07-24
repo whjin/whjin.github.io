@@ -1,7 +1,7 @@
 loadData();
 async function loadData() {
   try {
-    const response = await fetch('./link.json');
+    const response = await fetch('./data.json');
     if (!response.ok) throw new Error('数据文件加载失败');
     const data = await response.json();
     const linkContainer = document.querySelector('.link-container');
@@ -51,7 +51,7 @@ async function loadData() {
       <div class="recommend-card" data-url="${item.url || '#'}">
         <img src="${item.avatar}" alt="${item.name}" class="card-avatar">
         <div class="card-info">
-          <div class="card-name">${item.name}</div>
+          <div class="card-name" title="${item.name}">${item.name}</div>
           <div class="card-desc" title="${item.desc}">${item.desc}</div>
         </div>
       </div>
@@ -65,7 +65,7 @@ async function loadData() {
         <div class="card-footer">
           <img src="${item.avatar}" alt="${item.name}" class="card-avatar">
           <div class="card-info">
-            <div class="card-name">${item.name}</div>
+            <div class="card-name" title="${item.name}">${item.name}</div>
             <div class="card-desc" title="${item.desc}">${item.desc}</div>
           </div>
         </div>

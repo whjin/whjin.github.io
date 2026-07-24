@@ -38,7 +38,7 @@ function handleNavigation() {
     if (document.querySelector('.link-container')) return true;
     const pathname = window.location.pathname.toLowerCase();
     const search = decodeURIComponent(window.location.search);
-    return pathname.includes('viewer.html') && search.includes('友链');
+    return pathname.includes('viewer.html') && search.includes('index&format=html');
   }
 
   const isLinkPage = checkIsLinkPage();

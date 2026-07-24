@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
   const navContainer = document.querySelector('.nav-container');
 
   if (formatType === 'html') {
-    document.title = `${fileName} \u00AB 吴华锦`;
+    document.title = `${folderPath} \u00AB 吴华锦`;
     document.querySelector('.sidebar-area').style.display = 'none';
     navContainer.classList.add('hide-toc');
     contentEl.innerHTML = '';

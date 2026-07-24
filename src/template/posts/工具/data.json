@@ -1,0 +1,629 @@
+{
+    "categoryConfig": {
+        "技术": "tech",
+        "发电": "power",
+        "生活": "life"
+    },
+    "recommend": {
+        "show": true,
+        "title": "推荐",
+        "subtitle": "一站式IT工具合集",
+        "list": [
+            {
+                "avatar": "https://picsum.photos/seed/tool01/100",
+                "name": "菜鸟工具",
+                "desc": "在线综合工具平台",
+                "url": "https://www.jyshare.com/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool02/100",
+                "name": "Web 工具集",
+                "desc": "前端网页工具合集",
+                "url": "https://xianyu110.github.io/web-tools-suite/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool03/100",
+                "name": "UU在线工具",
+                "desc": "多功能在线工具箱",
+                "url": "https://uutool.cn/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool04/100",
+                "name": "独特工具箱",
+                "desc": "开发者实用在线工具",
+                "url": "https://www.dute.org/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool05/100",
+                "name": "开发者武器库",
+                "desc": "面向程序员的工具集合",
+                "url": "https://devtool.tech/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool06/100",
+                "name": "UML图开源工具",
+                "desc": "PlantUML在线绘图工具",
+                "url": "https://plantuml.com/zh/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool07/100",
+                "name": "视频转链接工具",
+                "desc": "MP3/视频转在线链接工具",
+                "url": "https://www.videotourl.com/zh/tools/mp3-to-url"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool08/100",
+                "name": "在线视频压缩",
+                "desc": "网页端视频无损压缩工具",
+                "url": "https://www.shipinyasuo.com/?2&b_scene_zt=1"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool09/100",
+                "name": "IT工具箱",
+                "desc": "国外开源开发者工具站",
+                "url": "https://it-tools.tech/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool10/100",
+                "name": "在线JSON校验格式化工具",
+                "desc": "JSON格式化、校验、转义工具",
+                "url": "https://www.bejson.com/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool11/100",
+                "name": "AI网址导航",
+                "desc": "AI工具导航汇总站",
+                "url": "https://www.json.cn/ai123/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool12/100",
+                "name": "AI菜鸟教程",
+                "desc": "AI相关入门学习教程",
+                "url": "https://tutorial.json.cn/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool13/100",
+                "name": "在线实时HTML和JavaScript编辑器",
+                "desc": "网页实时代码预览编辑器",
+                "url": "https://zh.infobyip.com/htmlandjavascripteditor.php"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool14/100",
+                "name": "HTML代码压缩",
+                "desc": "在线HTML压缩、混淆工具",
+                "url": "https://kangax.github.io/html-minifier/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool15/100",
+                "name": "JS压缩、解压、格式化、混淆加密、解密",
+                "desc": "前端JS代码处理工具箱",
+                "url": "https://www.css-js.com/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool16/100",
+                "name": "在线进制转换",
+                "desc": "二进制/十进制/十六进制互转",
+                "url": "https://tool.oschina.net/hexconvert/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool17/100",
+                "name": "可批量编辑图片的所有工具",
+                "desc": "在线图片压缩、裁剪、格式转换",
+                "url": "https://www.iloveimg.com/zh-cn"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool18/100",
+                "name": "跨平台多媒体播放器",
+                "desc": "VLC开源多媒体播放器官网",
+                "url": "https://www.videolan.org/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool19/100",
+                "name": "极简插件官网",
+                "desc": "Chrome浏览器插件下载站",
+                "url": "https://chrome.zzzmh.cn/index"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool20/100",
+                "name": "GitHub Corners",
+                "desc": "页面GitHub角标开源组件",
+                "url": "https://tholman.com/github-corners/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool21/100",
+                "name": "YouTube视频下载器",
+                "desc": "在线油管视频解析下载工具",
+                "url": "https://en.ssyoutube.com/1ab/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool22/100",
+                "name": "Vysor安卓投屏工具",
+                "desc": "电脑无线投屏安卓设备",
+                "url": "https://www.vysor.io/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool23/100",
+                "name": "Vysor_2.1.2破解及安装包",
+                "desc": "Vysor旧版安装与破解教程",
+                "url": "https://www.cnblogs.com/slade-sun/p10598209.html"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool24/100",
+                "name": "极限投屏",
+                "desc": "飞书文档投屏方案教程",
+                "url": "https://my.feishu.cn/docx/WuMld1xKvoT4H8xlZHdcMP53nMf"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool25/100",
+                "name": "证件照大师",
+                "desc": "在线证件照换底色、裁剪",
+                "url": "https://id-photo.cn/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool26/100",
+                "name": "CodePen代码托管平台",
+                "desc": "前端在线代码演示分享平台",
+                "url": "https://codepen.io/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool27/100",
+                "name": "JS在线编辑器",
+                "desc": "JSRun实时代码运行工具",
+                "url": "https://jsrun.net/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool28/100",
+                "name": "Share Icon",
+                "desc": "海量免费图标素材下载站",
+                "url": "https://www.shareicon.net/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool29/100",
+                "name": "Font图标大全",
+                "desc": "网页字体图标合集导航",
+                "url": "http://www.yinhuafeng.cn/daohang/font/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool30/100",
+                "name": "前端技术栈图标",
+                "desc": "主流开发技术logo素材",
+                "url": "https://devtool.tech/fe-logo"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool31/100",
+                "name": "在线制作ico图标",
+                "desc": "图片一键生成ICO图标",
+                "url": "https://www.bitbug.net/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool32/100",
+                "name": "Icon图标制作",
+                "desc": "Ray.so极简图标生成工具",
+                "url": "https://ray.so/icon"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool33/100",
+                "name": "Ionicons矢量图标官网",
+                "desc": "移动端矢量图标库",
+                "url": "https://ionic.io/ionicons"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool34/100",
+                "name": "Feather图标",
+                "desc": "轻量简约线性图标库",
+                "url": "https://feathericons.com/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool35/100",
+                "name": "React图标",
+                "desc": "React专用图标组件库合集",
+                "url": "https://react-icons.github.io/react-icons/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool36/100",
+                "name": "Emoji表情符号大全",
+                "desc": "全量Emoji检索与复制工具",
+                "url": "https://www.emojiall.com/zh-hans"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool37/100",
+                "name": "路过图床",
+                "desc": "免费在线图片存储图床",
+                "url": "https://imgchr.com/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool38/100",
+                "name": "Web安全色",
+                "desc": "网页标准安全色卡参考",
+                "url": "https://www.bootcss.com/p/websafecolors/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool39/100",
+                "name": "Cool Backgrounds网页背景设计",
+                "desc": "渐变/纹理网页背景生成器",
+                "url": "https://coolbackgrounds.io/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool40/100",
+                "name": "Watt Toolkit加速器",
+                "desc": "Steam开源网络加速工具",
+                "url": "https://steampp.net/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool41/100",
+                "name": "CDN UNPKG",
+                "desc": "npm包在线CDN加速",
+                "url": "https://unpkg.com/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool42/100",
+                "name": "CDN cdnjs",
+                "desc": "开源前端库公共CDN",
+                "url": "https://cdnjs.com/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool43/100",
+                "name": "CDN BootCDN",
+                "desc": "国内稳定前端静态资源CDN",
+                "url": "https://www.bootcdn.cn/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool44/100",
+                "name": "CDN jsDelivr",
+                "desc": "全球免费开源CDN服务",
+                "url": "https://www.jsdelivr.com/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool45/100",
+                "name": "npmmirror 镜像站",
+                "desc": "淘宝npm国内镜像加速",
+                "url": "https://www.npmmirror.com/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool46/100",
+                "name": "WebSocket 在线测试工具",
+                "desc": "在线WS连接调试工具",
+                "url": "https://wstool.jackxiang.com/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool47/100",
+                "name": "websocket在线测试",
+                "desc": "简易WebSocket在线调试页面",
+                "url": "http://www.websocket-test.com/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool48/100",
+                "name": "文件转换工具",
+                "desc": "多格式音视频文档互转",
+                "url": "https://www.aconvert.com/cn/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool49/100",
+                "name": "Convertio — 文件转换器",
+                "desc": "云端全类型文件转换平台",
+                "url": "https://convertio.co/zh/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool50/100",
+                "name": "PDF.js官网",
+                "desc": "浏览器原生PDF开源渲染库",
+                "url": "https://mozilla.github.io/pdf.js/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool51/100",
+                "name": "PDF24 在线PDF工具",
+                "desc": "PDF合并、拆分、编辑在线工具",
+                "url": "https://tools.pdf24.org/zh/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool52/100",
+                "name": "PDF压缩工具",
+                "desc": "无损在线PDF体积压缩",
+                "url": "https://pdfcompressor.com/zh/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool53/100",
+                "name": "MD5在线加密",
+                "desc": "字符串MD5哈希加密工具",
+                "url": "https://tool.chinaz.com/tools/md5.aspx?qq-pf-to=pcqq.c2c"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool54/100",
+                "name": "加密 JSON Web Tokens",
+                "desc": "JWT在线生成与解析工具",
+                "url": "https://www.jwt.io/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool55/100",
+                "name": "md5在线解密破解",
+                "desc": "MD5哈希彩虹表查询解密",
+                "url": "www.cmd5.com/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool56/100",
+                "name": "md5加密解密",
+                "desc": "MD5/SHA加密解密工具箱",
+                "url": "www.bejson.com/enc/md5/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool57/100",
+                "name": "Bcrypt在线校验工具",
+                "desc": "Bcrypt密码哈希生成验证",
+                "url": "https://config.net.cn/tools/BCrypt-Verify.html"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool58/100",
+                "name": "SVG在线查看器和编辑器",
+                "desc": "SVG代码预览与在线编辑",
+                "url": "https://www.rapidtables.org/zh-CN/web/tools/svg-viewer-editor.html"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool59/100",
+                "name": "ICO转SVG",
+                "desc": "图标格式ICO转矢量SVG",
+                "url": "https://cdkm.com/cn/ico-to-svg"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool60/100",
+                "name": "SVG to JPEG/PNG",
+                "desc": "SVG矢量图转位图工具",
+                "url": "https://tools.simonwillison.net/svg-render?url=https://gist.githubusercontent.com/simonw/aedecb93564af13ac1596810d40cac3c/raw/83e7f3be5b65bba61124684700fa7925d37c36c3/tiger.svg"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool61/100",
+                "name": "Mongoose中文网",
+                "desc": "MongoDB ODM框架中文文档",
+                "url": "https://mongoose.nodejs.cn/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool62/100",
+                "name": "Navicat激活教程",
+                "desc": "Navicat数据库工具激活指南",
+                "url": "https://baijiahao.baidu.com/s?id=1644169351506023288&wfr=spider&for=pc"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool63/100",
+                "name": "Sequelize中文网",
+                "desc": "Node.js ORM框架中文文档",
+                "url": "https://sequelize.nodejs.cn/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool64/100",
+                "name": "正则 Regex Tester",
+                "desc": "正则表达式在线测试工具",
+                "url": "https://regexpal.com/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool65/100",
+                "name": "正则 Regulex",
+                "desc": "正则可视化流程图解析",
+                "url": "https://jex.im/regulex/#!flags=&re=%5E(a%7Cb)*%3F%24"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool66/100",
+                "name": "随机图片数据",
+                "desc": "Picsum随机占位图接口",
+                "url": "https://picsum.photos/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool67/100",
+                "name": "接口大全",
+                "desc": "免费公开API接口汇总平台",
+                "url": "https://www.free-api.com/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool68/100",
+                "name": "免费API - 提供免费接口调用平台",
+                "desc": "开发者免费测试接口站点",
+                "url": "https://api.aa1.cn/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool69/100",
+                "name": "API 设计、开发、测试一体化协作平台",
+                "desc": "Apifox接口调试管理工具",
+                "url": "https://apifox.com/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool70/100",
+                "name": "手机号码生成器",
+                "desc": "批量生成测试手机号",
+                "url": "https://phonenumbertools.com/zh-cn/generator-cn/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool71/100",
+                "name": "身份证号码生成器",
+                "desc": "合规测试身份证生成工具",
+                "url": "https://zuoyinyun.com/tool/id-card"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool72/100",
+                "name": "JSONPlaceholder",
+                "desc": "前端模拟假数据API服务",
+                "url": "https://jsonplaceholder.typicode.com/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool73/100",
+                "name": "Dog API",
+                "desc": "狗狗图片随机接口",
+                "url": "https://dog.ceo/dog-api/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool74/100",
+                "name": "技术栈速查清单",
+                "desc": "前后端开发技术速查手册",
+                "url": "https://wangchujiang.com/reference/index.html"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool75/100",
+                "name": "egghead 英文技术学习平台",
+                "desc": "国外前端视频学习网站",
+                "url": "egghead.io/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool76/100",
+                "name": "CS自学指南 MIT计算机学习平台",
+                "desc": "计算机自学开源导航CSDIY",
+                "url": "https://csdiy.wiki/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool77/100",
+                "name": "有趣的开源社区 - HelloGitHub",
+                "desc": "优质开源项目月刊分享",
+                "url": "https://hellogithub.com/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool78/100",
+                "name": "现代 JavaScript 教程",
+                "desc": "JS官方中文完整教程",
+                "url": "https://zh.javascript.info/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool79/100",
+                "name": "张鑫旭博客",
+                "desc": "国内前端技术知名博客",
+                "url": "https://www.zhangxinxu.com/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool80/100",
+                "name": "张洪Heo - 分享设计与科技生活",
+                "desc": "设计与前端技术个人博客",
+                "url": "https://blog.zhheo.com/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool81/100",
+                "name": "阮一峰的网络日志",
+                "desc": "知名技术科普博客",
+                "url": "https://ruanyifeng.com/blog/index.html"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool82/100",
+                "name": "Arweave Wallet 官网",
+                "desc": "Arweave区块链钱包",
+                "url": "arweave.app/welcome"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool83/100",
+                "name": "Wagmi 官网",
+                "desc": "以太坊React交互工具库",
+                "url": "2.x.wagmi.sh/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool84/100",
+                "name": "以太坊经典",
+                "desc": "ETC区块链中文官网",
+                "url": "https://ethereumclassic.org/zh/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool85/100",
+                "name": "以太坊官网",
+                "desc": "ETH区块链官方站点",
+                "url": "https://ethereum.org/zh/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool86/100",
+                "name": "BlockBeats官网",
+                "desc": "区块链行业资讯媒体",
+                "url": "https://theblockbeats.info/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool87/100",
+                "name": "PinWeb3官网",
+                "desc": "Web3项目导航资讯站",
+                "url": "pinweb3.com/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool88/100",
+                "name": "ChainCatcher链捕手官网",
+                "desc": "区块链深度资讯平台",
+                "url": "chaincatcher.com/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool89/100",
+                "name": "吴说官网",
+                "desc": "加密市场行情与资讯",
+                "url": "www.wublock123.com/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool90/100",
+                "name": "TechFlow深潮官网",
+                "desc": "区块链产业深度报道",
+                "url": "www.techflowpost.com/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool91/100",
+                "name": "Foresight News官网",
+                "desc": "Web3全球资讯媒体",
+                "url": "foresightnews.pro/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool92/100",
+                "name": "Chainlink Faucets",
+                "desc": "Chainlink测试代币水龙头",
+                "url": "faucets.chain.link/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool93/100",
+                "name": "拓展学习资料链接",
+                "desc": "以太坊生态学习资料合集",
+                "url": "ethpanda.notion.site/32fbbd63be8780fdaa72ce556af4d5ec"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool94/100",
+                "name": "OpenZeppelin 中文文档 - 登链社区",
+                "desc": "Solidity安全合约库中文文档",
+                "url": "learnblockchain.cn/docs/openzeppelin/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool95/100",
+                "name": "Hardhat官网",
+                "desc": "以太坊智能合约开发框架",
+                "url": "hardhat.org/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool96/100",
+                "name": "Speedrun Ethereum",
+                "desc": "以太坊合约实战教程",
+                "url": "speedrunethereum.com/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool97/100",
+                "name": "Solidity教程",
+                "desc": "Solidity智能合约中文开发文档",
+                "url": "solidity-cn.readthedocs.io/zh/develop/index.html"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool98/100",
+                "name": "cesium中文网",
+                "desc": "三维GIS地图引擎中文教程",
+                "url": "cesium.xin/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool99/100",
+                "name": "Mapbox GL JS Cookbook",
+                "desc": "Mapbox地图开发案例手册",
+                "url": "naivemap.com/mapbox-gl-js-cookbook/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool100/100",
+                "name": "WebGL理论基础",
+                "desc": "Web图形渲染底层教程",
+                "url": "webglfundamentals.org/webgl/lessons/zh_cn/"
+            }
+        ]
+    },
+    "powering": {
+        "show": true,
+        "title": "正在发电",
+        "subtitle": "在爱发电中赞助博主的朋友们",
+        "list": [
+            {
+                "category": "技术",
+                "cover": "https://picsum.photos/seed/caodong/400/300",
+                "avatar": "https://picsum.photos/seed/caodong-avatar/100",
+                "name": "草东日记",
+                "desc": "独立思考，勿乱引导",
+                "url": "https://ifdian.net/a/whjin"
+            }
+        ]
+    }
+}
