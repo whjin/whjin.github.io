@@ -19,7 +19,7 @@ function createMenuItem(item) {
   aEl.innerHTML = item.marked ? `${MARKED_HTML}${item.text}` : item.text;
   aEl.title = item.title || item.text;
   aEl.href = item.href;
-  let isLinkPage = item.href.includes('viewer.html') && item.href.includes('index&format=html');
+  let isLinkPage = item.href.includes('viewer.html') && item.href.includes('&format=html');
   if (isLinkPage) {
     aEl.addEventListener('click', () => {
       localStorage.setItem(STORAGE_KEYS.navigateToLink, true);

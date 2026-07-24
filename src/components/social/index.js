@@ -1,7 +1,7 @@
 (function () {
   const socialList = [
     {
-      href: 'src/template/viewer.html?path=友链_index&format=html',
+      href: 'src/template/viewer.html?path=友链_link&format=html',
       title: '友链',
       name: 'link',
       icon: 28,

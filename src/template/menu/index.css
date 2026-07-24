@@ -96,7 +96,7 @@
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1em 3em;
   overflow: auto;
-  padding: 1.5em 2em 1em 4em;
+  padding: 1.5em 2em 1em 3em;
   word-break: break-word;
 }
 .modal-list li {

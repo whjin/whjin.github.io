@@ -608,6 +608,12 @@
                 "name": "WebGL理论基础",
                 "desc": "Web图形渲染底层教程",
                 "url": "webglfundamentals.org/webgl/lessons/zh_cn/"
+            },
+            {
+                "avatar": "https://picsum.photos/seed/tool101/101",
+                "name": "Mermaid中文网",
+                "desc": "Mermaid 图表工具\r\n基于 JavaScript 的图表工具，可渲染 Markdown 启发的文本定义以动态创建和修改图表。",
+                "url": "https://mermaid.nodejs.cn/"
             }
         ]
     },

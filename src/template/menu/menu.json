@@ -160,7 +160,7 @@
         "marked": true,
         "text": "一站式AI应用平台",
         "title": "友链 - 一站式AI应用平台",
-        "href": "src/template/viewer.html?path=友链_index&format=html"
+        "href": "src/template/viewer.html?path=友链_link&format=html"
       },
       {
         "marked": true,
@@ -184,6 +184,10 @@
         "text": "whjin-Gitee.com",
         "title": "寒青 (whjin) - Gitee 码云",
         "href": "https://gitee.com/whjin"
+      },
+      {
+        "text": "IT工具合集",
+        "href": "src/template/viewer.html?path=工具_tool&format=html"
       },
       {
         "text": "https://github.com/whjin/calculateApp",
@@ -615,11 +619,6 @@
         "text": "【站点】 Anime.js 中文网",
         "title": "一体化动画引擎.\r\n一个快速且灵活的 JavaScript 库。",
         "href": "https://anime.nodejs.cn/"
-      },
-      {
-        "text": "【站点】 Mermaid 中文网",
-        "title": "Mermaid 图表工具\r\n基于 JavaScript 的图表工具，可渲染 Markdown 启发的文本定义以动态创建和修改图表。",
-        "href": "https://mermaid.nodejs.cn/"
       }
     ]
   },
@@ -628,10 +627,6 @@
     "title": "文章",
     "tagName": "ol",
     "items": [
-      {
-        "text": "IT工具合集",
-        "href": "src/template/viewer.html?path=工具_index&format=html"
-      },
       {
         "text": "AI项目文档",
         "href": "src/template/viewer.html?path=AI_AI项目文档"
