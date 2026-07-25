@@ -1,3 +1,17 @@
+function getSearchParams() {
+  const params = new URLSearchParams(window.location.search);
+  const pathParam = params.get('path') || '';
+  const formatType = params.get('format') || '';
+  const pageSize = params.size || 2;
+  return { pathParam, formatType, pageSize };
+}
+
+function handleDecodeURI() {
+  const pathname = window.location.pathname.toLowerCase();
+  const search = decodeURIComponent(window.location.search);
+  return { pathname, search };
+}
+
 function isMobile() {
   const userAgent = navigator.userAgent.toLowerCase();
   const mobileRegex = /iphone|android|ipad|ipod|mobile|webos|blackberry|iemobile|opera mini/i;

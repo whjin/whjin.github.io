@@ -21,8 +21,7 @@
   }
 
   function getScrollKey() {
-    const params = new URLSearchParams(window.location.search);
-    const pathParam = params.get('path');
+    const { pathParam } = getSearchParams();
     let pathPart = 'link';
     if (pathParam && typeof pathParam === 'string') {
       const parts = pathParam.split('_');

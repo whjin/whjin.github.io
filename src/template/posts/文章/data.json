@@ -8,8 +8,8 @@
     },
     "recommend": {
         "show": true,
-        "title": "文章",
-        "subtitle": "",
+        "title": "技术文章合集",
+        "subtitle": "技术教程、IT工具、实战项目分享等",
         "mode": "recommend",
         "list": [
             {

@@ -1,8 +1,6 @@
 window.addEventListener('DOMContentLoaded', async (e) => {
-  const params = new URLSearchParams(window.location.search);
-  const pathPart = params.get('path') || '';
-  const formatType = params.get('format') || '';
-  const pathArr = pathPart.split('_');
+  const { pathParam, formatType } = getSearchParams();
+  const pathArr = pathParam.split('_');
   const fileName = pathArr.pop();
   const folderPath = pathArr.join('/');
   const contentEl = document.getElementById('markdown-content');

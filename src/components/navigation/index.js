@@ -7,7 +7,7 @@ function handleNavigation() {
     },
     {
       src: '../images/icons/back.png',
-      alt: '回到首页',
+      alt: '返回上一页',
       class: 'nav-back',
     },
   ];
@@ -33,11 +33,10 @@ function handleNavigation() {
   const navToc = document.querySelector('.nav-toc');
   const navBack = document.querySelector('.nav-back');
   const sidebarArea = document.querySelector('.sidebar-area');
+  const { pathname, search } = handleDecodeURI();
 
   function checkIsLinkPage() {
     if (document.querySelector('.link-container')) return true;
-    const pathname = window.location.pathname.toLowerCase();
-    const search = decodeURIComponent(window.location.search);
     return pathname.includes('viewer.html') && search.includes('&format=html');
   }
 
