@@ -7,10 +7,8 @@
         "产品": "#f59e0b"
     },
     "recommend": {
-        "show": true,
-        "title": "技术文章合集",
+        "title": "技术文章",
         "subtitle": "技术教程、IT工具、实战项目分享等",
-        "mode": "recommend",
         "list": [
             {
                 "avatar": "https://picsum.photos/seed/AI项目文档/100",
@@ -176,6 +174,20 @@
                 "avatar": "https://picsum.photos/seed/Web3钱包/100",
                 "name": "Web3钱包",
                 "url": "/src/template/viewer.html?path=Web3_Web3钱包"
+            }
+        ]
+    },
+    "powering": {
+        "title": "正在发电",
+        "subtitle": "在爱发电中赞助博主的朋友们",
+        "list": [
+            {
+                "category": "技术",
+                "cover": "https://picsum.photos/seed/caodong/400",
+                "avatar": "https://picsum.photos/seed/caodong-avatar/100",
+                "name": "草东日记",
+                "desc": "独立思考，勿乱引导",
+                "url": "https://ifdian.net/a/whjin"
             }
         ]
     }

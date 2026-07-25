@@ -9,17 +9,14 @@
       }, delay);
     };
   }
-
   function getTimeStamp(dateStr) {
     if (!dateStr) return 0;
     const ts = new Date(dateStr).getTime();
     return isNaN(ts) ? 0 : ts;
   }
-
   function getScrollContainer() {
     return document.querySelector('.content-area') || window;
   }
-
   function getScrollKey() {
     const { pathParam } = getSearchParams();
     let pathPart = 'link';
@@ -29,7 +26,6 @@
     }
     return `scrollPosition_${pathPart}`;
   }
-
   const defaultAvatar = 'https://picsum.photos/seed/jizhi-avatar/100';
   const defaultCover = 'https://picsum.photos/seed/jizhi/400/300';
   const renderModes = {
@@ -68,13 +64,11 @@
         const avatar = item.avatar || defaultAvatar;
         const name = item.name || '';
         const desc = item.desc || '';
-
         let tagHtml = '';
         if (item.category) {
           const tagColor = categoryConfig?.[item.category] || '#6b7280';
           tagHtml = `<span class="card-tag" style="background-color: ${tagColor};">${item.category}</span>`;
         }
-
         return `
           <div class="powering-card" data-url="${url}">
             ${tagHtml}
@@ -91,12 +85,10 @@
       },
     },
   };
-
   function getModeConfig(sectionKey, sectionData) {
     const modeName = sectionData.mode || sectionKey;
     return { modeName, config: renderModes[modeName] || null };
   }
-
   function applyFieldMap(item, customMap, defaultFields) {
     const mergedMap = { ...defaultFields, ...customMap };
     const result = {};
@@ -105,7 +97,6 @@
     }
     return { ...item, ...result };
   }
-
   function sortListByUpdated(list) {
     return [...list].sort((a, b) => {
       const tsA = getTimeStamp(a.updated);
@@ -116,20 +107,17 @@
       return 0;
     });
   }
-
   function sortSectionKeys(keys, data) {
     const modePriority = ['recommend', 'powering'];
     return [...keys].sort((a, b) => {
       const { modeName: modeA } = getModeConfig(a, data[a]);
       const { modeName: modeB } = getModeConfig(b, data[b]);
-
       const idxA = modePriority.indexOf(modeA);
       const idxB = modePriority.indexOf(modeB);
       if (idxA === -1 && idxB === -1) return 0;
       if (idxA === -1) return 1;
       if (idxB === -1) return -1;
       if (idxA !== idxB) return idxA - idxB;
-
       const isDefaultA = a === modeA;
       const isDefaultB = b === modeB;
       if (isDefaultA && !isDefaultB) return -1;
@@ -137,12 +125,17 @@
       return 0;
     });
   }
-
   function buildSectionSkeleton(sectionKey, sectionData) {
-    if (!sectionData?.show) return '';
+    if (
+      sectionData?.show === false ||
+      !sectionData?.list ||
+      !Array.isArray(sectionData.list) ||
+      sectionData.list.length === 0
+    ) {
+      return '';
+    }
     const { config } = getModeConfig(sectionKey, sectionData);
     if (!config) return '';
-
     const { title, subtitle, list } = sectionData;
     return `
       <section class="section">
@@ -152,14 +145,12 @@
       </section>
     `;
   }
-
   function renderGrid(gridId, list, modeConfig, categoryConfig, fieldMap) {
     const gridEl = document.getElementById(gridId);
     if (!gridEl) return;
     const mappedList = list.map((item) => applyFieldMap(item, fieldMap, modeConfig.defaultFields));
     gridEl.innerHTML = mappedList.map((item) => modeConfig.template(item, categoryConfig)).join('');
   }
-
   function bindGlobalCardJump(container) {
     if (!container) return;
     container.addEventListener('click', (e) => {
@@ -170,45 +161,36 @@
       window.open(targetUrl, '_blank', 'noopener noreferrer');
     });
   }
-
   async function loadData() {
     const linkContainer = document.querySelector('.link-container');
     if (!linkContainer) return;
-
     try {
       const response = await fetch('./data.json');
       if (!response.ok) throw new Error('数据文件加载失败');
       const data = await response.json();
       const categoryConfig = data.categoryConfig || {};
-
       const rawSectionKeys = Object.keys(data).filter((key) => {
         const item = data[key];
-        return item && typeof item === 'object' && 'show' in item && 'list' in item;
+        return item && typeof item === 'object' && Array.isArray(item.list);
       });
       const sectionKeys = sortSectionKeys(rawSectionKeys, data);
-
       linkContainer.innerHTML = sectionKeys
         .map((key) => buildSectionSkeleton(key, data[key]))
         .join('');
-
       sectionKeys.forEach((key) => {
         const sectionData = data[key];
         const { config } = getModeConfig(key, sectionData);
         if (!config) return;
-
         const sortedList = sortListByUpdated(sectionData.list);
         renderGrid(`${key}Grid`, sortedList, config, categoryConfig, sectionData.fieldMap || {});
       });
-
       bindGlobalCardJump(linkContainer);
-
       const scrollKey = getScrollKey();
       const scrollContainer = getScrollContainer();
       const saveScrollPosition = throttle(() => {
         const scrollY = scrollContainer === window ? window.scrollY : scrollContainer.scrollTop;
         localStorage.setItem(scrollKey, scrollY);
       }, 150);
-
       function restoreScrollPosition() {
         const savedY = localStorage.getItem(scrollKey);
         if (savedY === null) return;
@@ -217,7 +199,6 @@
           ? window.scrollTo(0, targetY)
           : (scrollContainer.scrollTop = targetY);
       }
-
       requestAnimationFrame(restoreScrollPosition);
       scrollContainer.addEventListener('scroll', saveScrollPosition);
     } catch (error) {
@@ -226,6 +207,5 @@
         '<p class="load-fail">内容加载失败，请检查data.json文件是否存在</p>';
     }
   }
-
   loadData();
 })();

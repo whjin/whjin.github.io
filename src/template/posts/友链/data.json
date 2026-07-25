@@ -7,7 +7,6 @@
         "产品": "#f59e0b"
     },
     "recommend": {
-        "show": true,
         "title": "推荐",
         "subtitle": "一站式AI应用平台",
         "list": [
@@ -188,7 +187,6 @@
         ]
     },
     "powering": {
-        "show": true,
         "title": "正在发电",
         "subtitle": "在爱发电中赞助博主的朋友们",
         "list": [

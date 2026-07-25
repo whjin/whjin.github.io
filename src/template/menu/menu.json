@@ -5,6 +5,12 @@
     "tagName": "ol",
     "items": [
       {
+        "marked": true,
+        "text": "一站式AI应用平台",
+        "title": "友链 - 一站式AI应用平台",
+        "href": "src/template/viewer.html?path=友链_link&format=html"
+      },
+      {
         "text": "Loomy",
         "title": "Loomy-你的AI工作搭子",
         "href": "https://loomy.cgref.cn/s/59ngvmonr2"
@@ -158,12 +164,6 @@
     "items": [
       {
         "marked": true,
-        "text": "一站式AI应用平台",
-        "title": "友链 - 一站式AI应用平台",
-        "href": "src/template/viewer.html?path=友链_link&format=html"
-      },
-      {
-        "marked": true,
         "text": "原创诗词",
         "title": "雅致寓于高阁渔舟唱晚，古典悠然；\r\n格调外发园林绿树萦绕，馥郁清香。",
         "href": "src/template/viewer.html?path=文学_原创诗词"
@@ -181,10 +181,44 @@
       },
       {
         "marked": true,
-        "text": "技术文章合集",
+        "text": "中文简历",
+        "href": "src/template/viewer.html?path=简历_中文简历"
+      },
+      {
+        "text": "中文简历PDF",
+        "href": "src/template/viewer.html?path=简历_中文简历PDF&format=pdf"
+      },
+      {
+        "text": "英文简历",
+        "href": "src/template/viewer.html?path=简历_英文简历"
+      },
+      {
+        "text": "英文简历PDF",
+        "href": "src/template/viewer.html?path=简历_英文简历PDF&format=pdf"
+      },
+      {
+        "text": "育儿",
+        "href": "src/template/viewer.html?path=生活_育儿经"
+      }
+    ]
+  },
+  {
+    "sticky": 3,
+    "title": "站点",
+    "tagName": "ol",
+    "items": [
+      {
+        "marked": true,
+        "text": "技术文章",
         "href": "src/template/viewer.html?path=文章_article&format=html"
       },
       {
+        "marked": true,
+        "text": "技术教程",
+        "href": "src/template/viewer.html?path=教程_tutorial&format=html"
+      },
+      {
+        "marked": true,
         "text": "IT工具合集",
         "href": "src/template/viewer.html?path=工具_tool&format=html"
       },
@@ -214,471 +248,12 @@
         "href": "https://www.vercount.one/"
       },
       {
-        "marked": true,
-        "text": "中文简历",
-        "href": "src/template/viewer.html?path=简历_中文简历"
-      },
-      {
-        "text": "中文简历PDF",
-        "href": "src/template/viewer.html?path=简历_中文简历PDF&format=pdf"
-      },
-      {
-        "text": "英文简历",
-        "href": "src/template/viewer.html?path=简历_英文简历"
-      },
-      {
-        "text": "英文简历PDF",
-        "href": "src/template/viewer.html?path=简历_英文简历PDF&format=pdf"
-      },
-      {
-        "text": "育儿",
-        "href": "src/template/viewer.html?path=生活_育儿经"
-      },
-      {
         "text": "基金持仓2026-7-23",
         "href": "src/template/viewer.html?path=生活_基金持仓2026-7-23"
       },
       {
         "text": "基金持仓2026-6-25",
         "href": "src/template/viewer.html?path=生活_基金持仓2026-6-25"
-      }
-    ]
-  },
-  {
-    "updated": "2026-7-23 08:04:58",
-    "title": "教程",
-    "tagName": "ol",
-    "items": [
-      {
-        "text": "【官网】 AI工具集官网",
-        "title": "AI工具集官网 | 1000+ AI工具集合，国内外AI工具集导航大全",
-        "href": "https://ai-bot.cn/"
-      },
-      {
-        "text": "【站点】 Hermes Agent 中文社区",
-        "href": "https://hermesagent.org.cn/"
-      },
-      {
-        "text": "Hello 算法",
-        "href": "https://www.hello-algo.com/"
-      },
-      {
-        "text": "LeetCode热题",
-        "href": "https://leetcode.cn/studyplan/top-100-liked/"
-      },
-      {
-        "text": "【站点】 NestJS 中文文档",
-        "title": "NestJS 中文文档\r\n高效、可扩展的 Node.js 服务器端应用框架",
-        "href": "https://docs.nestjs.cn/"
-      },
-      {
-        "text": "【站点】 Hono 中文网",
-        "title": "Hono\r\nWeb 应用框架\r\n快速、轻量、基于 Web 标准构建。支持任何 JavaScript 运行时。",
-        "href": "https://hono.nodejs.cn/"
-      }
-    ]
-  },
-  {
-    "updated": "2026-7-22 22:46:38",
-    "title": "工具",
-    "tagName": "ol",
-    "items": [
-      {
-        "text": "【PS】 在线 PS",
-        "title": "在线PS - 在线照片处理编辑器 - 在线photoshop",
-        "href": "https://ps.bmcx.com/"
-      },
-      {
-        "text": "【图标】 iconfont-阿里巴巴矢量图标库",
-        "href": "https://www.iconfont.cn/?spm=a313x.collections_index.i3.d4d0a486a.5e7a3a81TIxl6y"
-      },
-      {
-        "text": "【CDN】 cdnjs",
-        "title": "Simple. Fast. Reliable.\r\nContent delivery at its finest.",
-        "href": "https://cdnjs.com/"
-      },
-      {
-        "text": "【CDN】 BootCDN",
-        "title": "BootCDN - Bootstrap 中文网开源项目免费 CDN 加速服务\r\n稳定、快速、免费的前端开源项目 CDN 加速服务",
-        "href": "https://www.bootcdn.cn/"
-      },
-      {
-        "text": "【图片】 TinyPNG",
-        "title": "TinyPNG – 智能压缩您的WebP、JPEG和PNG图片",
-        "href": "https://tinify.cn/"
-      },
-      {
-        "text": "【图床】 ImageHub 图仓",
-        "title": "ImageHub - 图仓 - 公益图床，提供免费图片托管服务",
-        "href": "https://www.imagehub.cc/"
-      },
-      {
-        "text": "【图标】 Icon图标制作",
-        "title": "Icon Maker by Raycast",
-        "href": "https://ray.so/icon"
-      },
-      {
-        "text": "【音乐】 易听音乐网",
-        "title": "易听音乐网-MP3音乐免费下载,MP4下载,歌词大全,流行音乐,网络新歌",
-        "href": "https://www.eev3.com/"
-      },
-      {
-        "text": "【加速器】 瓦特工具箱(Steam++官网) - Watt Toolkit",
-        "title": "「Watt Toolkit」是一个开源跨平台的多功能 Steam 工具箱。",
-        "href": "https://steampp.net/"
-      },
-      {
-        "text": "【站点】 在线PDF工具",
-        "title": "PDF24 Tools: 免费且易于使用的在线PDF工具",
-        "href": "https://tools.pdf24.org/zh/"
-      }
-    ]
-  },
-  {
-    "updated": "2026-6-25 14:15:07",
-    "title": "Remote",
-    "tagName": "ol",
-    "items": [
-      {
-        "text": "【Job】 Jobanni",
-        "href": "https://jobanni.com/search?q=frontend"
-      },
-      {
-        "text": "【Job】 hnhiring",
-        "href": "https://hnhiring.com/"
-      },
-      {
-        "text": "【Job】 workatastartup",
-        "href": "https://www.workatastartup.com/"
-      },
-      {
-        "text": "【Job】 himalayas",
-        "href": "https://himalayas.app/jobs"
-      },
-      {
-        "text": "【Job】 Web3 Career Build",
-        "title": "构建可信的 Web3 人才高速路\r\n通过学习、实践与链上 Profile，连接优质人才与真实机会",
-        "href": "https://web3career.build/zh"
-      },
-      {
-        "text": "【Job】 Remote.co",
-        "title": "Remote Work: Jobs, Companies & Virtual Teams - Remote.co",
-        "href": "https://remote.co/"
-      },
-      {
-        "text": "【Job】 Remote Jobs",
-        "title": "Remote Jobs: Design, Marketing, Programming, Writing & More",
-        "href": "https://justremote.co/"
-      },
-      {
-        "text": "【Job】 We Work Remotely",
-        "title": "We Work Remotely: Advanced Remote Job Search\r\nThe largestjob board for remote jobs",
-        "href": "https://weworkremotely.com/"
-      },
-      {
-        "text": "【Job】 Remote Jobs | Working Nomads",
-        "title": "Get Hired for the Best Fully Remote Jobs",
-        "href": "https://www.workingnomads.com/jobs"
-      },
-      {
-        "text": "【Job】 Remotive 官网",
-        "title": "Remote Jobs in Programming, Support, Design and more",
-        "href": "https://remotive.com/"
-      },
-      {
-        "text": "【Job】 Crypto Jobs 官网",
-        "title": "Crypto Jobs: Web3 & Blockchain & Cryptocurrency Jobs list",
-        "href": "https://laborx.com/"
-      },
-      {
-        "text": "【Job】 Web3 Jobs 官网",
-        "title": "Web3 Jobs: Blockchain, Smart Contract and Crypto Jobs",
-        "href": "https://web3.career/"
-      },
-      {
-        "text": "【Job】 Cryptocurrency Jobs",
-        "title": "Cryptocurrency Jobs and Blockchain Jobs - Cryptocurrency Jobs",
-        "href": "https://cryptocurrencyjobs.co/"
-      },
-      {
-        "text": "【Job】 DeFi Jobs",
-        "title": "DeFi Jobs - Building the Future of Finance",
-        "href": "https://www.defi.jobs/"
-      },
-      {
-        "text": "【Job】 Cryptocurrency Jobs and Blockchain Jobs",
-        "href": "https://cryptojobslist.com/"
-      },
-      {
-        "text": "【职位】 DeJob 专注于Web3、远程招聘",
-        "title": "DeJob 专注于Web3、远程招聘",
-        "href": "https://dejob.ai/"
-      },
-      {
-        "text": "【职位】 Job3 官网",
-        "title": "Web3 Jobs Open To Everyone",
-        "href": "https://job3.co/"
-      },
-      {
-        "text": "【职位】 Freelancer 官网",
-        "title": "在线雇佣威客&寻找自由职业工作 | Freelancer",
-        "href": "https://www.freelancer.cn/"
-      },
-      {
-        "text": "【职位】 abetterweb3",
-        "title": "机会聚合 人才流动 abetterweb3",
-        "href": "https://abetterweb3.notion.site/"
-      },
-      {
-        "text": "【职位】 电鸭社区",
-        "title": "电鸭社区-专注远程工作招聘交流-远程工作，从电鸭开始",
-        "href": "https://eleduck.com/"
-      },
-      {
-        "text": "【攻略】 Web3 + AI 远程攻略",
-        "title": "web3+AI远程攻略（持续更新...） - 飞书云文档",
-        "href": "https://wcngrtwsafnt.feishu.cn/wiki/GYzHwA1Ctim5Xske5iScdRWDnZf"
-      },
-      {
-        "text": "【攻略】 Web3 远程工作攻略",
-        "title": "关于远程工作你想知道的都在这 - 飞书云文档",
-        "href": "https://wcngrtwsafnt.feishu.cn/wiki/Nl7rwvxypiIVa7kOXVScZLranbg"
-      }
-    ]
-  },
-  {
-    "updated": "2026-7-24 06:48:02",
-    "title": "Web3",
-    "tagName": "ul",
-    "items": [
-      {
-        "text": "【教程】 Solidity实例",
-        "title": "Solidity by Example",
-        "href": "https://solidity-by-example.org/"
-      },
-      {
-        "text": "【教程】 HackQuest 官网",
-        "title": "Web3 programming for everyone - HackQuest",
-        "href": "https://www.hackquest.io/zh-cn"
-      },
-      {
-        "text": "【教程】 Viem官网",
-        "title": "Viem · Ethereum 的 TypeScript 接口 Viem 中文文档 | 登链社区\r\n构建可靠的应用程序和库，使用与 Ethereum 接口的 轻量级、可组合 和 类型安全 模块",
-        "href": "https://learnblockchain.cn/docs/viem"
-      },
-      {
-        "text": "【社区】 登链社区 - 探索未来技术",
-        "href": "https://learnblockchain.cn/"
-      },
-      {
-        "marked": true,
-        "text": "【社区】 BinSchool Web3开发者社区",
-        "href": "https://binschool.org/"
-      },
-      {
-        "text": "【社区】 WTF Academy",
-        "title": "WTF Academy 是一个 Web3 开源大学",
-        "href": "https://www.wtf.academy/zh"
-      },
-      {
-        "text": "【平台】 AI × Web3 开源学习平台",
-        "title": "AI × Web3 开源学习平台 | AI x Web3 School",
-        "href": "https://aiweb3.school/"
-      },
-      {
-        "text": "【公开课】 公开课《区块链技术与应用》",
-        "title": "北京大学肖臻老师《区块链技术与应用》公开课",
-        "href": "https://www.bilibili.com/video/BV1Vt411X7JF?spm_id_from=333.788.videopod.episodes&vd_source=ebded8b3137534584af2d6a112cb0da6"
-      }
-    ]
-  },
-  {
-    "updated": "2026-6-25 17:15:06",
-    "title": "Vue",
-    "tagName": "ol",
-    "items": [
-      {
-        "text": "【站点】 Vue.js 官网",
-        "title": "渐进式JavaScript 框架\r\n易学易用，性能出色，适用场景丰富的 Web 前端框架。",
-        "href": "https://cn.vuejs.org/"
-      },
-      {
-        "text": "【站点】 Vue Router 官网",
-        "href": "https://router.vuejs.org/zh/"
-      },
-      {
-        "text": "【站点】 Vue CLI 官网",
-        "href": "https://cli.vuejs.org/zh/"
-      },
-      {
-        "text": "【站点】 Pinia 官网",
-        "href": "https://pinia.web3doc.top/"
-      },
-      {
-        "text": "【站点】 Vue Loader 官网",
-        "href": "https://vue-loader.vuejs.org/zh/"
-      },
-      {
-        "text": "【站点】 VueUse 中文网",
-        "title": "VueUse Vue\r\n组合式工具集\r\n基础 Vue 组合式工具的集合",
-        "href": "https://vueuse.nodejs.cn/"
-      },
-      {
-        "text": "【站点】 Vite 官网",
-        "title": "面向 Web 的构建工具\r\nVite 是一款速度极快的前端构建工具为下一代 Web 应用程序提供支持",
-        "href": "https://cn.vite.dev/"
-      },
-      {
-        "text": "【站点】 Nuxt 中文网",
-        "title": "渐进式 Web 框架\r\n使用 Nuxt 创建高质量的 Web 应用，Nuxt 是一个开源框架，它使使用 Vue.js 进行全栈开发变得直观。",
-        "href": "https://nuxt.nodejs.cn/"
-      }
-    ]
-  },
-  {
-    "updated": "2026-6-25 17:46:35",
-    "title": "React",
-    "tagName": "ol",
-    "items": [
-      {
-        "text": "【官网】 React 官方中文文档",
-        "href": "https://zh-hans.react.dev/"
-      },
-      {
-        "text": "【官网】 Redux 中文网",
-        "title": "Redux 中文网\r\n用于可预测和可维护的全局状态管理的 JS 库",
-        "href": "https://redux.nodejs.cn/"
-      },
-      {
-        "text": "【官网】 Zustand 中文网",
-        "title": "Zustand\r\nReact 状态管理\r\n小型、快速、可扩展",
-        "href": "https://zustand.nodejs.cn/"
-      },
-      {
-        "text": "【官网】 useHooks",
-        "title": "useHooks – The React Hooks Library",
-        "href": "https://usehooks.com/"
-      },
-      {
-        "text": "【官网】 Next.js 中文网",
-        "title": "Next.js - React 应用开发框架 | Next.js中文网",
-        "href": "https://www.nextjs.cn/"
-      }
-    ]
-  },
-  {
-    "updated": "2026-7-24 11:10:41",
-    "title": "JavaScript",
-    "tagName": "ol",
-    "items": [
-      {
-        "text": "【站点】 Lodash 中文网",
-        "title": "Lodash\r\n实用工具库\r\n提供一致性、模块化、高性能、以及额外功能",
-        "href": "https://lodash.nodejs.cn/"
-      },
-      {
-        "text": "【站点】 D3 中文网",
-        "title": "用于定制数据可视化的 JavaScript 库",
-        "href": "https://d3.nodejs.cn/"
-      },
-      {
-        "text": "【站点】 PixiJS 中文网",
-        "title": "HTML5 创作引擎\r\n使用最快、最灵活的 2D WebGL 渲染器创建精美的数字内容。",
-        "href": "https://pixi.nodejs.cn/"
-      },
-      {
-        "text": "【站点】 Babel 中文网",
-        "title": "Babel 是一个 JavaScript 编译器。",
-        "href": "https://babel.nodejs.cn/"
-      },
-      {
-        "text": "【站点】 Chart.js 中文网",
-        "title": "Chart.js\r\n用于现代网络的简单而灵活的 JavaScript 图表库",
-        "href": "https://chart.nodejs.cn/"
-      },
-      {
-        "text": "【站点】 Marked 中文网",
-        "href": "https://marked.nodejs.cn/"
-      },
-      {
-        "text": "【站点】 Day.js 中文网",
-        "title": "Day.js 中文网\r\n快速且体积只有 2kB 的 Moment.js 替代者，具有同样现代的 API",
-        "href": "https://day.nodejs.cn/"
-      },
-      {
-        "text": "【站点】 Milkdown 中文网",
-        "title": "一个插件驱动的框架，用于构建所见即所得的 Markdown 编辑器。",
-        "href": "https://milkdown.nodejs.cn/"
-      },
-      {
-        "text": "【站点】 clipboard.js 中文网",
-        "title": "将文本复制到剪贴板的现代方法\r\n没有 Flash。没有框架。只有 3kb gzip 压缩包",
-        "href": "https://clipboard.nodejs.cn/"
-      },
-      {
-        "text": "【站点】 Redis 中文网",
-        "href": "https://redis.nodejs.cn/"
-      },
-      {
-        "text": "【站点】 Anime.js 中文网",
-        "title": "一体化动画引擎.\r\n一个快速且灵活的 JavaScript 库。",
-        "href": "https://anime.nodejs.cn/"
-      }
-    ]
-  },
-  {
-    "updated": "2026-6-24 07:48:26",
-    "title": "小程序",
-    "tagName": "ol",
-    "items": [
-      {
-        "text": "【站点】 Taro 多端统一开发",
-        "href": "https://taro.js.org/"
-      },
-      {
-        "text": "【站点】 awesome-wechat-weapp",
-        "href": "https://github.com/justjavac/awesome-wechat-weapp"
-      },
-      {
-        "text": "【站点】 uni-app 官网",
-        "href": "https://uniapp.dcloud.net.cn/"
-      },
-      {
-        "text": "【站点】 uni-app 开发者中心",
-        "href": "https://dev.dcloud.net.cn/pages/app/list"
-      },
-      {
-        "text": "【站点】 HTML5+ API Reference",
-        "title": "HTML5+ 规范",
-        "href": "https://www.html5plus.org/doc/h5p.html"
-      },
-      {
-        "text": "【站点】 uCharts 官网",
-        "title": "uCharts - 高性能跨平台图标库\r\nPC、H5、APP、小程序、Vue、Taro",
-        "href": "https://www.ucharts.cn/v2/#/"
-      },
-      {
-        "text": "【框架】 mescroll 下拉刷新和上拉加载",
-        "title": "mescroll -- 精致的下拉刷新和上拉加载js框架",
-        "href": "https://www.mescroll.com/"
-      },
-      {
-        "text": "【插件】 image-tools - DCloud 插件市场",
-        "title": "图像转换工具，可用于图像和base64的转换",
-        "href": "https://ext.dcloud.net.cn/plugin?id=123"
-      },
-      {
-        "text": "【文章】 uni-app 实现离线打包",
-        "href": "https://blog.csdn.net/u012551928/article/details/84331339"
-      },
-      {
-        "text": "【文章】 解决gif图片只渲染一次的问题",
-        "title": "微信小程序：解决gif图片只渲染一次的问题",
-        "href": "https://www.jianshu.com/p/96f4ed883a24"
-      },
-      {
-        "text": "【文章】 uniapp富文本图片预览",
-        "href": "https://blog.csdn.net/zt199718/article/details/132555943"
       }
     ]
   }
