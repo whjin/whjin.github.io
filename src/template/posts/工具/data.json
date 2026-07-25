@@ -344,7 +344,7 @@
                 "url": "https://cdnjs.com/"
             },
             {
-                "avatar": "httpspicsum.photos/seed/tool43/100",
+                "avatar": "https://picsum.photos/seed/tool43/100",
                 "name": "CDN BootCDN",
                 "desc": "国内稳定前端静态资源CDN",
                 "url": "https://www.bootcdn.cn/"
@@ -617,7 +617,7 @@
                 "avatar": "https://picsum.photos/seed/tool88/100",
                 "name": "ChainCatcher",
                 "desc": "区块链深度资讯",
-                "url": "chaincatcher.com/"
+                "url": "https://chaincatcher.com/"
             },
             {
                 "avatar": "https://picsum.photos/seed/tool89/100",
@@ -629,19 +629,19 @@
                 "avatar": "https://picsum.photos/seed/tool90/100",
                 "name": "深潮TechFlow",
                 "desc": "区块链产业报道",
-                "url": "www.techflowpost.com/"
+                "url": "https://www.techflowpost.com/"
             },
             {
                 "avatar": "https://picsum.photos/seed/tool91/100",
                 "name": "Foresight News",
                 "desc": "Web3全球媒体",
-                "url": "foresightnews.pro/"
+                "url": "https://foresightnews.pro/"
             },
             {
                 "avatar": "https://picsum.photos/seed/tool92/100",
                 "name": "Chainlink水龙头",
                 "desc": "测试代币领取",
-                "url": "faucets.chain.link/"
+                "url": "https://faucets.chain.link/"
             },
             {
                 "avatar": "https://picsum.photos/seed/tool93/100",
@@ -656,7 +656,7 @@
                 "url": "https://learnblockchain.cn/docs/openzeppelin/"
             },
             {
-                "avatar": "httpspicsum.photos/seed/tool95/100",
+                "avatar": "https://picsum.photos/seed/tool95/100",
                 "name": "Hardhat",
                 "desc": "智能合约框架",
                 "url": "https://hardhat.org/"
@@ -665,19 +665,19 @@
                 "avatar": "https://picsum.photos/seed/tool96/100",
                 "name": "Speedrun Ethereum",
                 "desc": "合约实战教程",
-                "url": "speedrunethereum.com/"
+                "url": "https://speedrunethereum.com/"
             },
             {
                 "avatar": "https://picsum.photos/seed/tool97/100",
                 "name": "Solidity教程",
                 "desc": "Solidity中文开发文档",
-                "url": "solidity-cn.readthedocs.io/zh/develop/index.html"
+                "url": "https://solidity-cn.readthedocs.io/zh/develop/index.html"
             },
             {
                 "avatar": "https://picsum.photos/seed/tool98/100",
                 "name": "cesium中文网",
                 "desc": "三维GIS教程",
-                "url": "cesium.xin/"
+                "url": "https://cesium.xin/"
             },
             {
                 "avatar": "https://picsum.photos/seed/tool99/100",
