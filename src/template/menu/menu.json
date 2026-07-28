@@ -6,9 +6,13 @@
     "items": [
       {
         "marked": true,
-        "text": "一站式AI应用平台",
+        "text": "AI工具集",
         "title": "友链 - 一站式AI应用平台",
         "href": "src/template/viewer.html?path=友链_link&format=html"
+      },
+      {
+        "text": "讯飞绘文",
+        "href": "https://turbodesk.cgref.cn/s/5ln1rlgkrw"
       },
       {
         "text": "Loomy",
