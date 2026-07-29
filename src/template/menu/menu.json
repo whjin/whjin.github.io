@@ -11,10 +11,6 @@
         "href": "src/template/viewer.html?path=友链_link&format=html"
       },
       {
-        "text": "讯飞绘文",
-        "href": "https://turbodesk.xfyun.cn/?channelid=cakegrowth&utm=cg&cgv=5ln1rlgkrw"
-      },
-      {
         "text": "Loomy",
         "title": "Loomy-你的AI工作搭子",
         "href": "https://loomy.cgref.cn/s/59ngvmonr2"
@@ -55,9 +51,14 @@
         "href": "https://seko.cgref.cn/s/2znr3vznr7"
       },
       {
+        "marked": true,
         "text": "蛙蛙写作",
         "title": "蛙蛙写作——超级AI智能写作助手",
         "href": "https://wawawriter.cgref.cn/s/59ngw1oer2"
+      },
+      {
+        "text": "讯飞绘文",
+        "href": "https://turbodesk.xfyun.cn/?channelid=cakegrowth&utm=cg&cgv=5ln1rlgkrw"
       },
       {
         "text": "立刻MV",
