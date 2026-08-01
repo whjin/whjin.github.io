@@ -224,6 +224,12 @@
         "href": "src/template/viewer.html?path=工具_tool&format=html"
       },
       {
+        "marked": true,
+        "text": "FundScope",
+        "title": "FundScope - 专业基金持仓分析平台",
+        "href": "http://47.107.183.204/"
+      },
+      {
         "text": "whjin-Gitee.com",
         "title": "寒青 (whjin) - Gitee 码云",
         "href": "https://gitee.com/whjin"
