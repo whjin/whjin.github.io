@@ -7,8 +7,10 @@
       return `
         <a href="https://wuhuajin.com" target="_blank" rel="noopener noreferrer" title="吴华锦的个人主页">吴华锦</a>
         |&nbsp;访问
-        <span id="vercount_value_site_uv" class="count"></span>人
-        <span id="vercount_value_site_pv" class="count"></span>次
+        <span id="busuanzi_container_site_pv" style="display: inline">
+          <span id="busuanzi_value_site_uv" class="count"></span>人
+          <span id="busuanzi_value_site_pv" class="count"></span>次
+        </span>
       `;
     } else {
       return `

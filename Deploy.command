@@ -6,6 +6,11 @@ set -euo pipefail
 SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
 cd "${SCRIPT_DIR}"
 
+# 启动清屏：覆盖 Terminal 自动打印的命令路径 + shell 提示符（仅在交互终端生效）
+if [ -t 1 ]; then
+    clear
+fi
+
 # ========== 颜色定义 ==========
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
@@ -80,9 +85,9 @@ fi
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 info "当前分支：${BRANCH}"
 
-# 拉取远程更新
+# 拉取远程更新（静默，屏蔽 Already up to date / 进度条等输出）
 info "拉取远程更新..."
-git pull origin "${BRANCH}" 2>/dev/null || warn "pull 失败，跳过拉取直接提交"
+git pull --quiet origin "${BRANCH}" 2>/dev/null || warn "pull 失败，跳过拉取直接提交"
 
 git add -A
 
@@ -91,13 +96,10 @@ if ! git diff --cached --quiet; then
     CHANGED=$(git diff --cached --stat | tail -n 1)
     info "变更概况：${CHANGED}"
 
-    git commit -m "${latest_commit}"
+    git commit --quiet -m "${latest_commit}"
     info "推送到远程仓库..."
-    git push origin "${BRANCH}"
+    git push --quiet origin "${BRANCH}"
     info "提交并推送成功！"
-    echo ""
-    git log --oneline -3
-    echo ""
 else
     info "无需要提交的文件变更"
 fi
