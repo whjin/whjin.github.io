@@ -28,7 +28,7 @@
   const originalWarn = console.warn;
   console.warn = function (...args) {
     if (!shouldFilter(...args)) {
-      originalWarn.apply(console, args);
+      originalWarn?.apply(console, args);
     }
   };
 
