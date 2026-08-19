@@ -48,3 +48,12 @@
 32. 修改网页标题为动态标题，增加数据字段整体兼容处理。
 33. 增加兼容 **`Macbook`** 一键提交脚本
 
+# 兼容处理部署脚本
+
+```bash
+git pull --rebase origin main
+
+git rebase --continue
+
+git push origin main
+```
