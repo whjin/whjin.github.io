@@ -3,3 +3,16 @@
 node_modules
 pnpm-lock.yaml
 .git
+
+dist
+dist-ssr
+*.local
+.DS_Store
+._*
+*.log
+*.tsbuildinfo
+Thumbs.db
+*.tmp
+*.bak
+*.swp
+*.swo
