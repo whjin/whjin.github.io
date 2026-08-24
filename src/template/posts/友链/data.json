@@ -1,302 +1,314 @@
 {
-    "categoryConfig": {
-        "技术": "#007bff",
-        "发电": "#8b5cf6",
-        "生活": "#fd5a58",
-        "设计": "#10b981",
-        "产品": "#f59e0b"
-    },
-    "recommend": {
-        "title": "推荐",
-        "subtitle": "一站式AI应用平台",
-        "list": [
-            {
-                "avatar": "https://oss.cakegrowth.cn/public/product/2026/07/6s46zl01000djxc4q9g5blj3f3bv6oau.webp",
-                "name": "Loomy",
-                "desc": "Loomy-你的AI工作搭子",
-                "url": "https://loomy.cgref.cn/s/59ngvmonr2"
-            },
-            {
-                "avatar": "https://oss.cakegrowth.cn/public/product/2026/05/lh3px401000diu3kvu0grzo4nqh8uk30.webp",
-                "name": "潮际好麦",
-                "desc": "潮际好麦，专业级AI电商营销内容创作平台",
-                "url": "https://chaojihaomai.cgref.cn/s/dqndm2rn2z"
-            },
-            {
-                "avatar": "https://laper.ai/logo_png_public.png",
-                "name": "Laper",
-                "desc": "剧作软件的进化终点。以剧为本。在 Laper 中协作制片。",
-                "url": "https://laper.cgref.cn/s/zdkjq78n1r"
-            },
-            {
-                "avatar": "//s1.hdslb.com/bfs/static/jinkela/ai-tool/icon.png",
-                "name": "updream官网",
-                "desc": "updream官网-AI视频创作助手",
-                "url": "https://updream.cgref.cn/s/2znrpo9er7"
-            },
-            {
-                "avatar": "https://www.xingliu.art/favicon.ico",
-                "name": "星流",
-                "desc": "星流 - 新一代设计Agent",
-                "url": "https://xingliu.cgref.cn/s/ogewx7wkp2"
-            },
-            {
-                "avatar": "https://atoms.dev/favicon.ico",
-                "name": "Atoms",
-                "desc": "Atoms：用 AI 构建网站与应用，无需编码",
-                "url": "https://atoms.cgref.cn/s/20epqjjkw1"
-            },
-            {
-                "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/164qw2r1000di3tkojo3bvi7b10pfewm.png",
-                "name": "火山引擎",
-                "desc": "方舟 Agent Plan",
-                "url": "https://volcengine.cgref.cn/s/59ngwxoer2"
-            },
-            {
-                "avatar": "https://seko.sensetime.com/logo-48x48.svg",
-                "name": "Seko",
-                "desc": "Seko - World Class AI Video Generation Platform",
-                "url": "https://seko.cgref.cn/s/2znr3vznr7"
-            },
-            {
-                "avatar": "https://wawawriter.com/app/assets/wawa-qwUtEkkq.svg",
-                "name": "蛙蛙写作",
-                "desc": "蛙蛙写作——超级AI智能写作助手",
-                "url": "https://wawawriter.cgref.cn/s/59ngw1oer2"
-            },
-            {
-                "avatar": "https://oss.cakegrowth.cn/public/product/2026/07/qcqzei01000dk4vx5v25pva8ez2vhtc8.webp",
-                "name": "vibeknow",
-                "desc": "首页 | Vibeknow – 全球首个AI知识视频创作平台",
-                "url": "https://vibeknow.cgref.cn/s/4ony2gwejx"
-            },
-            {
-                "avatar": "https://oss.cakegrowth.cn/public/product/2026/07/wuu1lm01000dk9y03kh73xao0run6ecu.webp",
-                "name": "讯飞绘文",
-                "url": "https://turbodesk.cgref.cn/s/5ln1rlgkrw"
-            },
-            {
-                "avatar": "https://oss.cakegrowth.cn/public/product/2026/06/1nqhrdg1000dj68m7slix3g42tu6n6oy.webp",
-                "name": "立刻MV",
-                "desc": "立刻MV（LickMV） - AI 音乐视频生成器与 MV 创作工具",
-                "url": "https://lickmv.cgref.cn/s/rpe3j8jk05"
-            },
-            {
-                "avatar": "https://oss.cakegrowth.cn/public/product/2026/07/6s46zl01000djxcdot8ri2w3i2kt6pke.webp",
-                "name": "切问学术",
-                "desc": "切问学术搜索 - AI 文献发现与深度检索",
-                "url": "https://qiewenpaper.cgref.cn/s/41evw43kv8"
-            },
-            {
-                "avatar": "https://oss.cakegrowth.cn/public/product/2026/07/3fsfc301000djxbtunu24o53nr9efoxr.webp",
-                "name": "二狗PPT",
-                "desc": "二狗PPT - DeepSeek驱动的AI PPT生成器｜国企汇报·乙方方案·无AI痕迹",
-                "url": "https://2dogppt.cgref.cn/s/rpe3j29k05"
-            },
-            {
-                "avatar": "https://www.cappt.cc/favicon.ico",
-                "name": "咔片",
-                "desc": "咔片PPT-AI一键生成PPT-PPT在线智能制作网站",
-                "url": "https://cappt.cgref.cn/s/xpn8zrznzw"
-            },
-            {
-                "avatar": "https://oss.cakegrowth.cn/public/product/2026/05/p67q3901000dij3oz5c1gns590cvu22e.png",
-                "name": "LiblibAI",
-                "desc": "LiblibAI-哩布哩布AI - 中国领先的AI创作平台",
-                "url": "https://www.liblib.art/?sourceid=005904&utm=cg&cgv=4onyr06kjx"
-            },
-            {
-                "avatar": "https://www.liblib.tv/favicon.ico",
-                "name": "LibTV",
-                "desc": "LibTV - 专业视频创作工具",
-                "url": "https://libtv.cgref.cn/s/j7n63dqn1g"
-            },
-            {
-                "avatar": "https://images.modao.cc/images/favicon.ico",
-                "name": "墨刀AI",
-                "desc": "墨刀AI - 激发无限创造力",
-                "url": "https://modao.cgref.cn/s/5ln1o0mkrw"
-            },
-            {
-                "avatar": "https://logo.wondercv.com/favicon.ico",
-                "name": "超级简历WonderCV",
-                "desc": "超级简历WonderCV - AI智能简历制作工具,HR推荐专业中英文简历模板免费下载",
-                "url": "https://wondercv.cgref.cn/s/50k9g23ng6"
-            },
-            {
-                "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/1m56gzf1000di127lhoc4yl1b1xnxgcb.webp",
-                "name": "UP 简历",
-                "desc": "AI简历生成在线制作工具_简历模板免费下载使用-UP简历",
-                "url": "https://upcv.cgref.cn/s/1zn5mdykqm"
-            },
-            {
-                "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/1nakky01000di0dqcuoyrci2rb0vdf56.webp",
-                "name": "讯飞智作",
-                "desc": "讯飞智作-AI虚拟数字人视频制作-一键创作口播视频-数字分身定制",
-                "url": "https://xfzhizuo.cgref.cn/s/rpexmw9k90"
-            },
-            {
-                "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/4tbldy01000dhypafexwvf6692lj4vxd.webp",
-                "name": "音述AI",
-                "desc": "音述 - 全球前沿专业级中文AI音乐创作平台 | 永久免费在线AI写歌 | 音述AI音乐社区",
-                "url": "https://yinshu.cgref.cn/s/9qyk4xoe87"
-            },
-            {
-                "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/1xcsvvd1000dhxttpihimlr47g82gsiq.webp",
-                "name": "SpeedAI科研小助手",
-                "desc": "SpeedAI科研小助手【官网】- AI降重降AI率 | 知网维普万方",
-                "url": "https://speedai.cgref.cn/s/q50k978ng6"
-            },
-            {
-                "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/1xcsvvd1000dhxmd41lktbo3ij9lxaxb.png",
-                "name": "白日梦AI",
-                "desc": "白日梦AI-领先的AI视频创作类AIGC创作平台",
-                "url": "https://aibrm.cgref.cn/s/l41evd6ev8"
-            },
-            {
-                "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/1wrrdrl1000dhrpaaoxvbs6dg5q7f29u.webp",
-                "name": "AstronClaw",
-                "desc": "讯飞星辰Agent平台 - 一站式智能体开发平台",
-                "url": "https://astron-claw.cgref.cn/s/20epq01kw1"
-            },
-            {
-                "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/1mnu9d61000dhnooxt9vxmn7gxdmg3hn.webp",
-                "name": "AiPPT插件",
-                "desc": "AiPPT 插件-AI智能PPT制作软件，一键生成/美化/排版，高效PPT工具",
-                "url": "https://aippt-plugin.cgref.cn/s/3rpe3p9k05"
-            },
-            {
-                "avatar": "https://www.islide.cc/favicon.ico",
-                "name": "iSlide PPT",
-                "desc": "iSlide- 让PPT设计简单起来 | PPT模板下载平台",
-                "url": "https://islide.cgref.cn/s/dp3kqd7eol"
-            },
-            {
-                "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/1mnu9d61000dhj6u79bqap81fzyigk2f.jpeg",
-                "name": "沁言学术",
-                "desc": "学术超级智能体",
-                "url": "https://qinyanai.cgref.cn/s/rpexmw3k90"
-            },
-            {
-                "avatar": "https://oss.cakegrowth.cn/public/product/2026/03/1b0hko81000dhg0oniyq2la16ima2auh.png",
-                "name": "爱派AiPy",
-                "desc": "AiPy，超级AI牛马智能体工厂，爱派AiPy软件官网",
-                "url": "https://aipyaipy.cgref.cn/s/3mnzz45no1"
-            },
-            {
-                "avatar": "https://oss.cakegrowth.cn/public/product/2026/03/1b0hko81000dhfui1jw14zikq0rewpqf.webp",
-                "name": "码上飞",
-                "desc": "码上飞 - 说中文，做应用 | AI生成微信小程序/鸿蒙/APP/H5网站",
-                "url": "https://codeflying.cgref.cn/s/59ngw0xer2"
-            },
-            {
-                "avatar": "https://oss.cakegrowth.cn/public/product/2026/01/1hc9b211000dfvp0q0ifgg9400927860.png",
-                "name": "01Agent",
-                "desc": "01Agent - 会协作、能执行、可交付的 AI 创作智能体",
-                "url": "https://01agent.cgref.cn/s/1oe7l5pn23"
-            }
-        ]
-    },
-    "powering": {
-        "title": "正在发电",
-        "subtitle": "在爱发电中赞助博主的朋友们",
-        "list": [
-            {
-                "category": "技术",
-                "cover": "https://picsum.photos/seed/caodong/400/300",
-                "avatar": "https://picsum.photos/seed/caodong-avatar/100",
-                "name": "草东日记",
-                "desc": "独立思考，勿乱引导",
-                "url": "https://ifdian.net/a/whjin"
-            },
-            {
-                "category": "技术",
-                "cover": "https://picsum.photos/seed/adil/400/300",
-                "avatar": "https://picsum.photos/seed/adil-avatar/100",
-                "name": "Adil",
-                "desc": "BW/HANA顾问，BI工程师，数据分析",
-                "url": "https://ifdian.net/a/whjin"
-            },
-            {
-                "category": "技术",
-                "cover": "https://picsum.photos/seed/haoup/400/300",
-                "avatar": "https://picsum.photos/seed/haoup-avatar/100",
-                "name": "HaoUp",
-                "desc": "学习网络知识、积累兴趣的地方",
-                "url": "https://ifdian.net/a/whjin/haoup"
-            },
-            {
-                "category": "技术",
-                "cover": "https://picsum.photos/seed/jizhi/400/300",
-                "avatar": "https://picsum.photos/seed/jizhi-avatar/100",
-                "name": "极致本源",
-                "desc": "一个 Key 接入 200+ 主流 API",
-                "url": "https://ifdian.net/a/whjin/jizhi"
-            },
-            {
-                "category": "技术",
-                "cover": "https://picsum.photos/seed/mystic/400/300",
-                "avatar": "https://picsum.photos/seed/mystic-avatar/100",
-                "name": "MysticStars",
-                "desc": "Discover Infinity",
-                "url": "https://ifdian.net/a/whjin/mystic"
-            },
-            {
-                "category": "技术",
-                "cover": "https://picsum.photos/seed/tempmail/400",
-                "avatar": "https://picsum.photos/seed/tempmail-avatar/100",
-                "name": "Temp Mail",
-                "desc": "你的临时电子邮件地址",
-                "url": "https://ifdian.net/a/whjin/tempmail"
-            },
-            {
-                "category": "技术",
-                "cover": "https://picsum.photos/seed/haozhuji/400/300",
-                "avatar": "https://picsum.photos/seed/haozhuji-avatar/100",
-                "name": "好主机",
-                "desc": "国内外虚拟主机",
-                "url": "https://ifdian.net/a/whjin/haozhuji"
-            },
-            {
-                "category": "发电",
-                "cover": "https://picsum.photos/seed/diyi/400/300",
-                "avatar": "https://picsum.photos/seed/diyi-avatar/100",
-                "name": "狄伊",
-                "desc": "春至花如锦·夏近叶成帷",
-                "url": "https://ifdian.net/a/whjin/diyi"
-            },
-            {
-                "category": "技术",
-                "cover": "https://picsum.photos/seed/webfem/400/300",
-                "avatar": "https://picsum.photos/seed/webfem-avatar/100",
-                "name": "webfem",
-                "desc": "做有价值的博客",
-                "url": "https://ifdian.net/a/whjin/webfem"
-            },
-            {
-                "category": "生活",
-                "cover": "https://picsum.photos/seed/lanyiyun/400/300",
-                "avatar": "https://picsum.photos/seed/lanyiyun-avatar/100",
-                "name": "蓝易云CDN",
-                "desc": "高防CDN 全球安全加速服务",
-                "url": "https://ifdian.net/a/whjin/lanyiyun"
-            },
-            {
-                "category": "生活",
-                "cover": "https://picsum.photos/seed/xifeng/400/300",
-                "avatar": "https://picsum.photos/seed/xifeng-avatar/100",
-                "name": "西风往事",
-                "desc": "永远相信 美好的事情即将发生",
-                "url": "https://ifdian.net/a/whjin/xifeng"
-            },
-            {
-                "category": "生活",
-                "cover": "https://picsum.photos/seed/blogagg/400/300",
-                "avatar": "https://picsum.photos/seed/blogagg-avatar/100",
-                "name": "中文独立博主聚合",
-                "desc": "又一个博客聚合站",
-                "url": "https://ifdian.net/a/whjin/blogagg"
-            }
-        ]
-    }
+  "categoryConfig": {
+    "技术": "#007bff",
+    "发电": "#8b5cf6",
+    "生活": "#fd5a58",
+    "设计": "#10b981",
+    "产品": "#f59e0b"
+  },
+  "recommend": {
+    "title": "推荐",
+    "subtitle": "一站式AI应用平台",
+    "list": [
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/08/19ylgtw1000dkunrvef59br87h5nu60f.gif",
+        "name": "Lovart 中文版",
+        "desc": "Lovart 中文版- 新一代设计 Agent",
+        "url": "https://lovart.cgref.cn/s/2znrl36nr7"
+      },
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/07/6s46zl01000djxc4q9g5blj3f3bv6oau.webp",
+        "name": "Loomy",
+        "desc": "Loomy-你的AI工作搭子",
+        "url": "https://loomy.cgref.cn/s/59ngvmonr2"
+      },
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/05/lh3px401000diu3kvu0grzo4nqh8uk30.webp",
+        "name": "潮际好麦",
+        "desc": "潮际好麦，专业级AI电商营销内容创作平台",
+        "url": "https://chaojihaomai.cgref.cn/s/dqndm2rn2z"
+      },
+      {
+        "avatar": "https://laper.ai/logo_png_public.png",
+        "name": "Laper",
+        "desc": "剧作软件的进化终点。以剧为本。在 Laper 中协作制片。",
+        "url": "https://laper.cgref.cn/s/zdkjq78n1r"
+      },
+      {
+        "avatar": "//s1.hdslb.com/bfs/static/jinkela/ai-tool/icon.png",
+        "name": "updream官网",
+        "desc": "updream官网-AI视频创作助手",
+        "url": "https://updream.cgref.cn/s/2znrpo9er7"
+      },
+      {
+        "avatar": "https://www.xingliu.art/favicon.ico",
+        "name": "星流",
+        "desc": "星流 - 新一代设计Agent",
+        "url": "https://xingliu.cgref.cn/s/ogewx7wkp2"
+      },
+      {
+        "avatar": "https://atoms.dev/favicon.ico",
+        "name": "Atoms",
+        "desc": "Atoms：用 AI 构建网站与应用，无需编码",
+        "url": "https://atoms.cgref.cn/s/20epqjjkw1"
+      },
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/164qw2r1000di3tkojo3bvi7b10pfewm.png",
+        "name": "火山引擎",
+        "desc": "方舟 Agent Plan",
+        "url": "https://volcengine.cgref.cn/s/59ngwxoer2"
+      },
+      {
+        "avatar": "https://seko.sensetime.com/logo-48x48.svg",
+        "name": "Seko",
+        "desc": "Seko - World Class AI Video Generation Platform",
+        "url": "https://seko.cgref.cn/s/2znr3vznr7"
+      },
+      {
+        "avatar": "https://wawawriter.com/app/assets/wawa-qwUtEkkq.svg",
+        "name": "蛙蛙写作",
+        "desc": "蛙蛙写作——超级AI智能写作助手",
+        "url": "https://wawawriter.cgref.cn/s/59ngw1oer2"
+      },
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/08/42k5p201000dkrvwv6ho6ak2a03sgwg0.webp",
+        "name": "SkildArt",
+        "desc": "SkildArt 思可达 - 全球电商商家的AI视觉增长引擎",
+        "url": "https://skildart.cgref.cn/s/5ln1lo5krw"
+      },
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/07/qcqzei01000dk4vx5v25pva8ez2vhtc8.webp",
+        "name": "vibeknow",
+        "desc": "首页 | Vibeknow – 全球首个AI知识视频创作平台",
+        "url": "https://vibeknow.cgref.cn/s/4ony2gwejx"
+      },
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/07/wuu1lm01000dk9y03kh73xao0run6ecu.webp",
+        "name": "讯飞绘文",
+        "url": "https://turbodesk.cgref.cn/s/5ln1rlgkrw"
+      },
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/06/1nqhrdg1000dj68m7slix3g42tu6n6oy.webp",
+        "name": "立刻MV",
+        "desc": "立刻MV（LickMV） - AI 音乐视频生成器与 MV 创作工具",
+        "url": "https://lickmv.cgref.cn/s/rpe3j8jk05"
+      },
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/07/6s46zl01000djxcdot8ri2w3i2kt6pke.webp",
+        "name": "切问学术",
+        "desc": "切问学术搜索 - AI 文献发现与深度检索",
+        "url": "https://qiewenpaper.cgref.cn/s/41evw43kv8"
+      },
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/07/3fsfc301000djxbtunu24o53nr9efoxr.webp",
+        "name": "二狗PPT",
+        "desc": "二狗PPT - DeepSeek驱动的AI PPT生成器｜国企汇报·乙方方案·无AI痕迹",
+        "url": "https://2dogppt.cgref.cn/s/rpe3j29k05"
+      },
+      {
+        "avatar": "https://www.cappt.cc/favicon.ico",
+        "name": "咔片",
+        "desc": "咔片PPT-AI一键生成PPT-PPT在线智能制作网站",
+        "url": "https://cappt.cgref.cn/s/xpn8zrznzw"
+      },
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/05/p67q3901000dij3oz5c1gns590cvu22e.png",
+        "name": "LiblibAI",
+        "desc": "LiblibAI-哩布哩布AI - 中国领先的AI创作平台",
+        "url": "https://www.liblib.art/?sourceid=005904&utm=cg&cgv=4onyr06kjx"
+      },
+      {
+        "avatar": "https://www.liblib.tv/favicon.ico",
+        "name": "LibTV",
+        "desc": "LibTV - 专业视频创作工具",
+        "url": "https://libtv.cgref.cn/s/j7n63dqn1g"
+      },
+      {
+        "avatar": "https://images.modao.cc/images/favicon.ico",
+        "name": "墨刀AI",
+        "desc": "墨刀AI - 激发无限创造力",
+        "url": "https://modao.cgref.cn/s/5ln1o0mkrw"
+      },
+      {
+        "avatar": "https://logo.wondercv.com/favicon.ico",
+        "name": "超级简历WonderCV",
+        "desc": "超级简历WonderCV - AI智能简历制作工具,HR推荐专业中英文简历模板免费下载",
+        "url": "https://wondercv.cgref.cn/s/50k9g23ng6"
+      },
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/1m56gzf1000di127lhoc4yl1b1xnxgcb.webp",
+        "name": "UP 简历",
+        "desc": "AI简历生成在线制作工具_简历模板免费下载使用-UP简历",
+        "url": "https://upcv.cgref.cn/s/1zn5mdykqm"
+      },
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/1nakky01000di0dqcuoyrci2rb0vdf56.webp",
+        "name": "讯飞智作",
+        "desc": "讯飞智作-AI虚拟数字人视频制作-一键创作口播视频-数字分身定制",
+        "url": "https://xfzhizuo.cgref.cn/s/rpexmw9k90"
+      },
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/4tbldy01000dhypafexwvf6692lj4vxd.webp",
+        "name": "音述AI",
+        "desc": "音述 - 全球前沿专业级中文AI音乐创作平台 | 永久免费在线AI写歌 | 音述AI音乐社区",
+        "url": "https://yinshu.cgref.cn/s/9qyk4xoe87"
+      },
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/1xcsvvd1000dhxttpihimlr47g82gsiq.webp",
+        "name": "SpeedAI科研小助手",
+        "desc": "SpeedAI科研小助手【官网】- AI降重降AI率 | 知网维普万方",
+        "url": "https://speedai.cgref.cn/s/q50k978ng6"
+      },
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/1xcsvvd1000dhxmd41lktbo3ij9lxaxb.png",
+        "name": "白日梦AI",
+        "desc": "白日梦AI-领先的AI视频创作类AIGC创作平台",
+        "url": "https://aibrm.cgref.cn/s/l41evd6ev8"
+      },
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/1wrrdrl1000dhrpaaoxvbs6dg5q7f29u.webp",
+        "name": "AstronClaw",
+        "desc": "讯飞星辰Agent平台 - 一站式智能体开发平台",
+        "url": "https://astron-claw.cgref.cn/s/20epq01kw1"
+      },
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/1mnu9d61000dhnooxt9vxmn7gxdmg3hn.webp",
+        "name": "AiPPT插件",
+        "desc": "AiPPT 插件-AI智能PPT制作软件，一键生成/美化/排版，高效PPT工具",
+        "url": "https://aippt-plugin.cgref.cn/s/3rpe3p9k05"
+      },
+      {
+        "avatar": "https://www.islide.cc/favicon.ico",
+        "name": "iSlide PPT",
+        "desc": "iSlide- 让PPT设计简单起来 | PPT模板下载平台",
+        "url": "https://islide.cgref.cn/s/dp3kqd7eol"
+      },
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/1mnu9d61000dhj6u79bqap81fzyigk2f.jpeg",
+        "name": "沁言学术",
+        "desc": "学术超级智能体",
+        "url": "https://qinyanai.cgref.cn/s/rpexmw3k90"
+      },
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/03/1b0hko81000dhg0oniyq2la16ima2auh.png",
+        "name": "爱派AiPy",
+        "desc": "AiPy，超级AI牛马智能体工厂，爱派AiPy软件官网",
+        "url": "https://aipyaipy.cgref.cn/s/3mnzz45no1"
+      },
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/03/1b0hko81000dhfui1jw14zikq0rewpqf.webp",
+        "name": "码上飞",
+        "desc": "码上飞 - 说中文，做应用 | AI生成微信小程序/鸿蒙/APP/H5网站",
+        "url": "https://codeflying.cgref.cn/s/59ngw0xer2"
+      },
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/01/1hc9b211000dfvp0q0ifgg9400927860.png",
+        "name": "01Agent",
+        "desc": "01Agent - 会协作、能执行、可交付的 AI 创作智能体",
+        "url": "https://01agent.cgref.cn/s/1oe7l5pn23"
+      }
+    ]
+  },
+  "powering": {
+    "title": "正在发电",
+    "subtitle": "在爱发电中赞助博主的朋友们",
+    "list": [
+      {
+        "category": "技术",
+        "cover": "https://picsum.photos/seed/caodong/400/300",
+        "avatar": "https://picsum.photos/seed/caodong-avatar/100",
+        "name": "草东日记",
+        "desc": "独立思考，勿乱引导",
+        "url": "https://ifdian.net/a/whjin"
+      },
+      {
+        "category": "技术",
+        "cover": "https://picsum.photos/seed/adil/400/300",
+        "avatar": "https://picsum.photos/seed/adil-avatar/100",
+        "name": "Adil",
+        "desc": "BW/HANA顾问，BI工程师，数据分析",
+        "url": "https://ifdian.net/a/whjin"
+      },
+      {
+        "category": "技术",
+        "cover": "https://picsum.photos/seed/haoup/400/300",
+        "avatar": "https://picsum.photos/seed/haoup-avatar/100",
+        "name": "HaoUp",
+        "desc": "学习网络知识、积累兴趣的地方",
+        "url": "https://ifdian.net/a/whjin/haoup"
+      },
+      {
+        "category": "技术",
+        "cover": "https://picsum.photos/seed/jizhi/400/300",
+        "avatar": "https://picsum.photos/seed/jizhi-avatar/100",
+        "name": "极致本源",
+        "desc": "一个 Key 接入 200+ 主流 API",
+        "url": "https://ifdian.net/a/whjin/jizhi"
+      },
+      {
+        "category": "技术",
+        "cover": "https://picsum.photos/seed/mystic/400/300",
+        "avatar": "https://picsum.photos/seed/mystic-avatar/100",
+        "name": "MysticStars",
+        "desc": "Discover Infinity",
+        "url": "https://ifdian.net/a/whjin/mystic"
+      },
+      {
+        "category": "技术",
+        "cover": "https://picsum.photos/seed/tempmail/400",
+        "avatar": "https://picsum.photos/seed/tempmail-avatar/100",
+        "name": "Temp Mail",
+        "desc": "你的临时电子邮件地址",
+        "url": "https://ifdian.net/a/whjin/tempmail"
+      },
+      {
+        "category": "技术",
+        "cover": "https://picsum.photos/seed/haozhuji/400/300",
+        "avatar": "https://picsum.photos/seed/haozhuji-avatar/100",
+        "name": "好主机",
+        "desc": "国内外虚拟主机",
+        "url": "https://ifdian.net/a/whjin/haozhuji"
+      },
+      {
+        "category": "发电",
+        "cover": "https://picsum.photos/seed/diyi/400/300",
+        "avatar": "https://picsum.photos/seed/diyi-avatar/100",
+        "name": "狄伊",
+        "desc": "春至花如锦·夏近叶成帷",
+        "url": "https://ifdian.net/a/whjin/diyi"
+      },
+      {
+        "category": "技术",
+        "cover": "https://picsum.photos/seed/webfem/400/300",
+        "avatar": "https://picsum.photos/seed/webfem-avatar/100",
+        "name": "webfem",
+        "desc": "做有价值的博客",
+        "url": "https://ifdian.net/a/whjin/webfem"
+      },
+      {
+        "category": "生活",
+        "cover": "https://picsum.photos/seed/lanyiyun/400/300",
+        "avatar": "https://picsum.photos/seed/lanyiyun-avatar/100",
+        "name": "蓝易云CDN",
+        "desc": "高防CDN 全球安全加速服务",
+        "url": "https://ifdian.net/a/whjin/lanyiyun"
+      },
+      {
+        "category": "生活",
+        "cover": "https://picsum.photos/seed/xifeng/400/300",
+        "avatar": "https://picsum.photos/seed/xifeng-avatar/100",
+        "name": "西风往事",
+        "desc": "永远相信 美好的事情即将发生",
+        "url": "https://ifdian.net/a/whjin/xifeng"
+      },
+      {
+        "category": "生活",
+        "cover": "https://picsum.photos/seed/blogagg/400/300",
+        "avatar": "https://picsum.photos/seed/blogagg-avatar/100",
+        "name": "中文独立博主聚合",
+        "desc": "又一个博客聚合站",
+        "url": "https://ifdian.net/a/whjin/blogagg"
+      }
+    ]
+  }
 }
