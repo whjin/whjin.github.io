@@ -110,11 +110,61 @@ if [ -t 0 ]; then
     read -n 1 -s -t 3 any_key || true
 fi
 
-# 判断终端类型执行关闭窗口
-if [[ "${TERM_PROGRAM:-}" == "Apple_Terminal" ]]; then
-    osascript -e 'tell application "Terminal" to close front window' 2>/dev/null || true
-elif [[ "${TERM_PROGRAM:-}" == "iTerm2" ]]; then
-    osascript -e 'tell application "iTerm2" to close current window of front terminal' 2>/dev/null || true
+# ========== 5. 只关闭当前脚本所在的终端窗口 ==========
+# 通过当前会话的 tty（如 /dev/ttys004）精确匹配窗口并关闭。
+# 不要再用 "close front window"——在多窗口下它会关闭"当前最前"的窗口，
+# 一旦焦点在用户原来的终端上，就会把原来的终端一起误关掉。
+MY_TTY=$(tty 2>/dev/null || true)
+
+if [[ -n "${MY_TTY}" && -e "${MY_TTY}" ]]; then
+    if [[ "${TERM_PROGRAM:-}" == "Apple_Terminal" ]]; then
+        # Apple 终端：遍历所有窗口/标签，只关闭 tty 匹配到的那一个窗口
+        osascript - "${MY_TTY}" 2>/dev/null <<'APPLESCRIPT' || true
+on run argv
+    set targetTty to item 1 of argv
+    tell application "Terminal"
+        set foundWin to false
+        repeat with w in windows
+            repeat with t in tabs of w
+                try
+                    if (tty of t) is targetTty then
+                        close w
+                        set foundWin to true
+                        exit repeat
+                    end if
+                end try
+            end repeat
+            if foundWin then exit repeat
+        end repeat
+    end tell
+end run
+APPLESCRIPT
+    elif [[ "${TERM_PROGRAM:-}" == "iTerm2" ]]; then
+        # iTerm2：遍历所有窗口/标签/会话，只关闭 tty 匹配到的那一个窗口
+        osascript - "${MY_TTY}" 2>/dev/null <<'APPLESCRIPT' || true
+on run argv
+    set targetTty to item 1 of argv
+    tell application "iTerm2"
+        set foundWin to false
+        repeat with w in windows
+            repeat with t in tabs of w
+                repeat with s in sessions of t
+                    try
+                        if (tty of s) is targetTty then
+                            close w
+                            set foundWin to true
+                            exit repeat
+                        end if
+                    end try
+                end repeat
+                if foundWin then exit repeat
+            end repeat
+            if foundWin then exit repeat
+        end repeat
+    end tell
+end run
+APPLESCRIPT
+    fi
 fi
 
 exit 0
