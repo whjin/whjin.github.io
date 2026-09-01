@@ -63,7 +63,7 @@
 63. [Sequelize中文网](https://sequelize.nodejs.cn/)
 64. [正则 Regex Tester](https://www.regexpal.com/)
 65. [正则 Regulex](<https://jex.im/regulex/#!flags=&re=%5E(a%7Cb)*%3F%24>)
-66. [随机图片数据](https://picsum.photos/)
+66. [随机图片数据](https://loremflickr.com/400/300/flower)
 67. [接口大全](https://www.free-api.com/)
 68. [免费API - 提供免费接口调用平台](https://api.aa1.cn/)
 69. [API 设计、开发、测试一体化协作平台](https://apifox.com/)

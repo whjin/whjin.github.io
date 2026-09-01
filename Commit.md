@@ -1,1 +1,1 @@
-2026-08-28 09:11:55 menu: 新增AniShort菜单
+2026-09-01 08:05:22 doc: 修改合集中的随机图片数据API：loremflickr.com

@@ -26,8 +26,8 @@
     }
     return `scrollPosition_${pathPart}`;
   }
-  const defaultAvatar = 'https://picsum.photos/seed/jizhi-avatar/100';
-  const defaultCover = 'https://picsum.photos/seed/jizhi/400/300';
+  const defaultAvatar = 'https://loremflickr.com/100/100/city';
+  const defaultCover = 'https://loremflickr.com/400/300/city';
   const renderModes = {
     recommend: {
       gridClass: 'recommend-grid',
