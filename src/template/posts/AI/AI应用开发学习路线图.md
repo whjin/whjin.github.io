@@ -1,48 +1,5 @@
 # 全栈开发 + AI 应用开发完整学习路线图
 
-> 📅 最后更新：2025年  
-> 🎯 目标：培养具备全栈工程能力与 AI 应用开发经验的复合型人才  
-> ⏱️ 预计学习周期：6-12 个月（根据基础调整）
-
----
-
-## 📋 目录
-
-- [一、产品开发领域与技术栈](#一产品开发领域与技术栈)
-- [二、核心能力体系](#二核心能力体系)
-- [三、分阶段学习路线](#三分阶段学习路线)
-- [四、优质学习资源汇总](#四优质学习资源汇总)
-- [五、实战项目建议](#五实战项目建议)
-- [六、持续学习与职业发展](#六持续学习与职业发展)
-
----
-
-## 一、产品开发领域与技术栈
-
-### 1.1 智能内容创作平台
-
-**典型产品**：AI 写作助手、代码生成工具、图像/视频生成平台
-
-**核心技术栈**：
-
-- **前端**：React/Vue + TypeScript, Monaco Editor（代码编辑器）
-- **后端**：Node.js/Python FastAPI
-- **AI**：OpenAI API, Stable Diffusion, DALL-E 3
-- **存储**：S3/OSS（媒体文件）, PostgreSQL（用户数据）
-
-**优秀开源项目**：
-
-- [LangChain](https://github.com/langchain-ai/langchain) - LLM 应用开发框架
-- [Stable Diffusion WebUI](https://github.com/AUTOMATIC1111/stable-diffusion-webui) - 图像生成界面
-- [Codeium](https://github.com/Exafunction/codeium) - AI 代码补全
-
-**推荐学习资源**：
-
-- 📚 [Building Generative AI Applications with Gradio](https://www.deeplearning.ai/short-courses/building-generative-ai-applications-with-gradio/) - DeepLearning.AI
-- 📝 [The Rise and Potential of Large Language Model Based Agents](https://arxiv.org/abs/2305.14497) - 论文
-
----
-
 ### 1.2 企业级智能应用
 
 **典型产品**：智能客服、文档处理系统、业务流程自动化
