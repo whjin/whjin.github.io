@@ -5,65 +5,65 @@
         "mode": "recommend",
         "list": [
             {
-                "avatar": "https://loremflickr.com/100/100/lodash",
+                "avatar": "https://picsum.photos/seed/Lodash中文网/100",
                 "name": "Lodash中文网",
                 "desc": "Lodash\r\n实用工具库\r\n提供一致性、模块化、高性能、以及额外功能",
                 "url": "https://lodash.nodejs.cn/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/d3",
+                "avatar": "https://picsum.photos/seed/D3中文网/100",
                 "name": "D3中文网",
                 "desc": "用于定制数据可视化的 JavaScript 库",
                 "url": "https://d3.nodejs.cn/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/pixijs",
+                "avatar": "https://picsum.photos/seed/PixiJS中文网/100",
                 "name": "PixiJS中文网",
                 "desc": "HTML5 创作引擎\r\n使用最快、最灵活的 2D WebGL 渲染器创建精美的数字内容。",
                 "url": "https://pixi.nodejs.cn/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/babel",
+                "avatar": "https://picsum.photos/seed/Babel中文网/100",
                 "name": "Babel中文网",
                 "desc": "Babel 是一个 JavaScript 编译器。",
                 "url": "https://babel.nodejs.cn/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/chartjs",
+                "avatar": "https://picsum.photos/seed/Chart.js中文网/100",
                 "name": "Chart.js中文网",
                 "desc": "Chart.js\r\n用于现代网络的简单而灵活的 JavaScript 图表库",
                 "url": "shturl.cc/gLpXiKeZNQNonO"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/marked",
+                "avatar": "https://picsum.photos/seed/Marked中文网/100",
                 "name": "Marked中文网",
                 "url": "https://marked.nodejs.cn/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/dayjs",
+                "avatar": "https://picsum.photos/seed/Day.js中文网/100",
                 "name": "Day.js中文网",
                 "desc": "Day.js中文网\r\n快速且体积只有 2kB 的 Moment.js 替代者，具有同样现代的 API",
                 "url": "https://day.nodejs.cn/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/milkdown",
+                "avatar": "https://picsum.photos/seed/Milkdown中文网/100",
                 "name": "Milkdown中文网",
                 "desc": "一个插件驱动的框架，用于构建所见即所得的 Markdown 编辑器。",
                 "url": "https://milkdown.nodejs.cn/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/clipboard",
+                "avatar": "https://picsum.photos/seed/clipboard.js中文网/100",
                 "name": "clipboard.js中文网",
                 "desc": "将文本复制到剪贴板的现代方法\r\n没有 Flash。没有框架。只有 3kb gzip 压缩包",
                 "url": "https://clipboard.nodejs.cn/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/redis",
+                "avatar": "https://picsum.photos/seed/Redis中文网/100",
                 "name": "Redis中文网",
                 "url": "https://redis.nodejs.cn/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/animejs",
+                "avatar": "https://picsum.photos/seed/Anime.js中文网/100",
                 "name": "Anime.js中文网",
                 "desc": "一体化动画引擎.\r\n一个快速且灵活的 JavaScript 库。",
                 "url": "https://anime.nodejs.cn/"
@@ -76,30 +76,30 @@
         "mode": "recommend",
         "list": [
             {
-                "avatar": "https://loremflickr.com/100/100/react",
+                "avatar": "https://picsum.photos/seed/React官方中文文档/100",
                 "name": "React官方中文文档",
                 "url": "https://zh-hans.react.dev/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/redux",
+                "avatar": "https://picsum.photos/seed/Redux中文网/100",
                 "name": "Redux中文网",
                 "desc": "Redux中文网\r\n用于可预测和可维护的全局状态管理的 JS 库",
                 "url": "https://redux.nodejs.cn/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/zustand",
+                "avatar": "https://picsum.photos/seed/Zustand中文网/100",
                 "name": "Zustand中文网",
                 "desc": "Zustand\r\nReact 状态管理\r\n小型、快速、可扩展",
                 "url": "https://zustand.nodejs.cn/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/hooks",
+                "avatar": "https://picsum.photos/seed/useHooks/100",
                 "name": "useHooks",
                 "desc": "useHooks – The React Hooks Library",
                 "url": "https://usehooks.com/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/nextjs",
+                "avatar": "https://picsum.photos/seed/Next.js中文网/100",
                 "name": "Next.js中文网",
                 "desc": "Next.js - React 应用开发框架 | Next.js中文网",
                 "url": "https://www.nextjs.cn/"
@@ -112,45 +112,45 @@
         "mode": "recommend",
         "list": [
             {
-                "avatar": "https://loremflickr.com/100/100/vue",
+                "avatar": "https://picsum.photos/seed/Vue.js官网/100",
                 "name": "Vue.js官网",
                 "desc": "渐进式JavaScript 框架\r\n易学易用，性能出色，适用场景丰富的 Web 前端框架。",
                 "url": "https://cn.vuejs.org/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/router",
+                "avatar": "https://picsum.photos/seed/Vue Router官网/100",
                 "name": "Vue Router官网",
                 "url": "https://router.vuejs.org/zh/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/cli",
+                "avatar": "https://picsum.photos/seed/Vue CLI官网/100",
                 "name": "Vue CLI官网",
                 "url": "https://cli.vuejs.org/zh/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/pinia",
+                "avatar": "https://picsum.photos/seed/Pinia官网/100",
                 "name": "Pinia官网",
                 "url": "https://pinia.web3doc.top/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/loader",
+                "avatar": "https://picsum.photos/seed/Vue Loader官网/100",
                 "name": "Vue Loader官网",
                 "url": "https://vue-loader.vuejs.org/zh/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/vueuse",
+                "avatar": "https://picsum.photos/seed/VueUse中文网/100",
                 "name": "VueUse中文网",
                 "desc": "VueUse Vue\r\n组合式工具集\r\n基础 Vue 组合式工具的集合",
                 "url": "https://vueuse.nodejs.cn/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/vite",
+                "avatar": "https://picsum.photos/seed/Vite官网/100",
                 "name": "Vite官网",
                 "desc": "面向 Web 的构建工具\r\nVite 是一款速度极快的前端构建工具为下一代 Web 应用程序提供支持",
                 "url": "https://cn.vite.dev/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/nuxt",
+                "avatar": "https://picsum.photos/seed/Nuxt中文网/100",
                 "name": "Nuxt中文网",
                 "desc": "渐进式 Web 框架\r\n使用 Nuxt 创建高质量的 Web 应用，Nuxt 是一个开源框架，它使使用 Vue.js 进行全栈开发变得直观。",
                 "url": "https://nuxt.nodejs.cn/"
@@ -163,62 +163,62 @@
         "mode": "recommend",
         "list": [
             {
-                "avatar": "https://loremflickr.com/100/100/taro",
+                "avatar": "https://picsum.photos/seed/Taro多端统一开发/100",
                 "name": "Taro多端统一开发",
                 "url": "https://taro.js.org/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/wechat",
+                "avatar": "https://picsum.photos/seed/awesome-wechat-weapp/100",
                 "name": "awesome-wechat-weapp",
                 "url": "https://github.com/justjavac/awesome-wechat-weapp"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/uniapp",
+                "avatar": "https://picsum.photos/seed/uni-app官网/100",
                 "name": "uni-app官网",
                 "url": "https://uniapp.dcloud.net.cn/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/uniapp",
+                "avatar": "https://picsum.photos/seed/uni-app开发者中心/100",
                 "name": "uni-app开发者中心",
                 "url": "https://dev.dcloud.net.cn/pages/app/list"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/html5",
+                "avatar": "https://picsum.photos/seed/HTML5+ API Reference/100",
                 "name": "HTML5+ API Reference",
                 "desc": "HTML5+ 规范",
                 "url": "https://www.html5plus.org/doc/h5p.html"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/ucharts",
+                "avatar": "https://picsum.photos/seed/uCharts官网/100",
                 "name": "uCharts官网",
                 "desc": "uCharts - 高性能跨平台图标库\r\nPC、H5、APP、小程序、Vue、Taro",
                 "url": "https://www.ucharts.cn/v2/#/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/mescroll",
+                "avatar": "https://picsum.photos/seed/mescroll下拉刷新和上拉加载/100",
                 "name": "mescroll下拉刷新和上拉加载",
                 "desc": "mescroll -- 精致的下拉刷新和上拉加载js框架",
                 "url": "https://www.mescroll.com/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/image",
+                "avatar": "https://picsum.photos/seed/image-tools - DCloud 插件市场/100",
                 "name": "image-tools - DCloud 插件市场",
                 "desc": "图像转换工具，可用于图像和base64的转换",
                 "url": "https://ext.dcloud.net.cn/plugin?id=123"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/uniapp",
+                "avatar": "https://picsum.photos/seed/uni-app实现离线打包/100",
                 "name": "uni-app实现离线打包",
                 "url": "https://blog.csdn.net/u012551928/article/details/84331339"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/gif",
+                "avatar": "https://picsum.photos/seed/解决gif图片只渲染一次的问题/100",
                 "name": "解决gif图片只渲染一次的问题",
                 "desc": "微信小程序：解决gif图片只渲染一次的问题",
                 "url": "https://www.jianshu.com/p/96f4ed883a24"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/uniapp",
+                "avatar": "https://picsum.photos/seed/uniapp富文本图片预览/100",
                 "name": "uniapp富文本图片预览",
                 "url": "https://blog.csdn.net/zt199718/article/details/132555943"
             }
@@ -230,47 +230,47 @@
         "mode": "recommend",
         "list": [
             {
-                "avatar": "https://loremflickr.com/100/100/solidity",
+                "avatar": "https://picsum.photos/seed/Solidity实例/100",
                 "name": "Solidity实例",
                 "desc": "Solidity by Example",
                 "url": "https://solidity-by-example.org/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/hackquest",
+                "avatar": "https://picsum.photos/seed/HackQuest/100",
                 "name": "HackQuest",
                 "desc": "Web3 programming for everyone - HackQuest",
                 "url": "https://www.hackquest.io/zh-cn"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/viem",
+                "avatar": "https://picsum.photos/seed/Viem官网/100",
                 "name": "Viem官网",
                 "desc": "Viem · Ethereum 的 TypeScript 接口 Viem 中文文档 | 登链社区\r\n构建可靠的应用程序和库，使用与 Ethereum 接口的 轻量级、可组合 和 类型安全 模块",
                 "url": "https://learnblockchain.cn/docs/viem"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/learnblockchain",
+                "avatar": "https://picsum.photos/seed/登链社区 - 探索未来技术/100",
                 "name": "登链社区 - 探索未来技术",
                 "url": "https://learnblockchain.cn/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/binschool",
+                "avatar": "https://picsum.photos/seed/BinSchool Web3开发者社区/100",
                 "name": "BinSchool Web3开发者社区",
                 "url": "https://www.binschool.org/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/wtf",
+                "avatar": "https://picsum.photos/seed/WTF Academy/100",
                 "name": "WTF Academy",
                 "desc": "WTF Academy 是一个 Web3 开源大学",
                 "url": "https://www.wtf.academy/zh"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/aiweb3",
+                "avatar": "https://picsum.photos/seed/AI × Web3开源学习平台/100",
                 "name": "AI × Web3开源学习平台",
                 "desc": "AI × Web3开源学习平台 | AI x Web3 School",
                 "url": "https://aiweb3.school/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/course",
+                "avatar": "https://picsum.photos/seed/公开课《区块链技术与应用》/100",
                 "name": "公开课《区块链技术与应用》",
                 "desc": "北京大学肖臻老师《区块链技术与应用》公开课",
                 "url": "https://www.bilibili.com/video/BV1Vt411X7JF?spm_id_from=333.788.videopod.episodes&vd_source=ebded8b3137534584af2d6a112cb0da6"
@@ -283,128 +283,128 @@
         "mode": "recommend",
         "list": [
             {
-                "avatar": "https://loremflickr.com/100/100/job",
+                "avatar": "https://picsum.photos/seed/Jobanni/100",
                 "name": "Jobanni",
                 "url": "https://jobanni.com/search?q=frontend"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/job",
+                "avatar": "https://picsum.photos/seed/hnhiring/100",
                 "name": "hnhiring",
                 "url": "https://hnhiring.com/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/startup",
+                "avatar": "https://picsum.photos/seed/workatastartup/100",
                 "name": "workatastartup",
                 "url": "https://www.workatastartup.com/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/job",
+                "avatar": "https://picsum.photos/seed/himalayas/100",
                 "name": "himalayas",
                 "url": "https://himalayas.app/jobs"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/career",
+                "avatar": "https://picsum.photos/seed/Web3 Career Build/100",
                 "name": "Web3 Career Build",
                 "desc": "构建可信的 Web3 人才高速路\r\n通过学习、实践与链上 Profile，连接优质人才与真实机会",
                 "url": "https://web3career.build/zh"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/remote",
+                "avatar": "https://picsum.photos/seed/Remote.co/100",
                 "name": "Remote.co",
                 "desc": "Remote Work: Jobs, Companies & Virtual Teams - Remote.co",
                 "url": "https://remote.co/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/remote",
+                "avatar": "https://picsum.photos/seed/Remote Jobs/100",
                 "name": "Remote Jobs",
                 "desc": "Remote Jobs: Design, Marketing, Programming, Writing & More",
                 "url": "https://justremote.co/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/remote",
+                "avatar": "https://picsum.photos/seed/We Work Remotely/100",
                 "name": "We Work Remotely",
-                "desc": "We Work Remotely: Advanced Remote Job Search\r\nThe largest job board for remote jobs",
+                "desc": "We Work Remotely: Advanced Remote Job Search\r\nThe largestjob board for remote jobs",
                 "url": "https://weworkremotely.com/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/nomad",
+                "avatar": "https://picsum.photos/seed/Remote Jobs | Working Nomads/100",
                 "name": "Remote Jobs | Working Nomads",
                 "desc": "Get Hired for the Best Fully Remote Jobs",
                 "url": "https://www.workingnomads.com/jobs"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/remote",
+                "avatar": "https://picsum.photos/seed/Remotive官网/100",
                 "name": "Remotive官网",
                 "desc": "Remote Jobs in Programming, Support, Design and more",
                 "url": "https://remotive.com/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/crypto",
+                "avatar": "https://picsum.photos/seed/Crypto Jobs官网/100",
                 "name": "Crypto Jobs官网",
                 "desc": "Crypto Jobs: Web3 & Blockchain & Cryptocurrency Jobs list",
                 "url": "https://laborx.com/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/web3",
+                "avatar": "https://picsum.photos/seed/Web3 Jobs官网/100",
                 "name": "Web3 Jobs官网",
                 "desc": "Web3 Jobs: Blockchain, Smart Contract and Crypto Jobs",
                 "url": "https://web3.career/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/crypto",
+                "avatar": "https://picsum.photos/seed/Cryptocurrency Jobs/100",
                 "name": "Cryptocurrency Jobs",
                 "desc": "Cryptocurrency Jobs and Blockchain Jobs - Cryptocurrency Jobs",
                 "url": "https://cryptocurrencyjobs.co/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/defi",
+                "avatar": "https://picsum.photos/seed/DeFi Jobs/100",
                 "name": "DeFi Jobs",
                 "desc": "DeFi Jobs - Building the Future of Finance",
                 "url": "https://www.defi.jobs/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/crypto",
+                "avatar": "https://picsum.photos/seed/Cryptocurrency Jobs and Blockchain Jobs/100",
                 "name": "Cryptocurrency Jobs and Blockchain Jobs",
                 "url": "https://cryptojobslist.com/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/dejob",
+                "avatar": "https://picsum.photos/seed/DeJob 专注于Web3、远程招聘/100",
                 "name": "DeJob 专注于Web3、远程招聘",
                 "desc": "DeJob 专注于Web3、远程招聘",
                 "url": "https://dejob.ai/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/job",
+                "avatar": "https://picsum.photos/seed/Job3官网/100",
                 "name": "Job3官网",
                 "desc": "Web3 Jobs Open To Everyone",
                 "url": "https://job3.co/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/freelancer",
+                "avatar": "https://picsum.photos/seed/Freelancer官网/100",
                 "name": "Freelancer官网",
                 "desc": "在线雇佣威客&寻找自由职业工作 | Freelancer",
                 "url": "https://www.freelancer.cn/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/web3",
+                "avatar": "https://picsum.photos/seed/abetterweb3/100",
                 "name": "abetterweb3",
                 "desc": "机会聚合 人才流动 abetterweb3",
                 "url": "https://abetterweb3.notion.site/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/eleduck",
+                "avatar": "https://picsum.photos/seed/电鸭社区/100",
                 "name": "电鸭社区",
                 "desc": "电鸭社区-专注远程工作招聘交流-远程工作，从电鸭开始",
                 "url": "https://eleduck.com/"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/guide",
+                "avatar": "https://picsum.photos/seed/Web3 + AI 远程攻略/100",
                 "name": "Web3 + AI 远程攻略",
                 "desc": "web3+AI远程攻略（持续更新...） - 飞书云文档",
                 "url": "https://wcngrtwsafnt.feishu.cn/wiki/GYzHwA1Ctim5Xske5iScdRWDnZf"
             },
             {
-                "avatar": "https://loremflickr.com/100/100/guide",
+                "avatar": "https://picsum.photos/seed/Web3 远程工作攻略/100",
                 "name": "Web3 远程工作攻略",
                 "desc": "关于远程工作你想知道的都在这 - 飞书云文档",
                 "url": "https://wcngrtwsafnt.feishu.cn/wiki/Nl7rwvxypiIVa7kOXVScZLranbg"
@@ -417,8 +417,8 @@
         "list": [
             {
                 "category": "技术",
-                "cover": "https://loremflickr.com/400/300/tech",
-                "avatar": "https://loremflickr.com/100/100/tech",
+                "cover": "https://picsum.photos/seed/caodong/400",
+                "avatar": "https://picsum.photos/seed/caodong-avatar/100",
                 "name": "草东日记",
                 "desc": "独立思考，勿乱引导",
                 "url": "https://ifdian.net/a/whjin"

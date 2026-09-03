@@ -11,22 +11,22 @@
     "subtitle": "AI技术文章",
     "list": [
       {
-        "avatar": "https://loremflickr.com/100/100/ai",
+        "avatar": "https://picsum.photos/seed/AI项目文档/100",
         "name": "AI项目文档",
         "url": "/src/template/viewer.html?path=AI_AI项目文档"
       },
       {
-        "avatar": "https://loremflickr.com/100/100/ai",
+        "avatar": "https://picsum.photos/seed/AI大模型文档/100",
         "name": "AI大模型文档",
         "url": "/src/template/viewer.html?path=AI_AI大模型文档"
       },
       {
-        "avatar": "https://loremflickr.com/100/100/ai",
+        "avatar": "https://picsum.photos/seed/AI前端/100",
         "name": "AI前端",
         "url": "/src/template/viewer.html?path=AI_AI前端"
       },
       {
-        "avatar": "https://loremflickr.com/100/100/ai",
+        "avatar": "https://picsum.photos/seed/AI应用开发学习路线图/100",
         "name": "AI应用开发学习路线图",
         "url": "/src/template/viewer.html?path=AI_AI应用开发学习路线图"
       }
@@ -38,17 +38,17 @@
     "mode": "recommend",
     "list": [
       {
-        "avatar": "https://loremflickr.com/100/100/nodejs",
+        "avatar": "https://picsum.photos/seed/Node.js实战/100",
         "name": "Node.js实战",
         "url": "/src/template/viewer.html?path=Node_Node.js实战"
       },
       {
-        "avatar": "https://loremflickr.com/100/100/nodejs",
+        "avatar": "https://picsum.photos/seed/Node.js进阶/100",
         "name": "Node.js进阶",
         "url": "/src/template/viewer.html?path=Node_Node.js进阶"
       },
       {
-        "avatar": "https://loremflickr.com/100/100/nodejs",
+        "avatar": "https://picsum.photos/seed/Node.js文档/100",
         "name": "Node.js文档",
         "url": "/src/template/viewer.html?path=Node_Node.js文档"
       }
@@ -60,27 +60,27 @@
     "mode": "recommend",
     "list": [
       {
-        "avatar": "https://loremflickr.com/100/100/javascript",
+        "avatar": "https://picsum.photos/seed/功能代码集合/100",
         "name": "功能代码集合",
         "url": "/src/template/viewer.html?path=JavaScript_功能代码集合"
       },
       {
-        "avatar": "https://loremflickr.com/100/100/pattern",
+        "avatar": "https://picsum.photos/seed/设计模式文档/100",
         "name": "设计模式文档",
         "url": "/src/template/viewer.html?path=JavaScript_设计模式文档"
       },
       {
-        "avatar": "https://loremflickr.com/100/100/ecmascript",
+        "avatar": "https://picsum.photos/seed/ECMAScript文档/100",
         "name": "ECMAScript文档",
         "url": "/src/template/viewer.html?path=JavaScript_ECMAScript文档"
       },
       {
-        "avatar": "https://loremflickr.com/100/100/typescript",
+        "avatar": "https://picsum.photos/seed/TypeScript类型系统/100",
         "name": "TypeScript类型系统",
         "url": "/src/template/viewer.html?path=TypeScript_类型系统"
       },
       {
-        "avatar": "https://loremflickr.com/100/100/webrtc",
+        "avatar": "https://picsum.photos/seed/WebRTC性能优化/100",
         "name": "WebRTC性能优化",
         "url": "/src/template/viewer.html?path=WebRTC_WebRTC性能优化"
       }
@@ -92,7 +92,7 @@
     "mode": "recommend",
     "list": [
       {
-        "avatar": "https://loremflickr.com/100/100/vue",
+        "avatar": "https://picsum.photos/seed/Vue文档/100",
         "name": "Vue文档",
         "url": "/src/template/viewer.html?path=Vue_Vue文档"
       }
@@ -104,12 +104,12 @@
     "mode": "recommend",
     "list": [
       {
-        "avatar": "https://loremflickr.com/100/100/hermes",
+        "avatar": "https://picsum.photos/seed/Hermes引擎文档/100",
         "name": "Hermes引擎文档",
         "url": "/src/template/viewer.html?path=RN_Hermes引擎文档"
       },
       {
-        "avatar": "https://loremflickr.com/100/100/react",
+        "avatar": "https://picsum.photos/seed/React文档/100",
         "name": "React文档",
         "url": "/src/template/viewer.html?path=React_React文档"
       }
@@ -121,12 +121,12 @@
     "mode": "recommend",
     "list": [
       {
-        "avatar": "https://loremflickr.com/100/100/taro",
+        "avatar": "https://picsum.photos/seed/Taro小程序文档/100",
         "name": "Taro小程序文档",
         "url": "/src/template/viewer.html?path=小程序_Taro小程序文档"
       },
       {
-        "avatar": "https://loremflickr.com/100/100/miniprogram",
+        "avatar": "https://picsum.photos/seed/小程序文档/100",
         "name": "小程序文档",
         "url": "/src/template/viewer.html?path=小程序_小程序文档"
       }
@@ -138,12 +138,12 @@
     "mode": "recommend",
     "list": [
       {
-        "avatar": "https://loremflickr.com/100/100/gis",
+        "avatar": "https://picsum.photos/seed/Web GIS文档/100",
         "name": "Web GIS文档",
         "url": "/src/template/viewer.html?path=GIS_Web GIS文档"
       },
       {
-        "avatar": "https://loremflickr.com/100/100/cesium",
+        "avatar": "https://picsum.photos/seed/Cesium文档/100",
         "name": "Cesium文档",
         "url": "/src/template/viewer.html?path=GIS_Cesium文档"
       }
@@ -155,47 +155,47 @@
     "mode": "recommend",
     "list": [
       {
-        "avatar": "https://loremflickr.com/100/100/project",
+        "avatar": "https://picsum.photos/seed/实战项目文档/100",
         "name": "实战项目文档",
         "url": "/src/template/viewer.html?path=小程序_实战项目文档"
       },
       {
-        "avatar": "https://loremflickr.com/100/100/security",
+        "avatar": "https://picsum.photos/seed/Web加密/100",
         "name": "Web加密",
         "url": "/src/template/viewer.html?path=工程化_Web加密"
       },
       {
-        "avatar": "https://loremflickr.com/100/100/project",
+        "avatar": "https://picsum.photos/seed/工程实例文档/100",
         "name": "工程实例文档",
         "url": "/src/template/viewer.html?path=工程化_工程实例文档"
       },
       {
-        "avatar": "https://loremflickr.com/100/100/build",
+        "avatar": "https://picsum.photos/seed/Vite与Webpack对比/100",
         "name": "Vite与Webpack对比",
         "url": "/src/template/viewer.html?path=工程化_Vite与Webpack对比"
       },
       {
-        "avatar": "https://loremflickr.com/100/100/http",
+        "avatar": "https://picsum.photos/seed/HTTP文档/100",
         "name": "HTTP文档",
         "url": "/src/template/viewer.html?path=网络_HTTP文档"
       },
       {
-        "avatar": "https://loremflickr.com/100/100/os",
+        "avatar": "https://picsum.photos/seed/操作系统文档/100",
         "name": "操作系统文档",
         "url": "/src/template/viewer.html?path=文档_操作系统文档"
       },
       {
-        "avatar": "https://loremflickr.com/100/100/trend",
+        "avatar": "https://picsum.photos/seed/新趋势/100",
         "name": "新趋势",
         "url": "/src/template/viewer.html?path=文档_新趋势"
       },
       {
-        "avatar": "https://loremflickr.com/100/100/help",
+        "avatar": "https://picsum.photos/seed/帮助文档/100",
         "name": "帮助文档",
         "url": "/src/template/viewer.html?path=文档_帮助文档"
       },
       {
-        "avatar": "https://loremflickr.com/100/100/analysis",
+        "avatar": "https://picsum.photos/seed/领域适配性分析/100",
         "name": "领域适配性分析",
         "url": "/src/template/viewer.html?path=文档_领域适配性分析"
       }
@@ -207,22 +207,22 @@
     "mode": "recommend",
     "list": [
       {
-        "avatar": "https://loremflickr.com/100/100/solidity",
+        "avatar": "https://picsum.photos/seed/Solidity文档/100",
         "name": "Solidity文档",
         "url": "/src/template/viewer.html?path=Web3_Solidity文档"
       },
       {
-        "avatar": "https://loremflickr.com/100/100/contract",
+        "avatar": "https://picsum.photos/seed/智能合约/100",
         "name": "智能合约",
         "url": "/src/template/viewer.html?path=Web3_智能合约"
       },
       {
-        "avatar": "https://loremflickr.com/100/100/web3",
+        "avatar": "https://picsum.photos/seed/Web3文档/100",
         "name": "Web3文档",
         "url": "/src/template/viewer.html?path=Web3_Web3文档"
       },
       {
-        "avatar": "https://loremflickr.com/100/100/wallet",
+        "avatar": "https://picsum.photos/seed/Web3钱包/100",
         "name": "Web3钱包",
         "url": "/src/template/viewer.html?path=Web3_Web3钱包"
       }
@@ -234,12 +234,12 @@
     "mode": "recommend",
     "list": [
       {
-        "avatar": "https://loremflickr.com/100/100/adb",
+        "avatar": "https://picsum.photos/seed/ADB命令集合/100",
         "name": "ADB命令集合",
         "url": "/src/template/viewer.html?path=Android_ADB命令集合"
       },
       {
-        "avatar": "https://loremflickr.com/100/100/git",
+        "avatar": "https://picsum.photos/seed/Git文档/100",
         "name": "Git文档",
         "url": "/src/template/viewer.html?path=Git_Git文档"
       }
@@ -251,12 +251,12 @@
     "mode": "recommend",
     "list": [
       {
-        "avatar": "https://loremflickr.com/100/100/fund",
+        "avatar": "https://picsum.photos/seed/基金持仓2026-7-23/100",
         "name": "基金持仓2026-7-23",
         "url": "/src/template/viewer.html?path=生活_基金持仓2026-7-23"
       },
       {
-        "avatar": "https://loremflickr.com/100/100/fund",
+        "avatar": "https://picsum.photos/seed/基金持仓2026-6-25/100",
         "name": "基金持仓2026-6-25",
         "url": "/src/template/viewer.html?path=生活_基金持仓2026-6-25"
       }
@@ -268,7 +268,7 @@
     "mode": "recommend",
     "list": [
       {
-        "avatar": "https://loremflickr.com/100/100/life",
+        "avatar": "https://picsum.photos/seed/育儿经/100",
         "name": "育儿经",
         "url": "/src/template/viewer.html?path=生活_育儿经"
       }
@@ -280,8 +280,8 @@
     "list": [
       {
         "category": "技术",
-        "cover": "https://loremflickr.com/400/300/tech",
-        "avatar": "https://loremflickr.com/100/100/tech",
+        "cover": "https://picsum.photos/seed/caodong/400",
+        "avatar": "https://picsum.photos/seed/caodong-avatar/100",
         "name": "草东日记",
         "desc": "独立思考，勿乱引导",
         "url": "https://ifdian.net/a/whjin"
