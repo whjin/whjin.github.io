@@ -10,9 +10,14 @@
     "type": "git",
     "url": "https://github.com/whjin/whjin.github.io.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "blog",
+    "wuhuajin",
+    "吴华锦",
+    "吴华锦的个人主页"
+  ],
+  "author": "吴华锦",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/whjin/whjin.github.io/issues"
   },
