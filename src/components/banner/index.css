@@ -6,33 +6,21 @@ body.has-banner {
   width: 100%;
   height: var(--banner-height);
   box-sizing: border-box;
-  /* 以博客主色蓝 #007bff 为起点的渐变，兼顾参考图风格 */
   background: linear-gradient(90deg, #007bff 0%, #5b6ee1 100%);
   display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
   position: relative;
   z-index: 9;
 }
 
 .banner-slide {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  max-width: calc(100% - 2em);
-  color: #fff;
-  font-size: 15px;
-  font-weight: 600;
-  line-height: 1;
-  white-space: nowrap;
-  text-decoration: none;
-  border-radius: 0;
+  width: 100%;
+  padding: 0 1em;
+  text-align: center;
   animation: banner-fade-in 0.5s ease;
-}
-
-.banner-text {
+  display: inline-block;
   overflow: hidden;
+  white-space: nowrap;
   text-overflow: ellipsis;
 }
 
@@ -40,13 +28,20 @@ body.has-banner {
   width: 16px;
   height: 16px;
   flex-shrink: 0;
+  margin-left: 4px;
+  margin-bottom: 2px;
 }
 
-/* 覆盖全局 a:hover 的背景与变色规则，条幅内链接保持自身配色 */
 .banner a.banner-slide:hover {
   background-color: transparent;
   color: inherit;
   text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: #f9f4dc;
+}
+
+.banner a.banner-slide:hover .banner-text {
+  color: #f9f4dc;
 }
 
 @keyframes banner-fade-in {
@@ -54,23 +49,21 @@ body.has-banner {
     opacity: 0;
     transform: translateY(6px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* 首页：头部 40 + 条幅 + 底部 40，主体高度同步缩减 */
 body.has-banner .layout-container.home {
   height: calc(100% - 80px - var(--banner-height));
 }
 
-/* 详情页：主体高度让出条幅空间 */
 body.has-banner .layout-container {
   height: calc(100% - var(--banner-height));
 }
 
-/* 详情页右上角固定圆形导航按钮下移，避免压住条幅 */
 body.has-banner .nav-container {
   top: var(--banner-height);
 }
@@ -88,11 +81,15 @@ body.has-banner .nav-container {
     width: 14px;
     height: 14px;
   }
+
+  .banner a.banner-slide:hover {
+    text-decoration: none;
+  }
 }
 
 @media print {
   .banner {
-    display: none !important;
+    display: none;
   }
 
   body.has-banner .layout-container,

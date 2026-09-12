@@ -52,6 +52,18 @@
         "url": "https://www.eev3.com/"
       },
       {
+        "avatar": "https://picsum.photos/seed/videotourl/100",
+        "name": "视频转链接工具",
+        "desc": "MP3/视频转在线链接工具",
+        "url": "https://www.videotourl.com/zh/tools/mp3-to-url"
+      },
+      {
+        "avatar": "https://picsum.photos/seed/Meting API/100",
+        "name": "Meting API",
+        "desc": "Meting API - 多平台音乐 API",
+        "url": "https://api.music.abloom.site/"
+      },
+      {
         "avatar": "https://picsum.photos/seed/瓦特工具箱(Steam++官网) - Watt Toolkit/100",
         "name": "瓦特工具箱(Steam++官网) - Watt Toolkit",
         "desc": "「Watt Toolkit」是一个开源跨平台的多功能 Steam 工具箱。",
@@ -113,12 +125,6 @@
         "name": "UML图开源工具",
         "desc": "PlantUML在线绘图工具",
         "url": "https://plantuml.com/zh/"
-      },
-      {
-        "avatar": "https://picsum.photos/seed/tool07/100",
-        "name": "视频转链接工具",
-        "desc": "MP3/视频转在线链接工具",
-        "url": "https://www.videotourl.com/zh/tools/mp3-to-url"
       },
       {
         "avatar": "https://picsum.photos/seed/VideoCompress01/100",

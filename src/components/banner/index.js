@@ -1,16 +1,12 @@
 (function () {
-  // 轮播条幅总开关：false 时不请求数据、不渲染条幅，页面与无条幅时完全一致
   const BANNER_ENABLED = true;
-  // 每条信息默认停留时间（秒），数据项缺少 duration 或值非法时使用
   const DEFAULT_DURATION = 30;
 
   if (!BANNER_ENABLED) return;
 
-  // 必须在同步阶段记录脚本地址，异步回调中 document.currentScript 会失效
   const scriptSrc = document.currentScript ? document.currentScript.src : '';
   const dataUrl = new URL('data.json', scriptSrc || window.location.href).href;
 
-  // 渲染前筛选：show 不为 false 且标题非空，否则不展示
   function isValidItem(item) {
     return (
       item &&
@@ -21,13 +17,11 @@
     );
   }
 
-  // 当前条目的停留时长（毫秒），非法值回退到默认时长
   function getDuration(item) {
     const duration = Number(item.duration);
     return Number.isFinite(duration) && duration > 0 ? duration * 1000 : DEFAULT_DURATION * 1000;
   }
 
-  // 箭头图标：使用内联 SVG，颜色通过 currentColor 跟随文字颜色
   function createArrowIcon() {
     const svgNS = 'http://www.w3.org/2000/svg';
     const svg = document.createElementNS(svgNS, 'svg');
@@ -50,7 +44,6 @@
     return svg;
   }
 
-  // 每条条幅保持同一套 DOM 结构：文字 + 箭头；有 url 时整体用 a 包裹
   function createSlide(item) {
     const url = typeof item.url === 'string' ? item.url.trim() : '';
     const slide = document.createElement(url ? 'a' : 'div');
@@ -60,7 +53,6 @@
       slide.target = '_blank';
       slide.rel = 'noopener noreferrer';
     }
-    // 颜色支持 red、#ff0000、#f00 等任意合法 CSS 颜色，非法值浏览器自动忽略
     if (typeof item.color === 'string' && item.color.trim() !== '') {
       slide.style.color = item.color.trim();
     }
@@ -74,21 +66,50 @@
     return slide;
   }
 
+  function applyTitleIfOverflow(slide, fullText) {
+    const isOverflowing = slide.scrollWidth > slide.clientWidth;
+    if (isOverflowing) {
+      slide.title = fullText;
+    } else {
+      slide.removeAttribute('title');
+    }
+  }
+
   function renderBanner(list) {
     document.body.classList.add('has-banner');
     const banner = document.createElement('div');
     banner.className = 'banner';
     document.body.insertBefore(banner, document.body.firstChild);
 
-    // 只有一条时静态展示，不启动轮播
+    let currentSlide = null;
+    let currentItem = null;
+
+    function updateTitle() {
+      if (currentSlide && currentItem) {
+        applyTitleIfOverflow(currentSlide, currentItem.title.trim());
+      }
+    }
+
+    let resizeRaf = null;
+    window.addEventListener('resize', () => {
+      if (resizeRaf) return;
+      resizeRaf = requestAnimationFrame(() => {
+        resizeRaf = null;
+        updateTitle();
+      });
+    });
+
     if (list.length === 1) {
-      banner.appendChild(createSlide(list[0]));
+      currentItem = list[0];
+      currentSlide = createSlide(currentItem);
+      banner.appendChild(currentSlide);
+      updateTitle();
       return;
     }
 
     let currentIndex = 0;
     let timer = null;
-    let remaining = 0; // 距下一次切换的剩余时间（毫秒）
+    let remaining = 0;
     let startTime = 0;
 
     function scheduleNext(delay) {
@@ -102,11 +123,13 @@
 
     function showSlide(index) {
       currentIndex = index;
-      banner.replaceChildren(createSlide(list[currentIndex]));
-      scheduleNext(getDuration(list[currentIndex]));
+      currentItem = list[currentIndex];
+      currentSlide = createSlide(currentItem);
+      banner.replaceChildren(currentSlide);
+      updateTitle();
+      scheduleNext(getDuration(currentItem));
     }
 
-    // 标签页隐藏时暂停计时，恢复后按剩余时间继续，避免后台堆积或可见性抖动导致重头计时
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
         clearTimeout(timer);
@@ -127,7 +150,6 @@
     .then((data) => {
       if (!Array.isArray(data)) return;
       const bannerList = data.filter(isValidItem);
-      // 筛选后列表为空：不渲染、不占位，相当于不显示条幅
       if (bannerList.length > 0) renderBanner(bannerList);
     })
     .catch((error) => {
