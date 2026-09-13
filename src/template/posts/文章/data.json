@@ -32,6 +32,18 @@
       }
     ]
   },
+  "部署": {
+    "title": "部署",
+    "subtitle": "部署技术文章",
+    "mode": "recommend",
+    "list": [
+      {
+        "avatar": "https://picsum.photos/seed/部署Meting-API服务端/100",
+        "name": "部署Meting-API服务",
+        "url": "/src/template/viewer.html?path=工程化_Docker部署Meting API服务"
+      }
+    ]
+  },
   "Node.js": {
     "title": "Node.js",
     "subtitle": "Node.js技术文章",
