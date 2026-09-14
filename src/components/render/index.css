@@ -252,6 +252,12 @@ a:hover {
   height: calc(100% - 80px);
 }
 
+@media screen and (min-width: 768px) {
+  .layout-container.home #markdown-content {
+    height: 100%;
+  }
+}
+
 .content-area {
   height: 100%;
   flex: 1;

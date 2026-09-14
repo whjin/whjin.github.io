@@ -77,6 +77,7 @@ async function generateCard() {
   containerEl.appendChild(fragment);
   bindCardScroll();
   restoreCardScroll();
+  adjustCardLayout();
 }
 async function fetchData(filePath) {
   try {
@@ -121,6 +122,48 @@ function restoreCardScroll() {
     targetList.scrollTop = Number(savedTop);
   }
 }
+function adjustCardLayout() {
+  const container = document.querySelector('.card-container');
+  if (!container) return;
+  const cards = container.querySelectorAll('.card-item');
+  const cardCount = cards.length;
+  if (cardCount === 0) return;
+  if (window.innerWidth <= 768) {
+    container.style.gridTemplateColumns = '';
+    container.style.gridTemplateRows = '';
+    cards.forEach((card) => {
+      card.style.maxHeight = '';
+    });
+    return;
+  }
+  const containerStyles = getComputedStyle(container);
+  const gap = parseFloat(containerStyles.columnGap) || parseFloat(containerStyles.gap) || 16;
+  const paddingLeft = parseFloat(containerStyles.paddingLeft) || 0;
+  const paddingRight = parseFloat(containerStyles.paddingRight) || 0;
+  const availableWidth = container.clientWidth - paddingLeft - paddingRight;
+  const minCardWidth = 300;
+  let cols;
+  if (cardCount < 5) {
+    cols = cardCount;
+  } else {
+    cols = Math.max(1, Math.floor((availableWidth + gap) / (minCardWidth + gap)));
+    cols = Math.min(cols, cardCount);
+  }
+  const rows = Math.ceil(cardCount / cols);
+  container.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+  if (rows < 3) {
+    container.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
+    cards.forEach((card) => {
+      card.style.maxHeight = 'none';
+    });
+  } else {
+    container.style.gridTemplateRows = '';
+    cards.forEach((card) => {
+      card.style.maxHeight = '';
+    });
+  }
+}
+window.addEventListener('resize', debounce(adjustCardLayout, 150));
 let modalMask = null;
 function initModal(m) {
   if (modalMask) return;
