@@ -2,8 +2,8 @@
   const socialList = [
     {
       href: 'src/template/viewer.html?path=友链_link&format=html',
-      title: '友链',
-      name: 'link',
+      title: 'AI应用',
+      name: 'ai',
       icon: 28,
     },
     {
