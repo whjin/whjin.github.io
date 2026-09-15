@@ -86,13 +86,6 @@ const forked = fork('./child.js');
 
 forked.on('message', (msg) => {});
 forked.send('hello');
-
-// 子进程 child.js
-process.on('message', (msg) => {});
-let counter = 0;
-setInterval(() => {
-  process.send(counter++);
-}, 1000);
 ```
 
 当调用 `fork(./child.js)` 时，就是用 `node` 执行该文件中的代码，相当于 `spawn('node', ['./child.js'])`。

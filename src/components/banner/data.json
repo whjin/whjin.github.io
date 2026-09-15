@@ -1,22 +1,25 @@
 [
     {
         "show": true,
-        "duration": 30,
+        "duration": 10,
         "color": "white",
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/08/19ylgtw1000dkunrvef59br87h5nu60f.gif",
         "title": "Lovart 中文版- 新一代设计 Agent",
         "url": "https://lovart.cgref.cn/s/2znrl36nr7"
     },
     {
         "show": true,
-        "duration": 30,
+        "duration": 10,
         "color": "white",
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/08/3iemyq01000dkskul1pry4721gst97w0.webp",
         "title": "AniShort - AI影视剧协作平台",
         "url": "https://anishort.cgref.cn/s/9we2wzjego"
     },
     {
         "show": true,
-        "duration": 30,
+        "duration": 10,
         "color": "white",
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/07/6s46zl01000djxc4q9g5blj3f3bv6oau.webp",
         "title": "Loomy-你的AI工作搭子",
         "url": "https://loomy.cgref.cn/s/59ngvmonr2"
     },
@@ -24,6 +27,7 @@
         "show": true,
         "duration": 30,
         "color": "white",
+        "avatar": "//s1.hdslb.com/bfs/static/jinkela/ai-tool/icon.png",
         "title": "updream官网-AI视频创作助手",
         "url": "https://updream.cgref.cn/s/2znrpo9er7"
     },
@@ -31,6 +35,7 @@
         "show": true,
         "duration": 30,
         "color": "white",
+        "avatar": "https://laper.ai/logo_png_public.png",
         "title": "剧作软件的进化终点。以剧为本。在 Laper 中协作制片。",
         "url": "https://laper.cgref.cn/s/zdkjq78n1r"
     },
@@ -38,6 +43,7 @@
         "show": true,
         "duration": 30,
         "color": "white",
+        "avatar": "https://wawawriter.com/app/assets/wawa-qwUtEkkq.svg",
         "title": "蛙蛙写作——超级AI智能写作助手",
         "url": "https://wawawriter.cgref.cn/s/59ngw1oer2"
     },
@@ -45,6 +51,7 @@
         "show": true,
         "duration": 30,
         "color": "white",
+        "avatar": "https://seko.sensetime.com/logo-48x48.svg",
         "title": "Seko - World Class AI Video Generation Platform",
         "url": "https://seko.cgref.cn/s/2znr3vznr7"
     },
@@ -52,6 +59,7 @@
         "show": true,
         "duration": 30,
         "color": "white",
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/05/p67q3901000dij3oz5c1gns590cvu22e.png",
         "title": "LiblibAI-哩布哩布AI - 中国领先的AI创作平台",
         "url": "https://liblib.cgref.cn/s/4onyr06kjx"
     },
@@ -59,6 +67,7 @@
         "show": true,
         "duration": 30,
         "color": "white",
+        "avatar": "https://atoms.dev/favicon.ico",
         "title": "Atoms：用 AI 构建网站与应用，无需编码",
         "url": "https://atoms.cgref.cn/s/20epqjjkw1"
     },
@@ -66,6 +75,7 @@
         "show": true,
         "duration": 30,
         "color": "white",
+        "avatar": "https://www.liblib.tv/favicon.ico",
         "title": "LibTV - 专业视频创作工具",
         "url": "https://libtv.cgref.cn/s/j7n63dqn1g"
     },
@@ -73,6 +83,7 @@
         "show": true,
         "duration": 30,
         "color": "white",
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/164qw2r1000di3tkojo3bvi7b10pfewm.png",
         "title": "火山引擎 - 方舟 Agent Plan",
         "url": "https://volcengine.cgref.cn/s/59ngwxoer2"
     },
@@ -80,6 +91,7 @@
         "show": true,
         "duration": 30,
         "color": "white",
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/03/1b0hko81000dhg0oniyq2la16ima2auh.png",
         "title": "AiPy，超级AI牛马智能体工厂，爱派AiPy软件官网",
         "url": "https://aipyaipy.cgref.cn/s/3mnzz45no1"
     },
@@ -87,6 +99,7 @@
         "show": true,
         "duration": 30,
         "color": "white",
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/03/1b0hko81000dhfui1jw14zikq0rewpqf.webp",
         "title": "码上飞 - 说中文，做应用 | AI生成微信小程序/鸿蒙/APP/H5网站",
         "url": "https://codeflying.cgref.cn/s/59ngw0xer2"
     }

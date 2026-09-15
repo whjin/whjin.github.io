@@ -15,7 +15,7 @@ function handleDecodeURI() {
 function isMobile() {
   const userAgent = navigator.userAgent.toLowerCase();
   const mobileRegex = /iphone|android|ipad|ipod|mobile|webos|blackberry|iemobile|opera mini/i;
-  return mobileRegex.test(userAgent) || window.innerWidth <= 768;
+  return mobileRegex.test(userAgent) || window.innerWidth < 768;
 }
 
 function productionMode() {

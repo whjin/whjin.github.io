@@ -229,7 +229,6 @@
     ];
 
     const footerEl = document.querySelector('.footer-content');
-    const menuEl = document.querySelector('.card-container');
     let isActiveShow = false;
 
     playerConfigs.forEach(({ selector, pause }) => {
@@ -246,7 +245,6 @@
     });
 
     footerEl.style.visibility = isActiveShow ? 'hidden' : 'visible';
-    menuEl.style.paddingBottom = isActiveShow ? '2em' : '1em';
 
     if (isActiveShow) {
       document.body.classList.add('player-show');
@@ -255,8 +253,12 @@
     }
   }
 
+  function isNarrow() {
+    return window.innerWidth < 768;
+  }
+
   function toggleSocial() {
-    if (isMobile()) {
+    if (isNarrow()) {
       const isSocialShow = socialEl.classList.contains('show');
       barsEl.style.display = isSocialShow ? 'none' : 'block';
     } else {
@@ -277,7 +279,7 @@
   });
   titleEl.addEventListener('click', (e) => {
     e.stopPropagation();
-    if (!isMobile()) return;
+    if (!isNarrow()) return;
 
     socialEl.classList.remove('show');
     overlayEl.classList.remove('show');

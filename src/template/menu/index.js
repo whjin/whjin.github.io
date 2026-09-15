@@ -128,7 +128,7 @@ function adjustCardLayout() {
   const cards = container.querySelectorAll('.card-item');
   const cardCount = cards.length;
   if (cardCount === 0) return;
-  if (window.innerWidth <= 768) {
+  if (isMobile()) {
     container.style.gridTemplateColumns = '';
     container.style.gridTemplateRows = '';
     cards.forEach((card) => {

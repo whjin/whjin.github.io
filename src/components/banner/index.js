@@ -57,10 +57,20 @@
       slide.style.color = item.color.trim();
     }
 
+    const avatarSrc =
+      typeof item.avatar === 'string' && item.avatar.trim()
+        ? item.avatar.trim()
+        : 'https://picsum.photos/seed/ai/100';
+    const avatar = document.createElement('img');
+    avatar.className = 'banner-avatar';
+    avatar.src = avatarSrc;
+    avatar.alt = '';
+
     const text = document.createElement('span');
     text.className = 'banner-text';
     text.textContent = item.title.trim();
 
+    slide.appendChild(avatar);
     slide.appendChild(text);
     slide.appendChild(createArrowIcon());
     return slide;
