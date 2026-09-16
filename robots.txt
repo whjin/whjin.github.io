@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+# 只提交主站sitemap
+Sitemap: https://wuhuajin.com/sitemap.xml
