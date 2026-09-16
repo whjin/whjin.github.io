@@ -7,20 +7,20 @@
     "产品": "#f59e0b"
   },
   "recommend": {
-    "title": "推荐",
+    "title": "核心推荐",
     "subtitle": "一站式AI应用平台",
     "list": [
-      {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/08/3iemyq01000dkskul1pry4721gst97w0.webp",
-        "name": "AniShort",
-        "desc": "AniShort - AI影视剧协作平台",
-        "url": "https://anishort.cgref.cn/s/9we2wzjego"
-      },
       {
         "avatar": "https://oss.cakegrowth.cn/public/product/2026/08/19ylgtw1000dkunrvef59br87h5nu60f.gif",
         "name": "Lovart 中文版",
         "desc": "Lovart 中文版- 新一代设计 Agent",
         "url": "https://lovart.cgref.cn/s/2znrl36nr7"
+      },
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/08/3iemyq01000dkskul1pry4721gst97w0.webp",
+        "name": "AniShort",
+        "desc": "AniShort - AI影视剧协作平台",
+        "url": "https://anishort.cgref.cn/s/9we2wzjego"
       },
       {
         "avatar": "https://oss.cakegrowth.cn/public/product/2026/07/6s46zl01000djxc4q9g5blj3f3bv6oau.webp",
@@ -29,10 +29,10 @@
         "url": "https://loomy.cgref.cn/s/59ngvmonr2"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/05/lh3px401000diu3kvu0grzo4nqh8uk30.webp",
-        "name": "潮际好麦",
-        "desc": "潮际好麦，专业级AI电商营销内容创作平台",
-        "url": "https://chaojihaomai.cgref.cn/s/dqndm2rn2z"
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/07/wuu1lm01000dk9w92cashnhnpdzik9q0.webp",
+        "name": "updream官网",
+        "desc": "updream官网-AI视频创作助手",
+        "url": "https://updream.cgref.cn/s/2znrpo9er7"
       },
       {
         "avatar": "https://laper.ai/logo_png_public.png",
@@ -41,28 +41,10 @@
         "url": "https://laper.cgref.cn/s/zdkjq78n1r"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/07/wuu1lm01000dk9w92cashnhnpdzik9q0.webp",
-        "name": "updream官网",
-        "desc": "updream官网-AI视频创作助手",
-        "url": "https://updream.cgref.cn/s/2znrpo9er7"
-      },
-      {
-        "avatar": "https://www.xingliu.art/favicon.ico",
-        "name": "星流",
-        "desc": "星流 - 新一代设计Agent",
-        "url": "https://xingliu.cgref.cn/s/ogewx7wkp2"
-      },
-      {
-        "avatar": "https://atoms.dev/favicon.ico",
-        "name": "Atoms",
-        "desc": "Atoms：用 AI 构建网站与应用，无需编码",
-        "url": "https://atoms.cgref.cn/s/20epqjjkw1"
-      },
-      {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/164qw2r1000di3tkojo3bvi7b10pfewm.png",
-        "name": "火山引擎",
-        "desc": "方舟 Agent Plan",
-        "url": "https://volcengine.cgref.cn/s/59ngwxoer2"
+        "avatar": "https://wawawriter.com/app/assets/wawa-qwUtEkkq.svg",
+        "name": "蛙蛙写作",
+        "desc": "蛙蛙写作——超级AI智能写作助手",
+        "url": "https://wawawriter.cgref.cn/s/59ngw1oer2"
       },
       {
         "avatar": "https://seko.sensetime.com/logo-48x48.svg",
@@ -71,10 +53,59 @@
         "url": "https://seko.cgref.cn/s/2znr3vznr7"
       },
       {
-        "avatar": "https://wawawriter.com/app/assets/wawa-qwUtEkkq.svg",
-        "name": "蛙蛙写作",
-        "desc": "蛙蛙写作——超级AI智能写作助手",
-        "url": "https://wawawriter.cgref.cn/s/59ngw1oer2"
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/05/p67q3901000dij3oz5c1gns590cvu22e.png",
+        "name": "LiblibAI",
+        "desc": "LiblibAI-哩布哩布AI - 中国领先的AI创作平台",
+        "url": "https://www.liblib.art/?sourceid=005904&utm=cg&cgv=4onyr06kjx"
+      },
+      {
+        "avatar": "https://atoms.dev/favicon.ico",
+        "name": "Atoms",
+        "desc": "Atoms：用 AI 构建网站与应用，无需编码",
+        "url": "https://atoms.cgref.cn/s/20epqjjkw1"
+      },
+      {
+        "avatar": "https://www.liblib.tv/favicon.ico",
+        "name": "LibTV",
+        "desc": "LibTV - 专业视频创作工具",
+        "url": "https://libtv.cgref.cn/s/j7n63dqn1g"
+      },
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/164qw2r1000di3tkojo3bvi7b10pfewm.png",
+        "name": "火山引擎",
+        "desc": "方舟 Agent Plan",
+        "url": "https://volcengine.cgref.cn/s/59ngwxoer2"
+      },
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/03/1b0hko81000dhg0oniyq2la16ima2auh.png",
+        "name": "爱派AiPy",
+        "desc": "AiPy，超级AI牛马智能体工厂，爱派AiPy软件官网",
+        "url": "https://aipyaipy.cgref.cn/s/3mnzz45no1"
+      },
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/03/1b0hko81000dhfui1jw14zikq0rewpqf.webp",
+        "name": "码上飞",
+        "desc": "码上飞 - 说中文，做应用 | AI生成微信小程序/鸿蒙/APP/H5网站",
+        "url": "https://codeflying.cgref.cn/s/59ngw0xer2"
+      }
+    ]
+  },
+  "recommend1": {
+    "title": "推荐",
+    "subtitle": "一站式AI应用平台",
+    "mode": "recommend",
+    "list": [
+      {
+        "avatar": "https://oss.cakegrowth.cn/public/product/2026/05/lh3px401000diu3kvu0grzo4nqh8uk30.webp",
+        "name": "潮际好麦",
+        "desc": "潮际好麦，专业级AI电商营销内容创作平台",
+        "url": "https://chaojihaomai.cgref.cn/s/dqndm2rn2z"
+      },
+      {
+        "avatar": "https://www.xingliu.art/favicon.ico",
+        "name": "星流",
+        "desc": "星流 - 新一代设计Agent",
+        "url": "https://xingliu.cgref.cn/s/ogewx7wkp2"
       },
       {
         "avatar": "https://oss.cakegrowth.cn/public/product/2026/08/19d709j1000dl2t7i311ww56w62r6imy.webp",
@@ -128,18 +159,6 @@
         "name": "咔片",
         "desc": "咔片PPT-AI一键生成PPT-PPT在线智能制作网站",
         "url": "https://cappt.cgref.cn/s/xpn8zrznzw"
-      },
-      {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/05/p67q3901000dij3oz5c1gns590cvu22e.png",
-        "name": "LiblibAI",
-        "desc": "LiblibAI-哩布哩布AI - 中国领先的AI创作平台",
-        "url": "https://www.liblib.art/?sourceid=005904&utm=cg&cgv=4onyr06kjx"
-      },
-      {
-        "avatar": "https://www.liblib.tv/favicon.ico",
-        "name": "LibTV",
-        "desc": "LibTV - 专业视频创作工具",
-        "url": "https://libtv.cgref.cn/s/j7n63dqn1g"
       },
       {
         "avatar": "https://images.modao.cc/images/favicon.ico",
@@ -206,18 +225,6 @@
         "name": "沁言学术",
         "desc": "学术超级智能体",
         "url": "https://qinyanai.cgref.cn/s/rpexmw3k90"
-      },
-      {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/03/1b0hko81000dhg0oniyq2la16ima2auh.png",
-        "name": "爱派AiPy",
-        "desc": "AiPy，超级AI牛马智能体工厂，爱派AiPy软件官网",
-        "url": "https://aipyaipy.cgref.cn/s/3mnzz45no1"
-      },
-      {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/03/1b0hko81000dhfui1jw14zikq0rewpqf.webp",
-        "name": "码上飞",
-        "desc": "码上飞 - 说中文，做应用 | AI生成微信小程序/鸿蒙/APP/H5网站",
-        "url": "https://codeflying.cgref.cn/s/59ngw0xer2"
       },
       {
         "avatar": "https://oss.cakegrowth.cn/public/product/2026/01/1hc9b211000dfvp0q0ifgg9400927860.png",

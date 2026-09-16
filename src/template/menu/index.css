@@ -208,7 +208,7 @@
 
 @media screen and (orientation: landscape) and (max-height: 550px) {
   .player-show .modal-mask {
-    padding-bottom: 30px;
+    padding-bottom: 40px;
   }
   .card-container {
     height: auto;
