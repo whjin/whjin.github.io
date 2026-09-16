@@ -1,7 +1,0 @@
-name = "whjin-github-io"
-compatibility_date = "2026-09-16"
-
-# 纯静态站点：无 Worker 代码，由边缘直接托管仓库根目录
-# .assetsignore 控制哪些文件不上传（server.js、部署脚本等）
-[assets]
-directory = "./"
