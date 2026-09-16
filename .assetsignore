@@ -1,0 +1,27 @@
+# Cloudflare Workers 静态资源部署：排除开发/部署辅助文件
+# 与 .vercelignore 同理；Wrangler 不会上传匹配行（gitignore 格式）
+node_modules
+.git
+.idea
+.vscode
+.DS_Store
+._*
+*.log
+
+# 开发服务器（仅本地热更新用，线上不需要）
+server.js
+package.json
+pnpm-lock.yaml
+
+# 仓库文档与部署脚本
+README.md
+Commit.md
+Deploy.sh
+Deploy.command
+
+# 其他平台配置与元文件
+CNAME
+.prettierrc
+.gitignore
+.vercelignore
+**/.assetsignore
