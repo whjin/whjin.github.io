@@ -1,0 +1,24 @@
+# Vercel 纯静态部署：只发布站点文件，排除开发/部署辅助文件
+node_modules
+.git
+.idea
+.vscode
+.DS_Store
+._*
+*.log
+
+# 开发服务器与部署脚本（仅本地使用，不上线）
+server.js
+package.json
+pnpm-lock.yaml
+
+# 仓库文档与脚本
+README.md
+Commit.md
+Deploy.sh
+Deploy.command
+
+# GitHub Pages 专用（Vercel 域名在控制台管理）
+CNAME
+.prettierrc
+.gitignore
