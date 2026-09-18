@@ -52,6 +52,7 @@
 36. 增加 `sitemap.xml` `robots.txt` 文件，优化搜索引擎 `SEO` 优化。
 37. 修改阿里云默认 DNS 解析为 `Cloudflare`，优化域名解析速度。
 38. 接入 **`Google AdSense`** 广告，增加文章页广告位。
+39. 增加 `ads.txt` 文件，优化广告展示。
 
 # 兼容处理部署脚本
 
