@@ -6,22 +6,4 @@
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
-    <url>
-        <loc>https://fundscope.wuhuajin.com/</loc>
-        <lastmod>2026-09-16</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://whjin.vercel.app/</loc>
-        <lastmod>2026-09-16</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://blog.wuhuajin09.workers.dev/</loc>
-        <lastmod>2026-09-16</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
 </urlset>
