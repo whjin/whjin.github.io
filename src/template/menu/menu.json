@@ -84,7 +84,7 @@
     ]
   },
   {
-    "sticky": 1,
+    "sticky": 2,
     "title": "推荐",
     "tagName": "ol",
     "items": [
@@ -204,7 +204,7 @@
     ]
   },
   {
-    "sticky": 2,
+    "sticky": 3,
     "title": "我的",
     "tagName": "ol",
     "items": [
@@ -245,7 +245,7 @@
     ]
   },
   {
-    "sticky": 3,
+    "sticky": 4,
     "title": "站点",
     "tagName": "ol",
     "items": [
@@ -289,6 +289,29 @@
         "text": "https://github.com/whjin/next-ai-core",
         "title": "Next AI Core",
         "href": "https://next-ai-core.wuhuajin.com/"
+      }
+    ]
+  },
+  {
+    "sticky": 5,
+    "title": "关于",
+    "tagName": "ul",
+    "items": [
+      {
+        "text": "隐私政策",
+        "href": ""
+      },
+      {
+        "text": "服务条款",
+        "href": ""
+      },
+      {
+        "text": "关于我",
+        "href": ""
+      },
+      {
+        "text": "联系我",
+        "href": ""
       }
     ]
   }
