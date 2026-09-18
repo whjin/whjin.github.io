@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Wu Huajin's Personal Website</title>
+  <meta name="description"
+    content="About Wu Huajin: front-end engineer, technical blogger, indie developer. About this website and how to reach me." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="src/images/favicon.png" />
+  <link rel="stylesheet" href="src/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="src/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="src/components/render/index.css" />
+  <link rel="stylesheet" href="src/components/loading/index.css" />
+  <link rel="stylesheet" href="src/components/navigation/index.css" />
+  <link rel="stylesheet" href="src/components/banner/index.css" />
+  <style>
+    a {
+      color: #007bff;
+    }
+
+    .compliance-wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 24px 24px 32px;
+      box-sizing: border-box;
+    }
+
+    .page-head h1 {
+      font-size: 28px;
+      margin: 8px 0 4px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #e5e8ec;
+      border-radius: 10px;
+      padding: 16px 22px;
+      margin-bottom: 14px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    }
+
+    .card h2 {
+      font-size: 17px;
+      margin: 0 0 10px;
+      color: #1f2329;
+    }
+
+    .card p {
+      margin: 8px 0;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .profile {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #e8f0ff;
+      border: 2px solid #007bff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #007bff;
+      font-size: 24px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .profile-meta b {
+      font-size: 18px;
+      display: block;
+    }
+
+    .profile-meta span {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #007bff;
+      color: #fff;
+      border-radius: 6px;
+      padding: 6px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      margin: 4px 6px 4px 0;
+    }
+
+    .btn.ghost {
+      background: #fff;
+      color: #007bff;
+      border: 1px solid #007bff;
+    }
+
+    .chip {
+      display: inline-block;
+      background: #e8f0ff;
+      color: #007bff;
+      border-radius: 14px;
+      padding: 3px 12px;
+      font-size: 13px;
+      margin: 3px 4px 3px 0;
+    }
+
+    .stats {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      flex: 1;
+      min-width: 110px;
+      border: 1px solid #e5e8ec;
+      border-radius: 8px;
+      background: #f7f8fa;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .stat b {
+      font-size: 20px;
+      color: #007bff;
+      display: block;
+    }
+
+    .stat span {
+      font-size: 12px;
+      color: #666;
+    }
+
+    .lang-zh {
+      color: #666;
+      font-size: 13px;
+    }
+
+    .site-footer {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 12px 24px 28px;
+      box-sizing: border-box;
+      border-top: 1px solid #e5e8ec;
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+    }
+
+    .site-footer .count {
+      color: #007bff;
+      font-weight: 600;
+    }
+
+    .site-footer .legal-links a {
+      color: #007bff;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    .content-area {
+      scroll-behavior: smooth;
+    }
+
+    @media (max-width: 768px) {
+      .stats {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout-container">
+    <div class="nav-container"></div>
+    <div class="content-area">
+      <div class="compliance-wrap">
+        <div class="page-head">
+          <h1>About Me / 关于我</h1>
+        </div>
+
+        <div class="card">
+          <div class="profile">
+            <div class="avatar">华</div>
+            <div class="profile-meta">
+              <b>吴华锦 / Wu Huajin</b>
+              <span>Front-end Engineer · Technical Blogger · Indie Developer</span>
+            </div>
+            <div style="margin-left: auto">
+              <a class="btn" href="contact.html">Contact Me</a>
+              <a class="btn ghost" href="src/template/viewer.html?path=简历_英文简历" target="_blank"
+                rel="noopener noreferrer">Resume</a>
+            </div>
+          </div>
+          <p>I am a front-end engineer based in China, passionate about building practical web
+            applications, writing about front-end engineering and AI tools, and sharing what I
+            learn along the way.</p>
+          <p class="lang-zh">我是一名前端工程师，热爱构建实用的 Web 应用，关注前端工程与 AI
+            工具，并乐于记录和分享自己的实践与思考。</p>
+        </div>
+
+        <div class="card" id="site">
+          <h2>About This Website / 关于本站</h2>
+          <p>This personal website serves as my homepage and technical blog. It also collects and
+            reviews AI tools and applications to help developers and creators discover useful
+            products faster.</p>
+          <p class="lang-zh">本站是我的个人主页与技术博客，同时收录和评测 AI
+            工具与应用，帮助开发者与创作者更快发现好用的产品。</p>
+        </div>
+
+        <div class="card" id="skills">
+          <h2>Skills / 技能栈</h2>
+          <p><span class="chip">JavaScript / TypeScript</span><span class="chip">Vue / React</span><span
+              class="chip">Node.js</span><span class="chip">GIS / WebRTC</span><span class="chip">Web3</span><span
+              class="chip">Mini Program / Taro</span></p>
+          <p class="lang-zh">长期使用 JavaScript / TypeScript、Vue / React、Node.js，涉猎 GIS、WebRTC、Web3
+            与小游戏/小程序开发。</p>
+        </div>
+
+        <div class="card" id="data">
+          <h2>Site Stats / 站点数据</h2>
+          <p class="lang-zh">（以下数值为占位示例，上线前请替换为真实文章数、项目数与建站年份）</p>
+          <div class="stats">
+            <div class="stat"><b>20+</b><span>Articles / 技术文章</span></div>
+            <div class="stat"><b>10+</b><span>Open-source Projects / 开源项目</span></div>
+            <div class="stat"><b>2013</b><span>Website Since / 建站年份</span></div>
+          </div>
+        </div>
+
+        <div class="card" id="contact">
+          <h2>Contact / 联系方式</h2>
+          <p>Email: <a href="mailto:wuhuajin09@163.com">wuhuajin09@163.com</a><br />GitHub:
+            <a href="https://github.com/whjin" target="_blank" rel="noopener noreferrer">github.com/whjin</a>
+          </p>
+          <p class="lang-zh">商务合作、技术交流欢迎邮件联系，一般 1-2 个工作日内回复。</p>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        <div>&copy;2013-2026 Wu Huajin ｜ 访问
+          <span id="vercount_value_site_uv" class="count"></span>人
+          <span id="vercount_value_site_pv" class="count"></span>次
+        </div>
+        <div class="legal-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a
+            href="about.html">About</a><a href="contact.html">Contact</a></div>
+      </footer>
+      <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
+    </div>
+
+    <aside class="sidebar-area">
+      <div class="sidebar-title">文章目录</div>
+      <nav class="toc-nav">
+        <ul>
+          <li><a href="#site">About This Website</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#data">Site Stats</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
+
+  <script src="src/components/loading/index.js"></script>
+  <script src="src/components/banner/index.js"></script>
+  <script src="src/components/navigation/index.js"></script>
+  <script src="src/components/scroll/index.js"></script>
+  <script src="src/js/vercount.min.js"></script>
+  <script>
+    (function () {
+      var scrollContainer = document.querySelector('.content-area');
+      if (!scrollContainer) return;
+      document.querySelectorAll('.toc-nav a').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          var id = a.getAttribute('href');
+          if (!id || id.charAt(0) !== '#') return;
+          var target = document.querySelector(id);
+          if (target) {
+            e.preventDefault();
+            scrollContainer.scrollTo({ top: target.offsetTop - 20, behavior: 'smooth' });
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+
+</html>

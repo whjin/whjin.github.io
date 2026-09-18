@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 - Page Not Found ｜ Wu Huajin's Personal Website</title>
+  <meta name="description"
+    content="404 Page Not Found - the page you requested does not exist. Return to wuhuajin.com home page." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="icon" href="src/images/favicon.png" />
+  <link rel="stylesheet" href="src/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="src/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="src/components/render/index.css" />
+  <link rel="stylesheet" href="src/components/loading/index.css" />
+  <link rel="stylesheet" href="src/components/navigation/index.css" />
+  <link rel="stylesheet" href="src/components/banner/index.css" />
+  <style>
+    a {
+      color: #007bff;
+    }
+
+    .layout404 {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 24px;
+      box-sizing: border-box;
+    }
+
+    .code {
+      font-size: 88px;
+      font-weight: 800;
+      color: #007bff;
+      line-height: 1;
+      margin: 0;
+    }
+
+    .msg {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 14px 0 6px;
+    }
+
+    .desc {
+      font-size: 14px;
+      color: #666;
+      max-width: 520px;
+      margin: 6px 0 24px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #007bff;
+      color: #fff;
+      border-radius: 8px;
+      padding: 10px 28px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      margin: 4px 8px 4px 0;
+    }
+
+    .btn.ghost {
+      background: #fff;
+      color: #007bff;
+      border: 1px solid #007bff;
+    }
+
+    .quick {
+      margin-top: 26px;
+      font-size: 13px;
+      color: #666;
+    }
+
+    .quick a {
+      color: #007bff;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    .lang-zh {
+      color: #666;
+      font-size: 13px;
+      margin-top: 18px;
+    }
+
+    .site-footer {
+      padding: 12px 24px 28px;
+      box-sizing: border-box;
+      border-top: 1px solid #e5e8ec;
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+    }
+
+    .site-footer .count {
+      color: #007bff;
+      font-weight: 600;
+    }
+
+    .site-footer .legal-links a {
+      color: #007bff;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    @media (max-width: 768px) {
+      .code {
+        font-size: 64px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout-container">
+    <div class="nav-container"></div>
+    <div class="content-area">
+      <div class="layout404">
+        <div class="code">404</div>
+        <div class="msg">Page Not Found / 页面不存在</div>
+        <p class="desc">The page you are looking for may have been moved, renamed, or no longer exists. Please
+          return to the home page or use the links below.<br /><span
+            class="lang-zh">您访问的页面可能已被移动、重命名或不存在，请返回首页或使用下方链接。</span></p>
+        <div>
+          <a class="btn" href="index.html">Back to Home / 返回首页</a>
+          <a class="btn ghost" href="contact.html">Contact Me / 联系我</a>
+        </div>
+        <div class="quick">
+          <a href="about.html">About / 关于我</a>
+          <a href="privacy.html">Privacy / 隐私政策</a>
+          <a href="terms.html">Terms / 服务条款</a>
+        </div>
+      </div>
+      <footer class="site-footer">
+        <div>&copy;2013-2026 Wu Huajin ｜ 访问
+          <span id="vercount_value_site_uv" class="count"></span>人
+          <span id="vercount_value_site_pv" class="count"></span>次
+        </div>
+        <div class="legal-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a
+            href="about.html">About</a><a href="contact.html">Contact</a></div>
+      </footer>
+    </div>
+  </div>
+
+  <script src="src/components/loading/index.js"></script>
+  <script src="src/components/banner/index.js"></script>
+  <script src="src/components/navigation/index.js"></script>
+  <script src="src/components/scroll/index.js"></script>
+  <script src="src/js/vercount.min.js"></script>
+</body>
+
+</html>

@@ -1,12 +1,12 @@
 function handleNavigation() {
   const navImgs = [
     {
-      src: '../images/icons/toc.png',
+      src: '/src/images/icons/toc.png',
       alt: '隐藏目录',
       class: 'nav-toc',
     },
     {
-      src: '../images/icons/back.png',
+      src: '/src/images/icons/back.png',
       alt: '返回上一页',
       class: 'nav-back',
     },

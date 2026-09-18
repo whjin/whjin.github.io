@@ -15,3 +15,10 @@ Thumbs.db
 *.bak
 *.swp
 *.swo
+
+# 海外审核期临时隐藏：微信/打赏二维码图（social/index.js 已用 show:false 控制不渲染）
+src/images/social/wx_pay.jpg
+src/images/social/ali_pay.jpg
+src/images/social/wechat.jpg
+src/images/social/wechat_oa.jpg
+src/images/social/wechat_video.jpg

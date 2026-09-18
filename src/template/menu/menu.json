@@ -299,19 +299,19 @@
     "items": [
       {
         "text": "隐私政策",
-        "href": ""
+        "href": "privacy.html"
       },
       {
         "text": "服务条款",
-        "href": ""
+        "href": "terms.html"
       },
       {
         "text": "关于我",
-        "href": ""
+        "href": "about.html"
       },
       {
         "text": "联系我",
-        "href": ""
+        "href": "contact.html"
       }
     ]
   }

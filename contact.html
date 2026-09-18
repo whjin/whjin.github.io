@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Wu Huajin's Personal Website</title>
+  <meta name="description"
+    content="Contact Wu Huajin: email wuhuajin09@163.com, GitHub and social platforms. Expect a reply within 1-2 business days." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="src/images/favicon.png" />
+  <link rel="stylesheet" href="src/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="src/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="src/components/render/index.css" />
+  <link rel="stylesheet" href="src/components/loading/index.css" />
+  <link rel="stylesheet" href="src/components/navigation/index.css" />
+  <link rel="stylesheet" href="src/components/banner/index.css" />
+  <style>
+    a {
+      color: #007bff;
+    }
+
+    .compliance-wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 24px 24px 32px;
+      box-sizing: border-box;
+    }
+
+    .page-head h1 {
+      font-size: 28px;
+      margin: 8px 0 4px;
+    }
+
+    .cols {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .card {
+      flex: 1;
+      background: #fff;
+      border: 1px solid #e5e8ec;
+      border-radius: 10px;
+      padding: 16px 22px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    }
+
+    .card h2 {
+      font-size: 17px;
+      margin: 0 0 10px;
+      color: #1f2329;
+    }
+
+    .item {
+      border: 1px solid #e5e8ec;
+      background: #f7f8fa;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin: 8px 0;
+      font-size: 14px;
+    }
+
+    .item .label {
+      font-size: 12px;
+      color: #666;
+      display: block;
+    }
+
+    .item a {
+      color: #007bff;
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      margin-top: 6px;
+    }
+
+    .social-icons a {
+      display: inline-flex;
+    }
+
+    .social-icons img {
+      width: 32px;
+      height: 32px;
+      display: block;
+    }
+
+    .social-icons a:hover {
+      opacity: 0.75;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      margin: 10px 0 4px;
+    }
+
+    label .req {
+      color: #d93026;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid #e5e8ec;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 14px;
+      font-family: inherit;
+      background: #fff;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 24px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 14px;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #666;
+      margin-top: 8px;
+    }
+
+    .lang-zh {
+      color: #666;
+      font-size: 13px;
+    }
+
+    .site-footer {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 12px 24px 28px;
+      box-sizing: border-box;
+      border-top: 1px solid #e5e8ec;
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+    }
+
+    .site-footer .count {
+      color: #007bff;
+      font-weight: 600;
+    }
+
+    .site-footer .legal-links a {
+      color: #007bff;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    .content-area {
+      scroll-behavior: smooth;
+    }
+
+    @media (max-width: 768px) {
+      .cols {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout-container">
+    <div class="nav-container"></div>
+    <div class="content-area">
+      <div class="compliance-wrap">
+        <div class="page-head">
+          <h1>Contact Me / 联系我</h1>
+        </div>
+        <div class="cols">
+          <div class="card" id="info">
+            <h2>Contact Info / 联系方式</h2>
+            <div class="item"><span class="label">Email (primary) / 邮箱（主）</span><a
+                href="mailto:wuhuajin09@163.com">wuhuajin09@163.com</a></div>
+            <div class="item"><span class="label">GitHub</span><a href="https://github.com/whjin" target="_blank"
+                rel="noopener noreferrer">github.com/whjin</a></div>
+            <div class="item"><span class="label">Social Platforms / 社交平台</span>
+              <div class="social-icons">
+                <a href="https://weibo.com/u/1710899102" target="_blank" rel="noopener noreferrer" title="微博 / Weibo"><img
+                    src="src/images/icons/weibo.png" alt="微博" /></a>
+                <a href="https://x.com/whjin" target="_blank" rel="noopener noreferrer" title="X / Twitter"><img
+                    src="src/images/icons/twitter.png" alt="X / Twitter" /></a>
+                <a href="https://github.com/whjin" target="_blank" rel="noopener noreferrer" title="GitHub"><img
+                    src="src/images/icons/github.png" alt="GitHub" /></a>
+              </div>
+            </div>
+            <div class="item"><span class="label">Response Time / 响应时效</span>Usually within 3-5 business days
+              / 一般 3-5 个工作日内回复</div>
+            <p class="lang-zh">商务合作、技术交流、网站反馈均欢迎来信。</p>
+          </div>
+
+          <div class="card" id="message">
+            <h2>Send a Message / 留言</h2>
+            <form action="mailto:wuhuajin09@163.com" method="post" enctype="text/plain">
+              <label>Name / 姓名 <span class="req">*</span></label>
+              <input type="text" name="name" required />
+              <label>Email / 邮箱 <span class="req">*</span></label>
+              <input type="email" name="email" required />
+              <label>Message / 留言内容 <span class="req">*</span></label>
+              <textarea name="message" required></textarea>
+              <button class="btn" type="submit">Send / 发送</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        <div>&copy;2013-2026 Wu Huajin ｜ 访问
+          <span id="vercount_value_site_uv" class="count"></span>人
+          <span id="vercount_value_site_pv" class="count"></span>次
+        </div>
+        <div class="legal-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a
+            href="about.html">About</a><a href="contact.html">Contact</a></div>
+      </footer>
+      <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
+    </div>
+
+    <aside class="sidebar-area">
+      <div class="sidebar-title">文章目录</div>
+      <nav class="toc-nav">
+        <ul>
+          <li><a href="#info">Contact Info</a></li>
+          <li><a href="#message">Send a Message</a></li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
+
+  <script src="src/components/loading/index.js"></script>
+  <script src="src/components/banner/index.js"></script>
+  <script src="src/components/navigation/index.js"></script>
+  <script src="src/components/scroll/index.js"></script>
+  <script src="src/js/vercount.min.js"></script>
+  <script>
+    (function () {
+      var scrollContainer = document.querySelector('.content-area');
+      if (!scrollContainer) return;
+      document.querySelectorAll('.toc-nav a').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          var id = a.getAttribute('href');
+          if (!id || id.charAt(0) !== '#') return;
+          var target = document.querySelector(id);
+          if (target) {
+            e.preventDefault();
+            scrollContainer.scrollTo({ top: target.offsetTop - 20, behavior: 'smooth' });
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+
+</html>

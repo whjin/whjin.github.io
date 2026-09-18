@@ -11,12 +11,14 @@
       title: '微信',
       name: 'wechat',
       icon: 28,
+      show: false,
     },
     {
       href: '',
       title: '打赏',
       name: 'reward',
       icon: 28,
+      show: false,
     },
     {
       href: '',
@@ -66,6 +68,12 @@
       name: 'github',
       icon: 28,
     },
+    {
+      href: 'https://x.com/whjin',
+      title: 'X / Twitter',
+      name: 'twitter',
+      icon: 28,
+    },
   ];
 
   const wechatList = [
@@ -109,6 +117,7 @@
 
   const fragment = document.createDocumentFragment();
   socialList.forEach((s) => {
+    if (s.show === false) return;
     const aEl = document.createElement('a');
     const imgEl = document.createElement('img');
 

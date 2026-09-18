@@ -114,10 +114,17 @@ const server = http.createServer((req, res) => {
             // 重新读取文件
             fs.readFile(filePath, (err, data) => {
               if (err) {
-                res.writeHead(404, {
-                  'Content-Type': 'text/html; charset=utf-8',
+                fs.readFile(path.join(rootDir, '404.html'), (err404, content404) => {
+                  if (err404) {
+                    res.writeHead(404, {
+                      'Content-Type': 'text/html; charset=utf-8',
+                    });
+                    res.end(`<h1>404 - 文件未找到</h1><p>尝试读取文件时出错: ${err.message}</p>`);
+                    return;
+                  }
+                  res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
+                  res.end(content404);
                 });
-                res.end(`<h1>404 - 文件未找到</h1><p>尝试读取文件时出错: ${err.message}</p>`);
               } else {
                 res.writeHead(200, {
                   'Content-Type': contentType,
@@ -131,25 +138,16 @@ const server = http.createServer((req, res) => {
         }
 
         if (!fileFound) {
-          res.writeHead(404, {
-            'Content-Type': 'text/html; charset=utf-8',
+          // 返回自定义 404.html（保留 404 状态码而非 301 跳转，利于 SEO 与 AdSense 校验）
+          fs.readFile(path.join(rootDir, '404.html'), (err404, content404) => {
+            if (err404) {
+              res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
+              res.end('<h1>404 - 文件未找到</h1>');
+              return;
+            }
+            res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
+            res.end(content404);
           });
-          res.end(`
-            <html>
-              <head><title>404 - 文件未找到</title></head>
-              <body>
-                <h1>404 - 文件未找到</h1>
-                <p>尝试的文件路径: ${filePath}</p>
-                <p>解码后路径: ${pathname}</p>
-                <p>请确保文件存在于以下位置之一:</p>
-                <ul>
-                  <li>${rootDir}${pathname}</li>
-                  <li>${path.join(rootDir, 'src', 'template', pathname)}</li>
-                  <li>${path.join(rootDir, 'src/template/posts', pathname.includes('/posts/') ? pathname.split('/posts/')[1] : '')}</li>
-                </ul>
-              </body>
-            </html>
-          `);
         }
       } else {
         res.writeHead(500);
