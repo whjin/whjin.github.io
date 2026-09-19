@@ -8,7 +8,7 @@
         "marked": true,
         "text": "一站式AI应用平台",
         "title": "AI应用集 - 一站式AI应用平台",
-        "href": "src/template/viewer.html?path=友链_link&format=html"
+        "href": "/src/template/viewer.html?path=友链_link&format=html"
       },
       {
         "text": "AionClaw",
@@ -212,7 +212,7 @@
         "marked": true,
         "text": "原创诗词",
         "title": "雅致寓于高阁渔舟唱晚，古典悠然；\r\n格调外发园林绿树萦绕，馥郁清香。",
-        "href": "src/template/viewer.html?path=文学_原创诗词"
+        "href": "/src/template/viewer.html?path=文学_原创诗词"
       },
       {
         "marked": true,
@@ -228,41 +228,64 @@
       {
         "marked": true,
         "text": "中文简历",
-        "href": "src/template/viewer.html?path=简历_中文简历"
+        "href": "/src/template/viewer.html?path=简历_中文简历"
       },
       {
         "text": "中文简历PDF",
-        "href": "src/template/viewer.html?path=简历_中文简历PDF&format=pdf"
+        "href": "/src/template/viewer.html?path=简历_中文简历PDF&format=pdf"
       },
       {
         "text": "英文简历",
-        "href": "src/template/viewer.html?path=简历_英文简历"
+        "href": "/src/template/viewer.html?path=简历_英文简历"
       },
       {
         "text": "英文简历PDF",
-        "href": "src/template/viewer.html?path=简历_英文简历PDF&format=pdf"
+        "href": "/src/template/viewer.html?path=简历_英文简历PDF&format=pdf"
       }
     ]
   },
   {
     "sticky": 4,
+    "title": "关于",
+    "tagName": "ul",
+    "items": [
+      {
+        "text": "隐私政策",
+        "href": "privacy.html"
+      },
+      {
+        "text": "服务条款",
+        "href": "terms.html"
+      },
+      {
+        "text": "关于我",
+        "href": "about.html"
+      },
+      {
+        "text": "联系我",
+        "href": "contact.html"
+      }
+    ]
+  },
+  {
+    "sticky": 5,
     "title": "站点",
     "tagName": "ol",
     "items": [
       {
         "marked": true,
         "text": "技术文章",
-        "href": "src/template/viewer.html?path=文章_article&format=html"
+        "href": "/src/template/viewer.html?path=文章_article&format=html"
       },
       {
         "marked": true,
         "text": "技术教程",
-        "href": "src/template/viewer.html?path=教程_tutorial&format=html"
+        "href": "/src/template/viewer.html?path=教程_tutorial&format=html"
       },
       {
         "marked": true,
         "text": "IT工具合集",
-        "href": "src/template/viewer.html?path=工具_tool&format=html"
+        "href": "/src/template/viewer.html?path=工具_tool&format=html"
       },
       {
         "marked": true,
@@ -293,25 +316,161 @@
     ]
   },
   {
-    "sticky": 5,
-    "title": "关于",
-    "tagName": "ul",
+    "sticky": 6,
+    "title": "原创文章",
+    "tagName": "ol",
     "items": [
       {
-        "text": "隐私政策",
-        "href": "privacy.html"
+        "text": "AI项目文档",
+        "href": "/src/template/viewer.html?path=AI_AI项目文档"
       },
       {
-        "text": "服务条款",
-        "href": "terms.html"
+        "text": "AI大模型文档",
+        "href": "/src/template/viewer.html?path=AI_AI大模型文档"
       },
       {
-        "text": "关于我",
-        "href": "about.html"
+        "text": "AI前端",
+        "href": "/src/template/viewer.html?path=AI_AI前端"
       },
       {
-        "text": "联系我",
-        "href": "contact.html"
+        "text": "AI应用开发学习路线图",
+        "href": "/src/template/viewer.html?path=AI_AI应用开发学习路线图"
+      },
+      {
+        "text": "部署Meting-API服务",
+        "href": "/src/template/viewer.html?path=工程化_Docker部署Meting API服务"
+      },
+      {
+        "text": "Node.js实战",
+        "href": "/src/template/viewer.html?path=Node_Node.js实战"
+      },
+      {
+        "text": "Node.js进阶",
+        "href": "/src/template/viewer.html?path=Node_Node.js进阶"
+      },
+      {
+        "text": "Node.js文档",
+        "href": "/src/template/viewer.html?path=Node_Node.js文档"
+      },
+      {
+        "text": "功能代码集合",
+        "href": "/src/template/viewer.html?path=JavaScript_功能代码集合"
+      },
+      {
+        "text": "设计模式文档",
+        "href": "/src/template/viewer.html?path=JavaScript_设计模式文档"
+      },
+      {
+        "text": "ECMAScript文档",
+        "href": "/src/template/viewer.html?path=JavaScript_ECMAScript文档"
+      },
+      {
+        "text": "TypeScript类型系统",
+        "href": "/src/template/viewer.html?path=TypeScript_类型系统"
+      },
+      {
+        "text": "WebRTC性能优化",
+        "href": "/src/template/viewer.html?path=WebRTC_WebRTC性能优化"
+      },
+      {
+        "text": "Vue文档",
+        "href": "/src/template/viewer.html?path=Vue_Vue文档"
+      },
+      {
+        "text": "Hermes引擎文档",
+        "href": "/src/template/viewer.html?path=RN_Hermes引擎文档"
+      },
+      {
+        "text": "React文档",
+        "href": "/src/template/viewer.html?path=React_React文档"
+      },
+      {
+        "text": "Taro小程序文档",
+        "href": "/src/template/viewer.html?path=小程序_Taro小程序文档"
+      },
+      {
+        "text": "小程序文档",
+        "href": "/src/template/viewer.html?path=小程序_小程序文档"
+      },
+      {
+        "text": "Web GIS文档",
+        "href": "/src/template/viewer.html?path=GIS_Web GIS文档"
+      },
+      {
+        "text": "Cesium文档",
+        "href": "/src/template/viewer.html?path=GIS_Cesium文档"
+      },
+      {
+        "text": "实战项目文档",
+        "href": "/src/template/viewer.html?path=小程序_实战项目文档"
+      },
+      {
+        "text": "Web加密",
+        "href": "/src/template/viewer.html?path=工程化_Web加密"
+      },
+      {
+        "text": "工程实例文档",
+        "href": "/src/template/viewer.html?path=工程化_工程实例文档"
+      },
+      {
+        "text": "Vite与Webpack对比",
+        "href": "/src/template/viewer.html?path=工程化_Vite与Webpack对比"
+      },
+      {
+        "text": "HTTP文档",
+        "href": "/src/template/viewer.html?path=网络_HTTP文档"
+      },
+      {
+        "text": "操作系统文档",
+        "href": "/src/template/viewer.html?path=文档_操作系统文档"
+      },
+      {
+        "text": "新趋势",
+        "href": "/src/template/viewer.html?path=文档_新趋势"
+      },
+      {
+        "text": "帮助文档",
+        "href": "/src/template/viewer.html?path=文档_帮助文档"
+      },
+      {
+        "text": "领域适配性分析",
+        "href": "/src/template/viewer.html?path=文档_领域适配性分析"
+      },
+      {
+        "text": "Solidity文档",
+        "href": "/src/template/viewer.html?path=Web3_Solidity文档"
+      },
+      {
+        "text": "智能合约",
+        "href": "/src/template/viewer.html?path=Web3_智能合约"
+      },
+      {
+        "text": "Web3文档",
+        "href": "/src/template/viewer.html?path=Web3_Web3文档"
+      },
+      {
+        "text": "Web3钱包",
+        "href": "/src/template/viewer.html?path=Web3_Web3钱包"
+      },
+      {
+        "text": "ADB命令集合",
+        "href": "/src/template/viewer.html?path=Android_ADB命令集合"
+      },
+      {
+        "text": "Git文档",
+        "href": "/src/template/viewer.html?path=Git_Git文档"
+      },
+      {
+        "text": "基金持仓2026-7-23",
+        "href": "/src/template/viewer.html?path=生活_基金持仓2026-7-23"
+      },
+      {
+        "text": "基金持仓2026-6-25",
+        "href": "/src/template/viewer.html?path=生活_基金持仓2026-6-25"
+      },
+      {
+        "text": "育儿经",
+        "href": "/src/template/viewer.html?path=生活_育儿经"
       }
     ]
   }
