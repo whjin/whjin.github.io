@@ -1,1 +1,1 @@
-2026-09-19 09:57:43 feat: 清除多余的 `Google AdSense` 代码引入
+2026-09-21 06:53:46 feat: `Google AdSense` 代码调整至 `<head>` 标签
