@@ -243,8 +243,9 @@
       },
     ];
 
-    const footerEl = document.querySelector('.footer-content');
     let isActiveShow = false;
+    const footerContentEl = document.querySelector('.footer-content');
+    const footerLinksEl = document.querySelector('.footer-links');
 
     playerConfigs.forEach(({ selector, pause }) => {
       const playerEl = document.querySelector(selector);
@@ -259,7 +260,10 @@
       }
     });
 
-    footerEl.style.visibility = isActiveShow ? 'hidden' : 'visible';
+    // 播放器显示时隐藏 footer 版权/统计与合规内容（避免与迷你播放器重叠）
+    const hidden = isActiveShow ? 'hidden' : 'visible';
+    if (footerContentEl) footerContentEl.style.visibility = hidden;
+    if (footerLinksEl) footerLinksEl.style.visibility = hidden;
 
     if (isActiveShow) {
       document.body.classList.add('player-show');
