@@ -16,10 +16,10 @@ function createMenuItem(item) {
   const aEl = document.createElement('a');
   aEl.rel = 'noopener noreferrer';
   aEl.target = '_blank';
-  aEl.innerHTML = item.marked ? `${MARKED_HTML}${item.text}` : item.text;
-  aEl.title = item.title || item.text;
-  aEl.href = item.href;
-  let isLinkPage = item.href.includes('viewer.html') && item.href.includes('&format=html');
+  aEl.innerHTML = item.marked ? `${MARKED_HTML}${item.title}` : item.title;
+  aEl.title = item.desc || item.title;
+  aEl.href = item.url;
+  let isLinkPage = item.url.includes('viewer.html') && item.url.includes('&format=html');
   if (isLinkPage) {
     aEl.addEventListener('click', () => {
       localStorage.setItem(STORAGE_KEYS.navigateToLink, true);
@@ -29,12 +29,12 @@ function createMenuItem(item) {
   return liEl;
 }
 async function generateCard() {
-  const menuData = await fetchData('src/template/menu/menu.json');
+  const menuData = await fetchData('src/template/menu/data.json');
   const finalMenuData = processMenuData(menuData);
   const containerEl = document.querySelector('.card-container');
   const fragment = document.createDocumentFragment();
   finalMenuData.forEach((m) => {
-    if (!m.hide && m.items.length > 0) {
+    if (m.show !== false && m.items.length > 0) {
       const cardEl = document.createElement('div');
       cardEl.className = 'card-item';
       cardEl.dataset.cardTitle = m.title;

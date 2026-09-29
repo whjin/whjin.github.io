@@ -31,7 +31,7 @@
   const renderModes = {
     recommend: {
       gridClass: 'recommend-grid',
-      defaultFields: { url: 'url', avatar: 'avatar', name: 'name', desc: 'desc' },
+      defaultFields: { url: 'url', avatar: 'avatar', name: 'title', desc: 'desc' },
       template: (item) => {
         const avatar = item.avatar || defaultAvatar;
         const name = item.name || '';
@@ -54,7 +54,7 @@
         url: 'url',
         cover: 'cover',
         avatar: 'avatar',
-        name: 'name',
+        name: 'title',
         desc: 'desc',
         category: 'category',
       },
@@ -136,11 +136,11 @@
     }
     const { config } = getModeConfig(sectionKey, sectionData);
     if (!config) return '';
-    const { title, subtitle, list } = sectionData;
+    const { title, desc, list } = sectionData;
     return `
       <section class="section">
         <h2 class="section-title">${title} <span>(${list.length})</span></h2>
-        <p class="section-subtitle">${subtitle}</p>
+        <p class="section-subtitle">${desc}</p>
         <div id="${sectionKey}Grid" class="card-grid ${config.gridClass}"></div>
       </section>
     `;

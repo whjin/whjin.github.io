@@ -1,3 +1,10 @@
+---
+title: AI前端
+date: 2026-09-11
+category: AI
+description: LLM （大语言模型）
+---
+
 ## 模型侧
 
 - `LLM` （大语言模型）

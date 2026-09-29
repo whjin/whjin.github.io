@@ -1,3 +1,18 @@
+---
+title: AI应用开发学习路线图
+date: 2026-09-26
+updated: 2026-09-26
+category: AI
+tags:
+  - AI
+  - 学习路线
+cover: 
+keywords: AI应用开发,前端,大模型,学习路线
+description: 从零到实战的前端 × AI 系统学习路线，覆盖大模型、Agent、工程化与优质资源汇总。
+sticky: 1
+published: true
+---
+
 ## 四、优质学习资源汇总
 
 ### 4.1 在线学习平台

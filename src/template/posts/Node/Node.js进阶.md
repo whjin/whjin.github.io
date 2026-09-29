@@ -1,3 +1,10 @@
+---
+title: Node.js进阶
+date: 2026-09-26
+category: Node
+description: 创建 node 子进程用 fork，自带通道方便通信
+---
+
 ## 子进程
 
 > - 创建 `node` 子进程用 `fork`，自带通道方便通信

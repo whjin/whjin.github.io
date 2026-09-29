@@ -1,3 +1,10 @@
+---
+title: AI项目文档
+date: 2026-09-11
+category: AI
+description: Next.js框架
+---
+
 ## `Next.js`框架
 
 - **零配置**：自动编译并打包

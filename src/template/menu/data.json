@@ -1,0 +1,504 @@
+[
+  {
+    "sticky": 1,
+    "title": "核心推荐",
+    "tagName": "ol",
+    "show": false,
+    "items": [
+      {
+        "marked": true,
+        "title": "一站式AI应用平台",
+        "desc": "AI应用集 - 一站式AI应用平台",
+        "url": "/src/template/viewer.html?path=友链_link&format=html"
+      },
+      {
+        "title": "PixTV",
+        "desc": "PixTV｜一站式 AI 视频生成与无限画布创作平台",
+        "url": "https://pixtv.cgref.cn/s/omkloo8k4d"
+      },
+      {
+        "title": "PixPix",
+        "desc": "帧象创意 - PixPix官网_电商AI商品图生成器_AI视频_免费在线设计工具",
+        "url": "https://pixpix.cgref.cn/s/p3kqddweol"
+      },
+      {
+        "title": "AionClaw",
+        "desc": "AionClaw-真正能做事的AI龙虾-基于OpenClaw深度升级",
+        "url": "https://aionclaw.cgref.cn/s/4onyj26njx"
+      },
+      {
+        "title": "Lovart 中文版",
+        "desc": "Lovart 中文版- 新一代设计 Agent",
+        "url": "https://lovart.cgref.cn/s/2znrl36nr7"
+      },
+      {
+        "title": "AniShort",
+        "desc": "AniShort - AI影视剧协作平台",
+        "url": "https://anishort.cgref.cn/s/9we2wzjego"
+      },
+      {
+        "title": "Loomy",
+        "desc": "Loomy-你的AI工作搭子",
+        "url": "https://loomy.cgref.cn/s/59ngvmonr2"
+      },
+      {
+        "title": "updream官网",
+        "desc": "updream官网-AI视频创作助手",
+        "url": "https://updream.cgref.cn/s/2znrpo9er7"
+      },
+      {
+        "title": "Laper",
+        "desc": "剧作软件的进化终点。以剧为本。在 Laper 中协作制片。",
+        "url": "https://laper.cgref.cn/s/zdkjq78n1r"
+      },
+      {
+        "marked": true,
+        "title": "蛙蛙写作",
+        "desc": "蛙蛙写作——超级AI智能写作助手",
+        "url": "https://wawawriter.cgref.cn/s/59ngw1oer2"
+      },
+      {
+        "title": "Seko",
+        "desc": "Seko - World Class AI Video Generation Platform",
+        "url": "https://seko.cgref.cn/s/2znr3vznr7"
+      },
+      {
+        "title": "LiblibAI",
+        "desc": "LiblibAI-哩布哩布AI - 中国领先的AI创作平台",
+        "url": "https://liblib.cgref.cn/s/4onyr06kjx"
+      },
+      {
+        "title": "Atoms",
+        "desc": "Atoms：用 AI 构建网站与应用，无需编码",
+        "url": "https://atoms.cgref.cn/s/20epqjjkw1"
+      },
+      {
+        "title": "LibTV",
+        "desc": "LibTV - 专业视频创作工具",
+        "url": "https://libtv.cgref.cn/s/j7n63dqn1g"
+      },
+      {
+        "title": "火山引擎",
+        "desc": "方舟 Agent Plan",
+        "url": "https://volcengine.cgref.cn/s/59ngwxoer2"
+      },
+      {
+        "title": "爱派AiPy",
+        "desc": "AiPy，超级AI牛马智能体工厂，爱派AiPy软件官网",
+        "url": "https://aipyaipy.cgref.cn/s/3mnzz45no1"
+      },
+      {
+        "title": "码上飞",
+        "desc": "码上飞 - 说中文，做应用 | AI生成微信小程序/鸿蒙/APP/H5网站",
+        "url": "https://codeflying.cgref.cn/s/59ngw0xer2"
+      }
+    ]
+  },
+  {
+    "sticky": 2,
+    "title": "推荐",
+    "tagName": "ol",
+    "show": false,
+    "items": [
+      {
+        "title": "潮际好麦",
+        "desc": "潮际好麦，专业级AI电商营销内容创作平台",
+        "url": "https://chaojihaomai.cgref.cn/s/dqndm2rn2z"
+      },
+      {
+        "title": "星流",
+        "desc": "星流 - 新一代设计Agent",
+        "url": "https://xingliu.cgref.cn/s/ogewx7wkp2"
+      },
+      {
+        "title": "Agent Space",
+        "desc": "Codex 与 Claude Code 的 AI Agent 工作空间 | Agent.Space",
+        "url": "https://agentspace.cgref.cn/s/59ngrdjkr2"
+      },
+      {
+        "title": "剧云",
+        "desc": "剧云 - 免费专业中文剧本创作平台|AI智能编剧|智能改编|剧本医生",
+        "url": "https://jucloud.cgref.cn/s/qmnom6ye29"
+      },
+      {
+        "title": "vibeknow",
+        "url": "https://vibeknow.cgref.cn/s/4ony2gwejx"
+      },
+      {
+        "title": "SkildArt",
+        "desc": "SkildArt 思可达 - 全球电商商家的AI视觉增长引擎",
+        "url": "https://skildart.cgref.cn/s/5ln1lo5krw"
+      },
+      {
+        "title": "讯飞绘文",
+        "url": "https://turbodesk.cgref.cn/s/5ln1rlgkrw"
+      },
+      {
+        "title": "立刻MV",
+        "desc": "立刻MV（LickMV） - AI 音乐视频生成器与 MV 创作工具",
+        "url": "https://lickmv.cgref.cn/s/rpe3j8jk05"
+      },
+      {
+        "title": "切问学术",
+        "desc": "切问学术搜索 - AI 文献发现与深度检索",
+        "url": "https://qiewenpaper.cgref.cn/s/41evw43kv8"
+      },
+      {
+        "title": "二狗PPT",
+        "desc": "二狗PPT - DeepSeek驱动的AI PPT生成器｜国企汇报·乙方方案·无AI痕迹",
+        "url": "https://2dogppt.cgref.cn/s/rpe3j29k05"
+      },
+      {
+        "title": "咔片",
+        "desc": "咔片PPT-AI一键生成PPT-PPT在线智能制作网站",
+        "url": "https://cappt.cgref.cn/s/xpn8zrznzw"
+      },
+      {
+        "title": "墨刀AI",
+        "desc": "墨刀AI - 激发无限创造力",
+        "url": "https://modao.cgref.cn/s/5ln1o0mkrw"
+      },
+      {
+        "title": "超级简历WonderCV",
+        "desc": "超级简历WonderCV - AI智能简历制作工具,HR推荐专业中英文简历模板免费下载",
+        "url": "https://wondercv.cgref.cn/s/50k9g23ng6"
+      },
+      {
+        "title": "UP 简历",
+        "desc": "AI简历生成在线制作工具_简历模板免费下载使用-UP简历",
+        "url": "https://upcv.cgref.cn/s/1zn5mdykqm"
+      },
+      {
+        "title": "讯飞智作",
+        "desc": "讯飞智作-AI虚拟数字人视频制作-一键创作口播视频-文字转视频-数字分身定制",
+        "url": "https://xfzhizuo.cgref.cn/s/rpexmw9k90"
+      },
+      {
+        "title": "音述AI",
+        "desc": "音述 - 全球前沿专业级中文AI音乐创作平台 | 永久免费在线AI写歌 | 音述AI音乐社区",
+        "url": "https://yinshu.cgref.cn/s/9qyk4xoe87"
+      },
+      {
+        "title": "SpeedAI科研小助手",
+        "desc": "SpeedAI科研小助手【官网】- AI降重降AI率 | 知网维普万方",
+        "url": "https://speedai.cgref.cn/s/q50k978ng6"
+      },
+      {
+        "title": "白日梦AI",
+        "desc": "白日梦AI-领先的AI视频创作类AIGC创作平台",
+        "url": "https://aibrm.cgref.cn/s/l41evd6ev8"
+      },
+      {
+        "title": "AstronClaw",
+        "desc": "讯飞星辰Agent平台 - 一站式智能体开发平台",
+        "url": "https://astron-claw.cgref.cn/s/20epq01kw1"
+      },
+      {
+        "title": "AiPPT插件",
+        "desc": "AiPPT 插件-AI智能PPT制作软件，一键生成/美化/排版，高效PPT工具",
+        "url": "https://aippt-plugin.cgref.cn/s/3rpe3p9k05"
+      },
+      {
+        "title": "iSlide PPT",
+        "desc": "iSlide- 让PPT设计简单起来 | PPT模板下载平台",
+        "url": "https://islide.cgref.cn/s/dp3kqd7eol"
+      },
+      {
+        "title": "沁言学术",
+        "desc": "学术超级智能体",
+        "url": "https://qinyanai.cgref.cn/s/rpexmw3k90"
+      },
+      {
+        "title": "01Agent",
+        "desc": "01Agent - 会协作、能执行、可交付的 AI 创作智能体",
+        "url": "https://01agent.cgref.cn/s/1oe7l5pn23"
+      }
+    ]
+  },
+  {
+    "sticky": 3,
+    "title": "我的",
+    "tagName": "ol",
+    "items": [
+      {
+        "marked": true,
+        "title": "原创诗词",
+        "desc": "雅致寓于高阁渔舟唱晚，古典悠然；\r\n格调外发园林绿树萦绕，馥郁清香。",
+        "url": "/src/template/viewer.html?path=文学_原创诗词"
+      },
+      {
+        "marked": true,
+        "title": "吴华锦的个人主页",
+        "desc": "吴华锦的个人主页 « 吴华锦",
+        "url": "https://wuhuajin.com/"
+      },
+      {
+        "marked": true,
+        "title": "Github",
+        "url": "https://github.com/whjin"
+      },
+      {
+        "marked": true,
+        "title": "中文简历",
+        "url": "/src/template/viewer.html?path=简历_中文简历"
+      },
+      {
+        "title": "中文简历PDF",
+        "url": "/src/template/viewer.html?path=简历_中文简历PDF&format=pdf"
+      },
+      {
+        "title": "英文简历",
+        "url": "/src/template/viewer.html?path=简历_英文简历"
+      },
+      {
+        "title": "英文简历PDF",
+        "url": "/src/template/viewer.html?path=简历_英文简历PDF&format=pdf"
+      }
+    ]
+  },
+  {
+    "sticky": 5,
+    "title": "站点",
+    "tagName": "ol",
+    "items": [
+      {
+        "marked": true,
+        "title": "技术文章",
+        "url": "/src/template/viewer.html?path=文章_article&format=html"
+      },
+      {
+        "marked": true,
+        "title": "技术教程",
+        "url": "/src/template/viewer.html?path=教程_tutorial&format=html"
+      },
+      {
+        "marked": true,
+        "title": "IT工具合集",
+        "url": "/src/template/viewer.html?path=工具_tool&format=html"
+      },
+      {
+        "marked": true,
+        "title": "基金分析平台",
+        "desc": "FundScope - 专业基金持仓分析平台",
+        "url": "https://fundscope.wuhuajin.com/"
+      },
+      {
+        "title": "whjin-Gitee.com",
+        "desc": "寒青 (whjin) - Gitee 码云",
+        "url": "https://gitee.com/whjin"
+      },
+      {
+        "title": "https://github.com/whjin/calculateApp",
+        "desc": "简易计算器",
+        "url": "https://wuhuajin.com/calculateApp/"
+      },
+      {
+        "title": "https://github.com/whjin/gis-vue",
+        "desc": "GIS Vue3 项目",
+        "url": "https://wuhuajin.com/gis-vue/"
+      },
+      {
+        "title": "https://github.com/whjin/next-ai-core",
+        "desc": "Next AI Core",
+        "url": "https://next-ai-core.wuhuajin.com/"
+      }
+    ]
+  },
+  {
+    "sticky": 6,
+    "title": "原创文章",
+    "tagName": "ol",
+    "items": [
+      {
+        "title": "AI应用开发学习路线图",
+        "url": "/src/template/viewer.html?path=AI_AI应用开发学习路线图"
+      },
+      {
+        "title": "Node.js进阶",
+        "url": "/src/template/viewer.html?path=Node_Node.js进阶"
+      },
+      {
+        "title": "Docker部署Meting API服务",
+        "url": "/src/template/viewer.html?path=工程化_Docker部署Meting API服务"
+      },
+      {
+        "title": "AI前端",
+        "url": "/src/template/viewer.html?path=AI_AI前端"
+      },
+      {
+        "title": "AI大模型文档",
+        "url": "/src/template/viewer.html?path=AI_AI大模型文档"
+      },
+      {
+        "title": "AI项目文档",
+        "url": "/src/template/viewer.html?path=AI_AI项目文档"
+      },
+      {
+        "title": "ADB命令集合",
+        "url": "/src/template/viewer.html?path=Android_ADB命令集合"
+      },
+      {
+        "title": "Git文档",
+        "url": "/src/template/viewer.html?path=Git_Git文档"
+      },
+      {
+        "title": "ECMAScript文档",
+        "url": "/src/template/viewer.html?path=JavaScript_ECMAScript文档"
+      },
+      {
+        "title": "功能代码集合",
+        "url": "/src/template/viewer.html?path=JavaScript_功能代码集合"
+      },
+      {
+        "title": "设计模式文档",
+        "url": "/src/template/viewer.html?path=JavaScript_设计模式文档"
+      },
+      {
+        "title": "Node.js实战",
+        "url": "/src/template/viewer.html?path=Node_Node.js实战"
+      },
+      {
+        "title": "Node.js文档",
+        "url": "/src/template/viewer.html?path=Node_Node.js文档"
+      },
+      {
+        "title": "React文档",
+        "url": "/src/template/viewer.html?path=React_React文档"
+      },
+      {
+        "title": "Hermes引擎文档",
+        "url": "/src/template/viewer.html?path=RN_Hermes引擎文档"
+      },
+      {
+        "title": "类型系统",
+        "url": "/src/template/viewer.html?path=TypeScript_类型系统"
+      },
+      {
+        "title": "Vue文档",
+        "url": "/src/template/viewer.html?path=Vue_Vue文档"
+      },
+      {
+        "title": "Solidity文档",
+        "url": "/src/template/viewer.html?path=Web3_Solidity文档"
+      },
+      {
+        "title": "Web3文档",
+        "url": "/src/template/viewer.html?path=Web3_Web3文档"
+      },
+      {
+        "title": "Web3钱包",
+        "url": "/src/template/viewer.html?path=Web3_Web3钱包"
+      },
+      {
+        "title": "智能合约",
+        "url": "/src/template/viewer.html?path=Web3_智能合约"
+      },
+      {
+        "title": "WebRTC性能优化",
+        "url": "/src/template/viewer.html?path=WebRTC_WebRTC性能优化"
+      },
+      {
+        "title": "实战项目文档",
+        "url": "/src/template/viewer.html?path=小程序_实战项目文档"
+      },
+      {
+        "title": "小程序文档",
+        "url": "/src/template/viewer.html?path=小程序_小程序文档"
+      },
+      {
+        "title": "Vite与Webpack对比",
+        "url": "/src/template/viewer.html?path=工程化_Vite与Webpack对比"
+      },
+      {
+        "title": "Web加密",
+        "url": "/src/template/viewer.html?path=工程化_Web加密"
+      },
+      {
+        "title": "工程实例文档",
+        "url": "/src/template/viewer.html?path=工程化_工程实例文档"
+      },
+      {
+        "title": "原创诗词",
+        "url": "/src/template/viewer.html?path=文学_原创诗词"
+      },
+      {
+        "title": "IT工具合集",
+        "url": "/src/template/viewer.html?path=文档_IT工具合集"
+      },
+      {
+        "title": "帮助文档",
+        "url": "/src/template/viewer.html?path=文档_帮助文档"
+      },
+      {
+        "title": "操作系统文档",
+        "url": "/src/template/viewer.html?path=文档_操作系统文档"
+      },
+      {
+        "title": "新趋势",
+        "url": "/src/template/viewer.html?path=文档_新趋势"
+      },
+      {
+        "title": "领域适配性分析",
+        "url": "/src/template/viewer.html?path=文档_领域适配性分析"
+      },
+      {
+        "title": "基金持仓2026-6-25",
+        "url": "/src/template/viewer.html?path=生活_基金持仓2026-6-25"
+      },
+      {
+        "title": "基金持仓2026-7-23",
+        "url": "/src/template/viewer.html?path=生活_基金持仓2026-7-23"
+      },
+      {
+        "title": "育儿经",
+        "url": "/src/template/viewer.html?path=生活_育儿经"
+      },
+      {
+        "title": "中文简历",
+        "url": "/src/template/viewer.html?path=简历_中文简历"
+      },
+      {
+        "title": "英文简历",
+        "url": "/src/template/viewer.html?path=简历_英文简历"
+      },
+      {
+        "title": "HTTP文档",
+        "url": "/src/template/viewer.html?path=网络_HTTP文档"
+      },
+      {
+        "title": "Web GIS文档",
+        "url": "/src/template/viewer.html?path=GIS_Web GIS文档"
+      },
+      {
+        "title": "Taro小程序文档",
+        "url": "/src/template/viewer.html?path=小程序_Taro小程序文档"
+      },
+      {
+        "title": "Cesium文档",
+        "url": "/src/template/viewer.html?path=GIS_Cesium文档"
+      }
+    ]
+  },
+  {
+    "title": "关于",
+    "tagName": "ul",
+    "items": [
+      {
+        "title": "隐私政策",
+        "url": "privacy.html"
+      },
+      {
+        "title": "服务条款",
+        "url": "terms.html"
+      },
+      {
+        "title": "关于我",
+        "url": "about.html"
+      },
+      {
+        "title": "联系我",
+        "url": "contact.html"
+      }
+    ]
+  }
+]

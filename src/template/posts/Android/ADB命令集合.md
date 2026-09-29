@@ -1,3 +1,10 @@
+---
+title: ADB命令集合
+date: 2026-09-11
+category: Android
+description: <!--prettier-ignore-start-->
+---
+
 ## 设备基础
 
 <!--prettier-ignore-start-->

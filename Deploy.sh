@@ -40,6 +40,10 @@ fi
 
 echo "正在提交代码..."
 git pull
+
+# 生成 feed 数据（feed 由文章 front matter 构建，发布前运行）
+node scripts/build-feed.cjs 2>/dev/null || echo "[WARN] build-feed 生成失败，跳过"
+
 git add .
 
 # 4. 判断内容是否为空，若为空则使用默认提交信息

@@ -1,3 +1,10 @@
+---
+title: React文档
+date: 2026-09-11
+category: React
+description: 虚拟 dom 渲染
+---
+
 ## 核心技术
 
 - `JSX`开发思想

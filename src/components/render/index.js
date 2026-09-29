@@ -15,6 +15,15 @@ function handler(targetId, filePath, callback) {
     })
   );
 
+  function stripFrontMatter(text) {
+    // 剥离文章顶部 YAML front matter（Hexo 式），避免渲染进正文
+    if (/^---\r?\n/.test(text)) {
+      const m = /^---\r?\n[\s\S]*?\r?\n---\r?\n?/.exec(text);
+      if (m) return text.slice(m[0].length);
+    }
+    return text;
+  }
+
   fetch(filePath)
     .then((response) => {
       if (!response.ok) throw new Error(`文件加载失败: ${filePath}`);
@@ -30,7 +39,7 @@ function handler(targetId, filePath, callback) {
         const bodyContent = tempDiv.querySelector('body');
         htmlContent = bodyContent ? bodyContent.innerHTML : content;
       } else {
-        htmlContent = marked.parse(content);
+        htmlContent = marked.parse(stripFrontMatter(content));
       }
 
       targetEl.innerHTML = htmlContent;

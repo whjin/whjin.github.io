@@ -1,3 +1,10 @@
+---
+title: Web3文档
+date: 2026-09-11
+category: Web3
+description: React + TypeScript + Viem + Wagmi + Foundry + Scaffold-ETH2 …
+---
+
 ## 技术路线
 
 > `React + TypeScript + Viem + Wagmi + Foundry + Scaffold-ETH2` (`2026`年行业标准栈)

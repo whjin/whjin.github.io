@@ -1,3 +1,10 @@
+---
+title: Hermes引擎文档
+date: 2026-09-11
+category: RN
+description: Hermes 从 React Native 0.70 版本开始已成为 Android 和 IOS 双平台的默认 Java…
+---
+
 ## 核心工作原理
 
 > `Hermes` 从 `React Native 0.70` 版本开始已成为 `Android` 和 `IOS` 双平台的默认 `JavaScript` 引擎  

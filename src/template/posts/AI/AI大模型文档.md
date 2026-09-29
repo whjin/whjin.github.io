@@ -1,3 +1,10 @@
+---
+title: AI大模型文档
+date: 2026-09-11
+category: AI
+description: MCP 接口标准
+---
+
 ## `MCP` 接口标准
 
 > `MCP`-`Model Context Protocol`，模型上下文协议

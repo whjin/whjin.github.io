@@ -1,3 +1,10 @@
+---
+title: HTTP文档
+date: 2026-09-11
+category: 网络
+description: Open Systems Interconnection 开放式通信互联系统 ISO
+---
+
 ## `OSI` 模型
 
 - `Open Systems Interconnection` 开放式通信互联系统 `ISO`

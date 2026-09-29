@@ -1,3 +1,11 @@
+---
+title: Node.js实战
+date: 2026-09-11
+category: Node
+description: 全栈图书管理系统
+sticky: 1
+---
+
 # 全栈图书管理系统
 
 > 项目地址：[book-management-system](https://github.com/whjin/node-galaxy/tree/master/book-management-system)

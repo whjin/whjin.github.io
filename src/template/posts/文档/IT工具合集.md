@@ -1,3 +1,10 @@
+---
+title: IT工具合集
+date: 2026-09-11
+category: 文档
+description: 2. Web 工具集
+---
+
 1. [菜鸟工具](https://www.jyshare.com/)
 2. [Web 工具集](https://xianyu110.github.io/web-tools-suite/)
 3. [UU在线工具](https://uutool.cn/)

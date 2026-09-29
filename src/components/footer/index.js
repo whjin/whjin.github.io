@@ -24,6 +24,15 @@
         <span class="copyright-dblclick">&copy;${isMobile() ? '' : '2013-'}${currentYear}</span>
         <span class="footer-right-part">${getRightHtml()}</span>
       </div>
+      <div class="footer-links">
+        <a href="about.html" title="关于我">About 关于</a>
+        <span class="sep">&middot;</span>
+        <a href="contact.html" title="联系我">Contact 联系</a>
+        <span class="sep">&middot;</span>
+        <a href="privacy.html" title="隐私政策">Privacy 隐私</a>
+        <span class="sep">&middot;</span>
+        <a href="terms.html" title="服务条款">Terms 条款</a>
+      </div>
     `;
     bindEvents();
   }

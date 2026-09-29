@@ -1,3 +1,10 @@
+---
+title: Web3钱包
+date: 2026-09-11
+category: Web3
+description: 共识、trustless需要旷工的工作，旷工需要激励
+---
+
 # 区块链
 
 - 共识、`trustless`需要旷工的工作，旷工需要激励

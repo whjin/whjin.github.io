@@ -1,3 +1,10 @@
+---
+title: ECMAScript文档
+date: 2026-09-11
+category: JavaScript
+description: 1. var、let、const之间的区别
+---
+
 ## 1. `var`、`let`、`const`之间的区别
 
 - `var`：

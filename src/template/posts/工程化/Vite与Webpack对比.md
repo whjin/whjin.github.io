@@ -1,3 +1,10 @@
+---
+title: Vite与Webpack对比
+date: 2026-09-11
+category: 工程化
+description: 最本质的差异：Webpack 是 先打包，后服务 的 Bundle 驱动模式；Vite 是 先服务，按需编译 的 ESM…
+---
+
 > 最本质的差异：`Webpack` 是 **先打包，后服务** 的 `Bundle` 驱动模式；`Vite` 是 **先服务，按需编译** 的 `ESM` 原生驱动模式。
 
 ## 一、开发启动速度
