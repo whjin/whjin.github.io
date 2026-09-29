@@ -49,14 +49,17 @@
   // 精选模块已移除：置顶精选通过文章卡置顶 + ★ Featured 标识实现，不再重复展示
 
   // 卡片模板（Dev.to 风格，单数据集）：各区块按字段是否存在条件渲染
-  // 封面(cover) → 分类+精选标识 → 标题 → 摘要(excerpt) → 标签(tags) → 互动统计+阅读时长
+  // 封面(cover)存在 → 左图右文；标题行右侧为「分类+精选」标识；摘要(excerpt)→标签→互动统计+阅读时长
   function cardHTML(it) {
-    const cover = it.cover
+    const hasCover = !!it.cover;
+    const cover = hasCover
       ? '<div class="fc-cover"><img src="' + esc(it.cover) + '" alt="' + esc(it.title) + '" loading="lazy" onerror="this.parentNode.style.display=\'none\'"></div>'
       : '';
     const tags = (it.tags || []).slice(0, 4)
       .map((g) => '<span class="fc-tag">#' + esc(g) + '</span>').join('');
     const featured = it.featured ? '<span class="fc-featured">★ ' + esc(t('featured_badge', 'Featured')) + '</span>' : '';
+    const category = it.category ? '<span class="fc-category">' + esc(it.category) + '</span>' : '';
+    const badges = (category || featured) ? '<div class="fc-badges">' + category + featured + '</div>' : '';
     const excerpt = it.excerpt ? '<div class="fc-excerpt">' + esc(it.excerpt) + '</div>' : '';
     // 互动统计（可选字段，存在才渲染）
     let stats = '';
@@ -66,11 +69,10 @@
     return (
       cover +
       '<div class="fc-body">' +
-      '<div class="fc-top">' +
-      '<span class="fc-category">' + esc(it.category || '') + '</span>' +
-      featured +
-      '</div>' +
+      '<div class="fc-title-row">' +
       '<div class="fc-title">' + esc(it.title) + '</div>' +
+      badges +
+      '</div>' +
       excerpt +
       (tags ? '<div class="fc-tags">' + tags + '</div>' : '') +
       '<div class="fc-meta">' +
@@ -93,7 +95,7 @@
     } else {
       slice.forEach((it) => {
         const a = document.createElement('a');
-        a.className = 'feed-card';
+        a.className = 'feed-card' + (it.cover ? ' fc-has-cover' : '');
         a.href = it.url;
         a.target = '_blank';
         a.rel = 'noopener noreferrer';

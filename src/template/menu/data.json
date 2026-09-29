@@ -3,7 +3,7 @@
     "sticky": 1,
     "title": "核心推荐",
     "tagName": "ol",
-    "show": false,
+    "show": true,
     "items": [
       {
         "marked": true,
@@ -98,7 +98,7 @@
     "sticky": 2,
     "title": "推荐",
     "tagName": "ol",
-    "show": false,
+    "show": true,
     "items": [
       {
         "title": "潮际好麦",

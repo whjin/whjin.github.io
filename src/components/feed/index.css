@@ -132,45 +132,68 @@ body.home-page .footer {
 /* ---- 置顶精选模块已移除（由文章卡置顶 + ★ Featured 标识实现，避免重复内容）---- */
 
 /* ---- 文章流卡片（Dev.to 风格：单数据集按字段条件渲染，等宽、高度自适应） ---- */
-.home-feed-list {
+#home-feed-list {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 18px;
 }
-.feed-card {
+a.feed-card {
   display: block;
   background: #fff;
-  border: 1px solid #e6e6e6;
-  border-radius: 12px;
+  border: 1px solid #e8e8e8;
+  border-radius: 16px;
   overflow: hidden;
   text-decoration: none;
   color: #1c1c1c;
-  transition: box-shadow 0.15s, border-color 0.15s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 6px 16px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.18s, border-color 0.18s, transform 0.18s;
 }
-.feed-card:hover {
-  border-color: #d0d0d0;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+a.feed-card:hover {
+  border-color: #d6d6d6;
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.10), 0 14px 32px rgba(0, 0, 0, 0.09);
+  transform: translateY(-2px);
 }
-/* 封面（可选：存在 cover 才渲染） */
-.feed-card .fc-cover img {
+/* 有封面：左图右文 */
+.feed-card.fc-has-cover {
+  display: flex;
+}
+.feed-card.fc-has-cover .fc-cover {
+  width: 42%;
+  flex-shrink: 0;
+}
+.feed-card.fc-has-cover .fc-cover img {
   display: block;
   width: 100%;
-  aspect-ratio: 2 / 1;
+  height: auto;
+  max-height: calc(50vh + 180px);
   object-fit: cover;
+  align-self: center;
 }
+/* 无封面：保持当前布局（仅内容区） */
 .feed-card .fc-body {
-  padding: 14px 18px 16px;
+  flex: 1;
+  padding: 22px 24px;
 }
-.feed-card .fc-top {
+/* 标题行：左侧标题，右侧「分类+精选」标识 */
+.feed-card .fc-title-row {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.feed-card .fc-badges {
+  display: flex;
   gap: 8px;
-  margin-bottom: 8px;
+  flex-shrink: 0;
   font-size: 12px;
-  color: #8b5cf6;
+  align-items: center;
+  cursor: default;
 }
 .feed-card .fc-category {
   font-weight: 700;
+  color: #3b82f6;
 }
 .feed-card .fc-featured {
   background: #fff1cc;
@@ -182,20 +205,20 @@ body.home-page .footer {
 .feed-card .fc-title {
   font-size: 18px;
   font-weight: 700;
-  line-height: 1.4;
-  margin-bottom: 6px;
+  line-height: 1.45;
+  min-width: 0;
 }
 .feed-card .fc-excerpt {
   font-size: 13.5px;
   color: #555;
-  line-height: 1.6;
-  margin-bottom: 10px;
+  line-height: 1.65;
+  margin: 8px 0 0;
 }
 .feed-card .fc-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 8px;
+  margin-top: 12px;
 }
 .feed-card .fc-tag {
   font-size: 11px;
@@ -203,6 +226,7 @@ body.home-page .footer {
   background: #f3f3f3;
   border-radius: 10px;
   padding: 2px 8px;
+  cursor: default;
 }
 /* 底部信息栏：左侧互动统计，右侧日期+阅读时长 */
 .feed-card .fc-meta {
@@ -211,11 +235,12 @@ body.home-page .footer {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 12px;
-  padding-top: 10px;
+  margin-top: 16px;
+  padding-top: 12px;
   border-top: 1px solid #efefef;
   font-size: 12.5px;
   color: #717171;
+  cursor: default;
 }
 .feed-card .fc-stats {
   display: flex;
@@ -372,6 +397,13 @@ body.home-page .footer {
 @media screen and (max-width: 768px) {
   .header {
     padding: 8px 12px;
+  }
+  /* 移动端：有封面的卡片改为上下堆叠（封面在顶部全宽） */
+  .feed-card.fc-has-cover {
+    display: block;
+  }
+  .feed-card.fc-has-cover .fc-cover {
+    width: 100%;
   }
   /* 移动端：搜索框默认隐藏，点击社交区搜索图标（body.search-open）才显示；与 Logo 和右侧图标保持间距 */
   .home-search-wrap {
