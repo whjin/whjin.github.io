@@ -2,12 +2,11 @@
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  position: absolute;
-  right: 0;
-  z-index: 1;
-  max-width: calc(100% - 96px);
+  flex-shrink: 0;
   overflow: auto;
-  margin-right: 1em;
+  margin-left: 8px;
+  margin-right: 4px;
+  max-width: calc(100% - 120px);
 }
 .social::-webkit-scrollbar {
   display: none;

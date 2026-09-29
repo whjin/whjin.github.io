@@ -65,12 +65,17 @@ body.home-page .footer {
   display: block;
 }
 
-/* 宽搜索框（dev.to 风格：放大镜 + 占位） */
+/* 搜索框：默认隐藏，点击社交区搜索图标（桌面）才显示；保持与左侧 Logo 和右侧社交/三横杠的间距 */
 .home-search-wrap {
   position: relative;
   flex: 1;
-  max-width: 520px;
   min-width: 0;
+  max-width: 640px;
+  margin-right: 8px;
+  display: none;
+}
+body.search-open .home-search-wrap {
+  display: flex;
 }
 .search-icon {
   position: absolute;
@@ -108,31 +113,12 @@ body.home-page .footer {
   flex-shrink: 0;
 }
 
-/* ---- banner 订阅按钮（banner 右侧，核心盈利 CTA） ---- */
+/* ---- banner 轮播轨道（内容居中；订阅按钮已移至社交图标栏）---- */
 .banner-track {
-  flex: 1;
+  width: 100%;
   min-width: 0;
   display: flex;
   align-items: center;
-}
-.banner-subscribe {
-  flex-shrink: 0;
-  margin-left: auto;
-  margin-right: 14px;
-  background: rgba(255, 255, 255, 0.22);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 6px;
-  padding: 5px 14px;
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  white-space: nowrap;
-}
-.banner-subscribe:hover {
-  background: #fff;
-  color: #007bff;
 }
 
 /* ---- 顶部导航栏模块已移除（category 栏不再渲染）---- */
@@ -429,19 +415,24 @@ body.home-page .footer {
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 768px) {
   .header {
     padding: 8px 12px;
   }
+  /* 移动端：搜索框始终显示在中间（与 Logo 和右侧三横杠/社交图标保持间距，不重叠） */
   .home-search-wrap {
+    display: flex;
+    flex: 1;
+    min-width: 0;
     max-width: none;
+    margin-right: 8px;
+    margin-left: 4px;
+  }
+  /* 点击三横杠展示全部社交图标时，隐藏搜索框 */
+  body.search-collapsed .home-search-wrap {
+    display: none;
   }
   .home-featured-grid {
     grid-template-columns: 1fr;
-  }
-  .banner-subscribe {
-    margin-right: 8px;
-    padding: 4px 10px;
-    font-size: 12px;
   }
 }

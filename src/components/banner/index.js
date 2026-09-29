@@ -91,18 +91,10 @@
     banner.className = 'banner';
     document.body.insertBefore(banner, document.body.firstChild);
 
-    // 订阅按钮（banner 右侧，轮播不覆盖）
-    const sub = document.createElement('a');
-    sub.className = 'banner-subscribe';
-    sub.dataset.i18n = 'subscribe_btn';
-    sub.href = 'mailto:wuhuajin09@163.com?subject=Subscribe';
-    sub.textContent = window.I18N && window.I18N.t ? window.I18N.t('subscribe_btn', 'Subscribe') : 'Subscribe';
-    banner.appendChild(sub);
-
-    // 轮播轨道
+    // 轮播轨道（订阅按钮已移至社交图标栏，banner 内容居中）
     const track = document.createElement('div');
     track.className = 'banner-track';
-    banner.insertBefore(track, sub);
+    banner.appendChild(track);
 
     let currentSlide = null;
     let currentItem = null;

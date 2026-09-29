@@ -76,6 +76,18 @@
     },
     {
       href: '',
+      title: '搜索 / Search',
+      name: 'search',
+      icon: 26,
+    },
+    {
+      href: '',
+      title: '订阅 / Subscribe',
+      name: 'subscribe',
+      icon: 28,
+    },
+    {
+      href: '',
       title: '语言 / Language',
       name: 'link',
       icon: 28,
@@ -141,7 +153,7 @@
     aEl.appendChild(imgEl);
     fragment.appendChild(aEl);
 
-    if (['wechat', 'reward', 'music', 'qqmusic', 'netmusic'].includes(s.name)) {
+    if (['wechat', 'reward', 'music', 'qqmusic', 'netmusic', 'search', 'subscribe', 'link'].includes(s.name)) {
       aEl.removeAttribute('href');
       aEl.style.cursor = 'pointer';
     }
@@ -276,6 +288,15 @@
     return window.innerWidth < 768;
   }
 
+  // 移动端：展示社交图标时折叠搜索框；桌面端无此逻辑
+  function syncSearchCollapse() {
+    if (isNarrow()) {
+      document.body.classList.toggle('search-collapsed', socialEl.classList.contains('show'));
+    } else {
+      document.body.classList.remove('search-collapsed');
+    }
+  }
+
   function toggleSocial() {
     if (isNarrow()) {
       const isSocialShow = socialEl.classList.contains('show');
@@ -284,6 +305,7 @@
       socialEl.classList.add('show');
       barsEl.style.display = 'none';
     }
+    syncSearchCollapse();
   }
   toggleSocial();
 
@@ -295,6 +317,7 @@
     if (!isShow) {
       overlayEl.classList.remove('show');
     }
+    syncSearchCollapse();
   });
   titleEl.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -303,6 +326,7 @@
     socialEl.classList.remove('show');
     overlayEl.classList.remove('show');
     barsEl.style.display = 'block';
+    syncSearchCollapse();
   });
 
   socialEl.addEventListener('click', (e) => {
@@ -330,6 +354,16 @@
       togglePlayer('.netmusic-container');
       return;
     } else {
+      if (className.includes('icon-search')) {
+        // 搜索：切换左侧搜索框显隐（桌面端）
+        document.body.classList.toggle('search-open');
+        return;
+      }
+      if (className.includes('icon-subscribe')) {
+        // 订阅：打开邮箱订阅
+        window.location.href = 'mailto:wuhuajin09@163.com?subject=Subscribe';
+        return;
+      }
       if (className.includes('icon-link')) {
         // 语言切换（复用 link.png 图标，后续可替换）
         if (window.I18N && window.I18N.toggle) {
