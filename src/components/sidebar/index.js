@@ -115,6 +115,20 @@
     return block;
   }
 
+  // 社交卡片：把头部移出的社交图标平铺展示（由 social 组件提供网格渲染）
+  function renderSocial(section) {
+    const block = makeBlock(section);
+    if (window.SocialGrid && window.SocialGrid.renderInto) {
+      window.SocialGrid.renderInto(block);
+    } else {
+      const ph = document.createElement('div');
+      ph.className = 'sb-text';
+      ph.textContent = '—';
+      block.appendChild(ph);
+    }
+    return block;
+  }
+
   function renderAd(section) {
     const block = makeBlock(section);
     if (section.ad_slot) {
@@ -175,6 +189,7 @@
         else if (sec.type === 'notice') el = renderNotice(sec);
         else if (sec.type === 'tags') el = renderTags(sec, autoTags);
         else if (sec.type === 'categories') el = renderCategories(sec, catCounts);
+        else if (sec.type === 'social') el = renderSocial(sec);
         else if (sec.type === 'ads') el = renderAd(sec);
         else if (sec.type === 'links') el = renderLinks(sec);
         if (el) wrap.appendChild(el);

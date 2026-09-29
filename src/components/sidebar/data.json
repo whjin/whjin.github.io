@@ -12,6 +12,11 @@
       }
     },
     {
+      "type": "social",
+      "i18n_title": "sb_social",
+      "title": "Connect 社交"
+    },
+    {
       "type": "list",
       "i18n_title": "sb_happening",
       "title": "What's happening",

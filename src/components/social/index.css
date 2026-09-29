@@ -36,6 +36,25 @@
   z-index: 1;
 }
 
+/* 右侧「社交」卡片网格（由 sidebar 注入） */
+.social-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.social-grid a {
+  cursor: pointer;
+  display: inline-flex;
+}
+.social-grid img {
+  color: #000;
+  display: inline-block;
+  border-radius: 50%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
 .modal-overlay {
   position: absolute;
   top: 40px;
@@ -129,7 +148,13 @@
     display: flex;
   }
 
+  /* 移动端：三横杠改为文档流，避免与中间搜索框重叠 */
   .social-bars {
     display: block;
+    position: static;
+    transform: none;
+    top: auto;
+    margin-left: 8px;
+    margin-right: 0;
   }
 }

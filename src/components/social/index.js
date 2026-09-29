@@ -1,126 +1,29 @@
+/* 首页社交功能：
+ * - 头部标题栏 .social 仅保留「搜索 / 订阅 / 语言切换」三图标（+ 移动端三横杠）。
+ * - 其余社交图标（音乐/QQ/网易/爱发电/微博/博客/邮箱/GitHub/X 等）移至主体右侧新增的
+ *   「社交」卡片平铺展示，由 window.SocialGrid.renderInto(el) 注入，供 sidebar 组件调用。
+ */
 (function () {
-  const socialList = [
-    {
-      href: 'src/template/viewer.html?path=友链_link&format=html',
-      title: 'AI应用',
-      name: 'ai',
-      icon: 28,
-    },
-    {
-      href: '',
-      title: '微信',
-      name: 'wechat',
-      icon: 28,
-      show: false,
-    },
-    {
-      href: '',
-      title: '打赏',
-      name: 'reward',
-      icon: 28,
-      show: false,
-    },
-    {
-      href: '',
-      title: '我的音乐',
-      name: 'music',
-      icon: 30,
-    },
-    {
-      href: '',
-      title: 'QQ音乐',
-      name: 'qqmusic',
-      icon: 28,
-    },
-    {
-      href: '',
-      title: '网易云音乐',
-      name: 'netmusic',
-      icon: 28,
-    },
-    {
-      href: 'https://ifdian.net/a/whjin',
-      title: '爱发电',
-      name: 'aifadian',
-      icon: 28,
-    },
-    {
-      href: 'https://weibo.com/u/1710899102',
-      title: '微博',
-      name: 'weibo',
-      icon: 28,
-    },
-    {
-      href: 'https://wuhuajin.com',
-      title: '博客',
-      name: 'blog',
-      icon: 28,
-    },
-    {
-      href: 'mailto:wuhuajin09@163.com',
-      title: '邮箱',
-      name: 'email',
-      icon: 28,
-    },
-    {
-      href: 'https://github.com/whjin',
-      title: 'Github',
-      name: 'github',
-      icon: 28,
-    },
-    {
-      href: 'https://x.com/whjin',
-      title: 'X / Twitter',
-      name: 'twitter',
-      icon: 28,
-    },
-    {
-      href: '',
-      title: '搜索 / Search',
-      name: 'search',
-      icon: 26,
-    },
-    {
-      href: '',
-      title: '订阅 / Subscribe',
-      name: 'subscribe',
-      icon: 28,
-    },
-    {
-      href: '',
-      title: '语言 / Language',
-      name: 'link',
-      icon: 28,
-    },
+  'use strict';
+
+  const HEADER_ICONS = [
+    { name: 'search', title: '搜索 / Search', icon: 26 },
+    { name: 'subscribe', title: '订阅 / Subscribe', icon: 28 },
+    { name: 'link', title: '语言 / Language', icon: 28 },
   ];
 
-  const wechatList = [
-    {
-      src: 'src/images/social/wechat.jpg',
-      title: '微信',
-    },
-    {
-      src: 'src/images/social/wechat_oa.jpg',
-      title: '微信公众号',
-    },
-    {
-      src: 'src/images/social/wechat_video.jpg',
-      title: '微信视频号',
-    },
+  const GRID_ICONS = [
+    { href: 'src/template/viewer.html?path=友链_link&format=html', title: 'AI应用', name: 'ai', icon: 28 },
+    { href: '', title: '我的音乐', name: 'music', icon: 30 },
+    { href: '', title: 'QQ音乐', name: 'qqmusic', icon: 28 },
+    { href: '', title: '网易云音乐', name: 'netmusic', icon: 28 },
+    { href: 'https://ifdian.net/a/whjin', title: '爱发电', name: 'aifadian', icon: 28 },
+    { href: 'https://weibo.com/u/1710899102', title: '微博', name: 'weibo', icon: 28 },
+    { href: 'https://wuhuajin.com', title: '博客', name: 'blog', icon: 28 },
+    { href: 'mailto:wuhuajin09@163.com', title: '邮箱', name: 'email', icon: 28 },
+    { href: 'https://github.com/whjin', title: 'Github', name: 'github', icon: 28 },
+    { href: 'https://x.com/whjin', title: 'X / Twitter', name: 'twitter', icon: 28 },
   ];
-  const rewardList = [
-    {
-      src: 'src/images/social/wx_pay.jpg',
-      title: '微信支付',
-    },
-    {
-      src: 'src/images/social/ali_pay.jpg',
-      title: '支付宝',
-    },
-  ];
-
-  let qrcodeLink = null;
-  let prevIsMobile = isMobile();
 
   const titleEl = document.querySelector('.title');
   const socialEl = document.createElement('nav');
@@ -131,126 +34,51 @@
   barsEl.src = 'src/images/icons/bars.png';
   barsEl.title = barsEl.alt = '展开';
   barsEl.width = barsEl.height = 26;
-  titleEl.after(barsEl);
 
-  const fragment = document.createDocumentFragment();
-  socialList.forEach((s) => {
-    if (s.show === false) return;
+  function makeIcon(icon) {
     const aEl = document.createElement('a');
     const imgEl = document.createElement('img');
-
-    if (s.href) aEl.href = s.href;
-    aEl.rel = 'noopener noreferrer';
-    aEl.target = '_blank';
-    aEl.title = s.title;
-    aEl.className = `icon-${s.name}`;
-
-    imgEl.src = `src/images/icons/${s.name}.png`;
-    imgEl.alt = s.title;
-    imgEl.className = `img-${s.name}`;
-    imgEl.width = imgEl.height = s.icon;
-
-    aEl.appendChild(imgEl);
-    fragment.appendChild(aEl);
-
-    if (['wechat', 'reward', 'music', 'qqmusic', 'netmusic', 'search', 'subscribe', 'link'].includes(s.name)) {
-      aEl.removeAttribute('href');
+    aEl.className = `icon-${icon.name}`;
+    imgEl.src = `src/images/icons/${icon.name}.png`;
+    imgEl.alt = icon.title;
+    imgEl.className = `img-${icon.name}`;
+    imgEl.width = imgEl.height = icon.icon;
+    aEl.title = icon.title;
+    if (icon.href) {
+      aEl.href = icon.href;
+      aEl.rel = 'noopener noreferrer';
+      aEl.target = '_blank';
+    } else {
       aEl.style.cursor = 'pointer';
     }
-  });
-  socialEl.appendChild(fragment);
+    aEl.appendChild(imgEl);
+    return aEl;
+  }
+
+  // 头部社交栏：搜索 / 订阅 / 语言
+  const hf = document.createDocumentFragment();
+  HEADER_ICONS.forEach((s) => hf.appendChild(makeIcon(s)));
+  socialEl.appendChild(hf);
+  titleEl.after(barsEl);
   titleEl.after(socialEl);
   titleEl.innerText = isMobile() ? '吴华锦' : '吴华锦的个人主页';
 
-  const overlayEl = document.createElement('div');
-  overlayEl.className = 'modal-overlay';
-  overlayEl.setAttribute('id', 'wechat-modal');
-  socialEl.after(overlayEl);
-
-  const containerEl = document.createElement('div');
-  containerEl.className = 'modal-container';
-  overlayEl.appendChild(containerEl);
-
-  const fullscreenOverlayEl = document.createElement('div');
-  fullscreenOverlayEl.className = 'fullscreen-modal-overlay';
-  const fullscreenImgEl = document.createElement('img');
-  fullscreenImgEl.className = 'fullscreen-modal-img';
-  fullscreenOverlayEl.appendChild(fullscreenImgEl);
-  document.body.appendChild(fullscreenOverlayEl);
-
-  function renderQrcodeList(list) {
-    containerEl.innerHTML = '';
-    const fragment1 = document.createDocumentFragment();
-    list.forEach((q) => {
-      const imgEl = document.createElement('img');
-      imgEl.src = q.src;
-      imgEl.alt = imgEl.title = q.title;
-      fragment1.appendChild(imgEl);
-
-      imgEl.addEventListener('click', (e) => {
-        e.stopPropagation();
-        fullscreenImgEl.src = q.src;
-        fullscreenImgEl.alt = fullscreenImgEl.title = q.title;
-        fullscreenOverlayEl.classList.add('show');
-        document.body.style.overflow = 'hidden';
-      });
-    });
-    containerEl.appendChild(fragment1);
-  }
-
-  function calcTrianglePosition() {
-    if (!qrcodeLink) return;
-    const modalOverlayEl = document.querySelector('.modal-overlay');
-    const modalContainerEl = document.querySelector('.modal-container');
-
-    const linkRect = qrcodeLink.getBoundingClientRect();
-    const parentEl = document.querySelector('.header');
-    const parentRect = parentEl.getBoundingClientRect();
-
-    const linkCenterX = linkRect.left + linkRect.width / 2;
-    const linkCenterRelative = linkCenterX - parentRect.left;
-
-    const modalWidth = modalContainerEl.offsetWidth;
-    const safeGap = 8;
-
-    let finalLeft = linkCenterRelative - modalWidth / 2;
-
-    const minLeft = safeGap;
-    const maxLeft = parentRect.width - modalWidth - safeGap;
-    finalLeft = Math.max(minLeft, Math.min(finalLeft, maxLeft));
-
-    const triangleLeft = linkCenterRelative - finalLeft;
-
-    modalOverlayEl.style.left = `${finalLeft}px`;
-    modalContainerEl.style.setProperty('--triangle-left', `${triangleLeft}px`);
-  }
-
+  // ---- 播放器开关（供头部与右侧社交卡片共用）----
   function togglePlayer(activeSelector) {
     const playerConfigs = [
-      {
-        selector: '.aplayer-container',
-        pause: () => {
-          if (window.ap) {
-            window.ap.pause();
-          }
-        },
-      },
+      { selector: '.aplayer-container', pause: () => { if (window.ap) window.ap.pause(); } },
       {
         selector: '.qqmusic-container',
         pause: () => {
           const metingEl = document.querySelector('.qqmusic-container');
-          if (metingEl?.aplayer) {
-            metingEl.aplayer.pause();
-          }
+          if (metingEl?.aplayer) metingEl.aplayer.pause();
         },
       },
       {
         selector: '.netmusic-container',
         pause: () => {
           const metingEl = document.querySelector('.netmusic-container');
-          if (metingEl?.aplayer) {
-            metingEl.aplayer.pause();
-          }
+          if (metingEl?.aplayer) metingEl.aplayer.pause();
         },
       },
     ];
@@ -264,7 +92,6 @@
       if (selector === activeSelector) {
         playerEl.classList.toggle('show');
         isActiveShow = playerEl.classList.contains('show');
-
         if (!isActiveShow) pause();
       } else {
         pause();
@@ -272,23 +99,69 @@
       }
     });
 
-    // 播放器显示时隐藏 footer 版权/统计与合规内容（避免与迷你播放器重叠）
+    // 播放器显示时隐藏 footer 版权/统计与合规内容
     const hidden = isActiveShow ? 'hidden' : 'visible';
     if (footerContentEl) footerContentEl.style.visibility = hidden;
     if (footerLinksEl) footerLinksEl.style.visibility = hidden;
 
-    if (isActiveShow) {
-      document.body.classList.add('player-show');
-    } else {
-      document.body.classList.remove('player-show');
-    }
+    if (isActiveShow) document.body.classList.add('player-show');
+    else document.body.classList.remove('player-show');
   }
 
+  // ---- 头部社交栏点击 ----
+  socialEl.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const targetA = e.target.closest('a');
+    if (!targetA) return;
+    const className = targetA.className;
+
+    if (className.includes('icon-search')) {
+      // 搜索：桌面切换 search-open；移动端收起社交并显示搜索框
+      if (isNarrow()) {
+        socialEl.classList.remove('show');
+        barsEl.style.display = 'block';
+        document.body.classList.remove('search-collapsed');
+        syncSearchCollapse();
+      } else {
+        document.body.classList.toggle('search-open');
+      }
+      return;
+    }
+    if (className.includes('icon-subscribe')) {
+      window.location.href = 'mailto:wuhuajin09@163.com?subject=Subscribe';
+      return;
+    }
+    if (className.includes('icon-link')) {
+      if (window.I18N && window.I18N.toggle) window.I18N.toggle();
+      return;
+    }
+  });
+
+  // ---- 右侧社交卡片网格（供 sidebar 调用）----
+  window.SocialGrid = {
+    renderInto(el) {
+      const grid = document.createElement('div');
+      grid.className = 'social-grid';
+      GRID_ICONS.forEach((s) => {
+        const a = makeIcon(s);
+        a.addEventListener('click', (ev) => {
+          if (s.name === 'music' || s.name === 'qqmusic' || s.name === 'netmusic') {
+            ev.preventDefault();
+            ev.stopPropagation();
+            togglePlayer('.' + s.name + '-container');
+          }
+        });
+        grid.appendChild(a);
+      });
+      el.appendChild(grid);
+    },
+  };
+
+  // ---- 移动端三横杠 / 社交栏切换 ----
   function isNarrow() {
     return window.innerWidth < 768;
   }
 
-  // 移动端：展示社交图标时折叠搜索框；桌面端无此逻辑
   function syncSearchCollapse() {
     if (isNarrow()) {
       document.body.classList.toggle('search-collapsed', socialEl.classList.contains('show'));
@@ -313,110 +186,26 @@
     e.stopPropagation();
     const isShow = socialEl.classList.toggle('show');
     barsEl.style.display = isShow ? 'none' : 'block';
-
-    if (!isShow) {
-      overlayEl.classList.remove('show');
-    }
     syncSearchCollapse();
   });
+
   titleEl.addEventListener('click', (e) => {
     e.stopPropagation();
     if (!isNarrow()) return;
-
     socialEl.classList.remove('show');
-    overlayEl.classList.remove('show');
     barsEl.style.display = 'block';
     syncSearchCollapse();
   });
 
-  socialEl.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const targetA = e.target.closest('a');
-    if (!targetA) return;
-
-    const className = targetA.className;
-    if (className.includes('icon-wechat')) {
-      qrcodeLink = targetA;
-      renderQrcodeList(wechatList);
-    } else if (className.includes('icon-reward')) {
-      qrcodeLink = targetA;
-      renderQrcodeList(rewardList);
-    } else if (className.includes('icon-music')) {
-      // 我的音乐
-      togglePlayer('.aplayer-container');
-      return;
-    } else if (className.includes('icon-qqmusic')) {
-      // QQ音乐
-      togglePlayer('.qqmusic-container');
-      return;
-    } else if (className.includes('icon-netmusic')) {
-      // 网易云音乐
-      togglePlayer('.netmusic-container');
-      return;
-    } else {
-      if (className.includes('icon-search')) {
-        // 搜索：切换左侧搜索框显隐（桌面端）
-        document.body.classList.toggle('search-open');
-        return;
-      }
-      if (className.includes('icon-subscribe')) {
-        // 订阅：打开邮箱订阅
-        window.location.href = 'mailto:wuhuajin09@163.com?subject=Subscribe';
-        return;
-      }
-      if (className.includes('icon-link')) {
-        // 语言切换（复用 link.png 图标，后续可替换）
-        if (window.I18N && window.I18N.toggle) {
-          window.I18N.toggle();
-        }
-      }
-      return;
-    }
-
-    overlayEl.classList.add('show');
-    requestAnimationFrame(() => {
-      calcTrianglePosition();
-    });
-  });
-
-  document.addEventListener('click', () => {
-    overlayEl.classList.remove('show');
-  });
-  overlayEl.addEventListener('click', (e) => {
-    e.stopPropagation();
-  });
-
-  function hideQrcode(e) {
-    e.stopPropagation();
-    fullscreenOverlayEl.classList.remove('show');
-    document.body.style.overflow = '';
-  }
-
-  function debounce(func, delay = 150) {
+  // ---- 缩放切换 ----
+  let prevIsMobile = isMobile();
+  const debounce = (fn, delay = 150) => {
     let timer = null;
     return function (...args) {
       clearTimeout(timer);
-      timer = setTimeout(() => {
-        func.apply(this, args);
-      }, delay);
+      timer = setTimeout(() => fn.apply(this, args), delay);
     };
-  }
-
-  fullscreenOverlayEl.addEventListener('click', (e) => {
-    if (e.target === fullscreenOverlayEl) {
-      hideQrcode(e);
-    }
-  });
-
-  fullscreenImgEl.addEventListener('click', hideQrcode);
-
-  document.addEventListener('keydown', (e) => {
-    let flag = e.key === 'Escape' && fullscreenOverlayEl.classList.contains('show');
-    if (flag) {
-      hideQrcode(e);
-    }
-  });
-
+  };
   const handleResize = debounce(() => {
     const currentIsMobile = isMobile();
     if (currentIsMobile !== prevIsMobile) {
@@ -424,12 +213,7 @@
       window.location.reload();
       return;
     }
-
-    if (overlayEl.classList.contains('show')) {
-      calcTrianglePosition();
-    }
     toggleSocial();
   });
-
   window.addEventListener('resize', handleResize);
 })();

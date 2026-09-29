@@ -23,6 +23,7 @@
     sb_now: ['Happening Now! 🚀', '正在进行 🚀'],
     sb_tags: ['Popular tags', '热门标签'],
     sb_categories: ['Categories', '分类'],
+    sb_social: ['Connect', '社交'],
     sb_ads: ['Advertisement', '广告'],
     sb_links: ['Links', '链接'],
   };

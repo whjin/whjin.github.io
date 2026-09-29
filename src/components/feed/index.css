@@ -71,7 +71,7 @@ body.home-page .footer {
   flex: 1;
   min-width: 0;
   max-width: 640px;
-  margin-right: 8px;
+  margin-right: 16px;
   display: none;
 }
 body.search-open .home-search-wrap {
@@ -425,7 +425,7 @@ body.search-open .home-search-wrap {
     flex: 1;
     min-width: 0;
     max-width: none;
-    margin-right: 8px;
+    margin-right: 12px;
     margin-left: 4px;
   }
   /* 点击三横杠展示全部社交图标时，隐藏搜索框 */
