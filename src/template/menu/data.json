@@ -311,171 +311,349 @@
     "items": [
       {
         "title": "Node.js进阶",
-        "url": "/src/template/viewer.html?path=Node_Node.js进阶"
+        "url": "/src/template/viewer.html?path=Node_Node.js进阶",
+        "category": "Node",
+        "date": "2026-09-26",
+        "readTime": 8,
+        "excerpt": "创建 node 子进程用 fork，自带通道方便通信"
       },
       {
         "title": "Docker部署Meting API服务",
-        "url": "/src/template/viewer.html?path=工程化_Docker部署Meting API服务"
+        "url": "/src/template/viewer.html?path=工程化_Docker部署Meting API服务",
+        "category": "工程化",
+        "date": "2026-09-26",
+        "readTime": 11,
+        "excerpt": "Docker部署"
       },
       {
         "title": "AI应用开发学习路线图",
-        "url": "/src/template/viewer.html?path=AI_AI应用开发学习路线图"
+        "url": "/src/template/viewer.html?path=AI_AI应用开发学习路线图",
+        "category": "AI",
+        "date": "2026-09-24",
+        "readTime": 24,
+        "excerpt": "从零到实战的前端 × AI 系统学习路线，覆盖大模型、Agent、工程化与优质资源汇总。",
+        "tags": [
+          "AI",
+          "学习路线"
+        ],
+        "cover": "https://img4.kuwo.cn/star/albumcover/500/s4s14/74/267013878.jpg",
+        "featured": true
       },
       {
         "title": "AI前端",
-        "url": "/src/template/viewer.html?path=AI_AI前端"
+        "url": "/src/template/viewer.html?path=AI_AI前端",
+        "category": "AI",
+        "date": "2026-09-11",
+        "readTime": 28,
+        "excerpt": "LLM （大语言模型）"
       },
       {
         "title": "AI大模型文档",
-        "url": "/src/template/viewer.html?path=AI_AI大模型文档"
+        "url": "/src/template/viewer.html?path=AI_AI大模型文档",
+        "category": "AI",
+        "date": "2026-09-11",
+        "readTime": 6,
+        "excerpt": "MCP 接口标准"
       },
       {
         "title": "AI项目文档",
-        "url": "/src/template/viewer.html?path=AI_AI项目文档"
+        "url": "/src/template/viewer.html?path=AI_AI项目文档",
+        "category": "AI",
+        "date": "2026-09-11",
+        "readTime": 2,
+        "excerpt": "Next.js框架"
       },
       {
         "title": "ADB命令集合",
-        "url": "/src/template/viewer.html?path=Android_ADB命令集合"
+        "url": "/src/template/viewer.html?path=Android_ADB命令集合",
+        "category": "Android",
+        "date": "2026-09-11",
+        "readTime": 16,
+        "excerpt": "<!--prettier-ignore-start-->"
       },
       {
         "title": "Git文档",
-        "url": "/src/template/viewer.html?path=Git_Git文档"
+        "url": "/src/template/viewer.html?path=Git_Git文档",
+        "category": "Git",
+        "date": "2026-09-11",
+        "readTime": 14,
+        "excerpt": "Git 提交规范"
       },
       {
         "title": "ECMAScript文档",
-        "url": "/src/template/viewer.html?path=JavaScript_ECMAScript文档"
+        "url": "/src/template/viewer.html?path=JavaScript_ECMAScript文档",
+        "category": "JavaScript",
+        "date": "2026-09-11",
+        "readTime": 2,
+        "excerpt": "1. var、let、const之间的区别"
       },
       {
         "title": "功能代码集合",
-        "url": "/src/template/viewer.html?path=JavaScript_功能代码集合"
+        "url": "/src/template/viewer.html?path=JavaScript_功能代码集合",
+        "category": "JavaScript",
+        "date": "2026-09-11",
+        "readTime": 40,
+        "excerpt": "javascript",
+        "featured": true
       },
       {
         "title": "设计模式文档",
-        "url": "/src/template/viewer.html?path=JavaScript_设计模式文档"
+        "url": "/src/template/viewer.html?path=JavaScript_设计模式文档",
+        "category": "JavaScript",
+        "date": "2026-09-11",
+        "readTime": 3,
+        "excerpt": "不需要关注使用过程"
       },
       {
         "title": "Node.js实战",
-        "url": "/src/template/viewer.html?path=Node_Node.js实战"
+        "url": "/src/template/viewer.html?path=Node_Node.js实战",
+        "category": "Node",
+        "date": "2026-09-11",
+        "readTime": 8,
+        "excerpt": "全栈图书管理系统",
+        "featured": true
       },
       {
         "title": "Node.js文档",
-        "url": "/src/template/viewer.html?path=Node_Node.js文档"
+        "url": "/src/template/viewer.html?path=Node_Node.js文档",
+        "category": "Node",
+        "date": "2026-09-11",
+        "readTime": 16,
+        "excerpt": "开源的 JS 运行环境"
       },
       {
         "title": "React文档",
-        "url": "/src/template/viewer.html?path=React_React文档"
+        "url": "/src/template/viewer.html?path=React_React文档",
+        "category": "React",
+        "date": "2026-09-11",
+        "readTime": 5,
+        "excerpt": "虚拟 dom 渲染"
       },
       {
         "title": "Hermes引擎文档",
-        "url": "/src/template/viewer.html?path=RN_Hermes引擎文档"
+        "url": "/src/template/viewer.html?path=RN_Hermes引擎文档",
+        "category": "RN",
+        "date": "2026-09-11",
+        "readTime": 4,
+        "excerpt": "Hermes 从 React Native 0.70 版本开始已成为 Android 和 IOS 双平台的默认 Java…"
       },
       {
         "title": "类型系统",
-        "url": "/src/template/viewer.html?path=TypeScript_类型系统"
+        "url": "/src/template/viewer.html?path=TypeScript_类型系统",
+        "category": "TypeScript",
+        "date": "2026-09-11",
+        "readTime": 8,
+        "excerpt": "概要 summary"
       },
       {
         "title": "Vue文档",
-        "url": "/src/template/viewer.html?path=Vue_Vue文档"
+        "url": "/src/template/viewer.html?path=Vue_Vue文档",
+        "category": "Vue",
+        "date": "2026-09-11",
+        "readTime": 1,
+        "excerpt": "Vue-Router路由"
       },
       {
         "title": "Solidity文档",
-        "url": "/src/template/viewer.html?path=Web3_Solidity文档"
+        "url": "/src/template/viewer.html?path=Web3_Solidity文档",
+        "category": "Web3",
+        "date": "2026-09-11",
+        "readTime": 20,
+        "excerpt": "Solidity面向合约、为实现智能合约而创建的高级编程语言。受到了 C++，Python 和 JavaScript 语…",
+        "featured": true
       },
       {
         "title": "Web3文档",
-        "url": "/src/template/viewer.html?path=Web3_Web3文档"
+        "url": "/src/template/viewer.html?path=Web3_Web3文档",
+        "category": "Web3",
+        "date": "2026-09-11",
+        "readTime": 8,
+        "excerpt": "React + TypeScript + Viem + Wagmi + Foundry + Scaffold-ETH2 …"
       },
       {
         "title": "Web3钱包",
-        "url": "/src/template/viewer.html?path=Web3_Web3钱包"
+        "url": "/src/template/viewer.html?path=Web3_Web3钱包",
+        "category": "Web3",
+        "date": "2026-09-11",
+        "readTime": 3,
+        "excerpt": "共识、trustless需要旷工的工作，旷工需要激励"
       },
       {
         "title": "智能合约",
-        "url": "/src/template/viewer.html?path=Web3_智能合约"
+        "url": "/src/template/viewer.html?path=Web3_智能合约",
+        "category": "Web3",
+        "date": "2026-09-11",
+        "readTime": 6,
+        "excerpt": "数据类型中拷贝方法判定"
       },
       {
         "title": "WebRTC性能优化",
-        "url": "/src/template/viewer.html?path=WebRTC_WebRTC性能优化"
+        "url": "/src/template/viewer.html?path=WebRTC_WebRTC性能优化",
+        "category": "WebRTC",
+        "date": "2026-09-11",
+        "readTime": 12,
+        "excerpt": "一、自适应码率调整（ABR）：根据网络状况动态调整编码码率",
+        "featured": true
       },
       {
         "title": "实战项目文档",
-        "url": "/src/template/viewer.html?path=小程序_实战项目文档"
+        "url": "/src/template/viewer.html?path=小程序_实战项目文档",
+        "category": "小程序",
+        "date": "2026-09-11",
+        "readTime": 1,
+        "excerpt": "前端层：小程序 + Web管理后台"
       },
       {
         "title": "小程序文档",
-        "url": "/src/template/viewer.html?path=小程序_小程序文档"
+        "url": "/src/template/viewer.html?path=小程序_小程序文档",
+        "category": "小程序",
+        "date": "2026-09-11",
+        "readTime": 8,
+        "excerpt": "onLaunch：小程序初次加载后执行，只在全局触发一次"
       },
       {
         "title": "Vite与Webpack对比",
-        "url": "/src/template/viewer.html?path=工程化_Vite与Webpack对比"
+        "url": "/src/template/viewer.html?path=工程化_Vite与Webpack对比",
+        "category": "工程化",
+        "date": "2026-09-11",
+        "readTime": 7,
+        "excerpt": "最本质的差异：Webpack 是 先打包，后服务 的 Bundle 驱动模式；Vite 是 先服务，按需编译 的 ESM…"
       },
       {
         "title": "Web加密",
-        "url": "/src/template/viewer.html?path=工程化_Web加密"
+        "url": "/src/template/viewer.html?path=工程化_Web加密",
+        "category": "工程化",
+        "date": "2026-09-11",
+        "readTime": 5,
+        "excerpt": "双 Token 认证系统"
       },
       {
         "title": "工程实例文档",
-        "url": "/src/template/viewer.html?path=工程化_工程实例文档"
+        "url": "/src/template/viewer.html?path=工程化_工程实例文档",
+        "category": "工程化",
+        "date": "2026-09-11",
+        "readTime": 2,
+        "excerpt": "采用 SDK适配层 + 业务服务层 的两层结构"
       },
       {
         "title": "原创诗词",
-        "url": "/src/template/viewer.html?path=文学_原创诗词"
+        "url": "/src/template/viewer.html?path=文学_原创诗词",
+        "category": "文学",
+        "date": "2026-09-11",
+        "readTime": 57,
+        "excerpt": "小红书 <hr>"
       },
       {
         "title": "IT工具合集",
-        "url": "/src/template/viewer.html?path=文档_IT工具合集"
+        "url": "/src/template/viewer.html?path=文档_IT工具合集",
+        "category": "文档",
+        "date": "2026-09-11",
+        "readTime": 18,
+        "excerpt": "2. Web 工具集"
       },
       {
         "title": "帮助文档",
-        "url": "/src/template/viewer.html?path=文档_帮助文档"
+        "url": "/src/template/viewer.html?path=文档_帮助文档",
+        "category": "文档",
+        "date": "2026-09-11",
+        "readTime": 3,
+        "excerpt": "Prettier 注释指令对 Markdown 选定内容不格式化"
       },
       {
         "title": "操作系统文档",
-        "url": "/src/template/viewer.html?path=文档_操作系统文档"
+        "url": "/src/template/viewer.html?path=文档_操作系统文档",
+        "category": "文档",
+        "date": "2026-09-11",
+        "readTime": 1,
+        "excerpt": "跨进程通信 IPC"
       },
       {
         "title": "新趋势",
-        "url": "/src/template/viewer.html?path=文档_新趋势"
+        "url": "/src/template/viewer.html?path=文档_新趋势",
+        "category": "文档",
+        "date": "2026-09-11",
+        "readTime": 4,
+        "excerpt": "AI的最大价值不是内容生产，而是内容生产+自动化**"
       },
       {
         "title": "领域适配性分析",
-        "url": "/src/template/viewer.html?path=文档_领域适配性分析"
+        "url": "/src/template/viewer.html?path=文档_领域适配性分析",
+        "category": "文档",
+        "date": "2026-09-11",
+        "readTime": 4,
+        "excerpt": "1. 前端 AI 开发"
       },
       {
         "title": "基金持仓2026-6-25",
-        "url": "/src/template/viewer.html?path=生活_基金持仓2026-6-25"
+        "url": "/src/template/viewer.html?path=生活_基金持仓2026-6-25",
+        "category": "生活",
+        "date": "2026-09-11",
+        "readTime": 3,
+        "excerpt": "<!-- prettier-ignore-start -->"
       },
       {
         "title": "基金持仓2026-7-23",
-        "url": "/src/template/viewer.html?path=生活_基金持仓2026-7-23"
+        "url": "/src/template/viewer.html?path=生活_基金持仓2026-7-23",
+        "category": "生活",
+        "date": "2026-09-11",
+        "readTime": 4,
+        "excerpt": "<!-- prettier-ignore-start -->"
       },
       {
         "title": "育儿经",
-        "url": "/src/template/viewer.html?path=生活_育儿经"
+        "url": "/src/template/viewer.html?path=生活_育儿经",
+        "category": "生活",
+        "date": "2026-09-11",
+        "readTime": 1,
+        "excerpt": "观察、认知、理解并充分尊重，达到一种和谐的状态"
       },
       {
         "title": "中文简历",
-        "url": "/src/template/viewer.html?path=简历_中文简历"
+        "url": "/src/template/viewer.html?path=简历_中文简历",
+        "category": "简历",
+        "date": "2026-09-11",
+        "readTime": 10,
+        "excerpt": "学历：深圳大学-电子信息工程-全日制本科 | 邮箱: wuhuajin09@163.com | GitHub: gith…"
       },
       {
         "title": "英文简历",
-        "url": "/src/template/viewer.html?path=简历_英文简历"
+        "url": "/src/template/viewer.html?path=简历_英文简历",
+        "category": "简历",
+        "date": "2026-09-11",
+        "readTime": 10,
+        "excerpt": "Huajin Wu"
       },
       {
         "title": "HTTP文档",
-        "url": "/src/template/viewer.html?path=网络_HTTP文档"
+        "url": "/src/template/viewer.html?path=网络_HTTP文档",
+        "category": "网络",
+        "date": "2026-09-11",
+        "readTime": 17,
+        "excerpt": "Open Systems Interconnection 开放式通信互联系统 ISO"
       },
       {
         "title": "Web GIS文档",
-        "url": "/src/template/viewer.html?path=GIS_Web GIS文档"
+        "url": "/src/template/viewer.html?path=GIS_Web GIS文档",
+        "category": "GIS",
+        "date": "2026-06-13",
+        "readTime": 1,
+        "excerpt": "Web GIS文档"
       },
       {
         "title": "Taro小程序文档",
-        "url": "/src/template/viewer.html?path=小程序_Taro小程序文档"
+        "url": "/src/template/viewer.html?path=小程序_Taro小程序文档",
+        "category": "小程序",
+        "date": "2026-06-06",
+        "readTime": 1,
+        "excerpt": "Taro小程序文档"
       },
       {
         "title": "Cesium文档",
-        "url": "/src/template/viewer.html?path=GIS_Cesium文档"
+        "url": "/src/template/viewer.html?path=GIS_Cesium文档",
+        "category": "GIS",
+        "date": "2026-05-05",
+        "readTime": 1,
+        "excerpt": "Cesium文档"
       }
     ]
   },

@@ -111,19 +111,12 @@ const menu = JSON.parse(fs.readFileSync(MENU_PATH, 'utf8'));
 const card = menu.find((c) => c.title === '原创文章');
 if (!card) { console.error('未找到 原创文章 卡'); process.exit(1); }
 
-// 生成 feed（完整字段 → 专属 feed 文件，供首页 feed 渲染）
+// 生成文章数据（完整 feed 字段），注入 menu「原创文章」卡 items（单一数据源，不再写独立 feed/data.json）
 const items = buildFeed();
-const FEED_DIR = path.join(ROOT, 'src/template/feed');
-const FEED_PATH = path.join(FEED_DIR, 'data.json');
-if (!fs.existsSync(FEED_DIR)) fs.mkdirSync(FEED_DIR, { recursive: true });
-const feed = { updated: new Date().toISOString().slice(0, 10), items };
-fs.writeFileSync(FEED_PATH, JSON.stringify(feed, null, 2) + '\n', 'utf8');
-
-// menu「原创文章」卡只保留导航所需的 title+url（保持导航同步，feed 字段不再入 menu）
-card.items = items.map(({ title, url }) => ({ title, url }));
+card.items = items;
 fs.writeFileSync(MENU_PATH, JSON.stringify(menu, null, 2) + '\n', 'utf8');
 
 const feat = items.filter((it) => it.featured).map((it) => it.title);
-console.log('FEED_GENERATED items=' + items.length + ' featured=' + feat.length + ' -> ' + path.relative(ROOT, FEED_PATH));
+console.log('FEED_GENERATED items=' + items.length + ' featured=' + feat.length + ' -> 注入 menu/data.json 原创文章卡');
 console.log('FEATURED:', feat.join('; ') || '无');
-console.log('MENU_原创文章 items=' + card.items.length + ' (仅 title+url)');
+console.log('MENU_原创文章 items=' + card.items.length + ' (完整 feed 字段)');

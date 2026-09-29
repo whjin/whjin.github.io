@@ -1,9 +1,10 @@
-/* 首页文章流（Dev.to 风格）：读 src/template/feed/data.json 渲染精选+文章卡，分类 chips 进固定 category 栏 */
+/* 首页文章流（Dev.to 风格）：读 src/template/menu/data.json「原创文章」卡渲染文章卡 */
 (function () {
   'use strict';
 
   const PAGE = 10;
-  const DATA_URL = 'src/template/feed/data.json';
+  const MENU_URL = 'src/template/menu/data.json';
+  const ARTICLE_CARD_TITLE = '原创文章';
 
   let allItems = [];
   let cat = 'all';
@@ -167,10 +168,11 @@
     const wrap = document.getElementById('home-feed');
     if (!wrap) return;
     try {
-      const res = await fetch(DATA_URL);
-      if (!res.ok) throw new Error('feed 加载失败 ' + res.status);
-      const data = await res.json();
-      allItems = Array.isArray(data.items) ? data.items : [];
+      const res = await fetch(MENU_URL);
+      if (!res.ok) throw new Error('menu 加载失败 ' + res.status);
+      const menu = await res.json();
+      const card = (Array.isArray(menu) ? menu : []).find((c) => c.title === ARTICLE_CARD_TITLE);
+      allItems = (card && Array.isArray(card.items)) ? card.items : [];
       render();
       bindSearch();
     } catch (err) {

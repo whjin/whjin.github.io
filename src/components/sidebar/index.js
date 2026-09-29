@@ -169,13 +169,15 @@
     let autoTags = [];
     let catCounts = [];
     try {
-      const feed = await (await fetch('src/template/feed/data.json')).json();
+      const menu = await (await fetch('src/template/menu/data.json')).json();
+      const articleCard = (Array.isArray(menu) ? menu : []).find((c) => c.title === '原创文章');
+      const feedItems = (articleCard && Array.isArray(articleCard.items)) ? articleCard.items : [];
       const tagCounts = new Map();
-      (feed.items || []).forEach((it) => (it.tags || []).forEach((g) => tagCounts.set(g, (tagCounts.get(g) || 0) + 1)));
+      feedItems.forEach((it) => (it.tags || []).forEach((g) => tagCounts.set(g, (tagCounts.get(g) || 0) + 1)));
       autoTags = [...tagCounts.keys()].sort((a, b) => tagCounts.get(b) - tagCounts.get(a)).slice(0, 10);
       // 分类词云：按分类聚合（含数量）
       const catMap = new Map();
-      (feed.items || []).forEach((it) => catMap.set(it.category, (catMap.get(it.category) || 0) + 1));
+      feedItems.forEach((it) => catMap.set(it.category, (catMap.get(it.category) || 0) + 1));
       catCounts = [...catMap.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
     } catch (e) { /* 忽略 */ }
     try {
