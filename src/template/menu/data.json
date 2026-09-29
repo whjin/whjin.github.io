@@ -310,16 +310,16 @@
     "tagName": "ol",
     "items": [
       {
-        "title": "AI应用开发学习路线图",
-        "url": "/src/template/viewer.html?path=AI_AI应用开发学习路线图"
-      },
-      {
         "title": "Node.js进阶",
         "url": "/src/template/viewer.html?path=Node_Node.js进阶"
       },
       {
         "title": "Docker部署Meting API服务",
         "url": "/src/template/viewer.html?path=工程化_Docker部署Meting API服务"
+      },
+      {
+        "title": "AI应用开发学习路线图",
+        "url": "/src/template/viewer.html?path=AI_AI应用开发学习路线图"
       },
       {
         "title": "AI前端",

@@ -177,6 +177,15 @@ if (IS_DEV) {
   const triggerReload = (filePath) => {
     clearTimeout(reloadTimer);
     reloadTimer = setTimeout(() => {
+      // .md 文章变化 → 先重建 feed（data.json），再刷新，实时看到文章更新效果
+      if (/\.md$/i.test(filePath)) {
+        try {
+          const { execSync } = require('child_process');
+          execSync('node "' + path.join(rootDir, 'scripts', 'build-feed.cjs') + '"', { stdio: 'pipe' });
+        } catch (err) {
+          console.error('[Live] build-feed 失败:', err.message);
+        }
+      }
       if (path.extname(filePath).match(/\.(html|md|js|css|json)$/)) {
         // 向所有已连接的 WebSocket 客户端发送刷新指令
         wss.clients.forEach((client) => {

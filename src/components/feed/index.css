@@ -156,7 +156,7 @@ a.feed-card:hover {
   color: var(--card-color-hover, #1c1c1c);
   transform: translateY(-2px);
 }
-/* 有封面：左图右文（图片为紧凑 4:3 缩略图，宽度受限、高度自适应） */
+/* 有封面：左图右文（图片高度随右侧内容自适应，封顶 240px） */
 .feed-card.fc-has-cover {
   display: flex;
 }
@@ -164,13 +164,15 @@ a.feed-card:hover {
   width: 38%;
   max-width: 280px;
   flex-shrink: 0;
+  display: flex;
 }
 .feed-card.fc-has-cover .fc-cover img {
   display: block;
   width: 100%;
   height: 100%;
-  aspect-ratio: 4 / 3;
+  max-height: 240px;
   object-fit: cover;
+  align-self: center;
 }
 /* 无封面：保持当前布局（仅内容区） */
 .feed-card .fc-body {
@@ -191,12 +193,10 @@ a.feed-card:hover {
   flex-shrink: 0;
   font-size: 12px;
   align-items: center;
-  cursor: default;
 }
 .feed-card .fc-category {
   font-weight: 700;
   color: #3b82f6;
-  cursor: default;
 }
 .feed-card .fc-featured {
   background: #fff1cc;
@@ -216,6 +216,10 @@ a.feed-card:hover {
   color: #555;
   line-height: 1.65;
   margin: 8px 0 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .feed-card .fc-tags {
   display: flex;
@@ -229,7 +233,6 @@ a.feed-card:hover {
   background: #f3f3f3;
   border-radius: 10px;
   padding: 2px 8px;
-  cursor: default;
 }
 /* 底部信息栏：左侧互动统计，右侧日期+阅读时长 */
 .feed-card .fc-meta {
@@ -243,7 +246,6 @@ a.feed-card:hover {
   border-top: 1px solid #efefef;
   font-size: 12.5px;
   color: #717171;
-  cursor: default;
 }
 .feed-card .fc-stats {
   display: flex;

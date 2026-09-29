@@ -60,7 +60,9 @@
     const featured = it.featured ? '<span class="fc-featured">★ ' + esc(t('featured_badge', 'Featured')) + '</span>' : '';
     const category = it.category ? '<span class="fc-category">' + esc(it.category) + '</span>' : '';
     const badges = (category || featured) ? '<div class="fc-badges">' + category + featured + '</div>' : '';
-    const excerpt = it.excerpt ? '<div class="fc-excerpt">' + esc(it.excerpt) + '</div>' : '';
+    const excerpt = it.excerpt
+      ? '<div class="fc-excerpt" title="' + esc(it.excerpt) + '">' + esc(it.excerpt) + '</div>'
+      : '';
     // 互动统计（可选字段，存在才渲染）
     let stats = '';
     if (it.reactions != null) stats += '<span class="fc-stat">' + it.reactions + ' <span data-i18n="reactions">reactions</span></span>';
