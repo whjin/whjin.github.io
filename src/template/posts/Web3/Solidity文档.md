@@ -2,7 +2,7 @@
 title: Solidity文档
 date: 2026-09-11
 category: Web3
-description: Solidity面向合约、为实现智能合约而创建的高级编程语言。受到了 C++，Python 和 JavaScript 语…
+description: "Solidity面向合约、为实现智能合约而创建的高级编程语言。受到了 C++，Python 和 JavaScript 语言的影响，设计的目的是能在以太坊虚拟机（EVM）上运行。 Solidity 是静态类型语言，支持集成、库和复杂的用户定义类型等特性。 智能合约 关键字 pragma (编译指令)是告知编译器如何处理源代码的指令。Solidity 中的合约就是一组代码和数据，它们位于以太坊区块链的一个特定地址上。 所有的标识符（合约名、函数名和变量名）都只能使用 ASCII 字符集。UTF-8 编码的数据可以用字符串变量的形式存储。 数据类型 值类型 value type - 整数 枚举 布尔…"
 ---
 
 > `Solidity`面向合约、为实现智能合约而创建的高级编程语言。受到了 `C++`，`Python` 和 `JavaScript` 语言的影响，设计的目的是能在以太坊虚拟机（`EVM`）上运行。  

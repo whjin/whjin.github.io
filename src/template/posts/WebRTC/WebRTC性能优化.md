@@ -2,7 +2,7 @@
 title: WebRTC性能优化
 date: 2026-09-11
 category: WebRTC
-description: "一、自适应码率调整（ABR）：根据网络状况动态调整编码码率 核心思路： 通过 WebRTC 的 getStats() API 实时获取网络状态（丢包率、RTT、可用带宽等），动态调整视频编码器的输出码率，避免因网络拥塞导致的卡顿。 实现步骤 - 步骤1：定时获取网络统计数据 通过 RTCPeerCo…"
+description: "一、自适应码率调整（ABR）：根据网络状况动态调整编码码率 核心思路： 通过 WebRTC 的 getStats() API 实时获取网络状态（丢包率、RTT、可用带宽等），动态调整视频编码器的输出码率，避免因网络拥塞导致的卡顿。 实现步骤 - 步骤1：定时获取网络统计数据 通过 RTCPeerConnection.getStats() 定时采集发送端（或接收端）的网络指标，重点关注： - packetLost：丢包数 - roundTripTime：往返时间（RTT） - availableOutgotingBitrate：可用发送带宽（仅发送端） - 步骤2：分析网络状况，决策码率调整策略…"
 ---
 
 ### 一、自适应码率调整（`ABR`）：根据网络状况动态调整编码码率

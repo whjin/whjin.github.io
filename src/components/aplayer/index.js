@@ -1,5 +1,5 @@
 async function generateAPlayer() {
-  const audioData = await fetchData('src/components/aplayer/audio.json');
+  const audioData = await fetch('src/components/aplayer/audio.json').then((r) => r.json());
   const ap = new APlayer({
     container: document.querySelector('.aplayer-container'),
     fixed: true,

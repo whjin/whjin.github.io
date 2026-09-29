@@ -193,7 +193,7 @@ a:hover {
   position: sticky;
   float: right;
   margin-right: 20px;
-  bottom: 60px;
+  bottom: 78px;
   width: 40px;
   height: 40px;
   padding: 5px;
@@ -203,7 +203,7 @@ a:hover {
   box-shadow:
     0 0 3px 0 rgba(0, 0, 0, 0.12),
     0 3px 3px 0 rgba(0, 0, 0, 0.24);
-  z-index: 10;
+  z-index: 60;
 }
 
 .scroll-top:hover {
@@ -378,8 +378,8 @@ a:hover {
 
   .scroll-top {
     right: 20px;
-    bottom: 60px;
-    z-index: 9;
+    bottom: 78px;
+    z-index: 60;
   }
 
   .sidebar-area {

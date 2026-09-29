@@ -2,7 +2,7 @@
 title: AI大模型文档
 date: 2026-09-11
 category: AI
-description: "MCP 接口标准 MCP-Model Context Protocol，模型上下文协议 提升对大模型行为的控制能力：优化提问方式，设计输入环境，连接外部能力，形成可复用能力单元。 为模型提供可调用的能力（查询数据、执行操作或访问服务），通过标准化接口，让模型能够可靠地调用外部能力。 MCP 核心组件…"
+description: "MCP 接口标准 MCP-Model Context Protocol，模型上下文协议 提升对大模型行为的控制能力：优化提问方式，设计输入环境，连接外部能力，形成可复用能力单元。 为模型提供可调用的能力（查询数据、执行操作或访问服务），通过标准化接口，让模型能够可靠地调用外部能力。 MCP 核心组件 - MCP Client - MCP Server - MCP Host MCP Server 1. Tools 执行动作 基于统一的协议标准定义和调用，具有更好的通用性和可复用行 2. Resources 提供信息 - MCP Server Resources 是一种数据源 - RAG 是一种数…"
 ---
 
 ## `MCP` 接口标准

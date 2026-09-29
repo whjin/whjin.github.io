@@ -2,7 +2,7 @@
 title: Web3文档
 date: 2026-09-11
 category: Web3
-description: React + TypeScript + Viem + Wagmi + Foundry + Scaffold-ETH2 …
+description: "技术路线 React + TypeScript + Viem + Wagmi + Foundry + Scaffold-ETH2 (2026年行业标准栈) 合约开发 1. 数据类型中拷贝方法判定 2. 合约上下文变量 3. ABI数据、接口与函数调用的底层逻辑 4. 函数调用机制中的过滤器链条模型 5. 委托调用与代理模式 6. 线性化、super关键字与虚函数覆盖 实战项目 1. 应用合约开发中 openzeppelin合约库 2. 钱包与应用的状态管理 3. 通过访问合约构建 DAPP业务逻辑 4. 使用 web3基础设施，特别是去中心化存储支持功能开发 5. 与生态的关系处理 6. 基本…"
 ---
 
 ## 技术路线

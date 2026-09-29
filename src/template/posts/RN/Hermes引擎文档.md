@@ -2,7 +2,7 @@
 title: Hermes引擎文档
 date: 2026-09-11
 category: RN
-description: Hermes 从 React Native 0.70 版本开始已成为 Android 和 IOS 双平台的默认 Java…
+description: "核心工作原理 Hermes 从 React Native 0.70 版本开始已成为 Android 和 IOS 双平台的默认 JavaScript 引擎 提升 React Native 应用启动速度、内存占用和包体积。 - AOT（Ahead-Of-Time） 预编译策略 - 构建时打包 - Hermes 编译器介入 - 直接将 JS 代码编译为紧凑的字节码（.hbc 文件） - 在 App 启动时，Hermes 虚拟机直接加载并执行这些字节码，完全 绕过运行时解析与 JIT 编译环节 - V8 JSC 采用 JIT（Just-In-Time） 编译模式 - 运行时解析 - 解析执行 - 动态…"
 ---
 
 ## 核心工作原理

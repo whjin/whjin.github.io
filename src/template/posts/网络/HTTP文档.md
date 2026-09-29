@@ -2,7 +2,7 @@
 title: HTTP文档
 date: 2026-09-11
 category: 网络
-description: Open Systems Interconnection 开放式通信互联系统 ISO
+description: "OSI 模型 - Open Systems Interconnection 开放式通信互联系统 ISO - OSI 模型是国际组织 ISO 创建的，用于描述网络通信的协议，是 TCP/IP 模型的基础 1. 应用层：提供应用层服务，如 HTTP、FTP、SMTP、DNS 等 2. 表示层：提供数据格式转换，如 ASCII、UTF-8 等，数据压缩、数据加密、数据内容的描述 3. 会话层: 提供会话管理，如 Telnet、SSH 等 4. 传输层: 提供数据传输，如 TCP、UDP 等，不同主机进程间的通信 5. 网络层：提供网络通信，如 IP、UDP、TCP 等 6. 数据链路层：提供数据链路…"
 ---
 
 ## `OSI` 模型

@@ -152,6 +152,7 @@ body.home-page .footer {
 
 a.feed-card {
   display: block;
+  position: relative;
   background: #fff;
   border: 1px solid #e8e8e8;
   border-radius: 16px;
@@ -216,8 +217,16 @@ a.feed-card:hover {
 }
 
 .feed-card .fc-category {
-  font-weight: 700;
-  color: #3b82f6;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px 10px;
+  border-bottom-left-radius: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+  background: #3b82f6;
+  z-index: 2;
 }
 
 .feed-card .fc-featured {
@@ -407,6 +416,13 @@ a.feed-card:hover {
 
 .sb-tag:hover {
   border-color: #8b5cf6;
+}
+
+.sb-tag.active {
+  border-color: #8b5cf6;
+  background: #e9e4ff;
+  color: #6d3fd6;
+  font-weight: 600;
 }
 
 .sb-ad {

@@ -7,7 +7,7 @@ tags:
   - 学习路线
 cover: https://img4.kuwo.cn/star/albumcover/500/s4s14/74/267013878.jpg
 keywords: AI应用开发,前端,大模型,学习路线
-description: 从零到实战的前端 × AI 系统学习路线，覆盖大模型、Agent、工程化与优质资源汇总。
+description: "四、优质学习资源汇总 4.1 在线学习平台 平台 特色 推荐课程 价格 --------------------------------------------------- ------------ ------------------------------------- -------- DeepLearning.AI AI 专项课程 ChatGPT Prompt Engineering, AI Agents 部分免费 Coursera 大学合作课程 ML Specialization, Data Science 订阅制 Udemy 实用技能培训 React, Node.js, Pyth…"
 ---
 
 ## 四、优质学习资源汇总

@@ -2,7 +2,7 @@
 title: Git文档
 date: 2026-09-11
 category: Git
-description: "Git 提交规范 类型说明 :----::----: feat新特性 fix(scope)修复 scope 中的 Bug feat!:/feat(scope)!:breaking change / 重构 API build变更影响的是构建系统或者外部依赖 (如: gulp, npm) ci修改了 C…"
+description: "Git 提交规范 类型说明 :----::----: feat新特性 fix(scope)修复 scope 中的 Bug feat!:/feat(scope)!:breaking change / 重构 API build变更影响的是构建系统或者外部依赖 (如: gulp, npm) ci修改了 CI 配置文件或脚本 (如: Github Action, Travis) chore【重要】 变更不影响源代码或测试（如更新了辅助工具、库等) docs只修改了文档 feat【重要】 一个新特性 fix【重要】 修复了一个 Bug perf增强性能的代码变更 refactor并非修复 Bug 或添加…"
 ---
 
 ## `Git` 提交规范

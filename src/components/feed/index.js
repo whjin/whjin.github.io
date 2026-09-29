@@ -6,7 +6,6 @@
 
   const PAGE = 10;
   const MENU_URL = 'src/template/menu/data.json';
-  const ARTICLE_CARD_TITLE = '原创文章';
 
   let allItems = [];
   let cat = 'all';
@@ -41,11 +40,7 @@
         return hay.includes(q);
       });
     }
-    // relevant：精选优先 + 按日期倒序
-    const dateVal = (it) => (it.date ? new Date(it.date).getTime() : 0);
-    const cmpDate = (a, b) => dateVal(b) - dateVal(a);
-    const cmpFeatured = (a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0);
-    list.sort((a, b) => cmpFeatured(a, b) || cmpDate(a, b));
+    // 严格按 data.json 顺序渲染：sticky 置顶（数值小在前）已在 allItems 构建时排序，此处不再按日期/精选排序
     return list;
   }
 
@@ -152,6 +147,13 @@
     }
   }
 
+  // 回顶：首页滚动容器为 window，兼容 content-area 容器（二级页）
+  function scrollTop() {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    const ca = document.querySelector('.content-area');
+    if (ca && ca.scrollTop) ca.scrollTop = 0;
+  }
+
   function bindSearch() {
     const input = document.getElementById('home-search');
     if (!input) return;
@@ -162,6 +164,7 @@
         query = input.value.trim();
         shown = PAGE;
         render();
+        scrollTop();
       }, 150);
     });
   }
@@ -177,20 +180,17 @@
       const cards = (Array.isArray(menu) ? menu : []).filter(function (c) {
         return c.show !== false && c.items && c.items.length > 0;
       });
-      // 原创文章卡条目为文章；其余卡为链接条目（卡标题作分类徽标）
-      const artCard = cards.find(function (c) { return c.title === ARTICLE_CARD_TITLE; });
-      const linkCards = cards.filter(function (c) { return c.title !== ARTICLE_CARD_TITLE; });
-      // 链接卡按 sticky 置顶排序（有 sticky 升序在前，无 sticky 按数组序）
-      linkCards.sort(function (a, b) {
+      // 严格按 data.json 顺序：全部卡按 sticky 置顶（数值小在前），无 sticky 按数组序
+      cards.sort(function (a, b) {
         const sa = a.sticky === undefined ? Infinity : a.sticky;
         const sb = b.sticky === undefined ? Infinity : b.sticky;
         return sa - sb;
       });
+      // 扁平化所有卡的条目（保持 data.json 内顺序），卡标题作为链接条目的分类徽标
       allItems = [];
-      if (artCard && Array.isArray(artCard.items)) allItems = allItems.concat(artCard.items);
-      linkCards.forEach(function (c) {
+      cards.forEach(function (c) {
         (c.items || []).forEach(function (it) {
-          it._group = c.title;
+          if (!it.category) it._group = c.title;
           allItems.push(it);
         });
       });
@@ -203,7 +203,25 @@
 
   window.HomeFeed = {
     init,
-    setCategory(name) { cat = name; shown = PAGE; render(); },
+    // 点击标签/分类：若点击的是当前筛选则重置为全部，否则应用筛选；并回顶
+    setCategory(name) {
+      cat = (name === cat) ? 'all' : name;
+      shown = PAGE;
+      render();
+      scrollTop();
+    },
+    // 重置筛选：分类=全部、清空搜索，并回顶
+    reset() {
+      cat = 'all';
+      query = '';
+      const input = document.getElementById('home-search');
+      if (input) input.value = '';
+      shown = PAGE;
+      render();
+      scrollTop();
+    },
+    getCategory() { return cat; },
+    scrollTop,
     refresh() { shown = PAGE; render(); },
   };
 })();

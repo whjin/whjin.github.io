@@ -2,7 +2,7 @@
 title: ADB命令集合
 date: 2026-09-11
 category: Android
-description: "设备基础 命令说明 adb devices列出已连接设备 adb devices -l列出已连接设备和种类 adb connect/disconnect [ip:port]连接到指定IP和端口的设备/断开连接 adb root以root权限重新启动adb adb remount重新挂载具有读/写访问…"
+description: "设备基础 命令说明 adb devices列出已连接设备 adb devices -l列出已连接设备和种类 adb connect/disconnect [ip:port]连接到指定IP和端口的设备/断开连接 adb root以root权限重新启动adb adb remount重新挂载具有读/写访问权限的文件系统 adb start-server启动adb服务 adb kill-server停止adb服务 adb reboot重启设备 adb reboot bootloader将设备重启到fastboot模式 adb reboot recovery将设备重启到恢复模式 adb disable-…"
 ---
 
 ## 设备基础

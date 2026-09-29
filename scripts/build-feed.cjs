@@ -9,7 +9,7 @@ const ROOT = path.resolve(__dirname, '..');
 const POSTS = path.join(ROOT, 'src/template/posts');
 const MENU_PATH = path.join(ROOT, 'src/template/menu/data.json');
 
-const DESC_MIN = 40; // 少于该长度的 description 视为不合格，自动生成
+const DESC_MIN = 250; // 少于该长度的 description 视为不合格，自动生成（目标 ~300 字）
 
 function parseFrontMatter(content) {
   const m = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/.exec(content);
@@ -58,7 +58,7 @@ function walk(dir, out = []) {
 }
 
 // 从正文自动提取 ~maxChars 字的摘要（清理代码块/链接/标记符号）
-function generateSummary(body, maxChars = 150) {
+function generateSummary(body, maxChars = 300) {
   const text = body
     .replace(/```[\s\S]*?```/g, ' ')
     .replace(/<!--[\s\S]*?-->/g, ' ')
@@ -70,7 +70,7 @@ function generateSummary(body, maxChars = 150) {
   let c = text.trim();
   if (!c) return '';
   c = c.replace(/^[\s\-.\d、*+]+/, '');
-  if (c.length > maxChars) c = c.slice(0, maxChars) + '…';
+  if (c.length > maxChars) c = c.slice(0, maxChars).trim();
   return c;
 }
 
@@ -100,10 +100,15 @@ function resolveMd(url) {
   return urlToMd.get(`/src/template/viewer.html?path=${m[1]}`) || null;
 }
 
+// 清理描述：去掉结尾省略号字符（…/...），保证 title 弹框完整显示、不出现省略号
+function cleanDesc(s) {
+  return String(s == null ? '' : s).trim().replace(/(?:…|\.\.\.)\s*$/g, '');
+}
+
 // 取描述：md 的 description 若合格则用，否则自动生成
 function descriptionFor(md) {
   if (!md) return '';
-  const fd = md.front && md.front.description ? String(md.front.description).trim() : '';
+  const fd = cleanDesc(md.front && md.front.description ? String(md.front.description) : '');
   return fd.length >= DESC_MIN ? fd : generateSummary(md.body);
 }
 
@@ -177,7 +182,7 @@ function normalizeLinkItem(it, cardTitle) {
     if (md.front && (md.front.sticky || md.front.featured === 'true' || md.front.featured === true)) out.featured = true;
   } else {
     out.category = cardTitle;
-    out.description = it.desc != null ? String(it.desc) : (it.description || '');
+    out.description = cleanDesc(it.desc != null ? String(it.desc) : (it.description || ''));
   }
   if (it.marked) out.marked = true;
   if (it.featured) out.featured = true;

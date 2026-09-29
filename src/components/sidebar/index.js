@@ -16,6 +16,14 @@
       .replace(/"/g, '&quot;');
   }
 
+  // 高亮当前处于激活筛选的标签（POPULAR TAGS / Categories 复用）
+  function applyActiveTag() {
+    const activeKey = (window.HomeFeed && window.HomeFeed.getCategory) ? window.HomeFeed.getCategory() : 'all';
+    document.querySelectorAll('.sb-tag[data-key]').forEach((b) => {
+      b.classList.toggle('active', b.dataset.key === activeKey);
+    });
+  }
+
   function makeBlock(section) {
     const block = document.createElement('div');
     block.className = 'sb-block';
@@ -87,9 +95,11 @@
     tags.forEach((tg) => {
       const b = document.createElement('span');
       b.className = 'sb-tag';
+      b.dataset.key = tg;
       b.textContent = '#' + tg;
       b.addEventListener('click', () => {
         if (window.HomeFeed && window.HomeFeed.setCategory) window.HomeFeed.setCategory(tg);
+        applyActiveTag();
       });
       wrap.appendChild(b);
     });
@@ -105,9 +115,11 @@
     catCounts.forEach(([key, count]) => {
       const b = document.createElement('span');
       b.className = 'sb-tag sb-cat';
+      b.dataset.key = key;
       b.textContent = key + ' ' + count;
       b.addEventListener('click', () => {
         if (window.HomeFeed && window.HomeFeed.setCategory) window.HomeFeed.setCategory(key);
+        applyActiveTag();
       });
       wrap.appendChild(b);
     });

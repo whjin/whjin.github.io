@@ -2,14 +2,15 @@
   position: sticky;
   width: 100%;
   bottom: 0px;
+  height: 66px;
   background: #f8f8f9;
   border-top: 1px solid #e6e6e6;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  row-gap: 6px;
-  padding: 12px 20px 14px;
+  row-gap: 2px;
+  padding: 5px 20px 6px;
   white-space: nowrap;
   overflow: auto;
   box-sizing: border-box;
@@ -17,9 +18,9 @@
 
 .footer-links {
   font-size: 12px;
-  line-height: 1.6;
+  line-height: 1.4;
   color: #666;
-  margin-top: 4px;
+  margin-top: 1px;
 }
 
 .footer-links a {

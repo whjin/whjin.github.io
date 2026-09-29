@@ -265,7 +265,7 @@
         "category": "文学",
         "date": "2026-09-11",
         "readTime": 57,
-        "description": "蓝色盛夏 作者：吴华锦 视频地址： 视频号 B站 抖音 快手 小红书 <hr 蓝色盛夏，热浪裹青帐，山昏影更长。 泉水倚清涧，兰舟穿荷塘，绿荷如擎盖，芙蓉比高洁。 好风有劲意，欺云赶雨不停息。 吹皱一池淡墨，流远一行柔波，拂起千叶霓裳甚风情。 石阶轻弹珍珠落，回廊闻香挂雨帘。 三三两两，闲叙一二，不…",
+        "description": "蓝色盛夏 作者：吴华锦 视频地址： 视频号 B站 抖音 快手 小红书 <hr 蓝色盛夏，热浪裹青帐，山昏影更长。 泉水倚清涧，兰舟穿荷塘，绿荷如擎盖，芙蓉比高洁。 好风有劲意，欺云赶雨不停息。 吹皱一池淡墨，流远一行柔波，拂起千叶霓裳甚风情。 石阶轻弹珍珠落，回廊闻香挂雨帘。 三三两两，闲叙一二，不止良辰好景，更有赏心乐事。 山色空蒙笼烟纱，泼染水洗如画。 云销雨霁，明月均分千家院，一种情思谁家窗，点滴在心间。 最是酣梦能消除，无念且无主。 少年锦时 作者：吴华锦 视频地址： 视频号 B站 抖音 快手 小红书 <hr 北江之畔，山峦秀丽，川流清冽，风物俱美，人杰地灵。 性情随和，乐于助人，喜文",
         "marked": true
       },
       {
@@ -288,7 +288,7 @@
         "category": "简历",
         "date": "2026-09-11",
         "readTime": 10,
-        "description": "学历：深圳大学-电子信息工程-全日制本科 | 邮箱: wuhuajin09@163.com | GitHub: gith…",
+        "description": "基本信息 学历：深圳大学-电子信息工程-全日制本科 邮箱: wuhuajin09@163.com GitHub: github.com/whjin 博客: wuhuajin.com 工作经历 广州市高科通信技术股份有限公司 全栈开发工程师 2020.06 - 2026.02 岗位定位：专注公安司法监所领域软硬件产品研发，负责前端架构迭代、Node.js服务开发、国产化适配及AI研发赋能，全程主导产品研发、迭代优化与政企项目落地交付。全程支撑政企项目招投标、落地终验，负责全国警博会技术展示保障，具备成熟的政企项目全流程交付经验。 - 核心参与20+省内外监所政企项目，完成10款安卓终端APP、5",
         "marked": true
       },
       {
@@ -303,7 +303,7 @@
         "category": "简历",
         "date": "2026-09-11",
         "readTime": 10,
-        "description": "Huajin Wu Email: wuhuajin09@163.com GitHub: github.com/whjin Portfolio: wuhuajin.com Education Shenzhen University Bachelor of Engineering, Electronic…"
+        "description": "Huajin Wu Email: wuhuajin09@163.com GitHub: github.com/whjin Portfolio: wuhuajin.com Education Shenzhen University Bachelor of Engineering, Electronic Information Engineering Professional Summary Results-driven Full-Stack Engineer with 7+ years of enterprise development experience, focusing on cross"
       },
       {
         "title": "英文简历PDF",
@@ -374,7 +374,6 @@
   {
     "sticky": 6,
     "title": "原创文章",
-    "show": true,
     "items": [
       {
         "title": "Node.js进阶",
@@ -382,7 +381,7 @@
         "category": "Node",
         "date": "2026-09-26",
         "readTime": 8,
-        "description": "子进程 - 创建 node 子进程用 fork，自带通道方便通信 充分利用多核 CPU 的优势，用到 child_process 模块创建子进程，有四种方法可以创建子进程： - exec - execFile - spawn - fork 四个方法都会返回 ChildProcess 实例（继承自 E…"
+        "description": "子进程 - 创建 node 子进程用 fork，自带通道方便通信 充分利用多核 CPU 的优势，用到 child_process 模块创建子进程，有四种方法可以创建子进程： - exec - execFile - spawn - fork 四个方法都会返回 ChildProcess 实例（继承自 EventEmitter），该实例拥有三个标准的 stdio 流： 1. child.stdin 2. child.stdout 3. child.stderr 子进程生命周期内可以注册监听的事件有： - exit：子进程结束时触发，参数 code 错误码和 signal 中断信号 - close：子"
       },
       {
         "title": "Docker部署Meting API服务",
@@ -390,7 +389,7 @@
         "category": "工程化",
         "date": "2026-09-26",
         "readTime": 11,
-        "description": "Docker部署 1. 安装 Docker dnf 添加 docker-ce 阿里云源并安装，启停 2. 获取镜像 拉取 ghcr.io 官方镜像；拉不动则 git clone 后本地 docker build 3. 运行容器 -p 80:80，配置 METING_URL / METING_TOKE…"
+        "description": "Docker部署 1. 安装 Docker dnf 添加 docker-ce 阿里云源并安装，启停 2. 获取镜像 拉取 ghcr.io 官方镜像；拉不动则 git clone 后本地 docker build 3. 运行容器 -p 80:80，配置 METING_URL / METING_TOKEN 环境变量 4. 放行端口 阿里云安全组 + firewalld 放行 80 5. 验证 curl 访问 /api?server=netease&type=search 第 1 步：安装 Docker（阿里云官方源） 第 2 步：获取镜像 拉取Github仓库代码本地构建 配置 Docker 镜像"
       },
       {
         "title": "AI应用开发学习路线图",
@@ -398,7 +397,7 @@
         "category": "AI",
         "date": "2026-09-24",
         "readTime": 24,
-        "description": "从零到实战的前端 × AI 系统学习路线，覆盖大模型、Agent、工程化与优质资源汇总。",
+        "description": "四、优质学习资源汇总 4.1 在线学习平台 平台 特色 推荐课程 价格 --------------------------------------------------- ------------ ------------------------------------- -------- DeepLearning.AI AI 专项课程 ChatGPT Prompt Engineering, AI Agents 部分免费 Coursera 大学合作课程 ML Specialization, Data Science 订阅制 Udemy 实用技能培训 React, Node.js, Pyth",
         "tags": [
           "AI",
           "学习路线"
@@ -411,7 +410,7 @@
         "category": "AI",
         "date": "2026-09-11",
         "readTime": 28,
-        "description": "模型侧 - LLM （大语言模型） - fine-tuning - 模型微调：成本较高，灾难性遗忘 - 多模态：输入：图片、音视频 输出：富媒体内容 - 模型效果评测：AI Code 实现场景（实现一个电商网站，是否有登录、是否有购物车），核心评测手段，依靠人工来评测 - 模型部署优化（模型压缩） …"
+        "description": "模型侧 - LLM （大语言模型） - fine-tuning - 模型微调：成本较高，灾难性遗忘 - 多模态：输入：图片、音视频 输出：富媒体内容 - 模型效果评测：AI Code 实现场景（实现一个电商网站，是否有登录、是否有购物车），核心评测手段，依靠人工来评测 - 模型部署优化（模型压缩） - 数据蒸馏 - 推理加速优化：核心方法，模型提前按照高频的使用场景（query词）生成好模板 工程侧 - 领域能力 webview的IDE应用 LSP - 上下文管理 - 提示词工程：通过指令的方式，规范化模型的输出，让模型的回复（处理效果）更符合预期 - multi agent：工程分治的思想，"
       },
       {
         "title": "AI大模型文档",
@@ -419,7 +418,7 @@
         "category": "AI",
         "date": "2026-09-11",
         "readTime": 6,
-        "description": "MCP 接口标准 MCP-Model Context Protocol，模型上下文协议 提升对大模型行为的控制能力：优化提问方式，设计输入环境，连接外部能力，形成可复用能力单元。 为模型提供可调用的能力（查询数据、执行操作或访问服务），通过标准化接口，让模型能够可靠地调用外部能力。 MCP 核心组件…"
+        "description": "MCP 接口标准 MCP-Model Context Protocol，模型上下文协议 提升对大模型行为的控制能力：优化提问方式，设计输入环境，连接外部能力，形成可复用能力单元。 为模型提供可调用的能力（查询数据、执行操作或访问服务），通过标准化接口，让模型能够可靠地调用外部能力。 MCP 核心组件 - MCP Client - MCP Server - MCP Host MCP Server 1. Tools 执行动作 基于统一的协议标准定义和调用，具有更好的通用性和可复用行 2. Resources 提供信息 - MCP Server Resources 是一种数据源 - RAG 是一种数"
       },
       {
         "title": "AI项目文档",
@@ -427,7 +426,7 @@
         "category": "AI",
         "date": "2026-09-11",
         "readTime": 2,
-        "description": "Next.js框架 - 零配置：自动编译并打包 - 混合模式SSG 和 SSr：在一个项目中同时支持构建时预渲染页面 SSG 和请求时渲染页面 SSR - 增量静态生成：在构建之后以增量的方式添加并更新静态预渲染的页面 - 基于文件系统的路由：每个 pages 目录下的组件都是一个路由 - API路…"
+        "description": "Next.js框架 - 零配置：自动编译并打包 - 混合模式SSG 和 SSr：在一个项目中同时支持构建时预渲染页面 SSG 和请求时渲染页面 SSR - 增量静态生成：在构建之后以增量的方式添加并更新静态预渲染的页面 - 基于文件系统的路由：每个 pages 目录下的组件都是一个路由 - API路由：创建 API 端点以提供后端功能 - 内置支持 CSS：使用 CSS 模块创建组件级样式，内置对 Sass 支持 - 代码拆分和打包：采用 Google Chrome 优化打包和拆分算法 内置功能 - 基于页面的路由系统，支持动态路由 - 预渲染，支持在页面级静态生成 SSG 和服务端渲染 SS"
       },
       {
         "title": "ADB命令集合",
@@ -435,7 +434,7 @@
         "category": "Android",
         "date": "2026-09-11",
         "readTime": 16,
-        "description": "设备基础 命令说明 adb devices列出已连接设备 adb devices -l列出已连接设备和种类 adb connect/disconnect [ip:port]连接到指定IP和端口的设备/断开连接 adb root以root权限重新启动adb adb remount重新挂载具有读/写访问…"
+        "description": "设备基础 命令说明 adb devices列出已连接设备 adb devices -l列出已连接设备和种类 adb connect/disconnect [ip:port]连接到指定IP和端口的设备/断开连接 adb root以root权限重新启动adb adb remount重新挂载具有读/写访问权限的文件系统 adb start-server启动adb服务 adb kill-server停止adb服务 adb reboot重启设备 adb reboot bootloader将设备重启到fastboot模式 adb reboot recovery将设备重启到恢复模式 adb disable-"
       },
       {
         "title": "Git文档",
@@ -443,7 +442,7 @@
         "category": "Git",
         "date": "2026-09-11",
         "readTime": 14,
-        "description": "Git 提交规范 类型说明 :----::----: feat新特性 fix(scope)修复 scope 中的 Bug feat!:/feat(scope)!:breaking change / 重构 API build变更影响的是构建系统或者外部依赖 (如: gulp, npm) ci修改了 C…"
+        "description": "Git 提交规范 类型说明 :----::----: feat新特性 fix(scope)修复 scope 中的 Bug feat!:/feat(scope)!:breaking change / 重构 API build变更影响的是构建系统或者外部依赖 (如: gulp, npm) ci修改了 CI 配置文件或脚本 (如: Github Action, Travis) chore【重要】 变更不影响源代码或测试（如更新了辅助工具、库等) docs只修改了文档 feat【重要】 一个新特性 fix【重要】 修复了一个 Bug perf增强性能的代码变更 refactor并非修复 Bug 或添加"
       },
       {
         "title": "ECMAScript文档",
@@ -451,7 +450,7 @@
         "category": "JavaScript",
         "date": "2026-09-11",
         "readTime": 2,
-        "description": "var、let、const之间的区别 - var： - 声明变量可以重复声明 - 不受限于块级 - 会跟 window 相映射 - 声明上方访问变量 - let： - 不可以重复声明 - 受限制于块级 - 暂存死区 - const： - 声明后必须赋值 - 常量，不能修改 2. ES6 Module…"
+        "description": "var、let、const之间的区别 - var： - 声明变量可以重复声明 - 不受限于块级 - 会跟 window 相映射 - 声明上方访问变量 - let： - 不可以重复声明 - 受限制于块级 - 暂存死区 - const： - 声明后必须赋值 - 常量，不能修改 2. ES6 Module 与 CommonJS核心区别 特性CommonJSES6 Module 加载时机运行时同步加载编译时静态加载 导出特性值的拷贝（修改原变量不影响导出）值的只读引用（原变量修改会同步） 静态分析不支持（无法 tree-shaking）支持（可移除未使用代码） 浏览器支持不原生支持原生支持（<scri"
       },
       {
         "title": "功能代码集合",
@@ -459,7 +458,7 @@
         "category": "JavaScript",
         "date": "2026-09-11",
         "readTime": 40,
-        "description": "两数之和 日期格式化 时间转换（秒数转时分秒） 计算时分秒差值 深拷贝和浅拷贝 浅拷贝 - 只拷贝一层 - 引用类型拷贝内存地址 深拷贝 数组去重 数组对象去重 数组对象排序 获取上/下个月日期 获取前/后7天日期 一周日期 点击内容切换 时分秒 当月第一天和最后一天 fetch接口请求 按键处理方…"
+        "description": "两数之和 日期格式化 时间转换（秒数转时分秒） 计算时分秒差值 深拷贝和浅拷贝 浅拷贝 - 只拷贝一层 - 引用类型拷贝内存地址 深拷贝 数组去重 数组对象去重 数组对象排序 获取上/下个月日期 获取前/后7天日期 一周日期 点击内容切换 时分秒 当月第一天和最后一天 fetch接口请求 按键处理方法 返回顶部 自适应内部元素 iview封装菜单menu 图片懒加载 CSS多行文本省略 Vue字符串换行 封装iView无限层级菜单 上传文件 CSS控制禁止点击 pointer-events: none; //（禁止鼠标点击事件） 单行居中，多行顶部对齐 计算传入时间与当前时间相差的秒数 提取U"
       },
       {
         "title": "设计模式文档",
@@ -467,7 +466,7 @@
         "category": "JavaScript",
         "date": "2026-09-11",
         "readTime": 3,
-        "description": "面向对象 - 不需要关注使用过程 - 易维护、易扩展、易复用 - 特征：继承、封装、多台 2. 设计原则 - 单一职责 - 开放封闭 - 里氏替换 - 依赖倒置 - 接口分离 3. 工厂模式、抽象工厂模式 - 工厂模式：通过传入不同的短参数，达到实例化不同的对象的目的 - 优势：关注当前产品的创建，…"
+        "description": "面向对象 - 不需要关注使用过程 - 易维护、易扩展、易复用 - 特征：继承、封装、多台 2. 设计原则 - 单一职责 - 开放封闭 - 里氏替换 - 依赖倒置 - 接口分离 3. 工厂模式、抽象工厂模式 - 工厂模式：通过传入不同的短参数，达到实例化不同的对象的目的 - 优势：关注当前产品的创建，具有良好的封装 - 劣势：增加系统复杂性 - 抽象工厂模式：关注当前抽象类，不需要知道产品具体细节，只需要关注当前抽象方法 4. 状态模式 - 提高代码可维护性 - 添加了很多类，每个类都有自己的方法和状态，增加了系统的负载 5. 单例模式 - 不用重复去构建实例，直接取保存在内存中的实例 - 优势"
       },
       {
         "title": "Node.js实战",
@@ -475,7 +474,7 @@
         "category": "Node",
         "date": "2026-09-11",
         "readTime": 8,
-        "description": "全栈图书管理系统 项目地址：book-management-system 1. 完整项目的需求分析和架构设计（需求规划、目录结构设计、接口设计） 2. 后端接口开发和数据库设计（Express + MongoDB 开发接口，设计数据模型，认证授权） 3. 前后端联调方法和解决跨域问题（Apifox …"
+        "description": "全栈图书管理系统 项目地址：book-management-system 1. 完整项目的需求分析和架构设计（需求规划、目录结构设计、接口设计） 2. 后端接口开发和数据库设计（Express + MongoDB 开发接口，设计数据模型，认证授权） 3. 前后端联调方法和解决跨域问题（Apifox 测试接口，cors和代理解决跨域问题） 4. 项目部署流程，使用 PM2 管理应用进程（搭建服务器环境、上传项目、PM2 启动、管理项目） 5. 项目优化与迭代（性能优化、功能扩展） 一、需求分析 1. 功能规划：分角色、分模块 - 公共功能：用户注册、用户登录（JWT认证）、图书借阅（模糊查询、分"
       },
       {
         "title": "Node.js文档",
@@ -483,7 +482,7 @@
         "category": "Node",
         "date": "2026-09-11",
         "readTime": 16,
-        "description": "非阻塞 IO - 开源的 JS 运行环境 - Chrome V8引擎 非阻塞 异步 IO 服务端 - 事件驱动：事件队列 异步事件 任务队列 - 适合处理高并发请求 优缺点 - 高并发 - IO 密集型 - 单线程 不适合 CPU 密集型应用 单核 CPU - 代码发生问题，系统会崩溃 应用场景 -…"
+        "description": "非阻塞 IO - 开源的 JS 运行环境 - Chrome V8引擎 非阻塞 异步 IO 服务端 - 事件驱动：事件队列 异步事件 任务队列 - 适合处理高并发请求 优缺点 - 高并发 - IO 密集型 - 单线程 不适合 CPU 密集型应用 单核 CPU - 代码发生问题，系统会崩溃 应用场景 - IO 更适合 - IO 内部不需要做非常复杂的逻辑 - WebSocket - 后台管理 实时交互系统 高并发 - canvas 多人协作 - 单页面浏览器应用创建服务 - 开发服务器端的中间层（BFF） - 开发前端方向的各种工具 fs 模块 - fs: filesystem 操作文档文件夹 -"
       },
       {
         "title": "React文档",
@@ -491,7 +490,7 @@
         "category": "React",
         "date": "2026-09-11",
         "readTime": 5,
-        "description": "核心技术 - JSX开发思想 - 虚拟 dom 渲染 - 单项数据流 - state 与 props - 类组件与组件的生命周期 - 函数式组件与副作用处理机制 - hooks - 事件处理 - 条件渲染 - 列表与数据塑形 - ajax异步处理 - 跨组件数据传递 Context - Provid…"
+        "description": "核心技术 - JSX开发思想 - 虚拟 dom 渲染 - 单项数据流 - state 与 props - 类组件与组件的生命周期 - 函数式组件与副作用处理机制 - hooks - 事件处理 - 条件渲染 - 列表与数据塑形 - ajax异步处理 - 跨组件数据传递 Context - Provider - CSS in JS - 模块化样式加载 - UI渲染原理 JSX JSX = JavaScript + XML - {}模板语法 - 添加注释 - 属性渲染变量 - 事件渲染函数 - style渲染对象 - {}渲染 JSX Redux - Store 的连接与订阅 - Action - "
       },
       {
         "title": "Hermes引擎文档",
@@ -499,7 +498,7 @@
         "category": "RN",
         "date": "2026-09-11",
         "readTime": 4,
-        "description": "Hermes 从 React Native 0.70 版本开始已成为 Android 和 IOS 双平台的默认 Java…"
+        "description": "核心工作原理 Hermes 从 React Native 0.70 版本开始已成为 Android 和 IOS 双平台的默认 JavaScript 引擎 提升 React Native 应用启动速度、内存占用和包体积。 - AOT（Ahead-Of-Time） 预编译策略 - 构建时打包 - Hermes 编译器介入 - 直接将 JS 代码编译为紧凑的字节码（.hbc 文件） - 在 App 启动时，Hermes 虚拟机直接加载并执行这些字节码，完全 绕过运行时解析与 JIT 编译环节 - V8 JSC 采用 JIT（Just-In-Time） 编译模式 - 运行时解析 - 解析执行 - 动态"
       },
       {
         "title": "类型系统",
@@ -507,7 +506,7 @@
         "category": "TypeScript",
         "date": "2026-09-11",
         "readTime": 8,
-        "description": "概要 summary - 类型安全：强类型 弱类型 - 类型检查：静态类型 动态类型 - 标准库：内置对象对应的声明 类型 type - 类型注解 let a:string = 'hello' 类型推断 - 联合类型 let a:string number = 'hello' 类型之间进行 或 操作…"
+        "description": "概要 summary - 类型安全：强类型 弱类型 - 类型检查：静态类型 动态类型 - 标准库：内置对象对应的声明 类型 type - 类型注解 let a:string = 'hello' 类型推断 - 联合类型 let a:string number = 'hello' 类型之间进行 或 操作 - 交叉类型 类型之间进行 与 操作 - never类型 永不存在值的类型 - any类型 任意类型 不进行检测 - unknown类型 any类型对应的安全类型 默认会进行检测 - 类型断言 a as string - 非空断言 a!.length - 数组类型 - 类型 []：let a:(n"
       },
       {
         "title": "Vue文档",
@@ -523,7 +522,7 @@
         "category": "Web3",
         "date": "2026-09-11",
         "readTime": 20,
-        "description": "Solidity面向合约、为实现智能合约而创建的高级编程语言。受到了 C++，Python 和 JavaScript 语…"
+        "description": "Solidity面向合约、为实现智能合约而创建的高级编程语言。受到了 C++，Python 和 JavaScript 语言的影响，设计的目的是能在以太坊虚拟机（EVM）上运行。 Solidity 是静态类型语言，支持集成、库和复杂的用户定义类型等特性。 智能合约 关键字 pragma (编译指令)是告知编译器如何处理源代码的指令。Solidity 中的合约就是一组代码和数据，它们位于以太坊区块链的一个特定地址上。 所有的标识符（合约名、函数名和变量名）都只能使用 ASCII 字符集。UTF-8 编码的数据可以用字符串变量的形式存储。 数据类型 值类型 value type - 整数 枚举 布尔"
       },
       {
         "title": "Web3文档",
@@ -531,7 +530,7 @@
         "category": "Web3",
         "date": "2026-09-11",
         "readTime": 8,
-        "description": "React + TypeScript + Viem + Wagmi + Foundry + Scaffold-ETH2 …"
+        "description": "技术路线 React + TypeScript + Viem + Wagmi + Foundry + Scaffold-ETH2 (2026年行业标准栈) 合约开发 1. 数据类型中拷贝方法判定 2. 合约上下文变量 3. ABI数据、接口与函数调用的底层逻辑 4. 函数调用机制中的过滤器链条模型 5. 委托调用与代理模式 6. 线性化、super关键字与虚函数覆盖 实战项目 1. 应用合约开发中 openzeppelin合约库 2. 钱包与应用的状态管理 3. 通过访问合约构建 DAPP业务逻辑 4. 使用 web3基础设施，特别是去中心化存储支持功能开发 5. 与生态的关系处理 6. 基本"
       },
       {
         "title": "Web3钱包",
@@ -539,7 +538,7 @@
         "category": "Web3",
         "date": "2026-09-11",
         "readTime": 3,
-        "description": "区块链 - 共识、trustless需要旷工的工作，旷工需要激励 - transaction的执行有成本 gas，gas费成为旷工的激励 - ether是这个经济生态系统的通行货币 gas和转账 - 转账是与函数调用一起发生，转账就是函数调用。 gaslimit与 gasleft()函数 - 交易发…"
+        "description": "区块链 - 共识、trustless需要旷工的工作，旷工需要激励 - transaction的执行有成本 gas，gas费成为旷工的激励 - ether是这个经济生态系统的通行货币 gas和转账 - 转账是与函数调用一起发生，转账就是函数调用。 gaslimit与 gasleft()函数 - 交易发起者设定最多消耗多少 gaslimit - 合约之间调用，调用者可以设定 gaslimit - 区块本身有一个 gaslimit gasleft()是以上因素作为限定，与当前 gas消耗一起计算的结果 退款规则 - 剩下没用完的 gas会退款 - 如果可用 gas耗尽时，会终止交易执行 - 交易失败"
       },
       {
         "title": "智能合约",
@@ -547,7 +546,7 @@
         "category": "Web3",
         "date": "2026-09-11",
         "readTime": 6,
-        "description": "合约开发 - 数据类型中拷贝方法判定 - 合约上下文变量 - ABI数据、接口与函数调用的底层逻辑 - 函数调用机制中的过滤器链条模型 - 委托调研与代理模式 - 线性化、super关键字与虚函数覆盖 合约外部调用原理 - ABI Application Binary Interface - 读操作…"
+        "description": "合约开发 - 数据类型中拷贝方法判定 - 合约上下文变量 - ABI数据、接口与函数调用的底层逻辑 - 函数调用机制中的过滤器链条模型 - 委托调研与代理模式 - 线性化、super关键字与虚函数覆盖 合约外部调用原理 - ABI Application Binary Interface - 读操作与写操作的不同调用方式 合约的成员变量的特殊性 与一般的虚拟器或物理机不同，EVM的机器模型中引入了 storage，合约成员变量指向固定的持久化 storage数据块，它并能像一般引用类型变量一样切换它所指向的数据块，由于这个限制，对成员变量的赋值，引用拷贝从技术上变成不可能。 location对"
       },
       {
         "title": "WebRTC性能优化",
@@ -555,7 +554,7 @@
         "category": "WebRTC",
         "date": "2026-09-11",
         "readTime": 12,
-        "description": "一、自适应码率调整（ABR）：根据网络状况动态调整编码码率 核心思路： 通过 WebRTC 的 getStats() API 实时获取网络状态（丢包率、RTT、可用带宽等），动态调整视频编码器的输出码率，避免因网络拥塞导致的卡顿。 实现步骤 - 步骤1：定时获取网络统计数据 通过 RTCPeerCo…"
+        "description": "一、自适应码率调整（ABR）：根据网络状况动态调整编码码率 核心思路： 通过 WebRTC 的 getStats() API 实时获取网络状态（丢包率、RTT、可用带宽等），动态调整视频编码器的输出码率，避免因网络拥塞导致的卡顿。 实现步骤 - 步骤1：定时获取网络统计数据 通过 RTCPeerConnection.getStats() 定时采集发送端（或接收端）的网络指标，重点关注： - packetLost：丢包数 - roundTripTime：往返时间（RTT） - availableOutgotingBitrate：可用发送带宽（仅发送端） - 步骤2：分析网络状况，决策码率调整策略"
       },
       {
         "title": "实战项目文档",
@@ -563,7 +562,7 @@
         "category": "小程序",
         "date": "2026-09-11",
         "readTime": 1,
-        "description": "技术架构 - 前端层：小程序 + Web管理后台 - SDK层：auth sdk + core sdk - 后端服务层：认证服务 + 核心服务 + 知识服务 - 数据存储层：云存储/本地存储 + 数据库（MongoDB/MySQL） 帮助文档 uniapp移动端输入监听键盘上正在输入的值 例如搜狗输…"
+        "description": "技术架构 - 前端层：小程序 + Web管理后台 - SDK层：auth sdk + core sdk - 后端服务层：认证服务 + 核心服务 + 知识服务 - 数据存储层：云存储/本地存储 + 数据库（MongoDB/MySQL） 帮助文档 uniapp移动端输入监听键盘上正在输入的值 例如搜狗输入法的英文预测模式下，输入的字符不会马上赋给输入框。 input有个ignoreCompositionEvent属性，是否忽略组件内对文本合成系统事件的处理。为 false 时将触发 compositionstart、compositionend、compositionupdate 事件，且在文本合"
       },
       {
         "title": "小程序文档",
@@ -571,7 +570,7 @@
         "category": "小程序",
         "date": "2026-09-11",
         "readTime": 8,
-        "description": "生命周期 应用维度 - onLaunch：小程序初次加载后执行，只在全局触发一次 - onShow：小程序启动，或者从后台进入前台时触发，监听小程序显示 - onHide：从前台进入后台时触发 - onError：发生错误时触发 - onThemeChange：主题切换时触发 - onUnhandl…"
+        "description": "生命周期 应用维度 - onLaunch：小程序初次加载后执行，只在全局触发一次 - onShow：小程序启动，或者从后台进入前台时触发，监听小程序显示 - onHide：从前台进入后台时触发 - onError：发生错误时触发 - onThemeChange：主题切换时触发 - onUnhandledRejection：Promise 未处理的错误时触发 - 资源占用过高，销毁 页面维度 - onLoad：加载页面时执行 - onShow：显示页面元素时执行 - onReady：页面渲染完成时执行，render page 一个页面只会调用一次 - onHide：页面隐藏时执行 - onUnl"
       },
       {
         "title": "Vite与Webpack对比",
@@ -579,7 +578,7 @@
         "category": "工程化",
         "date": "2026-09-11",
         "readTime": 7,
-        "description": "最本质的差异：Webpack 是 先打包，后服务 的 Bundle 驱动模式；Vite 是 先服务，按需编译 的 ESM…"
+        "description": "最本质的差异：Webpack 是 先打包，后服务 的 Bundle 驱动模式；Vite 是 先服务，按需编译 的 ESM 原生驱动模式。 一、开发启动速度 核心原因：Webpack必须先完成全量打包才能提供服务；Vite 利用现代浏览器原生支持的 ES Module 特性，把“打包”工作交给了浏览器，服务器只负责按需编译和转发。 维度 Webpack Vite -------- --------- ------ 冷启动原理 从入口文件开始，递归打包 所有依赖和业务代码，<br生成完整 bundle 后再启动开发服务器 1. 仅对第三方依赖做 预编译（eslint加速）<br2. 直接启动开发服"
       },
       {
         "title": "Web加密",
@@ -587,7 +586,7 @@
         "category": "工程化",
         "date": "2026-09-11",
         "readTime": 5,
-        "description": "双 Token 认证系统 1. Access Token（访问令牌） - 用途：用于访问受保护的 API 资源，附加在每个请求的 Header 中 - 特点：生命周期短（1小时），无状态，服务器无需存储 - 存储：通常存储在客户端内存中，需要频繁读取 2. Refresh Token（刷新令牌） -…"
+        "description": "双 Token 认证系统 1. Access Token（访问令牌） - 用途：用于访问受保护的 API 资源，附加在每个请求的 Header 中 - 特点：生命周期短（1小时），无状态，服务器无需存储 - 存储：通常存储在客户端内存中，需要频繁读取 2. Refresh Token（刷新令牌） - 用途：当 Access Token 过期时，专门用于获取一个新的 Access Token - 特点：生命周期长（7天或30天），与特定用户绑定，服务器需要安全存储其有效性记录 - 存储：必须安全存储。最佳实践时存储在 HttpOnly Cookie 中，可以防止客户端 JavaScript（XS"
       },
       {
         "title": "工程实例文档",
@@ -595,7 +594,7 @@
         "category": "工程化",
         "date": "2026-09-11",
         "readTime": 2,
-        "description": "接口设计 1. 整体架构 采用 SDK适配层 + 业务服务层 的两层结构 - SDK 适配层：直接调用厂商提供的原生 SDK，处理底层通信、数据格式转换。 - 业务服务层：对外暴露简洁的业务 API，封装权限校验、错误重试、日志记录等通用逻辑。 权限验证 基于 RBAC 的权限验证 权限验证的场景以…"
+        "description": "接口设计 1. 整体架构 采用 SDK适配层 + 业务服务层 的两层结构 - SDK 适配层：直接调用厂商提供的原生 SDK，处理底层通信、数据格式转换。 - 业务服务层：对外暴露简洁的业务 API，封装权限校验、错误重试、日志记录等通用逻辑。 权限验证 基于 RBAC 的权限验证 权限验证的场景以及需求： - 特定的角色的用户才能操作特定的资源 - 不同的用户能操作同类资源的特定实体 - 不同的用户操作特定资源的不同属性 根据角色完成权限的控制-RBAC（Role-Based Access Control） CASL Docker <center命令</center<center作用</ce"
       },
       {
         "title": "原创诗词",
@@ -603,7 +602,7 @@
         "category": "文学",
         "date": "2026-09-11",
         "readTime": 57,
-        "description": "蓝色盛夏 作者：吴华锦 视频地址： 视频号 B站 抖音 快手 小红书 <hr 蓝色盛夏，热浪裹青帐，山昏影更长。 泉水倚清涧，兰舟穿荷塘，绿荷如擎盖，芙蓉比高洁。 好风有劲意，欺云赶雨不停息。 吹皱一池淡墨，流远一行柔波，拂起千叶霓裳甚风情。 石阶轻弹珍珠落，回廊闻香挂雨帘。 三三两两，闲叙一二，不…"
+        "description": "蓝色盛夏 作者：吴华锦 视频地址： 视频号 B站 抖音 快手 小红书 <hr 蓝色盛夏，热浪裹青帐，山昏影更长。 泉水倚清涧，兰舟穿荷塘，绿荷如擎盖，芙蓉比高洁。 好风有劲意，欺云赶雨不停息。 吹皱一池淡墨，流远一行柔波，拂起千叶霓裳甚风情。 石阶轻弹珍珠落，回廊闻香挂雨帘。 三三两两，闲叙一二，不止良辰好景，更有赏心乐事。 山色空蒙笼烟纱，泼染水洗如画。 云销雨霁，明月均分千家院，一种情思谁家窗，点滴在心间。 最是酣梦能消除，无念且无主。 少年锦时 作者：吴华锦 视频地址： 视频号 B站 抖音 快手 小红书 <hr 北江之畔，山峦秀丽，川流清冽，风物俱美，人杰地灵。 性情随和，乐于助人，喜文"
       },
       {
         "title": "IT工具合集",
@@ -611,7 +610,7 @@
         "category": "文档",
         "date": "2026-09-11",
         "readTime": 18,
-        "description": "菜鸟工具 2. Web 工具集 3. UU在线工具 4. 独特工具箱 5. 开发者武器库 6. UML图开源工具 7. 视频转链接工具 8. 在线视频压缩 9. IT工具箱 10. 在线JSON校验格式化工具 11. AI网址导航 12. AI菜鸟教程 13. 在线实时HTML和JavaScript…"
+        "description": "菜鸟工具 2. Web 工具集 3. UU在线工具 4. 独特工具箱 5. 开发者武器库 6. UML图开源工具 7. 视频转链接工具 8. 在线视频压缩 9. IT工具箱 10. 在线JSON校验格式化工具 11. AI网址导航 12. AI菜鸟教程 13. 在线实时HTML和JavaScript编辑器 14. HTML代码压缩 15. JS压缩、解压、格式化、混淆加密、解密 16. 在线进制转换 17. 可批量编辑图片的所有工具 18. 跨平台多媒体播放器 19. 极简插件官网 20. GitHub Corners 21. YouTube视频下载器 22. Vysor安卓投屏工具 23. "
       },
       {
         "title": "帮助文档",
@@ -619,7 +618,7 @@
         "category": "文档",
         "date": "2026-09-11",
         "readTime": 3,
-        "description": "Prettier 注释指令对 Markdown 选定内容不格式化 1. 忽略单个代码块 在代码块前一行添加 注释 2. 忽略多行/整个区域 使用 和 包裹需要忽略的内容 3. 忽略整个 Markdown 文件 在项目根目录创建 .prettierignore 文件，并添加 .md 忽略代码块内的特定…"
+        "description": "Prettier 注释指令对 Markdown 选定内容不格式化 1. 忽略单个代码块 在代码块前一行添加 注释 2. 忽略多行/整个区域 使用 和 包裹需要忽略的内容 3. 忽略整个 Markdown 文件 在项目根目录创建 .prettierignore 文件，并添加 .md 忽略代码块内的特定语言 只想禁用代码块内某一种语言的格式化，保留其他语言的格式化，可以在 .prettierrc 配置文件中添加： 个人介绍 生于1989年，广东省英德市人，现住在广州市。2013年毕业于深圳大学，专业电子信息工程。曾在深圳和广州工作，任职前端开发工程师岗位。技术栈包括Vue、React、Node.j"
       },
       {
         "title": "操作系统文档",
@@ -635,7 +634,7 @@
         "category": "文档",
         "date": "2026-09-11",
         "readTime": 4,
-        "description": "AI的最大价值不是内容生产，而是内容生产+自动化 第二次API开发浪潮正在到来 CSS原生能力 主流框架演进 - Vue：Vue的核心进展 性能飞跃 - Vapor Mode：从“虚拟”到“直接” - 是什么：一种新的编译策略，它在编译时直接将Vue模板转换为高效的、直接操作真实DOM的指令代码，完…"
+        "description": "AI的最大价值不是内容生产，而是内容生产+自动化 第二次API开发浪潮正在到来 CSS原生能力 主流框架演进 - Vue：Vue的核心进展 性能飞跃 - Vapor Mode：从“虚拟”到“直接” - 是什么：一种新的编译策略，它在编译时直接将Vue模板转换为高效的、直接操作真实DOM的指令代码，完全跳过虚拟DOM的创建与 Diff 过程 - 解决了什么：传统VDOM在高频更新场景（如大型数据表、实时图表）有额外开销。Vapor Mode消除了这部分开销，根据测试，在渲染万级列表时，时间可减少约40%，内存占用降低近一半。 - React： - 通过新API持续优化开发体验和应用性能 - 在推"
       },
       {
         "title": "领域适配性分析",
@@ -643,7 +642,7 @@
         "category": "文档",
         "date": "2026-09-11",
         "readTime": 4,
-        "description": "领域分析 1. 前端 AI 开发 - 音视频（WebRTC、流媒体）、数据可视化 Echarts、Node.js 后端服务 - 智能行为分析、AI身份核验、AI运维 - AI能力前端集成 + AI硬件对接 + AI交付 - 基础：TensorFlow.js轻量化模型部署、主流大模型 API 调用 -…"
+        "description": "领域分析 1. 前端 AI 开发 - 音视频（WebRTC、流媒体）、数据可视化 Echarts、Node.js 后端服务 - 智能行为分析、AI身份核验、AI运维 - AI能力前端集成 + AI硬件对接 + AI交付 - 基础：TensorFlow.js轻量化模型部署、主流大模型 API 调用 - 核心：AI 音视频处理（降噪/增强/行为识别）、AI 硬件 SDK 封装、AI 分析结果可视化 - 差异化：国产化 AI 框架对接（华为昇腾/百度飞桨）、离线 AI 推理 1. Node.js + Python 全栈开发 - 全栈能力：前端（React/Vue） + Node.js(实时服务、信令"
       },
       {
         "title": "基金持仓2026-6-25",
@@ -651,7 +650,7 @@
         "category": "生活",
         "date": "2026-09-11",
         "readTime": 3,
-        "description": "科技 永赢科技智选混合C中欧数字经济混合C 中际旭创新易盛【重】 新易盛中际旭创【重】 沪电股份新泉股份 深南电路沪电股份【重】 东山精密长飞光纤光缆 腾景科技东山精密【重】 江丰电子阳光电源 博迁新材亨通光电【重】 中国巨石天孚通信 鼎泰高科潍柴动力 航天军工 永赢国证商用卫星通信产业ETF永赢高…"
+        "description": "科技 永赢科技智选混合C中欧数字经济混合C 中际旭创新易盛【重】 新易盛中际旭创【重】 沪电股份新泉股份 深南电路沪电股份【重】 东山精密长飞光纤光缆 腾景科技东山精密【重】 江丰电子阳光电源 博迁新材亨通光电【重】 中国巨石天孚通信 鼎泰高科潍柴动力 航天军工 永赢国证商用卫星通信产业ETF永赢高端装备智选混合C国泰国证航天军工指数(LOF)A 航天电子航天电子【重】中国船舶 中国卫星中国卫星【重】航发动力 睿创微纳天银机电光启技术 信维通信国博电子【重】航天电子【重】 ST臻镭中国卫通【重】中国卫星【重】 复旦微电信维通信【重】中航沈飞 乾照光电中科星图紫光国微 上海瀚讯乾照光电【重】中航"
       },
       {
         "title": "基金持仓2026-7-23",
@@ -659,7 +658,7 @@
         "category": "生活",
         "date": "2026-09-11",
         "readTime": 4,
-        "description": "科技 永赢科技智选混合C中欧数字经济混合C 沪电股份中际旭创【重】 深南电路新易盛【重】 中际旭创寒武纪 新易盛沪电股份【重】 工业富联中芯国际 华大九天深南电路【重】 立讯精密建滔积层板 杰瑞股份鹏鼎股份【重】 锐科激光三环集团 鹏鼎控股联瑞新材 航天军工 永赢国证商用卫星通信产业ETF永赢高端装…"
+        "description": "科技 永赢科技智选混合C中欧数字经济混合C 沪电股份中际旭创【重】 深南电路新易盛【重】 中际旭创寒武纪 新易盛沪电股份【重】 工业富联中芯国际 华大九天深南电路【重】 立讯精密建滔积层板 杰瑞股份鹏鼎股份【重】 锐科激光三环集团 鹏鼎控股联瑞新材 航天军工 永赢国证商用卫星通信产业ETF永赢高端装备智选混合C国泰国证航天军工指数(LOF)A 睿创微纳信维通信【重】中国船舶 航天电子航天电子【重】菲利华 中国卫星睿创微纳【重】紫光国微 复旦微电飞沃科技航天电子【重】 火炬电子国博电子【重】中航光电 上海瀚讯铖昌科技航发动力 信科移动天银机电光启技术 信维通信斯瑞新材【重】中国卫星【重】 国博电"
       },
       {
         "title": "育儿经",
@@ -675,7 +674,7 @@
         "category": "简历",
         "date": "2026-09-11",
         "readTime": 10,
-        "description": "学历：深圳大学-电子信息工程-全日制本科 | 邮箱: wuhuajin09@163.com | GitHub: gith…"
+        "description": "基本信息 学历：深圳大学-电子信息工程-全日制本科 邮箱: wuhuajin09@163.com GitHub: github.com/whjin 博客: wuhuajin.com 工作经历 广州市高科通信技术股份有限公司 全栈开发工程师 2020.06 - 2026.02 岗位定位：专注公安司法监所领域软硬件产品研发，负责前端架构迭代、Node.js服务开发、国产化适配及AI研发赋能，全程主导产品研发、迭代优化与政企项目落地交付。全程支撑政企项目招投标、落地终验，负责全国警博会技术展示保障，具备成熟的政企项目全流程交付经验。 - 核心参与20+省内外监所政企项目，完成10款安卓终端APP、5"
       },
       {
         "title": "英文简历",
@@ -683,7 +682,7 @@
         "category": "简历",
         "date": "2026-09-11",
         "readTime": 10,
-        "description": "Huajin Wu Email: wuhuajin09@163.com GitHub: github.com/whjin Portfolio: wuhuajin.com Education Shenzhen University Bachelor of Engineering, Electronic…"
+        "description": "Huajin Wu Email: wuhuajin09@163.com GitHub: github.com/whjin Portfolio: wuhuajin.com Education Shenzhen University Bachelor of Engineering, Electronic Information Engineering Professional Summary Results-driven Full-Stack Engineer with 7+ years of enterprise development experience, focusing on cross"
       },
       {
         "title": "HTTP文档",
@@ -691,7 +690,7 @@
         "category": "网络",
         "date": "2026-09-11",
         "readTime": 17,
-        "description": "Open Systems Interconnection 开放式通信互联系统 ISO"
+        "description": "OSI 模型 - Open Systems Interconnection 开放式通信互联系统 ISO - OSI 模型是国际组织 ISO 创建的，用于描述网络通信的协议，是 TCP/IP 模型的基础 1. 应用层：提供应用层服务，如 HTTP、FTP、SMTP、DNS 等 2. 表示层：提供数据格式转换，如 ASCII、UTF-8 等，数据压缩、数据加密、数据内容的描述 3. 会话层: 提供会话管理，如 Telnet、SSH 等 4. 传输层: 提供数据传输，如 TCP、UDP 等，不同主机进程间的通信 5. 网络层：提供网络通信，如 IP、UDP、TCP 等 6. 数据链路层：提供数据链路"
       },
       {
         "title": "Web GIS文档",
@@ -715,7 +714,11 @@
         "category": "GIS",
         "date": "2026-05-05",
         "readTime": 1,
-        "description": ""
+        "description": "",
+        "tags": [
+          "AI",
+          "学习路线"
+        ]
       }
     ]
   }
