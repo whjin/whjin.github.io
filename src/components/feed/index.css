@@ -28,11 +28,6 @@ body.home-page .header {
   top: var(--banner-height, 0);
   z-index: 29;
 }
-body.home-page .category-bar {
-  position: sticky;
-  top: calc(var(--banner-height, 0) + 54px);
-  z-index: 28;
-}
 body.home-page .footer {
   position: sticky;
   bottom: 0;
@@ -140,35 +135,7 @@ body.home-page .footer {
   color: #007bff;
 }
 
-/* ---- 固定 category 栏：导航链接（词云已移至右栏）---- */
-.category-bar {
-  background: #ffffff;
-  border-bottom: 1px solid #ececec;
-  padding: 8px 20px;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 6px 14px;
-  box-sizing: border-box;
-}
-.category-bar .nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-  margin-right: auto;
-}
-.category-bar .nav-links a {
-  color: #444;
-  font-size: 14px;
-  font-weight: 500;
-  padding: 5px 10px;
-  border-radius: 6px;
-  text-decoration: none;
-}
-.category-bar .nav-links a:hover {
-  background: #f2f3f5;
-  color: #1c1c1c;
-}
+/* ---- 顶部导航栏模块已移除（category 栏不再渲染）---- */
 
 /* ---- 两栏主体 ---- */
 .home-two-col {
@@ -471,9 +438,6 @@ body.home-page .footer {
   }
   .home-featured-grid {
     grid-template-columns: 1fr;
-  }
-  .category-bar {
-    padding: 8px 12px;
   }
   .banner-subscribe {
     margin-right: 8px;

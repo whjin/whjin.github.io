@@ -46,21 +46,7 @@
     return pair[lang === 'en' ? 0 : 1];
   }
 
-  // 在固定 category 栏内构建导航链接 + 预留分类 chips 容器
-  function buildNav() {
-    const bar = document.getElementById('category-bar');
-    if (!bar) return;
-    const links = document.createElement('div');
-    links.className = 'nav-links';
-    NAV_LINKS.forEach((link) => {
-      const a = document.createElement('a');
-      a.href = link.url;
-      a.dataset.i18n = link.key;
-      a.textContent = t(link.key);
-      links.appendChild(a);
-    });
-    bar.appendChild(links);
-  }
+  // 顶部导航栏模块已移除（首页不再展示 category 栏；二级页有独立导航）
 
   function apply() {
     document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
@@ -81,7 +67,6 @@
   }
 
   function init() {
-    buildNav();
     apply();
   }
 

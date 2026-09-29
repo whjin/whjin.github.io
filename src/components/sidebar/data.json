@@ -16,9 +16,18 @@
       "i18n_title": "sb_happening",
       "title": "What's happening",
       "items": [
-        { "text": "AI 应用开发学习路线图 已发布", "time": "This week" },
-        { "text": "Node.js 工程化实战持续更新", "time": "This week" },
-        { "text": "Web3 / 智能合约系列新增", "time": "This month" }
+        {
+          "text": "AI 应用开发学习路线图 已发布",
+          "time": "This week"
+        },
+        {
+          "text": "Node.js 工程化实战持续更新",
+          "time": "This week"
+        },
+        {
+          "text": "Web3 / 智能合约系列新增",
+          "time": "This month"
+        }
       ]
     },
     {
@@ -26,8 +35,14 @@
       "i18n_title": "sb_live",
       "title": "Livestreams",
       "items": [
-        { "text": "WebRTC 性能优化实战解析", "time": "On demand" },
-        { "text": "从零搭建前端 × AI 工作流", "time": "Coming soon" }
+        {
+          "text": "WebRTC 性能优化实战解析",
+          "time": "On demand"
+        },
+        {
+          "text": "从零搭建前端 × AI 工作流",
+          "time": "Coming soon"
+        }
       ]
     },
     {
@@ -61,10 +76,22 @@
       "i18n_title": "sb_links",
       "title": "Links",
       "items": [
-        { "text": "About 关于", "url": "about.html" },
-        { "text": "Contact 联系", "url": "contact.html" },
-        { "text": "Privacy 隐私", "url": "privacy.html" },
-        { "text": "Terms 条款", "url": "terms.html" }
+        {
+          "text": "About 关于",
+          "url": "about.html"
+        },
+        {
+          "text": "Contact 联系",
+          "url": "contact.html"
+        },
+        {
+          "text": "Privacy 隐私",
+          "url": "privacy.html"
+        },
+        {
+          "text": "Terms 条款",
+          "url": "terms.html"
+        }
       ]
     }
   ]
