@@ -4,7 +4,7 @@
   "description": "- [吴华锦的个人主页](https://wuhuajin.com)\r - [讨论站点](https://github.com/whjin/whjin.github.io/issues)",
   "main": "server.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development node server.js",
+    "dev": "node scripts/add-front-matter.cjs && node scripts/build-feed.cjs && cross-env NODE_ENV=development node server.js",
     "build:feed": "node scripts/build-feed.cjs",
     "build:frontmatter": "node scripts/add-front-matter.cjs"
   },

@@ -5,13 +5,16 @@ html.home-page {
   overflow: auto;
   height: auto;
 }
+
 body.home-page {
   overflow: visible;
   height: auto;
 }
+
 body.home-page .layout-container.home {
   height: auto;
 }
+
 body.home-page .content-area {
   overflow: visible;
   height: auto;
@@ -23,11 +26,13 @@ body.home-page .banner {
   top: 0;
   z-index: 30;
 }
+
 body.home-page .header {
   position: sticky;
   top: var(--banner-height, 0);
   z-index: 29;
 }
+
 body.home-page .footer {
   position: sticky;
   bottom: 0;
@@ -54,10 +59,12 @@ body.home-page .footer {
   flex-shrink: 0;
   border-radius: 8px;
 }
+
 .home-logo:hover {
   background: transparent;
   color: inherit;
 }
+
 .home-logo-img {
   width: 34px;
   height: 34px;
@@ -74,6 +81,7 @@ body.home-page .footer {
   margin-right: 16px;
   display: flex;
 }
+
 .search-icon {
   position: absolute;
   left: 12px;
@@ -83,6 +91,7 @@ body.home-page .footer {
   display: flex;
   pointer-events: none;
 }
+
 .home-search {
   width: 100%;
   height: 36px;
@@ -96,6 +105,7 @@ body.home-page .footer {
   box-sizing: border-box;
   transition: border-color 0.15s, background 0.15s;
 }
+
 .home-search:focus {
   border-color: #8b5cf6;
   background: #fff;
@@ -122,9 +132,11 @@ body.home-page .footer {
   grid-template-columns: minmax(0, 1fr) 360px;
   gap: 28px;
 }
+
 .home-feed {
   min-width: 0;
 }
+
 .home-sidebar {
   min-width: 0;
 }
@@ -137,6 +149,7 @@ body.home-page .footer {
   flex-direction: column;
   gap: 18px;
 }
+
 a.feed-card {
   display: block;
   background: #fff;
@@ -148,6 +161,7 @@ a.feed-card {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 6px 16px rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.18s, border-color 0.18s, background-color 0.18s, transform 0.18s;
 }
+
 /* Dev.to 风格 hover：CSS 变量控制（bg/border/shadow/color） */
 a.feed-card:hover {
   background-color: var(--card-bg-hover, #fcfcfd);
@@ -156,29 +170,34 @@ a.feed-card:hover {
   color: var(--card-color-hover, #1c1c1c);
   transform: translateY(-2px);
 }
+
 /* 有封面：左图右文（图片高度随右侧内容自适应，封顶 240px） */
 .feed-card.fc-has-cover {
   display: flex;
 }
+
 .feed-card.fc-has-cover .fc-cover {
   width: 38%;
   max-width: 280px;
   flex-shrink: 0;
   display: flex;
 }
+
 .feed-card.fc-has-cover .fc-cover img {
   display: block;
   width: 100%;
   height: 100%;
-  max-height: 240px;
+  max-height: 180px;
   object-fit: cover;
   align-self: center;
 }
+
 /* 无封面：保持当前布局（仅内容区） */
 .feed-card .fc-body {
   flex: 1;
   padding: 22px 24px;
 }
+
 /* 标题行：左侧标题，右侧「分类+精选」标识 */
 .feed-card .fc-title-row {
   display: flex;
@@ -187,6 +206,7 @@ a.feed-card:hover {
   gap: 12px;
   flex-wrap: wrap;
 }
+
 .feed-card .fc-badges {
   display: flex;
   gap: 8px;
@@ -194,10 +214,12 @@ a.feed-card:hover {
   font-size: 12px;
   align-items: center;
 }
+
 .feed-card .fc-category {
   font-weight: 700;
   color: #3b82f6;
 }
+
 .feed-card .fc-featured {
   background: #fff1cc;
   color: #b8860b;
@@ -205,12 +227,14 @@ a.feed-card:hover {
   padding: 1px 8px;
   font-weight: 700;
 }
+
 .feed-card .fc-title {
   font-size: 18px;
   font-weight: 700;
   line-height: 1.45;
   min-width: 0;
 }
+
 .feed-card .fc-excerpt {
   font-size: 13.5px;
   color: #555;
@@ -221,12 +245,14 @@ a.feed-card:hover {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
 .feed-card .fc-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
   margin-top: 12px;
 }
+
 .feed-card .fc-tag {
   font-size: 11px;
   color: #666;
@@ -234,6 +260,7 @@ a.feed-card:hover {
   border-radius: 10px;
   padding: 2px 8px;
 }
+
 /* 底部信息栏：左侧互动统计，右侧日期+阅读时长 */
 .feed-card .fc-meta {
   display: flex;
@@ -247,16 +274,20 @@ a.feed-card:hover {
   font-size: 12.5px;
   color: #717171;
 }
+
 .feed-card .fc-stats {
   display: flex;
   gap: 14px;
 }
+
 .feed-card .fc-date {
   color: #999;
 }
+
 .feed-card .fc-readtime {
   color: #717171;
 }
+
 .feed-empty {
   color: #999;
   text-align: center;
@@ -287,12 +318,14 @@ a.feed-card:hover {
   flex-direction: column;
   gap: 14px;
 }
+
 .sb-block {
   background: #fff;
   border: 1px solid #e6e6e6;
   border-radius: 12px;
   padding: 16px 18px;
 }
+
 .sb-block h3 {
   font-size: 14px;
   font-weight: 700;
@@ -301,27 +334,32 @@ a.feed-card:hover {
   color: #8b5cf6;
   margin: 0 0 10px;
 }
+
 .sb-intro {
   display: flex;
   gap: 12px;
   align-items: flex-start;
 }
+
 .sb-intro .sb-avatar {
   width: 48px;
   height: 48px;
   border-radius: 8px;
   object-fit: cover;
 }
+
 .sb-intro .sb-text {
   font-size: 13.5px;
   color: #555;
   line-height: 1.6;
 }
+
 .sb-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
 .sb-list li {
   padding: 6px 0;
   border-bottom: 1px solid #f3f3f3;
@@ -329,28 +367,34 @@ a.feed-card:hover {
   color: #333;
   line-height: 1.5;
 }
+
 .sb-list li:last-child {
   border-bottom: none;
 }
+
 .sb-list a {
   color: #333;
   text-decoration: none;
   font-weight: 600;
 }
+
 .sb-list a:hover {
   color: #8b5cf6;
 }
+
 .sb-list .sb-time {
   display: block;
   font-size: 12px;
   color: #999;
   font-weight: 400;
 }
+
 .sb-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
 }
+
 .sb-tag {
   font-size: 12px;
   color: #8b5cf6;
@@ -360,9 +404,11 @@ a.feed-card:hover {
   cursor: pointer;
   border: 1px solid transparent;
 }
+
 .sb-tag:hover {
   border-color: #8b5cf6;
 }
+
 .sb-ad {
   min-height: 120px;
   display: flex;
@@ -374,16 +420,19 @@ a.feed-card:hover {
   border-radius: 10px;
   background: #fafafa;
 }
+
 .sb-links {
   display: flex;
   flex-wrap: wrap;
   gap: 4px 12px;
 }
+
 .sb-links a {
   font-size: 12.5px;
   color: #666;
   text-decoration: none;
 }
+
 .sb-links a:hover {
   color: #8b5cf6;
 }
@@ -394,6 +443,7 @@ a.feed-card:hover {
     grid-template-columns: minmax(0, 1fr);
     padding: 20px 16px 40px;
   }
+
   .home-sidebar {
     margin-top: 8px;
   }
@@ -403,18 +453,22 @@ a.feed-card:hover {
   .header {
     padding: 8px 12px;
   }
+
   /* 移动端：有封面的卡片改为上下堆叠（封面在顶部全宽，16:9） */
   .feed-card.fc-has-cover {
     display: block;
   }
+
   .feed-card.fc-has-cover .fc-cover {
     width: 100%;
     max-width: none;
   }
+
   .feed-card.fc-has-cover .fc-cover img {
     aspect-ratio: 16 / 9;
-    max-height: 220px;
+    max-height: 180px;
   }
+
   /* 移动端：搜索框默认隐藏，点击社交区搜索图标（body.search-open）才显示；与 Logo 和右侧图标保持间距 */
   .home-search-wrap {
     display: none;
@@ -424,9 +478,11 @@ a.feed-card:hover {
     margin-right: 12px;
     margin-left: 4px;
   }
+
   body.search-open .home-search-wrap {
     display: flex;
   }
+
   /* 移动端三横杠展示社交图标时，确保搜索框不与其冲突 */
   body.search-collapsed .home-search-wrap {
     display: none;

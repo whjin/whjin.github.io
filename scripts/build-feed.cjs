@@ -68,12 +68,8 @@ function cleanPara(text) {
   return '';
 }
 
-// 摘要提取（分层）：<!--more--> 之上文本 > description > 自动提取
+// 摘要提取：优先 description，否则自动提取
 function extractExcerpt(front, body) {
-  if (body.includes('<!--more-->')) {
-    const e = cleanPara(body.split('<!--more-->')[0]);
-    if (e) return e;
-  }
   if (front && front.description) return front.description;
   return cleanPara(body);
 }

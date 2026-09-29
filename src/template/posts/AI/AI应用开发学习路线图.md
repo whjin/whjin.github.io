@@ -26,8 +26,6 @@ published: true
 | [The Odin Project](https://www.theodinproject.com/) | 开源课程     | Full Stack JavaScript                 | 免费     |
 | [Full Stack Open](https://fullstackopen.com/en/)    | 赫尔辛基大学 | 现代 Web 开发                         | 免费     |
 
-<!--more-->
-
 ### 4.2 技术博客与资讯
 
 **综合技术**：
