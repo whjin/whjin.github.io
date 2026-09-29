@@ -13,6 +13,14 @@ body.has-banner {
   z-index: 9;
 }
 
+/* 轮播轨道：全宽（作为 flex 子项需显式宽度才居中），首页与二级页共用 */
+.banner-track {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+}
+
 .banner-slide {
   width: 100%;
   padding: 0 1em;

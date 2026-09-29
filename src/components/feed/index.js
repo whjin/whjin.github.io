@@ -44,36 +44,7 @@
     return list;
   }
 
-  // 分类过滤由右栏词云/热门标签调用 HomeFeed.setCategory 实现，不再在顶部渲染 chips
-
-  function buildFeatured() {
-    const wrap = document.getElementById('home-featured');
-    if (!wrap) return;
-    const feats = allItems.filter((it) => it.featured).slice(0, 6);
-    if (!feats.length) { wrap.style.display = 'none'; return; }
-    wrap.style.display = '';
-    wrap.innerHTML = '';
-    const title = document.createElement('div');
-    title.className = 'home-featured-title';
-    title.dataset.i18n = 'featured_title';
-    title.textContent = t('featured_title', 'Trending · 精选');
-    const grid = document.createElement('div');
-    grid.className = 'home-featured-grid';
-    feats.forEach((it) => {
-      const a = document.createElement('a');
-      a.className = 'home-featured-card';
-      a.href = it.url;
-      a.target = '_blank';
-      a.rel = 'noopener noreferrer';
-      a.innerHTML =
-        '<span class="fc-badge">★ ' + esc(t('featured_badge', 'Featured')) + '</span>' +
-        '<div class="fc-title">' + esc(it.title) + '</div>' +
-        '<div class="fc-meta">' + esc(it.category || '') + ' · ' + (it.date || '') + '</div>';
-      grid.appendChild(a);
-    });
-    wrap.appendChild(title);
-    wrap.appendChild(grid);
-  }
+  // 精选模块已移除：置顶精选通过文章卡置顶 + ★ Featured 标识实现，不再重复展示
 
   function cardHTML(it) {
     const tags = (it.tags || []).slice(0, 4)
@@ -147,7 +118,6 @@
       if (!res.ok) throw new Error('feed 加载失败 ' + res.status);
       const data = await res.json();
       allItems = Array.isArray(data.items) ? data.items : [];
-      buildFeatured();
       render();
       bindSearch();
       bindLoadMore();

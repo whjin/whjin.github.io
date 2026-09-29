@@ -116,14 +116,15 @@
     const className = targetA.className;
 
     if (className.includes('icon-search')) {
-      // 搜索：桌面切换 search-open；移动端收起社交并显示搜索框
+      // 搜索：宽度足够时默认显示；宽度不足时点击图标展开搜索框
       if (isNarrow()) {
         socialEl.classList.remove('show');
         barsEl.style.display = 'block';
-        document.body.classList.remove('search-collapsed');
+        document.body.classList.add('search-open');
         syncSearchCollapse();
       } else {
-        document.body.classList.toggle('search-open');
+        const input = document.getElementById('home-search');
+        if (input) input.focus();
       }
       return;
     }

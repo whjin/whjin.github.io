@@ -65,16 +65,13 @@ body.home-page .footer {
   display: block;
 }
 
-/* 搜索框：默认隐藏，点击社交区搜索图标（桌面）才显示；保持与左侧 Logo 和右侧社交/三横杠的间距 */
+/* 搜索框：宽度足够时默认显示；宽度不足（≤768px）时隐藏，点击社交区搜索图标才显示 */
 .home-search-wrap {
   position: relative;
   flex: 1;
   min-width: 0;
   max-width: 640px;
   margin-right: 16px;
-  display: none;
-}
-body.search-open .home-search-wrap {
   display: flex;
 }
 .search-icon {
@@ -113,14 +110,6 @@ body.search-open .home-search-wrap {
   flex-shrink: 0;
 }
 
-/* ---- banner 轮播轨道（内容居中；订阅按钮已移至社交图标栏）---- */
-.banner-track {
-  width: 100%;
-  min-width: 0;
-  display: flex;
-  align-items: center;
-}
-
 /* ---- 顶部导航栏模块已移除（category 栏不再渲染）---- */
 
 /* ---- 两栏主体 ---- */
@@ -141,55 +130,7 @@ body.search-open .home-search-wrap {
   min-width: 0;
 }
 
-/* ---- 置顶精选 ---- */
-.home-featured {
-  margin-bottom: 20px;
-}
-.home-featured-title {
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: #8b5cf6;
-  margin: 0 0 10px;
-}
-.home-featured-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 12px;
-}
-.home-featured-card {
-  display: block;
-  background: linear-gradient(135deg, #f3f0ff, #eef6ff);
-  border: 1px solid #e6e0ff;
-  border-radius: 12px;
-  padding: 14px;
-  text-decoration: none;
-  color: #1c1c1c;
-  transition: transform 0.15s, box-shadow 0.15s;
-}
-.home-featured-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-  background: #fff;
-}
-.home-featured-card .fc-badge {
-  display: inline-block;
-  font-size: 11px;
-  color: #8b5cf6;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-.home-featured-card .fc-title {
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.4;
-  margin-bottom: 6px;
-}
-.home-featured-card .fc-meta {
-  font-size: 12px;
-  color: #777;
-}
+/* ---- 置顶精选模块已移除（由文章卡置顶 + ★ Featured 标识实现，避免重复内容）---- */
 
 /* ---- 文章流卡片 ---- */
 .home-feed-list {
@@ -419,20 +360,20 @@ body.search-open .home-search-wrap {
   .header {
     padding: 8px 12px;
   }
-  /* 移动端：搜索框始终显示在中间（与 Logo 和右侧三横杠/社交图标保持间距，不重叠） */
+  /* 移动端：搜索框默认隐藏，点击社交区搜索图标（body.search-open）才显示；与 Logo 和右侧图标保持间距 */
   .home-search-wrap {
-    display: flex;
+    display: none;
     flex: 1;
     min-width: 0;
     max-width: none;
     margin-right: 12px;
     margin-left: 4px;
   }
-  /* 点击三横杠展示全部社交图标时，隐藏搜索框 */
+  body.search-open .home-search-wrap {
+    display: flex;
+  }
+  /* 移动端三横杠展示社交图标时，确保搜索框不与其冲突 */
   body.search-collapsed .home-search-wrap {
     display: none;
-  }
-  .home-featured-grid {
-    grid-template-columns: 1fr;
   }
 }
