@@ -2,7 +2,7 @@
 title: AI项目文档
 date: 2026-09-11
 category: AI
-description: Next.js框架
+description: "Next.js框架 - 零配置：自动编译并打包 - 混合模式SSG 和 SSr：在一个项目中同时支持构建时预渲染页面 SSG 和请求时渲染页面 SSR - 增量静态生成：在构建之后以增量的方式添加并更新静态预渲染的页面 - 基于文件系统的路由：每个 pages 目录下的组件都是一个路由 - API路…"
 ---
 
 ## `Next.js`框架

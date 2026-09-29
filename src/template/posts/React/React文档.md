@@ -2,7 +2,7 @@
 title: React文档
 date: 2026-09-11
 category: React
-description: 虚拟 dom 渲染
+description: "核心技术 - JSX开发思想 - 虚拟 dom 渲染 - 单项数据流 - state 与 props - 类组件与组件的生命周期 - 函数式组件与副作用处理机制 - hooks - 事件处理 - 条件渲染 - 列表与数据塑形 - ajax异步处理 - 跨组件数据传递 Context - Provid…"
 ---
 
 ## 核心技术

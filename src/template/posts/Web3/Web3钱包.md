@@ -2,7 +2,7 @@
 title: Web3钱包
 date: 2026-09-11
 category: Web3
-description: 共识、trustless需要旷工的工作，旷工需要激励
+description: "区块链 - 共识、trustless需要旷工的工作，旷工需要激励 - transaction的执行有成本 gas，gas费成为旷工的激励 - ether是这个经济生态系统的通行货币 gas和转账 - 转账是与函数调用一起发生，转账就是函数调用。 gaslimit与 gasleft()函数 - 交易发…"
 ---
 
 # 区块链

@@ -2,606 +2,285 @@
   {
     "sticky": 1,
     "title": "核心推荐",
-    "tagName": "ol",
     "show": true,
     "items": [
       {
-        "marked": true,
         "title": "一站式AI应用平台",
-        "desc": "AI应用集 - 一站式AI应用平台",
-        "url": "/src/template/viewer.html?path=友链_link&format=html"
+        "url": "/src/template/viewer.html?path=友链_link&format=html",
+        "category": "核心推荐",
+        "description": "AI应用集 - 一站式AI应用平台",
+        "marked": true
       },
       {
         "title": "PixTV",
-        "desc": "PixTV｜一站式 AI 视频生成与无限画布创作平台",
-        "url": "https://pixtv.cgref.cn/s/omkloo8k4d"
+        "url": "https://pixtv.cgref.cn/s/omkloo8k4d",
+        "category": "核心推荐",
+        "description": "PixTV｜一站式 AI 视频生成与无限画布创作平台"
       },
       {
         "title": "PixPix",
-        "desc": "帧象创意 - PixPix官网_电商AI商品图生成器_AI视频_免费在线设计工具",
-        "url": "https://pixpix.cgref.cn/s/p3kqddweol"
+        "url": "https://pixpix.cgref.cn/s/p3kqddweol",
+        "category": "核心推荐",
+        "description": "帧象创意 - PixPix官网_电商AI商品图生成器_AI视频_免费在线设计工具"
       },
       {
         "title": "AionClaw",
-        "desc": "AionClaw-真正能做事的AI龙虾-基于OpenClaw深度升级",
-        "url": "https://aionclaw.cgref.cn/s/4onyj26njx"
+        "url": "https://aionclaw.cgref.cn/s/4onyj26njx",
+        "category": "核心推荐",
+        "description": "AionClaw-真正能做事的AI龙虾-基于OpenClaw深度升级"
       },
       {
         "title": "Lovart 中文版",
-        "desc": "Lovart 中文版- 新一代设计 Agent",
-        "url": "https://lovart.cgref.cn/s/2znrl36nr7"
+        "url": "https://lovart.cgref.cn/s/2znrl36nr7",
+        "category": "核心推荐",
+        "description": "Lovart 中文版- 新一代设计 Agent"
       },
       {
         "title": "AniShort",
-        "desc": "AniShort - AI影视剧协作平台",
-        "url": "https://anishort.cgref.cn/s/9we2wzjego"
+        "url": "https://anishort.cgref.cn/s/9we2wzjego",
+        "category": "核心推荐",
+        "description": "AniShort - AI影视剧协作平台"
       },
       {
         "title": "Loomy",
-        "desc": "Loomy-你的AI工作搭子",
-        "url": "https://loomy.cgref.cn/s/59ngvmonr2"
+        "url": "https://loomy.cgref.cn/s/59ngvmonr2",
+        "category": "核心推荐",
+        "description": "Loomy-你的AI工作搭子"
       },
       {
         "title": "updream官网",
-        "desc": "updream官网-AI视频创作助手",
-        "url": "https://updream.cgref.cn/s/2znrpo9er7"
+        "url": "https://updream.cgref.cn/s/2znrpo9er7",
+        "category": "核心推荐",
+        "description": "updream官网-AI视频创作助手"
       },
       {
         "title": "Laper",
-        "desc": "剧作软件的进化终点。以剧为本。在 Laper 中协作制片。",
-        "url": "https://laper.cgref.cn/s/zdkjq78n1r"
+        "url": "https://laper.cgref.cn/s/zdkjq78n1r",
+        "category": "核心推荐",
+        "description": "剧作软件的进化终点。以剧为本。在 Laper 中协作制片。"
       },
       {
-        "marked": true,
         "title": "蛙蛙写作",
-        "desc": "蛙蛙写作——超级AI智能写作助手",
-        "url": "https://wawawriter.cgref.cn/s/59ngw1oer2"
+        "url": "https://wawawriter.cgref.cn/s/59ngw1oer2",
+        "category": "核心推荐",
+        "description": "蛙蛙写作——超级AI智能写作助手",
+        "marked": true
       },
       {
         "title": "Seko",
-        "desc": "Seko - World Class AI Video Generation Platform",
-        "url": "https://seko.cgref.cn/s/2znr3vznr7"
+        "url": "https://seko.cgref.cn/s/2znr3vznr7",
+        "category": "核心推荐",
+        "description": "Seko - World Class AI Video Generation Platform"
       },
       {
         "title": "LiblibAI",
-        "desc": "LiblibAI-哩布哩布AI - 中国领先的AI创作平台",
-        "url": "https://liblib.cgref.cn/s/4onyr06kjx"
+        "url": "https://liblib.cgref.cn/s/4onyr06kjx",
+        "category": "核心推荐",
+        "description": "LiblibAI-哩布哩布AI - 中国领先的AI创作平台"
       },
       {
         "title": "Atoms",
-        "desc": "Atoms：用 AI 构建网站与应用，无需编码",
-        "url": "https://atoms.cgref.cn/s/20epqjjkw1"
+        "url": "https://atoms.cgref.cn/s/20epqjjkw1",
+        "category": "核心推荐",
+        "description": "Atoms：用 AI 构建网站与应用，无需编码"
       },
       {
         "title": "LibTV",
-        "desc": "LibTV - 专业视频创作工具",
-        "url": "https://libtv.cgref.cn/s/j7n63dqn1g"
+        "url": "https://libtv.cgref.cn/s/j7n63dqn1g",
+        "category": "核心推荐",
+        "description": "LibTV - 专业视频创作工具"
       },
       {
         "title": "火山引擎",
-        "desc": "方舟 Agent Plan",
-        "url": "https://volcengine.cgref.cn/s/59ngwxoer2"
+        "url": "https://volcengine.cgref.cn/s/59ngwxoer2",
+        "category": "核心推荐",
+        "description": "方舟 Agent Plan"
       },
       {
         "title": "爱派AiPy",
-        "desc": "AiPy，超级AI牛马智能体工厂，爱派AiPy软件官网",
-        "url": "https://aipyaipy.cgref.cn/s/3mnzz45no1"
+        "url": "https://aipyaipy.cgref.cn/s/3mnzz45no1",
+        "category": "核心推荐",
+        "description": "AiPy，超级AI牛马智能体工厂，爱派AiPy软件官网"
       },
       {
         "title": "码上飞",
-        "desc": "码上飞 - 说中文，做应用 | AI生成微信小程序/鸿蒙/APP/H5网站",
-        "url": "https://codeflying.cgref.cn/s/59ngw0xer2"
+        "url": "https://codeflying.cgref.cn/s/59ngw0xer2",
+        "category": "核心推荐",
+        "description": "码上飞 - 说中文，做应用 | AI生成微信小程序/鸿蒙/APP/H5网站"
       }
     ]
   },
   {
     "sticky": 2,
     "title": "推荐",
-    "tagName": "ol",
     "show": true,
     "items": [
       {
         "title": "潮际好麦",
-        "desc": "潮际好麦，专业级AI电商营销内容创作平台",
-        "url": "https://chaojihaomai.cgref.cn/s/dqndm2rn2z"
+        "url": "https://chaojihaomai.cgref.cn/s/dqndm2rn2z",
+        "category": "推荐",
+        "description": "潮际好麦，专业级AI电商营销内容创作平台"
       },
       {
         "title": "星流",
-        "desc": "星流 - 新一代设计Agent",
-        "url": "https://xingliu.cgref.cn/s/ogewx7wkp2"
+        "url": "https://xingliu.cgref.cn/s/ogewx7wkp2",
+        "category": "推荐",
+        "description": "星流 - 新一代设计Agent"
       },
       {
         "title": "Agent Space",
-        "desc": "Codex 与 Claude Code 的 AI Agent 工作空间 | Agent.Space",
-        "url": "https://agentspace.cgref.cn/s/59ngrdjkr2"
+        "url": "https://agentspace.cgref.cn/s/59ngrdjkr2",
+        "category": "推荐",
+        "description": "Codex 与 Claude Code 的 AI Agent 工作空间 | Agent.Space"
       },
       {
         "title": "剧云",
-        "desc": "剧云 - 免费专业中文剧本创作平台|AI智能编剧|智能改编|剧本医生",
-        "url": "https://jucloud.cgref.cn/s/qmnom6ye29"
+        "url": "https://jucloud.cgref.cn/s/qmnom6ye29",
+        "category": "推荐",
+        "description": "剧云 - 免费专业中文剧本创作平台|AI智能编剧|智能改编|剧本医生"
       },
       {
         "title": "vibeknow",
-        "url": "https://vibeknow.cgref.cn/s/4ony2gwejx"
+        "url": "https://vibeknow.cgref.cn/s/4ony2gwejx",
+        "category": "推荐",
+        "description": ""
       },
       {
         "title": "SkildArt",
-        "desc": "SkildArt 思可达 - 全球电商商家的AI视觉增长引擎",
-        "url": "https://skildart.cgref.cn/s/5ln1lo5krw"
+        "url": "https://skildart.cgref.cn/s/5ln1lo5krw",
+        "category": "推荐",
+        "description": "SkildArt 思可达 - 全球电商商家的AI视觉增长引擎"
       },
       {
         "title": "讯飞绘文",
-        "url": "https://turbodesk.cgref.cn/s/5ln1rlgkrw"
+        "url": "https://turbodesk.cgref.cn/s/5ln1rlgkrw",
+        "category": "推荐",
+        "description": ""
       },
       {
         "title": "立刻MV",
-        "desc": "立刻MV（LickMV） - AI 音乐视频生成器与 MV 创作工具",
-        "url": "https://lickmv.cgref.cn/s/rpe3j8jk05"
+        "url": "https://lickmv.cgref.cn/s/rpe3j8jk05",
+        "category": "推荐",
+        "description": "立刻MV（LickMV） - AI 音乐视频生成器与 MV 创作工具"
       },
       {
         "title": "切问学术",
-        "desc": "切问学术搜索 - AI 文献发现与深度检索",
-        "url": "https://qiewenpaper.cgref.cn/s/41evw43kv8"
+        "url": "https://qiewenpaper.cgref.cn/s/41evw43kv8",
+        "category": "推荐",
+        "description": "切问学术搜索 - AI 文献发现与深度检索"
       },
       {
         "title": "二狗PPT",
-        "desc": "二狗PPT - DeepSeek驱动的AI PPT生成器｜国企汇报·乙方方案·无AI痕迹",
-        "url": "https://2dogppt.cgref.cn/s/rpe3j29k05"
+        "url": "https://2dogppt.cgref.cn/s/rpe3j29k05",
+        "category": "推荐",
+        "description": "二狗PPT - DeepSeek驱动的AI PPT生成器｜国企汇报·乙方方案·无AI痕迹"
       },
       {
         "title": "咔片",
-        "desc": "咔片PPT-AI一键生成PPT-PPT在线智能制作网站",
-        "url": "https://cappt.cgref.cn/s/xpn8zrznzw"
+        "url": "https://cappt.cgref.cn/s/xpn8zrznzw",
+        "category": "推荐",
+        "description": "咔片PPT-AI一键生成PPT-PPT在线智能制作网站"
       },
       {
         "title": "墨刀AI",
-        "desc": "墨刀AI - 激发无限创造力",
-        "url": "https://modao.cgref.cn/s/5ln1o0mkrw"
+        "url": "https://modao.cgref.cn/s/5ln1o0mkrw",
+        "category": "推荐",
+        "description": "墨刀AI - 激发无限创造力"
       },
       {
         "title": "超级简历WonderCV",
-        "desc": "超级简历WonderCV - AI智能简历制作工具,HR推荐专业中英文简历模板免费下载",
-        "url": "https://wondercv.cgref.cn/s/50k9g23ng6"
+        "url": "https://wondercv.cgref.cn/s/50k9g23ng6",
+        "category": "推荐",
+        "description": "超级简历WonderCV - AI智能简历制作工具,HR推荐专业中英文简历模板免费下载"
       },
       {
         "title": "UP 简历",
-        "desc": "AI简历生成在线制作工具_简历模板免费下载使用-UP简历",
-        "url": "https://upcv.cgref.cn/s/1zn5mdykqm"
+        "url": "https://upcv.cgref.cn/s/1zn5mdykqm",
+        "category": "推荐",
+        "description": "AI简历生成在线制作工具_简历模板免费下载使用-UP简历"
       },
       {
         "title": "讯飞智作",
-        "desc": "讯飞智作-AI虚拟数字人视频制作-一键创作口播视频-文字转视频-数字分身定制",
-        "url": "https://xfzhizuo.cgref.cn/s/rpexmw9k90"
+        "url": "https://xfzhizuo.cgref.cn/s/rpexmw9k90",
+        "category": "推荐",
+        "description": "讯飞智作-AI虚拟数字人视频制作-一键创作口播视频-文字转视频-数字分身定制"
       },
       {
         "title": "音述AI",
-        "desc": "音述 - 全球前沿专业级中文AI音乐创作平台 | 永久免费在线AI写歌 | 音述AI音乐社区",
-        "url": "https://yinshu.cgref.cn/s/9qyk4xoe87"
+        "url": "https://yinshu.cgref.cn/s/9qyk4xoe87",
+        "category": "推荐",
+        "description": "音述 - 全球前沿专业级中文AI音乐创作平台 | 永久免费在线AI写歌 | 音述AI音乐社区"
       },
       {
         "title": "SpeedAI科研小助手",
-        "desc": "SpeedAI科研小助手【官网】- AI降重降AI率 | 知网维普万方",
-        "url": "https://speedai.cgref.cn/s/q50k978ng6"
+        "url": "https://speedai.cgref.cn/s/q50k978ng6",
+        "category": "推荐",
+        "description": "SpeedAI科研小助手【官网】- AI降重降AI率 | 知网维普万方"
       },
       {
         "title": "白日梦AI",
-        "desc": "白日梦AI-领先的AI视频创作类AIGC创作平台",
-        "url": "https://aibrm.cgref.cn/s/l41evd6ev8"
+        "url": "https://aibrm.cgref.cn/s/l41evd6ev8",
+        "category": "推荐",
+        "description": "白日梦AI-领先的AI视频创作类AIGC创作平台"
       },
       {
         "title": "AstronClaw",
-        "desc": "讯飞星辰Agent平台 - 一站式智能体开发平台",
-        "url": "https://astron-claw.cgref.cn/s/20epq01kw1"
+        "url": "https://astron-claw.cgref.cn/s/20epq01kw1",
+        "category": "推荐",
+        "description": "讯飞星辰Agent平台 - 一站式智能体开发平台"
       },
       {
         "title": "AiPPT插件",
-        "desc": "AiPPT 插件-AI智能PPT制作软件，一键生成/美化/排版，高效PPT工具",
-        "url": "https://aippt-plugin.cgref.cn/s/3rpe3p9k05"
+        "url": "https://aippt-plugin.cgref.cn/s/3rpe3p9k05",
+        "category": "推荐",
+        "description": "AiPPT 插件-AI智能PPT制作软件，一键生成/美化/排版，高效PPT工具"
       },
       {
         "title": "iSlide PPT",
-        "desc": "iSlide- 让PPT设计简单起来 | PPT模板下载平台",
-        "url": "https://islide.cgref.cn/s/dp3kqd7eol"
+        "url": "https://islide.cgref.cn/s/dp3kqd7eol",
+        "category": "推荐",
+        "description": "iSlide- 让PPT设计简单起来 | PPT模板下载平台"
       },
       {
         "title": "沁言学术",
-        "desc": "学术超级智能体",
-        "url": "https://qinyanai.cgref.cn/s/rpexmw3k90"
+        "url": "https://qinyanai.cgref.cn/s/rpexmw3k90",
+        "category": "推荐",
+        "description": "学术超级智能体"
       },
       {
         "title": "01Agent",
-        "desc": "01Agent - 会协作、能执行、可交付的 AI 创作智能体",
-        "url": "https://01agent.cgref.cn/s/1oe7l5pn23"
+        "url": "https://01agent.cgref.cn/s/1oe7l5pn23",
+        "category": "推荐",
+        "description": "01Agent - 会协作、能执行、可交付的 AI 创作智能体"
       }
     ]
   },
   {
     "sticky": 3,
     "title": "我的",
-    "tagName": "ol",
     "items": [
-      {
-        "marked": true,
-        "title": "原创诗词",
-        "desc": "雅致寓于高阁渔舟唱晚，古典悠然；\r\n格调外发园林绿树萦绕，馥郁清香。",
-        "url": "/src/template/viewer.html?path=文学_原创诗词"
-      },
-      {
-        "marked": true,
-        "title": "吴华锦的个人主页",
-        "desc": "吴华锦的个人主页 « 吴华锦",
-        "url": "https://wuhuajin.com/"
-      },
-      {
-        "marked": true,
-        "title": "Github",
-        "url": "https://github.com/whjin"
-      },
-      {
-        "marked": true,
-        "title": "中文简历",
-        "url": "/src/template/viewer.html?path=简历_中文简历"
-      },
-      {
-        "title": "中文简历PDF",
-        "url": "/src/template/viewer.html?path=简历_中文简历PDF&format=pdf"
-      },
-      {
-        "title": "英文简历",
-        "url": "/src/template/viewer.html?path=简历_英文简历"
-      },
-      {
-        "title": "英文简历PDF",
-        "url": "/src/template/viewer.html?path=简历_英文简历PDF&format=pdf"
-      }
-    ]
-  },
-  {
-    "sticky": 5,
-    "title": "站点",
-    "tagName": "ol",
-    "items": [
-      {
-        "marked": true,
-        "title": "技术文章",
-        "url": "/src/template/viewer.html?path=文章_article&format=html"
-      },
-      {
-        "marked": true,
-        "title": "技术教程",
-        "url": "/src/template/viewer.html?path=教程_tutorial&format=html"
-      },
-      {
-        "marked": true,
-        "title": "IT工具合集",
-        "url": "/src/template/viewer.html?path=工具_tool&format=html"
-      },
-      {
-        "marked": true,
-        "title": "基金分析平台",
-        "desc": "FundScope - 专业基金持仓分析平台",
-        "url": "https://fundscope.wuhuajin.com/"
-      },
-      {
-        "title": "whjin-Gitee.com",
-        "desc": "寒青 (whjin) - Gitee 码云",
-        "url": "https://gitee.com/whjin"
-      },
-      {
-        "title": "https://github.com/whjin/calculateApp",
-        "desc": "简易计算器",
-        "url": "https://wuhuajin.com/calculateApp/"
-      },
-      {
-        "title": "https://github.com/whjin/gis-vue",
-        "desc": "GIS Vue3 项目",
-        "url": "https://wuhuajin.com/gis-vue/"
-      },
-      {
-        "title": "https://github.com/whjin/next-ai-core",
-        "desc": "Next AI Core",
-        "url": "https://next-ai-core.wuhuajin.com/"
-      }
-    ]
-  },
-  {
-    "sticky": 6,
-    "title": "原创文章",
-    "tagName": "ol",
-    "items": [
-      {
-        "title": "Node.js进阶",
-        "url": "/src/template/viewer.html?path=Node_Node.js进阶",
-        "category": "Node",
-        "date": "2026-09-26",
-        "readTime": 8,
-        "excerpt": "创建 node 子进程用 fork，自带通道方便通信"
-      },
-      {
-        "title": "Docker部署Meting API服务",
-        "url": "/src/template/viewer.html?path=工程化_Docker部署Meting API服务",
-        "category": "工程化",
-        "date": "2026-09-26",
-        "readTime": 11,
-        "excerpt": "Docker部署"
-      },
-      {
-        "title": "AI应用开发学习路线图",
-        "url": "/src/template/viewer.html?path=AI_AI应用开发学习路线图",
-        "category": "AI",
-        "date": "2026-09-24",
-        "readTime": 24,
-        "excerpt": "从零到实战的前端 × AI 系统学习路线，覆盖大模型、Agent、工程化与优质资源汇总。",
-        "tags": [
-          "AI",
-          "学习路线"
-        ],
-        "cover": "https://img4.kuwo.cn/star/albumcover/500/s4s14/74/267013878.jpg",
-        "featured": true
-      },
-      {
-        "title": "AI前端",
-        "url": "/src/template/viewer.html?path=AI_AI前端",
-        "category": "AI",
-        "date": "2026-09-11",
-        "readTime": 28,
-        "excerpt": "LLM （大语言模型）"
-      },
-      {
-        "title": "AI大模型文档",
-        "url": "/src/template/viewer.html?path=AI_AI大模型文档",
-        "category": "AI",
-        "date": "2026-09-11",
-        "readTime": 6,
-        "excerpt": "MCP 接口标准"
-      },
-      {
-        "title": "AI项目文档",
-        "url": "/src/template/viewer.html?path=AI_AI项目文档",
-        "category": "AI",
-        "date": "2026-09-11",
-        "readTime": 2,
-        "excerpt": "Next.js框架"
-      },
-      {
-        "title": "ADB命令集合",
-        "url": "/src/template/viewer.html?path=Android_ADB命令集合",
-        "category": "Android",
-        "date": "2026-09-11",
-        "readTime": 16,
-        "excerpt": "<!--prettier-ignore-start-->"
-      },
-      {
-        "title": "Git文档",
-        "url": "/src/template/viewer.html?path=Git_Git文档",
-        "category": "Git",
-        "date": "2026-09-11",
-        "readTime": 14,
-        "excerpt": "Git 提交规范"
-      },
-      {
-        "title": "ECMAScript文档",
-        "url": "/src/template/viewer.html?path=JavaScript_ECMAScript文档",
-        "category": "JavaScript",
-        "date": "2026-09-11",
-        "readTime": 2,
-        "excerpt": "1. var、let、const之间的区别"
-      },
-      {
-        "title": "功能代码集合",
-        "url": "/src/template/viewer.html?path=JavaScript_功能代码集合",
-        "category": "JavaScript",
-        "date": "2026-09-11",
-        "readTime": 40,
-        "excerpt": "javascript"
-      },
-      {
-        "title": "设计模式文档",
-        "url": "/src/template/viewer.html?path=JavaScript_设计模式文档",
-        "category": "JavaScript",
-        "date": "2026-09-11",
-        "readTime": 3,
-        "excerpt": "不需要关注使用过程"
-      },
-      {
-        "title": "Node.js实战",
-        "url": "/src/template/viewer.html?path=Node_Node.js实战",
-        "category": "Node",
-        "date": "2026-09-11",
-        "readTime": 8,
-        "excerpt": "全栈图书管理系统"
-      },
-      {
-        "title": "Node.js文档",
-        "url": "/src/template/viewer.html?path=Node_Node.js文档",
-        "category": "Node",
-        "date": "2026-09-11",
-        "readTime": 16,
-        "excerpt": "开源的 JS 运行环境"
-      },
-      {
-        "title": "React文档",
-        "url": "/src/template/viewer.html?path=React_React文档",
-        "category": "React",
-        "date": "2026-09-11",
-        "readTime": 5,
-        "excerpt": "虚拟 dom 渲染"
-      },
-      {
-        "title": "Hermes引擎文档",
-        "url": "/src/template/viewer.html?path=RN_Hermes引擎文档",
-        "category": "RN",
-        "date": "2026-09-11",
-        "readTime": 4,
-        "excerpt": "Hermes 从 React Native 0.70 版本开始已成为 Android 和 IOS 双平台的默认 Java…"
-      },
-      {
-        "title": "类型系统",
-        "url": "/src/template/viewer.html?path=TypeScript_类型系统",
-        "category": "TypeScript",
-        "date": "2026-09-11",
-        "readTime": 8,
-        "excerpt": "概要 summary"
-      },
-      {
-        "title": "Vue文档",
-        "url": "/src/template/viewer.html?path=Vue_Vue文档",
-        "category": "Vue",
-        "date": "2026-09-11",
-        "readTime": 1,
-        "excerpt": "Vue-Router路由"
-      },
-      {
-        "title": "Solidity文档",
-        "url": "/src/template/viewer.html?path=Web3_Solidity文档",
-        "category": "Web3",
-        "date": "2026-09-11",
-        "readTime": 20,
-        "excerpt": "Solidity面向合约、为实现智能合约而创建的高级编程语言。受到了 C++，Python 和 JavaScript 语…"
-      },
-      {
-        "title": "Web3文档",
-        "url": "/src/template/viewer.html?path=Web3_Web3文档",
-        "category": "Web3",
-        "date": "2026-09-11",
-        "readTime": 8,
-        "excerpt": "React + TypeScript + Viem + Wagmi + Foundry + Scaffold-ETH2 …"
-      },
-      {
-        "title": "Web3钱包",
-        "url": "/src/template/viewer.html?path=Web3_Web3钱包",
-        "category": "Web3",
-        "date": "2026-09-11",
-        "readTime": 3,
-        "excerpt": "共识、trustless需要旷工的工作，旷工需要激励"
-      },
-      {
-        "title": "智能合约",
-        "url": "/src/template/viewer.html?path=Web3_智能合约",
-        "category": "Web3",
-        "date": "2026-09-11",
-        "readTime": 6,
-        "excerpt": "数据类型中拷贝方法判定"
-      },
-      {
-        "title": "WebRTC性能优化",
-        "url": "/src/template/viewer.html?path=WebRTC_WebRTC性能优化",
-        "category": "WebRTC",
-        "date": "2026-09-11",
-        "readTime": 12,
-        "excerpt": "一、自适应码率调整（ABR）：根据网络状况动态调整编码码率"
-      },
-      {
-        "title": "实战项目文档",
-        "url": "/src/template/viewer.html?path=小程序_实战项目文档",
-        "category": "小程序",
-        "date": "2026-09-11",
-        "readTime": 1,
-        "excerpt": "前端层：小程序 + Web管理后台"
-      },
-      {
-        "title": "小程序文档",
-        "url": "/src/template/viewer.html?path=小程序_小程序文档",
-        "category": "小程序",
-        "date": "2026-09-11",
-        "readTime": 8,
-        "excerpt": "onLaunch：小程序初次加载后执行，只在全局触发一次"
-      },
-      {
-        "title": "Vite与Webpack对比",
-        "url": "/src/template/viewer.html?path=工程化_Vite与Webpack对比",
-        "category": "工程化",
-        "date": "2026-09-11",
-        "readTime": 7,
-        "excerpt": "最本质的差异：Webpack 是 先打包，后服务 的 Bundle 驱动模式；Vite 是 先服务，按需编译 的 ESM…"
-      },
-      {
-        "title": "Web加密",
-        "url": "/src/template/viewer.html?path=工程化_Web加密",
-        "category": "工程化",
-        "date": "2026-09-11",
-        "readTime": 5,
-        "excerpt": "双 Token 认证系统"
-      },
-      {
-        "title": "工程实例文档",
-        "url": "/src/template/viewer.html?path=工程化_工程实例文档",
-        "category": "工程化",
-        "date": "2026-09-11",
-        "readTime": 2,
-        "excerpt": "采用 SDK适配层 + 业务服务层 的两层结构"
-      },
       {
         "title": "原创诗词",
         "url": "/src/template/viewer.html?path=文学_原创诗词",
         "category": "文学",
         "date": "2026-09-11",
         "readTime": 57,
-        "excerpt": "小红书 <hr>"
+        "description": "蓝色盛夏 作者：吴华锦 视频地址： 视频号 B站 抖音 快手 小红书 <hr 蓝色盛夏，热浪裹青帐，山昏影更长。 泉水倚清涧，兰舟穿荷塘，绿荷如擎盖，芙蓉比高洁。 好风有劲意，欺云赶雨不停息。 吹皱一池淡墨，流远一行柔波，拂起千叶霓裳甚风情。 石阶轻弹珍珠落，回廊闻香挂雨帘。 三三两两，闲叙一二，不…",
+        "marked": true
       },
       {
-        "title": "IT工具合集",
-        "url": "/src/template/viewer.html?path=文档_IT工具合集",
-        "category": "文档",
-        "date": "2026-09-11",
-        "readTime": 18,
-        "excerpt": "2. Web 工具集"
+        "title": "吴华锦的个人主页",
+        "url": "https://wuhuajin.com/",
+        "category": "我的",
+        "description": "吴华锦的个人主页 « 吴华锦",
+        "marked": true
       },
       {
-        "title": "帮助文档",
-        "url": "/src/template/viewer.html?path=文档_帮助文档",
-        "category": "文档",
-        "date": "2026-09-11",
-        "readTime": 3,
-        "excerpt": "Prettier 注释指令对 Markdown 选定内容不格式化"
-      },
-      {
-        "title": "操作系统文档",
-        "url": "/src/template/viewer.html?path=文档_操作系统文档",
-        "category": "文档",
-        "date": "2026-09-11",
-        "readTime": 1,
-        "excerpt": "跨进程通信 IPC"
-      },
-      {
-        "title": "新趋势",
-        "url": "/src/template/viewer.html?path=文档_新趋势",
-        "category": "文档",
-        "date": "2026-09-11",
-        "readTime": 4,
-        "excerpt": "AI的最大价值不是内容生产，而是内容生产+自动化**"
-      },
-      {
-        "title": "领域适配性分析",
-        "url": "/src/template/viewer.html?path=文档_领域适配性分析",
-        "category": "文档",
-        "date": "2026-09-11",
-        "readTime": 4,
-        "excerpt": "1. 前端 AI 开发"
-      },
-      {
-        "title": "基金持仓2026-6-25",
-        "url": "/src/template/viewer.html?path=生活_基金持仓2026-6-25",
-        "category": "生活",
-        "date": "2026-09-11",
-        "readTime": 3,
-        "excerpt": "<!-- prettier-ignore-start -->"
-      },
-      {
-        "title": "基金持仓2026-7-23",
-        "url": "/src/template/viewer.html?path=生活_基金持仓2026-7-23",
-        "category": "生活",
-        "date": "2026-09-11",
-        "readTime": 4,
-        "excerpt": "<!-- prettier-ignore-start -->"
-      },
-      {
-        "title": "育儿经",
-        "url": "/src/template/viewer.html?path=生活_育儿经",
-        "category": "生活",
-        "date": "2026-09-11",
-        "readTime": 1,
-        "excerpt": "观察、认知、理解并充分尊重，达到一种和谐的状态"
+        "title": "Github",
+        "url": "https://github.com/whjin",
+        "category": "我的",
+        "description": "",
+        "marked": true
       },
       {
         "title": "中文简历",
@@ -609,7 +288,14 @@
         "category": "简历",
         "date": "2026-09-11",
         "readTime": 10,
-        "excerpt": "学历：深圳大学-电子信息工程-全日制本科 | 邮箱: wuhuajin09@163.com | GitHub: gith…"
+        "description": "学历：深圳大学-电子信息工程-全日制本科 | 邮箱: wuhuajin09@163.com | GitHub: gith…",
+        "marked": true
+      },
+      {
+        "title": "中文简历PDF",
+        "url": "/src/template/viewer.html?path=简历_中文简历PDF&format=pdf",
+        "category": "我的",
+        "description": ""
       },
       {
         "title": "英文简历",
@@ -617,7 +303,387 @@
         "category": "简历",
         "date": "2026-09-11",
         "readTime": 10,
-        "excerpt": "Huajin Wu"
+        "description": "Huajin Wu Email: wuhuajin09@163.com GitHub: github.com/whjin Portfolio: wuhuajin.com Education Shenzhen University Bachelor of Engineering, Electronic…"
+      },
+      {
+        "title": "英文简历PDF",
+        "url": "/src/template/viewer.html?path=简历_英文简历PDF&format=pdf",
+        "category": "我的",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "sticky": 5,
+    "title": "站点",
+    "items": [
+      {
+        "title": "技术文章",
+        "url": "/src/template/viewer.html?path=文章_article&format=html",
+        "category": "站点",
+        "description": "",
+        "marked": true
+      },
+      {
+        "title": "技术教程",
+        "url": "/src/template/viewer.html?path=教程_tutorial&format=html",
+        "category": "站点",
+        "description": "",
+        "marked": true
+      },
+      {
+        "title": "IT工具合集",
+        "url": "/src/template/viewer.html?path=工具_tool&format=html",
+        "category": "站点",
+        "description": "",
+        "marked": true
+      },
+      {
+        "title": "基金分析平台",
+        "url": "https://fundscope.wuhuajin.com/",
+        "category": "站点",
+        "description": "FundScope - 专业基金持仓分析平台",
+        "marked": true
+      },
+      {
+        "title": "whjin-Gitee.com",
+        "url": "https://gitee.com/whjin",
+        "category": "站点",
+        "description": "寒青 (whjin) - Gitee 码云"
+      },
+      {
+        "title": "https://github.com/whjin/calculateApp",
+        "url": "https://wuhuajin.com/calculateApp/",
+        "category": "站点",
+        "description": "简易计算器"
+      },
+      {
+        "title": "https://github.com/whjin/gis-vue",
+        "url": "https://wuhuajin.com/gis-vue/",
+        "category": "站点",
+        "description": "GIS Vue3 项目"
+      },
+      {
+        "title": "https://github.com/whjin/next-ai-core",
+        "url": "https://next-ai-core.wuhuajin.com/",
+        "category": "站点",
+        "description": "Next AI Core"
+      }
+    ]
+  },
+  {
+    "sticky": 6,
+    "title": "原创文章",
+    "show": true,
+    "items": [
+      {
+        "title": "Node.js进阶",
+        "url": "/src/template/viewer.html?path=Node_Node.js进阶",
+        "category": "Node",
+        "date": "2026-09-26",
+        "readTime": 8,
+        "description": "子进程 - 创建 node 子进程用 fork，自带通道方便通信 充分利用多核 CPU 的优势，用到 child_process 模块创建子进程，有四种方法可以创建子进程： - exec - execFile - spawn - fork 四个方法都会返回 ChildProcess 实例（继承自 E…"
+      },
+      {
+        "title": "Docker部署Meting API服务",
+        "url": "/src/template/viewer.html?path=工程化_Docker部署Meting API服务",
+        "category": "工程化",
+        "date": "2026-09-26",
+        "readTime": 11,
+        "description": "Docker部署 1. 安装 Docker dnf 添加 docker-ce 阿里云源并安装，启停 2. 获取镜像 拉取 ghcr.io 官方镜像；拉不动则 git clone 后本地 docker build 3. 运行容器 -p 80:80，配置 METING_URL / METING_TOKE…"
+      },
+      {
+        "title": "AI应用开发学习路线图",
+        "url": "/src/template/viewer.html?path=AI_AI应用开发学习路线图",
+        "category": "AI",
+        "date": "2026-09-24",
+        "readTime": 24,
+        "description": "从零到实战的前端 × AI 系统学习路线，覆盖大模型、Agent、工程化与优质资源汇总。",
+        "tags": [
+          "AI",
+          "学习路线"
+        ],
+        "cover": "https://img4.kuwo.cn/star/albumcover/500/s4s14/74/267013878.jpg"
+      },
+      {
+        "title": "AI前端",
+        "url": "/src/template/viewer.html?path=AI_AI前端",
+        "category": "AI",
+        "date": "2026-09-11",
+        "readTime": 28,
+        "description": "模型侧 - LLM （大语言模型） - fine-tuning - 模型微调：成本较高，灾难性遗忘 - 多模态：输入：图片、音视频 输出：富媒体内容 - 模型效果评测：AI Code 实现场景（实现一个电商网站，是否有登录、是否有购物车），核心评测手段，依靠人工来评测 - 模型部署优化（模型压缩） …"
+      },
+      {
+        "title": "AI大模型文档",
+        "url": "/src/template/viewer.html?path=AI_AI大模型文档",
+        "category": "AI",
+        "date": "2026-09-11",
+        "readTime": 6,
+        "description": "MCP 接口标准 MCP-Model Context Protocol，模型上下文协议 提升对大模型行为的控制能力：优化提问方式，设计输入环境，连接外部能力，形成可复用能力单元。 为模型提供可调用的能力（查询数据、执行操作或访问服务），通过标准化接口，让模型能够可靠地调用外部能力。 MCP 核心组件…"
+      },
+      {
+        "title": "AI项目文档",
+        "url": "/src/template/viewer.html?path=AI_AI项目文档",
+        "category": "AI",
+        "date": "2026-09-11",
+        "readTime": 2,
+        "description": "Next.js框架 - 零配置：自动编译并打包 - 混合模式SSG 和 SSr：在一个项目中同时支持构建时预渲染页面 SSG 和请求时渲染页面 SSR - 增量静态生成：在构建之后以增量的方式添加并更新静态预渲染的页面 - 基于文件系统的路由：每个 pages 目录下的组件都是一个路由 - API路…"
+      },
+      {
+        "title": "ADB命令集合",
+        "url": "/src/template/viewer.html?path=Android_ADB命令集合",
+        "category": "Android",
+        "date": "2026-09-11",
+        "readTime": 16,
+        "description": "设备基础 命令说明 adb devices列出已连接设备 adb devices -l列出已连接设备和种类 adb connect/disconnect [ip:port]连接到指定IP和端口的设备/断开连接 adb root以root权限重新启动adb adb remount重新挂载具有读/写访问…"
+      },
+      {
+        "title": "Git文档",
+        "url": "/src/template/viewer.html?path=Git_Git文档",
+        "category": "Git",
+        "date": "2026-09-11",
+        "readTime": 14,
+        "description": "Git 提交规范 类型说明 :----::----: feat新特性 fix(scope)修复 scope 中的 Bug feat!:/feat(scope)!:breaking change / 重构 API build变更影响的是构建系统或者外部依赖 (如: gulp, npm) ci修改了 C…"
+      },
+      {
+        "title": "ECMAScript文档",
+        "url": "/src/template/viewer.html?path=JavaScript_ECMAScript文档",
+        "category": "JavaScript",
+        "date": "2026-09-11",
+        "readTime": 2,
+        "description": "var、let、const之间的区别 - var： - 声明变量可以重复声明 - 不受限于块级 - 会跟 window 相映射 - 声明上方访问变量 - let： - 不可以重复声明 - 受限制于块级 - 暂存死区 - const： - 声明后必须赋值 - 常量，不能修改 2. ES6 Module…"
+      },
+      {
+        "title": "功能代码集合",
+        "url": "/src/template/viewer.html?path=JavaScript_功能代码集合",
+        "category": "JavaScript",
+        "date": "2026-09-11",
+        "readTime": 40,
+        "description": "两数之和 日期格式化 时间转换（秒数转时分秒） 计算时分秒差值 深拷贝和浅拷贝 浅拷贝 - 只拷贝一层 - 引用类型拷贝内存地址 深拷贝 数组去重 数组对象去重 数组对象排序 获取上/下个月日期 获取前/后7天日期 一周日期 点击内容切换 时分秒 当月第一天和最后一天 fetch接口请求 按键处理方…"
+      },
+      {
+        "title": "设计模式文档",
+        "url": "/src/template/viewer.html?path=JavaScript_设计模式文档",
+        "category": "JavaScript",
+        "date": "2026-09-11",
+        "readTime": 3,
+        "description": "面向对象 - 不需要关注使用过程 - 易维护、易扩展、易复用 - 特征：继承、封装、多台 2. 设计原则 - 单一职责 - 开放封闭 - 里氏替换 - 依赖倒置 - 接口分离 3. 工厂模式、抽象工厂模式 - 工厂模式：通过传入不同的短参数，达到实例化不同的对象的目的 - 优势：关注当前产品的创建，…"
+      },
+      {
+        "title": "Node.js实战",
+        "url": "/src/template/viewer.html?path=Node_Node.js实战",
+        "category": "Node",
+        "date": "2026-09-11",
+        "readTime": 8,
+        "description": "全栈图书管理系统 项目地址：book-management-system 1. 完整项目的需求分析和架构设计（需求规划、目录结构设计、接口设计） 2. 后端接口开发和数据库设计（Express + MongoDB 开发接口，设计数据模型，认证授权） 3. 前后端联调方法和解决跨域问题（Apifox …"
+      },
+      {
+        "title": "Node.js文档",
+        "url": "/src/template/viewer.html?path=Node_Node.js文档",
+        "category": "Node",
+        "date": "2026-09-11",
+        "readTime": 16,
+        "description": "非阻塞 IO - 开源的 JS 运行环境 - Chrome V8引擎 非阻塞 异步 IO 服务端 - 事件驱动：事件队列 异步事件 任务队列 - 适合处理高并发请求 优缺点 - 高并发 - IO 密集型 - 单线程 不适合 CPU 密集型应用 单核 CPU - 代码发生问题，系统会崩溃 应用场景 -…"
+      },
+      {
+        "title": "React文档",
+        "url": "/src/template/viewer.html?path=React_React文档",
+        "category": "React",
+        "date": "2026-09-11",
+        "readTime": 5,
+        "description": "核心技术 - JSX开发思想 - 虚拟 dom 渲染 - 单项数据流 - state 与 props - 类组件与组件的生命周期 - 函数式组件与副作用处理机制 - hooks - 事件处理 - 条件渲染 - 列表与数据塑形 - ajax异步处理 - 跨组件数据传递 Context - Provid…"
+      },
+      {
+        "title": "Hermes引擎文档",
+        "url": "/src/template/viewer.html?path=RN_Hermes引擎文档",
+        "category": "RN",
+        "date": "2026-09-11",
+        "readTime": 4,
+        "description": "Hermes 从 React Native 0.70 版本开始已成为 Android 和 IOS 双平台的默认 Java…"
+      },
+      {
+        "title": "类型系统",
+        "url": "/src/template/viewer.html?path=TypeScript_类型系统",
+        "category": "TypeScript",
+        "date": "2026-09-11",
+        "readTime": 8,
+        "description": "概要 summary - 类型安全：强类型 弱类型 - 类型检查：静态类型 动态类型 - 标准库：内置对象对应的声明 类型 type - 类型注解 let a:string = 'hello' 类型推断 - 联合类型 let a:string number = 'hello' 类型之间进行 或 操作…"
+      },
+      {
+        "title": "Vue文档",
+        "url": "/src/template/viewer.html?path=Vue_Vue文档",
+        "category": "Vue",
+        "date": "2026-09-11",
+        "readTime": 1,
+        "description": "Vue-Router路由 - route获取路由对象 $route.params - router调用路由方法 $router.push()"
+      },
+      {
+        "title": "Solidity文档",
+        "url": "/src/template/viewer.html?path=Web3_Solidity文档",
+        "category": "Web3",
+        "date": "2026-09-11",
+        "readTime": 20,
+        "description": "Solidity面向合约、为实现智能合约而创建的高级编程语言。受到了 C++，Python 和 JavaScript 语…"
+      },
+      {
+        "title": "Web3文档",
+        "url": "/src/template/viewer.html?path=Web3_Web3文档",
+        "category": "Web3",
+        "date": "2026-09-11",
+        "readTime": 8,
+        "description": "React + TypeScript + Viem + Wagmi + Foundry + Scaffold-ETH2 …"
+      },
+      {
+        "title": "Web3钱包",
+        "url": "/src/template/viewer.html?path=Web3_Web3钱包",
+        "category": "Web3",
+        "date": "2026-09-11",
+        "readTime": 3,
+        "description": "区块链 - 共识、trustless需要旷工的工作，旷工需要激励 - transaction的执行有成本 gas，gas费成为旷工的激励 - ether是这个经济生态系统的通行货币 gas和转账 - 转账是与函数调用一起发生，转账就是函数调用。 gaslimit与 gasleft()函数 - 交易发…"
+      },
+      {
+        "title": "智能合约",
+        "url": "/src/template/viewer.html?path=Web3_智能合约",
+        "category": "Web3",
+        "date": "2026-09-11",
+        "readTime": 6,
+        "description": "合约开发 - 数据类型中拷贝方法判定 - 合约上下文变量 - ABI数据、接口与函数调用的底层逻辑 - 函数调用机制中的过滤器链条模型 - 委托调研与代理模式 - 线性化、super关键字与虚函数覆盖 合约外部调用原理 - ABI Application Binary Interface - 读操作…"
+      },
+      {
+        "title": "WebRTC性能优化",
+        "url": "/src/template/viewer.html?path=WebRTC_WebRTC性能优化",
+        "category": "WebRTC",
+        "date": "2026-09-11",
+        "readTime": 12,
+        "description": "一、自适应码率调整（ABR）：根据网络状况动态调整编码码率 核心思路： 通过 WebRTC 的 getStats() API 实时获取网络状态（丢包率、RTT、可用带宽等），动态调整视频编码器的输出码率，避免因网络拥塞导致的卡顿。 实现步骤 - 步骤1：定时获取网络统计数据 通过 RTCPeerCo…"
+      },
+      {
+        "title": "实战项目文档",
+        "url": "/src/template/viewer.html?path=小程序_实战项目文档",
+        "category": "小程序",
+        "date": "2026-09-11",
+        "readTime": 1,
+        "description": "技术架构 - 前端层：小程序 + Web管理后台 - SDK层：auth sdk + core sdk - 后端服务层：认证服务 + 核心服务 + 知识服务 - 数据存储层：云存储/本地存储 + 数据库（MongoDB/MySQL） 帮助文档 uniapp移动端输入监听键盘上正在输入的值 例如搜狗输…"
+      },
+      {
+        "title": "小程序文档",
+        "url": "/src/template/viewer.html?path=小程序_小程序文档",
+        "category": "小程序",
+        "date": "2026-09-11",
+        "readTime": 8,
+        "description": "生命周期 应用维度 - onLaunch：小程序初次加载后执行，只在全局触发一次 - onShow：小程序启动，或者从后台进入前台时触发，监听小程序显示 - onHide：从前台进入后台时触发 - onError：发生错误时触发 - onThemeChange：主题切换时触发 - onUnhandl…"
+      },
+      {
+        "title": "Vite与Webpack对比",
+        "url": "/src/template/viewer.html?path=工程化_Vite与Webpack对比",
+        "category": "工程化",
+        "date": "2026-09-11",
+        "readTime": 7,
+        "description": "最本质的差异：Webpack 是 先打包，后服务 的 Bundle 驱动模式；Vite 是 先服务，按需编译 的 ESM…"
+      },
+      {
+        "title": "Web加密",
+        "url": "/src/template/viewer.html?path=工程化_Web加密",
+        "category": "工程化",
+        "date": "2026-09-11",
+        "readTime": 5,
+        "description": "双 Token 认证系统 1. Access Token（访问令牌） - 用途：用于访问受保护的 API 资源，附加在每个请求的 Header 中 - 特点：生命周期短（1小时），无状态，服务器无需存储 - 存储：通常存储在客户端内存中，需要频繁读取 2. Refresh Token（刷新令牌） -…"
+      },
+      {
+        "title": "工程实例文档",
+        "url": "/src/template/viewer.html?path=工程化_工程实例文档",
+        "category": "工程化",
+        "date": "2026-09-11",
+        "readTime": 2,
+        "description": "接口设计 1. 整体架构 采用 SDK适配层 + 业务服务层 的两层结构 - SDK 适配层：直接调用厂商提供的原生 SDK，处理底层通信、数据格式转换。 - 业务服务层：对外暴露简洁的业务 API，封装权限校验、错误重试、日志记录等通用逻辑。 权限验证 基于 RBAC 的权限验证 权限验证的场景以…"
+      },
+      {
+        "title": "原创诗词",
+        "url": "/src/template/viewer.html?path=文学_原创诗词",
+        "category": "文学",
+        "date": "2026-09-11",
+        "readTime": 57,
+        "description": "蓝色盛夏 作者：吴华锦 视频地址： 视频号 B站 抖音 快手 小红书 <hr 蓝色盛夏，热浪裹青帐，山昏影更长。 泉水倚清涧，兰舟穿荷塘，绿荷如擎盖，芙蓉比高洁。 好风有劲意，欺云赶雨不停息。 吹皱一池淡墨，流远一行柔波，拂起千叶霓裳甚风情。 石阶轻弹珍珠落，回廊闻香挂雨帘。 三三两两，闲叙一二，不…"
+      },
+      {
+        "title": "IT工具合集",
+        "url": "/src/template/viewer.html?path=文档_IT工具合集",
+        "category": "文档",
+        "date": "2026-09-11",
+        "readTime": 18,
+        "description": "菜鸟工具 2. Web 工具集 3. UU在线工具 4. 独特工具箱 5. 开发者武器库 6. UML图开源工具 7. 视频转链接工具 8. 在线视频压缩 9. IT工具箱 10. 在线JSON校验格式化工具 11. AI网址导航 12. AI菜鸟教程 13. 在线实时HTML和JavaScript…"
+      },
+      {
+        "title": "帮助文档",
+        "url": "/src/template/viewer.html?path=文档_帮助文档",
+        "category": "文档",
+        "date": "2026-09-11",
+        "readTime": 3,
+        "description": "Prettier 注释指令对 Markdown 选定内容不格式化 1. 忽略单个代码块 在代码块前一行添加 注释 2. 忽略多行/整个区域 使用 和 包裹需要忽略的内容 3. 忽略整个 Markdown 文件 在项目根目录创建 .prettierignore 文件，并添加 .md 忽略代码块内的特定…"
+      },
+      {
+        "title": "操作系统文档",
+        "url": "/src/template/viewer.html?path=文档_操作系统文档",
+        "category": "文档",
+        "date": "2026-09-11",
+        "readTime": 1,
+        "description": "跨进程通信 IPC - 管道 pipe：单向数据流，适合父子进程间传递数据 - 共享内存：多个进程映射同一块内存区域，速度快，需配合同步机制 - 消息队列：进程间以消息为单位，收发数据，解耦发送与接收 - Socket：可跨网络通信，支持本机与远程进程交互，后端服务器与前端服务端交互"
+      },
+      {
+        "title": "新趋势",
+        "url": "/src/template/viewer.html?path=文档_新趋势",
+        "category": "文档",
+        "date": "2026-09-11",
+        "readTime": 4,
+        "description": "AI的最大价值不是内容生产，而是内容生产+自动化 第二次API开发浪潮正在到来 CSS原生能力 主流框架演进 - Vue：Vue的核心进展 性能飞跃 - Vapor Mode：从“虚拟”到“直接” - 是什么：一种新的编译策略，它在编译时直接将Vue模板转换为高效的、直接操作真实DOM的指令代码，完…"
+      },
+      {
+        "title": "领域适配性分析",
+        "url": "/src/template/viewer.html?path=文档_领域适配性分析",
+        "category": "文档",
+        "date": "2026-09-11",
+        "readTime": 4,
+        "description": "领域分析 1. 前端 AI 开发 - 音视频（WebRTC、流媒体）、数据可视化 Echarts、Node.js 后端服务 - 智能行为分析、AI身份核验、AI运维 - AI能力前端集成 + AI硬件对接 + AI交付 - 基础：TensorFlow.js轻量化模型部署、主流大模型 API 调用 -…"
+      },
+      {
+        "title": "基金持仓2026-6-25",
+        "url": "/src/template/viewer.html?path=生活_基金持仓2026-6-25",
+        "category": "生活",
+        "date": "2026-09-11",
+        "readTime": 3,
+        "description": "科技 永赢科技智选混合C中欧数字经济混合C 中际旭创新易盛【重】 新易盛中际旭创【重】 沪电股份新泉股份 深南电路沪电股份【重】 东山精密长飞光纤光缆 腾景科技东山精密【重】 江丰电子阳光电源 博迁新材亨通光电【重】 中国巨石天孚通信 鼎泰高科潍柴动力 航天军工 永赢国证商用卫星通信产业ETF永赢高…"
+      },
+      {
+        "title": "基金持仓2026-7-23",
+        "url": "/src/template/viewer.html?path=生活_基金持仓2026-7-23",
+        "category": "生活",
+        "date": "2026-09-11",
+        "readTime": 4,
+        "description": "科技 永赢科技智选混合C中欧数字经济混合C 沪电股份中际旭创【重】 深南电路新易盛【重】 中际旭创寒武纪 新易盛沪电股份【重】 工业富联中芯国际 华大九天深南电路【重】 立讯精密建滔积层板 杰瑞股份鹏鼎股份【重】 锐科激光三环集团 鹏鼎控股联瑞新材 航天军工 永赢国证商用卫星通信产业ETF永赢高端装…"
+      },
+      {
+        "title": "育儿经",
+        "url": "/src/template/viewer.html?path=生活_育儿经",
+        "category": "生活",
+        "date": "2026-09-11",
+        "readTime": 1,
+        "description": "懂比爱更重要 理解与尊重 - 观察、认知、理解并充分尊重，达到一种和谐的状态 - 保持耐心，站在孩子的视角看待问题，真诚互动 -"
+      },
+      {
+        "title": "中文简历",
+        "url": "/src/template/viewer.html?path=简历_中文简历",
+        "category": "简历",
+        "date": "2026-09-11",
+        "readTime": 10,
+        "description": "学历：深圳大学-电子信息工程-全日制本科 | 邮箱: wuhuajin09@163.com | GitHub: gith…"
+      },
+      {
+        "title": "英文简历",
+        "url": "/src/template/viewer.html?path=简历_英文简历",
+        "category": "简历",
+        "date": "2026-09-11",
+        "readTime": 10,
+        "description": "Huajin Wu Email: wuhuajin09@163.com GitHub: github.com/whjin Portfolio: wuhuajin.com Education Shenzhen University Bachelor of Engineering, Electronic…"
       },
       {
         "title": "HTTP文档",
@@ -625,7 +691,7 @@
         "category": "网络",
         "date": "2026-09-11",
         "readTime": 17,
-        "excerpt": "Open Systems Interconnection 开放式通信互联系统 ISO"
+        "description": "Open Systems Interconnection 开放式通信互联系统 ISO"
       },
       {
         "title": "Web GIS文档",
@@ -633,7 +699,7 @@
         "category": "GIS",
         "date": "2026-06-13",
         "readTime": 1,
-        "excerpt": "Web GIS文档"
+        "description": ""
       },
       {
         "title": "Taro小程序文档",
@@ -641,7 +707,7 @@
         "category": "小程序",
         "date": "2026-06-06",
         "readTime": 1,
-        "excerpt": "Taro小程序文档"
+        "description": ""
       },
       {
         "title": "Cesium文档",
@@ -649,7 +715,7 @@
         "category": "GIS",
         "date": "2026-05-05",
         "readTime": 1,
-        "excerpt": "Cesium文档"
+        "description": ""
       }
     ]
   }

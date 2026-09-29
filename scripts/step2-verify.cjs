@@ -26,10 +26,3 @@ for (const card of menu) {
     }
   }
 }
-
-const homeCount = menu.flatMap((c) => c.items || []).filter((it) => it.home === true).length;
-console.log('JSON_OK=true');
-console.log('HOME_TOTAL=', homeCount);
-console.log('FEATURED_COUNT=', featuredCount, featuredCount === 5 ? '(OK=5)' : '(期望5!)');
-console.log('HOME_OUTSIDE_原创文章=', homeOutside, homeOutside === 0 ? '(OK)' : '(异常!)');
-console.log(errs.length ? 'ERRORS:\n' + errs.join('\n') : 'FIELD_CHECK=OK');

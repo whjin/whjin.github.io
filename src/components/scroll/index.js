@@ -4,9 +4,15 @@ function scrollControls() {
   let scrollDebounceTimer = null;
   const scrollTopBtn = document.querySelector('.scroll-top');
   const navContainer = document.querySelector('.nav-container');
-  const scrollContainer = document.querySelector('.content-area');
+  const contentArea = document.querySelector('.content-area');
 
-  if (!scrollContainer) return;
+  // 实际滚动可能是 window（首页：.content-area overflow:visible）或 .content-area（二级页固定高度）
+  // 同时监听两者，取最大滚动值，确保任意一种情况都生效
+  function getScrollTop() {
+    const w = window.pageYOffset || document.documentElement.scrollTop || 0;
+    const c = contentArea ? contentArea.scrollTop || 0 : 0;
+    return Math.max(w, c);
+  }
 
   function clearTransition(element) {
     if (element._fadeEndHandler) {
@@ -56,18 +62,20 @@ function scrollControls() {
     element.addEventListener('transitionend', onEnd);
   }
 
-  function smoothScrollToTop(container, duration = 500) {
-    const startScrollTop = container.scrollTop;
-    if (startScrollTop === 0) return;
+  function smoothScrollToTop(duration = 500) {
+    const startTop = getScrollTop();
+    if (startTop === 0) return;
     const startTime = performance.now();
     function step(currentTime) {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
       const easeProgress = 1 - (1 - progress) * (1 - progress);
-      container.scrollTop = startScrollTop * (1 - easeProgress);
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      }
+      const val = startTop * (1 - easeProgress);
+      const w = window.pageYOffset || document.documentElement.scrollTop || 0;
+      const c = contentArea ? contentArea.scrollTop || 0 : 0;
+      if (w > 0) window.scrollTo(0, val);
+      if (c > 0) contentArea.scrollTop = val;
+      if (progress < 1) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
   }
@@ -84,7 +92,7 @@ function scrollControls() {
 
   function wakeUpButton() {
     if (!scrollTopBtn) return;
-    const scrollTop = scrollContainer.scrollTop;
+    const scrollTop = getScrollTop();
     if (scrollTop <= 100) {
       fadeOut(scrollTopBtn);
       if (idleTimer) clearTimeout(idleTimer);
@@ -97,7 +105,7 @@ function scrollControls() {
   }
 
   function handleScroll() {
-    const scrollTop = scrollContainer.scrollTop;
+    const scrollTop = getScrollTop();
 
     if (navContainer && navContainer.dataset.forceHidden !== 'true') {
       if (scrollTop > 100) {
@@ -118,18 +126,20 @@ function scrollControls() {
     }
   }
 
-  scrollContainer.addEventListener('scroll', function () {
+  const listener = function () {
     wakeUpButton();
     if (scrollDebounceTimer) clearTimeout(scrollDebounceTimer);
     scrollDebounceTimer = setTimeout(handleScroll, 50);
-  });
+  };
+  window.addEventListener('scroll', listener, { passive: true });
+  if (contentArea) contentArea.addEventListener('scroll', listener, { passive: true });
 
   if (scrollTopBtn) {
     scrollTopBtn.addEventListener('click', function () {
-      smoothScrollToTop(scrollContainer);
+      smoothScrollToTop();
     });
     scrollTopBtn.addEventListener('mouseenter', function () {
-      const scrollTop = scrollContainer.scrollTop;
+      const scrollTop = getScrollTop();
       if (scrollTop <= 100) return;
       if (idleTimer) clearTimeout(idleTimer);
       this.style.transition = 'opacity 150ms ease';

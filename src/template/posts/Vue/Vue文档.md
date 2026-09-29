@@ -2,7 +2,7 @@
 title: Vue文档
 date: 2026-09-11
 category: Vue
-description: Vue-Router路由
+description: "Vue-Router路由 - route获取路由对象 $route.params - router调用路由方法 $router.push()"
 ---
 
 ## `Vue-Router`路由

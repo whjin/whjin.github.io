@@ -2,7 +2,7 @@
 title: Node.js文档
 date: 2026-09-11
 category: Node
-description: 开源的 JS 运行环境
+description: "非阻塞 IO - 开源的 JS 运行环境 - Chrome V8引擎 非阻塞 异步 IO 服务端 - 事件驱动：事件队列 异步事件 任务队列 - 适合处理高并发请求 优缺点 - 高并发 - IO 密集型 - 单线程 不适合 CPU 密集型应用 单核 CPU - 代码发生问题，系统会崩溃 应用场景 -…"
 ---
 
 ## 非阻塞 `IO`

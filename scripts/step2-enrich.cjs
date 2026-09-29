@@ -73,9 +73,3 @@ const card = menu.find((c) => c.title === '原创文章');
 if (!card) { console.error('未找到 原创文章 卡'); process.exit(1); }
 card.items = card.items.map(enrich);
 fs.writeFileSync(menuPath, JSON.stringify(menu, null, 2) + '\n', 'utf8');
-
-const feat = card.items.filter((it) => it.featured).map((it) => it.title);
-const missing = card.items.filter((it) => !it.date || !it.excerpt).map((it) => it.title);
-console.log('FEATURED(' + feat.length + '):', feat.join('; '));
-console.log('MISSING_FIELDS:', missing.length ? missing.join('; ') : '无');
-console.log('HOME_ITEMS:', card.items.filter((it) => it.home).length);

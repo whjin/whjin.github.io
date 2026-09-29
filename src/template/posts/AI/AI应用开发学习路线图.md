@@ -8,8 +8,6 @@ tags:
 cover: https://img4.kuwo.cn/star/albumcover/500/s4s14/74/267013878.jpg
 keywords: AI应用开发,前端,大模型,学习路线
 description: 从零到实战的前端 × AI 系统学习路线，覆盖大模型、Agent、工程化与优质资源汇总。
-published: true
-featured: true
 ---
 
 ## 四、优质学习资源汇总

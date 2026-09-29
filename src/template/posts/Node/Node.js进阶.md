@@ -2,7 +2,7 @@
 title: Node.js进阶
 date: 2026-09-26
 category: Node
-description: 创建 node 子进程用 fork，自带通道方便通信
+description: "子进程 - 创建 node 子进程用 fork，自带通道方便通信 充分利用多核 CPU 的优势，用到 child_process 模块创建子进程，有四种方法可以创建子进程： - exec - execFile - spawn - fork 四个方法都会返回 ChildProcess 实例（继承自 E…"
 ---
 
 ## 子进程

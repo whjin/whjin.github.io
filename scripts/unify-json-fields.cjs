@@ -61,6 +61,4 @@ for (const { file, fn } of plan) {
   const text = JSON.stringify(next, null, 2) + '\n';
   fs.writeFileSync(abs, text, 'utf8');
   changed++;
-  console.log(`OK  ${file}`);
 }
-console.log(`DONE ${changed}/${plan.length}`);

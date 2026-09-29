@@ -2,7 +2,7 @@
 title: Docker部署Meting API服务
 date: 2026-09-26
 category: 工程化
-description: Docker部署
+description: "Docker部署 1. 安装 Docker dnf 添加 docker-ce 阿里云源并安装，启停 2. 获取镜像 拉取 ghcr.io 官方镜像；拉不动则 git clone 后本地 docker build 3. 运行容器 -p 80:80，配置 METING_URL / METING_TOKE…"
 ---
 
 # `Docker`部署

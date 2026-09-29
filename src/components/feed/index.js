@@ -1,4 +1,6 @@
-/* 首页文章流（Dev.to 风格）：读 src/template/menu/data.json「原创文章」卡渲染文章卡 */
+/* 首页统一文章流（Dev.to 风格）：读 src/template/menu/data.json，默认渲染全部卡的条目。
+   原创文章卡条目渲染为文章卡（封面左图右文/标签/日期/时长），其余卡（核心推荐/推荐/我的/站点）
+   条目渲染为 feed 风格卡（卡标题作分类徽标），全部并入左侧主列。show:false 隐藏该卡条目，sticky 控制置顶顺序。 */
 (function () {
   'use strict';
 
@@ -50,7 +52,7 @@
   // 精选模块已移除：置顶精选通过文章卡置顶 + ★ Featured 标识实现，不再重复展示
 
   // 卡片模板（Dev.to 风格，单数据集）：各区块按字段是否存在条件渲染
-  // 封面(cover)存在 → 左图右文；标题行右侧为「分类+精选」标识；摘要(excerpt)→标签→互动统计+阅读时长
+  // 封面(cover)存在 → 左图右文；标题行右侧为「分类+精选」标识；摘要(description)→标签→互动统计+阅读时长
   function cardHTML(it) {
     const hasCover = !!it.cover;
     const cover = hasCover
@@ -59,10 +61,10 @@
     const tags = (it.tags || []).slice(0, 4)
       .map((g) => '<span class="fc-tag">#' + esc(g) + '</span>').join('');
     const featured = it.featured ? '<span class="fc-featured">★ ' + esc(t('featured_badge', 'Featured')) + '</span>' : '';
-    const category = it.category ? '<span class="fc-category">' + esc(it.category) + '</span>' : '';
+    const category = (it.category || it._group) ? '<span class="fc-category">' + esc(it.category || it._group) + '</span>' : '';
     const badges = (category || featured) ? '<div class="fc-badges">' + category + featured + '</div>' : '';
-    const excerpt = it.excerpt
-      ? '<div class="fc-excerpt" title="' + esc(it.excerpt) + '">' + esc(it.excerpt) + '</div>'
+    const description = it.description
+      ? '<div class="fc-excerpt" title="' + esc(it.description) + '">' + esc(it.description) + '</div>'
       : '';
     // 互动统计（可选字段，存在才渲染）
     let stats = '';
@@ -76,7 +78,7 @@
       '<div class="fc-title">' + esc(it.title) + '</div>' +
       badges +
       '</div>' +
-      excerpt +
+      description +
       (tags ? '<div class="fc-tags">' + tags + '</div>' : '') +
       '<div class="fc-meta">' +
       (stats ? '<div class="fc-stats">' + stats + '</div>' : '') +
@@ -171,8 +173,27 @@
       const res = await fetch(MENU_URL);
       if (!res.ok) throw new Error('menu 加载失败 ' + res.status);
       const menu = await res.json();
-      const card = (Array.isArray(menu) ? menu : []).find((c) => c.title === ARTICLE_CARD_TITLE);
-      allItems = (card && Array.isArray(card.items)) ? card.items : [];
+      // 默认渲染全部卡的条目：show:false 隐藏，其余全部渲染
+      const cards = (Array.isArray(menu) ? menu : []).filter(function (c) {
+        return c.show !== false && c.items && c.items.length > 0;
+      });
+      // 原创文章卡条目为文章；其余卡为链接条目（卡标题作分类徽标）
+      const artCard = cards.find(function (c) { return c.title === ARTICLE_CARD_TITLE; });
+      const linkCards = cards.filter(function (c) { return c.title !== ARTICLE_CARD_TITLE; });
+      // 链接卡按 sticky 置顶排序（有 sticky 升序在前，无 sticky 按数组序）
+      linkCards.sort(function (a, b) {
+        const sa = a.sticky === undefined ? Infinity : a.sticky;
+        const sb = b.sticky === undefined ? Infinity : b.sticky;
+        return sa - sb;
+      });
+      allItems = [];
+      if (artCard && Array.isArray(artCard.items)) allItems = allItems.concat(artCard.items);
+      linkCards.forEach(function (c) {
+        (c.items || []).forEach(function (it) {
+          it._group = c.title;
+          allItems.push(it);
+        });
+      });
       render();
       bindSearch();
     } catch (err) {

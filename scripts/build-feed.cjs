@@ -1,10 +1,15 @@
-// Hexo 式 feed 生成器：扫描 posts/**/*.md，解析 YAML front matter，生成 feed 并写回 menu/data.json「原创文章」卡
-// 用法：node scripts/build-feed.cjs   （部署前运行，等价 hexo generate）
+// Hexo 式 feed 生成器 + 菜单数据规范化：
+// 1) 扫描 posts/**/*.md → 生成「原创文章」卡 items（完整 feed 字段：title/url/category/date/readTime/description/tags/cover/featured）
+// 2) 规范化其余卡（核心推荐/推荐/我的/站点）条目为同一 feed 结构，md 链接自动生成 ~150 字 description
+// 3) 摘要统一使用 description 字段（移除 excerpt），优先取 md 的 description，缺失/过短时自动生成并回写 md front matter
+// 用法：node scripts/build-feed.cjs （部署前运行）
 const fs = require('fs');
 const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const POSTS = path.join(ROOT, 'src/template/posts');
 const MENU_PATH = path.join(ROOT, 'src/template/menu/data.json');
+
+const DESC_MIN = 40; // 少于该长度的 description 视为不合格，自动生成
 
 function parseFrontMatter(content) {
   const m = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/.exec(content);
@@ -52,32 +57,76 @@ function walk(dir, out = []) {
   return out;
 }
 
-function cleanPara(text) {
-  const lines = text.split(/\r?\n/);
-  for (const ln of lines) {
-    const s = ln
-      .replace(/```/g, ' ')
-      .replace(/`/g, '')
-      .replace(/^[#>*\-\s]+/, '')
-      .replace(/\*\*(.+?)\*\*/g, '$1')
-      .replace(/\[(.+?)\]\(.+?\)/g, '$1')
-      .replace(/!?\[.*?\]\(.*?\)/g, '')
-      .trim();
-    if (s.length >= 8) return s.length > 42 ? s.slice(0, 42) + '…' : s;
+// 从正文自动提取 ~maxChars 字的摘要（清理代码块/链接/标记符号）
+function generateSummary(body, maxChars = 150) {
+  const text = body
+    .replace(/```[\s\S]*?```/g, ' ')
+    .replace(/<!--[\s\S]*?-->/g, ' ')
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+    .replace(/[`*#>|~]/g, '')
+    .replace(/^\s*(-{3,}|={3,})\s*$/gm, '')
+    .replace(/\s+/g, ' ');
+  let c = text.trim();
+  if (!c) return '';
+  c = c.replace(/^[\s\-.\d、*+]+/, '');
+  if (c.length > maxChars) c = c.slice(0, maxChars) + '…';
+  return c;
+}
+
+function mdUrl(folder, fileBase) {
+  return `/src/template/viewer.html?path=${folder}_${fileBase}`;
+}
+
+// url → md 信息映射
+const urlToMd = new Map();
+function buildUrlMap() {
+  urlToMd.clear();
+  for (const file of walk(POSTS)) {
+    const rel = path.relative(POSTS, file);
+    const parts = rel.split(path.sep);
+    const fileBase = parts.pop().replace(/\.md$/, '');
+    const folder = parts.join('/');
+    const raw = fs.readFileSync(file, 'utf8');
+    const { front, body } = parseFrontMatter(raw);
+    urlToMd.set(mdUrl(folder, fileBase), { file, folder, fileBase, front, body, raw });
   }
-  return '';
 }
 
-// 摘要提取：优先 description，否则自动提取
-function extractExcerpt(front, body) {
-  if (front && front.description) return front.description;
-  return cleanPara(body);
+function resolveMd(url) {
+  if (!url) return null;
+  const m = /path=([^&]+)/.exec(url);
+  if (!m) return null;
+  return urlToMd.get(`/src/template/viewer.html?path=${m[1]}`) || null;
 }
 
+// 取描述：md 的 description 若合格则用，否则自动生成
+function descriptionFor(md) {
+  if (!md) return '';
+  const fd = md.front && md.front.description ? String(md.front.description).trim() : '';
+  return fd.length >= DESC_MIN ? fd : generateSummary(md.body);
+}
+
+// 把生成的 description 回写 md front matter（使其成为规范来源）
+function setMdDescription(md, desc) {
+  const raw = md.raw;
+  const m = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/.exec(raw);
+  if (!m || !desc) return;
+  let fm = m[1];
+  const quoted = JSON.stringify(desc);
+  if (/^description:/m.test(fm)) {
+    fm = fm.replace(/^description:.*$/m, `description: ${quoted}`);
+  } else {
+    fm = fm.replace(/^title:.*$/m, `$&\ndescription: ${quoted}`);
+  }
+  const newText = raw.slice(0, m.index) + '---\n' + fm + '\n---\n' + raw.slice(m.index + m[0].length);
+  fs.writeFileSync(md.file, newText, 'utf8');
+}
+
+// 生成「原创文章」卡 items
 function buildFeed() {
-  const files = walk(POSTS);
   const items = [];
-  for (const file of files) {
+  for (const file of walk(POSTS)) {
     const rel = path.relative(POSTS, file);
     const parts = rel.split(path.sep);
     const fileBase = parts.pop().replace(/\.md$/, '');
@@ -90,13 +139,18 @@ function buildFeed() {
     if (!published) continue;
     const bodyChars = body.replace(/\s/g, '').length;
     const mt = fs.statSync(file).mtime;
+    const mdObj = { file, folder, fileBase, front, body, raw };
+    const desc = descriptionFor(mdObj);
+    // 若 md 的 description 缺失/过短，把自动生成的摘要回写进 md front matter，保证两者一致
+    const mdDesc = front && front.description ? String(front.description).trim() : '';
+    if (mdDesc.length < DESC_MIN && desc) setMdDescription(mdObj, desc);
     const item = {
       title: (front && front.title) || fileBase,
-      url: `/src/template/viewer.html?path=${folder}_${fileBase}`,
+      url: mdUrl(folder, fileBase),
       category: (front && front.category) || folder,
       date: (front && front.date) || `${mt.getFullYear()}-${String(mt.getMonth() + 1).padStart(2, '0')}-${String(mt.getDate()).padStart(2, '0')}`,
       readTime: Math.max(1, Math.round(bodyChars / 280)),
-      excerpt: extractExcerpt(front, body) || fileBase,
+      description: desc,
     };
     if (front && Array.isArray(front.tags) && front.tags.length) item.tags = front.tags;
     if (front && front.cover) item.cover = front.cover;
@@ -107,16 +161,45 @@ function buildFeed() {
   return items;
 }
 
+// 规范化其他卡条目为 feed 结构
+function normalizeLinkItem(it, cardTitle) {
+  const md = resolveMd(it.url);
+  const out = { title: it.title, url: it.url };
+  if (md) {
+    out.category = (md.front && md.front.category) || cardTitle;
+    if (md.front && md.front.date) out.date = md.front.date;
+    out.readTime = Math.max(1, Math.round(md.body.replace(/\s/g, '').length / 280));
+    out.description = descriptionFor(md);
+    const fd = md.front && md.front.description ? String(md.front.description).trim() : '';
+    if (fd.length < DESC_MIN && out.description) setMdDescription(md, out.description);
+    if (md.front && Array.isArray(md.front.tags) && md.front.tags.length) out.tags = md.front.tags;
+    if (md.front && md.front.cover) out.cover = md.front.cover;
+    if (md.front && (md.front.sticky || md.front.featured === 'true' || md.front.featured === true)) out.featured = true;
+  } else {
+    out.category = cardTitle;
+    out.description = it.desc != null ? String(it.desc) : (it.description || '');
+  }
+  if (it.marked) out.marked = true;
+  if (it.featured) out.featured = true;
+  return out;
+}
+
+buildUrlMap();
+
 const menu = JSON.parse(fs.readFileSync(MENU_PATH, 'utf8'));
-const card = menu.find((c) => c.title === '原创文章');
-if (!card) { console.error('未找到 原创文章 卡'); process.exit(1); }
 
-// 生成文章数据（完整 feed 字段），注入 menu「原创文章」卡 items（单一数据源，不再写独立 feed/data.json）
+// 1) 「原创文章」卡：重新生成 feed 字段（含 description）
+const artCard = menu.find((c) => c.title === '原创文章');
+if (!artCard) { console.error('未找到 原创文章 卡'); process.exit(1); }
 const items = buildFeed();
-card.items = items;
-fs.writeFileSync(MENU_PATH, JSON.stringify(menu, null, 2) + '\n', 'utf8');
+artCard.items = items;
 
-const feat = items.filter((it) => it.featured).map((it) => it.title);
-console.log('FEED_GENERATED items=' + items.length + ' featured=' + feat.length + ' -> 注入 menu/data.json 原创文章卡');
-console.log('FEATURED:', feat.join('; ') || '无');
-console.log('MENU_原创文章 items=' + card.items.length + ' (完整 feed 字段)');
+// 2) 其余卡：规范化条目为 feed 结构
+for (const c of menu) {
+  if (c.title === '原创文章') continue;
+  if (!Array.isArray(c.items)) continue;
+  c.items = c.items.map((it) => normalizeLinkItem(it, c.title));
+}
+
+fs.writeFileSync(MENU_PATH, JSON.stringify(menu, null, 2) + '\n', 'utf8');
+console.log(`menu/data.json 规范化完成：原创文章 ${items.length} 篇，其余卡条目已统一 feed 结构（description 字段）。`);

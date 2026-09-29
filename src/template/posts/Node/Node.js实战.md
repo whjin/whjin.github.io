@@ -2,7 +2,7 @@
 title: Node.js实战
 date: 2026-09-11
 category: Node
-description: 全栈图书管理系统
+description: "全栈图书管理系统 项目地址：book-management-system 1. 完整项目的需求分析和架构设计（需求规划、目录结构设计、接口设计） 2. 后端接口开发和数据库设计（Express + MongoDB 开发接口，设计数据模型，认证授权） 3. 前后端联调方法和解决跨域问题（Apifox …"
 ---
 
 # 全栈图书管理系统

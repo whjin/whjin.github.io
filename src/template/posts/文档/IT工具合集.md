@@ -2,7 +2,7 @@
 title: IT工具合集
 date: 2026-09-11
 category: 文档
-description: 2. Web 工具集
+description: "菜鸟工具 2. Web 工具集 3. UU在线工具 4. 独特工具箱 5. 开发者武器库 6. UML图开源工具 7. 视频转链接工具 8. 在线视频压缩 9. IT工具箱 10. 在线JSON校验格式化工具 11. AI网址导航 12. AI菜鸟教程 13. 在线实时HTML和JavaScript…"
 ---
 
 1. [菜鸟工具](https://www.jyshare.com/)

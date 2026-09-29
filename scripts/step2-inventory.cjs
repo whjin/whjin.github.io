@@ -5,7 +5,6 @@ const ROOT = path.resolve(__dirname, '..');
 
 const menu = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/template/menu/data.json'), 'utf8'));
 const card = menu.find((c) => c.title === '原创文章');
-if (!card) { console.log('未找到 原创文章 卡'); process.exit(0); }
 
 function parsePath(url) {
   const m = /path=([^&]+)/.exec(url || '');
@@ -30,7 +29,6 @@ function firstPara(text) {
   return '';
 }
 
-console.log('共', card.items.length, '个条目\n');
 card.items.forEach((it, i) => {
   const mp = mdPath(it);
   const p = parsePath(it.url);
@@ -45,5 +43,4 @@ card.items.forEach((it, i) => {
   } else {
     info = `MISSING md for folder=${p.folder} file=${p.file}`;
   }
-  console.log(`${i + 1}. [${it.title}] ${info}`);
 });

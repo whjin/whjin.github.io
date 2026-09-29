@@ -63,7 +63,7 @@ async function generateCard() {
       if (m.sticky) {
         headerEl.classList.add('sticky-mark');
       }
-      const listEl = document.createElement(m.tagName || 'ul');
+      const listEl = document.createElement('ul');
       listEl.className = 'card-list';
       listEl.dataset.cardListTitle = m.title;
       m.items.forEach((item) => {
@@ -184,7 +184,7 @@ function initModal(m) {
   fragment.appendChild(closeImg);
   modalHeaderEl.appendChild(fragment);
   closeImg.addEventListener('click', closeModal);
-  const modalList = document.createElement(m.tagName || 'ul');
+  const modalList = document.createElement('ul');
   modalList.className = 'modal-list';
   modalContent.appendChild(modalHeaderEl);
   modalContent.appendChild(modalList);

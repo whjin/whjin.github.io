@@ -2,7 +2,7 @@
 title: ADB命令集合
 date: 2026-09-11
 category: Android
-description: <!--prettier-ignore-start-->
+description: "设备基础 命令说明 adb devices列出已连接设备 adb devices -l列出已连接设备和种类 adb connect/disconnect [ip:port]连接到指定IP和端口的设备/断开连接 adb root以root权限重新启动adb adb remount重新挂载具有读/写访问…"
 ---
 
 ## 设备基础

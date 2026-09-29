@@ -2,7 +2,7 @@
 title: Web加密
 date: 2026-09-11
 category: 工程化
-description: 双 Token 认证系统
+description: "双 Token 认证系统 1. Access Token（访问令牌） - 用途：用于访问受保护的 API 资源，附加在每个请求的 Header 中 - 特点：生命周期短（1小时），无状态，服务器无需存储 - 存储：通常存储在客户端内存中，需要频繁读取 2. Refresh Token（刷新令牌） -…"
 ---
 
 ## 双 `Token` 认证系统

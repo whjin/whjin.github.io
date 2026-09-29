@@ -2,7 +2,7 @@
 title: ECMAScript文档
 date: 2026-09-11
 category: JavaScript
-description: 1. var、let、const之间的区别
+description: "var、let、const之间的区别 - var： - 声明变量可以重复声明 - 不受限于块级 - 会跟 window 相映射 - 声明上方访问变量 - let： - 不可以重复声明 - 受限制于块级 - 暂存死区 - const： - 声明后必须赋值 - 常量，不能修改 2. ES6 Module…"
 ---
 
 ## 1. `var`、`let`、`const`之间的区别
