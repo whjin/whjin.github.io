@@ -102,18 +102,6 @@ body.home-page .footer {
   box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.12);
 }
 
-/* 宽度足够时：搜索框在标题栏内居中展示 */
-@media screen and (min-width: 769px) {
-  .home-search-wrap {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: min(640px, calc(100% - 420px));
-    margin: 0;
-    flex: none;
-  }
-}
-
 /* .title：仅作为社交图标锚点，隐藏文字 */
 .header .title {
   margin-left: auto;
@@ -127,8 +115,7 @@ body.home-page .footer {
 /* ---- 两栏主体 ---- */
 .home-two-col {
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
+  margin: 0;
   padding: 24px 20px 110px;
   box-sizing: border-box;
   display: grid;
@@ -144,25 +131,35 @@ body.home-page .footer {
 
 /* ---- 置顶精选模块已移除（由文章卡置顶 + ★ Featured 标识实现，避免重复内容）---- */
 
-/* ---- 文章流卡片 ---- */
+/* ---- 文章流卡片（Dev.to 风格：单数据集按字段条件渲染，等宽、高度自适应） ---- */
 .home-feed-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 .feed-card {
   display: block;
   background: #fff;
   border: 1px solid #e6e6e6;
   border-radius: 12px;
-  padding: 16px 18px;
+  overflow: hidden;
   text-decoration: none;
   color: #1c1c1c;
   transition: box-shadow 0.15s, border-color 0.15s;
 }
 .feed-card:hover {
-  border-color: #8b5cf6;
+  border-color: #d0d0d0;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+/* 封面（可选：存在 cover 才渲染） */
+.feed-card .fc-cover img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+}
+.feed-card .fc-body {
+  padding: 14px 18px 16px;
 }
 .feed-card .fc-top {
   display: flex;
@@ -183,7 +180,7 @@ body.home-page .footer {
   font-weight: 700;
 }
 .feed-card .fc-title {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 700;
   line-height: 1.4;
   margin-bottom: 6px;
@@ -193,13 +190,6 @@ body.home-page .footer {
   color: #555;
   line-height: 1.6;
   margin-bottom: 10px;
-}
-.feed-card .fc-meta {
-  font-size: 12px;
-  color: #999;
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
 }
 .feed-card .fc-tags {
   display: flex;
@@ -213,6 +203,29 @@ body.home-page .footer {
   background: #f3f3f3;
   border-radius: 10px;
   padding: 2px 8px;
+}
+/* 底部信息栏：左侧互动统计，右侧日期+阅读时长 */
+.feed-card .fc-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #efefef;
+  font-size: 12.5px;
+  color: #717171;
+}
+.feed-card .fc-stats {
+  display: flex;
+  gap: 14px;
+}
+.feed-card .fc-date {
+  color: #999;
+}
+.feed-card .fc-readtime {
+  color: #717171;
 }
 .feed-empty {
   color: #999;
@@ -233,8 +246,7 @@ body.home-page .footer {
 /* ---- in-article 广告（全宽置底） ---- */
 .home-ad-in-article {
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
+  margin: 0;
   padding: 0 20px 120px;
   box-sizing: border-box;
 }

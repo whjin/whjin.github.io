@@ -227,10 +227,18 @@
       GRID_ICONS.forEach((s) => {
         const a = makeIcon(s);
         a.addEventListener('click', (ev) => {
-          if (s.name === 'music' || s.name === 'qqmusic' || s.name === 'netmusic') {
+          if (s.name === 'music') {
             ev.preventDefault();
             ev.stopPropagation();
-            togglePlayer('.' + s.name + '-container');
+            togglePlayer('.aplayer-container');
+          } else if (s.name === 'qqmusic') {
+            ev.preventDefault();
+            ev.stopPropagation();
+            togglePlayer('.qqmusic-container');
+          } else if (s.name === 'netmusic') {
+            ev.preventDefault();
+            ev.stopPropagation();
+            togglePlayer('.netmusic-container');
           } else if (s.name === 'wechat') {
             ev.preventDefault();
             ev.stopPropagation();

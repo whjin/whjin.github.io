@@ -48,20 +48,37 @@
 
   // 精选模块已移除：置顶精选通过文章卡置顶 + ★ Featured 标识实现，不再重复展示
 
+  // 卡片模板（Dev.to 风格，单数据集）：各区块按字段是否存在条件渲染
+  // 封面(cover) → 分类+精选标识 → 标题 → 摘要(excerpt) → 标签(tags) → 互动统计+阅读时长
   function cardHTML(it) {
+    const cover = it.cover
+      ? '<div class="fc-cover"><img src="' + esc(it.cover) + '" alt="' + esc(it.title) + '" loading="lazy" onerror="this.parentNode.style.display=\'none\'"></div>'
+      : '';
     const tags = (it.tags || []).slice(0, 4)
       .map((g) => '<span class="fc-tag">#' + esc(g) + '</span>').join('');
     const featured = it.featured ? '<span class="fc-featured">★ ' + esc(t('featured_badge', 'Featured')) + '</span>' : '';
-    const read = it.readTime ? ' · ' + it.readTime + ' min' : '';
+    const excerpt = it.excerpt ? '<div class="fc-excerpt">' + esc(it.excerpt) + '</div>' : '';
+    // 互动统计（可选字段，存在才渲染）
+    let stats = '';
+    if (it.reactions != null) stats += '<span class="fc-stat">' + it.reactions + ' <span data-i18n="reactions">reactions</span></span>';
+    if (it.comments != null) stats += '<span class="fc-stat">' + it.comments + ' <span data-i18n="comments">comments</span></span>';
+    const readtime = it.readTime ? '<span class="fc-readtime">' + it.readTime + ' min read</span>' : '';
     return (
+      cover +
+      '<div class="fc-body">' +
       '<div class="fc-top">' +
       '<span class="fc-category">' + esc(it.category || '') + '</span>' +
       featured +
       '</div>' +
       '<div class="fc-title">' + esc(it.title) + '</div>' +
-      (it.excerpt ? '<div class="fc-excerpt">' + esc(it.excerpt) + '</div>' : '') +
-      '<div class="fc-meta"><span>' + (it.date || '') + '</span><span>' + (it.readTime ? it.readTime + ' min read' : '') + '</span></div>' +
-      (tags ? '<div class="fc-tags">' + tags + '</div>' : '')
+      excerpt +
+      (tags ? '<div class="fc-tags">' + tags + '</div>' : '') +
+      '<div class="fc-meta">' +
+      (stats ? '<div class="fc-stats">' + stats + '</div>' : '') +
+      '<span class="fc-date">' + esc(it.date || '') + '</span>' +
+      readtime +
+      '</div>' +
+      '</div>'
     );
   }
 
