@@ -74,6 +74,12 @@
       name: 'twitter',
       icon: 28,
     },
+    {
+      href: '',
+      title: '语言 / Language',
+      name: 'link',
+      icon: 28,
+    },
   ];
 
   const wechatList = [
@@ -321,7 +327,10 @@
       return;
     } else {
       if (className.includes('icon-link')) {
-        localStorage.setItem('navigateToLink', true);
+        // 语言切换（复用 link.png 图标，后续可替换）
+        if (window.I18N && window.I18N.toggle) {
+          window.I18N.toggle();
+        }
       }
       return;
     }

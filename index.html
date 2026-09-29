@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="home-page">
 
 <head>
   <meta charset="UTF-8" />
@@ -31,29 +31,42 @@
   <link rel="stylesheet" href="src/css/bootstrap.min.css" />
   <link rel="stylesheet" href="src/css/font-awesome.min.css" />
   <link rel="stylesheet" href="src/css/github-dark.min.css" />
+  <link rel="stylesheet" href="src/css/APlayer.min.css" />
   <link rel="stylesheet" href="src/components/render/index.css" />
   <link rel="stylesheet" href="src/components/footer/index.css" />
   <link rel="stylesheet" href="src/components/social/index.css" />
   <link rel="stylesheet" href="src/components/loading/index.css" />
   <link rel="stylesheet" href="src/components/banner/index.css" />
+  <link rel="stylesheet" href="src/components/aplayer/index.css" />
+  <link rel="stylesheet" href="src/components/feed/index.css" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046"
     crossorigin="anonymous"></script>
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
   </script>
 </head>
 
-<body>
+<body class="home-page">
   <amp-auto-ads type="adsense" data-ad-client="ca-pub-3179609405594046">
   </amp-auto-ads>
   <div class="header">
-    <div class="title">吴华锦的个人主页</div>
+    <a class="home-logo" href="/" title="吴华锦|以码为笔・写意人间">
+      <img class="home-logo-img" src="src/images/favicon.png" alt="吴华锦" />
+    </a>
+    <div class="home-search-wrap">
+      <span class="search-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+          stroke-linejoin="round" width="15" height="15">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </span>
+      <input id="home-search" class="home-search" type="search" autocomplete="off" placeholder="Search…" />
+    </div>
+    <div class="title"></div>
   </div>
+  <nav class="category-bar" id="category-bar" aria-label="Categories"></nav>
   <div class="layout-container home">
     <div id="markdown-content" class="markdown-content content-area entry"></div>
-    <div class="sidebar-area">
-      <div class="sidebar-title">文章目录</div>
-      <nav id="toc-nav" class="toc-nav"></nav>
-    </div>
   </div>
   <footer class="footer"></footer>
   <div class="scroll-top opacity">
@@ -82,12 +95,9 @@
   <script src="src/js/Meting.min.js"></script>
   <script src="src/components/aplayer/index.js"></script>
   <script src="src/components/cookie-consent/index.js"></script>
-  <!-- Google AdSense 代码 -->
-  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
-    data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
+  <script src="src/components/feed/index.js"></script>
+  <script src="src/components/sidebar/index.js"></script>
+  <script src="src/components/i18n/index.js"></script>
 </body>
 
 </html>

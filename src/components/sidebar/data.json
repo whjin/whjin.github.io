@@ -1,0 +1,71 @@
+{
+  "sections": [
+    {
+      "type": "intro",
+      "i18n_title": "sb_about",
+      "title": "About",
+      "avatar": "/src/images/favicon.png",
+      "text": "吴华锦 · 前端工程师。以码为笔，写意人间。专注 JavaScript / Node.js / Web 与 AI 应用开发，也分享生活、随笔与金融思考。",
+      "link": {
+        "text": "关于我 About →",
+        "url": "about.html"
+      }
+    },
+    {
+      "type": "list",
+      "i18n_title": "sb_happening",
+      "title": "What's happening",
+      "items": [
+        { "text": "AI 应用开发学习路线图 已发布", "time": "This week" },
+        { "text": "Node.js 工程化实战持续更新", "time": "This week" },
+        { "text": "Web3 / 智能合约系列新增", "time": "This month" }
+      ]
+    },
+    {
+      "type": "list",
+      "i18n_title": "sb_live",
+      "title": "Livestreams",
+      "items": [
+        { "text": "WebRTC 性能优化实战解析", "time": "On demand" },
+        { "text": "从零搭建前端 × AI 工作流", "time": "Coming soon" }
+      ]
+    },
+    {
+      "type": "notice",
+      "i18n_title": "sb_now",
+      "title": "Happening Now! 🚀",
+      "text": "新文章持续更新中 —— 关注本站获取最新的前端与 AI 开发内容。",
+      "url": "contact.html",
+      "url_text": "联系我 →"
+    },
+    {
+      "type": "tags",
+      "i18n_title": "sb_tags",
+      "title": "Popular tags",
+      "tags": []
+    },
+    {
+      "type": "categories",
+      "i18n_title": "sb_categories",
+      "title": "Categories"
+    },
+    {
+      "type": "ads",
+      "i18n_title": "sb_ads",
+      "title": "Advertisement",
+      "ad_client": "ca-pub-3179609405594046",
+      "ad_slot": ""
+    },
+    {
+      "type": "links",
+      "i18n_title": "sb_links",
+      "title": "Links",
+      "items": [
+        { "text": "About 关于", "url": "about.html" },
+        { "text": "Contact 联系", "url": "contact.html" },
+        { "text": "Privacy 隐私", "url": "privacy.html" },
+        { "text": "Terms 条款", "url": "terms.html" }
+      ]
+    }
+  ]
+}
