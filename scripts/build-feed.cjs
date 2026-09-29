@@ -68,6 +68,17 @@ function cleanPara(text) {
   return '';
 }
 
+// 摘要提取（分层）：description > <!--more--> 之上文本 > 自动提取
+function extractExcerpt(front, body) {
+  if (front && front.description) return front.description;
+  if (body.includes('<!--more-->')) {
+    const above = body.split('<!--more-->')[0];
+    const e = cleanPara(above);
+    if (e) return e;
+  }
+  return cleanPara(body);
+}
+
 function buildFeed() {
   const files = walk(POSTS);
   const items = [];
@@ -90,7 +101,7 @@ function buildFeed() {
       category: (front && front.category) || folder,
       date: (front && front.date) || `${mt.getFullYear()}-${String(mt.getMonth() + 1).padStart(2, '0')}-${String(mt.getDate()).padStart(2, '0')}`,
       readTime: Math.max(1, Math.round(bodyChars / 280)),
-      excerpt: (front && front.description) || cleanPara(body) || fileBase,
+      excerpt: extractExcerpt(front, body) || fileBase,
     };
     if (front && Array.isArray(front.tags) && front.tags.length) item.tags = front.tags;
     if (front && front.cover) item.cover = front.cover;
