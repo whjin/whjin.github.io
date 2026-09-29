@@ -9,8 +9,10 @@
   let cat = 'all';
   let query = '';
   let shown = PAGE;
-  let loadMoreBtn = null;
   let feedList = null;
+  let sentinel = null;
+  let observer = null;
+  let loading = false;
 
   // i18n 助手：window.I18N 由 i18n/index.js 提供
   function t(key, zh) {
@@ -82,8 +84,47 @@
         feedList.appendChild(a);
       });
     }
-    if (loadMoreBtn) {
-      loadMoreBtn.classList.toggle('hidden', shown >= list.length);
+    setupInfiniteScroll();
+  }
+
+  // 下拉触底加载更多（替代 Load More 按钮）
+  function teardownInfiniteScroll() {
+    if (observer) { observer.disconnect(); observer = null; }
+    if (sentinel) { sentinel.remove(); sentinel = null; }
+  }
+
+  function loadMore() {
+    if (loading) return;
+    const list = filtered();
+    if (shown >= list.length) { teardownInfiniteScroll(); return; }
+    loading = true;
+    shown += PAGE;
+    render();
+    loading = false;
+  }
+
+  function setupInfiniteScroll() {
+    teardownInfiniteScroll();
+    const list = filtered();
+    if (shown >= list.length) return; // 已全部加载
+    sentinel = document.createElement('div');
+    sentinel.className = 'feed-sentinel';
+    sentinel.setAttribute('data-i18n', 'loading');
+    sentinel.textContent = t('loading', 'Loading… 加载中…');
+    feedList.appendChild(sentinel);
+    if (typeof IntersectionObserver === 'function') {
+      observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) loadMore();
+      }, { rootMargin: '240px 0px' });
+      observer.observe(sentinel);
+    } else {
+      // 兜底：窗口滚动
+      window.addEventListener('scroll', function onScroll() {
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 240) {
+          loadMore();
+          if (shown >= filtered().length) window.removeEventListener('scroll', onScroll);
+        }
+      });
     }
   }
 
@@ -101,15 +142,6 @@
     });
   }
 
-  function bindLoadMore() {
-    loadMoreBtn = document.getElementById('home-load-more');
-    if (!loadMoreBtn) return;
-    loadMoreBtn.addEventListener('click', () => {
-      shown += PAGE;
-      render();
-    });
-  }
-
   async function init() {
     const wrap = document.getElementById('home-feed');
     if (!wrap) return;
@@ -120,7 +152,6 @@
       allItems = Array.isArray(data.items) ? data.items : [];
       render();
       bindSearch();
-      bindLoadMore();
     } catch (err) {
       console.error('Feed 初始化失败：', err.message);
     }

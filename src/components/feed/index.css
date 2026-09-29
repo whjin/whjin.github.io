@@ -102,6 +102,18 @@ body.home-page .footer {
   box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.12);
 }
 
+/* 宽度足够时：搜索框在标题栏内居中展示 */
+@media screen and (min-width: 769px) {
+  .home-search-wrap {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(640px, calc(100% - 420px));
+    margin: 0;
+    flex: none;
+  }
+}
+
 /* .title：仅作为社交图标锚点，隐藏文字 */
 .header .title {
   margin-left: auto;
@@ -208,25 +220,14 @@ body.home-page .footer {
   padding: 40px 0;
 }
 
-/* ---- 加载更多 ---- */
-.home-load-more {
-  display: block;
-  margin: 20px auto 0;
-  background: #fff;
-  border: 1px solid #e2e2e2;
-  border-radius: 18px;
-  padding: 9px 26px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #555;
-  cursor: pointer;
-}
-.home-load-more:hover {
-  border-color: #8b5cf6;
-  color: #8b5cf6;
-}
-.home-load-more.hidden {
-  display: none;
+/* 下拉触底加载：哨兵元素（隐藏，仅触发观察） */
+.feed-sentinel {
+  height: 1px;
+  margin: 0;
+  color: #aaa;
+  font-size: 12px;
+  text-align: center;
+  padding: 14px 0;
 }
 
 /* ---- in-article 广告（全宽置底） ---- */

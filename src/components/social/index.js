@@ -14,6 +14,8 @@
 
   const GRID_ICONS = [
     { href: 'src/template/viewer.html?path=友链_link&format=html', title: 'AI应用', name: 'ai', icon: 28 },
+    { href: '', title: '微信', name: 'wechat', icon: 28, show: true },
+    { href: '', title: '打赏', name: 'reward', icon: 28, show: true },
     { href: '', title: '我的音乐', name: 'music', icon: 30 },
     { href: '', title: 'QQ音乐', name: 'qqmusic', icon: 28 },
     { href: '', title: '网易云音乐', name: 'netmusic', icon: 28 },
@@ -22,7 +24,7 @@
     { href: 'https://wuhuajin.com', title: '博客', name: 'blog', icon: 28 },
     { href: 'mailto:wuhuajin09@163.com', title: '邮箱', name: 'email', icon: 28 },
     { href: 'https://github.com/whjin', title: 'Github', name: 'github', icon: 28 },
-    { href: 'https://x.com/whjin', title: 'X / Twitter', name: 'twitter', icon: 28 },
+    { href: 'https://x.com/whjin', title: 'Twitter', name: 'twitter', icon: 28 },
   ];
 
   const titleEl = document.querySelector('.title');
@@ -138,6 +140,85 @@
     }
   });
 
+  // ---- 微信 / 打赏 二维码弹窗 ----
+  const wechatList = [
+    { src: 'src/images/social/wechat.jpg', title: '微信' },
+    { src: 'src/images/social/wechat_oa.jpg', title: '微信公众号' },
+    { src: 'src/images/social/wechat_video.jpg', title: '微信视频号' },
+  ];
+  const rewardList = [
+    { src: 'src/images/social/wx_pay.jpg', title: '微信支付' },
+    { src: 'src/images/social/ali_pay.jpg', title: '支付宝' },
+  ];
+
+  const overlayEl = document.createElement('div');
+  overlayEl.className = 'modal-overlay';
+  overlayEl.setAttribute('id', 'wechat-modal');
+  const containerEl = document.createElement('div');
+  containerEl.className = 'modal-container';
+  overlayEl.appendChild(containerEl);
+  const fullscreenOverlayEl = document.createElement('div');
+  fullscreenOverlayEl.className = 'fullscreen-modal-overlay';
+  const fullscreenImgEl = document.createElement('img');
+  fullscreenImgEl.className = 'fullscreen-modal-img';
+  fullscreenOverlayEl.appendChild(fullscreenImgEl);
+  document.body.appendChild(fullscreenOverlayEl);
+  document.body.appendChild(overlayEl);
+
+  function renderQrcodeList(list) {
+    containerEl.innerHTML = '';
+    const fragment1 = document.createDocumentFragment();
+    list.forEach((q) => {
+      const imgEl = document.createElement('img');
+      imgEl.src = q.src;
+      imgEl.alt = imgEl.title = q.title;
+      fragment1.appendChild(imgEl);
+      imgEl.addEventListener('click', (e) => {
+        e.stopPropagation();
+        fullscreenImgEl.src = q.src;
+        fullscreenImgEl.alt = fullscreenImgEl.title = q.title;
+        fullscreenOverlayEl.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    containerEl.appendChild(fragment1);
+  }
+
+  function openQrModal(linkEl, list) {
+    renderQrcodeList(list);
+    overlayEl.classList.add('show');
+    const r = linkEl.getBoundingClientRect();
+    const mw = containerEl.offsetWidth || 280;
+    const iconCx = r.left + r.width / 2;
+    let left = iconCx - mw / 2;
+    left = Math.max(8, Math.min(left, window.innerWidth - mw - 8));
+    containerEl.style.setProperty('--triangle-left', Math.max(8, iconCx - left) + 'px');
+    overlayEl.style.left = left + 'px';
+    overlayEl.style.top = (r.bottom + 10) + 'px';
+  }
+
+  document.addEventListener('click', () => {
+    overlayEl.classList.remove('show');
+  });
+  overlayEl.addEventListener('click', (e) => e.stopPropagation());
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && fullscreenOverlayEl.classList.contains('show')) {
+      fullscreenOverlayEl.classList.remove('show');
+      document.body.style.overflow = '';
+    }
+  });
+  fullscreenOverlayEl.addEventListener('click', (e) => {
+    if (e.target === fullscreenOverlayEl) {
+      fullscreenOverlayEl.classList.remove('show');
+      document.body.style.overflow = '';
+    }
+  });
+  fullscreenImgEl.addEventListener('click', (e) => {
+    e.stopPropagation();
+    fullscreenOverlayEl.classList.remove('show');
+    document.body.style.overflow = '';
+  });
+
   // ---- 右侧社交卡片网格（供 sidebar 调用）----
   window.SocialGrid = {
     renderInto(el) {
@@ -150,6 +231,14 @@
             ev.preventDefault();
             ev.stopPropagation();
             togglePlayer('.' + s.name + '-container');
+          } else if (s.name === 'wechat') {
+            ev.preventDefault();
+            ev.stopPropagation();
+            openQrModal(a, wechatList);
+          } else if (s.name === 'reward') {
+            ev.preventDefault();
+            ev.stopPropagation();
+            openQrModal(a, rewardList);
           }
         });
         grid.appendChild(a);

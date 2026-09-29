@@ -16,6 +16,7 @@
     featured_badge: ['Featured', '精选'],
     cat_all: ['All', '全部'],
     load_more: ['Load more', '加载更多'],
+    loading: ['Loading…', '加载中…'],
     feed_empty: ['No articles found. 没有找到相关文章。', '没有找到相关文章。'],
     sb_about: ['About', '关于'],
     sb_happening: ["What's happening", '近期动态'],
