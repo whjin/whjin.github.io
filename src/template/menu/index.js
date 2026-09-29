@@ -216,3 +216,6 @@ function closeModal() {
   modalMask.classList.remove('show');
   document.body.style.overflow = '';
 }
+
+// 暴露给首页在 home.html 挂载后调用（menu/index.js 加载早于卡片容器出现）
+window.MenuGrid = { generateCard };

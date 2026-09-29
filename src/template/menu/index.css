@@ -4,7 +4,11 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1em;
-  padding: 1em;
+  padding: 8px 20px 40px;
+}
+.menu-card-section {
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .card-item {
@@ -119,17 +123,33 @@
   margin-right: 2px;
 }
 .card-title {
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  font-size: 1em;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  max-width: 70%;
+  padding: 4px 11px;
+  border-radius: 5px;
+  background: #1a73e8;
+  border: none;
+  color: #fff;
+  font-size: 0.86em;
   font-weight: 600;
-  border-bottom: 2px solid #b1c8cd;
-  flex-shrink: 0;
+  line-height: 1.4;
+  height: auto;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  padding: 0 0.5em;
+  box-shadow: 0 1px 3px rgba(26, 115, 232, 0.35);
+}
+/* 蓝 tag 内的计数徽标与星标改为白字，保证对比度 */
+.card-title .count-badge {
+  color: #fff;
+}
+.card-title .sticky-mark::before {
+  color: #fff;
 }
 .count-badge {
   font-size: 12px;
@@ -158,7 +178,7 @@
   overflow: auto;
   white-space: pre-wrap;
   word-break: break-word;
-  padding-right: 0.5em;
+  padding: 2.9em 0.5em 0.5em 0.9em;
 }
 .card-list::-webkit-scrollbar {
   width: 0.3em;

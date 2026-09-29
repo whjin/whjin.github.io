@@ -393,8 +393,7 @@
         "category": "JavaScript",
         "date": "2026-09-11",
         "readTime": 40,
-        "excerpt": "javascript",
-        "featured": true
+        "excerpt": "javascript"
       },
       {
         "title": "设计模式文档",
@@ -410,8 +409,7 @@
         "category": "Node",
         "date": "2026-09-11",
         "readTime": 8,
-        "excerpt": "全栈图书管理系统",
-        "featured": true
+        "excerpt": "全栈图书管理系统"
       },
       {
         "title": "Node.js文档",
@@ -459,8 +457,7 @@
         "category": "Web3",
         "date": "2026-09-11",
         "readTime": 20,
-        "excerpt": "Solidity面向合约、为实现智能合约而创建的高级编程语言。受到了 C++，Python 和 JavaScript 语…",
-        "featured": true
+        "excerpt": "Solidity面向合约、为实现智能合约而创建的高级编程语言。受到了 C++，Python 和 JavaScript 语…"
       },
       {
         "title": "Web3文档",
@@ -492,8 +489,7 @@
         "category": "WebRTC",
         "date": "2026-09-11",
         "readTime": 12,
-        "excerpt": "一、自适应码率调整（ABR）：根据网络状况动态调整编码码率",
-        "featured": true
+        "excerpt": "一、自适应码率调整（ABR）：根据网络状况动态调整编码码率"
       },
       {
         "title": "实战项目文档",
@@ -654,28 +650,6 @@
         "date": "2026-05-05",
         "readTime": 1,
         "excerpt": "Cesium文档"
-      }
-    ]
-  },
-  {
-    "title": "关于",
-    "tagName": "ul",
-    "items": [
-      {
-        "title": "隐私政策",
-        "url": "privacy.html"
-      },
-      {
-        "title": "服务条款",
-        "url": "terms.html"
-      },
-      {
-        "title": "关于我",
-        "url": "about.html"
-      },
-      {
-        "title": "联系我",
-        "url": "contact.html"
       }
     ]
   }

@@ -67,6 +67,3 @@ for (const file of walk(POSTS)) {
   if (!fs.existsSync(file)) missing++;
   added++;
 }
-
-console.log('FRONT_MATTER_ADDED=' + added + ' SKIPPED(已有)=' + skipped + ' MISSING=' + missing);
-console.log('FEATURED=', [...FEATURED].join('; '));

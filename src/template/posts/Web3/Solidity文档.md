@@ -3,7 +3,6 @@ title: Solidity文档
 date: 2026-09-11
 category: Web3
 description: Solidity面向合约、为实现智能合约而创建的高级编程语言。受到了 C++，Python 和 JavaScript 语…
-sticky: 1
 ---
 
 > `Solidity`面向合约、为实现智能合约而创建的高级编程语言。受到了 `C++`，`Python` 和 `JavaScript` 语言的影响，设计的目的是能在以太坊虚拟机（`EVM`）上运行。  

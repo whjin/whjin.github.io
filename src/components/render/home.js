@@ -3,6 +3,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     .then(() => {
       if (window.HomeFeed && window.HomeFeed.init) window.HomeFeed.init();
       if (window.HomeSidebar && window.HomeSidebar.init) window.HomeSidebar.init();
+      if (window.MenuGrid && window.MenuGrid.generateCard) window.MenuGrid.generateCard();
       if (typeof generateAPlayer === 'function') generateAPlayer();
       // 触发 in-article 广告单元填充
       try {

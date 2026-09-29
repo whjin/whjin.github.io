@@ -3,7 +3,6 @@ title: WebRTC性能优化
 date: 2026-09-11
 category: WebRTC
 description: 一、自适应码率调整（ABR）：根据网络状况动态调整编码码率
-sticky: 1
 ---
 
 ### 一、自适应码率调整（`ABR`）：根据网络状况动态调整编码码率

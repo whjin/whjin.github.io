@@ -3,7 +3,6 @@ title: Node.js实战
 date: 2026-09-11
 category: Node
 description: 全栈图书管理系统
-sticky: 1
 ---
 
 # 全栈图书管理系统
