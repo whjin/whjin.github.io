@@ -460,8 +460,15 @@ a.feed-card:hover {
     padding: 20px 16px 40px;
   }
 
+  /* 方案1：移动端右侧信息栏提前 → 头部→右侧→左侧→底部（order 重排） */
   .home-sidebar {
-    margin-top: 8px;
+    order: -1;
+    margin-top: 0;
+  }
+
+  .home-feed {
+    order: 1;
+    margin-top: 18px;
   }
 }
 
