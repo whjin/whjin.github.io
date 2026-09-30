@@ -30,13 +30,20 @@
       .replace(/"/g, '&quot;');
   }
 
+  function activeFilter() {
+    return cat !== 'all' || !!query;
+  }
+
   function filtered() {
     let list = allItems.slice();
-    if (cat !== 'all') list = list.filter((it) => it.category === cat);
+    if (cat !== 'all') {
+      // 统一匹配：文章分类 / 所属卡片分组(核心推荐/推荐/我的/站点/原创文章) / 文章标签 均可命中
+      list = list.filter((it) => it.category === cat || it._group === cat || (it.tags || []).includes(cat));
+    }
     if (query) {
       const q = query.toLowerCase();
       list = list.filter((it) => {
-        const hay = (it.title + ' ' + (it.category || '') + ' ' + (it.tags || []).join(' ')).toLowerCase();
+        const hay = (it.title + ' ' + (it.category || '') + ' ' + (it._group || '') + ' ' + (it.tags || []).join(' ') + ' ' + (it.description || '')).toLowerCase();
         return hay.includes(q);
       });
     }
@@ -88,7 +95,8 @@
     if (!feedList) feedList = document.getElementById('home-feed-list');
     if (!feedList) return;
     const list = filtered();
-    const slice = list.slice(0, shown);
+    // 筛选/搜索激活时一次性全量渲染所有匹配项（含未加载过的），保证"同类查找"能找到全部；默认浏览才分页触底加载
+    const slice = activeFilter() ? list : list.slice(0, shown);
     feedList.innerHTML = '';
     if (!slice.length) {
       feedList.innerHTML = '<div class="feed-empty">' + esc(t('feed_empty', 'No articles found. 没有找到相关文章。')) + '</div>';
@@ -114,6 +122,7 @@
 
   function loadMore() {
     if (loading) return;
+    if (activeFilter()) { teardownInfiniteScroll(); return; } // 筛选状态已全量渲染，不触底加载
     const list = filtered();
     if (shown >= list.length) { teardownInfiniteScroll(); return; }
     loading = true;
@@ -124,6 +133,7 @@
 
   function setupInfiniteScroll() {
     teardownInfiniteScroll();
+    if (activeFilter()) return; // 筛选状态一次性全量渲染，不启用触底加载
     const list = filtered();
     if (shown >= list.length) return; // 已全部加载
     sentinel = document.createElement('div');
@@ -186,11 +196,11 @@
         const sb = b.sticky === undefined ? Infinity : b.sticky;
         return sa - sb;
       });
-      // 扁平化所有卡的条目（保持 data.json 内顺序），卡标题作为链接条目的分类徽标
+      // 扁平化所有卡的条目（保持 data.json 内顺序），卡标题作为链接条目的分类徽标（_group 始终记录所属分组）
       allItems = [];
       cards.forEach(function (c) {
         (c.items || []).forEach(function (it) {
-          if (!it.category) it._group = c.title;
+          it._group = c.title;
           allItems.push(it);
         });
       });

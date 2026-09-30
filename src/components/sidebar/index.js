@@ -47,6 +47,97 @@
     return block;
   }
 
+  // 单条事件卡：图片 + 标题 + 描述（dev.to Happening Now 式），图片与标题均可跳转，描述3行省略+悬停title全文
+  function makeEventCard(it) {
+    const card = document.createElement('div');
+    card.className = 'sb-event';
+    const href = it.url || '#';
+    if (it.image) {
+      const a = document.createElement('a');
+      a.className = 'sb-event-img';
+      a.href = href;
+      const img = document.createElement('img');
+      img.src = it.image;
+      img.alt = it.title || '';
+      img.loading = 'lazy';
+      a.appendChild(img);
+      card.appendChild(a);
+    }
+    if (it.title) {
+      const at = document.createElement('a');
+      at.className = 'sb-event-title';
+      at.href = href;
+      at.textContent = it.title;
+      card.appendChild(at);
+    }
+    if (it.desc) {
+      const p = document.createElement('p');
+      p.className = 'sb-event-desc';
+      p.textContent = it.desc;
+      p.title = it.desc; // 悬停 title 显示完整描述
+      card.appendChild(p);
+    }
+    return card;
+  }
+
+  // 事件/动态卡片：默认只显示1条，条目数>1时在标题右侧提供「更多 ›」按钮展开其余内容（省空间，利于移动端）
+  // all:true → 默认全部显示、不提供「更多」按钮；all:false/缺省 → 收起为1条 + 「更多」
+  function renderEvent(section) {
+    const block = document.createElement('div');
+    block.className = 'sb-block';
+    const items = section.items || [];
+    const count = items.length;
+    const showAll = section.all === true;
+    // 标题行：标题 + （条目>1且非all时）右侧「更多 ›」按钮
+    const head = document.createElement('div');
+    head.className = 'sb-event-head';
+    const h = document.createElement('h3');
+    h.dataset.i18n = section.i18n_title || '';
+    h.textContent = t(section.i18n_title || '', section.title || '');
+    head.appendChild(h);
+    let moreBtn = null;
+    let extraWrap = null;
+    if (count > 1 && !showAll) {
+      const ml = (function () {
+        const v = (window.I18N && window.I18N.t) ? window.I18N.t('sb_more') : '';
+        return (v && v !== 'sb_more') ? v : '更多';
+      })();
+      moreBtn = document.createElement('button');
+      moreBtn.className = 'sb-event-more';
+      moreBtn.type = 'button';
+      moreBtn.innerHTML = '<span class="sb-event-more-text">' + esc(ml) + '</span><span class="sb-event-arrow">›</span>';
+      head.appendChild(moreBtn);
+    }
+    block.appendChild(head);
+    // 主列表：all 或只有1条 → 全部显示；否则只显示第1条
+    const wrap = document.createElement('div');
+    wrap.className = 'sb-events';
+    if (showAll || count <= 1) {
+      items.forEach((it) => wrap.appendChild(makeEventCard(it)));
+    } else {
+      wrap.appendChild(makeEventCard(items[0]));
+    }
+    block.appendChild(wrap);
+    // 边框：仅当可见内容多于1条时呈现（sb-events-multi），收起为1条时去掉
+    block.classList.toggle('sb-events-multi', (showAll || count <= 1) ? count > 1 : false);
+    // 其余条目：默认隐藏，点「更多」展开
+    if (count > 1 && !showAll) {
+      extraWrap = document.createElement('div');
+      extraWrap.className = 'sb-events-extra';
+      extraWrap.hidden = true;
+      items.slice(1).forEach((it) => extraWrap.appendChild(makeEventCard(it)));
+      block.appendChild(extraWrap);
+      moreBtn.addEventListener('click', () => {
+        const isOpen = !extraWrap.hidden;
+        extraWrap.hidden = isOpen;
+        moreBtn.classList.toggle('open', !isOpen);
+        // 展开(>1条)加边框，收起(1条)去边框
+        block.classList.toggle('sb-events-multi', !isOpen);
+      });
+    }
+    return block;
+  }
+
   function renderList(section) {
     const block = makeBlock(section);
     const ul = document.createElement('ul');
@@ -87,11 +178,13 @@
     return block;
   }
 
-  function renderTags(section, autoTags) {
+  // 热门标签：menu 卡标题（同类查找，点击定位到该分组的文章）+ 文章标签
+  function renderTags(section, autoTags, menuTitles) {
     const block = makeBlock(section);
     const wrap = document.createElement('div');
     wrap.className = 'sb-tags';
-    const tags = (section.tags && section.tags.length ? section.tags : autoTags).slice(0, 10);
+    const base = (section.tags && section.tags.length ? section.tags : autoTags);
+    const tags = (menuTitles || []).concat(base).slice(0, 16);
     tags.forEach((tg) => {
       const b = document.createElement('span');
       b.className = 'sb-tag';
@@ -141,7 +234,13 @@
     return block;
   }
 
+  // 广告卡片：若配置了 items（图片+标题+描述，同正在进行/近期动态结构）则复用 event 渲染（支持收起/更多/all）；
+  // 图片和标题都为空 → 回退到当前广告位内容（AdSense 或占位）
   function renderAd(section) {
+    const adItems = (section.items || []).filter((it) => it.image || it.title);
+    if (adItems.length) {
+      return renderEvent(Object.assign({}, section, { items: adItems }));
+    }
     const block = makeBlock(section);
     if (section.ad_slot) {
       const ins = document.createElement('ins');
@@ -179,9 +278,14 @@
     const wrap = document.getElementById('home-sidebar');
     if (!wrap) return;
     let autoTags = [];
+    let menuTitles = [];
     let catCounts = [];
     try {
       const menu = await (await fetch('src/template/menu/data.json')).json();
+      // 所属卡片分组标题（核心推荐/推荐/我的/站点/原创文章），作为"同类查找"入口加入热门标签
+      menuTitles = (Array.isArray(menu) ? menu : [])
+        .filter((c) => c.show !== false && c.items && c.items.length > 0)
+        .map((c) => c.title);
       const articleCard = (Array.isArray(menu) ? menu : []).find((c) => c.title === '原创文章');
       const feedItems = (articleCard && Array.isArray(articleCard.items)) ? articleCard.items : [];
       const tagCounts = new Map();
@@ -199,9 +303,10 @@
       (data.sections || []).forEach((sec) => {
         let el = null;
         if (sec.type === 'intro') el = renderIntro(sec);
+        else if (sec.type === 'event') el = renderEvent(sec);
         else if (sec.type === 'list') el = renderList(sec);
         else if (sec.type === 'notice') el = renderNotice(sec);
-        else if (sec.type === 'tags') el = renderTags(sec, autoTags);
+        else if (sec.type === 'tags') el = renderTags(sec, autoTags, menuTitles);
         else if (sec.type === 'categories') el = renderCategories(sec, catCounts);
         else if (sec.type === 'social') el = renderSocial(sec);
         else if (sec.type === 'ads') el = renderAd(sec);

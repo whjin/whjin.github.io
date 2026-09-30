@@ -207,4 +207,3 @@ for (const c of menu) {
 }
 
 fs.writeFileSync(MENU_PATH, JSON.stringify(menu, null, 2) + '\n', 'utf8');
-console.log(`menu/data.json 规范化完成：原创文章 ${items.length} 篇，其余卡条目已统一 feed 结构（description 字段）。`);

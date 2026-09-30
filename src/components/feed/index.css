@@ -338,10 +338,116 @@ a.feed-card:hover {
 .sb-block h3 {
   font-size: 14px;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 0.5px;
   color: #8b5cf6;
   margin: 0 0 10px;
+}
+
+/* 事件/动态卡片：图片 + 标题 + 描述（dev.to Happening Now 式），图片与标题均可跳转 */
+.sb-events {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sb-event {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px;
+  /* 边框仅当显示多于1条内容时呈现（sb-events-multi 由 JS 控制），布局不变 */
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+.sb-events-multi .sb-event {
+  border-color: #8b5cf6;
+}
+
+.sb-event-img {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.sb-event-img img {
+  width: 100%;
+  height: auto;
+  max-height: 130px;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+}
+
+.sb-event-title {
+  color: #3b82f6;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.sb-event-title:hover {
+  color: #2563eb;
+  background: transparent;
+}
+
+p.sb-event-desc {
+  margin: 0;
+  color: #71717a;
+  font-size: 14px;
+  line-height: 1.55;
+  /* 描述超3行省略，悬停 title 显示全文 */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 事件卡标题行 + 「更多 ›」展开按钮 */
+.sb-event-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.sb-event-head h3 {
+  margin: 0;
+}
+.sb-event-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  border: none;
+  background: transparent;
+  color: #8b5cf6;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 2px 4px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.sb-event-more:hover {
+  background: rgba(139, 92, 246, 0.08);
+}
+.sb-event-more .sb-event-arrow {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+.sb-event-more.open .sb-event-arrow {
+  transform: rotate(90deg);
+}
+.sb-events-extra {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 14px;
+}
+.sb-events-extra[hidden] {
+  display: none;
 }
 
 .sb-intro {
@@ -361,6 +467,8 @@ a.feed-card:hover {
   font-size: 13.5px;
   color: #555;
   line-height: 1.6;
+  /* ①换行符支持：让 data.json 中的 \r\n 渲染为真实换行 */
+  white-space: pre-line;
 }
 
 .sb-list {
