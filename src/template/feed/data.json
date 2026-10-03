@@ -3,10 +3,12 @@
     "sticky": 1,
     "title": "核心推荐",
     "show": true,
+    "home": false,
+    "tagName": "ol",
     "items": [
       {
         "title": "一站式AI应用平台",
-        "url": "/src/template/viewer.html?path=友链_link&format=html",
+        "url": "/view?path=友链_link&format=html",
         "category": "核心推荐",
         "description": "AI应用集 - 一站式AI应用平台",
         "marked": true
@@ -114,6 +116,8 @@
     "sticky": 2,
     "title": "推荐",
     "show": true,
+    "home": false,
+    "tagName": "ol",
     "items": [
       {
         "title": "潮际好麦",
@@ -258,10 +262,13 @@
   {
     "sticky": 3,
     "title": "我的",
+    "show": false,
+    "home": true,
+    "tagName": "ol",
     "items": [
       {
         "title": "原创诗词",
-        "url": "/src/template/viewer.html?path=文学_原创诗词",
+        "url": "/view?path=文学_原创诗词",
         "category": "文学",
         "date": "2026-09-11",
         "readTime": 57,
@@ -269,22 +276,15 @@
         "marked": true
       },
       {
-        "title": "吴华锦的个人主页",
-        "url": "https://wuhuajin.com/",
-        "category": "我的",
-        "description": "吴华锦的个人主页 « 吴华锦",
-        "marked": true
-      },
-      {
         "title": "Github",
         "url": "https://github.com/whjin",
         "category": "我的",
-        "description": "",
+        "description": "github",
         "marked": true
       },
       {
         "title": "中文简历",
-        "url": "/src/template/viewer.html?path=简历_中文简历",
+        "url": "/view?path=简历_中文简历",
         "category": "简历",
         "date": "2026-09-11",
         "readTime": 10,
@@ -293,13 +293,13 @@
       },
       {
         "title": "中文简历PDF",
-        "url": "/src/template/viewer.html?path=简历_中文简历PDF&format=pdf",
+        "url": "/view?path=简历_中文简历PDF&format=pdf",
         "category": "我的",
         "description": ""
       },
       {
         "title": "英文简历",
-        "url": "/src/template/viewer.html?path=简历_英文简历",
+        "url": "/view?path=简历_英文简历",
         "category": "简历",
         "date": "2026-09-11",
         "readTime": 10,
@@ -307,33 +307,35 @@
       },
       {
         "title": "英文简历PDF",
-        "url": "/src/template/viewer.html?path=简历_英文简历PDF&format=pdf",
+        "url": "/view?path=简历_英文简历PDF&format=pdf",
         "category": "我的",
         "description": ""
       }
     ]
   },
   {
-    "sticky": 5,
+    "sticky": 4,
     "title": "站点",
+    "home": true,
+    "tagName": "ol",
     "items": [
       {
         "title": "技术文章",
-        "url": "/src/template/viewer.html?path=文章_article&format=html",
+        "url": "/view?path=文章_article&format=html",
         "category": "站点",
         "description": "",
         "marked": true
       },
       {
         "title": "技术教程",
-        "url": "/src/template/viewer.html?path=教程_tutorial&format=html",
+        "url": "/view?path=教程_tutorial&format=html",
         "category": "站点",
         "description": "",
         "marked": true
       },
       {
         "title": "IT工具合集",
-        "url": "/src/template/viewer.html?path=工具_tool&format=html",
+        "url": "/view?path=工具_tool&format=html",
         "category": "站点",
         "description": "",
         "marked": true
@@ -372,8 +374,11 @@
     ]
   },
   {
-    "sticky": 6,
+    "sticky": 5,
     "title": "原创文章",
+    "type": "articles",
+    "home": true,
+    "tagName": "ol",
     "items": [
       {
         "title": "Node.js进阶",

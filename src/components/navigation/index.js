@@ -7,7 +7,7 @@ function handleNavigation() {
     },
     {
       src: '/src/images/icons/back.png',
-      alt: '返回上一页',
+      alt: '返回首页',
       class: 'nav-back',
     },
   ];
@@ -37,7 +37,7 @@ function handleNavigation() {
 
   function checkIsLinkPage() {
     if (document.querySelector('.link-container')) return true;
-    return pathname.includes('viewer.html') && search.includes('&format=html');
+    return (pathname.includes('viewer.html') || pathname === '/view' || pathname.startsWith('/view')) && search.includes('&format=html');
   }
 
   const isLinkPage = checkIsLinkPage();
@@ -45,13 +45,9 @@ function handleNavigation() {
   const hasNavigateFlag = localStorage.getItem('navigateToLink') || SHOW_NAVIGATION;
 
   if (isLinkPage) {
-    if (hasNavigateFlag) {
-      navContainer.style.display = '';
-      navContainer.dataset.forceHidden = 'false';
-    } else {
-      navContainer.style.display = 'none';
-      navContainer.dataset.forceHidden = 'true';
-    }
+    // 二级页（&format=html）：显示返回首页按钮（复用旧项目 navigation 返回逻辑）
+    navContainer.style.display = '';
+    navContainer.dataset.forceHidden = 'false';
   }
 
   if (!isMobileDevice && navToc) {

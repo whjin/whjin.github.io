@@ -12,7 +12,7 @@
       `;
     } else {
       return `
-        <span class="beian-text" style="color:#007bff;cursor:pointer;">粤ICP备2026112434号</span>
+        <span class="beian-text">粤ICP备2026112434号</span>
       `;
     }
   }

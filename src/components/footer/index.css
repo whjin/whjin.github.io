@@ -12,7 +12,6 @@
   row-gap: 2px;
   padding: 5px 20px 6px;
   white-space: nowrap;
-  overflow: auto;
   box-sizing: border-box;
 }
 
@@ -46,8 +45,7 @@
   color: #007bff;
 }
 
-.footer::-webkit-scrollbar,
-pre::-webkit-scrollbar,
-blockquote::-webkit-scrollbar {
-  display: none;
+.footer-content .beian-text {
+  color: #007bff;
+  cursor: pointer;
 }

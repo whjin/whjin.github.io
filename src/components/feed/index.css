@@ -34,7 +34,7 @@ body.home-page .header {
 }
 
 body.home-page .footer {
-  position: sticky;
+  position: fixed;
   bottom: 0;
   z-index: 27;
 }
@@ -120,13 +120,10 @@ body.home-page .footer {
   flex-shrink: 0;
 }
 
-/* ---- 顶部导航栏模块已移除（category 栏不再渲染）---- */
-
-/* ---- 两栏主体 ---- */
 .home-two-col {
   width: 100%;
   margin: 0;
-  padding: 24px 20px 110px;
+  padding: 24px 20px 50px;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 360px;
@@ -141,9 +138,6 @@ body.home-page .footer {
   min-width: 0;
 }
 
-/* ---- 置顶精选模块已移除（由文章卡置顶 + ★ Featured 标识实现，避免重复内容）---- */
-
-/* ---- 文章流卡片（Dev.to 风格：单数据集按字段条件渲染，等宽、高度自适应） ---- */
 #home-feed-list {
   display: flex;
   flex-direction: column;
@@ -163,7 +157,6 @@ a.feed-card {
   transition: box-shadow 0.18s, border-color 0.18s, background-color 0.18s, transform 0.18s;
 }
 
-/* Dev.to 风格 hover：CSS 变量控制（bg/border/shadow/color） */
 a.feed-card:hover {
   background-color: var(--card-bg-hover, #fcfcfd);
   border-color: var(--card-border-hover, #d0d0d0);
@@ -172,7 +165,6 @@ a.feed-card:hover {
   transform: translateY(-2px);
 }
 
-/* 有封面：左图右文（图片高度随右侧内容自适应，封顶 240px） */
 .feed-card.fc-has-cover {
   display: flex;
 }
@@ -193,13 +185,11 @@ a.feed-card:hover {
   align-self: center;
 }
 
-/* 无封面：保持当前布局（仅内容区） */
 .feed-card .fc-body {
   flex: 1;
   padding: 22px 24px;
 }
 
-/* 标题行：左侧标题，右侧「分类+精选」标识 */
 .feed-card .fc-title-row {
   display: flex;
   justify-content: space-between;
@@ -270,7 +260,6 @@ a.feed-card:hover {
   padding: 2px 8px;
 }
 
-/* 底部信息栏：左侧互动统计，右侧日期+阅读时长 */
 .feed-card .fc-meta {
   display: flex;
   align-items: center;
@@ -303,7 +292,6 @@ a.feed-card:hover {
   padding: 40px 0;
 }
 
-/* 下拉触底加载：哨兵元素（隐藏，仅触发观察） */
 .feed-sentinel {
   height: 1px;
   margin: 0;
@@ -313,15 +301,12 @@ a.feed-card:hover {
   padding: 14px 0;
 }
 
-/* ---- in-article 广告（全宽置底） ---- */
 .home-ad-in-article {
   width: 100%;
   margin: 0;
-  padding: 0 20px 120px;
   box-sizing: border-box;
 }
 
-/* ---- 右栏：dev.to 式独立带边框区块（每个信息区成块） ---- */
 .home-sidebar {
   display: flex;
   flex-direction: column;
@@ -336,14 +321,13 @@ a.feed-card:hover {
 }
 
 .sb-block h3 {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.5px;
   color: #8b5cf6;
   margin: 0 0 10px;
 }
 
-/* 事件/动态卡片：图片 + 标题 + 描述（dev.to Happening Now 式），图片与标题均可跳转 */
 .sb-events {
   display: flex;
   flex-direction: column;
@@ -354,13 +338,16 @@ a.feed-card:hover {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding: 12px;
+  /* 内边距仅当显示边框（sb-events-multi）时生效，单条内容不占内边距 */
+  padding: 0;
   /* 边框仅当显示多于1条内容时呈现（sb-events-multi 由 JS 控制），布局不变 */
   border: 2px solid transparent;
   border-radius: 8px;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, padding 0.2s ease;
 }
+
 .sb-events-multi .sb-event {
+  padding: 12px;
   border-color: #8b5cf6;
 }
 
@@ -382,7 +369,7 @@ a.feed-card:hover {
 .sb-event-title {
   color: #3b82f6;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.4;
   text-decoration: none;
 }
@@ -395,9 +382,8 @@ a.feed-card:hover {
 p.sb-event-desc {
   margin: 0;
   color: #71717a;
-  font-size: 14px;
-  line-height: 1.55;
-  /* 描述超3行省略，悬停 title 显示全文 */
+  font-size: 13px;
+  line-height: 1.5;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -412,9 +398,11 @@ p.sb-event-desc {
   gap: 8px;
   margin-bottom: 10px;
 }
+
 .sb-event-head h3 {
   margin: 0;
 }
+
 .sb-event-more {
   display: inline-flex;
   align-items: center;
@@ -428,24 +416,29 @@ p.sb-event-desc {
   cursor: pointer;
   border-radius: 6px;
 }
+
 .sb-event-more:hover {
   background: rgba(139, 92, 246, 0.08);
 }
+
 .sb-event-more .sb-event-arrow {
   display: inline-block;
   font-size: 14px;
   line-height: 1;
   transition: transform 0.2s ease;
 }
+
 .sb-event-more.open .sb-event-arrow {
   transform: rotate(90deg);
 }
+
 .sb-events-extra {
   display: flex;
   flex-direction: column;
   gap: 14px;
   margin-top: 14px;
 }
+
 .sb-events-extra[hidden] {
   display: none;
 }
@@ -464,10 +457,9 @@ p.sb-event-desc {
 }
 
 .sb-intro .sb-text {
-  font-size: 13.5px;
+  font-size: 14px;
   color: #555;
   line-height: 1.6;
-  /* ①换行符支持：让 data.json 中的 \r\n 渲染为真实换行 */
   white-space: pre-line;
 }
 

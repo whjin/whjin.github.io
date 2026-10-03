@@ -1,19 +1,14 @@
-/* 首页社交功能：
- * - 头部标题栏 .social 仅保留「搜索 / 订阅 / 语言切换」三图标（+ 移动端三横杠）。
- * - 其余社交图标（音乐/QQ/网易/爱发电/微博/博客/邮箱/GitHub/X 等）移至主体右侧新增的
- *   「社交」卡片平铺展示，由 window.SocialGrid.renderInto(el) 注入，供 sidebar 组件调用。
- */
 (function () {
   'use strict';
 
   const HEADER_ICONS = [
-    { name: 'search', title: '搜索 / Search', icon: 26 },
     { name: 'subscribe', title: '订阅 / Subscribe', icon: 28 },
-    { name: 'link', title: '语言 / Language', icon: 28 },
+    { name: 'lang', title: '语言 / Language', icon: 28 },
+    { name: 'search', title: '搜索 / Search', icon: 28 },
   ];
 
   const GRID_ICONS = [
-    { href: 'src/template/viewer.html?path=友链_link&format=html', title: 'AI应用', name: 'ai', icon: 28 },
+    { href: '/view?path=友链_link&format=html', title: 'AI应用', name: 'ai', icon: 28 },
     { href: '', title: '微信', name: 'wechat', icon: 28, show: true },
     { href: '', title: '打赏', name: 'reward', icon: 28, show: true },
     { href: '', title: '我的音乐', name: 'music', icon: 30 },
@@ -134,7 +129,7 @@
       window.location.href = 'mailto:wuhuajin09@163.com?subject=Subscribe';
       return;
     }
-    if (className.includes('icon-link')) {
+    if (className.includes('icon-lang')) {
       if (window.I18N && window.I18N.toggle) window.I18N.toggle();
       return;
     }

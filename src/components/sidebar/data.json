@@ -5,7 +5,7 @@
       "i18n_title": "sb_about",
       "title": "About",
       "avatar": "/src/images/favicon.png",
-      "text": "吴华锦 · 以码为笔，写意人间。\r\n雅致寓于高阁渔舟唱晚，古典悠然；\r\n格调外发园林绿树萦绕，馥郁清香。",
+      "text": "吴华锦 | 锦绣年华・写意人间。\r\n雅致寓于高阁渔舟唱晚，古典悠然；\r\n格调外发园林绿树萦绕，馥郁清香。",
       "link": {
         "text": "关于我 About →",
         "url": "about.html"
@@ -28,22 +28,15 @@
       "title": "Categories"
     },
     {
-      "type": "ads",
-      "i18n_title": "sb_ads",
-      "title": "Advertisement",
-      "ad_client": "ca-pub-3179609405594046",
-      "ad_slot": ""
-    },
-    {
       "type": "event",
       "i18n_title": "sb_now",
       "title": "Happening Now! 🚀",
       "items": [
         {
           "image": "/src/images/favicon.png",
-          "title": "新文章持续更新中",
+          "title": "最新资源持续更新中...",
           "desc": "关注本站获取最新的前端与 AI 开发内容。",
-          "url": "contact.html"
+          "url": "/view?path=资源_resource&format=html"
         }
       ]
     },
@@ -56,19 +49,19 @@
           "image": "https://img4.kuwo.cn/star/albumcover/500/s4s14/74/267013878.jpg",
           "title": "AI 应用开发学习路线图",
           "desc": "从零到实战的 AI 应用开发学习路线图已上线：平台、模型、工程化与实战项目。",
-          "url": "/src/template/viewer.html?path=AI_AI应用开发学习路线图"
+          "url": "/view?path=AI_AI应用开发学习路线图"
         },
         {
           "image": "/src/images/favicon.png",
           "title": "Node.js 工程化实战持续更新",
           "desc": "Node.js 工程化实战系列持续更新，覆盖全栈图书管理系统与工程实践。",
-          "url": "/src/template/viewer.html?path=Node_Node.js实战"
+          "url": "/view?path=Node_Node.js实战"
         },
         {
           "image": "/src/images/favicon.png",
           "title": "Web3 / 智能合约系列新增",
           "desc": "Web3 与智能合约系列新增内容：从 Solidity 语法到链上应用开发。",
-          "url": "/src/template/viewer.html?path=Web3_智能合约"
+          "url": "/view?path=Web3_智能合约"
         }
       ]
     },
@@ -81,7 +74,7 @@
           "image": "/src/images/favicon.png",
           "title": "WebRTC 性能优化实战解析",
           "desc": "直播已上线，支持随时回放（On demand）：自适应码率、RTT 与丢包调优实战。",
-          "url": "/src/template/viewer.html?path=WebRTC_WebRTC性能优化"
+          "url": "/view?path=WebRTC_WebRTC性能优化"
         },
         {
           "image": "/src/images/favicon.png",
@@ -90,6 +83,13 @@
           "url": "#"
         }
       ]
+    },
+    {
+      "type": "ads",
+      "i18n_title": "sb_ads",
+      "title": "Advertisement",
+      "ad_client": "ca-pub-3179609405594046",
+      "ad_slot": ""
     },
     {
       "type": "links",

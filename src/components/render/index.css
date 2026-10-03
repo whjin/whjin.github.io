@@ -198,7 +198,7 @@ a:hover {
   position: sticky;
   float: right;
   margin-right: 20px;
-  bottom: 78px;
+  bottom: 66px;
   width: 40px;
   height: 40px;
   padding: 5px;
@@ -389,7 +389,7 @@ a:hover {
 
   .scroll-top {
     right: 20px;
-    bottom: 78px;
+    bottom: 66px;
     z-index: 60;
   }
 

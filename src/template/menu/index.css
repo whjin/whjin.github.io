@@ -4,11 +4,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1em;
-  padding: 8px 20px 40px;
-}
-.menu-card-section {
-  width: 100%;
-  box-sizing: border-box;
+  padding: 1em;
 }
 
 .card-item {
@@ -21,6 +17,7 @@
   overflow: hidden;
   position: relative;
 }
+
 .card-expand-btn {
   position: absolute;
   top: 7px;
@@ -30,17 +27,21 @@
   cursor: pointer;
   user-select: none;
 }
+
 .card-item:hover .card-expand-btn {
   display: block;
 }
+
 .card-expand-btn img {
   width: 26px;
   height: 26px;
   display: block;
 }
+
 .card-expand-btn:hover img {
   opacity: 0.6;
 }
+
 .modal-mask {
   position: fixed;
   top: 0;
@@ -53,9 +54,11 @@
   align-items: center;
   z-index: 9;
 }
+
 .modal-mask.show {
   display: flex;
 }
+
 .modal-content {
   width: 90%;
   height: 90%;
@@ -67,8 +70,9 @@
   background: linear-gradient(90deg, rgba(231, 251, 233, 1) 0%, rgba(224, 238, 255, 1) 100%);
   background-size: cover;
 }
+
 .player-show .card-container {
-  padding-bottom: 3em;
+  /* padding-bottom: 3em; */
 }
 
 .player-show .modal-content {
@@ -87,19 +91,23 @@
   padding: 1em;
   cursor: pointer;
 }
+
 .modal-title {
   font-size: 18px;
   font-weight: 600;
 }
+
 .modal-close img {
   width: 28px;
   height: 28px;
   display: block;
   transition: opacity 0.2s;
 }
+
 .modal-close:hover img {
   opacity: 0.6;
 }
+
 .modal-list {
   width: 100%;
   box-sizing: border-box;
@@ -110,53 +118,43 @@
   padding: 1.5em 2em 1em 3em;
   word-break: break-word;
 }
+
 .modal-list li {
   line-height: 1.5;
 }
+
 .modal-list a {
   color: #1a73e8;
   text-decoration: none;
 }
+
 .modal-list .marked {
   font-weight: bold;
   color: red;
   margin-right: 2px;
 }
+
 .card-title {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  max-width: 70%;
-  padding: 4px 11px;
-  border-radius: 5px;
-  background: #1a73e8;
-  border: none;
-  color: #fff;
-  font-size: 0.86em;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 1em;
   font-weight: 600;
-  line-height: 1.4;
-  height: auto;
+  border-bottom: 2px solid #b1c8cd;
+  flex-shrink: 0;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(26, 115, 232, 0.35);
+  padding: 0 0.5em;
 }
-/* 蓝 tag 内的计数徽标与星标改为白字，保证对比度 */
-.card-title .count-badge {
-  color: #fff;
-}
-.card-title .sticky-mark::before {
-  color: #fff;
-}
+
 .count-badge {
   font-size: 12px;
   margin-left: 2px;
   color: red;
   position: relative;
 }
+
 .count-badge.normal {
   display: inline-block;
   text-align: center;
@@ -167,40 +165,49 @@
   background-color: red;
   color: #fff;
 }
+
 .sticky-mark::before {
   content: '*';
   color: #f00;
   margin-right: 2px;
 }
+
 .card-list {
   flex: 1;
   box-sizing: border-box;
   overflow: auto;
   white-space: pre-wrap;
   word-break: break-word;
-  padding: 2.9em 0.5em 0.5em 0.9em;
+  padding-right: 0.5em;
 }
+
 .card-list::-webkit-scrollbar {
   width: 0.3em;
   transition: width 0.2s ease;
 }
+
 .card-list::-webkit-scrollbar-track {
   background: transparent;
 }
+
 .card-list::-webkit-scrollbar-thumb {
   background: transparent;
   border-radius: 0.25em;
   transition: background 0.2s ease;
 }
+
 .card-item:hover .card-list::-webkit-scrollbar-thumb {
   background: #808080;
 }
+
 .card-list::-webkit-scrollbar-thumb:hover {
   background: #666;
 }
+
 .card-list li:not(:last-child) {
   margin-bottom: 0.3em;
 }
+
 .card-list .marked {
   font-weight: bold;
   color: red;
@@ -211,9 +218,11 @@
   .card-list {
     padding-right: 0.5em;
   }
+
   .card-expand-btn {
     display: block;
   }
+
   .card-list::-webkit-scrollbar,
   .modal-list::-webkit-scrollbar {
     display: none;
@@ -230,6 +239,7 @@
   .player-show .modal-mask {
     padding-bottom: 3em;
   }
+
   .card-container {
     height: auto;
   }

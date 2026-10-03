@@ -36,8 +36,17 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  const ALIASES = {
+    '/view': '/src/template/viewer.html',
+  };
+  const ALIAS_BASES = {
+    '/view': '/src/template/',
+  };
   // 构建请求的文件路径
-  let filePath = path.join(rootDir, pathname === '/' ? 'index.html' : pathname);
+  let filePath = path.join(
+    rootDir,
+    ALIASES[pathname] || (pathname === '/' ? 'index.html' : pathname)
+  );
 
   if (!isInsideRoot(filePath)) {
     res.writeHead(403, { 'Content-Type': 'text/html; charset=utf-8' });
@@ -77,6 +86,9 @@ const server = http.createServer((req, res) => {
       break;
     case '.txt':
       contentType = 'text/plain;charset=utf-8';
+      break;
+    case '.html':
+      contentType = 'text/html;charset=utf-8';
       break;
   }
 
@@ -154,12 +166,21 @@ const server = http.createServer((req, res) => {
         res.end('Server Error: ' + error.code);
       }
     } else {
+      let out = content;
+      const base = ALIAS_BASES[pathname];
+      if (base) {
+        const html = content.toString('utf8');
+        out = Buffer.from(
+          html.replace(/<head([^>]*)>/i, '<head$1><base href="' + base + '">'),
+          'utf8'
+        );
+      }
       res.writeHead(200, {
         'Content-Type': contentType,
         'Access-Control-Allow-Origin': '*',
         'Cache-Control': 'no-cache, no-store, must-revalidate',
       });
-      res.end(content);
+      res.end(out);
     }
   });
 });
@@ -181,7 +202,9 @@ if (IS_DEV) {
       if (/\.md$/i.test(filePath)) {
         try {
           const { execSync } = require('child_process');
-          execSync('node "' + path.join(rootDir, 'scripts', 'build-feed.cjs') + '"', { stdio: 'pipe' });
+          execSync('node "' + path.join(rootDir, 'scripts', 'build-feed.cjs') + '"', {
+            stdio: 'pipe',
+          });
         } catch (err) {
           console.error('[Live] build-feed 失败:', err.message);
         }

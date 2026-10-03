@@ -250,7 +250,7 @@
       ins.setAttribute('data-ad-slot', section.ad_slot);
       ins.setAttribute('data-ad-format', 'fluid');
       block.appendChild(ins);
-      try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
+      try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) { }
     } else {
       const ph = document.createElement('div');
       ph.className = 'sb-ad';
@@ -281,8 +281,7 @@
     let menuTitles = [];
     let catCounts = [];
     try {
-      const menu = await (await fetch('src/template/menu/data.json')).json();
-      // 所属卡片分组标题（核心推荐/推荐/我的/站点/原创文章），作为"同类查找"入口加入热门标签
+      const menu = await (await fetch('src/template/feed/data.json')).json();
       menuTitles = (Array.isArray(menu) ? menu : [])
         .filter((c) => c.show !== false && c.items && c.items.length > 0)
         .map((c) => c.title);

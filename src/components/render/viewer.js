@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
   const navContainer = document.querySelector('.nav-container');
 
   if (formatType === 'html') {
-    const htmlUrl = `posts/${folderPath}/${fileName}.html`;
+    const htmlUrl = `/src/template/posts/${folderPath}/${fileName}.html`;
     document.querySelector('.sidebar-area').style.display = 'none';
     navContainer.classList.add('hide-toc');
     contentEl.innerHTML = '';
@@ -23,10 +23,13 @@ window.addEventListener('DOMContentLoaded', async (e) => {
         const realTitle = doc.querySelector('title')?.textContent?.trim() || '';
         document.title = realTitle || `${folderPath} « 吴华锦`;
 
-        const basePath = `posts/${folderPath}/`;
-        const baseTag = document.createElement('base');
+        const basePath = `/src/template/posts/${folderPath}/`;
+        let baseTag = document.querySelector('head base');
+        if (!baseTag) {
+          baseTag = document.createElement('base');
+          document.head.insertBefore(baseTag, document.head.firstChild);
+        }
         baseTag.href = basePath;
-        document.head.appendChild(baseTag);
 
         contentEl.innerHTML = htmlStr;
 
@@ -59,13 +62,13 @@ window.addEventListener('DOMContentLoaded', async (e) => {
     document.title = `${fileName} « 吴华锦`;
     document.querySelector('.sidebar-area').style.display = 'none';
     navContainer.classList.add('hide-toc');
-    const pdfUrl = `posts/${folderPath}/${fileName}.pdf`;
+    const pdfUrl = `/src/template/posts/${folderPath}/${fileName}.pdf`;
     renderPDF(document.getElementById('view-container'), pdfUrl).then(() => {
       hideLoading();
     });
   } else {
     document.title = `${fileName} « 吴华锦`;
-    const mdUrl = `posts/${folderPath}/${fileName}.md`;
+    const mdUrl = `/src/template/posts/${folderPath}/${fileName}.md`;
     loadMarkdown('markdown-content', mdUrl).then(() => {
       generateTOC();
       const headings = contentEl.querySelectorAll('h1, h2, h3, h4, h5, h6');
@@ -90,7 +93,7 @@ async function renderPDF(container, url) {
     console.error('PDF渲染失败：未找到 id="view-container" 的容器元素，请检查HTML结构');
     return;
   }
-  pdfjsLib.GlobalWorkerOptions.workerSrc = '../js/pdf.worker.min.js';
+  pdfjsLib.GlobalWorkerOptions.workerSrc = '/src/js/pdf.worker.min.js';
 
   try {
     container.innerHTML = '';

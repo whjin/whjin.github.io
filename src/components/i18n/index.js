@@ -32,11 +32,11 @@
   };
 
   const NAV_LINKS = [
-    { key: 'nav_articles', url: '/src/template/viewer.html?path=文章_article&format=html' },
-    { key: 'nav_tutorials', url: '/src/template/viewer.html?path=教程_tutorial&format=html' },
-    { key: 'nav_tools', url: '/src/template/viewer.html?path=工具_tool&format=html' },
-    { key: 'nav_ai', url: '/src/template/viewer.html?path=友链_link&format=html' },
-    { key: 'nav_poetry', url: '/src/template/viewer.html?path=文学_原创诗词' },
+    { key: 'nav_articles', url: '/view?path=文章_article&format=html' },
+    { key: 'nav_tutorials', url: '/view?path=教程_tutorial&format=html' },
+    { key: 'nav_tools', url: '/view?path=工具_tool&format=html' },
+    { key: 'nav_ai', url: '/view?path=友链_link&format=html' },
+    { key: 'nav_poetry', url: '/view?path=文学_原创诗词' },
     { key: 'nav_about', url: 'about.html' },
     { key: 'nav_contact', url: 'contact.html' },
   ];

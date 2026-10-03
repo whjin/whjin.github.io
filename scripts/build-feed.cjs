@@ -7,9 +7,11 @@ const fs = require('fs');
 const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const POSTS = path.join(ROOT, 'src/template/posts');
-const MENU_PATH = path.join(ROOT, 'src/template/menu/data.json');
+const MENU_PATH = path.join(ROOT, 'src/template/feed/data.json');
 
 const DESC_MIN = 250; // 少于该长度的 description 视为不合格，自动生成（目标 ~300 字）
+const ARTICLE_CARD_TYPE = 'articles'; // 原创文章卡的稳定标识（与显示标题解耦）
+const ARTICLE_CARD_FALLBACK_TITLE = '原创文章'; // 兼容旧数据（无 type 字段时的回退）
 
 function parseFrontMatter(content) {
   const m = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/.exec(content);
@@ -194,14 +196,14 @@ buildUrlMap();
 const menu = JSON.parse(fs.readFileSync(MENU_PATH, 'utf8'));
 
 // 1) 「原创文章」卡：重新生成 feed 字段（含 description）
-const artCard = menu.find((c) => c.title === '原创文章');
+const artCard = menu.find((c) => c.type === ARTICLE_CARD_TYPE) || menu.find((c) => c.title === ARTICLE_CARD_FALLBACK_TITLE);
 if (!artCard) { console.error('未找到 原创文章 卡'); process.exit(1); }
 const items = buildFeed();
 artCard.items = items;
 
 // 2) 其余卡：规范化条目为 feed 结构
 for (const c of menu) {
-  if (c.title === '原创文章') continue;
+  if (c.type === ARTICLE_CARD_TYPE || c.title === ARTICLE_CARD_FALLBACK_TITLE) continue;
   if (!Array.isArray(c.items)) continue;
   c.items = c.items.map((it) => normalizeLinkItem(it, c.title));
 }

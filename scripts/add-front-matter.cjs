@@ -3,10 +3,19 @@ const fs = require('fs');
 const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const POSTS = path.join(ROOT, 'src/template/posts');
-const MENU_PATH = path.join(ROOT, 'src/template/menu/data.json');
+const MENU_PATH = path.join(ROOT, 'src/template/feed/data.json');
 
 // 精选 5 篇（按 title，与既有决策一致）
-const FEATURED = new Set(['AI应用开发学习路线图', '功能代码集合', 'Node.js实战', 'Solidity文档', 'WebRTC性能优化']);
+const FEATURED = new Set([
+  'AI应用开发学习路线图',
+  '功能代码集合',
+  'Node.js实战',
+  'Solidity文档',
+  'WebRTC性能优化',
+]);
+
+const ARTICLE_CARD_TYPE = 'articles'; // 原创文章卡的稳定标识（与显示标题解耦）
+const ARTICLE_CARD_FALLBACK_TITLE = '原创文章'; // 兼容旧数据（无 type 字段时的回退）
 
 function walk(dir, out = []) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -38,17 +47,22 @@ function cleanPara(text) {
 }
 
 const menu = JSON.parse(fs.readFileSync(MENU_PATH, 'utf8'));
-const card = menu.find((c) => c.title === '原创文章');
+const card = menu.find((c) => c.type === ARTICLE_CARD_TYPE) || menu.find((c) => c.title === ARTICLE_CARD_FALLBACK_TITLE);
 const byUrl = new Map((card ? card.items : []).map((it) => [it.url, it]));
 
-let added = 0, skipped = 0, missing = 0;
+let added = 0,
+  skipped = 0,
+  missing = 0;
 for (const file of walk(POSTS)) {
   const rel = path.relative(POSTS, file);
   const parts = rel.split(path.sep);
   const fileBase = parts.pop().replace(/\.md$/, '');
   const folder = parts.join('/');
   const raw = fs.readFileSync(file, 'utf8');
-  if (hasFrontMatter(raw)) { skipped++; continue; }
+  if (hasFrontMatter(raw)) {
+    skipped++;
+    continue;
+  }
 
   const wantUrl = `/src/template/viewer.html?path=${folder}_${fileBase}`;
   const m = byUrl.get(wantUrl);

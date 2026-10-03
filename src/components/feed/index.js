@@ -1,11 +1,8 @@
-/* 首页统一文章流（Dev.to 风格）：读 src/template/menu/data.json，默认渲染全部卡的条目。
-   原创文章卡条目渲染为文章卡（封面左图右文/标签/日期/时长），其余卡（核心推荐/推荐/我的/站点）
-   条目渲染为 feed 风格卡（卡标题作分类徽标），全部并入左侧主列。show:false 隐藏该卡条目，sticky 控制置顶顺序。 */
 (function () {
   'use strict';
 
   const PAGE = 10;
-  const MENU_URL = 'src/template/menu/data.json';
+  const MENU_URL = 'src/template/feed/data.json';
 
   let allItems = [];
   let cat = 'all';
@@ -186,9 +183,9 @@
       const res = await fetch(MENU_URL);
       if (!res.ok) throw new Error('menu 加载失败 ' + res.status);
       const menu = await res.json();
-      // 默认渲染全部卡的条目：show:false 隐藏，其余全部渲染
+      // 首页展示由 home 字段控制：home:true 显示，home:false 隐藏（show 只控制二级页/全站导航）
       const cards = (Array.isArray(menu) ? menu : []).filter(function (c) {
-        return c.show !== false && c.items && c.items.length > 0;
+        return c.home === true && c.items && c.items.length > 0;
       });
       // 严格按 data.json 顺序：全部卡按 sticky 置顶（数值小在前），无 sticky 按数组序
       cards.sort(function (a, b) {
