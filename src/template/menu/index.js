@@ -7,24 +7,25 @@
     host === '127.0.0.1' ||
     host === '::1' ||
     host === '0.0.0.0';
-  if (!isLocal) return;
-
-  var ws;
-  function connect() {
-    try {
-      ws = new WebSocket('ws://' + window.location.host);
-      ws.onmessage = function (e) {
-        if (e.data === 'reload') window.location.reload();
-      };
-      ws.onclose = function () {
-        setTimeout(connect, 1000);
-      };
-      ws.onerror = function () {
-        try { ws.close(); } catch (x) { }
-      };
-    } catch (e) { }
+  // 热重载仅本地开发启用；渲染逻辑（generateCard 等）本地/线上都需执行
+  if (isLocal) {
+    var ws;
+    function connect() {
+      try {
+        ws = new WebSocket('ws://' + window.location.host);
+        ws.onmessage = function (e) {
+          if (e.data === 'reload') window.location.reload();
+        };
+        ws.onclose = function () {
+          setTimeout(connect, 1000);
+        };
+        ws.onerror = function () {
+          try { ws.close(); } catch (x) { }
+        };
+      } catch (e) { }
+    }
+    connect();
   }
-  connect();
 
   generateCard();
   generateTOC();

@@ -182,9 +182,8 @@
     containerEl.appendChild(fragment1);
   }
 
-  function openQrModal(linkEl, list) {
-    renderQrcodeList(list);
-    overlayEl.classList.add('show');
+  let currentQrLink = null;
+  function positionQrModal(linkEl) {
     const r = linkEl.getBoundingClientRect();
     const mw = containerEl.offsetWidth || 280;
     const iconCx = r.left + r.width / 2;
@@ -194,6 +193,25 @@
     overlayEl.style.left = left + 'px';
     overlayEl.style.top = (r.bottom + 10) + 'px';
   }
+
+  function openQrModal(linkEl, list) {
+    renderQrcodeList(list);
+    overlayEl.classList.add('show');
+    currentQrLink = linkEl;
+    positionQrModal(linkEl);
+  }
+
+  // 弹窗为 fixed 定位：页面（.content-area）滚动时按图标当前位置重定位，避免固定原位不跟随
+  const repositionOnScroll = () => {
+    if (currentQrLink && overlayEl.classList.contains('show')) {
+      positionQrModal(currentQrLink);
+    }
+  };
+  const qrScrollContainer = document.querySelector('.content-area');
+  if (qrScrollContainer) {
+    qrScrollContainer.addEventListener('scroll', repositionOnScroll, { passive: true });
+  }
+  window.addEventListener('scroll', repositionOnScroll, { passive: true });
 
   document.addEventListener('click', () => {
     overlayEl.classList.remove('show');

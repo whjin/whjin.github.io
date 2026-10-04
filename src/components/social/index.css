@@ -61,7 +61,8 @@
   left: 0;
   max-width: calc(100% - 16px);
   display: none;
-  z-index: 120;
+  /* 层级低于顶部导航栏（banner z-index 30、header 含搜索框 z-index 29），导航栏保持置顶可见 */
+  z-index: 28;
 }
 .modal-overlay.show {
   display: block;
@@ -111,7 +112,8 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 99;
+  /* 全屏预览同样低于顶部导航栏，保证导航栏始终置顶可见 */
+  z-index: 28;
   display: none;
   align-items: center;
   justify-content: center;
