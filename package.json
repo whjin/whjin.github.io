@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "node scripts/add-front-matter.cjs && node scripts/build-feed.cjs && cross-env NODE_ENV=development node server.js",
     "build:feed": "node scripts/build-feed.cjs",
-    "build:frontmatter": "node scripts/add-front-matter.cjs"
+    "build:frontmatter": "node scripts/add-front-matter.cjs",
+    "build:articles": "node scripts/build-articles.cjs",
+    "build:sitemap": "node scripts/build-sitemap.cjs"
   },
   "repository": {
     "type": "git",

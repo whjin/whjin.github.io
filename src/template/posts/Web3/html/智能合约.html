@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="吴华锦" />
+  <title>智能合约 « 吴华锦</title>
+  <meta name="description" content="合约开发 - 数据类型中拷贝方法判定 - 合约上下文变量 - ABI数据、接口与函数调用的底层逻辑 - 函数调用机制中的过滤器链条模型 - 委托调研与代理模式 - 线性化、super关键字与虚函数覆盖 合约外部调用原理 - ABI Application Binary Interface - 读操作与写操作的不同调用方式 合约的成员变量的特殊性 与一般的虚拟器或物理机不同，EVM的机器模型中引入了 storage，合约成员变量指向固定的持久化 storage数据块，它并能像一般引用类型变量一样切换它所指向的数据块，由于这个限制，对成员变量的赋值，引用拷贝从技术上变成不可能。 location对" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wuhuajin.com/src/template/posts/Web3/html/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Wu Huajin" />
+  <meta property="og:title" content="智能合约" />
+  <meta property="og:description" content="合约开发 - 数据类型中拷贝方法判定 - 合约上下文变量 - ABI数据、接口与函数调用的底层逻辑 - 函数调用机制中的过滤器链条模型 - 委托调研与代理模式 - 线性化、super关键字与虚函数覆盖 合约外部调用原理 - ABI Application Binary Interface - 读操作与写操作的不同调用方式 合约的成员变量的特殊性 与一般的虚拟器或物理机不同，EVM的机器模型中引入了 storage，合约成员变量指向固定的持久化 storage数据块，它并能像一般引用类型变量一样切换它所指向的数据块，由于这个限制，对成员变量的赋值，引用拷贝从技术上变成不可能。 location对" />
+  <meta property="og:url" content="https://wuhuajin.com/src/template/posts/Web3/html/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6.html" />
+  <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="智能合约" />
+  <meta name="twitter:description" content="合约开发 - 数据类型中拷贝方法判定 - 合约上下文变量 - ABI数据、接口与函数调用的底层逻辑 - 函数调用机制中的过滤器链条模型 - 委托调研与代理模式 - 线性化、super关键字与虚函数覆盖 合约外部调用原理 - ABI Application Binary Interface - 读操作与写操作的不同调用方式 合约的成员变量的特殊性 与一般的虚拟器或物理机不同，EVM的机器模型中引入了 storage，合约成员变量指向固定的持久化 storage数据块，它并能像一般引用类型变量一样切换它所指向的数据块，由于这个限制，对成员变量的赋值，引用拷贝从技术上变成不可能。 location对" />
+  <link rel="icon" href="/src/images/favicon.png" />
+  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/src/css/github-dark.min.css" />
+  <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/loading/index.css" />
+  <link rel="stylesheet" href="/src/components/navigation/index.css" />
+  <link rel="stylesheet" href="/src/components/banner/index.css" />
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "智能合约",
+  "description": "合约开发 - 数据类型中拷贝方法判定 - 合约上下文变量 - ABI数据、接口与函数调用的底层逻辑 - 函数调用机制中的过滤器链条模型 - 委托调研与代理模式 - 线性化、super关键字与虚函数覆盖 合约外部调用原理 - ABI Application Binary Interface - 读操作与写操作的不同调用方式 合约的成员变量的特殊性 与一般的虚拟器或物理机不同，EVM的机器模型中引入了 storage，合约成员变量指向固定的持久化 storage数据块，它并能像一般引用类型变量一样切换它所指向的数据块，由于这个限制，对成员变量的赋值，引用拷贝从技术上变成不可能。 location对",
+  "author": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "datePublished": "2026-09-11",
+  "inLanguage": "zh-CN",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wuhuajin.com/src/template/posts/Web3/html/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6.html"
+  }
+}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
+  <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+</head>
+<body>
+  <div class="layout-container">
+    <div class="nav-container"></div>
+    <div class="content-area">
+      <div id="markdown-content" class="markdown-content viewer"></div>
+      <noscript><div class="markdown-content viewer" style="padding:1em"><h2>合约开发</h2>
+<ul>
+<li>数据类型中拷贝方法判定</li>
+<li>合约上下文变量</li>
+<li><code>ABI</code>数据、接口与函数调用的底层逻辑</li>
+<li>函数调用机制中的过滤器链条模型</li>
+<li>委托调研与代理模式</li>
+<li>线性化、<code>super</code>关键字与虚函数覆盖</li>
+</ul>
+<p><strong>合约外部调用原理</strong></p>
+<ul>
+<li><code>ABI</code> <code>Application Binary Interface</code></li>
+<li>读操作与写操作的不同调用方式</li>
+</ul>
+<p><strong>合约的成员变量的特殊性</strong></p>
+<p>与一般的虚拟器或物理机不同，<code>EVM</code>的机器模型中引入了 <code>storage</code>，合约成员变量指向固定的持久化 <code>storage</code>数据块，它并能像一般引用类型变量一样切换它所指向的数据块，由于这个限制，对成员变量的赋值，引用拷贝从技术上变成不可能。</p>
+<p><strong><code>location</code>对数据空间的分割</strong></p>
+<p>数据块有三个存储位置（<code>calldata</code> <code>memory</code> <code>storage</code>），概念上存储空间被分割成三个子空间，引用类型变量被 <code>location</code>属性限定，不可能跨越子空间进行指向切换，只能在子空间内部切换。</p>
+<p><strong>判定算法</strong></p>
+<p>赋值操作：<code>x = a</code></p>
+<ol>
+<li>如果 <code>x</code> 是成员变量，值拷贝</li>
+<li>如果 <code>x</code> 与 <code>a</code> 的 <code>location</code>相同，引用拷贝，否则：值拷贝</li>
+</ol>
+<p><strong><code>calldata</code>的只读属性</strong></p>
+<ol>
+<li><code>calldata</code>是 <code>message</code>的数据字段</li>
+<li>无法向 <code>message</code>数据体的 <code>calldata</code>数据域中拷贝内容</li>
+</ol>
+<p><strong><code>mapping</code>不支持拷贝</strong></p>
+<ol>
+<li>不能遍历，没有遍历能力的技术原因在于 <code>mapping</code>在 <code>storage</code>中的存储方式</li>
+<li>不能进行值拷贝</li>
+</ol>
+<p><strong>检查算法</strong></p>
+<p>判定算法有三个输出：引用拷贝、值拷贝。如果输出引用拷贝，不必检查；输出值拷贝，则执行检查算法。</p>
+<ol>
+<li>检查 <code>x</code>和 <code>a</code>的类型中是否有 <code>mapping</code>元素，如果有则出错</li>
+<li>检查 <code>x</code>是否是 <code>calldata</code>，如果有则出错</li>
+<li>执行值拷贝</li>
+</ol>
+<p><strong>算法的作用</strong></p>
+<ol>
+<li>判定算法让我们理解赋值操作背后发生了什么</li>
+<li>检查算法让我们理解赋值操作为什么不被允许</li>
+</ol>
+<h3>运行机制</h3>
+<ul>
+<li><code>Transation</code>驱动的 <code>EVM</code></li>
+<li>没有并发问题</li>
+<li><code>Transation</code>的原子性与闪贷</li>
+</ul>
+<h2>实战项目</h2>
+<ul>
+<li>应用合约开发中 <code>openzepellin</code> 合约库</li>
+<li>钱包与应用的状态管理</li>
+<li>通过访问合约构建 <code>DApp</code> 业务逻辑</li>
+<li>使用 <code>Web3</code> 基础设施，特别是去中心化存储支持功能开发</li>
+</ul>
+<h2>子货币（<code>Subcurrency</code>）</h2>
+<h2>安全</h2>
+<ul>
+<li><strong>重入攻击（<code>Reentrancy</code>）- 最高危</strong></li>
+</ul>
+<p><strong>问题本质：</strong> 向外部合约转账/调用时，控制权会转移给对方，恶意合约可在原函数执行完成前回调，重复执行敏感逻辑（如多次提款）</p>
+<h2>问题汇总</h2>
+<ul>
+<li><strong>有效载荷 <code>payload</code></strong>：随交易一起发送的字节码“数据”</li>
+<li><strong>创建一个可以被中止并退款的合约</strong>：在构造函数中，将 <code>creator</code> 赋值为 <code>msg.sender</code>，并保持。然后调用 <code>selfdestruct(creator)</code> 来中止程序并进行退款。</li>
+</ul>
+<h2>汇编</h2>
+<h3>内存布局</h3>
+<ol>
+<li>内存地址：以字节为单位寻址</li>
+<li><code>0x00-0x40</code>：保留 <code>keccak256()</code></li>
+<li><code>0x40-0x60</code>：<code>32</code>个自由内存指针</li>
+<li><code>0x60-0x80</code>：<code>zero slot</code></li>
+</ol>
+<h3>内存操作</h3>
+<ol>
+<li><code>mload(offset)</code>：将内存数据（<code>32</code>字节）载入 <code>stack</code>（头部）</li>
+<li><code>mstore(offset, value)</code>：将 <code>value</code>压栈，然后写入 <code>offset</code>开始的 <code>32</code>字节内存</li>
+</ol>
+<h3><code>storage</code>操作</h3>
+<ol>
+<li><code>sload(key)</code>：将 <code>storage</code>中 <code>slot[key]</code>数据（<code>32</code>字节）载入 <code>stack</code>（头部）</li>
+<li><code>sstore(key, value)</code>：将 <code>value</code>压栈，然后写入 <code>store</code>中 <code>slot[key]</code></li>
+</ol>
+</div></noscript>
+      <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
+      <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
+           data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
+    </div>
+    <aside class="sidebar-area">
+      <div class="sidebar-title">文章目录</div>
+      <nav id="toc-nav" class="toc-nav"></nav>
+    </aside>
+  </div>
+  <script src="/src/components/loading/index.js"></script>
+  <script src="/src/components/banner/index.js"></script>
+  <script src="/src/components/navigation/index.js"></script>
+  <script src="/src/js/highlight.min.js"></script>
+  <script src="/src/js/marked.min.js"></script>
+  <script src="/src/js/marked-highlight.min.js"></script>
+  <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/scroll/index.js"></script>
+  <script src="/src/components/cookie-consent/index.js"></script>
+  <script>
+    (function () {
+      /* 静态页滚动容器抗注入：部分预览环境会对 .layout-container/.content-area 整段 setAttribute style 为
+         "height: auto !important"，使内部滚动容器按内容高度解析、滚不到底。
+         用 MutationObserver 侦测 style 属性变化，一旦出现 auto 即用 JS 计算的视口像素高度（window.innerHeight，
+         不受 100vh 被内容撑大的影响）重新施加，恢复 631 内部滚动。生产正常浏览器无注入时不触发。 */
+      var l = document.querySelector('.layout-container');
+      var ca = document.querySelector('.content-area');
+      if (!l || !ca) return;
+      function fixedH() {
+        var b = parseInt(window.getComputedStyle(document.body).getPropertyValue('--banner-height')) || 0;
+        return (window.innerHeight - b) + 'px';
+      }
+      function force() {
+        var h = fixedH();
+        var changed = false;
+        if ((l.getAttribute('style') || '').indexOf('auto') !== -1) {
+          l.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        if ((ca.getAttribute('style') || '').indexOf('auto') !== -1) {
+          ca.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        return changed;
+      }
+      var timer = null;
+      var mo = new MutationObserver(function () {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(force, 50);
+      });
+      mo.observe(l, { attributes: true, attributeFilter: ['style'] });
+      mo.observe(ca, { attributes: true, attributeFilter: ['style'] });
+      window.addEventListener('resize', force);
+      force();
+    })();
+  </script>
+  <script>
+    (function () {
+      // 运行时从相邻 .md 渲染：md 改动后刷新即更新；保留预渲染正文作为 no-JS / 爬虫回退
+      var mdUrl = '../%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6.md';
+      function finish() {
+        try {
+          if (typeof generateTOC === 'function') generateTOC();
+          var blocks = document.querySelectorAll('#markdown-content pre code');
+          if (window.hljs && blocks.length) {
+            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
+          }
+          document.querySelectorAll('#markdown-content a').forEach(function (a) {
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener noreferrer');
+          });
+        } catch (e) {}
+        if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
+        if (typeof hideLoading === 'function') hideLoading();
+      }
+      try {
+        if (typeof handler === 'function') {
+          handler('markdown-content', mdUrl, finish);
+        } else {
+          finish();
+        }
+      } catch (e) { finish(); }
+    })();
+  </script>
+</body>
+</html>

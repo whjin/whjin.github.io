@@ -31,253 +31,253 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=Node_Node.js%E8%BF%9B%E9%98%B6</loc>
+    <loc>https://wuhuajin.com/src/template/posts/Node/html/Node.js%E8%BF%9B%E9%98%B6.html</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=%E5%B7%A5%E7%A8%8B%E5%8C%96_Docker%E9%83%A8%E7%BD%B2Meting%20API%E6%9C%8D%E5%8A%A1</loc>
+    <loc>https://wuhuajin.com/src/template/posts/%E5%B7%A5%E7%A8%8B%E5%8C%96/html/Docker%E9%83%A8%E7%BD%B2Meting%20API%E6%9C%8D%E5%8A%A1.html</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=AI_AI%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E5%9B%BE</loc>
+    <loc>https://wuhuajin.com/src/template/posts/AI/html/AI%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E5%9B%BE.html</loc>
     <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=AI_AI%E5%89%8D%E7%AB%AF</loc>
+    <loc>https://wuhuajin.com/src/template/posts/AI/html/AI%E5%89%8D%E7%AB%AF.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=AI_AI%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%96%87%E6%A1%A3</loc>
+    <loc>https://wuhuajin.com/src/template/posts/AI/html/AI%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%96%87%E6%A1%A3.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=AI_AI%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3</loc>
+    <loc>https://wuhuajin.com/src/template/posts/AI/html/AI%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=Android_ADB%E5%91%BD%E4%BB%A4%E9%9B%86%E5%90%88</loc>
+    <loc>https://wuhuajin.com/src/template/posts/Android/html/ADB%E5%91%BD%E4%BB%A4%E9%9B%86%E5%90%88.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=Git_Git%E6%96%87%E6%A1%A3</loc>
+    <loc>https://wuhuajin.com/src/template/posts/Git/html/Git%E6%96%87%E6%A1%A3.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=JavaScript_ECMAScript%E6%96%87%E6%A1%A3</loc>
+    <loc>https://wuhuajin.com/src/template/posts/JavaScript/html/ECMAScript%E6%96%87%E6%A1%A3.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=JavaScript_%E5%8A%9F%E8%83%BD%E4%BB%A3%E7%A0%81%E9%9B%86%E5%90%88</loc>
+    <loc>https://wuhuajin.com/src/template/posts/JavaScript/html/%E5%8A%9F%E8%83%BD%E4%BB%A3%E7%A0%81%E9%9B%86%E5%90%88.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=JavaScript_%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%96%87%E6%A1%A3</loc>
+    <loc>https://wuhuajin.com/src/template/posts/JavaScript/html/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%96%87%E6%A1%A3.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=Node_Node.js%E5%AE%9E%E6%88%98</loc>
+    <loc>https://wuhuajin.com/src/template/posts/Node/html/Node.js%E5%AE%9E%E6%88%98.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=Node_Node.js%E6%96%87%E6%A1%A3</loc>
+    <loc>https://wuhuajin.com/src/template/posts/Node/html/Node.js%E6%96%87%E6%A1%A3.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=React_React%E6%96%87%E6%A1%A3</loc>
+    <loc>https://wuhuajin.com/src/template/posts/React/html/React%E6%96%87%E6%A1%A3.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=RN_Hermes%E5%BC%95%E6%93%8E%E6%96%87%E6%A1%A3</loc>
+    <loc>https://wuhuajin.com/src/template/posts/RN/html/Hermes%E5%BC%95%E6%93%8E%E6%96%87%E6%A1%A3.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=TypeScript_%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F</loc>
+    <loc>https://wuhuajin.com/src/template/posts/TypeScript/html/%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=Vue_Vue%E6%96%87%E6%A1%A3</loc>
+    <loc>https://wuhuajin.com/src/template/posts/Vue/html/Vue%E6%96%87%E6%A1%A3.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=Web3_Solidity%E6%96%87%E6%A1%A3</loc>
+    <loc>https://wuhuajin.com/src/template/posts/Web3/html/Solidity%E6%96%87%E6%A1%A3.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=Web3_Web3%E6%96%87%E6%A1%A3</loc>
+    <loc>https://wuhuajin.com/src/template/posts/Web3/html/Web3%E6%96%87%E6%A1%A3.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=Web3_Web3%E9%92%B1%E5%8C%85</loc>
+    <loc>https://wuhuajin.com/src/template/posts/Web3/html/Web3%E9%92%B1%E5%8C%85.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=Web3_%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6</loc>
+    <loc>https://wuhuajin.com/src/template/posts/Web3/html/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=WebRTC_WebRTC%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96</loc>
+    <loc>https://wuhuajin.com/src/template/posts/WebRTC/html/WebRTC%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=%E5%B0%8F%E7%A8%8B%E5%BA%8F_%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3</loc>
+    <loc>https://wuhuajin.com/src/template/posts/%E5%B0%8F%E7%A8%8B%E5%BA%8F/html/%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=%E5%B0%8F%E7%A8%8B%E5%BA%8F_%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%96%87%E6%A1%A3</loc>
+    <loc>https://wuhuajin.com/src/template/posts/%E5%B0%8F%E7%A8%8B%E5%BA%8F/html/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%96%87%E6%A1%A3.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=%E5%B7%A5%E7%A8%8B%E5%8C%96_Vite%E4%B8%8EWebpack%E5%AF%B9%E6%AF%94</loc>
+    <loc>https://wuhuajin.com/src/template/posts/%E5%B7%A5%E7%A8%8B%E5%8C%96/html/Vite%E4%B8%8EWebpack%E5%AF%B9%E6%AF%94.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=%E5%B7%A5%E7%A8%8B%E5%8C%96_Web%E5%8A%A0%E5%AF%86</loc>
+    <loc>https://wuhuajin.com/src/template/posts/%E5%B7%A5%E7%A8%8B%E5%8C%96/html/Web%E5%8A%A0%E5%AF%86.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=%E5%B7%A5%E7%A8%8B%E5%8C%96_%E5%B7%A5%E7%A8%8B%E5%AE%9E%E4%BE%8B%E6%96%87%E6%A1%A3</loc>
+    <loc>https://wuhuajin.com/src/template/posts/%E5%B7%A5%E7%A8%8B%E5%8C%96/html/%E5%B7%A5%E7%A8%8B%E5%AE%9E%E4%BE%8B%E6%96%87%E6%A1%A3.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=%E6%96%87%E5%AD%A6_%E5%8E%9F%E5%88%9B%E8%AF%97%E8%AF%8D</loc>
+    <loc>https://wuhuajin.com/src/template/posts/%E6%96%87%E5%AD%A6/html/%E5%8E%9F%E5%88%9B%E8%AF%97%E8%AF%8D.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=%E6%96%87%E6%A1%A3_IT%E5%B7%A5%E5%85%B7%E5%90%88%E9%9B%86</loc>
+    <loc>https://wuhuajin.com/src/template/posts/%E6%96%87%E6%A1%A3/html/IT%E5%B7%A5%E5%85%B7%E5%90%88%E9%9B%86.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=%E6%96%87%E6%A1%A3_%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3</loc>
+    <loc>https://wuhuajin.com/src/template/posts/%E6%96%87%E6%A1%A3/html/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=%E6%96%87%E6%A1%A3_%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%96%87%E6%A1%A3</loc>
+    <loc>https://wuhuajin.com/src/template/posts/%E6%96%87%E6%A1%A3/html/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%96%87%E6%A1%A3.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=%E6%96%87%E6%A1%A3_%E6%96%B0%E8%B6%8B%E5%8A%BF</loc>
+    <loc>https://wuhuajin.com/src/template/posts/%E6%96%87%E6%A1%A3/html/%E6%96%B0%E8%B6%8B%E5%8A%BF.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=%E6%96%87%E6%A1%A3_%E9%A2%86%E5%9F%9F%E9%80%82%E9%85%8D%E6%80%A7%E5%88%86%E6%9E%90</loc>
+    <loc>https://wuhuajin.com/src/template/posts/%E6%96%87%E6%A1%A3/html/%E9%A2%86%E5%9F%9F%E9%80%82%E9%85%8D%E6%80%A7%E5%88%86%E6%9E%90.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=%E7%94%9F%E6%B4%BB_%E5%9F%BA%E9%87%91%E6%8C%81%E4%BB%932026-6-25</loc>
+    <loc>https://wuhuajin.com/src/template/posts/%E7%94%9F%E6%B4%BB/html/%E5%9F%BA%E9%87%91%E6%8C%81%E4%BB%932026-6-25.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=%E7%94%9F%E6%B4%BB_%E5%9F%BA%E9%87%91%E6%8C%81%E4%BB%932026-7-23</loc>
+    <loc>https://wuhuajin.com/src/template/posts/%E7%94%9F%E6%B4%BB/html/%E5%9F%BA%E9%87%91%E6%8C%81%E4%BB%932026-7-23.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=%E7%94%9F%E6%B4%BB_%E8%82%B2%E5%84%BF%E7%BB%8F</loc>
+    <loc>https://wuhuajin.com/src/template/posts/%E7%94%9F%E6%B4%BB/html/%E8%82%B2%E5%84%BF%E7%BB%8F.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=%E7%AE%80%E5%8E%86_%E4%B8%AD%E6%96%87%E7%AE%80%E5%8E%86</loc>
+    <loc>https://wuhuajin.com/src/template/posts/%E7%AE%80%E5%8E%86/html/%E4%B8%AD%E6%96%87%E7%AE%80%E5%8E%86.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=%E7%AE%80%E5%8E%86_%E8%8B%B1%E6%96%87%E7%AE%80%E5%8E%86</loc>
+    <loc>https://wuhuajin.com/src/template/posts/%E7%AE%80%E5%8E%86/html/%E8%8B%B1%E6%96%87%E7%AE%80%E5%8E%86.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=%E7%BD%91%E7%BB%9C_HTTP%E6%96%87%E6%A1%A3</loc>
+    <loc>https://wuhuajin.com/src/template/posts/%E7%BD%91%E7%BB%9C/html/HTTP%E6%96%87%E6%A1%A3.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=GIS_Web%20GIS%E6%96%87%E6%A1%A3</loc>
+    <loc>https://wuhuajin.com/src/template/posts/GIS/html/Web%20GIS%E6%96%87%E6%A1%A3.html</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=%E5%B0%8F%E7%A8%8B%E5%BA%8F_Taro%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%96%87%E6%A1%A3</loc>
+    <loc>https://wuhuajin.com/src/template/posts/%E5%B0%8F%E7%A8%8B%E5%BA%8F/html/Taro%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%96%87%E6%A1%A3.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/viewer.html?path=GIS_Cesium%E6%96%87%E6%A1%A3</loc>
+    <loc>https://wuhuajin.com/src/template/posts/GIS/html/Cesium%E6%96%87%E6%A1%A3.html</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

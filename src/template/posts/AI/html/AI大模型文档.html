@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="吴华锦" />
+  <title>AI大模型文档 « 吴华锦</title>
+  <meta name="description" content="MCP 接口标准 MCP-Model Context Protocol，模型上下文协议 提升对大模型行为的控制能力：优化提问方式，设计输入环境，连接外部能力，形成可复用能力单元。 为模型提供可调用的能力（查询数据、执行操作或访问服务），通过标准化接口，让模型能够可靠地调用外部能力。 MCP 核心组件 - MCP Client - MCP Server - MCP Host MCP Server 1. Tools 执行动作 基于统一的协议标准定义和调用，具有更好的通用性和可复用行 2. Resources 提供信息 - MCP Server Resources 是一种数据源 - RAG 是一种数" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wuhuajin.com/src/template/posts/AI/html/AI%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%96%87%E6%A1%A3.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Wu Huajin" />
+  <meta property="og:title" content="AI大模型文档" />
+  <meta property="og:description" content="MCP 接口标准 MCP-Model Context Protocol，模型上下文协议 提升对大模型行为的控制能力：优化提问方式，设计输入环境，连接外部能力，形成可复用能力单元。 为模型提供可调用的能力（查询数据、执行操作或访问服务），通过标准化接口，让模型能够可靠地调用外部能力。 MCP 核心组件 - MCP Client - MCP Server - MCP Host MCP Server 1. Tools 执行动作 基于统一的协议标准定义和调用，具有更好的通用性和可复用行 2. Resources 提供信息 - MCP Server Resources 是一种数据源 - RAG 是一种数" />
+  <meta property="og:url" content="https://wuhuajin.com/src/template/posts/AI/html/AI%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%96%87%E6%A1%A3.html" />
+  <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="AI大模型文档" />
+  <meta name="twitter:description" content="MCP 接口标准 MCP-Model Context Protocol，模型上下文协议 提升对大模型行为的控制能力：优化提问方式，设计输入环境，连接外部能力，形成可复用能力单元。 为模型提供可调用的能力（查询数据、执行操作或访问服务），通过标准化接口，让模型能够可靠地调用外部能力。 MCP 核心组件 - MCP Client - MCP Server - MCP Host MCP Server 1. Tools 执行动作 基于统一的协议标准定义和调用，具有更好的通用性和可复用行 2. Resources 提供信息 - MCP Server Resources 是一种数据源 - RAG 是一种数" />
+  <link rel="icon" href="/src/images/favicon.png" />
+  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/src/css/github-dark.min.css" />
+  <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/loading/index.css" />
+  <link rel="stylesheet" href="/src/components/navigation/index.css" />
+  <link rel="stylesheet" href="/src/components/banner/index.css" />
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI大模型文档",
+  "description": "MCP 接口标准 MCP-Model Context Protocol，模型上下文协议 提升对大模型行为的控制能力：优化提问方式，设计输入环境，连接外部能力，形成可复用能力单元。 为模型提供可调用的能力（查询数据、执行操作或访问服务），通过标准化接口，让模型能够可靠地调用外部能力。 MCP 核心组件 - MCP Client - MCP Server - MCP Host MCP Server 1. Tools 执行动作 基于统一的协议标准定义和调用，具有更好的通用性和可复用行 2. Resources 提供信息 - MCP Server Resources 是一种数据源 - RAG 是一种数",
+  "author": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "datePublished": "2026-09-11",
+  "inLanguage": "zh-CN",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wuhuajin.com/src/template/posts/AI/html/AI%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%96%87%E6%A1%A3.html"
+  }
+}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
+  <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+</head>
+<body>
+  <div class="layout-container">
+    <div class="nav-container"></div>
+    <div class="content-area">
+      <div id="markdown-content" class="markdown-content viewer"></div>
+      <noscript><div class="markdown-content viewer" style="padding:1em"><h2><code>MCP</code> 接口标准</h2>
+<blockquote>
+<p><code>MCP</code>-<code>Model Context Protocol</code>，模型上下文协议
+提升对大模型行为的控制能力：优化提问方式，设计输入环境，连接外部能力，形成可复用能力单元。
+为模型提供可调用的能力（查询数据、执行操作或访问服务），通过标准化接口，让模型能够可靠地调用外部能力。</p>
+</blockquote>
+<h2><code>MCP</code> 核心组件</h2>
+<ul>
+<li><code>MCP Client</code></li>
+<li><code>MCP Server</code></li>
+<li><code>MCP Host</code></li>
+</ul>
+<h2><code>MCP Server</code></h2>
+<ol>
+<li><code>Tools</code> 执行动作 基于统一的协议标准定义和调用，具有更好的通用性和可复用行</li>
+<li><code>Resources</code> 提供信息</li>
+</ol>
+<ul>
+<li><code>MCP</code> <code>Server Resources</code> 是一种数据源</li>
+<li><code>RAG</code> 是一种数据检索策略</li>
+<li><code>MCP Server Resources</code> 可以作为 <code>RAG</code> 的数据源</li>
+</ul>
+<ol start="3">
+<li><code>Prompts</code> 提示词</li>
+</ol>
+<h2><code>MCP Client</code></h2>
+<ul>
+<li>连接 <code>MCP Server</code></li>
+<li>完成协议握手</li>
+<li>发送请求，接受 <code>MCP Server</code> 的响应</li>
+<li>获取 <code>MCP Server</code> 的能力</li>
+</ul>
+<pre><code class="language-js">class MCPClient {
+  // 连接
+  connect(transport)
+
+  // 生命周期
+  initialize()
+
+  // 能力发现
+  listTools()
+  listResources()
+  listPrompts()
+
+  // 能力调用
+  callTool()
+  readResource()
+  getPrompt()
+
+  // 通信
+  request()
+  notify()
+
+  // 会话管理
+  close()
+  reconnect()
+}
+</code></pre>
+<p><strong>1. 连接层</strong></p>
+<p>建立和 <code>MCP Server</code> 的连接，<code>transport</code> 可以是：</p>
+<ul>
+<li><code>stdio</code></li>
+<li><code>http</code></li>
+<li><code>websocket</code></li>
+</ul>
+<p><strong>2. 生命周期</strong></p>
+<ul>
+<li>初始化会话</li>
+<li>获取 <code>server</code> 能力</li>
+<li>协议握手</li>
+</ul>
+<p><strong>3. 能力发现</strong></p>
+<p><strong>4. 能力调用</strong></p>
+<p>调用 <code>MCP Server</code> 提供的方法，拿到对应的上线爱文内容</p>
+<p><strong>5. 会话管理</strong></p>
+<p>用于管理连接生命周期，处理断连/重连等场景</p>
+<h2><code>MCP Host</code></h2>
+<p><code>MCP Host</code> 是一个 <code>Agent</code> 应用，而 <code>MCP Client</code> 是整个 <code>Agent</code> 应用的其中一个模块。</p>
+<h2>通信方式</h2>
+<p><strong>通信格式</strong></p>
+<ul>
+<li><code>xml</code></li>
+<li><code>json</code></li>
+<li>字符串</li>
+</ul>
+<p><code>MCP</code>中的通信格式采用 <code>JSON-RPC2.0</code>，<code>JSON Remote Procedure Call</code>，远程函数调用。</p>
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;method&quot;: &quot;callTool&quot;,
+  &quot;params&quot;: {
+    &quot;name&quot;: &quot;weather&quot;,
+    &quot;argumengs&quot;: {
+      &quot;location&quot;: &quot;北京&quot;
+    }
+  },
+  &quot;id&quot;: 1
+}
+
+{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;result&quot;: {
+    &quot;temperature&quot;: 25,
+    &quot;condition&quot;: &quot;晴&quot;
+  }
+}
+</code></pre>
+<p><strong>通信方式</strong></p>
+<ul>
+<li><code>stdio</code>：本地进程通信</li>
+<li><code>http</code>：网络通信</li>
+</ul>
+<p><code>Streamable HTTP</code> 是 <code>MCP</code> 中基于 <code>http</code> 的通信方式，主要用于远程和 <code>Web</code> 场景。</p>
+<ul>
+<li>通过 <code>HTTP</code> 接收 <strong>远程</strong> 请求（前端网页、<code>API</code> 网关）</li>
+<li>需要支持 <strong>多客户端</strong> 并发访问</li>
+<li>浏览器与 <code>MCP Server</code> 通信</li>
+<li>流式响应（<code>SSE</code> 推送）</li>
+</ul>
+<p>客户端基于 <code>HTTP POST</code> 发送 <code>JSON-RPC</code> 请求：</p>
+<ul>
+<li><code>initialize</code></li>
+<li><code>callTool</code></li>
+<li><code>listResources</code></li>
+</ul>
+<p>服务端根据场景返回：</p>
+<ul>
+<li>普通 <code>JSON</code> 响应（<code>application/json</code>）</li>
+<li>流式 <code>SSE</code> 响应（<code>text/event-stream</code>）</li>
+</ul>
+<p>除了请求响应外，客户端还可以通过 <code>GET</code> 请求建立 <code>SSE</code> 连接，用于接收服务端的通知，<code>SSE</code> 主要用于 <strong>服务端主动推送</strong>。</p>
+<ul>
+<li><code>notifications/resources/list_changed</code></li>
+<li><code>notifications/tools/list_changed</code></li>
+</ul>
+</div></noscript>
+      <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
+      <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
+           data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
+    </div>
+    <aside class="sidebar-area">
+      <div class="sidebar-title">文章目录</div>
+      <nav id="toc-nav" class="toc-nav"></nav>
+    </aside>
+  </div>
+  <script src="/src/components/loading/index.js"></script>
+  <script src="/src/components/banner/index.js"></script>
+  <script src="/src/components/navigation/index.js"></script>
+  <script src="/src/js/highlight.min.js"></script>
+  <script src="/src/js/marked.min.js"></script>
+  <script src="/src/js/marked-highlight.min.js"></script>
+  <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/scroll/index.js"></script>
+  <script src="/src/components/cookie-consent/index.js"></script>
+  <script>
+    (function () {
+      /* 静态页滚动容器抗注入：部分预览环境会对 .layout-container/.content-area 整段 setAttribute style 为
+         "height: auto !important"，使内部滚动容器按内容高度解析、滚不到底。
+         用 MutationObserver 侦测 style 属性变化，一旦出现 auto 即用 JS 计算的视口像素高度（window.innerHeight，
+         不受 100vh 被内容撑大的影响）重新施加，恢复 631 内部滚动。生产正常浏览器无注入时不触发。 */
+      var l = document.querySelector('.layout-container');
+      var ca = document.querySelector('.content-area');
+      if (!l || !ca) return;
+      function fixedH() {
+        var b = parseInt(window.getComputedStyle(document.body).getPropertyValue('--banner-height')) || 0;
+        return (window.innerHeight - b) + 'px';
+      }
+      function force() {
+        var h = fixedH();
+        var changed = false;
+        if ((l.getAttribute('style') || '').indexOf('auto') !== -1) {
+          l.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        if ((ca.getAttribute('style') || '').indexOf('auto') !== -1) {
+          ca.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        return changed;
+      }
+      var timer = null;
+      var mo = new MutationObserver(function () {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(force, 50);
+      });
+      mo.observe(l, { attributes: true, attributeFilter: ['style'] });
+      mo.observe(ca, { attributes: true, attributeFilter: ['style'] });
+      window.addEventListener('resize', force);
+      force();
+    })();
+  </script>
+  <script>
+    (function () {
+      // 运行时从相邻 .md 渲染：md 改动后刷新即更新；保留预渲染正文作为 no-JS / 爬虫回退
+      var mdUrl = '../AI%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%96%87%E6%A1%A3.md';
+      function finish() {
+        try {
+          if (typeof generateTOC === 'function') generateTOC();
+          var blocks = document.querySelectorAll('#markdown-content pre code');
+          if (window.hljs && blocks.length) {
+            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
+          }
+          document.querySelectorAll('#markdown-content a').forEach(function (a) {
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener noreferrer');
+          });
+        } catch (e) {}
+        if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
+        if (typeof hideLoading === 'function') hideLoading();
+      }
+      try {
+        if (typeof handler === 'function') {
+          handler('markdown-content', mdUrl, finish);
+        } else {
+          finish();
+        }
+      } catch (e) { finish(); }
+    })();
+  </script>
+</body>
+</html>

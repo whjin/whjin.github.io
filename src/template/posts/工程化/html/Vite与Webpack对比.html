@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="吴华锦" />
+  <title>Vite与Webpack对比 « 吴华锦</title>
+  <meta name="description" content="最本质的差异：Webpack 是 先打包，后服务 的 Bundle 驱动模式；Vite 是 先服务，按需编译 的 ESM 原生驱动模式。 一、开发启动速度 核心原因：Webpack必须先完成全量打包才能提供服务；Vite 利用现代浏览器原生支持的 ES Module 特性，把“打包”工作交给了浏览器，服务器只负责按需编译和转发。 维度 Webpack Vite -------- --------- ------ 冷启动原理 从入口文件开始，递归打包 所有依赖和业务代码，&lt;br生成完整 bundle 后再启动开发服务器 1. 仅对第三方依赖做 预编译（eslint加速）&lt;br2. 直接启动开发服" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wuhuajin.com/src/template/posts/%E5%B7%A5%E7%A8%8B%E5%8C%96/html/Vite%E4%B8%8EWebpack%E5%AF%B9%E6%AF%94.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Wu Huajin" />
+  <meta property="og:title" content="Vite与Webpack对比" />
+  <meta property="og:description" content="最本质的差异：Webpack 是 先打包，后服务 的 Bundle 驱动模式；Vite 是 先服务，按需编译 的 ESM 原生驱动模式。 一、开发启动速度 核心原因：Webpack必须先完成全量打包才能提供服务；Vite 利用现代浏览器原生支持的 ES Module 特性，把“打包”工作交给了浏览器，服务器只负责按需编译和转发。 维度 Webpack Vite -------- --------- ------ 冷启动原理 从入口文件开始，递归打包 所有依赖和业务代码，&lt;br生成完整 bundle 后再启动开发服务器 1. 仅对第三方依赖做 预编译（eslint加速）&lt;br2. 直接启动开发服" />
+  <meta property="og:url" content="https://wuhuajin.com/src/template/posts/%E5%B7%A5%E7%A8%8B%E5%8C%96/html/Vite%E4%B8%8EWebpack%E5%AF%B9%E6%AF%94.html" />
+  <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Vite与Webpack对比" />
+  <meta name="twitter:description" content="最本质的差异：Webpack 是 先打包，后服务 的 Bundle 驱动模式；Vite 是 先服务，按需编译 的 ESM 原生驱动模式。 一、开发启动速度 核心原因：Webpack必须先完成全量打包才能提供服务；Vite 利用现代浏览器原生支持的 ES Module 特性，把“打包”工作交给了浏览器，服务器只负责按需编译和转发。 维度 Webpack Vite -------- --------- ------ 冷启动原理 从入口文件开始，递归打包 所有依赖和业务代码，&lt;br生成完整 bundle 后再启动开发服务器 1. 仅对第三方依赖做 预编译（eslint加速）&lt;br2. 直接启动开发服" />
+  <link rel="icon" href="/src/images/favicon.png" />
+  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/src/css/github-dark.min.css" />
+  <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/loading/index.css" />
+  <link rel="stylesheet" href="/src/components/navigation/index.css" />
+  <link rel="stylesheet" href="/src/components/banner/index.css" />
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Vite与Webpack对比",
+  "description": "最本质的差异：Webpack 是 先打包，后服务 的 Bundle 驱动模式；Vite 是 先服务，按需编译 的 ESM 原生驱动模式。 一、开发启动速度 核心原因：Webpack必须先完成全量打包才能提供服务；Vite 利用现代浏览器原生支持的 ES Module 特性，把“打包”工作交给了浏览器，服务器只负责按需编译和转发。 维度 Webpack Vite -------- --------- ------ 冷启动原理 从入口文件开始，递归打包 所有依赖和业务代码，<br生成完整 bundle 后再启动开发服务器 1. 仅对第三方依赖做 预编译（eslint加速）<br2. 直接启动开发服",
+  "author": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "datePublished": "2026-09-11",
+  "inLanguage": "zh-CN",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wuhuajin.com/src/template/posts/%E5%B7%A5%E7%A8%8B%E5%8C%96/html/Vite%E4%B8%8EWebpack%E5%AF%B9%E6%AF%94.html"
+  }
+}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
+  <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+</head>
+<body>
+  <div class="layout-container">
+    <div class="nav-container"></div>
+    <div class="content-area">
+      <div id="markdown-content" class="markdown-content viewer"></div>
+      <noscript><div class="markdown-content viewer" style="padding:1em"><blockquote>
+<p>最本质的差异：<code>Webpack</code> 是 <strong>先打包，后服务</strong> 的 <code>Bundle</code> 驱动模式；<code>Vite</code> 是 <strong>先服务，按需编译</strong> 的 <code>ESM</code> 原生驱动模式。</p>
+</blockquote>
+<h2>一、开发启动速度</h2>
+<p><strong>核心原因</strong>：<strong>Webpack</strong>必须先完成全量打包才能提供服务；<code>Vite</code> 利用现代浏览器原生支持的 <code>ES Module</code> 特性，把“打包”工作交给了浏览器，服务器只负责按需编译和转发。</p>
+<!-- prettier-ignore-start -->
+<table>
+<thead>
+<tr>
+<th><strong>维度</strong></th>
+<th><code>Webpack</code></th>
+<th><code>Vite</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>冷启动原理</strong></td>
+<td>从入口文件开始，递归打包 <strong>所有依赖和业务代码</strong>，<br>生成完整 <code>bundle</code> 后再启动开发服务器</td>
+<td>1. 仅对第三方依赖做 <strong>预编译</strong>（<code>eslint</code>加速）<br>2. 直接启动开发服务器<br>3. 浏览器请求哪个模块，才 <strong>实时编译</strong> 哪个模块</td>
+</tr>
+<tr>
+<td><strong>启动耗时</strong></td>
+<td>与项目规模 <strong>正相关</strong>，大型项目可达 <code>30s-5min</code></td>
+<td>几乎与项目规模 <strong>无关</strong>，通常 <code>1-3s</code>完成启动</td>
+</tr>
+<tr>
+<td><strong>二次启动</strong></td>
+<td>依赖缓存优化，但仍需重新打包变更的依赖树</td>
+<td>预构建结果强缓存，二次启动几乎瞬时</td>
+</tr>
+</tbody></table>
+<!-- prettier-ignore-end -->
+
+<h2>二、热更新（<code>HMR</code>）</h2>
+<!-- prettier-ignore-start -->
+<table>
+<thead>
+<tr>
+<th><strong>维度</strong></th>
+<th><code>Webpack</code></th>
+<th><code>Vite</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>更新原理</strong></td>
+<td>重新打包 <strong>变更模块及其所有依赖</strong>，替换整个 <code>chunk</code></td>
+<td>基于 <code>ESM</code> 精确更新 <strong>变更的单个模块</strong>，不影响其他模块</td>
+</tr>
+<tr>
+<td><strong>更新耗时</strong></td>
+<td>与项目规模正相关，大型项目可达 <code>5-10s</code></td>
+<td>毫秒级，与项目规模完全无关</td>
+</tr>
+<tr>
+<td><strong>状态保留</strong></td>
+<td>部分框架需要额外插件支持，容易出现状态丢失</td>
+<td>原生支持更好，状态保留稳定</td>
+</tr>
+<tr>
+<td><strong>页面刷新</strong></td>
+<td>复杂变更可能触发整页刷新</td>
+<td>极少触发整页刷新</td>
+</tr>
+</tbody></table>
+<!-- prettier-ignore-end -->
+
+<h2>三、生产构建流程</h2>
+<!-- prettier-ignore-start -->
+<table>
+<thead>
+<tr>
+<th><strong>维度</strong></th>
+<th><code>Webpack</code></th>
+<th><code>Vite</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>构建工具</strong></td>
+<td>自身完全全流程打包</td>
+<td>开发用 <code>esbuild</code> 预构建，生产用 <code>Rollup</code> 打包</td>
+</tr>
+<tr>
+<td><strong>构建原理</strong></td>
+<td>基于 <code>CommonJS/ESM</code> 混合打包，兼容性优先</td>
+<td>纯 <code>ESM</code> 打包，<code>Tree Shaking</code> 更彻底</td>
+</tr>
+<tr>
+<td><strong>构建速度</strong></td>
+<td>中等，大型项目耗时较长</td>
+<td>比 <code>Webpack</code> 快 <code>2-10</code> 倍（<code>esbuild + Rollup</code> 双重加速）</td>
+</tr>
+<tr>
+<td><strong>产物优化</strong></td>
+<td>优化手段丰富，但配置复杂</td>
+<td>内置代码分割、压缩、懒加载，默认优化效果更好</td>
+</tr>
+<tr>
+<td><strong>产物体积</strong></td>
+<td>通常更大（冗余代码多）</td>
+<td>通常更小（<code>Rollup</code> 更优的 <code>Tree Shaking</code>）</td>
+</tr>
+<tr>
+<td><strong>兼容性</strong></td>
+<td>原生支持低版本浏览器</td>
+<td>默认仅支持现代浏览器，需 <code>@vitejs/plugin-legacy</code> 兼容低版本</td>
+</tr>
+</tbody></table>
+<!-- prettier-ignore-end -->
+
+<h2>四、其他关键区别</h2>
+<ol>
+<li><strong>配置复杂度</strong></li>
+</ol>
+<ul>
+<li><code>Webpack</code>：配置及其灵活但复杂，需要手动配置 <code>entry</code>、<code>output</code>、<code>loader</code>、<code>plugin</code>、<code>optimization</code> 等。</li>
+<li><code>Vite</code>：遵循“约定大于配置”，内置对 <code>TypeScript</code>、<code>JSX</code>、<code>CSS</code>、<code>JSON</code>、静态资源等支持，开箱即用，配置量减少 <code>70%</code> 以上。</li>
+</ul>
+<ol start="2">
+<li><strong>依赖处理</strong></li>
+</ol>
+<ul>
+<li><code>Webpack</code>：打包时统一处理所有依赖，支持 <code>CommonJS</code>、<code>AMD</code>、<code>UMD</code>、<code>ESM</code> 等所有模块规范。</li>
+<li><code>Vite</code>：<ul>
+<li>开发时：用 <code>esbuild</code> 预构建第三方依赖（将 <code>CommonJS/UMD</code> 转为 <code>ESM</code>，合并小模块减少请求）</li>
+<li>生产时：<code>Rollup</code> 处理所有依赖，纯 <code>ESM</code> 输出</li>
+<li>对非 <code>ESM</code> 规范的依赖兼容性稍差，部分老旧库可能需要额外配置。</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li><strong>生态系统</strong></li>
+</ol>
+<ul>
+<li><code>Webpack</code>：生态及其成熟，拥有海量 <code>loader</code> 和 <code>plugin</code>，几乎能满足任何构建需求。</li>
+<li><code>Vite</code>：生态发展迅猛，主流框架（<code>React</code>、<code>Vue</code>、<code>Svelte</code>）均官方支持，但小众场景的插件数量仍小于 <code>Webpack</code>。</li>
+</ul>
+<ol start="4">
+<li><strong>多页面应用支持</strong></li>
+</ol>
+<ul>
+<li><code>Webpack</code>：需要手动配置多个 <code>entry</code> 和 <code>HtmlWebpackPlugin</code> 。</li>
+<li><code>Vite</code>：原生支持多页面，只需在 <code>pages</code> 目录下创建对应 <code>HTML</code> 文件即可。</li>
+</ul>
+</div></noscript>
+      <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
+      <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
+           data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
+    </div>
+    <aside class="sidebar-area">
+      <div class="sidebar-title">文章目录</div>
+      <nav id="toc-nav" class="toc-nav"></nav>
+    </aside>
+  </div>
+  <script src="/src/components/loading/index.js"></script>
+  <script src="/src/components/banner/index.js"></script>
+  <script src="/src/components/navigation/index.js"></script>
+  <script src="/src/js/highlight.min.js"></script>
+  <script src="/src/js/marked.min.js"></script>
+  <script src="/src/js/marked-highlight.min.js"></script>
+  <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/scroll/index.js"></script>
+  <script src="/src/components/cookie-consent/index.js"></script>
+  <script>
+    (function () {
+      /* 静态页滚动容器抗注入：部分预览环境会对 .layout-container/.content-area 整段 setAttribute style 为
+         "height: auto !important"，使内部滚动容器按内容高度解析、滚不到底。
+         用 MutationObserver 侦测 style 属性变化，一旦出现 auto 即用 JS 计算的视口像素高度（window.innerHeight，
+         不受 100vh 被内容撑大的影响）重新施加，恢复 631 内部滚动。生产正常浏览器无注入时不触发。 */
+      var l = document.querySelector('.layout-container');
+      var ca = document.querySelector('.content-area');
+      if (!l || !ca) return;
+      function fixedH() {
+        var b = parseInt(window.getComputedStyle(document.body).getPropertyValue('--banner-height')) || 0;
+        return (window.innerHeight - b) + 'px';
+      }
+      function force() {
+        var h = fixedH();
+        var changed = false;
+        if ((l.getAttribute('style') || '').indexOf('auto') !== -1) {
+          l.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        if ((ca.getAttribute('style') || '').indexOf('auto') !== -1) {
+          ca.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        return changed;
+      }
+      var timer = null;
+      var mo = new MutationObserver(function () {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(force, 50);
+      });
+      mo.observe(l, { attributes: true, attributeFilter: ['style'] });
+      mo.observe(ca, { attributes: true, attributeFilter: ['style'] });
+      window.addEventListener('resize', force);
+      force();
+    })();
+  </script>
+  <script>
+    (function () {
+      // 运行时从相邻 .md 渲染：md 改动后刷新即更新；保留预渲染正文作为 no-JS / 爬虫回退
+      var mdUrl = '../Vite%E4%B8%8EWebpack%E5%AF%B9%E6%AF%94.md';
+      function finish() {
+        try {
+          if (typeof generateTOC === 'function') generateTOC();
+          var blocks = document.querySelectorAll('#markdown-content pre code');
+          if (window.hljs && blocks.length) {
+            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
+          }
+          document.querySelectorAll('#markdown-content a').forEach(function (a) {
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener noreferrer');
+          });
+        } catch (e) {}
+        if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
+        if (typeof hideLoading === 'function') hideLoading();
+      }
+      try {
+        if (typeof handler === 'function') {
+          handler('markdown-content', mdUrl, finish);
+        } else {
+          finish();
+        }
+      } catch (e) { finish(); }
+    })();
+  </script>
+</body>
+</html>

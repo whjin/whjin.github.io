@@ -512,6 +512,8 @@ p.sb-event-desc {
   padding: 4px 10px;
   cursor: pointer;
   border: 1px solid transparent;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .sb-tag:hover {

@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="吴华锦" />
+  <title>功能代码集合 « 吴华锦</title>
+  <meta name="description" content="两数之和 日期格式化 时间转换（秒数转时分秒） 计算时分秒差值 深拷贝和浅拷贝 浅拷贝 - 只拷贝一层 - 引用类型拷贝内存地址 深拷贝 数组去重 数组对象去重 数组对象排序 获取上/下个月日期 获取前/后7天日期 一周日期 点击内容切换 时分秒 当月第一天和最后一天 fetch接口请求 按键处理方法 返回顶部 自适应内部元素 iview封装菜单menu 图片懒加载 CSS多行文本省略 Vue字符串换行 封装iView无限层级菜单 上传文件 CSS控制禁止点击 pointer-events: none; //（禁止鼠标点击事件） 单行居中，多行顶部对齐 计算传入时间与当前时间相差的秒数 提取U" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wuhuajin.com/src/template/posts/JavaScript/html/%E5%8A%9F%E8%83%BD%E4%BB%A3%E7%A0%81%E9%9B%86%E5%90%88.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Wu Huajin" />
+  <meta property="og:title" content="功能代码集合" />
+  <meta property="og:description" content="两数之和 日期格式化 时间转换（秒数转时分秒） 计算时分秒差值 深拷贝和浅拷贝 浅拷贝 - 只拷贝一层 - 引用类型拷贝内存地址 深拷贝 数组去重 数组对象去重 数组对象排序 获取上/下个月日期 获取前/后7天日期 一周日期 点击内容切换 时分秒 当月第一天和最后一天 fetch接口请求 按键处理方法 返回顶部 自适应内部元素 iview封装菜单menu 图片懒加载 CSS多行文本省略 Vue字符串换行 封装iView无限层级菜单 上传文件 CSS控制禁止点击 pointer-events: none; //（禁止鼠标点击事件） 单行居中，多行顶部对齐 计算传入时间与当前时间相差的秒数 提取U" />
+  <meta property="og:url" content="https://wuhuajin.com/src/template/posts/JavaScript/html/%E5%8A%9F%E8%83%BD%E4%BB%A3%E7%A0%81%E9%9B%86%E5%90%88.html" />
+  <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="功能代码集合" />
+  <meta name="twitter:description" content="两数之和 日期格式化 时间转换（秒数转时分秒） 计算时分秒差值 深拷贝和浅拷贝 浅拷贝 - 只拷贝一层 - 引用类型拷贝内存地址 深拷贝 数组去重 数组对象去重 数组对象排序 获取上/下个月日期 获取前/后7天日期 一周日期 点击内容切换 时分秒 当月第一天和最后一天 fetch接口请求 按键处理方法 返回顶部 自适应内部元素 iview封装菜单menu 图片懒加载 CSS多行文本省略 Vue字符串换行 封装iView无限层级菜单 上传文件 CSS控制禁止点击 pointer-events: none; //（禁止鼠标点击事件） 单行居中，多行顶部对齐 计算传入时间与当前时间相差的秒数 提取U" />
+  <link rel="icon" href="/src/images/favicon.png" />
+  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/src/css/github-dark.min.css" />
+  <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/loading/index.css" />
+  <link rel="stylesheet" href="/src/components/navigation/index.css" />
+  <link rel="stylesheet" href="/src/components/banner/index.css" />
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "功能代码集合",
+  "description": "两数之和 日期格式化 时间转换（秒数转时分秒） 计算时分秒差值 深拷贝和浅拷贝 浅拷贝 - 只拷贝一层 - 引用类型拷贝内存地址 深拷贝 数组去重 数组对象去重 数组对象排序 获取上/下个月日期 获取前/后7天日期 一周日期 点击内容切换 时分秒 当月第一天和最后一天 fetch接口请求 按键处理方法 返回顶部 自适应内部元素 iview封装菜单menu 图片懒加载 CSS多行文本省略 Vue字符串换行 封装iView无限层级菜单 上传文件 CSS控制禁止点击 pointer-events: none; //（禁止鼠标点击事件） 单行居中，多行顶部对齐 计算传入时间与当前时间相差的秒数 提取U",
+  "author": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "datePublished": "2026-09-11",
+  "inLanguage": "zh-CN",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wuhuajin.com/src/template/posts/JavaScript/html/%E5%8A%9F%E8%83%BD%E4%BB%A3%E7%A0%81%E9%9B%86%E5%90%88.html"
+  }
+}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
+  <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+</head>
+<body>
+  <div class="layout-container">
+    <div class="nav-container"></div>
+    <div class="content-area">
+      <div id="markdown-content" class="markdown-content viewer"></div>
+      <noscript><div class="markdown-content viewer" style="padding:1em"><h2>两数之和</h2>
+<pre><code class="language-javascript">function twoSum(nums, target) {
+  for (let i = 0; i &lt; nums.length; i++) {
+    let num = nums[i];
+    let targetIndex = nums.indexOf(target - num);
+    if (targetIndex !== -1 &amp;&amp; targetIndex !== i) {
+      return [i, targetIndex];
+    }
+  }
+}
+</code></pre>
+<h2>日期格式化</h2>
+<pre><code class="language-JavaScript">// 格式化日期类型,fmt格式可选择
+function dateFormat(fmt, date) {
+  let ret;
+  let opt = {
+    &quot;Y+&quot;: date.getFullYear().toString(), // 年
+    &quot;M+&quot;: (date.getMonth() + 1).toString(), // 月
+    &quot;D+&quot;: date.getDate().toString(), // 日
+    &quot;h+&quot;: date.getHours().toString(), // 时
+    &quot;m+&quot;: date.getMinutes().toString(), // 分
+    &quot;s+&quot;: date.getSeconds().toString(), // 秒
+    &quot;ms+&quot;: date.getMilliseconds().toString() // 毫秒
+  };
+  for (let k in opt) {
+    ret = new RegExp(&quot;(&quot; + k + &quot;)&quot;).exec(fmt);
+    if (ret) {
+      fmt = fmt.replace(ret[1], ret[1].length == 1 ? opt[k] : opt[k].padStart(ret[1].length, &quot;0&quot;));
+    }
+  }
+  return fmt;
+}
+let date = new Date();
+let fDate = dateFormat(&quot;YYYY-MM-DD hh:mm:ss.ms&quot;, new Date(date));
+</code></pre>
+<!--more-->
+
+<h2>时间转换（秒数转时分秒）</h2>
+<pre><code class="language-JavaScript">function timeFormat (sec) {
+    let minite = Math.floor((sec / 60 % 60)) &lt; 10 ? &#39;0&#39; + Math.floor((sec / 60 % 60)) : Math.floor((sec / 60 % 60));
+    let second = Math.floor((sec % 60)) &lt; 10 ? &#39;0&#39; + Math.floor((sec % 60)) : Math.floor((sec % 60));
+    if (sec &lt; 3600) {
+        return `${minite}:${second}`;
+    } else {
+        let hour = Math.floor(sec / 3600) &lt; 10 ? &#39;0&#39; + Math.floor(sec / 3600) : Math.floor(sec / 3600);
+        return `${hour}:${minite}:${second}`;
+    }
+}
+</code></pre>
+<h2>计算时分秒差值</h2>
+<pre><code class="language-JavaScript">// 计算时分秒差值
+function timeDiffer(beginTime, endTime) {
+  let ret = {};
+  let date = new Date();
+  let sTime = Date.parse(dateFormat(&quot;YYYY/MM/DD&quot;, date) + &quot; &quot; + beginTime);
+  if (beginTime &gt;= endTime) {
+    date.setDate(date.getDate() + 1);
+  }
+  let eTime = Date.parse(dateFormat(&quot;YYYY/MM/DD&quot;, date) + &quot; &quot; + endTime);
+  let differ = eTime - sTime;
+  let hour = Math.floor(differ / 1000 / 60 / 60);
+  let minute = Math.floor(differ / 1000 / 60 - hour * 60);
+  let second = Math.floor(differ / 1000 - hour * 60 * 60);
+  ret = {
+    differHour: hour,
+    differMinute: minute,
+    differSecond: second
+  };
+  return ret;
+}
+let { differHour, differMinute, differSecond } = timeDiffer(beginTime, endTime);
+</code></pre>
+<h2>深拷贝和浅拷贝</h2>
+<p><strong>浅拷贝</strong></p>
+<ul>
+<li>只拷贝一层</li>
+<li>引用类型拷贝内存地址</li>
+</ul>
+<pre><code class="language-javascript">Object.assign;
+Array.prototype.slice();
+Array.prototype.concat();
+扩展运算符;
+</code></pre>
+<p><strong>深拷贝</strong></p>
+<pre><code class="language-javascript">_.cloneDeep() lodash 深拷贝函数
+jQuery.extend() jquery 深拷贝函数
+JSON.stringify() 存在弊端 忽略 undefined Symbol
+手写循环递归
+
+function deepCopy(obj) {
+  if (typeof obj !== &#39;object&#39;) {
+    return new Error(&#39;类型错误&#39;);
+  }
+  let result = Array.isArray(obj) ? [] : {};
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      if (typeof obj[key] === &#39;object&#39; &amp;&amp; obj[key] !== null) {
+        result[key] = deepCopy(obj[key]);
+      }
+    } else {
+      result[key] = obj[key];
+    }
+  }
+  return result;
+}
+
+function deepCopy(obj) {
+  let copyObj = null;
+  if (typeof obj === &#39;object&#39; &amp;&amp; obj !== null) {
+    copyObj = Array.isArray(obj) ? [] : {};
+    for (let key in obj) {
+      copyObj[key] = deepCopy(obj[key]);
+    }
+  } else {
+    copyObj = obj;
+  }
+  return copyObj;
+}
+</code></pre>
+<h2>数组去重</h2>
+<pre><code class="language-javascript">// ES6最简方法
+let result = [];
+if (Array.isArray(arr)) {
+  result = new Set(arr);
+}
+function unique(arr) {
+  return Array.from(new Set(arr));
+}
+
+// filter去重
+function unique(arr) {
+  return arr.filter((item, index, arr) =&gt; {
+    // 当前元素在原数据中的第一个索引等于当前索引值，否则返回当前元素
+    return arr.indexOf(item, 0) == index;
+  });
+}
+
+// 数组去重
+function unique(arr) {
+  if (!Array.isArray(arr)) {
+    return;
+  }
+  let result = [];
+  for (let i = 0; i &lt; arr.length; i++) {
+    if (result.indexOf(arr[i]) === -1) {
+      result.push(arr[i]);
+    }
+  }
+  return result;
+}
+function unique(arr) {
+  if (Array.isArray(arr)) {
+    let result = [];
+    for (let i = 0, len = arr.length; i &lt; len; i++) {
+      if (!result.includes(arr[i])) {
+        result.push(arr[i]);
+      }
+    }
+    return result;
+  }
+}
+</code></pre>
+<h2>数组对象去重</h2>
+<pre><code class="language-JavaScript">function uniqueArr(arr) {
+  if (!Array.isArray(arr)) {
+    return;
+  }
+  let map = new Map();
+  for (let i = 0, len = arr.length; i &lt; len; i++) {
+    if (!map.has(arr[i].name)) {
+      map.set(arr[i].name, arr[i]);
+    }
+  }
+  return [...map.values()];
+}
+</code></pre>
+<h2>数组对象排序</h2>
+<pre><code class="language-JavaScript">// 数组对象排序，比较两个字符串
+list.sort((a, b) =&gt; {
+  return a.id.localeCompare(b.id);
+});
+</code></pre>
+<h2>获取上/下个月日期</h2>
+<pre><code class="language-JavaScript">// 下个月
+let date = new Date(this.startDate);
+let nextMonthDate = date.setMonth(date.getMonth() + 1);
+this.endDate = dateFormat(&quot;YYYY-MM-DD&quot;, new Date(nextMonthDate));
+
+// 上个月个月
+let lastMonthDate = date.setMonth(date.getMonth() - 1);
+</code></pre>
+<h2>获取前/后7天日期</h2>
+<pre><code class="language-JavaScript">// 前7天
+let date = new Date(this.startDate);
+let afterDate = date.setDate(date.getDate() + 6);
+this.endDate = dateFormat(&quot;YYYY-MM-DD&quot;, new Date(afterDate));
+
+// 后7天
+let afterDate = date.setDate(date.getDate() - 6);
+</code></pre>
+<h2>一周日期</h2>
+<pre><code class="language-javascript">let weeks = [&#39;周一&#39;, &#39;周二&#39;, &#39;周三&#39;, &#39;周四&#39;, &#39;周五&#39;, &#39;周六&#39;, &#39;周日&#39;];
+for (let i = 0; i &lt; 7; i++) {
+  let date = new Date();
+  let index = date.getDay() ? date.getDay() - 1 : 6;
+  let nowDate = date.setDate(date.getDate() - index + i);
+  let formatDate = dateFormat(&#39;MM-DD&#39;, new Date(nowDate));
+  let week = weeks[i];
+  let weekDate = `${formatDate}(${week})`;
+  this.weekDateColumns.push(weekDate);
+}
+</code></pre>
+<h2>点击内容切换</h2>
+<pre><code class="language-javascript">let len = this.assistList.length - 1;
+if (this.index &lt; len) {
+  this.index++;
+  this.assistInfo = this.assistList[this.index];
+} else {
+  this.index = 0;
+  this.assistInfo = this.assistList[this.index];
+}
+</code></pre>
+<h2>时分秒</h2>
+<pre><code class="language-javascript">时：`parseInt(count/60/60)`
+分：`parseInt(count/60)%60`
+秒：`parseInt(count%60)`
+</code></pre>
+<h2>当月第一天和最后一天</h2>
+<pre><code class="language-javascript">// 第一天
+let date = new Date();
+date.setDate(1);
+
+// 最后一天
+let date = new Date();
+let lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+</code></pre>
+<h2>fetch接口请求</h2>
+<pre><code class="language-javascript">let api = &#39;https://api.com&#39;;
+let headerConfig = {
+  headers: {
+    Accept: &#39;application/json&#39;,
+  },
+};
+async function request() {
+  let res = await fetch(api, headerConfig);
+  let data = await res.json();
+}
+</code></pre>
+<h2>按键处理方法</h2>
+<pre><code class="language-javascript">window.addEventListener(&#39;keydown&#39;, (e) =&gt; {
+  let container = document.querySelector(&#39;##container&#39;);
+  let { key, keyCode, code } = e;
+  let template = &#39;&#39;;
+  [
+    {
+      title: &#39;e.key&#39;,
+      content: key == &#39; &#39; ? &#39;Space&#39; : key,
+    },
+    {
+      title: &#39;e.keyCode&#39;,
+      content: keyCode,
+    },
+    {
+      title: &#39;e.code&#39;,
+      content: code,
+    },
+  ].forEach((item) =&gt; {
+    template += `&lt;div class=&quot;key&quot;&gt;&lt;small&gt;${item.title}&lt;/small&gt;${item.content}&lt;/div&gt;`;
+  });
+  container.innerHTML = template;
+});
+</code></pre>
+<h2>返回顶部</h2>
+<pre><code class="language-css">html,
+body {
+  scroll-behavior: smooth;
+}
+.back {
+  position: sticky;
+  float: right;
+  top: -110px;
+  margin-top: -50px;
+  border-radius: 50%;
+  background: url(&#39;&#39;) center no-repeat dodgerblue;
+  background-size: 50%;
+  width: 50px;
+  height: 50px;
+  transform: translateY(calc(100vh + 50px));
+}
+</code></pre>
+<h2>自适应内部元素</h2>
+<pre><code class="language-css">figure {
+  max-width: 300px;
+  max-width: min-content;
+  margin: auto;
+}
+figure &gt; img {
+  max-width: inherit;
+}
+</code></pre>
+<h2>iview封装菜单menu</h2>
+<pre><code class="language-vue">&lt;template&gt;
+  &lt;i-submenu :name=&quot;menuList.name&quot;&gt;
+    &lt;!-- 父级菜单 --&gt;
+    &lt;template slot=&quot;title&quot;&gt;{{ menuList.title }}&lt;/template&gt;
+    &lt;template v-for=&quot;(item, index) in menuList.children&quot;&gt;
+      &lt;!-- 如果还要子集，继续调用 --&gt;
+      &lt;left-menu-nav v-if=&quot;item.hasOwnProperty(&#39;children&#39;)&quot; :menuList=&quot;item&quot;&gt;&lt;/left-menu-nav&gt;
+      &lt;!-- 无子菜单 --&gt;
+      &lt;i-menu-item v-else :name=&quot;item.name&quot;&gt;{{ item.title }}&lt;/i-menu-item&gt;
+    &lt;/template&gt;
+  &lt;/i-submenu&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  name: &quot;leftMenuNav&quot;,
+  props: {
+    menuList: {
+      type: Object,
+      default: () =&gt; { }
+    }
+  }
+};
+&lt;/script&gt;
+
+&lt;Layout&gt;
+    &lt;Sider hide-trigger collapsible :width=&quot;192&quot; :collapsed-width=&quot;64&quot; v-model=&quot;collapsed&quot; class=&quot;left-sider&quot; :style=&quot;{ overflow: &#39;hidden&#39; }&quot;&gt;
+        &lt;i-menu class=&quot;menu-position&quot; ref=&quot;menu&quot; :active-name=&quot;selectItem&quot; :open-names=&quot;menuOpenName&quot; @on-select=&quot;changeSelectItem&quot;&gt;
+            &lt;template v-for=&quot;(item, index) in menuList&quot; :name=&quot;item.name&quot;&gt;
+                &lt;!-- 有子菜单 --&gt;
+                &lt;left-menu-nav v-if=&quot;item.hasOwnProperty(&#39;children&#39;)&quot; :menuList=&quot;item&quot;&gt;&lt;/left-menu-nav&gt;
+                &lt;!-- 无子菜单 --&gt;
+                &lt;i-menu-item v-else :name=&quot;item.name&quot;&gt;{{ item.title }}&lt;/i-menu-item&gt;
+            &lt;/template&gt;
+        &lt;/i-menu&gt;
+    &lt;/Sider&gt;
+    &lt;Content class=&quot;main-content-con&quot;&gt;
+        &lt;Layout class=&quot;main-layout-con&quot;&gt;
+            &lt;Content class=&quot;content-wrapper&quot; style=&quot;position: relative&quot;&gt;
+                &lt;router-view style=&quot;height: 100%&quot; /&gt;
+                &lt;div v-show=&quot;lockEnable&quot; class=&quot;lockBox&quot;&gt;&lt;/div&gt;
+                &lt;ABackTop :height=&quot;100&quot; :bottom=&quot;80&quot; :right=&quot;50&quot; container=&quot;.content-wrapper&quot;&gt;&lt;/ABackTop&gt;
+            &lt;/Content&gt;
+        &lt;/Layout&gt;
+    &lt;/Content&gt;
+&lt;/Layout&gt;
+</code></pre>
+<h2>图片懒加载</h2>
+<pre><code class="language-javascript">const images = document.querySelectorAll(&#39;img&#39;);
+const callback = (entries) =&gt; {
+  entries.forEach((entry) =&gt; {
+    if (entry.isIntersecting) {
+      const image = entry.target;
+      const data_src = image.getAttribute(&#39;data-src&#39;);
+      image.setAttribute(&#39;src&#39;, data_src);
+      ResizeObserver.unobserver(image);
+    }
+  });
+};
+const observer = new IntersectionObserver(callback);
+images.forEach((image) =&gt; {
+  observer.observe(image);
+});
+</code></pre>
+<h2>CSS多行文本省略</h2>
+<pre><code class="language-css">p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+</code></pre>
+<h2>Vue字符串换行</h2>
+<pre><code class="language-vue">1. 添加`white-space:pre`
+2. 使用`&lt;pre&gt;`标签替换
+</code></pre>
+<h2>封装iView无限层级菜单</h2>
+<pre><code class="language-vue">// 子组件
+&lt;template&gt;
+  &lt;i-submenu :name=&quot;menuList.name&quot;&gt;
+    &lt;!-- 父级菜单 --&gt;
+    &lt;template slot=&quot;title&quot;&gt;{{ menuList.title }}&lt;/template&gt;
+    &lt;template v-for=&quot;(item, index) in menuList.children&quot;&gt;
+      &lt;!-- 如果还要子集，继续调用 --&gt;
+      &lt;left-menu-nav v-if=&quot;item.children &amp;&amp; item.children.length&quot; :menuList=&quot;item&quot; :key=&quot;item.index&quot;&gt;&lt;/left-menu-nav&gt;
+      &lt;!-- 子菜单 --&gt;
+      &lt;i-menu-item :key=&quot;item.id&quot; :name=&quot;item.name&quot;&gt;{{ item.title }}&lt;/i-menu-item&gt;
+    &lt;/template&gt;
+  &lt;/i-submenu&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  name: &#39;leftMenuNav&#39;,
+  props: {
+    menuList: {
+      type: Object,
+      default: () =&gt; {},
+    },
+  },
+};
+&lt;/script&gt;
+</code></pre>
+<pre><code>// 父组件
+&lt;i-menu :active-name=&quot;selectItem&quot; :open-names=&quot;menuOpenName&quot; @on-select=&quot;changeSelectItem&quot;&gt;
+&lt;template v-for=&quot;(item, index) in menuList&quot; :name=&quot;item.name&quot;&gt;
+  &lt;!-- 有子菜单 --&gt;
+  &lt;left-menu-nav v-if=&quot;item.children &amp;&amp; item.children.length&quot; :menuList=&quot;item&quot; :key=&quot;item.name&quot;&gt;&lt;/left-menu-nav&gt;
+  &lt;!-- 无子菜单 --&gt;
+  &lt;i-menu-item v-else :name=&quot;item.name&quot; :key=&quot;item.name&quot;&gt;{{
+    item.title
+  }}&lt;/i-menu-item&gt;
+&lt;/template&gt;
+&lt;/i-menu&gt;
+</code></pre>
+<h2>上传文件</h2>
+<pre><code class="language-css">&lt;div class=&quot;upload&quot;&gt;
+  &lt;button id=&quot;btn&quot; class=&quot;btn&quot;&gt;上传文件&lt;/button&gt;
+  &lt;input type=&quot;file&quot; id=&quot;input&quot; class=&quot;input&quot; /&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code>.upload {
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+.btn {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 1px dashed rgb(31, 154, 158);
+  background: #fff;
+  cursor: pointer;
+}
+.input {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+</code></pre>
+<h2>CSS控制禁止点击</h2>
+<p><code>pointer-events: none; //（禁止鼠标点击事件）</code></p>
+<h2>单行居中，多行顶部对齐</h2>
+<pre><code class="language-css">.table-item {
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  font-size: 16upx;
+  text-align: justify;
+  font-weight: 600;
+  span {
+    width: 125upx;
+    height: 65upx;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+  }
+}
+</code></pre>
+<h2>计算传入时间与当前时间相差的秒数</h2>
+<pre><code class="language-javascript">function convertStrToTime(time) {
+  let nowTime = new Date().getTime();
+  let date = new Date();
+  let arr = time.split(&#39;:&#39;);
+  date.setHours(parseInt(arr[0]));
+  date.setMinutes(parseInt(arr[1]));
+  let endTime = new Date(date).getTime();
+  let ret = Math.ceil((endTime - nowTime) / 1000);
+  return ret;
+}
+</code></pre>
+<h2>提取URL的参数</h2>
+<pre><code class="language-javascript">function queryURLParams(url) {
+  let str = url.split(&#39;?&#39;)[1];
+  const urlSearchParams = new URLSearchParams(str);
+  const params = Object.fromEntries(urlSearchParams.entries());
+
+  return params;
+}
+</code></pre>
+<h2>使用迭代的方式实现flatten函数</h2>
+<pre><code class="language-javascript">const flatten = function (arr) {
+  return [].concat(...arr.map((v) =&gt; (Array.isArray(v) ? flatten(v) : v)));
+};
+</code></pre>
+<h2><code>JS</code>原型链</h2>
+<pre><code class="language-js">function Person() {}
+Person.prototype.name = &#39;abc&#39;;
+Person.prototype.sayName = function () {};
+
+let person = new Person();
+
+person.__proto__ = Person.prototype;
+String.__proto__ = Function.prototype;
+String.constructor = Function;
+</code></pre>
+<h2>原型继承</h2>
+<pre><code class="language-js">function Parent() {
+  this.name = &#39;Parent&#39;;
+  this.sex = &#39;male&#39;;
+}
+
+function Child() {
+  this.name = &#39;Child&#39;;
+}
+
+Child.prototype = new Parent();
+</code></pre>
+<h2>构造函数继承</h2>
+<pre><code class="language-js">function Parent(name) {
+  this.name = name;
+}
+
+function Child() {
+  Parent.call(this, &#39;Child&#39;);
+}
+</code></pre>
+<h2>组合继承</h2>
+<pre><code class="language-js">function Person(name) {
+  this.name = name;
+}
+
+function Child(name) {
+  Person.call(this, name);
+}
+
+Child.prototype = new Persion();
+Child.prototype.constructor = Child;
+</code></pre>
+<h2><code>new</code>关键字</h2>
+<pre><code class="language-js">function _new(constructor, ...arg) {
+  let obj = {};
+  obj.__proto__ = constructor.prototype;
+  let res = constructor.apply(obj, arg);
+  return Object.prototype.toString.call(res) === &#39;[object Object]&#39; ? res : obj;
+}
+</code></pre>
+<h2>获取本周所有日期</h2>
+<pre><code class="language-js">export const getWeekDate = () =&gt; {
+  let weekDateList = [];
+  let weeks = [&#39;星期一&#39;, &#39;星期二&#39;, &#39;星期三&#39;, &#39;星期四&#39;, &#39;星期五&#39;, &#39;星期六&#39;, &#39;星期日&#39;];
+
+  let today = new Date();
+  let currentDay = today.getDay();
+  let monday = new Date(today);
+  monday.setDate(today.getDate() - ((currentDay + 6) % 7));
+  for (let i = 0; i &lt; 7; i++) {
+    let currentDate = new Date(monday);
+    currentDate.setDate(monday.getDate() + i);
+    let formatDate = dateFormat(&#39;MM-DD&#39;, new Date(currentDate));
+    let weekDate = `${formatDate} ${weeks[i]}`;
+    weekDateList.push(weekDate);
+  }
+  return weekDateList;
+};
+</code></pre>
+<h2>获取两个数组对象的差值</h2>
+<pre><code class="language-js">export const getArrayDiff = (arr1, arr2, key = &#39;id&#39;) =&gt; {
+  let keysInArr2 = new Set(arr2.map((item) =&gt; item[key]));
+  let result = arr1.filter((item) =&gt; !keysInArr2.has(item[key]));
+  return result;
+};
+</code></pre>
+</div></noscript>
+      <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
+      <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
+           data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
+    </div>
+    <aside class="sidebar-area">
+      <div class="sidebar-title">文章目录</div>
+      <nav id="toc-nav" class="toc-nav"></nav>
+    </aside>
+  </div>
+  <script src="/src/components/loading/index.js"></script>
+  <script src="/src/components/banner/index.js"></script>
+  <script src="/src/components/navigation/index.js"></script>
+  <script src="/src/js/highlight.min.js"></script>
+  <script src="/src/js/marked.min.js"></script>
+  <script src="/src/js/marked-highlight.min.js"></script>
+  <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/scroll/index.js"></script>
+  <script src="/src/components/cookie-consent/index.js"></script>
+  <script>
+    (function () {
+      /* 静态页滚动容器抗注入：部分预览环境会对 .layout-container/.content-area 整段 setAttribute style 为
+         "height: auto !important"，使内部滚动容器按内容高度解析、滚不到底。
+         用 MutationObserver 侦测 style 属性变化，一旦出现 auto 即用 JS 计算的视口像素高度（window.innerHeight，
+         不受 100vh 被内容撑大的影响）重新施加，恢复 631 内部滚动。生产正常浏览器无注入时不触发。 */
+      var l = document.querySelector('.layout-container');
+      var ca = document.querySelector('.content-area');
+      if (!l || !ca) return;
+      function fixedH() {
+        var b = parseInt(window.getComputedStyle(document.body).getPropertyValue('--banner-height')) || 0;
+        return (window.innerHeight - b) + 'px';
+      }
+      function force() {
+        var h = fixedH();
+        var changed = false;
+        if ((l.getAttribute('style') || '').indexOf('auto') !== -1) {
+          l.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        if ((ca.getAttribute('style') || '').indexOf('auto') !== -1) {
+          ca.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        return changed;
+      }
+      var timer = null;
+      var mo = new MutationObserver(function () {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(force, 50);
+      });
+      mo.observe(l, { attributes: true, attributeFilter: ['style'] });
+      mo.observe(ca, { attributes: true, attributeFilter: ['style'] });
+      window.addEventListener('resize', force);
+      force();
+    })();
+  </script>
+  <script>
+    (function () {
+      // 运行时从相邻 .md 渲染：md 改动后刷新即更新；保留预渲染正文作为 no-JS / 爬虫回退
+      var mdUrl = '../%E5%8A%9F%E8%83%BD%E4%BB%A3%E7%A0%81%E9%9B%86%E5%90%88.md';
+      function finish() {
+        try {
+          if (typeof generateTOC === 'function') generateTOC();
+          var blocks = document.querySelectorAll('#markdown-content pre code');
+          if (window.hljs && blocks.length) {
+            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
+          }
+          document.querySelectorAll('#markdown-content a').forEach(function (a) {
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener noreferrer');
+          });
+        } catch (e) {}
+        if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
+        if (typeof hideLoading === 'function') hideLoading();
+      }
+      try {
+        if (typeof handler === 'function') {
+          handler('markdown-content', mdUrl, finish);
+        } else {
+          finish();
+        }
+      } catch (e) { finish(); }
+    })();
+  </script>
+</body>
+</html>

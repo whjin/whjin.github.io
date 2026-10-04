@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="吴华锦" />
+  <title>Web3钱包 « 吴华锦</title>
+  <meta name="description" content="区块链 - 共识、trustless需要旷工的工作，旷工需要激励 - transaction的执行有成本 gas，gas费成为旷工的激励 - ether是这个经济生态系统的通行货币 gas和转账 - 转账是与函数调用一起发生，转账就是函数调用。 gaslimit与 gasleft()函数 - 交易发起者设定最多消耗多少 gaslimit - 合约之间调用，调用者可以设定 gaslimit - 区块本身有一个 gaslimit gasleft()是以上因素作为限定，与当前 gas消耗一起计算的结果 退款规则 - 剩下没用完的 gas会退款 - 如果可用 gas耗尽时，会终止交易执行 - 交易失败" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wuhuajin.com/src/template/posts/Web3/html/Web3%E9%92%B1%E5%8C%85.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Wu Huajin" />
+  <meta property="og:title" content="Web3钱包" />
+  <meta property="og:description" content="区块链 - 共识、trustless需要旷工的工作，旷工需要激励 - transaction的执行有成本 gas，gas费成为旷工的激励 - ether是这个经济生态系统的通行货币 gas和转账 - 转账是与函数调用一起发生，转账就是函数调用。 gaslimit与 gasleft()函数 - 交易发起者设定最多消耗多少 gaslimit - 合约之间调用，调用者可以设定 gaslimit - 区块本身有一个 gaslimit gasleft()是以上因素作为限定，与当前 gas消耗一起计算的结果 退款规则 - 剩下没用完的 gas会退款 - 如果可用 gas耗尽时，会终止交易执行 - 交易失败" />
+  <meta property="og:url" content="https://wuhuajin.com/src/template/posts/Web3/html/Web3%E9%92%B1%E5%8C%85.html" />
+  <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Web3钱包" />
+  <meta name="twitter:description" content="区块链 - 共识、trustless需要旷工的工作，旷工需要激励 - transaction的执行有成本 gas，gas费成为旷工的激励 - ether是这个经济生态系统的通行货币 gas和转账 - 转账是与函数调用一起发生，转账就是函数调用。 gaslimit与 gasleft()函数 - 交易发起者设定最多消耗多少 gaslimit - 合约之间调用，调用者可以设定 gaslimit - 区块本身有一个 gaslimit gasleft()是以上因素作为限定，与当前 gas消耗一起计算的结果 退款规则 - 剩下没用完的 gas会退款 - 如果可用 gas耗尽时，会终止交易执行 - 交易失败" />
+  <link rel="icon" href="/src/images/favicon.png" />
+  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/src/css/github-dark.min.css" />
+  <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/loading/index.css" />
+  <link rel="stylesheet" href="/src/components/navigation/index.css" />
+  <link rel="stylesheet" href="/src/components/banner/index.css" />
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Web3钱包",
+  "description": "区块链 - 共识、trustless需要旷工的工作，旷工需要激励 - transaction的执行有成本 gas，gas费成为旷工的激励 - ether是这个经济生态系统的通行货币 gas和转账 - 转账是与函数调用一起发生，转账就是函数调用。 gaslimit与 gasleft()函数 - 交易发起者设定最多消耗多少 gaslimit - 合约之间调用，调用者可以设定 gaslimit - 区块本身有一个 gaslimit gasleft()是以上因素作为限定，与当前 gas消耗一起计算的结果 退款规则 - 剩下没用完的 gas会退款 - 如果可用 gas耗尽时，会终止交易执行 - 交易失败",
+  "author": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "datePublished": "2026-09-11",
+  "inLanguage": "zh-CN",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wuhuajin.com/src/template/posts/Web3/html/Web3%E9%92%B1%E5%8C%85.html"
+  }
+}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
+  <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+</head>
+<body>
+  <div class="layout-container">
+    <div class="nav-container"></div>
+    <div class="content-area">
+      <div id="markdown-content" class="markdown-content viewer"></div>
+      <noscript><div class="markdown-content viewer" style="padding:1em"><h1>区块链</h1>
+<ul>
+<li>共识、<code>trustless</code>需要旷工的工作，旷工需要激励</li>
+<li><code>transaction</code>的执行有成本 <code>gas</code>，<code>gas</code>费成为旷工的激励</li>
+<li><code>ether</code>是这个经济生态系统的通行货币</li>
+</ul>
+<h2><code>gas</code>和转账</h2>
+<ul>
+<li>转账是与函数调用一起发生，转账就是函数调用。</li>
+</ul>
+<h3><code>gaslimit</code>与 <code>gasleft()</code>函数</h3>
+<ul>
+<li>交易发起者设定最多消耗多少 <code>gaslimit</code></li>
+<li>合约之间调用，调用者可以设定 <code>gaslimit</code></li>
+<li>区块本身有一个 <code>gaslimit</code></li>
+</ul>
+<p><strong><code>gasleft()</code>是以上因素作为限定，与当前 <code>gas</code>消耗一起计算的结果</strong></p>
+<h3>退款规则</h3>
+<ul>
+<li>剩下没用完的 <code>gas</code>会退款</li>
+<li>如果可用 <code>gas</code>耗尽时，会终止交易执行</li>
+<li>交易失败时，已经用了的 <code>gas</code>不退</li>
+</ul>
+<h2><code>receive()</code>函数</h2>
+<h3>被调用函数解析逻辑</h3>
+<ol>
+<li>自定义函数匹配 <code>selector</code></li>
+<li><code>receive</code>函数匹配为空的 <code>calldata</code></li>
+<li><code>fallback</code>函数兜底</li>
+<li>除了 <code>fallback</code>必须在尾部，其他元素顺序无关</li>
+</ol>
+<h3>检查逻辑</h3>
+<p><strong><code>payable</code>修饰符在函数定义中的作用</strong>：解析逻辑如果成功则会输出一个函数，检查逻辑就是检查一个情况：<strong><code>value &gt; 0</code>并且这个函数没有被 <code>payable</code>修饰</strong>。如果出现这个情况，调用失败终止，否则执行函数逻辑。</p>
+<h3>地址的 <code>checksum</code></h3>
+<ul>
+<li><code>checksum</code>保证了输入错误能够被检查出来</li>
+<li><code>checksum</code>检查是在链下完成的，比如在 <code>ethersjs</code>这种 <code>js</code>包中完成，链上并不会检查 <code>checksum</code></li>
+</ul>
+<h2>连接钱包</h2>
+<ol>
+<li>连接成功，检查是否为所支持的网络</li>
+<li>如果没有工作在所支持的网络上，通过配置参数向钱包推送配置，切换到合适的网络</li>
+<li>如果是 <code>Transation</code>一定是连接钱包；如果是读操作并且需要当前 <code>account</code>，从 <code>signer</code>中获取，否则直接使用 <code>jsonRpcProvider</code></li>
+<li>重构代码，将合约访问业务组织在 <code>service</code>中</li>
+</ol>
+</div></noscript>
+      <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
+      <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
+           data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
+    </div>
+    <aside class="sidebar-area">
+      <div class="sidebar-title">文章目录</div>
+      <nav id="toc-nav" class="toc-nav"></nav>
+    </aside>
+  </div>
+  <script src="/src/components/loading/index.js"></script>
+  <script src="/src/components/banner/index.js"></script>
+  <script src="/src/components/navigation/index.js"></script>
+  <script src="/src/js/highlight.min.js"></script>
+  <script src="/src/js/marked.min.js"></script>
+  <script src="/src/js/marked-highlight.min.js"></script>
+  <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/scroll/index.js"></script>
+  <script src="/src/components/cookie-consent/index.js"></script>
+  <script>
+    (function () {
+      /* 静态页滚动容器抗注入：部分预览环境会对 .layout-container/.content-area 整段 setAttribute style 为
+         "height: auto !important"，使内部滚动容器按内容高度解析、滚不到底。
+         用 MutationObserver 侦测 style 属性变化，一旦出现 auto 即用 JS 计算的视口像素高度（window.innerHeight，
+         不受 100vh 被内容撑大的影响）重新施加，恢复 631 内部滚动。生产正常浏览器无注入时不触发。 */
+      var l = document.querySelector('.layout-container');
+      var ca = document.querySelector('.content-area');
+      if (!l || !ca) return;
+      function fixedH() {
+        var b = parseInt(window.getComputedStyle(document.body).getPropertyValue('--banner-height')) || 0;
+        return (window.innerHeight - b) + 'px';
+      }
+      function force() {
+        var h = fixedH();
+        var changed = false;
+        if ((l.getAttribute('style') || '').indexOf('auto') !== -1) {
+          l.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        if ((ca.getAttribute('style') || '').indexOf('auto') !== -1) {
+          ca.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        return changed;
+      }
+      var timer = null;
+      var mo = new MutationObserver(function () {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(force, 50);
+      });
+      mo.observe(l, { attributes: true, attributeFilter: ['style'] });
+      mo.observe(ca, { attributes: true, attributeFilter: ['style'] });
+      window.addEventListener('resize', force);
+      force();
+    })();
+  </script>
+  <script>
+    (function () {
+      // 运行时从相邻 .md 渲染：md 改动后刷新即更新；保留预渲染正文作为 no-JS / 爬虫回退
+      var mdUrl = '../Web3%E9%92%B1%E5%8C%85.md';
+      function finish() {
+        try {
+          if (typeof generateTOC === 'function') generateTOC();
+          var blocks = document.querySelectorAll('#markdown-content pre code');
+          if (window.hljs && blocks.length) {
+            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
+          }
+          document.querySelectorAll('#markdown-content a').forEach(function (a) {
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener noreferrer');
+          });
+        } catch (e) {}
+        if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
+        if (typeof hideLoading === 'function') hideLoading();
+      }
+      try {
+        if (typeof handler === 'function') {
+          handler('markdown-content', mdUrl, finish);
+        } else {
+          finish();
+        }
+      } catch (e) { finish(); }
+    })();
+  </script>
+</body>
+</html>

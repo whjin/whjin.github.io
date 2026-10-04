@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="吴华锦" />
+  <title>HTTP文档 « 吴华锦</title>
+  <meta name="description" content="OSI 模型 - Open Systems Interconnection 开放式通信互联系统 ISO - OSI 模型是国际组织 ISO 创建的，用于描述网络通信的协议，是 TCP/IP 模型的基础 1. 应用层：提供应用层服务，如 HTTP、FTP、SMTP、DNS 等 2. 表示层：提供数据格式转换，如 ASCII、UTF-8 等，数据压缩、数据加密、数据内容的描述 3. 会话层: 提供会话管理，如 Telnet、SSH 等 4. 传输层: 提供数据传输，如 TCP、UDP 等，不同主机进程间的通信 5. 网络层：提供网络通信，如 IP、UDP、TCP 等 6. 数据链路层：提供数据链路" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wuhuajin.com/src/template/posts/%E7%BD%91%E7%BB%9C/html/HTTP%E6%96%87%E6%A1%A3.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Wu Huajin" />
+  <meta property="og:title" content="HTTP文档" />
+  <meta property="og:description" content="OSI 模型 - Open Systems Interconnection 开放式通信互联系统 ISO - OSI 模型是国际组织 ISO 创建的，用于描述网络通信的协议，是 TCP/IP 模型的基础 1. 应用层：提供应用层服务，如 HTTP、FTP、SMTP、DNS 等 2. 表示层：提供数据格式转换，如 ASCII、UTF-8 等，数据压缩、数据加密、数据内容的描述 3. 会话层: 提供会话管理，如 Telnet、SSH 等 4. 传输层: 提供数据传输，如 TCP、UDP 等，不同主机进程间的通信 5. 网络层：提供网络通信，如 IP、UDP、TCP 等 6. 数据链路层：提供数据链路" />
+  <meta property="og:url" content="https://wuhuajin.com/src/template/posts/%E7%BD%91%E7%BB%9C/html/HTTP%E6%96%87%E6%A1%A3.html" />
+  <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="HTTP文档" />
+  <meta name="twitter:description" content="OSI 模型 - Open Systems Interconnection 开放式通信互联系统 ISO - OSI 模型是国际组织 ISO 创建的，用于描述网络通信的协议，是 TCP/IP 模型的基础 1. 应用层：提供应用层服务，如 HTTP、FTP、SMTP、DNS 等 2. 表示层：提供数据格式转换，如 ASCII、UTF-8 等，数据压缩、数据加密、数据内容的描述 3. 会话层: 提供会话管理，如 Telnet、SSH 等 4. 传输层: 提供数据传输，如 TCP、UDP 等，不同主机进程间的通信 5. 网络层：提供网络通信，如 IP、UDP、TCP 等 6. 数据链路层：提供数据链路" />
+  <link rel="icon" href="/src/images/favicon.png" />
+  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/src/css/github-dark.min.css" />
+  <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/loading/index.css" />
+  <link rel="stylesheet" href="/src/components/navigation/index.css" />
+  <link rel="stylesheet" href="/src/components/banner/index.css" />
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "HTTP文档",
+  "description": "OSI 模型 - Open Systems Interconnection 开放式通信互联系统 ISO - OSI 模型是国际组织 ISO 创建的，用于描述网络通信的协议，是 TCP/IP 模型的基础 1. 应用层：提供应用层服务，如 HTTP、FTP、SMTP、DNS 等 2. 表示层：提供数据格式转换，如 ASCII、UTF-8 等，数据压缩、数据加密、数据内容的描述 3. 会话层: 提供会话管理，如 Telnet、SSH 等 4. 传输层: 提供数据传输，如 TCP、UDP 等，不同主机进程间的通信 5. 网络层：提供网络通信，如 IP、UDP、TCP 等 6. 数据链路层：提供数据链路",
+  "author": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "datePublished": "2026-09-11",
+  "inLanguage": "zh-CN",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wuhuajin.com/src/template/posts/%E7%BD%91%E7%BB%9C/html/HTTP%E6%96%87%E6%A1%A3.html"
+  }
+}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
+  <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+</head>
+<body>
+  <div class="layout-container">
+    <div class="nav-container"></div>
+    <div class="content-area">
+      <div id="markdown-content" class="markdown-content viewer"></div>
+      <noscript><div class="markdown-content viewer" style="padding:1em"><h2><code>OSI</code> 模型</h2>
+<ul>
+<li><code>Open Systems Interconnection</code> 开放式通信互联系统 <code>ISO</code></li>
+<li><code>OSI</code> 模型是国际组织 <code>ISO</code> 创建的，用于描述网络通信的协议，是 <code>TCP/IP</code> 模型的基础<ol>
+<li>应用层：提供应用层服务，如 <code>HTTP</code>、<code>FTP</code>、<code>SMTP</code>、<code>DNS</code> 等</li>
+<li>表示层：提供数据格式转换，如 <code>ASCII</code>、<code>UTF-8</code> 等，数据压缩、数据加密、数据内容的描述</li>
+<li>会话层: 提供会话管理，如 <code>Telnet</code>、<code>SSH</code> 等</li>
+<li>传输层: 提供数据传输，如 <code>TCP</code>、<code>UDP</code> 等，不同主机进程间的通信</li>
+<li>网络层：提供网络通信，如 <code>IP</code>、<code>UDP</code>、<code>TCP</code> 等</li>
+<li>数据链路层：提供数据链路，如 <code>Ethernet</code>、<code>WiFi</code> 等，<code>Mac</code>地址、<code>IP</code> 数据包</li>
+<li>物理层：提供物理通信，如 <code>Ethernet</code>、<code>WiFi</code> 等</li>
+</ol>
+</li>
+</ul>
+<h2><code>TCP/IP</code></h2>
+<ul>
+<li><p>在多个不同的网络之间进行数据传输的协议</p>
+</li>
+<li><p><code>TCP</code> 传输控制协议</p>
+</li>
+<li><p><code>IP</code> 报文包 <code>UDP</code>、<code>SMTP</code>、<code>FTP</code></p>
+</li>
+<li><p><code>OSI</code> 面向连接 <code>7</code>层，做了明确声明</p>
+</li>
+<li><p><code>TCP/IP</code> 无连接 <code>5</code>层，没有对网络接口层</p>
+</li>
+</ul>
+<h2><code>TCP/UDP</code></h2>
+<p><strong><code>UDP</code></strong></p>
+<ul>
+<li><code>User Datagram Protocol</code> 用户数据报协议</li>
+<li>面向数据报的通信协议，针对应用层交互下的数据没有任何的处理</li>
+<li><code>UDP</code> <code>4</code>个字段 每个字段 <code>16 bite</code></li>
+<li>源端口 目标端口 长度 校验和</li>
+<li><code>UDP</code>首部 + 数据部分</li>
+</ul>
+<p><strong><code>TCP</code></strong></p>
+<ul>
+<li><code>TCP</code> <code>Transmission Control Protocol</code> 传输控制协议</li>
+<li>流水形式 发送方 <code>TCP</code> 缓存区 网络是否适合发送 网络是否拥塞</li>
+<li>丢包 重发 发送顺序乱-排序 按顺序发送</li>
+<li>面向连接 控制流量、保序、可靠</li>
+<li><code>IP</code> 重发控制 连接管理 窗口管理</li>
+</ul>
+<p><strong>区别</strong></p>
+<ol>
+<li>可靠性：<code>TCP</code> 是可靠的，<code>UDP</code> 不可靠</li>
+<li>连接性：<code>TCP</code> 是连接的，<code>UDP</code> 是无连接的</li>
+<li>效率：<code>TCP</code> 慢，<code>UDP</code> 快</li>
+<li>流量控制：<code>TCP</code> 慢，<code>UDP</code> 快，<code>TCP</code>滑动窗口</li>
+<li>拥塞控制：<code>TCP</code> 慢，<code>UDP</code> 快，<code>TCP</code>拥塞控制</li>
+</ol>
+<h2><code>GET/POST</code></h2>
+<ul>
+<li><code>HTTP</code>发送请求方法</li>
+<li><code>GET</code>：获取指定资源的表示方式，只适合于获取数据</li>
+<li><code>POST</code>：数据传输到指定的资源位，有副作用</li>
+<li><code>GET</code> 在浏览器回退</li>
+<li><code>GET</code> <code>cache</code> 在浏览器</li>
+<li><code>url</code>编码 <code>POST</code>多种编码方式</li>
+<li><code>GET</code>数据类型 只接受 <code>ASCII</code></li>
+<li><code>POST</code> 更适合传输安全数据</li>
+</ul>
+<p><strong>区别</strong></p>
+<ul>
+<li>参数位置</li>
+<li>参数长度</li>
+<li>安全性</li>
+</ul>
+<h2>三次握手</h2>
+<ul>
+<li><code>TCP</code> 在建立连接时，客户端和服务端都会进行三次握手<ol>
+<li>客户端向服务端发送一个 <code>SYN</code> 包，报文 <code>SYN = 1 seq = x</code>，当客户端发送后 <code>SYN_SENT</code></li>
+<li>服务端 <code>SYN = 1 ACK = 1 seq = y ack = x + 1</code>，发送后服务器 <code>SYN_RECV</code></li>
+<li>客户端 <code>SYN = 1 ACK = 1 seq = x + 1 ack = y + 1</code>，发送后客户端 <code>ESTABLISHED</code></li>
+</ol>
+</li>
+</ul>
+<h2>四次挥手</h2>
+<ul>
+<li>客户端 发送 <code>FIN = 1 seq = x</code>，客户端 <code>FIN_WAIT1</code></li>
+<li>服务端 接收到 <code>FIN ACK = 1 seq = y ack = x + 1</code>，服务端 <code>CLOSE_WAIT</code></li>
+<li>服务端 <code>FIN = 1 ACK = 1 seq = y + 1 ack = x + 1</code></li>
+<li>客户端 <code>FIN = 1 ACK = 1 seq = x + 1 ack = y + 2</code></li>
+</ul>
+<h2><code>HTTP</code>请求头</h2>
+<ul>
+<li><p><code>HTTP</code>请求 <code>header fields</code></p>
+</li>
+<li><p><code>Accept</code>：<code>content-type</code></p>
+</li>
+<li><p><code>Accept-Charset</code>：<code>utf-8</code></p>
+</li>
+<li><p><code>Accept-Encoding</code>：<code>gzip</code></p>
+</li>
+<li><p><code>Accept-Language</code>：<code>zh-CN</code></p>
+</li>
+<li><p><code>Cache-Control</code></p>
+</li>
+<li><p><code>Connection</code>：<code>keep-alive</code> 保持长连接 <code>Upgrqade</code> 升级长连接</p>
+</li>
+<li><p><code>Cookoie</code>: <code>set-cookie</code></p>
+</li>
+<li><p><code>Content-Length</code></p>
+</li>
+<li><p><code>Content-Type</code></p>
+</li>
+<li><p><code>Date</code></p>
+</li>
+<li><p><code>Expect</code></p>
+</li>
+<li><p><code>Host</code>：<code>Referer</code> <code>User-Agent</code></p>
+</li>
+<li><p><code>If-Match</code></p>
+</li>
+<li><p><code>If-Modified-Since</code></p>
+</li>
+<li><p><code>If-None-Match</code></p>
+</li>
+<li><p><code>User-Agent</code></p>
+</li>
+</ul>
+<h3>协商缓存</h3>
+<ul>
+<li><code>Last-Modified</code></li>
+<li><code>If-Modified-Since</code></li>
+<li><code>Etag</code></li>
+<li><code>If-Match</code></li>
+<li><code>If-None-Match</code></li>
+</ul>
+<h3>强缓存</h3>
+<ul>
+<li><code>Cache-Control</code></li>
+<li><code>Expires</code></li>
+</ul>
+<h3>会话状态</h3>
+<ul>
+<li><code>cookie</code></li>
+<li><code>set-cookie</code></li>
+</ul>
+<h2><code>HTTP</code>状态码</h2>
+<ul>
+<li><code>1xx</code>：请求已经被接收，但是需要继续处理<ul>
+<li><code>100</code>：客户端发送 <code>POST</code> 请求给服务端，询问服务端意见</li>
+</ul>
+</li>
+<li><code>2xx</code>：服务端接收 <code>200</code><ul>
+<li><code>206</code>：大文件上传</li>
+</ul>
+</li>
+<li><code>3xx</code>：适用于重定向<ul>
+<li><code>301</code>：永久重定向</li>
+<li><code>302</code>：临时重定向</li>
+<li><code>304</code>：缓存，协商缓存</li>
+<li><code>305</code>：跳转</li>
+<li><code>307</code>：临时重定向</li>
+</ul>
+</li>
+<li><code>4xx</code>: 客户端有问题<ul>
+<li><code>400</code>-<code>bad request</code></li>
+<li><code>401</code>-<code>unauthorized</code></li>
+<li><code>403</code>-<code>forbidden</code></li>
+<li><code>404</code>-<code>not found</code></li>
+<li><code>405</code>-<code>method not allowed</code></li>
+<li><code>406</code>-<code>not acceptable</code></li>
+<li><code>407</code>-<code>proxy authentication required</code></li>
+<li><code>408</code>-<code>request timeout</code></li>
+<li><code>409</code>-<code>conflict</code></li>
+<li><code>410</code>-<code>gone</code></li>
+<li><code>411</code>-<code>length required</code></li>
+<li><code>412</code>-<code>precondition failed</code></li>
+<li><code>413</code>-<code>payload too large</code></li>
+</ul>
+</li>
+<li><code>5xx</code>: 服务端报错<ul>
+<li><code>500</code>-<code>internal server error</code></li>
+<li><code>501</code>-<code>not implemented</code></li>
+<li><code>502</code>-<code>bad gateway</code></li>
+<li><code>503</code>-<code>service unavailable</code></li>
+<li><code>504</code>-<code>gateway timeout</code></li>
+<li><code>505</code>-<code>http version not supported</code></li>
+<li><code>506</code>-<code>variant also negotiates</code></li>
+<li><code>507</code>-<code>insufficient storage</code></li>
+<li><code>508</code>-<code>loop detected</code></li>
+</ul>
+</li>
+</ul>
+<h2><code>HTTPS</code></h2>
+<p><strong><code>HTTP</code></strong></p>
+<ul>
+<li><code>HTTP</code> <code>Hypertext Transfer Protocol</code></li>
+<li><code>C/S</code>: <code>Client/Server</code></li>
+<li>灵活 、可扩展，<code>HTTP</code>运行传输各种数据类型 <code>Content-Type</code></li>
+<li>简单快速，<code>GET /index.html HTTP/1.1</code></li>
+<li>无连接 无状态</li>
+<li>明文传输</li>
+</ul>
+<p><strong><code>HTTPS</code></strong></p>
+<ul>
+<li><code>SSL/TLS</code> + <code>HTTP</code></li>
+<li>可以验证服务器身份，并且为浏览器和服务器间的通信提供加密方式</li>
+<li><code>TCP/IP</code> 协议 其他应用层间的位置 <code>SSL</code></li>
+</ul>
+<p><strong>客户端</strong></p>
+<ol>
+<li>发送 <code>https</code>请求</li>
+<li>生成随机对称密钥加密</li>
+<li>发送加密后的内容</li>
+</ol>
+<p><strong>服务端</strong></p>
+<ol>
+<li>返回证书（公钥）</li>
+<li>根据客户端发送的密文</li>
+</ol>
+<p><strong>加密方式</strong></p>
+<ul>
+<li>对称加密 <code>encode</code> <code>decode</code> 同一个秘钥</li>
+</ul>
+<p><strong>非对称加密</strong></p>
+<ul>
+<li>公钥 私钥</li>
+</ul>
+<p><strong>混合加密</strong></p>
+<ul>
+<li>明文：会话秘钥 非对称加密的公钥</li>
+<li>密文：明文 非对称加密的私钥</li>
+</ul>
+<h2><code>HTTP 2.0</code></h2>
+<ol>
+<li>多路复用</li>
+<li>二进制分帧</li>
+<li>首部压缩</li>
+<li>服务端推送</li>
+</ol>
+<h2><code>CDN</code></h2>
+<ul>
+<li><code>content delivery network</code> 内容分发网络</li>
+<li>边缘节点：多个节点，用户访问时，会选择距离最近的节点</li>
+<li>静态资源缓存，减少请求次数，提升性能</li>
+<li>根据当前用户的<code>IP</code>获取真实地址，找到距离最近的边缘节点</li>
+<li>找到运营商，找到相同网络的边缘节点</li>
+<li>找到访问人数少，负载较轻的节点</li>
+<li>缓存代理</li>
+</ul>
+<h2><code>DNS</code></h2>
+<ul>
+<li><code>Domain Name System</code> 域名系统</li>
+<li>负责将域名解析为<code>IP</code>地址</li>
+</ul>
+<h2><code>HTTP/2 vs HTTP/3</code> 核心特性差异</h2>
+<!--prettier-ignore-start-->
+<table>
+<thead>
+<tr>
+<th><strong>特性</strong></th>
+<th><code>HTTP/2</code></th>
+<th><code>HTTP/3</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>底层协议</td>
+<td><code>TCP</code></td>
+<td><code>QUIC</code>（基于 <code>UDP</code>）</td>
+</tr>
+<tr>
+<td>队头阻塞</td>
+<td>存在（<code>TCP</code>层全局阻塞）</td>
+<td>不存在（流独立，单流丢包不影响其他）</td>
+</tr>
+<tr>
+<td>连接建立</td>
+<td><code>TCP</code>三次握手 + <code>TLS</code>握手（<code>2RTT</code>）</td>
+<td><code>QUIC</code>合并握手（<code>0-RTT/1-RTT</code>）</td>
+</tr>
+<tr>
+<td>连接迁移</td>
+<td>不支持（<code>IP</code>/端口变化即断开）</td>
+<td>支持（连接 <code>ID</code>标识），网络切换不中断</td>
+</tr>
+<tr>
+<td>头部压缩</td>
+<td><code>HPACK</code></td>
+<td><code>QPACK</code>（流独立压缩，更高效）</td>
+</tr>
+<tr>
+<td>拥塞控制</td>
+<td>固定 <code>TCP</code>算法</td>
+<td>可插拔，针对弱网优化</td>
+</tr>
+</tbody></table>
+<!--prettier-ignore-end-->
+
+<h2><code>HTTP/3</code>大模型场景</h2>
+<ol>
+<li><strong>大模型多模态对话</strong><ul>
+<li>同时传输文本、音频、图片时无队头阻塞，避免大文件阻塞小请求</li>
+<li><code>0-RTT</code>握手显著降低首次响应延迟，提升对话流畅度</li>
+<li>移动网络切换时连接不中断，保证对话连续性</li>
+</ul>
+</li>
+<li><strong>医疗 <code>AI</code> 影像分析</strong><ul>
+<li>大文件传输速度提升 <code>30%-50%</code>，减少影像上传等待时间</li>
+<li>弱网下丢包恢复能力更强，传输成功率更高</li>
+<li>支持断点续传，网络中断后无需重新上传整个文件</li>
+</ul>
+</li>
+</ol>
+<h2>弱网环境 <code>AI</code> 请求不稳定解决方案</h2>
+<ol>
+<li><p><strong>协议层</strong></p>
+<ul>
+<li>配置 <code>HTTP/3</code>优先，自动降级到 <code>HTTP/2/1.1</code></li>
+<li>开启 <code>BBR</code> 拥塞控制算法，提升弱网吞吐量</li>
+<li>启用 <code>0-RTT</code>握手，减少连接建立时间</li>
+</ul>
+</li>
+<li><p><strong>请求层</strong></p>
+<ul>
+<li>大请求分片传输，单分片失败仅重传该分片</li>
+<li>指数退避重试（<code>1s -&gt; 2s -&gt; 4s -&gt; 8s</code>），避免服务器雪崩</li>
+<li>限流处理：解析响应头 <code>retry-After</code>字段，按服务器要求等待</li>
+</ul>
+</li>
+<li><p><strong>缓存层</strong></p>
+<ul>
+<li>本地缓存常用 <code>AI</code> 结果和静态资源</li>
+<li>边缘 <code>CDN</code>缓存模型文件和常用响应</li>
+</ul>
+</li>
+<li><p><strong>降级策略</strong></p>
+<ul>
+<li>网络极差时关闭流式输出，改用非流式</li>
+<li>降低影像分辨率和音频采样率，减少数据量</li>
+</ul>
+</li>
+</ol>
+<h2>多级缓存策略</h2>
+<!--prettier-ignore-start-->
+<table>
+<thead>
+<tr>
+<th align="center"><div style="text-align:center">内存缓存（<code>Map</code>）-&gt;</div></th>
+<th align="center"><div style="text-align:center"><code>LocalStorage</code> -&gt;</div></th>
+<th align="center"><div style="text-align:center"><code>IndexDB</code> -&gt;</div></th>
+<th align="center"><div style="text-align:center">服务器缓存</div></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">最快</td>
+<td align="center">较快</td>
+<td align="center">大容量</td>
+<td align="center">最可靠</td>
+</tr>
+<tr>
+<td align="center"><code>5</code>分钟过期</td>
+<td align="center"><code>7</code>天过期</td>
+<td align="center"><code>30</code>天过期</td>
+<td align="center">永久/按需</td>
+</tr>
+</tbody></table>
+<!--prettier-ignore-end-->
+
+<ol>
+<li><p><strong>一级缓存：内存缓存</strong></p>
+<ul>
+<li>存储：当前页面 <code>AI</code>答题结果、正在作答的记录、当前题目向量</li>
+<li>实现：使用 <code>Map</code>或状态管理库 <code>Zustand</code></li>
+<li>过期：页面卸载或 <code>5</code>分钟后自动清楚</li>
+</ul>
+</li>
+<li><p><strong>二级缓存：<code>LocalStorage</code></strong></p>
+<ul>
+<li>存储：最近 <code>7</code>天的 <code>AI</code>答题结果、常用题库向量</li>
+<li>注意：仅存储小数据 <code>&lt;100KB</code>，避免阻塞主线程</li>
+<li>过期：写入时记录时间戳，读取时检查</li>
+</ul>
+</li>
+<li><p><strong>三级缓存：<code>IndexDB</code></strong></p>
+<ul>
+<li>存储：所有题库向量、<code>30</code>天的答题记录、大体积 <code>AI</code>结果</li>
+<li>实现：使用 <code>localforage</code>简化操作</li>
+<li>过期：定期清理过期数据</li>
+</ul>
+</li>
+<li><p><strong>四级缓存：服务器缓存</strong></p>
+<ul>
+<li>存储：所有静态数据、<code>AI</code>结果缓存</li>
+<li>过期：根据数据更新频率设置</li>
+</ul>
+</li>
+</ol>
+</div></noscript>
+      <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
+      <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
+           data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
+    </div>
+    <aside class="sidebar-area">
+      <div class="sidebar-title">文章目录</div>
+      <nav id="toc-nav" class="toc-nav"></nav>
+    </aside>
+  </div>
+  <script src="/src/components/loading/index.js"></script>
+  <script src="/src/components/banner/index.js"></script>
+  <script src="/src/components/navigation/index.js"></script>
+  <script src="/src/js/highlight.min.js"></script>
+  <script src="/src/js/marked.min.js"></script>
+  <script src="/src/js/marked-highlight.min.js"></script>
+  <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/scroll/index.js"></script>
+  <script src="/src/components/cookie-consent/index.js"></script>
+  <script>
+    (function () {
+      /* 静态页滚动容器抗注入：部分预览环境会对 .layout-container/.content-area 整段 setAttribute style 为
+         "height: auto !important"，使内部滚动容器按内容高度解析、滚不到底。
+         用 MutationObserver 侦测 style 属性变化，一旦出现 auto 即用 JS 计算的视口像素高度（window.innerHeight，
+         不受 100vh 被内容撑大的影响）重新施加，恢复 631 内部滚动。生产正常浏览器无注入时不触发。 */
+      var l = document.querySelector('.layout-container');
+      var ca = document.querySelector('.content-area');
+      if (!l || !ca) return;
+      function fixedH() {
+        var b = parseInt(window.getComputedStyle(document.body).getPropertyValue('--banner-height')) || 0;
+        return (window.innerHeight - b) + 'px';
+      }
+      function force() {
+        var h = fixedH();
+        var changed = false;
+        if ((l.getAttribute('style') || '').indexOf('auto') !== -1) {
+          l.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        if ((ca.getAttribute('style') || '').indexOf('auto') !== -1) {
+          ca.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        return changed;
+      }
+      var timer = null;
+      var mo = new MutationObserver(function () {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(force, 50);
+      });
+      mo.observe(l, { attributes: true, attributeFilter: ['style'] });
+      mo.observe(ca, { attributes: true, attributeFilter: ['style'] });
+      window.addEventListener('resize', force);
+      force();
+    })();
+  </script>
+  <script>
+    (function () {
+      // 运行时从相邻 .md 渲染：md 改动后刷新即更新；保留预渲染正文作为 no-JS / 爬虫回退
+      var mdUrl = '../HTTP%E6%96%87%E6%A1%A3.md';
+      function finish() {
+        try {
+          if (typeof generateTOC === 'function') generateTOC();
+          var blocks = document.querySelectorAll('#markdown-content pre code');
+          if (window.hljs && blocks.length) {
+            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
+          }
+          document.querySelectorAll('#markdown-content a').forEach(function (a) {
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener noreferrer');
+          });
+        } catch (e) {}
+        if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
+        if (typeof hideLoading === 'function') hideLoading();
+      }
+      try {
+        if (typeof handler === 'function') {
+          handler('markdown-content', mdUrl, finish);
+        } else {
+          finish();
+        }
+      } catch (e) { finish(); }
+    })();
+  </script>
+</body>
+</html>

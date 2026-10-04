@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="吴华锦" />
+  <title>领域适配性分析 « 吴华锦</title>
+  <meta name="description" content="领域分析 1. 前端 AI 开发 - 音视频（WebRTC、流媒体）、数据可视化 Echarts、Node.js 后端服务 - 智能行为分析、AI身份核验、AI运维 - AI能力前端集成 + AI硬件对接 + AI交付 - 基础：TensorFlow.js轻量化模型部署、主流大模型 API 调用 - 核心：AI 音视频处理（降噪/增强/行为识别）、AI 硬件 SDK 封装、AI 分析结果可视化 - 差异化：国产化 AI 框架对接（华为昇腾/百度飞桨）、离线 AI 推理 1. Node.js + Python 全栈开发 - 全栈能力：前端（React/Vue） + Node.js(实时服务、信令" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wuhuajin.com/src/template/posts/%E6%96%87%E6%A1%A3/html/%E9%A2%86%E5%9F%9F%E9%80%82%E9%85%8D%E6%80%A7%E5%88%86%E6%9E%90.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Wu Huajin" />
+  <meta property="og:title" content="领域适配性分析" />
+  <meta property="og:description" content="领域分析 1. 前端 AI 开发 - 音视频（WebRTC、流媒体）、数据可视化 Echarts、Node.js 后端服务 - 智能行为分析、AI身份核验、AI运维 - AI能力前端集成 + AI硬件对接 + AI交付 - 基础：TensorFlow.js轻量化模型部署、主流大模型 API 调用 - 核心：AI 音视频处理（降噪/增强/行为识别）、AI 硬件 SDK 封装、AI 分析结果可视化 - 差异化：国产化 AI 框架对接（华为昇腾/百度飞桨）、离线 AI 推理 1. Node.js + Python 全栈开发 - 全栈能力：前端（React/Vue） + Node.js(实时服务、信令" />
+  <meta property="og:url" content="https://wuhuajin.com/src/template/posts/%E6%96%87%E6%A1%A3/html/%E9%A2%86%E5%9F%9F%E9%80%82%E9%85%8D%E6%80%A7%E5%88%86%E6%9E%90.html" />
+  <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="领域适配性分析" />
+  <meta name="twitter:description" content="领域分析 1. 前端 AI 开发 - 音视频（WebRTC、流媒体）、数据可视化 Echarts、Node.js 后端服务 - 智能行为分析、AI身份核验、AI运维 - AI能力前端集成 + AI硬件对接 + AI交付 - 基础：TensorFlow.js轻量化模型部署、主流大模型 API 调用 - 核心：AI 音视频处理（降噪/增强/行为识别）、AI 硬件 SDK 封装、AI 分析结果可视化 - 差异化：国产化 AI 框架对接（华为昇腾/百度飞桨）、离线 AI 推理 1. Node.js + Python 全栈开发 - 全栈能力：前端（React/Vue） + Node.js(实时服务、信令" />
+  <link rel="icon" href="/src/images/favicon.png" />
+  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/src/css/github-dark.min.css" />
+  <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/loading/index.css" />
+  <link rel="stylesheet" href="/src/components/navigation/index.css" />
+  <link rel="stylesheet" href="/src/components/banner/index.css" />
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "领域适配性分析",
+  "description": "领域分析 1. 前端 AI 开发 - 音视频（WebRTC、流媒体）、数据可视化 Echarts、Node.js 后端服务 - 智能行为分析、AI身份核验、AI运维 - AI能力前端集成 + AI硬件对接 + AI交付 - 基础：TensorFlow.js轻量化模型部署、主流大模型 API 调用 - 核心：AI 音视频处理（降噪/增强/行为识别）、AI 硬件 SDK 封装、AI 分析结果可视化 - 差异化：国产化 AI 框架对接（华为昇腾/百度飞桨）、离线 AI 推理 1. Node.js + Python 全栈开发 - 全栈能力：前端（React/Vue） + Node.js(实时服务、信令",
+  "author": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "datePublished": "2026-09-11",
+  "inLanguage": "zh-CN",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wuhuajin.com/src/template/posts/%E6%96%87%E6%A1%A3/html/%E9%A2%86%E5%9F%9F%E9%80%82%E9%85%8D%E6%80%A7%E5%88%86%E6%9E%90.html"
+  }
+}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
+  <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+</head>
+<body>
+  <div class="layout-container">
+    <div class="nav-container"></div>
+    <div class="content-area">
+      <div id="markdown-content" class="markdown-content viewer"></div>
+      <noscript><div class="markdown-content viewer" style="padding:1em"><h2>领域分析</h2>
+<ol>
+<li><strong>前端 <code>AI</code> 开发</strong></li>
+</ol>
+<ul>
+<li>音视频（<code>WebRTC</code>、流媒体）、数据可视化 <code>Echarts</code>、<code>Node.js</code> 后端服务</li>
+<li>智能行为分析、<code>AI</code>身份核验、<code>AI</code>运维</li>
+<li><code>AI</code>能力前端集成 + <code>AI</code>硬件对接 + <code>AI</code>交付</li>
+<li>基础：<code>TensorFlow.js</code>轻量化模型部署、主流大模型 <code>API</code> 调用</li>
+<li>核心：<code>AI</code> 音视频处理（降噪/增强/行为识别）、<code>AI</code> 硬件 <code>SDK</code> 封装、<code>AI</code> 分析结果可视化</li>
+<li>差异化：国产化 <code>AI</code> 框架对接（华为昇腾/百度飞桨）、离线 <code>AI</code> 推理</li>
+</ul>
+<ol>
+<li><strong><code>Node.js + Python</code> 全栈开发</strong></li>
+</ol>
+<ul>
+<li>全栈能力：前端（<code>React/Vue</code>） + <code>Node.js</code>(实时服务、信令交换、文件传输) + <code>Python</code>（数据/接口/自动化）</li>
+<li><code>Node.js</code>：深化 <code>NestJS</code>（企业级框架）、<code>PM2</code> 部署、日志/监控</li>
+<li><code>Python</code>：<code>FastAPI</code>（接口）+ <code>Pandas</code> （数据处理）</li>
+</ul>
+<ol start="3">
+<li><strong><code>React Native</code></strong></li>
+</ol>
+<ul>
+<li><code>React Native</code>的核心逻辑（跨端渲染、原生桥接），状态管理（<code>Redux/Zustand</code>）, <code>RN</code> 生态（组件库、原生模块封装）</li>
+<li><code>RN</code> 核心：组件库（<code>React Native Paper/Ant Design Mobile</code>）、状态管理、原生模块（<code>Android</code>）对接硬件 <code>SDK</code></li>
+<li><code>AI</code> 移动端集成：<code>TensorFlow Lite</code> 、移动端 <code>AI SDK</code> 对接</li>
+</ul>
+<ol start="4">
+<li><strong><code>GIS</code> 开发</strong></li>
+</ol>
+<ul>
+<li>掌握 <code>ECharts</code> 数据可视化，<code>GIS</code> 前端核心就是 <strong>前端 + 地图 <code>SDK</code> + 数据可视化</strong></li>
+<li><code>GIS</code> 地图 + <code>AI</code> 数据可视化</li>
+<li><code>AI</code> + 安防 <code>GIS</code>（摄像头点位监控、异常行为热力图）</li>
+<li><code>AI</code> + 电网 <code>GIS</code> （设备巡检、故障预警）</li>
+<li>基础：坐标系、<code>GeoJSON</code>、<code>OpenLayers/ArcGIS JS API</code></li>
+<li>进阶：<code>GIS</code> + <code>AI</code> 可视化、空间数据分析</li>
+<li>实战：基于 <code>Openlayers</code> 做 <code>AI</code> 安防 <code>GIS</code> 系统，实现摄像头点位标注、异常行为热力图、实时预警推送</li>
+</ul>
+<ol start="5">
+<li><strong><code>Web3 DApp</code> 开发</strong></li>
+</ol>
+<ul>
+<li><code>React + Ethers.js</code> 做 <code>DApp</code> 开发</li>
+</ul>
+<h2>细分领域</h2>
+<ol>
+<li><strong>音视频 <code>AI</code> 开发</strong></li>
+</ol>
+<ul>
+<li><code>AI</code> 音视频降噪、增强、转码</li>
+<li><code>AI</code> 实时字幕、语音识别</li>
+<li><code>AI</code> 视频内容分析（行为识别、人脸识别）</li>
+<li>教育、医疗行业的音视频 <code>AI</code> 公司</li>
+</ul>
+<ol start="2">
+<li><p><strong>国产 <code>AI</code> 适配开发</strong></p>
+</li>
+<li><p><strong><code>AI</code> 低代码开发</strong></p>
+</li>
+</ol>
+<ul>
+<li>低代码平台的 <code>AI</code> 组件开发</li>
+<li>基于低代码平台快速搭建 <code>AI</code> 应用</li>
+<li><code>AI</code> 低代码解决方案交付</li>
+</ul>
+</div></noscript>
+      <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
+      <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
+           data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
+    </div>
+    <aside class="sidebar-area">
+      <div class="sidebar-title">文章目录</div>
+      <nav id="toc-nav" class="toc-nav"></nav>
+    </aside>
+  </div>
+  <script src="/src/components/loading/index.js"></script>
+  <script src="/src/components/banner/index.js"></script>
+  <script src="/src/components/navigation/index.js"></script>
+  <script src="/src/js/highlight.min.js"></script>
+  <script src="/src/js/marked.min.js"></script>
+  <script src="/src/js/marked-highlight.min.js"></script>
+  <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/scroll/index.js"></script>
+  <script src="/src/components/cookie-consent/index.js"></script>
+  <script>
+    (function () {
+      /* 静态页滚动容器抗注入：部分预览环境会对 .layout-container/.content-area 整段 setAttribute style 为
+         "height: auto !important"，使内部滚动容器按内容高度解析、滚不到底。
+         用 MutationObserver 侦测 style 属性变化，一旦出现 auto 即用 JS 计算的视口像素高度（window.innerHeight，
+         不受 100vh 被内容撑大的影响）重新施加，恢复 631 内部滚动。生产正常浏览器无注入时不触发。 */
+      var l = document.querySelector('.layout-container');
+      var ca = document.querySelector('.content-area');
+      if (!l || !ca) return;
+      function fixedH() {
+        var b = parseInt(window.getComputedStyle(document.body).getPropertyValue('--banner-height')) || 0;
+        return (window.innerHeight - b) + 'px';
+      }
+      function force() {
+        var h = fixedH();
+        var changed = false;
+        if ((l.getAttribute('style') || '').indexOf('auto') !== -1) {
+          l.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        if ((ca.getAttribute('style') || '').indexOf('auto') !== -1) {
+          ca.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        return changed;
+      }
+      var timer = null;
+      var mo = new MutationObserver(function () {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(force, 50);
+      });
+      mo.observe(l, { attributes: true, attributeFilter: ['style'] });
+      mo.observe(ca, { attributes: true, attributeFilter: ['style'] });
+      window.addEventListener('resize', force);
+      force();
+    })();
+  </script>
+  <script>
+    (function () {
+      // 运行时从相邻 .md 渲染：md 改动后刷新即更新；保留预渲染正文作为 no-JS / 爬虫回退
+      var mdUrl = '../%E9%A2%86%E5%9F%9F%E9%80%82%E9%85%8D%E6%80%A7%E5%88%86%E6%9E%90.md';
+      function finish() {
+        try {
+          if (typeof generateTOC === 'function') generateTOC();
+          var blocks = document.querySelectorAll('#markdown-content pre code');
+          if (window.hljs && blocks.length) {
+            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
+          }
+          document.querySelectorAll('#markdown-content a').forEach(function (a) {
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener noreferrer');
+          });
+        } catch (e) {}
+        if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
+        if (typeof hideLoading === 'function') hideLoading();
+      }
+      try {
+        if (typeof handler === 'function') {
+          handler('markdown-content', mdUrl, finish);
+        } else {
+          finish();
+        }
+      } catch (e) { finish(); }
+    })();
+  </script>
+</body>
+</html>

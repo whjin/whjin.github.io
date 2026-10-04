@@ -77,7 +77,7 @@ function generateSummary(body, maxChars = 300) {
 }
 
 function mdUrl(folder, fileBase) {
-  return `/src/template/viewer.html?path=${folder}_${fileBase}`;
+  return `/src/template/posts/${folder}/${fileBase}.html`;
 }
 
 // url → md 信息映射
@@ -97,9 +97,18 @@ function buildUrlMap() {
 
 function resolveMd(url) {
   if (!url) return null;
-  const m = /path=([^&]+)/.exec(url);
-  if (!m) return null;
-  return urlToMd.get(`/src/template/viewer.html?path=${m[1]}`) || null;
+  // 新格式：/src/template/posts/<folder>/<file>.html
+  const s = /\/src\/template\/posts\/(.+?)\.html$/.exec(url);
+  if (s) {
+    return urlToMd.get(`/src/template/posts/${s[1]}.html`) || null;
+  }
+  // 旧格式：viewer.html?path=<folder>_<file>（兼容历史链接）
+  const q = /path=([^&]+)/.exec(url);
+  if (!q) return null;
+  const parts = q[1].split('_');
+  const file = parts.pop();
+  const folder = parts.join('/');
+  return urlToMd.get(`/src/template/posts/${folder}/${file}.html`) || null;
 }
 
 // 清理描述：去掉结尾省略号字符（…/...），保证 title 弹框完整显示、不出现省略号

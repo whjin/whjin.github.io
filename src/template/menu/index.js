@@ -48,7 +48,7 @@
     aEl.rel = 'noopener noreferrer';
     aEl.target = '_blank';
     aEl.innerHTML = item.marked ? `${MARKED_HTML}${item.title}` : item.title;
-    aEl.title = item.title || item.description || '';
+    aEl.title = item.description || item.title || '';
     aEl.href = item.url || '';
     let isLinkPage = !!item.url && item.url.includes('viewer.html') && item.url.includes('&format=html');
     if (isLinkPage) {

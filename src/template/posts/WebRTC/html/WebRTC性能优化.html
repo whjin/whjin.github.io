@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="吴华锦" />
+  <title>WebRTC性能优化 « 吴华锦</title>
+  <meta name="description" content="一、自适应码率调整（ABR）：根据网络状况动态调整编码码率 核心思路： 通过 WebRTC 的 getStats() API 实时获取网络状态（丢包率、RTT、可用带宽等），动态调整视频编码器的输出码率，避免因网络拥塞导致的卡顿。 实现步骤 - 步骤1：定时获取网络统计数据 通过 RTCPeerConnection.getStats() 定时采集发送端（或接收端）的网络指标，重点关注： - packetLost：丢包数 - roundTripTime：往返时间（RTT） - availableOutgotingBitrate：可用发送带宽（仅发送端） - 步骤2：分析网络状况，决策码率调整策略" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wuhuajin.com/src/template/posts/WebRTC/html/WebRTC%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Wu Huajin" />
+  <meta property="og:title" content="WebRTC性能优化" />
+  <meta property="og:description" content="一、自适应码率调整（ABR）：根据网络状况动态调整编码码率 核心思路： 通过 WebRTC 的 getStats() API 实时获取网络状态（丢包率、RTT、可用带宽等），动态调整视频编码器的输出码率，避免因网络拥塞导致的卡顿。 实现步骤 - 步骤1：定时获取网络统计数据 通过 RTCPeerConnection.getStats() 定时采集发送端（或接收端）的网络指标，重点关注： - packetLost：丢包数 - roundTripTime：往返时间（RTT） - availableOutgotingBitrate：可用发送带宽（仅发送端） - 步骤2：分析网络状况，决策码率调整策略" />
+  <meta property="og:url" content="https://wuhuajin.com/src/template/posts/WebRTC/html/WebRTC%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html" />
+  <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="WebRTC性能优化" />
+  <meta name="twitter:description" content="一、自适应码率调整（ABR）：根据网络状况动态调整编码码率 核心思路： 通过 WebRTC 的 getStats() API 实时获取网络状态（丢包率、RTT、可用带宽等），动态调整视频编码器的输出码率，避免因网络拥塞导致的卡顿。 实现步骤 - 步骤1：定时获取网络统计数据 通过 RTCPeerConnection.getStats() 定时采集发送端（或接收端）的网络指标，重点关注： - packetLost：丢包数 - roundTripTime：往返时间（RTT） - availableOutgotingBitrate：可用发送带宽（仅发送端） - 步骤2：分析网络状况，决策码率调整策略" />
+  <link rel="icon" href="/src/images/favicon.png" />
+  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/src/css/github-dark.min.css" />
+  <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/loading/index.css" />
+  <link rel="stylesheet" href="/src/components/navigation/index.css" />
+  <link rel="stylesheet" href="/src/components/banner/index.css" />
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "WebRTC性能优化",
+  "description": "一、自适应码率调整（ABR）：根据网络状况动态调整编码码率 核心思路： 通过 WebRTC 的 getStats() API 实时获取网络状态（丢包率、RTT、可用带宽等），动态调整视频编码器的输出码率，避免因网络拥塞导致的卡顿。 实现步骤 - 步骤1：定时获取网络统计数据 通过 RTCPeerConnection.getStats() 定时采集发送端（或接收端）的网络指标，重点关注： - packetLost：丢包数 - roundTripTime：往返时间（RTT） - availableOutgotingBitrate：可用发送带宽（仅发送端） - 步骤2：分析网络状况，决策码率调整策略",
+  "author": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "datePublished": "2026-09-11",
+  "inLanguage": "zh-CN",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wuhuajin.com/src/template/posts/WebRTC/html/WebRTC%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html"
+  }
+}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
+  <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+</head>
+<body>
+  <div class="layout-container">
+    <div class="nav-container"></div>
+    <div class="content-area">
+      <div id="markdown-content" class="markdown-content viewer"></div>
+      <noscript><div class="markdown-content viewer" style="padding:1em"><h3>一、自适应码率调整（<code>ABR</code>）：根据网络状况动态调整编码码率</h3>
+<p><strong>核心思路：</strong> 通过 <code>WebRTC</code> 的 <code>getStats()</code> <code>API</code> 实时获取网络状态（丢包率、<code>RTT</code>、可用带宽等），动态调整视频编码器的输出码率，避免因网络拥塞导致的卡顿。</p>
+<p><strong>实现步骤</strong></p>
+<ul>
+<li><strong>步骤1：定时获取网络统计数据</strong><br>通过 <code>RTCPeerConnection.getStats()</code> 定时采集发送端（或接收端）的网络指标，重点关注：<ul>
+<li><code>packetLost</code>：丢包数</li>
+<li><code>roundTripTime</code>：往返时间（<code>RTT</code>）</li>
+<li><code>availableOutgotingBitrate</code>：可用发送带宽（仅发送端）</li>
+</ul>
+</li>
+<li><strong>步骤2：分析网络状况，决策码率调整策略</strong><br>根据丢包率、<code>RTT</code>等指标判断网络拥塞程度<ul>
+<li>轻度拥塞（丢包率 &lt; 5%<code>，RTT</code> &lt; 200ms）：适当提高码率，提升画质</li>
+<li>中度拥塞（丢包率 5% ~ 15%，<code>RTT</code> 200 ~ 500ms）：保持当前码率，或小幅降低</li>
+<li>重度拥塞（丢包率 &gt; 15%，<code>RTT</code> &gt; 500ms）：大幅降低码率，优先保障保流畅度</li>
+</ul>
+</li>
+<li><strong>步骤3：动态修改视频编码器码率</strong><br>通过 <code>MediaStreamTrack.applyConstraints()</code> 实时调整视频轨道的编码参数（如 <code>maxBitrate</code>、<code>minBitrate</code>）</li>
+</ul>
+<pre><code class="language-javascript">let pc = new RTCPeerConnection();
+// 获取视频发送器
+let videoSender = pc.getSenders().find((s) =&gt; s.track?.kind === &#39;video&#39;);
+let lastBritrate = 1000000; // 初始码率 1Mbps
+const MIN_BITRATE = 300000; // 最低码率 300kbps
+const MAX_BITRATE = 2500000; // 最高码率 2.5Mbps
+
+setInterval(setBitRate, 2000);
+
+async function setBitRate() {
+  if (!videoSender) return;
+
+  // 获取发送端统计数据
+  const states = await pc.getStats(videoSender);
+  let packetsLost = 0;
+  let roundTripTime = 0;
+  let availableBitrate = 0;
+
+  states.forEach((report) =&gt; {
+    // 提取视频发送统计（类型为 outbound-rtp）
+    if (report.type === &#39;outbound-rtp&#39; &amp;&amp; report.kind === &#39;video&#39;) {
+      packetsLost = report.packetsLost || 0;
+      // 计算丢包率
+      const totalPackets = report.packetsSent || 1;
+      const lossRate = (packetsLost / totalPackets) * 100;
+    } else if (report.type === &#39;transport&#39;) {
+      roundTripTime = report.currentRoundTripTime * 1000;
+      availableBitrate = report.availableOutgoingBitrate || 0;
+    }
+  });
+
+  // 根据网络状况调整码率
+  let newBitrate = lastBritrate;
+  if (lossRate &gt; 15 || roundTripTime &gt; 500) {
+    // 重度拥塞：降码率 30%
+    newBitrate = Math.max(lastBritrate * 0.7, MIN_BITRATE);
+  } else if (lossRate &lt; 3 &amp;&amp; roundTripTime &lt; 150 &amp;&amp; availableBitrate &gt; lastBritrate) {
+    // 网络良好：升码率 10%
+    newBitrate = Math.min(lastBritrate * 1.1, MAX_BITRATE);
+  }
+
+  // 应用新码率到视频编码器
+  if (Math.abs(newBitrate - lastBritrate) &gt; 50000) {
+    // 避免频繁调整（差异 &gt; 50kbps 才调整）
+    try {
+      await videoSender.track.applyConstraints({
+        advanced: [
+          {
+            maxBitrate: newBitrate,
+            minBitrate: Math.max(newBitrate * 0.5, MIN_BITRATE),
+          },
+        ],
+      });
+
+      lastBritrate = newBitrate;
+    } catch (error) {
+      console.error(&#39;码率调整失败:&#39;, error);
+    }
+  }
+}
+</code></pre>
+<h3>二、丢包重传（<code>NACK/ARQ</code>）：通过 <code>RTCP</code> 反馈请求重传丢失包</h3>
+<p><strong>核心思路</strong>：利用 <code>WebRTC</code> 内置的 <code>NACK(Negative Acknowledgement)</code> 机制，接收端检测到丢包后，通过 <code>RTCP</code> 反馈包向发送端请求重传；同时可结合 <code>FEC</code> <strong>（前向纠错）</strong> 进一步提升抗丢包能力。</p>
+<p><strong>实现步骤</strong></p>
+<ul>
+<li><strong>步骤1：在 <code>SDP</code> 中启用 <code>NACK</code> 和 <code>FEC</code></strong>
+在创建 <code>Offer/Answer</code> 时，通过修改 <code>SDP</code> 配置，明确声明支持 <code>NACK</code> （丢包重传）和 <code>FEC</code> （前向纠错）。</li>
+<li><strong>步骤2：（可选）配置重传缓冲区大小</strong>
+调整发送端的重传缓冲器（<code>rtx</code>），保留更多已发送的包以便重传。</li>
+<li><strong>步骤3：结合自适应码率</strong>
+丢包严重时，除了重传，还需配合降低码率，避免网络进一步拥塞。</li>
+</ul>
+<pre><code class="language-javascript">let pc = new RTCPeerConnection();
+
+// 1. 创建 Offer 后修改 SDP，启用 NACK 和 FEC
+async function createAndSetOffer() {
+  const offer = await pc.createOffer();
+
+  // 修改SDP，为视频媒体流添加 NACK、PLI（关键帧请求）和 FEC 支持
+  let modifiedSdp = offer.sdp.replace(/a=rtmpap:(\d+) H264\/\d+/g, (match, pt) =&gt; {
+    // 原 H264 映射行后添加 NACK、PLI、FEC 配置
+    return `${match}\r\na=rtcp-fb:${pt} 
+      nack\r\na=rtcp-fb:${pt} 
+      nack pli\r\na=rtcp-fb:${pt} 
+      goog-remb\r\na=fmtp:${pt} 
+      packetization-mode=1;profile-level-id=42e01f;
+      level-asymmetry-allowed=1`;
+  });
+
+  // 启用 RTX （重传流）
+  modifiedSdp = modifiedSdp.replace(/a=fmtp:(\d+) rtx\/\d+/g, (match, rtxPt) =&gt; {
+    return `${match}\r\na=fmtp:${rtxPt} apt=96`; // 假设 H264 的 PT 为 96，需根据实际情况调整
+  });
+
+  await pc.setLocalDescription(new RTCSessionDescription({ type: &#39;offer&#39;, sdp: modifiedSdp }));
+}
+
+// 2. 监听 ICE 连接状态，确保连接建立后 NACK 生效
+pc.oniceconnectionstatechange = () =&gt; {
+  if (pc.iceConnectionState === &#39;connected&#39;) {
+  }
+};
+
+// 3. （可选）通过 getStates 监控丢包和重传情况
+setInterval(async () =&gt; {
+  const stats = await pc.getStats();
+  stats.forEach((report) =&gt; {
+    if (report.type === &#39;outbound-rtp&#39; &amp;&amp; report.kind === &#39;video&#39;) {
+    }
+  });
+}, 3000);
+</code></pre>
+</div></noscript>
+      <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
+      <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
+           data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
+    </div>
+    <aside class="sidebar-area">
+      <div class="sidebar-title">文章目录</div>
+      <nav id="toc-nav" class="toc-nav"></nav>
+    </aside>
+  </div>
+  <script src="/src/components/loading/index.js"></script>
+  <script src="/src/components/banner/index.js"></script>
+  <script src="/src/components/navigation/index.js"></script>
+  <script src="/src/js/highlight.min.js"></script>
+  <script src="/src/js/marked.min.js"></script>
+  <script src="/src/js/marked-highlight.min.js"></script>
+  <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/scroll/index.js"></script>
+  <script src="/src/components/cookie-consent/index.js"></script>
+  <script>
+    (function () {
+      /* 静态页滚动容器抗注入：部分预览环境会对 .layout-container/.content-area 整段 setAttribute style 为
+         "height: auto !important"，使内部滚动容器按内容高度解析、滚不到底。
+         用 MutationObserver 侦测 style 属性变化，一旦出现 auto 即用 JS 计算的视口像素高度（window.innerHeight，
+         不受 100vh 被内容撑大的影响）重新施加，恢复 631 内部滚动。生产正常浏览器无注入时不触发。 */
+      var l = document.querySelector('.layout-container');
+      var ca = document.querySelector('.content-area');
+      if (!l || !ca) return;
+      function fixedH() {
+        var b = parseInt(window.getComputedStyle(document.body).getPropertyValue('--banner-height')) || 0;
+        return (window.innerHeight - b) + 'px';
+      }
+      function force() {
+        var h = fixedH();
+        var changed = false;
+        if ((l.getAttribute('style') || '').indexOf('auto') !== -1) {
+          l.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        if ((ca.getAttribute('style') || '').indexOf('auto') !== -1) {
+          ca.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        return changed;
+      }
+      var timer = null;
+      var mo = new MutationObserver(function () {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(force, 50);
+      });
+      mo.observe(l, { attributes: true, attributeFilter: ['style'] });
+      mo.observe(ca, { attributes: true, attributeFilter: ['style'] });
+      window.addEventListener('resize', force);
+      force();
+    })();
+  </script>
+  <script>
+    (function () {
+      // 运行时从相邻 .md 渲染：md 改动后刷新即更新；保留预渲染正文作为 no-JS / 爬虫回退
+      var mdUrl = '../WebRTC%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.md';
+      function finish() {
+        try {
+          if (typeof generateTOC === 'function') generateTOC();
+          var blocks = document.querySelectorAll('#markdown-content pre code');
+          if (window.hljs && blocks.length) {
+            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
+          }
+          document.querySelectorAll('#markdown-content a').forEach(function (a) {
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener noreferrer');
+          });
+        } catch (e) {}
+        if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
+        if (typeof hideLoading === 'function') hideLoading();
+      }
+      try {
+        if (typeof handler === 'function') {
+          handler('markdown-content', mdUrl, finish);
+        } else {
+          finish();
+        }
+      } catch (e) { finish(); }
+    })();
+  </script>
+</body>
+</html>

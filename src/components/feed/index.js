@@ -39,10 +39,20 @@
     }
     if (query) {
       const q = query.toLowerCase();
-      list = list.filter((it) => {
-        const hay = (it.title + ' ' + (it.category || '') + ' ' + (it._group || '') + ' ' + (it.tags || []).join(' ') + ' ' + (it.description || '')).toLowerCase();
-        return hay.includes(q);
+      // 相关度排序：标题命中(3) > 分类/标签命中(2) > 仅描述命中(1)，同分保持原顺序
+      const scored = [];
+      list.forEach((it) => {
+        const title = (it.title || '').toLowerCase();
+        const cat = ((it.category || '') + ' ' + (it._group || '') + ' ' + (it.tags || []).join(' ')).toLowerCase();
+        const desc = (it.description || '').toLowerCase();
+        let score = 0;
+        if (title.includes(q)) score = 3;
+        else if (cat.includes(q)) score = 2;
+        else if (desc.includes(q)) score = 1;
+        if (score) scored.push({ it, score });
       });
+      scored.sort(function (a, b) { return b.score - a.score; });
+      list = scored.map(function (x) { return x.it; });
     }
     // 严格按 data.json 顺序渲染：sticky 置顶（数值小在前）已在 allItems 构建时排序，此处不再按日期/精选排序
     return list;
@@ -169,9 +179,12 @@
       clearTimeout(timer);
       timer = setTimeout(() => {
         query = input.value.trim();
+        // 新搜索先重置分类/标签，避免与筛选叠加；并清除 sidebar 高亮
+        cat = 'all';
         shown = PAGE;
         render();
         scrollTop();
+        if (window.HomeSidebar && window.HomeSidebar.applyActiveTag) window.HomeSidebar.applyActiveTag();
       }, 150);
     });
   }
@@ -210,9 +223,12 @@
 
   window.HomeFeed = {
     init,
-    // 点击标签/分类：若点击的是当前筛选则重置为全部，否则应用筛选；并回顶
+    // 点击标签/分类：若点击的是当前筛选则重置为全部，否则应用筛选；切换时清空搜索词，避免筛选与搜索叠加；并回顶
     setCategory(name) {
       cat = (name === cat) ? 'all' : name;
+      query = '';
+      const input = document.getElementById('home-search');
+      if (input) input.value = '';
       shown = PAGE;
       render();
       scrollTop();

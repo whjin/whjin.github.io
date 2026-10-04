@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="吴华锦" />
+  <title>ADB命令集合 « 吴华锦</title>
+  <meta name="description" content="设备基础 命令说明 adb devices列出已连接设备 adb devices -l列出已连接设备和种类 adb connect/disconnect [ip:port]连接到指定IP和端口的设备/断开连接 adb root以root权限重新启动adb adb remount重新挂载具有读/写访问权限的文件系统 adb start-server启动adb服务 adb kill-server停止adb服务 adb reboot重启设备 adb reboot bootloader将设备重启到fastboot模式 adb reboot recovery将设备重启到恢复模式 adb disable-" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wuhuajin.com/src/template/posts/Android/html/ADB%E5%91%BD%E4%BB%A4%E9%9B%86%E5%90%88.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Wu Huajin" />
+  <meta property="og:title" content="ADB命令集合" />
+  <meta property="og:description" content="设备基础 命令说明 adb devices列出已连接设备 adb devices -l列出已连接设备和种类 adb connect/disconnect [ip:port]连接到指定IP和端口的设备/断开连接 adb root以root权限重新启动adb adb remount重新挂载具有读/写访问权限的文件系统 adb start-server启动adb服务 adb kill-server停止adb服务 adb reboot重启设备 adb reboot bootloader将设备重启到fastboot模式 adb reboot recovery将设备重启到恢复模式 adb disable-" />
+  <meta property="og:url" content="https://wuhuajin.com/src/template/posts/Android/html/ADB%E5%91%BD%E4%BB%A4%E9%9B%86%E5%90%88.html" />
+  <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="ADB命令集合" />
+  <meta name="twitter:description" content="设备基础 命令说明 adb devices列出已连接设备 adb devices -l列出已连接设备和种类 adb connect/disconnect [ip:port]连接到指定IP和端口的设备/断开连接 adb root以root权限重新启动adb adb remount重新挂载具有读/写访问权限的文件系统 adb start-server启动adb服务 adb kill-server停止adb服务 adb reboot重启设备 adb reboot bootloader将设备重启到fastboot模式 adb reboot recovery将设备重启到恢复模式 adb disable-" />
+  <link rel="icon" href="/src/images/favicon.png" />
+  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/src/css/github-dark.min.css" />
+  <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/loading/index.css" />
+  <link rel="stylesheet" href="/src/components/navigation/index.css" />
+  <link rel="stylesheet" href="/src/components/banner/index.css" />
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ADB命令集合",
+  "description": "设备基础 命令说明 adb devices列出已连接设备 adb devices -l列出已连接设备和种类 adb connect/disconnect [ip:port]连接到指定IP和端口的设备/断开连接 adb root以root权限重新启动adb adb remount重新挂载具有读/写访问权限的文件系统 adb start-server启动adb服务 adb kill-server停止adb服务 adb reboot重启设备 adb reboot bootloader将设备重启到fastboot模式 adb reboot recovery将设备重启到恢复模式 adb disable-",
+  "author": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "datePublished": "2026-09-11",
+  "inLanguage": "zh-CN",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wuhuajin.com/src/template/posts/Android/html/ADB%E5%91%BD%E4%BB%A4%E9%9B%86%E5%90%88.html"
+  }
+}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
+  <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+</head>
+<body>
+  <div class="layout-container">
+    <div class="nav-container"></div>
+    <div class="content-area">
+      <div id="markdown-content" class="markdown-content viewer"></div>
+      <noscript><div class="markdown-content viewer" style="padding:1em"><h2>设备基础</h2>
+<!--prettier-ignore-start-->
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>adb devices</code></td>
+<td>列出已连接设备</td>
+</tr>
+<tr>
+<td><code>adb devices -l</code></td>
+<td>列出已连接设备和种类</td>
+</tr>
+<tr>
+<td><code>adb connect/disconnect [ip:port]</code></td>
+<td>连接到指定<code>IP</code>和端口的设备/断开连接</td>
+</tr>
+<tr>
+<td><code>adb root</code></td>
+<td>以<code>root</code>权限重新启动<code>adb</code></td>
+</tr>
+<tr>
+<td><code>adb remount</code></td>
+<td>重新挂载具有读/写访问权限的文件系统</td>
+</tr>
+<tr>
+<td><code>adb start-server</code></td>
+<td>启动<code>adb</code>服务</td>
+</tr>
+<tr>
+<td><code>adb kill-server</code></td>
+<td>停止<code>adb</code>服务</td>
+</tr>
+<tr>
+<td><code>adb reboot</code></td>
+<td>重启设备</td>
+</tr>
+<tr>
+<td><code>adb reboot bootloader</code></td>
+<td>将设备重启到<code>fastboot</code>模式</td>
+</tr>
+<tr>
+<td><code>adb reboot recovery</code></td>
+<td>将设备重启到恢复模式</td>
+</tr>
+<tr>
+<td><code>adb disable-verify</code></td>
+<td>禁用设备的<code>dm-verity</code>安全特性</td>
+</tr>
+</tbody></table>
+<!--prettier-ignore-end-->
+
+<h2>logcat</h2>
+<!--prettier-ignore-start-->
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>adb logcat</code></td>
+<td>将日志消息打印到标准输出</td>
+</tr>
+<tr>
+<td><code>adb logcat -g</code></td>
+<td>显示当前日志缓冲大小</td>
+</tr>
+<tr>
+<td><code>adb logcat -G &lt;size&gt;</code></td>
+<td>设置缓冲区大小（<code>K</code>或<code>M</code>）</td>
+</tr>
+<tr>
+<td><code>adb logcat -c</code></td>
+<td>清除日志缓冲区</td>
+</tr>
+<tr>
+<td><code>adb logcat *:V</code></td>
+<td>启用所有日志消息（详细）</td>
+</tr>
+<tr>
+<td><code>adb logcat *:W</code></td>
+<td>显示优先级不低于<strong>警告</strong>的所有标记的所有日志消息</td>
+</tr>
+<tr>
+<td><code>adb logcat -f &lt;filename&gt;</code></td>
+<td>将日志转储到指定文件</td>
+</tr>
+</tbody></table>
+<!--prettier-ignore-end-->
+
+<h2>文件管理</h2>
+<!--prettier-ignore-start-->
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>adb push &lt;local&gt; &lt;remote&gt;</code></td>
+<td>将本地文件复制到远程设备</td>
+</tr>
+<tr>
+<td><code>adb pull &lt;remote&gt; &lt;local&gt;</code></td>
+<td>将远程设备文件复制到本地</td>
+</tr>
+</tbody></table>
+<!--prettier-ignore-end-->
+
+<h2>远程shell</h2>
+<!--prettier-ignore-start-->
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>adb shell &lt;command&gt;</code></td>
+<td>在设备上运行指定的命令</td>
+</tr>
+<tr>
+<td><code>adb shell wm size</code></td>
+<td>显示当前屏幕分辨率</td>
+</tr>
+<tr>
+<td><code>adb shell wm size WxH</code></td>
+<td>将分辨率设置为<code>WxH</code></td>
+</tr>
+<tr>
+<td><code>adb shell pm list packages</code></td>
+<td>列出所有已安装的应用包</td>
+</tr>
+<tr>
+<td><code>adb shell pm list packages -3</code></td>
+<td>列出所有已安装的第三方的应用包</td>
+</tr>
+<tr>
+<td><code>adb shell monkey -p app.package.name &lt;count&gt;</code></td>
+<td>启动指定包名的应用程序，并执行测试</td>
+</tr>
+<tr>
+<td><code>adb shell ls</code></td>
+<td>列出目录内容</td>
+</tr>
+<tr>
+<td><code>adb shell ls -s</code></td>
+<td>每个文件的打印尺寸</td>
+</tr>
+<tr>
+<td><code>adb shell ls -R</code></td>
+<td>递归列出子目录</td>
+</tr>
+</tbody></table>
+<!--prettier-ignore-end-->
+
+<h2>包安装</h2>
+<!--prettier-ignore-start-->
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>adb install &lt;apk&gt;</code></td>
+<td>安装应用程序</td>
+</tr>
+<tr>
+<td><code>adb install &lt;path&gt;</code></td>
+<td>从手机路径安装应用</td>
+</tr>
+<tr>
+<td><code>adb install -r &lt;path&gt;</code></td>
+<td>从手机路径安装应用（允许覆盖安装）</td>
+</tr>
+<tr>
+<td><code>adb uninstall &lt;name&gt;</code></td>
+<td>卸载应用程序</td>
+</tr>
+</tbody></table>
+<!--prettier-ignore-end-->
+
+<h2>包信息</h2>
+<!--prettier-ignore-start-->
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>adb shell pm list packages</code></td>
+<td>列出包名称</td>
+</tr>
+<tr>
+<td><code>adb shell pm list packages -f</code></td>
+<td>列出包+<code>apks</code>的路径</td>
+</tr>
+<tr>
+<td><code>adb shell pm list packages -3</code></td>
+<td>列出第三方包名称</td>
+</tr>
+<tr>
+<td><code>adb shell pm list packages -s</code></td>
+<td>仅列出系统包</td>
+</tr>
+<tr>
+<td><code>adb shell pm list packages -u</code></td>
+<td>列出包和未安装包</td>
+</tr>
+<tr>
+<td><code>adb shell pm list packages -i</code></td>
+<td>列出包名称+安装来源</td>
+</tr>
+<tr>
+<td><code>adb shell pm list packages -e</code></td>
+<td>列出启用的包</td>
+</tr>
+<tr>
+<td><code>adb shell pm list packages -d</code></td>
+<td>列出禁用的包</td>
+</tr>
+<tr>
+<td><code>adb shell dumpsys package packages</code></td>
+<td>列出所有应用程序的信息</td>
+</tr>
+<tr>
+<td><code>adb shell dumpsys package &lt;name&gt;</code></td>
+<td>列出一个包的信息</td>
+</tr>
+<tr>
+<td><code>adb shell pm path &lt;package&gt;</code></td>
+<td>列出<code>APK</code>文件的路径</td>
+</tr>
+</tbody></table>
+<!--prettier-ignore-end-->
+
+<h2>手机信息</h2>
+<!--prettier-ignore-start-->
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>adb get-state</code></td>
+<td>打印设备状态</td>
+</tr>
+<tr>
+<td><code>adb get-serialno</code></td>
+<td>获取设备的序列号</td>
+</tr>
+<tr>
+<td><code>adb shell dumpsys iphonesybinfo</code></td>
+<td>获取设备的<code>IMEI</code>信息</td>
+</tr>
+<tr>
+<td><code>adb shell netstat</code></td>
+<td>列出设备上的所有<code>TCP</code>连接</td>
+</tr>
+<tr>
+<td><code>adb shell pwd</code></td>
+<td>打印当前工作目录</td>
+</tr>
+<tr>
+<td><code>adb shell dumpsys dattery</code></td>
+<td>获取设备电池状态</td>
+</tr>
+<tr>
+<td><code>adb shell pm list features</code></td>
+<td>列出设备支持的所有功能</td>
+</tr>
+<tr>
+<td><code>adb shell service list</code></td>
+<td>列出设备上运行的所有服务</td>
+</tr>
+<tr>
+<td><code>adb shell dumpsys activity &lt;package&gt;/&lt;activity&gt;</code></td>
+<td>获取指定包和活动的信息</td>
+</tr>
+<tr>
+<td><code>adb shell ps</code></td>
+<td>打印设备上所有运行的进程状态</td>
+</tr>
+<tr>
+<td><code>adb shell wm size</code></td>
+<td>显示当前设备的屏幕分辨率</td>
+</tr>
+</tbody></table>
+<!--prettier-ignore-end-->
+
+<h2>设备相关</h2>
+<!--prettier-ignore-start-->
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>adb reboot recovery</code></td>
+<td>重启设备进入恢复模式</td>
+</tr>
+<tr>
+<td><code>adb reboot fastboot</code></td>
+<td>重启设备进入恢复模式</td>
+</tr>
+<tr>
+<td><code>adb reboot screencap -p &quot;/path/to/screenshot.png&quot;</code></td>
+<td>截图</td>
+</tr>
+<tr>
+<td><code>adb reboot screenrecord &quot;/path/to/record.mp4&quot;</code></td>
+<td>录制设备屏幕</td>
+</tr>
+<tr>
+<td><code>adb backup -apk -all -f backup.ab</code></td>
+<td>备份设置和应用程序</td>
+</tr>
+<tr>
+<td><code>adb backup -apk -shared -all -f backup.ab</code></td>
+<td>备份设置、应用程序和共享存储</td>
+</tr>
+<tr>
+<td><code>adb backup -apk -nosystem -all -f backup.ab</code></td>
+<td>仅备份非系统应用程序</td>
+</tr>
+<tr>
+<td><code>adb restore backup.ab</code></td>
+<td>恢复以前的备份</td>
+</tr>
+<tr>
+<td><code>adb shell am start -a android.intent.action.VIEW -d URL</code></td>
+<td>打开网址</td>
+</tr>
+<tr>
+<td><code>adb shell am start -t image/* -a android.intent.action.VIEW</code></td>
+<td>打开画廊</td>
+</tr>
+</tbody></table>
+<!--prettier-ignore-end-->
+
+<h2>权限</h2>
+<!--prettier-ignore-start-->
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>adb shell permissions groups</code></td>
+<td>列出所有已定义的权限组</td>
+</tr>
+<tr>
+<td><code>adb shell list permissions -g -r</code></td>
+<td>列出所有权限的详细信息</td>
+</tr>
+</tbody></table>
+<!--prettier-ignore-end-->
+
+<h2>logs</h2>
+<!--prettier-ignore-start-->
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>adb logcat [options][filter][filter]</code></td>
+<td>查看设备日志</td>
+</tr>
+<tr>
+<td><code>adb bugreport</code></td>
+<td>打印错误报告</td>
+</tr>
+</tbody></table>
+<!--prettier-ignore-end-->
+
+<h2>常见命令</h2>
+<!--prettier-ignore-start-->
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>adb push example.apk /sdcard/Download/</code></td>
+<td>将文件推送到<code>Android</code>设备的下载文件夹</td>
+</tr>
+<tr>
+<td><code>adb install example.apk</code></td>
+<td>从主机安装<code>APK</code>到<code>Android</code>设备</td>
+</tr>
+<tr>
+<td><code>adb shell settings put global http_proxy :0</code></td>
+<td>禁用网络代理</td>
+</tr>
+<tr>
+<td><code>adb shell pm list packages -f</code></td>
+<td>列出所有已安装的包并获取完整路径</td>
+</tr>
+<tr>
+<td><code>adb install /sdcard/Download/example.apk</code></td>
+<td>从<code>Android</code>设备存储安装<code>APK</code></td>
+</tr>
+<tr>
+<td><code>adb devices</code><br/><code>adb -s 7f1c864e shell</code></td>
+<td>显示连接的设备并指定一个设备进行<code>shell</code></td>
+</tr>
+<tr>
+<td><code>adb install /Users/dev/projects/myapp.apk</code></td>
+<td>将计算机上的<code>APK</code>文件安装到设备</td>
+</tr>
+<tr>
+<td><code>adb shell pm list packages | grep app_name</code></td>
+<td>通过名称查找应用的包名</td>
+</tr>
+<tr>
+<td><code>adb push path/to/local/file /sdcard/foo.txt</code></td>
+<td>将文件从计算机复制到设备</td>
+</tr>
+<tr>
+<td><code>adb shell input text &quot;Hello World&quot;</code></td>
+<td>使用虚拟键盘发送文本</td>
+</tr>
+<tr>
+<td><code>adb shell input tap x y</code></td>
+<td>点击屏幕发送点击</td>
+</tr>
+<tr>
+<td><code>adb pull /sdcard/Download/example.apk</code></td>
+<td>从安卓设备中提取文件</td>
+</tr>
+<tr>
+<td><code>adb shell settings put global http_proxy &lt;address&gt;:&lt;port&gt;</code></td>
+<td>设置网络代理</td>
+</tr>
+<tr>
+<td><code>adb connect 192.168.56.101:5555</code></td>
+<td>通过<code>IP</code>地址连接到设备</td>
+</tr>
+<tr>
+<td><code>adb shell pm path com.example.myapp</code></td>
+<td>查找应用的<code>APK</code>路径</td>
+</tr>
+<tr>
+<td><code>adb shell pm path com.example.myapp</code></td>
+<td>从设备提取<code>APK</code>到计算机</td>
+</tr>
+<tr>
+<td><code>adb shell input swipe 300 300 500 1000</code></td>
+<td>滚动屏幕</td>
+</tr>
+<tr>
+<td><code>adb shell input keyevent 66</code></td>
+<td>发送按键事件</td>
+</tr>
+<tr>
+<td><code>adb shell &#39;logcat --pid=$(pidof -s &lt;package_name&gt;)&#39;</code></td>
+<td>查看包的日志</td>
+</tr>
+<tr>
+<td><code>adb devices</code><br/><code>adb shell ifconfig</code><br/><code>adb tcpip 5555</code><br/><code>adb connect 192.168.1.4:5555</code></td>
+<td>记下<code>inet addr</code>后的<code>IP</code>地址。<br/>断开<code>USB</code>线缆</td>
+</tr>
+</tbody></table>
+<!--prettier-ignore-end-->
+</div></noscript>
+      <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
+      <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
+           data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
+    </div>
+    <aside class="sidebar-area">
+      <div class="sidebar-title">文章目录</div>
+      <nav id="toc-nav" class="toc-nav"></nav>
+    </aside>
+  </div>
+  <script src="/src/components/loading/index.js"></script>
+  <script src="/src/components/banner/index.js"></script>
+  <script src="/src/components/navigation/index.js"></script>
+  <script src="/src/js/highlight.min.js"></script>
+  <script src="/src/js/marked.min.js"></script>
+  <script src="/src/js/marked-highlight.min.js"></script>
+  <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/scroll/index.js"></script>
+  <script src="/src/components/cookie-consent/index.js"></script>
+  <script>
+    (function () {
+      /* 静态页滚动容器抗注入：部分预览环境会对 .layout-container/.content-area 整段 setAttribute style 为
+         "height: auto !important"，使内部滚动容器按内容高度解析、滚不到底。
+         用 MutationObserver 侦测 style 属性变化，一旦出现 auto 即用 JS 计算的视口像素高度（window.innerHeight，
+         不受 100vh 被内容撑大的影响）重新施加，恢复 631 内部滚动。生产正常浏览器无注入时不触发。 */
+      var l = document.querySelector('.layout-container');
+      var ca = document.querySelector('.content-area');
+      if (!l || !ca) return;
+      function fixedH() {
+        var b = parseInt(window.getComputedStyle(document.body).getPropertyValue('--banner-height')) || 0;
+        return (window.innerHeight - b) + 'px';
+      }
+      function force() {
+        var h = fixedH();
+        var changed = false;
+        if ((l.getAttribute('style') || '').indexOf('auto') !== -1) {
+          l.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        if ((ca.getAttribute('style') || '').indexOf('auto') !== -1) {
+          ca.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        return changed;
+      }
+      var timer = null;
+      var mo = new MutationObserver(function () {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(force, 50);
+      });
+      mo.observe(l, { attributes: true, attributeFilter: ['style'] });
+      mo.observe(ca, { attributes: true, attributeFilter: ['style'] });
+      window.addEventListener('resize', force);
+      force();
+    })();
+  </script>
+  <script>
+    (function () {
+      // 运行时从相邻 .md 渲染：md 改动后刷新即更新；保留预渲染正文作为 no-JS / 爬虫回退
+      var mdUrl = '../ADB%E5%91%BD%E4%BB%A4%E9%9B%86%E5%90%88.md';
+      function finish() {
+        try {
+          if (typeof generateTOC === 'function') generateTOC();
+          var blocks = document.querySelectorAll('#markdown-content pre code');
+          if (window.hljs && blocks.length) {
+            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
+          }
+          document.querySelectorAll('#markdown-content a').forEach(function (a) {
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener noreferrer');
+          });
+        } catch (e) {}
+        if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
+        if (typeof hideLoading === 'function') hideLoading();
+      }
+      try {
+        if (typeof handler === 'function') {
+          handler('markdown-content', mdUrl, finish);
+        } else {
+          finish();
+        }
+      } catch (e) { finish(); }
+    })();
+  </script>
+</body>
+</html>

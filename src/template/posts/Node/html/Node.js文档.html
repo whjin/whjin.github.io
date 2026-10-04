@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="吴华锦" />
+  <title>Node.js文档 « 吴华锦</title>
+  <meta name="description" content="非阻塞 IO - 开源的 JS 运行环境 - Chrome V8引擎 非阻塞 异步 IO 服务端 - 事件驱动：事件队列 异步事件 任务队列 - 适合处理高并发请求 优缺点 - 高并发 - IO 密集型 - 单线程 不适合 CPU 密集型应用 单核 CPU - 代码发生问题，系统会崩溃 应用场景 - IO 更适合 - IO 内部不需要做非常复杂的逻辑 - WebSocket - 后台管理 实时交互系统 高并发 - canvas 多人协作 - 单页面浏览器应用创建服务 - 开发服务器端的中间层（BFF） - 开发前端方向的各种工具 fs 模块 - fs: filesystem 操作文档文件夹 -" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wuhuajin.com/src/template/posts/Node/html/Node.js%E6%96%87%E6%A1%A3.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Wu Huajin" />
+  <meta property="og:title" content="Node.js文档" />
+  <meta property="og:description" content="非阻塞 IO - 开源的 JS 运行环境 - Chrome V8引擎 非阻塞 异步 IO 服务端 - 事件驱动：事件队列 异步事件 任务队列 - 适合处理高并发请求 优缺点 - 高并发 - IO 密集型 - 单线程 不适合 CPU 密集型应用 单核 CPU - 代码发生问题，系统会崩溃 应用场景 - IO 更适合 - IO 内部不需要做非常复杂的逻辑 - WebSocket - 后台管理 实时交互系统 高并发 - canvas 多人协作 - 单页面浏览器应用创建服务 - 开发服务器端的中间层（BFF） - 开发前端方向的各种工具 fs 模块 - fs: filesystem 操作文档文件夹 -" />
+  <meta property="og:url" content="https://wuhuajin.com/src/template/posts/Node/html/Node.js%E6%96%87%E6%A1%A3.html" />
+  <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Node.js文档" />
+  <meta name="twitter:description" content="非阻塞 IO - 开源的 JS 运行环境 - Chrome V8引擎 非阻塞 异步 IO 服务端 - 事件驱动：事件队列 异步事件 任务队列 - 适合处理高并发请求 优缺点 - 高并发 - IO 密集型 - 单线程 不适合 CPU 密集型应用 单核 CPU - 代码发生问题，系统会崩溃 应用场景 - IO 更适合 - IO 内部不需要做非常复杂的逻辑 - WebSocket - 后台管理 实时交互系统 高并发 - canvas 多人协作 - 单页面浏览器应用创建服务 - 开发服务器端的中间层（BFF） - 开发前端方向的各种工具 fs 模块 - fs: filesystem 操作文档文件夹 -" />
+  <link rel="icon" href="/src/images/favicon.png" />
+  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/src/css/github-dark.min.css" />
+  <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/loading/index.css" />
+  <link rel="stylesheet" href="/src/components/navigation/index.css" />
+  <link rel="stylesheet" href="/src/components/banner/index.css" />
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Node.js文档",
+  "description": "非阻塞 IO - 开源的 JS 运行环境 - Chrome V8引擎 非阻塞 异步 IO 服务端 - 事件驱动：事件队列 异步事件 任务队列 - 适合处理高并发请求 优缺点 - 高并发 - IO 密集型 - 单线程 不适合 CPU 密集型应用 单核 CPU - 代码发生问题，系统会崩溃 应用场景 - IO 更适合 - IO 内部不需要做非常复杂的逻辑 - WebSocket - 后台管理 实时交互系统 高并发 - canvas 多人协作 - 单页面浏览器应用创建服务 - 开发服务器端的中间层（BFF） - 开发前端方向的各种工具 fs 模块 - fs: filesystem 操作文档文件夹 -",
+  "author": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "datePublished": "2026-09-11",
+  "inLanguage": "zh-CN",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wuhuajin.com/src/template/posts/Node/html/Node.js%E6%96%87%E6%A1%A3.html"
+  }
+}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
+  <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+</head>
+<body>
+  <div class="layout-container">
+    <div class="nav-container"></div>
+    <div class="content-area">
+      <div id="markdown-content" class="markdown-content viewer"></div>
+      <noscript><div class="markdown-content viewer" style="padding:1em"><h2>非阻塞 <code>IO</code></h2>
+<ul>
+<li>开源的 <code>JS</code> 运行环境</li>
+<li><code>Chrome V8</code>引擎 非阻塞 异步 <code>IO</code> 服务端</li>
+<li>事件驱动：事件队列 异步事件 任务队列</li>
+<li>适合处理高并发请求</li>
+</ul>
+<h2>优缺点</h2>
+<ul>
+<li>高并发</li>
+<li><code>IO</code> 密集型</li>
+<li>单线程 不适合 <code>CPU</code> 密集型应用 单核 <code>CPU</code></li>
+<li>代码发生问题，系统会崩溃</li>
+</ul>
+<!--more-->
+
+<h2>应用场景</h2>
+<ul>
+<li><code>IO</code> 更适合</li>
+<li><code>IO</code> 内部不需要做非常复杂的逻辑</li>
+<li><code>WebSocket</code></li>
+<li>后台管理 实时交互系统 高并发</li>
+<li><code>canvas</code> 多人协作</li>
+<li>单页面浏览器应用创建服务</li>
+<li>开发服务器端的中间层（<code>BFF</code>）</li>
+<li>开发前端方向的各种工具</li>
+</ul>
+<h2><code>fs</code> 模块</h2>
+<ul>
+<li><code>fs</code>: <code>filesystem</code> 操作文档文件夹</li>
+<li>权限位：<code>mode</code></li>
+<li><code>r</code>： <code>read</code> <code>readFileSync</code> 读取文件 不存在，抛出异常</li>
+<li><code>r+</code>：读取并写入文件 文件不存在，抛出异常</li>
+<li><code>w</code>：<code>write</code> 写入文件 存在则清空后写入</li>
+<li><code>w+</code>：写入文件 文件不存在，创建文件 存在清空后写入</li>
+<li><code>appendFile</code>：<code>appendFileSync</code> 追加写入文件 文件不存在，创建文件</li>
+<li><code>copyFile</code> <code>copyFileSync</code> 文件拷贝</li>
+<li><code>mkdir</code> <code>mkdirSync</code> 创建文件夹</li>
+</ul>
+<h2><code>buffer</code>文件</h2>
+<ul>
+<li>二进制 <code>Buffer</code> 内存</li>
+<li><code>Buffer.from(&#39;10&#39;)</code></li>
+<li><code>Buffer.alloc(10, 1)</code> 创建指定长度的 <code>Buffer</code>，填充值为<code>1</code></li>
+<li>编码类型：<code>utf8</code>、<code>ascii</code>、<code>base64</code>、 <code>hex</code></li>
+</ul>
+<h2><code>JWT</code>鉴权机制</h2>
+<ul>
+<li><code>JWT</code>：<code>JSON Web Token</code>，<code>JSON</code>对象，<code>Base64</code>编码，<code>HMAC</code>签名</li>
+<li><code>token</code>：头部 <code>header</code>、载荷 <code>payload</code>、签名 <code>signature</code></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;alg&quot;: &quot;HS256&quot;,
+  &quot;typ&quot;: &quot;JWT&quot;
+}
+</code></pre>
+<ul>
+<li>生成 <code>token</code>，验证 <code>token</code></li>
+<li>校验 <code>token</code>：<code>koa-jwt</code></li>
+<li>加密密钥 <code>payload</code></li>
+</ul>
+<pre><code class="language-js">app.use(koajwt({
+    secret: &#39;access_token&#39;,
+  }).unless({
+    path: [/api/login],
+  }));
+
+  router.get(&#39;/api/user&#39;, async (ctx,next) =&gt; {
+    const authorization = ctx.header.authorization; // 获取 jwt
+    const token = authorization.replace(&#39;Bearer &#39;, &#39;&#39;);
+    const result = jwt.verify(token, &#39;access_token&#39;);
+    ctx.body = result;
+  })
+</code></pre>
+<h2><code>Stream</code></h2>
+<ul>
+<li><code>stream</code>：数据传输手段，端到端信息交互方式</li>
+<li>可写流：<code>fs.createWriteStream</code></li>
+<li>可读流：<code>fs.createReadStream</code></li>
+<li>双工流：<code>net.socket</code></li>
+<li>转换流：在数据写入/读取时修改数据的流</li>
+<li><code>http</code> <code>request</code>-可读流 <code>response</code>-可写流</li>
+<li><code>pipe</code>：数据传输管道，可读流 -&gt; 可写流</li>
+</ul>
+<pre><code class="language-js">const server = http.createServer((req, res) =&gt; {
+  const method = req.method;
+  if (method === &#39;GET&#39;) {
+    const filename = path.resolve(__dirname, &#39;data.json&#39;);
+    let stream = fs.createReadStream(filename);
+    stream.pipe(res);
+  }
+});
+</code></pre>
+<h2><code>process</code></h2>
+<ul>
+<li><code>process</code>：开启服务进程，进程管理</li>
+<li><code>process.env</code> <code>process.env.NODE_ENV</code></li>
+<li><code>process.nextTick</code> <code>evnetLoop</code></li>
+<li><code>process.pid</code> <code>ppid</code></li>
+<li><code>process.cwd()</code> 当前进程目录</li>
+<li><code>process.stdout</code> <code>process.stdin</code> <code>process.stderr</code></li>
+<li><code>process.argv</code> 命令行参数</li>
+<li><code>process.argv.slice(2)</code> 0: <code>Node</code>路径 1: <code>JS</code>文件路径</li>
+</ul>
+<h2><code>eventEmitter</code></h2>
+<ul>
+<li>事件驱动 <code>fs.readStream</code> <code>eventEmitter.on()</code></li>
+<li>观察者模式</li>
+</ul>
+<h2>中间件</h2>
+<ul>
+<li>本质是回调函数</li>
+<li><code>koa</code>通过中间件实现请求处理流程</li>
+<li><code>ctx</code>：<code>request</code>、<code>response</code></li>
+<li><code>next</code>：执行下一次中间件的函数</li>
+<li>每个中间件足够清晰，职责单一，可组合</li>
+<li>接受客户端请求</li>
+<li>渲染 <code>HTML</code> 页面</li>
+<li><code>Bigpipe</code>、<code>Comet</code>、<code>Socket</code></li>
+<li>合并接口请求</li>
+<li>路由定制</li>
+<li>数据缓存</li>
+</ul>
+<pre><code class="language-js">module.exports = (options) =&gt; async (ctx, next) =&gt; {
+  try {
+    const token = ctx.header.authorization;
+    if (token) {
+      await verify(token);
+    }
+    await next();
+  } catch (error) {
+    console.error(error);
+  }
+};
+</code></pre>
+<h2>事件循环</h2>
+<ul>
+<li><code>timers</code>：<code>setTimeout</code>、<code>setInterval</code></li>
+<li><code>timers</code>检查阶段：<code>setTimeout</code>、<code>setInterval</code> 回调函数</li>
+<li><code>IO</code> 回调</li>
+<li>闲置时间：<code>idle</code> 系统内部</li>
+<li><code>poll</code>：轮询阶段</li>
+<li><code>check</code>：<code>setImmediate</code></li>
+<li><code>close</code> 回调 <code>socket.on(&#39;end&#39;)</code></li>
+<li>每个阶段，都会执行对应的队列</li>
+<li><code>process.nextTick</code></li>
+</ul>
+<p><strong><code>JavaScript</code>事件循环机制与异步阻塞优化</strong></p>
+<ul>
+<li><code>JS</code>单线程，事件循环负责协调同步代码、异步任务和 <code>UI</code>渲染</li>
+<li><strong>宏任务</strong>：<code>script</code>整体、<code>setTimeout</code>、<code>setInterval</code>、<code>I/O</code>、<code>UI</code>渲染、<code>fetch</code>，执行时机在每次 <code>UI</code>渲染之后</li>
+<li><strong>微任务</strong>：<code>Promise.then/catch/finally</code>、<code>async/await</code>、<code>queueMicrotask</code>、<code>MutationObserver</code>，执行时机在同步代码完成后、<code>UI</code>渲染前</li>
+<li>执行顺序：同步代码 -&gt; 所有微任务 -&gt; <code>UI</code>渲染 -&gt; 一个宏任务，循环往复</li>
+</ul>
+<p><strong>流式语音转写场景优化</strong></p>
+<ol>
+<li><strong>微任务优先处理高频小数据</strong>：流式转写的每个 <code>chunk</code> 用 <code>queueMicrotask</code> 包裹解析，保证在 <code>UI</code>渲染前完成，字幕无延迟</li>
+<li><strong><code>Web Worker</code>隔离计算密集型人物</strong>：将语音后处理（断句、标点修正、敏感词过滤）移到 <code>Worker</code>，主线程仅负责渲染</li>
+<li><strong>分片处理 + 时间切片</strong>：大段转写文本用 <code>requestIdleCallback</code> 分片渲染，每次处理不超过 <code>16ms</code>，避免阻塞主线程</li>
+<li><strong>批量 <code>DOM</code>更新</strong>：使用 <code>DocumentFragment</code>或虚拟 <code>DOM</code>批量更新字幕，减少重排重绘次数</li>
+<li><strong><code>React</code>调度优化</strong>：使用 <code>useTransition</code>将字幕渲染标记为第优先级，保证用户交互优先响应</li>
+</ol>
+<h2>性能 + 监控 + 优化</h2>
+<ul>
+<li><code>CPU</code>：负载 使用率</li>
+<li><code>内存</code>：<code>os</code></li>
+<li>磁盘 <code>IO</code> <code>Redis</code> <code>memcached</code></li>
+</ul>
+<pre><code class="language-js">const os = require(&#39;os&#39;);
+
+const { rss, heapTotal, heapUsed } = process.memoryUsage();
+
+const sysFree = os.freemem();
+const sysTotal = os.totalmem();
+
+// heapUsed / heapTotal：Node堆内存的占用率
+// rss / sysTotal：进程占用的内存率 内存系统比例
+</code></pre>
+<ul>
+<li><code>EasyMonitor</code> <code>Node</code> 内核性能监控 + 分析工具</li>
+<li><code>Node.js</code> 使用最新版本 <code>V8</code></li>
+<li><code>Stream</code></li>
+<li>代码层面</li>
+<li>内存管理</li>
+</ul>
+<h2>文件上传</h2>
+<ul>
+<li><code>multiparty</code>：文件上传 <code>&quot;content-type&quot;: &quot;multipart/form-data&quot;</code></li>
+</ul>
+<pre><code class="language-js">&lt;form action=&quot;http://localhost:8080/api/upload&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+  &lt;input type=&quot;file&quot; name=&quot;file&quot; id=&quot;file&quot; value=&quot;&quot; multiple=&quot;multiple&quot; /&gt;
+  &lt;input type=&quot;submit&quot; value=&quot;提交&quot; /&gt;
+&lt;/form&gt;;
+
+router.post(&#39;/uploadFile&#39;, async (ctx, next) =&gt; {
+  const file = ctx.request.files.file;
+  const reader = fs.createReadStream(file.path);
+  let filePath = path.join(__dirname, &#39;public/upload/&#39;) + `${file.name}`;
+  const upStream = fs.createWriteStream(filePath);
+  reader.pipe(upStream);
+  return (ctx.body = { code: 200, message: &#39;上传成功&#39; });
+});
+</code></pre>
+<ul>
+<li><code>koa-multer</code></li>
+</ul>
+<pre><code class="language-js">const storage = multer.diskStorage({
+  destination: (req, file, cb) =&gt; {
+    cb(null, &#39;./upload/&#39;);
+  },
+  filename: (req, file, cb) =&gt; {
+    cb(null, Date.now() + path.extname(file.originalname));
+  },
+});
+
+const upload = multer({ storage });
+
+const fileRouter = new Router();
+fileRouter.post(&#39;/upload&#39;, upload.single(&#39;file&#39;), async (ctx, next) =&gt; {});
+app.use(fileRouter.routes());
+</code></pre>
+<h2><code>NVM</code>配置</h2>
+<pre><code class="language-sh">NVM_HOME &quot;C:\Program Files\nvm&quot;
+NVM_SYMLINK &quot;C:\Program Files\nvm\nodejs&quot;
+PATH  %NVM_HOME% %NVM_SYMLINK%
+
+// nvm/settings.txt
+root: C:\Software\nvm
+path: C:\Software\nvm\nodejs
+arch: 64
+proxy: none
+
+// 终端
+cd C:\Software\nvm
+rmdir /s /q nodejs
+mklink /D nodejs v24.16.0
+</code></pre>
+</div></noscript>
+      <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
+      <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
+           data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
+    </div>
+    <aside class="sidebar-area">
+      <div class="sidebar-title">文章目录</div>
+      <nav id="toc-nav" class="toc-nav"></nav>
+    </aside>
+  </div>
+  <script src="/src/components/loading/index.js"></script>
+  <script src="/src/components/banner/index.js"></script>
+  <script src="/src/components/navigation/index.js"></script>
+  <script src="/src/js/highlight.min.js"></script>
+  <script src="/src/js/marked.min.js"></script>
+  <script src="/src/js/marked-highlight.min.js"></script>
+  <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/scroll/index.js"></script>
+  <script src="/src/components/cookie-consent/index.js"></script>
+  <script>
+    (function () {
+      /* 静态页滚动容器抗注入：部分预览环境会对 .layout-container/.content-area 整段 setAttribute style 为
+         "height: auto !important"，使内部滚动容器按内容高度解析、滚不到底。
+         用 MutationObserver 侦测 style 属性变化，一旦出现 auto 即用 JS 计算的视口像素高度（window.innerHeight，
+         不受 100vh 被内容撑大的影响）重新施加，恢复 631 内部滚动。生产正常浏览器无注入时不触发。 */
+      var l = document.querySelector('.layout-container');
+      var ca = document.querySelector('.content-area');
+      if (!l || !ca) return;
+      function fixedH() {
+        var b = parseInt(window.getComputedStyle(document.body).getPropertyValue('--banner-height')) || 0;
+        return (window.innerHeight - b) + 'px';
+      }
+      function force() {
+        var h = fixedH();
+        var changed = false;
+        if ((l.getAttribute('style') || '').indexOf('auto') !== -1) {
+          l.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        if ((ca.getAttribute('style') || '').indexOf('auto') !== -1) {
+          ca.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        return changed;
+      }
+      var timer = null;
+      var mo = new MutationObserver(function () {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(force, 50);
+      });
+      mo.observe(l, { attributes: true, attributeFilter: ['style'] });
+      mo.observe(ca, { attributes: true, attributeFilter: ['style'] });
+      window.addEventListener('resize', force);
+      force();
+    })();
+  </script>
+  <script>
+    (function () {
+      // 运行时从相邻 .md 渲染：md 改动后刷新即更新；保留预渲染正文作为 no-JS / 爬虫回退
+      var mdUrl = '../Node.js%E6%96%87%E6%A1%A3.md';
+      function finish() {
+        try {
+          if (typeof generateTOC === 'function') generateTOC();
+          var blocks = document.querySelectorAll('#markdown-content pre code');
+          if (window.hljs && blocks.length) {
+            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
+          }
+          document.querySelectorAll('#markdown-content a').forEach(function (a) {
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener noreferrer');
+          });
+        } catch (e) {}
+        if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
+        if (typeof hideLoading === 'function') hideLoading();
+      }
+      try {
+        if (typeof handler === 'function') {
+          handler('markdown-content', mdUrl, finish);
+        } else {
+          finish();
+        }
+      } catch (e) { finish(); }
+    })();
+  </script>
+</body>
+</html>

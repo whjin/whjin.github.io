@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="吴华锦" />
+  <title>Git文档 « 吴华锦</title>
+  <meta name="description" content="Git 提交规范 类型说明 :----::----: feat新特性 fix(scope)修复 scope 中的 Bug feat!:/feat(scope)!:breaking change / 重构 API build变更影响的是构建系统或者外部依赖 (如: gulp, npm) ci修改了 CI 配置文件或脚本 (如: Github Action, Travis) chore【重要】 变更不影响源代码或测试（如更新了辅助工具、库等) docs只修改了文档 feat【重要】 一个新特性 fix【重要】 修复了一个 Bug perf增强性能的代码变更 refactor并非修复 Bug 或添加" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wuhuajin.com/src/template/posts/Git/html/Git%E6%96%87%E6%A1%A3.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Wu Huajin" />
+  <meta property="og:title" content="Git文档" />
+  <meta property="og:description" content="Git 提交规范 类型说明 :----::----: feat新特性 fix(scope)修复 scope 中的 Bug feat!:/feat(scope)!:breaking change / 重构 API build变更影响的是构建系统或者外部依赖 (如: gulp, npm) ci修改了 CI 配置文件或脚本 (如: Github Action, Travis) chore【重要】 变更不影响源代码或测试（如更新了辅助工具、库等) docs只修改了文档 feat【重要】 一个新特性 fix【重要】 修复了一个 Bug perf增强性能的代码变更 refactor并非修复 Bug 或添加" />
+  <meta property="og:url" content="https://wuhuajin.com/src/template/posts/Git/html/Git%E6%96%87%E6%A1%A3.html" />
+  <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Git文档" />
+  <meta name="twitter:description" content="Git 提交规范 类型说明 :----::----: feat新特性 fix(scope)修复 scope 中的 Bug feat!:/feat(scope)!:breaking change / 重构 API build变更影响的是构建系统或者外部依赖 (如: gulp, npm) ci修改了 CI 配置文件或脚本 (如: Github Action, Travis) chore【重要】 变更不影响源代码或测试（如更新了辅助工具、库等) docs只修改了文档 feat【重要】 一个新特性 fix【重要】 修复了一个 Bug perf增强性能的代码变更 refactor并非修复 Bug 或添加" />
+  <link rel="icon" href="/src/images/favicon.png" />
+  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/src/css/github-dark.min.css" />
+  <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/loading/index.css" />
+  <link rel="stylesheet" href="/src/components/navigation/index.css" />
+  <link rel="stylesheet" href="/src/components/banner/index.css" />
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Git文档",
+  "description": "Git 提交规范 类型说明 :----::----: feat新特性 fix(scope)修复 scope 中的 Bug feat!:/feat(scope)!:breaking change / 重构 API build变更影响的是构建系统或者外部依赖 (如: gulp, npm) ci修改了 CI 配置文件或脚本 (如: Github Action, Travis) chore【重要】 变更不影响源代码或测试（如更新了辅助工具、库等) docs只修改了文档 feat【重要】 一个新特性 fix【重要】 修复了一个 Bug perf增强性能的代码变更 refactor并非修复 Bug 或添加",
+  "author": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "datePublished": "2026-09-11",
+  "inLanguage": "zh-CN",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wuhuajin.com/src/template/posts/Git/html/Git%E6%96%87%E6%A1%A3.html"
+  }
+}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
+  <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+</head>
+<body>
+  <div class="layout-container">
+    <div class="nav-container"></div>
+    <div class="content-area">
+      <div id="markdown-content" class="markdown-content viewer"></div>
+      <noscript><div class="markdown-content viewer" style="padding:1em"><h2><code>Git</code> 提交规范</h2>
+<!--prettier-ignore-start-->
+<table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>feat</code></td>
+<td align="center">新特性</td>
+</tr>
+<tr>
+<td align="center"><code>fix(scope)</code></td>
+<td align="center">修复 <code>scope</code> 中的 <code>Bug</code></td>
+</tr>
+<tr>
+<td align="center"><code>feat!:/feat(scope)!:</code></td>
+<td align="center"><code>breaking change</code> / 重构 <code>API</code></td>
+</tr>
+<tr>
+<td align="center"><code>build</code></td>
+<td align="center">变更影响的是构建系统或者外部依赖 (如: <code>gulp</code>, <code>npm</code>)</td>
+</tr>
+<tr>
+<td align="center"><code>ci</code></td>
+<td align="center">修改了 <code>CI</code> 配置文件或脚本 (如: <code>Github Action</code>, <code>Travis</code>)</td>
+</tr>
+<tr>
+<td align="center"><code>chore</code></td>
+<td align="center">【重要】 变更不影响源代码或测试（如更新了辅助工具、库等)</td>
+</tr>
+<tr>
+<td align="center"><code>docs</code></td>
+<td align="center">只修改了文档</td>
+</tr>
+<tr>
+<td align="center"><code>feat</code></td>
+<td align="center">【重要】 一个新特性</td>
+</tr>
+<tr>
+<td align="center"><code>fix</code></td>
+<td align="center">【重要】 修复了一个 <code>Bug</code></td>
+</tr>
+<tr>
+<td align="center"><code>perf</code></td>
+<td align="center">增强性能的代码变更</td>
+</tr>
+<tr>
+<td align="center"><code>refactor</code></td>
+<td align="center">并非修复 <code>Bug</code> 或添加新特性的代码变更</td>
+</tr>
+<tr>
+<td align="center"><code>revert</code></td>
+<td align="center">回退代码</td>
+</tr>
+<tr>
+<td align="center"><code>style</code></td>
+<td align="center">变更不影响一些有意义的代码 (如: 删除空格、格式化代码、添加分号等)</td>
+</tr>
+<tr>
+<td align="center"><code>test</code></td>
+<td align="center">添加测试代码或修正已有的测试</td>
+</tr>
+</tbody></table>
+<!--prettier-ignore-end-->
+
+<h2>查看HEAD上最近一次的提交（commit）</h2>
+<pre><code class="language-sh">git show
+
+git log -n1 -p
+</code></pre>
+<h2>修改提交信息（commit message）</h2>
+<pre><code class="language-sh">git commit --amend --only
+
+git commit --amend --only -m &#39;xxx&#39;
+</code></pre>
+<h2>修改提交的用户名和邮箱</h2>
+<pre><code class="language-sh">git commit --amend --author &#39;new authorname email&#39;
+</code></pre>
+<h2>从一个提交移除一个文件</h2>
+<pre><code class="language-sh">git checkout HEAD^ myfile
+
+git add -A
+
+git commit --amend
+</code></pre>
+<h2>删除最后一次提交</h2>
+<pre><code class="language-sh">git reset HEAD^ --hard
+
+git push -f [remote][branch]
+
+git reset --soft HEAD@{1}
+</code></pre>
+<h2>删除任意提交</h2>
+<pre><code class="language-sh">git rebase --onto SHA1_OF_BAD_COMMIT^ SHA1_OF_BAD_COMMIT
+
+git push -f [remote][branch]
+</code></pre>
+<h2>强推到远端</h2>
+<pre><code class="language-sh">git push -f origin my-branch
+</code></pre>
+<h2>硬重置（hard reset）后，找回内容</h2>
+<pre><code class="language-sh">git reflog
+
+git reset --hard SHA1234
+</code></pre>
+<h2>把暂存（staging）的内容添加到上一次的提交</h2>
+<pre><code class="language-sh">git commit --amend
+</code></pre>
+<h2>只暂存一个新文件的一部分，不是全部</h2>
+<pre><code class="language-sh">git add --patch[-p] filename.x
+
+git add -N filename.x
+</code></pre>
+<h2>把在一个文件里的变化（changes）加到两个提交里</h2>
+<pre><code class="language-sh">git add -p
+</code></pre>
+<h2>把暂存的内容变成未暂存，把未暂存的内容暂存</h2>
+<pre><code class="language-sh">git commit -m &quot;WIP&quot;
+
+git add .
+
+git stash
+
+git reset HEAD^
+
+git stash pop --index 0
+</code></pre>
+<h2>把未暂存（unstaged）的内容移动到一个新分支</h2>
+<pre><code class="language-sh">git checkout -b my-branch
+</code></pre>
+<h2>把未暂存的内容移动到另一个已存在的分支</h2>
+<pre><code class="language-sh">git stash
+
+git checkout my-branch
+
+git stash pop
+</code></pre>
+<h2>丢弃本地未提交的变化（uncommitted changes）</h2>
+<pre><code class="language-sh">// one commit
+git reset --hard HEAD^
+
+// two commits
+git reset --hard HEAD^^
+
+// four commits
+git reset --hard HEAD~4
+
+git checkout -f
+
+git reset filename
+</code></pre>
+<h2>丢弃某些未暂存的内容</h2>
+<pre><code class="language-sh">git checkout -p
+
+git stash -p
+
+git reset --hard
+
+git stash pop
+
+git stash drop
+</code></pre>
+<h2>从错误的分支拉取了内容，或把内容推送到了错误的分支</h2>
+<pre><code class="language-sh">git reflog
+
+git reset --hard [hash]
+</code></pre>
+<h2>丢弃本地的提交，以便本地分支与远程保持一致</h2>
+<pre><code class="language-sh">git status
+
+git reset --hard origin/branch
+</code></pre>
+<h2>需要提交到一个新分支，但错误的提交到了main</h2>
+<pre><code class="language-sh">git branch my-branch
+
+git reset --hard HEAD^
+
+git reset --hard [hash]
+</code></pre>
+<h2>保留来自另一个ref-ish的整体文件</h2>
+<pre><code class="language-sh">git add -A &amp;&amp; git commit -m &quot;commit message&quot;
+
+git checkout solution -- file.txt
+</code></pre>
+<h2>删除上游（upstream）分支被删除了的本地分支</h2>
+<pre><code class="language-sh">git fetch -p
+</code></pre>
+<h2>不小心删除了分支</h2>
+<pre><code class="language-sh">git checkout -b my-branch
+
+git branch
+
+git reflog
+
+git checkout -b my-branch
+</code></pre>
+<h2>删除一个远程分支</h2>
+<pre><code class="language-sh">git push origin --delete my-branch
+
+git push origin :my-branch
+</code></pre>
+<h2>删除一个本地分支</h2>
+<pre><code class="language-sh">git branch -D my-branch
+</code></pre>
+<h2>从别人正在工作的远程分支迁出（checkout）一个分支</h2>
+<pre><code class="language-sh">git fetch --all
+
+git checkout --track origin/[branch]
+</code></pre>
+<h2>撤销rebase/merge</h2>
+<pre><code class="language-sh">git reset --hard ORIG_HEAD
+</code></pre>
+<h2>已经rebase，但不想强推（force push）</h2>
+<pre><code class="language-sh">git checkout my-branch
+
+git rebase -i main
+
+git checkout main
+
+git merge --ff-only my-branch
+</code></pre>
+<h2>需要组合（combine）几个提交</h2>
+<pre><code class="language-sh">git reset --soft main
+
+git commit -am &quot;new awesome feature&quot;
+
+git rebase -i main
+
+git rebase -i HEAD~2
+</code></pre>
+<h2>安全合并（merging）策略</h2>
+<pre><code class="language-sh">git merge --no-ff --no-commit my-branch
+</code></pre>
+<h2>将一个分支合并成一个提交</h2>
+<pre><code class="language-sh">git merge --squash my-branch
+</code></pre>
+<h2>组合（combine）未推的提交</h2>
+<pre><code class="language-sh">git rebase -i @{u}
+</code></pre>
+<h2>检查是否分支上的所有提交都已经合并</h2>
+<pre><code class="language-sh">git log --graph --left-right --cherry-pick --outline HEAD...feature/120-on-scroll
+
+git log main ^feature/120-on-scroll --no-merges
+</code></pre>
+<h2>暂存所有改动</h2>
+<pre><code class="language-sh">git stash
+
+git stash -u
+</code></pre>
+<h2>暂存指定文件</h2>
+<pre><code class="language-sh">git stash push working-directory-path/filename.ext
+
+git stash push working-directory-path/filename1.ext working-directory-path/filename2.ext
+</code></pre>
+<h2>暂存时记录消息</h2>
+<pre><code class="language-sh">git stash save &lt;message&gt;
+
+git stash push -m &lt;message&gt;
+</code></pre>
+<h2>使用某个指定暂存</h2>
+<pre><code class="language-sh">git stash list
+
+git stash apply &quot;stash@{n}&quot;
+
+git stash apply &quot;stash@{2.hours.ago}&quot;
+</code></pre>
+<h2>暂存时保留未暂存的内容</h2>
+<pre><code class="language-sh">git stash create
+
+git stash store -m &quot;commit message&quot; CREATED_SHA1
+</code></pre>
+<h2>克隆所有子模块</h2>
+<pre><code class="language-sh">git clone --recursive git://github.com/foo/bar.git
+
+git submodule update --init --recursive
+</code></pre>
+<h2>删除标签（tag）</h2>
+<pre><code class="language-sh">git tag -d &lt;tag_name&gt;
+
+git push &lt;remote&gt; :refs/tags/&lt;tag_name&gt;
+</code></pre>
+<h2>恢复已删除标签</h2>
+<pre><code class="language-sh">git fsck --uncreachable | grep tag
+
+git update-ref refs/tags/&lt;tag_name&gt; &lt;hash&gt;
+</code></pre>
+<h2>只改变一个文件名字，不修改内容</h2>
+<pre><code class="language-sh">git mv --force myfile MyFile
+</code></pre>
+<h2>从Git删除一个文件，但保留该文件</h2>
+<pre><code class="language-sh">git rm --cached log.txt
+</code></pre>
+<h2>缓存一个仓库（repository）的用户名和密码</h2>
+<pre><code class="language-sh">git config --global credential.helper cache
+
+git config --global credential.helper &#39;cache --timeout=3600&#39;
+</code></pre>
+<h2>修改远程分支名</h2>
+<pre><code class="language-sh">git branch -m oldbranch newbranch
+
+git push --delete origin oldbranch
+
+git push origin newbranch
+
+git branch --set-upsteam-to origin/newbranch
+</code></pre>
+</div></noscript>
+      <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
+      <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
+           data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
+    </div>
+    <aside class="sidebar-area">
+      <div class="sidebar-title">文章目录</div>
+      <nav id="toc-nav" class="toc-nav"></nav>
+    </aside>
+  </div>
+  <script src="/src/components/loading/index.js"></script>
+  <script src="/src/components/banner/index.js"></script>
+  <script src="/src/components/navigation/index.js"></script>
+  <script src="/src/js/highlight.min.js"></script>
+  <script src="/src/js/marked.min.js"></script>
+  <script src="/src/js/marked-highlight.min.js"></script>
+  <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/scroll/index.js"></script>
+  <script src="/src/components/cookie-consent/index.js"></script>
+  <script>
+    (function () {
+      /* 静态页滚动容器抗注入：部分预览环境会对 .layout-container/.content-area 整段 setAttribute style 为
+         "height: auto !important"，使内部滚动容器按内容高度解析、滚不到底。
+         用 MutationObserver 侦测 style 属性变化，一旦出现 auto 即用 JS 计算的视口像素高度（window.innerHeight，
+         不受 100vh 被内容撑大的影响）重新施加，恢复 631 内部滚动。生产正常浏览器无注入时不触发。 */
+      var l = document.querySelector('.layout-container');
+      var ca = document.querySelector('.content-area');
+      if (!l || !ca) return;
+      function fixedH() {
+        var b = parseInt(window.getComputedStyle(document.body).getPropertyValue('--banner-height')) || 0;
+        return (window.innerHeight - b) + 'px';
+      }
+      function force() {
+        var h = fixedH();
+        var changed = false;
+        if ((l.getAttribute('style') || '').indexOf('auto') !== -1) {
+          l.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        if ((ca.getAttribute('style') || '').indexOf('auto') !== -1) {
+          ca.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        return changed;
+      }
+      var timer = null;
+      var mo = new MutationObserver(function () {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(force, 50);
+      });
+      mo.observe(l, { attributes: true, attributeFilter: ['style'] });
+      mo.observe(ca, { attributes: true, attributeFilter: ['style'] });
+      window.addEventListener('resize', force);
+      force();
+    })();
+  </script>
+  <script>
+    (function () {
+      // 运行时从相邻 .md 渲染：md 改动后刷新即更新；保留预渲染正文作为 no-JS / 爬虫回退
+      var mdUrl = '../Git%E6%96%87%E6%A1%A3.md';
+      function finish() {
+        try {
+          if (typeof generateTOC === 'function') generateTOC();
+          var blocks = document.querySelectorAll('#markdown-content pre code');
+          if (window.hljs && blocks.length) {
+            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
+          }
+          document.querySelectorAll('#markdown-content a').forEach(function (a) {
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener noreferrer');
+          });
+        } catch (e) {}
+        if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
+        if (typeof hideLoading === 'function') hideLoading();
+      }
+      try {
+        if (typeof handler === 'function') {
+          handler('markdown-content', mdUrl, finish);
+        } else {
+          finish();
+        }
+      } catch (e) { finish(); }
+    })();
+  </script>
+</body>
+</html>

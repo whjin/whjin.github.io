@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="吴华锦" />
+  <title>设计模式文档 « 吴华锦</title>
+  <meta name="description" content="面向对象 - 不需要关注使用过程 - 易维护、易扩展、易复用 - 特征：继承、封装、多台 2. 设计原则 - 单一职责 - 开放封闭 - 里氏替换 - 依赖倒置 - 接口分离 3. 工厂模式、抽象工厂模式 - 工厂模式：通过传入不同的短参数，达到实例化不同的对象的目的 - 优势：关注当前产品的创建，具有良好的封装 - 劣势：增加系统复杂性 - 抽象工厂模式：关注当前抽象类，不需要知道产品具体细节，只需要关注当前抽象方法 4. 状态模式 - 提高代码可维护性 - 添加了很多类，每个类都有自己的方法和状态，增加了系统的负载 5. 单例模式 - 不用重复去构建实例，直接取保存在内存中的实例 - 优势" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wuhuajin.com/src/template/posts/JavaScript/html/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%96%87%E6%A1%A3.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Wu Huajin" />
+  <meta property="og:title" content="设计模式文档" />
+  <meta property="og:description" content="面向对象 - 不需要关注使用过程 - 易维护、易扩展、易复用 - 特征：继承、封装、多台 2. 设计原则 - 单一职责 - 开放封闭 - 里氏替换 - 依赖倒置 - 接口分离 3. 工厂模式、抽象工厂模式 - 工厂模式：通过传入不同的短参数，达到实例化不同的对象的目的 - 优势：关注当前产品的创建，具有良好的封装 - 劣势：增加系统复杂性 - 抽象工厂模式：关注当前抽象类，不需要知道产品具体细节，只需要关注当前抽象方法 4. 状态模式 - 提高代码可维护性 - 添加了很多类，每个类都有自己的方法和状态，增加了系统的负载 5. 单例模式 - 不用重复去构建实例，直接取保存在内存中的实例 - 优势" />
+  <meta property="og:url" content="https://wuhuajin.com/src/template/posts/JavaScript/html/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%96%87%E6%A1%A3.html" />
+  <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="设计模式文档" />
+  <meta name="twitter:description" content="面向对象 - 不需要关注使用过程 - 易维护、易扩展、易复用 - 特征：继承、封装、多台 2. 设计原则 - 单一职责 - 开放封闭 - 里氏替换 - 依赖倒置 - 接口分离 3. 工厂模式、抽象工厂模式 - 工厂模式：通过传入不同的短参数，达到实例化不同的对象的目的 - 优势：关注当前产品的创建，具有良好的封装 - 劣势：增加系统复杂性 - 抽象工厂模式：关注当前抽象类，不需要知道产品具体细节，只需要关注当前抽象方法 4. 状态模式 - 提高代码可维护性 - 添加了很多类，每个类都有自己的方法和状态，增加了系统的负载 5. 单例模式 - 不用重复去构建实例，直接取保存在内存中的实例 - 优势" />
+  <link rel="icon" href="/src/images/favicon.png" />
+  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/src/css/github-dark.min.css" />
+  <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/loading/index.css" />
+  <link rel="stylesheet" href="/src/components/navigation/index.css" />
+  <link rel="stylesheet" href="/src/components/banner/index.css" />
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "设计模式文档",
+  "description": "面向对象 - 不需要关注使用过程 - 易维护、易扩展、易复用 - 特征：继承、封装、多台 2. 设计原则 - 单一职责 - 开放封闭 - 里氏替换 - 依赖倒置 - 接口分离 3. 工厂模式、抽象工厂模式 - 工厂模式：通过传入不同的短参数，达到实例化不同的对象的目的 - 优势：关注当前产品的创建，具有良好的封装 - 劣势：增加系统复杂性 - 抽象工厂模式：关注当前抽象类，不需要知道产品具体细节，只需要关注当前抽象方法 4. 状态模式 - 提高代码可维护性 - 添加了很多类，每个类都有自己的方法和状态，增加了系统的负载 5. 单例模式 - 不用重复去构建实例，直接取保存在内存中的实例 - 优势",
+  "author": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "datePublished": "2026-09-11",
+  "inLanguage": "zh-CN",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wuhuajin.com/src/template/posts/JavaScript/html/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%96%87%E6%A1%A3.html"
+  }
+}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
+  <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+</head>
+<body>
+  <div class="layout-container">
+    <div class="nav-container"></div>
+    <div class="content-area">
+      <div id="markdown-content" class="markdown-content viewer"></div>
+      <noscript><div class="markdown-content viewer" style="padding:1em"><ol>
+<li><strong>面向对象</strong></li>
+</ol>
+<ul>
+<li>不需要关注使用过程</li>
+<li>易维护、易扩展、易复用</li>
+<li>特征：继承、封装、多台</li>
+</ul>
+<ol start="2">
+<li><strong>设计原则</strong></li>
+</ol>
+<ul>
+<li>单一职责</li>
+<li>开放封闭</li>
+<li>里氏替换</li>
+<li>依赖倒置</li>
+<li>接口分离</li>
+</ul>
+<ol start="3">
+<li><strong>工厂模式、抽象工厂模式</strong></li>
+</ol>
+<ul>
+<li>工厂模式：通过传入不同的短参数，达到实例化不同的对象的目的<ul>
+<li>优势：关注当前产品的创建，具有良好的封装</li>
+<li>劣势：增加系统复杂性</li>
+</ul>
+</li>
+<li>抽象工厂模式：关注当前抽象类，不需要知道产品具体细节，只需要关注当前抽象方法</li>
+</ul>
+<ol start="4">
+<li><strong>状态模式</strong></li>
+</ol>
+<ul>
+<li>提高代码可维护性</li>
+<li>添加了很多类，每个类都有自己的方法和状态，增加了系统的负载</li>
+</ul>
+<ol start="5">
+<li><strong>单例模式</strong></li>
+</ol>
+<ul>
+<li>不用重复去构建实例，直接取保存在内存中的实例</li>
+<li>优势：只有一个实例，内存占用少，提高性能</li>
+<li>劣势：不常用，扩展性差</li>
+</ul>
+<ol start="6">
+<li><strong>代理模式</strong></li>
+</ol>
+<ul>
+<li>不能直接访问源对象，通过访问代理对象访问源对象</li>
+</ul>
+<ol start="7">
+<li><strong>观察者模式</strong></li>
+</ol>
+<ul>
+<li>对象之间一对多依赖关系，当一个对象的状态发生变化，所有依赖它的对象都得到通知并被自动更新</li>
+<li>事件通信，<code>Vue</code>、<code>React</code>、<code>DOM</code> 事件、<code>Vue</code>-<code>watch</code></li>
+</ul>
+<ol start="8">
+<li><strong>装饰器模式</strong></li>
+</ol>
+<ul>
+<li>为对象添加新功能，不改变原有的结构和功能</li>
+</ul>
+<ol start="9">
+<li><strong>适配器模式</strong></li>
+</ol>
+<ul>
+<li>原有接口格式不兼容，加一层适配转换接口</li>
+</ul>
+<ol start="10">
+<li><strong>策略模式</strong></li>
+</ol>
+<ul>
+<li>策略组，可复用、可扩展、可维护</li>
+<li>方便在运行时切换算法和策略</li>
+<li>代码更简洁，避免大量的条件判断</li>
+<li>关注分离，每个 <code>strategy</code> 控制自己的算法逻辑，<code>strategy</code> 和使用者之间独立</li>
+</ul>
+<ol start="11">
+<li><strong>迭代器模式</strong></li>
+</ol>
+<ul>
+<li><code>ES6</code> <code>Iterator</code>，迭代器用于遍历容器，并且访问容器中的元素 <code>array</code>、<code>set</code>、<code>map</code>、<code>string</code></li>
+<li>接口都是一样的，迭代器协议</li>
+<li>解决问题：<ul>
+<li>提供了一致的遍历各种数据结构方式，不用了解数据的内部结构</li>
+<li>提供了遍历容器的能力，无需改变接口</li>
+<li><code>hasNext()</code>：判断迭代是否结束</li>
+<li><code>next()</code>查找并返回下一个元素</li>
+</ul>
+</li>
+</ul>
+</div></noscript>
+      <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
+      <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
+           data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
+    </div>
+    <aside class="sidebar-area">
+      <div class="sidebar-title">文章目录</div>
+      <nav id="toc-nav" class="toc-nav"></nav>
+    </aside>
+  </div>
+  <script src="/src/components/loading/index.js"></script>
+  <script src="/src/components/banner/index.js"></script>
+  <script src="/src/components/navigation/index.js"></script>
+  <script src="/src/js/highlight.min.js"></script>
+  <script src="/src/js/marked.min.js"></script>
+  <script src="/src/js/marked-highlight.min.js"></script>
+  <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/scroll/index.js"></script>
+  <script src="/src/components/cookie-consent/index.js"></script>
+  <script>
+    (function () {
+      /* 静态页滚动容器抗注入：部分预览环境会对 .layout-container/.content-area 整段 setAttribute style 为
+         "height: auto !important"，使内部滚动容器按内容高度解析、滚不到底。
+         用 MutationObserver 侦测 style 属性变化，一旦出现 auto 即用 JS 计算的视口像素高度（window.innerHeight，
+         不受 100vh 被内容撑大的影响）重新施加，恢复 631 内部滚动。生产正常浏览器无注入时不触发。 */
+      var l = document.querySelector('.layout-container');
+      var ca = document.querySelector('.content-area');
+      if (!l || !ca) return;
+      function fixedH() {
+        var b = parseInt(window.getComputedStyle(document.body).getPropertyValue('--banner-height')) || 0;
+        return (window.innerHeight - b) + 'px';
+      }
+      function force() {
+        var h = fixedH();
+        var changed = false;
+        if ((l.getAttribute('style') || '').indexOf('auto') !== -1) {
+          l.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        if ((ca.getAttribute('style') || '').indexOf('auto') !== -1) {
+          ca.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        return changed;
+      }
+      var timer = null;
+      var mo = new MutationObserver(function () {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(force, 50);
+      });
+      mo.observe(l, { attributes: true, attributeFilter: ['style'] });
+      mo.observe(ca, { attributes: true, attributeFilter: ['style'] });
+      window.addEventListener('resize', force);
+      force();
+    })();
+  </script>
+  <script>
+    (function () {
+      // 运行时从相邻 .md 渲染：md 改动后刷新即更新；保留预渲染正文作为 no-JS / 爬虫回退
+      var mdUrl = '../%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%96%87%E6%A1%A3.md';
+      function finish() {
+        try {
+          if (typeof generateTOC === 'function') generateTOC();
+          var blocks = document.querySelectorAll('#markdown-content pre code');
+          if (window.hljs && blocks.length) {
+            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
+          }
+          document.querySelectorAll('#markdown-content a').forEach(function (a) {
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener noreferrer');
+          });
+        } catch (e) {}
+        if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
+        if (typeof hideLoading === 'function') hideLoading();
+      }
+      try {
+        if (typeof handler === 'function') {
+          handler('markdown-content', mdUrl, finish);
+        } else {
+          finish();
+        }
+      } catch (e) { finish(); }
+    })();
+  </script>
+</body>
+</html>

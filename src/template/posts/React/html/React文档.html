@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="吴华锦" />
+  <title>React文档 « 吴华锦</title>
+  <meta name="description" content="核心技术 - JSX开发思想 - 虚拟 dom 渲染 - 单项数据流 - state 与 props - 类组件与组件的生命周期 - 函数式组件与副作用处理机制 - hooks - 事件处理 - 条件渲染 - 列表与数据塑形 - ajax异步处理 - 跨组件数据传递 Context - Provider - CSS in JS - 模块化样式加载 - UI渲染原理 JSX JSX = JavaScript + XML - {}模板语法 - 添加注释 - 属性渲染变量 - 事件渲染函数 - style渲染对象 - {}渲染 JSX Redux - Store 的连接与订阅 - Action -" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wuhuajin.com/src/template/posts/React/html/React%E6%96%87%E6%A1%A3.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Wu Huajin" />
+  <meta property="og:title" content="React文档" />
+  <meta property="og:description" content="核心技术 - JSX开发思想 - 虚拟 dom 渲染 - 单项数据流 - state 与 props - 类组件与组件的生命周期 - 函数式组件与副作用处理机制 - hooks - 事件处理 - 条件渲染 - 列表与数据塑形 - ajax异步处理 - 跨组件数据传递 Context - Provider - CSS in JS - 模块化样式加载 - UI渲染原理 JSX JSX = JavaScript + XML - {}模板语法 - 添加注释 - 属性渲染变量 - 事件渲染函数 - style渲染对象 - {}渲染 JSX Redux - Store 的连接与订阅 - Action -" />
+  <meta property="og:url" content="https://wuhuajin.com/src/template/posts/React/html/React%E6%96%87%E6%A1%A3.html" />
+  <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="React文档" />
+  <meta name="twitter:description" content="核心技术 - JSX开发思想 - 虚拟 dom 渲染 - 单项数据流 - state 与 props - 类组件与组件的生命周期 - 函数式组件与副作用处理机制 - hooks - 事件处理 - 条件渲染 - 列表与数据塑形 - ajax异步处理 - 跨组件数据传递 Context - Provider - CSS in JS - 模块化样式加载 - UI渲染原理 JSX JSX = JavaScript + XML - {}模板语法 - 添加注释 - 属性渲染变量 - 事件渲染函数 - style渲染对象 - {}渲染 JSX Redux - Store 的连接与订阅 - Action -" />
+  <link rel="icon" href="/src/images/favicon.png" />
+  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/src/css/github-dark.min.css" />
+  <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/loading/index.css" />
+  <link rel="stylesheet" href="/src/components/navigation/index.css" />
+  <link rel="stylesheet" href="/src/components/banner/index.css" />
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "React文档",
+  "description": "核心技术 - JSX开发思想 - 虚拟 dom 渲染 - 单项数据流 - state 与 props - 类组件与组件的生命周期 - 函数式组件与副作用处理机制 - hooks - 事件处理 - 条件渲染 - 列表与数据塑形 - ajax异步处理 - 跨组件数据传递 Context - Provider - CSS in JS - 模块化样式加载 - UI渲染原理 JSX JSX = JavaScript + XML - {}模板语法 - 添加注释 - 属性渲染变量 - 事件渲染函数 - style渲染对象 - {}渲染 JSX Redux - Store 的连接与订阅 - Action -",
+  "author": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "datePublished": "2026-09-11",
+  "inLanguage": "zh-CN",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wuhuajin.com/src/template/posts/React/html/React%E6%96%87%E6%A1%A3.html"
+  }
+}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
+  <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+</head>
+<body>
+  <div class="layout-container">
+    <div class="nav-container"></div>
+    <div class="content-area">
+      <div id="markdown-content" class="markdown-content viewer"></div>
+      <noscript><div class="markdown-content viewer" style="padding:1em"><h2>核心技术</h2>
+<ul>
+<li><code>JSX</code>开发思想</li>
+<li>虚拟 <code>dom</code> 渲染</li>
+<li>单项数据流</li>
+<li><code>state</code> 与 <code>props</code></li>
+<li>类组件与组件的生命周期</li>
+<li>函数式组件与副作用处理机制</li>
+<li><code>hooks</code></li>
+<li>事件处理</li>
+<li>条件渲染</li>
+<li>列表与数据塑形</li>
+<li><code>ajax</code>异步处理</li>
+<li>跨组件数据传递 <code>Context</code></li>
+<li><code>Provider</code></li>
+<li><code>CSS in JS</code></li>
+<li>模块化样式加载</li>
+<li><code>UI</code>渲染原理</li>
+</ul>
+<h2><code>JSX</code></h2>
+<p><code>JSX = JavaScript + XML</code></p>
+<ul>
+<li><code>{}</code>模板语法</li>
+<li>添加注释</li>
+<li>属性渲染变量</li>
+<li>事件渲染函数</li>
+<li><code>style</code>渲染对象</li>
+<li><code>{}</code>渲染 <code>JSX</code></li>
+</ul>
+<h2><code>Redux</code></h2>
+<ul>
+<li><code>Store</code> 的连接与订阅</li>
+<li><code>Action</code></li>
+<li><code>Reducer</code></li>
+<li><code>react-redux</code></li>
+<li><code>redux-thunk</code></li>
+<li>自定义中间件</li>
+</ul>
+<p><strong><code>redux-thunk</code>中间件处理异步操作</strong></p>
+<ul>
+<li><code>dispatch</code>默认只支持对象字面量，通过 <code>redux-thunk</code>可以让它支持回调函数</li>
+<li>通过 <code>applyMiddleware</code>方法，让中间件生效</li>
+</ul>
+<p><strong><code>React</code>方法</strong></p>
+<ul>
+<li><code>setState</code>参数：<code>setState((prevState, nextProps)=&gt;{},callback)</code></li>
+</ul>
+<h2>生命周期</h2>
+<ul>
+<li>初始化：构建函数 -&gt; <code>getDerivedStateFromProps</code> -&gt; <code>render()</code>渲染 <code>UI</code> -&gt; <code>componentDidMount</code></li>
+<li>更新：<code>getDrivedStateFromProps</code> -&gt; <code>shouldComponentUpdate</code> -&gt; <code>render</code>渲染 <code>UI</code> -&gt; <code>componentDidUpdate</code></li>
+<li>销毁：<code>componentWillUnmount</code></li>
+</ul>
+<h2><code>Hooks</code></h2>
+<ul>
+<li><code>useEffect</code>: <code>useEffect(()=&gt;{..., return ()=&gt;{...}},[])</code></li>
+<li>只在最顶层使用 <code>Hooks</code></li>
+<li>只在 <code>React</code> 函数中调用 <code>Hooks</code></li>
+</ul>
+<h2>路由</h2>
+<ul>
+<li><code>react-router-dom</code> 用于浏览器，处理 <code>Web App</code> 的路由<ul>
+<li>自动安装 <code>react-router</code>核心框架</li>
+<li><code>&lt;Link /&gt;</code>组件可以渲染出 <code>&lt;a /&gt;</code>标签</li>
+<li><code>&lt;BrowserRouter /&gt;</code>组件利用 <code>H5 API</code>实现路由切换</li>
+<li><code>&lt;HashRouter /&gt;</code>组件利用原生 <code>JS</code>中的 <code>window.location.hash</code>实现路由切换</li>
+</ul>
+</li>
+<li><code>react-router-native</code> 用于移动端 <code>React Native</code>，处理手机APP的路由</li>
+<li><code>react-router-redux</code> 提供了路由中间件，处理 <code>redux</code>的集成</li>
+<li><code>react-router-config</code> 用来静态配置路由</li>
+</ul>
+<p><strong>网站路由系统</strong></p>
+<ul>
+<li>路由导航与原生浏览器操作行为一致 <code>&lt;BrowserRouter /&gt;</code></li>
+<li>路由的路径解析原理与原生浏览器一致，可以自动识别 <code>URL</code>路径 <code>&lt;Route /&gt;</code></li>
+<li>路径的切换以页面为单位，不要页面堆叠 <code>&lt;Switch /&gt;</code></li>
+</ul>
+<p><strong>在 <code>URL</code>中添加参数</strong></p>
+<ul>
+<li>第一种最常见 使用 <code>?</code>来引导参数 <code>http://localhost:3000/path?name1=value1&amp;name2=value2</code></li>
+<li>第二种：分段路由 <code>Segments</code> <code>http://localhost:3000/products/31415926</code></li>
+</ul>
+<h2>国际化</h2>
+<ul>
+<li><code>i18next</code> 目前最主流的框架</li>
+<li><code>react-i18next</code> <code>i18next</code>的 <code>React</code> 插件</li>
+</ul>
+</div></noscript>
+      <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
+      <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
+           data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
+    </div>
+    <aside class="sidebar-area">
+      <div class="sidebar-title">文章目录</div>
+      <nav id="toc-nav" class="toc-nav"></nav>
+    </aside>
+  </div>
+  <script src="/src/components/loading/index.js"></script>
+  <script src="/src/components/banner/index.js"></script>
+  <script src="/src/components/navigation/index.js"></script>
+  <script src="/src/js/highlight.min.js"></script>
+  <script src="/src/js/marked.min.js"></script>
+  <script src="/src/js/marked-highlight.min.js"></script>
+  <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/scroll/index.js"></script>
+  <script src="/src/components/cookie-consent/index.js"></script>
+  <script>
+    (function () {
+      /* 静态页滚动容器抗注入：部分预览环境会对 .layout-container/.content-area 整段 setAttribute style 为
+         "height: auto !important"，使内部滚动容器按内容高度解析、滚不到底。
+         用 MutationObserver 侦测 style 属性变化，一旦出现 auto 即用 JS 计算的视口像素高度（window.innerHeight，
+         不受 100vh 被内容撑大的影响）重新施加，恢复 631 内部滚动。生产正常浏览器无注入时不触发。 */
+      var l = document.querySelector('.layout-container');
+      var ca = document.querySelector('.content-area');
+      if (!l || !ca) return;
+      function fixedH() {
+        var b = parseInt(window.getComputedStyle(document.body).getPropertyValue('--banner-height')) || 0;
+        return (window.innerHeight - b) + 'px';
+      }
+      function force() {
+        var h = fixedH();
+        var changed = false;
+        if ((l.getAttribute('style') || '').indexOf('auto') !== -1) {
+          l.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        if ((ca.getAttribute('style') || '').indexOf('auto') !== -1) {
+          ca.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        return changed;
+      }
+      var timer = null;
+      var mo = new MutationObserver(function () {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(force, 50);
+      });
+      mo.observe(l, { attributes: true, attributeFilter: ['style'] });
+      mo.observe(ca, { attributes: true, attributeFilter: ['style'] });
+      window.addEventListener('resize', force);
+      force();
+    })();
+  </script>
+  <script>
+    (function () {
+      // 运行时从相邻 .md 渲染：md 改动后刷新即更新；保留预渲染正文作为 no-JS / 爬虫回退
+      var mdUrl = '../React%E6%96%87%E6%A1%A3.md';
+      function finish() {
+        try {
+          if (typeof generateTOC === 'function') generateTOC();
+          var blocks = document.querySelectorAll('#markdown-content pre code');
+          if (window.hljs && blocks.length) {
+            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
+          }
+          document.querySelectorAll('#markdown-content a').forEach(function (a) {
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener noreferrer');
+          });
+        } catch (e) {}
+        if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
+        if (typeof hideLoading === 'function') hideLoading();
+      }
+      try {
+        if (typeof handler === 'function') {
+          handler('markdown-content', mdUrl, finish);
+        } else {
+          finish();
+        }
+      } catch (e) { finish(); }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="吴华锦" />
+  <title>Hermes引擎文档 « 吴华锦</title>
+  <meta name="description" content="核心工作原理 Hermes 从 React Native 0.70 版本开始已成为 Android 和 IOS 双平台的默认 JavaScript 引擎 提升 React Native 应用启动速度、内存占用和包体积。 - AOT（Ahead-Of-Time） 预编译策略 - 构建时打包 - Hermes 编译器介入 - 直接将 JS 代码编译为紧凑的字节码（.hbc 文件） - 在 App 启动时，Hermes 虚拟机直接加载并执行这些字节码，完全 绕过运行时解析与 JIT 编译环节 - V8 JSC 采用 JIT（Just-In-Time） 编译模式 - 运行时解析 - 解析执行 - 动态" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wuhuajin.com/src/template/posts/RN/html/Hermes%E5%BC%95%E6%93%8E%E6%96%87%E6%A1%A3.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Wu Huajin" />
+  <meta property="og:title" content="Hermes引擎文档" />
+  <meta property="og:description" content="核心工作原理 Hermes 从 React Native 0.70 版本开始已成为 Android 和 IOS 双平台的默认 JavaScript 引擎 提升 React Native 应用启动速度、内存占用和包体积。 - AOT（Ahead-Of-Time） 预编译策略 - 构建时打包 - Hermes 编译器介入 - 直接将 JS 代码编译为紧凑的字节码（.hbc 文件） - 在 App 启动时，Hermes 虚拟机直接加载并执行这些字节码，完全 绕过运行时解析与 JIT 编译环节 - V8 JSC 采用 JIT（Just-In-Time） 编译模式 - 运行时解析 - 解析执行 - 动态" />
+  <meta property="og:url" content="https://wuhuajin.com/src/template/posts/RN/html/Hermes%E5%BC%95%E6%93%8E%E6%96%87%E6%A1%A3.html" />
+  <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Hermes引擎文档" />
+  <meta name="twitter:description" content="核心工作原理 Hermes 从 React Native 0.70 版本开始已成为 Android 和 IOS 双平台的默认 JavaScript 引擎 提升 React Native 应用启动速度、内存占用和包体积。 - AOT（Ahead-Of-Time） 预编译策略 - 构建时打包 - Hermes 编译器介入 - 直接将 JS 代码编译为紧凑的字节码（.hbc 文件） - 在 App 启动时，Hermes 虚拟机直接加载并执行这些字节码，完全 绕过运行时解析与 JIT 编译环节 - V8 JSC 采用 JIT（Just-In-Time） 编译模式 - 运行时解析 - 解析执行 - 动态" />
+  <link rel="icon" href="/src/images/favicon.png" />
+  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/src/css/github-dark.min.css" />
+  <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/loading/index.css" />
+  <link rel="stylesheet" href="/src/components/navigation/index.css" />
+  <link rel="stylesheet" href="/src/components/banner/index.css" />
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Hermes引擎文档",
+  "description": "核心工作原理 Hermes 从 React Native 0.70 版本开始已成为 Android 和 IOS 双平台的默认 JavaScript 引擎 提升 React Native 应用启动速度、内存占用和包体积。 - AOT（Ahead-Of-Time） 预编译策略 - 构建时打包 - Hermes 编译器介入 - 直接将 JS 代码编译为紧凑的字节码（.hbc 文件） - 在 App 启动时，Hermes 虚拟机直接加载并执行这些字节码，完全 绕过运行时解析与 JIT 编译环节 - V8 JSC 采用 JIT（Just-In-Time） 编译模式 - 运行时解析 - 解析执行 - 动态",
+  "author": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "datePublished": "2026-09-11",
+  "inLanguage": "zh-CN",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wuhuajin.com/src/template/posts/RN/html/Hermes%E5%BC%95%E6%93%8E%E6%96%87%E6%A1%A3.html"
+  }
+}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
+  <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+</head>
+<body>
+  <div class="layout-container">
+    <div class="nav-container"></div>
+    <div class="content-area">
+      <div id="markdown-content" class="markdown-content viewer"></div>
+      <noscript><div class="markdown-content viewer" style="padding:1em"><h2>核心工作原理</h2>
+<blockquote>
+<p><code>Hermes</code> 从 <code>React Native 0.70</code> 版本开始已成为 <code>Android</code> 和 <code>IOS</code> 双平台的默认 <code>JavaScript</code> 引擎<br>提升 <code>React Native</code> 应用启动速度、内存占用和包体积。</p>
+</blockquote>
+<ul>
+<li><code>AOT（Ahead-Of-Time）</code> 预编译策略<ul>
+<li>构建时打包 -&gt; <code>Hermes</code> 编译器介入 -&gt; 直接将 <code>JS</code> 代码编译为紧凑的字节码（<code>.hbc</code> 文件）</li>
+<li>在 <code>App</code> 启动时，<code>Hermes</code> 虚拟机直接加载并执行这些字节码，完全 <strong>绕过运行时解析与 <code>JIT</code> 编译环节</strong></li>
+</ul>
+</li>
+<li><code>V8 JSC</code> 采用 <code>JIT（Just-In-Time）</code> 编译模式<ul>
+<li>运行时解析 -&gt; 解析执行 -&gt; 动态分析热点 -&gt; 编译成机器码</li>
+</ul>
+</li>
+</ul>
+<!-- prettier-ignore-start -->
+<table>
+<thead>
+<tr>
+<th><strong>执行阶段</strong></th>
+<th><strong>传统引擎（<code>JSC/V8</code>）</strong></th>
+<th><strong><code>Hermes</code> 引擎（<code>AOT</code>）</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>构建阶段</strong></td>
+<td>代码压缩与混淆</td>
+<td><strong>预编译为字节码（<code>.hbc</code>）</strong></td>
+</tr>
+<tr>
+<td><strong>运行时加载</strong></td>
+<td>解析 <code>JS</code> 代码</td>
+<td>直接加载字节码</td>
+</tr>
+<tr>
+<td><strong>运行时编译</strong></td>
+<td>动态分析并编译热点代码（<code>JIT</code>）</td>
+<td><strong>无需编译，直接执行</strong></td>
+</tr>
+</tbody></table>
+<!-- prettier-ignore-end -->
+
+<h2>优缺点</h2>
+<h3>核心优点</h3>
+<ol>
+<li><strong>极速启动</strong>：字节码预编译，打开 <code>App</code> 的等待时间大幅缩短。</li>
+<li><strong>低内存占用与低延迟垃圾回收</strong>：最新的 <strong><code>Hades</code> 垃圾回收器</strong> 采用并发标记-清除算法，在后台线程完成内存回收，<code>UI</code> 线程暂停时间可压缩到 <strong><code>2ms</code> 以内</strong>。相比 <code>V8</code> 的 <code>Stop-The-World</code> 垃圾回收，在滑动场景中可减少 <strong><code>70%</code> 的掉帧现象</strong>。</li>
+<li><strong>更小的安装包体积</strong>：生成的 <code>.hbc</code> 字节码比原始 <code>JS</code> 源码体积小 <strong><code>30%-50%</code></strong>，有效缩减 <code>APK/IPA</code> 体积。</li>
+</ol>
+<h3>缺点与注意事项</h3>
+<ol>
+<li><strong>无 <code>JIT</code>，计算密集型场景表现稍弱</strong>：不含即时编译器 <code>JIT</code>，在复杂动画渲染、大量数据处理等长时间运行的计算密集型场景下，性能可能不如 <code>V8/JSC</code> 的 <code>JIT</code> 优化版本。</li>
+<li><strong>部分第三方库存在兼容性问题</strong>：使用了 <code>Proxy</code>、<code>WeakRef</code> 等高级特性或非标准写法的第三方原生库，可能出现兼容性问题。</li>
+<li><strong>功能子集</strong>：目前不完全支持所有最新的 <code>ES</code> 特性。</li>
+</ol>
+</div></noscript>
+      <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
+      <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
+           data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
+    </div>
+    <aside class="sidebar-area">
+      <div class="sidebar-title">文章目录</div>
+      <nav id="toc-nav" class="toc-nav"></nav>
+    </aside>
+  </div>
+  <script src="/src/components/loading/index.js"></script>
+  <script src="/src/components/banner/index.js"></script>
+  <script src="/src/components/navigation/index.js"></script>
+  <script src="/src/js/highlight.min.js"></script>
+  <script src="/src/js/marked.min.js"></script>
+  <script src="/src/js/marked-highlight.min.js"></script>
+  <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/scroll/index.js"></script>
+  <script src="/src/components/cookie-consent/index.js"></script>
+  <script>
+    (function () {
+      /* 静态页滚动容器抗注入：部分预览环境会对 .layout-container/.content-area 整段 setAttribute style 为
+         "height: auto !important"，使内部滚动容器按内容高度解析、滚不到底。
+         用 MutationObserver 侦测 style 属性变化，一旦出现 auto 即用 JS 计算的视口像素高度（window.innerHeight，
+         不受 100vh 被内容撑大的影响）重新施加，恢复 631 内部滚动。生产正常浏览器无注入时不触发。 */
+      var l = document.querySelector('.layout-container');
+      var ca = document.querySelector('.content-area');
+      if (!l || !ca) return;
+      function fixedH() {
+        var b = parseInt(window.getComputedStyle(document.body).getPropertyValue('--banner-height')) || 0;
+        return (window.innerHeight - b) + 'px';
+      }
+      function force() {
+        var h = fixedH();
+        var changed = false;
+        if ((l.getAttribute('style') || '').indexOf('auto') !== -1) {
+          l.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        if ((ca.getAttribute('style') || '').indexOf('auto') !== -1) {
+          ca.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        return changed;
+      }
+      var timer = null;
+      var mo = new MutationObserver(function () {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(force, 50);
+      });
+      mo.observe(l, { attributes: true, attributeFilter: ['style'] });
+      mo.observe(ca, { attributes: true, attributeFilter: ['style'] });
+      window.addEventListener('resize', force);
+      force();
+    })();
+  </script>
+  <script>
+    (function () {
+      // 运行时从相邻 .md 渲染：md 改动后刷新即更新；保留预渲染正文作为 no-JS / 爬虫回退
+      var mdUrl = '../Hermes%E5%BC%95%E6%93%8E%E6%96%87%E6%A1%A3.md';
+      function finish() {
+        try {
+          if (typeof generateTOC === 'function') generateTOC();
+          var blocks = document.querySelectorAll('#markdown-content pre code');
+          if (window.hljs && blocks.length) {
+            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
+          }
+          document.querySelectorAll('#markdown-content a').forEach(function (a) {
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener noreferrer');
+          });
+        } catch (e) {}
+        if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
+        if (typeof hideLoading === 'function') hideLoading();
+      }
+      try {
+        if (typeof handler === 'function') {
+          handler('markdown-content', mdUrl, finish);
+        } else {
+          finish();
+        }
+      } catch (e) { finish(); }
+    })();
+  </script>
+</body>
+</html>

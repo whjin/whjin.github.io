@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="吴华锦" />
+  <title>小程序文档 « 吴华锦</title>
+  <meta name="description" content="生命周期 应用维度 - onLaunch：小程序初次加载后执行，只在全局触发一次 - onShow：小程序启动，或者从后台进入前台时触发，监听小程序显示 - onHide：从前台进入后台时触发 - onError：发生错误时触发 - onThemeChange：主题切换时触发 - onUnhandledRejection：Promise 未处理的错误时触发 - 资源占用过高，销毁 页面维度 - onLoad：加载页面时执行 - onShow：显示页面元素时执行 - onReady：页面渲染完成时执行，render page 一个页面只会调用一次 - onHide：页面隐藏时执行 - onUnl" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wuhuajin.com/src/template/posts/%E5%B0%8F%E7%A8%8B%E5%BA%8F/html/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%96%87%E6%A1%A3.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Wu Huajin" />
+  <meta property="og:title" content="小程序文档" />
+  <meta property="og:description" content="生命周期 应用维度 - onLaunch：小程序初次加载后执行，只在全局触发一次 - onShow：小程序启动，或者从后台进入前台时触发，监听小程序显示 - onHide：从前台进入后台时触发 - onError：发生错误时触发 - onThemeChange：主题切换时触发 - onUnhandledRejection：Promise 未处理的错误时触发 - 资源占用过高，销毁 页面维度 - onLoad：加载页面时执行 - onShow：显示页面元素时执行 - onReady：页面渲染完成时执行，render page 一个页面只会调用一次 - onHide：页面隐藏时执行 - onUnl" />
+  <meta property="og:url" content="https://wuhuajin.com/src/template/posts/%E5%B0%8F%E7%A8%8B%E5%BA%8F/html/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%96%87%E6%A1%A3.html" />
+  <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="小程序文档" />
+  <meta name="twitter:description" content="生命周期 应用维度 - onLaunch：小程序初次加载后执行，只在全局触发一次 - onShow：小程序启动，或者从后台进入前台时触发，监听小程序显示 - onHide：从前台进入后台时触发 - onError：发生错误时触发 - onThemeChange：主题切换时触发 - onUnhandledRejection：Promise 未处理的错误时触发 - 资源占用过高，销毁 页面维度 - onLoad：加载页面时执行 - onShow：显示页面元素时执行 - onReady：页面渲染完成时执行，render page 一个页面只会调用一次 - onHide：页面隐藏时执行 - onUnl" />
+  <link rel="icon" href="/src/images/favicon.png" />
+  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/src/css/github-dark.min.css" />
+  <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/loading/index.css" />
+  <link rel="stylesheet" href="/src/components/navigation/index.css" />
+  <link rel="stylesheet" href="/src/components/banner/index.css" />
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "小程序文档",
+  "description": "生命周期 应用维度 - onLaunch：小程序初次加载后执行，只在全局触发一次 - onShow：小程序启动，或者从后台进入前台时触发，监听小程序显示 - onHide：从前台进入后台时触发 - onError：发生错误时触发 - onThemeChange：主题切换时触发 - onUnhandledRejection：Promise 未处理的错误时触发 - 资源占用过高，销毁 页面维度 - onLoad：加载页面时执行 - onShow：显示页面元素时执行 - onReady：页面渲染完成时执行，render page 一个页面只会调用一次 - onHide：页面隐藏时执行 - onUnl",
+  "author": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "datePublished": "2026-09-11",
+  "inLanguage": "zh-CN",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wuhuajin.com/src/template/posts/%E5%B0%8F%E7%A8%8B%E5%BA%8F/html/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%96%87%E6%A1%A3.html"
+  }
+}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
+  <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+</head>
+<body>
+  <div class="layout-container">
+    <div class="nav-container"></div>
+    <div class="content-area">
+      <div id="markdown-content" class="markdown-content viewer"></div>
+      <noscript><div class="markdown-content viewer" style="padding:1em"><h2>生命周期</h2>
+<h3>应用维度</h3>
+<ul>
+<li><code>onLaunch</code>：小程序初次加载后执行，<strong>只在全局触发一次</strong></li>
+<li><code>onShow</code>：小程序启动，或者从<strong>后台进入前台时触发</strong>，<strong>监听小程序显示</strong></li>
+<li><code>onHide</code>：<strong>从前台进入后台时触发</strong></li>
+<li><code>onError</code>：发生错误时触发</li>
+<li><code>onThemeChange</code>：主题切换时触发</li>
+<li><code>onUnhandledRejection``：Promise</code> 未处理的错误时触发</li>
+<li>资源占用过高，销毁</li>
+</ul>
+<h3>页面维度</h3>
+<ul>
+<li><code>onLoad</code>：<strong>加载页面</strong>时执行</li>
+<li><code>onShow</code>：<strong>显示页面元素</strong>时执行</li>
+<li><code>onReady</code>：页面渲染完成时执行，<code>render page</code> 一个页面只会调用一次</li>
+<li><code>onHide</code>：页面隐藏时执行</li>
+<li><code>onUnload</code>：页面卸载时执行</li>
+<li><code>wx.redirectTo</code></li>
+<li><code>wx.navigateBack</code> <code>onUnload</code></li>
+</ul>
+<h3>组件维度</h3>
+<ul>
+<li><code>created</code>：组件实例被创建时执行</li>
+<li><code>attached</code>：组件实例进入页面节点树时执行</li>
+<li><code>ready</code>：组件布局完成时执行</li>
+<li><code>moved</code>：组件实例被移动到页面节点树 anotherTarget 时执行</li>
+<li><code>detached</code>：组件实例被从页面节点树移除时执行</li>
+<li><code>error</code>：组件出错时执行</li>
+</ul>
+<h2>登录流程</h2>
+<ul>
+<li><p><code>wx</code> 登录能力</p>
+</li>
+<li><p><code>openid</code></p>
+</li>
+<li><p><code>code</code> <code>wx.login()</code> <code>wx.getUserInfo()</code></p>
+</li>
+<li><p>自身的后端，调用微信服务器，获取用户信息</p>
+</li>
+<li><p><code>wx.request</code>：<code>appid</code>、<code>appsecret</code>、<code>code</code></p>
+</li>
+<li><p><code>openid</code>：<code>session_key</code> <code>storage</code></p>
+</li>
+<li><p>登录态是否过期 <code>token</code></p>
+</li>
+<li><p><code>wx.checkSession</code></p>
+</li>
+<li><p><code>wx.getSettings</code> -&gt; <code>wx.getUserInfo</code></p>
+</li>
+</ul>
+<h2>路由跳转</h2>
+<ul>
+<li><code>pageModel</code> <code>pageStack</code></li>
+<li><code>wx.navigateTo</code>：保留当前页面，调整到应用内的页面 -&gt; 新的页面入栈<ul>
+<li><code>url</code> <code>path?key=value1&amp;key2=value2</code></li>
+<li><code>events</code></li>
+<li><code>success</code></li>
+<li><code>fail</code></li>
+<li><code>complete</code></li>
+</ul>
+</li>
+<li><code>wx.redirectTo</code> 重定向，关闭当前页面，跳转到应用内的页面 -&gt; 当前页面出栈，新的页面入栈</li>
+<li><code>wx.switchTab</code>：<code>tabBar</code> 关闭所有其他非 <code>tabBar</code> 页面 -&gt; 所有页面全部出栈，只留下新的 <code>tab</code> 页面</li>
+<li><code>wx.navigateBack</code>：返回上一个页面 -&gt; 页面不断出栈，直到找到目标页面</li>
+<li><code>wx.reLaunch</code>：关闭所有页面，打开到某个指定的页面 -&gt; 页面全部出栈，只留下新的页面</li>
+<li><code>wx.getCurrentPages()</code></li>
+</ul>
+<h2>发布流程</h2>
+<ul>
+<li>上传代码：<code>devtools dist</code> -&gt; <code>commit message</code> <code>version message</code> + <code>bundle</code> + <code>upload</code></li>
+<li>提交审核：开发管理 - 开发版本 -&gt; 审核提交</li>
+<li>发布版本：灰度版本 线上版本</li>
+<li>代码管理服务器拉取分支</li>
+<li>开发、测试</li>
+<li>测试后，本地分支 合并到 <code>master</code> 分支</li>
+<li><code>master</code> 最新代码，<code>build</code> 构建</li>
+<li>上传</li>
+<li>审核</li>
+<li>发布</li>
+</ul>
+<p><strong><code>CI/CD</code></strong></p>
+<p>自动化 <code>webHooks</code></p>
+<ul>
+<li>开发提交分支代码</li>
+<li><code>master</code> <code>Jenkins</code></li>
+<li><code>compiler</code></li>
+<li><code>api</code> <code>push</code> 微信后台 审核</li>
+</ul>
+<h2>支付流程</h2>
+<ul>
+<li>用户登录选购 <code>wx.login</code> <code>code</code> <code>openid</code></li>
+<li>调用微信支付控件 <code>itemId</code> <code>itemCount</code></li>
+<li>商家后台也会接收到支付成功 <code>wx pay</code> <code>prepayId</code></li>
+<li>商家小程序购买成功 <code>wx pay</code> <code>prepay_id</code></li>
+<li><code>wx</code> 支付平台，支付凭证 <code>wx.requestPayment</code></li>
+</ul>
+<h2>实现原理</h2>
+<ul>
+<li>渲染线程 <code>JS</code> 脚本线程</li>
+<li><code>Hybrid</code></li>
+<li><code>view</code>：<code>webview</code></li>
+<li><code>jscode</code>：</li>
+<li><code>native</code></li>
+<li><code>https</code> <code>request</code> 第三方服务器</li>
+<li><code>render layer</code>: <code>wxml</code> -&gt; <code>layer</code></li>
+<li><code>setData</code>：<code>diff</code>数据 <code>DOM</code></li>
+<li>双线程</li>
+</ul>
+<h2>运行机制</h2>
+<ul>
+<li>冷启动 重新开始</li>
+<li>热启动 后台切换到前台状态</li>
+</ul>
+<p><strong>销毁</strong></p>
+<ul>
+<li>长期不打开小程序</li>
+<li>短时间内，系统收到了 <code>2</code> 次以上的内存警告</li>
+</ul>
+<h2>性能优化</h2>
+<ul>
+<li><code>loading</code> 状态</li>
+<li>下载的小程序代码包</li>
+<li>加载代码包</li>
+<li>初始化首页</li>
+<li><code>AppService</code>：<code>JS</code> 引擎初始化 公共代码库注入</li>
+<li><code>Webview</code>：公共库的注入，<code>webview</code> 初始化</li>
+</ul>
+<ol>
+<li><strong>加载</strong></li>
+</ol>
+<ul>
+<li>控制小程序包大小<ul>
+<li>代码包压缩</li>
+<li>无用的代码，及时清理</li>
+<li>减少包中固定资源的内容 <code>icon</code> <code>assets</code></li>
+<li>分包加载</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li><strong>渲染</strong></li>
+</ol>
+<ul>
+<li><code>onLoad</code></li>
+<li>减少不必要的请求 <code>get/set storageSync</code></li>
+<li><code>list</code> -&gt; <code>detail</code> 骨架屏</li>
+<li><code>setData</code></li>
+</ul>
+<h2>小程序 <code>API</code></h2>
+<ul>
+<li><p><strong>点击事件 <code>bindtap</code> 传递参数</strong>：</p>
+<ul>
+<li>通过属性绑定（<code>data-xx</code>）把需要传递的参数绑定到 <code>DOM</code>中</li>
+<li>在对应的回调函数中，通过 <code>e.target.dataset</code> 进行访问</li>
+</ul>
+</li>
+<li><p><strong>数据请求</strong></p>
+<ul>
+<li>智能请求 <code>HTTPS</code>协议的接口</li>
+<li>必须将接口域名添加到信任列表</li>
+</ul>
+</li>
+<li><p><strong>自定义组件</strong></p>
+<ul>
+<li>在页面 <code>.json</code>文件中，通过 <code>usingComponents</code>进行注册</li>
+<li>在 <code>wxml</code>文件中，以注册的 <code>key</code>为 <strong>标签名</strong>进行注册</li>
+</ul>
+</li>
+</ul>
+</div></noscript>
+      <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
+      <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
+           data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
+    </div>
+    <aside class="sidebar-area">
+      <div class="sidebar-title">文章目录</div>
+      <nav id="toc-nav" class="toc-nav"></nav>
+    </aside>
+  </div>
+  <script src="/src/components/loading/index.js"></script>
+  <script src="/src/components/banner/index.js"></script>
+  <script src="/src/components/navigation/index.js"></script>
+  <script src="/src/js/highlight.min.js"></script>
+  <script src="/src/js/marked.min.js"></script>
+  <script src="/src/js/marked-highlight.min.js"></script>
+  <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/scroll/index.js"></script>
+  <script src="/src/components/cookie-consent/index.js"></script>
+  <script>
+    (function () {
+      /* 静态页滚动容器抗注入：部分预览环境会对 .layout-container/.content-area 整段 setAttribute style 为
+         "height: auto !important"，使内部滚动容器按内容高度解析、滚不到底。
+         用 MutationObserver 侦测 style 属性变化，一旦出现 auto 即用 JS 计算的视口像素高度（window.innerHeight，
+         不受 100vh 被内容撑大的影响）重新施加，恢复 631 内部滚动。生产正常浏览器无注入时不触发。 */
+      var l = document.querySelector('.layout-container');
+      var ca = document.querySelector('.content-area');
+      if (!l || !ca) return;
+      function fixedH() {
+        var b = parseInt(window.getComputedStyle(document.body).getPropertyValue('--banner-height')) || 0;
+        return (window.innerHeight - b) + 'px';
+      }
+      function force() {
+        var h = fixedH();
+        var changed = false;
+        if ((l.getAttribute('style') || '').indexOf('auto') !== -1) {
+          l.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        if ((ca.getAttribute('style') || '').indexOf('auto') !== -1) {
+          ca.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        return changed;
+      }
+      var timer = null;
+      var mo = new MutationObserver(function () {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(force, 50);
+      });
+      mo.observe(l, { attributes: true, attributeFilter: ['style'] });
+      mo.observe(ca, { attributes: true, attributeFilter: ['style'] });
+      window.addEventListener('resize', force);
+      force();
+    })();
+  </script>
+  <script>
+    (function () {
+      // 运行时从相邻 .md 渲染：md 改动后刷新即更新；保留预渲染正文作为 no-JS / 爬虫回退
+      var mdUrl = '../%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%96%87%E6%A1%A3.md';
+      function finish() {
+        try {
+          if (typeof generateTOC === 'function') generateTOC();
+          var blocks = document.querySelectorAll('#markdown-content pre code');
+          if (window.hljs && blocks.length) {
+            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
+          }
+          document.querySelectorAll('#markdown-content a').forEach(function (a) {
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener noreferrer');
+          });
+        } catch (e) {}
+        if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
+        if (typeof hideLoading === 'function') hideLoading();
+      }
+      try {
+        if (typeof handler === 'function') {
+          handler('markdown-content', mdUrl, finish);
+        } else {
+          finish();
+        }
+      } catch (e) { finish(); }
+    })();
+  </script>
+</body>
+</html>

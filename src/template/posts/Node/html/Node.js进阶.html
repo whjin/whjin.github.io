@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="吴华锦" />
+  <title>Node.js进阶 « 吴华锦</title>
+  <meta name="description" content="子进程 - 创建 node 子进程用 fork，自带通道方便通信 充分利用多核 CPU 的优势，用到 child_process 模块创建子进程，有四种方法可以创建子进程： - exec - execFile - spawn - fork 四个方法都会返回 ChildProcess 实例（继承自 EventEmitter），该实例拥有三个标准的 stdio 流： 1. child.stdin 2. child.stdout 3. child.stderr 子进程生命周期内可以注册监听的事件有： - exit：子进程结束时触发，参数 code 错误码和 signal 中断信号 - close：子" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wuhuajin.com/src/template/posts/Node/html/Node.js%E8%BF%9B%E9%98%B6.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Wu Huajin" />
+  <meta property="og:title" content="Node.js进阶" />
+  <meta property="og:description" content="子进程 - 创建 node 子进程用 fork，自带通道方便通信 充分利用多核 CPU 的优势，用到 child_process 模块创建子进程，有四种方法可以创建子进程： - exec - execFile - spawn - fork 四个方法都会返回 ChildProcess 实例（继承自 EventEmitter），该实例拥有三个标准的 stdio 流： 1. child.stdin 2. child.stdout 3. child.stderr 子进程生命周期内可以注册监听的事件有： - exit：子进程结束时触发，参数 code 错误码和 signal 中断信号 - close：子" />
+  <meta property="og:url" content="https://wuhuajin.com/src/template/posts/Node/html/Node.js%E8%BF%9B%E9%98%B6.html" />
+  <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Node.js进阶" />
+  <meta name="twitter:description" content="子进程 - 创建 node 子进程用 fork，自带通道方便通信 充分利用多核 CPU 的优势，用到 child_process 模块创建子进程，有四种方法可以创建子进程： - exec - execFile - spawn - fork 四个方法都会返回 ChildProcess 实例（继承自 EventEmitter），该实例拥有三个标准的 stdio 流： 1. child.stdin 2. child.stdout 3. child.stderr 子进程生命周期内可以注册监听的事件有： - exit：子进程结束时触发，参数 code 错误码和 signal 中断信号 - close：子" />
+  <link rel="icon" href="/src/images/favicon.png" />
+  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/src/css/github-dark.min.css" />
+  <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/loading/index.css" />
+  <link rel="stylesheet" href="/src/components/navigation/index.css" />
+  <link rel="stylesheet" href="/src/components/banner/index.css" />
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Node.js进阶",
+  "description": "子进程 - 创建 node 子进程用 fork，自带通道方便通信 充分利用多核 CPU 的优势，用到 child_process 模块创建子进程，有四种方法可以创建子进程： - exec - execFile - spawn - fork 四个方法都会返回 ChildProcess 实例（继承自 EventEmitter），该实例拥有三个标准的 stdio 流： 1. child.stdin 2. child.stdout 3. child.stderr 子进程生命周期内可以注册监听的事件有： - exit：子进程结束时触发，参数 code 错误码和 signal 中断信号 - close：子",
+  "author": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "datePublished": "2026-09-26",
+  "inLanguage": "zh-CN",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wuhuajin.com/src/template/posts/Node/html/Node.js%E8%BF%9B%E9%98%B6.html"
+  }
+}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
+  <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+</head>
+<body>
+  <div class="layout-container">
+    <div class="nav-container"></div>
+    <div class="content-area">
+      <div id="markdown-content" class="markdown-content viewer"></div>
+      <noscript><div class="markdown-content viewer" style="padding:1em"><h2>子进程</h2>
+<blockquote>
+<ul>
+<li>创建 <code>node</code> 子进程用 <code>fork</code>，自带通道方便通信</li>
+</ul>
+</blockquote>
+<p>充分利用多核 <code>CPU</code> 的优势，用到 <code>child_process</code> 模块创建子进程，有四种方法可以创建子进程：</p>
+<ul>
+<li><code>exec</code></li>
+<li><code>execFile</code></li>
+<li><code>spawn</code></li>
+<li><code>fork</code></li>
+</ul>
+<p>四个方法都会返回 <code>ChildProcess</code> 实例（继承自 <code>EventEmitter</code>），该实例拥有三个标准的 <code>stdio</code> 流：</p>
+<ol>
+<li><code>child.stdin</code></li>
+<li><code>child.stdout</code></li>
+<li><code>child.stderr</code></li>
+</ol>
+<p>子进程生命周期内可以注册监听的事件有：</p>
+<ul>
+<li><code>exit</code>：子进程结束时触发，参数 <code>code</code> 错误码和 <code>signal</code> 中断信号</li>
+<li><code>close</code>：子进程结束并且 <code>stdio</code> 流被关闭时触发，参数同 <code>exit</code> 事件</li>
+<li><code>disconnect</code>：父进程调用 <code>child.disconnect()</code> 或子进程调用 <code>process.disconnect()</code> 时触发</li>
+<li><code>error</code>：子进程无法创建、无法被杀掉、发消息给子进程失败时触发</li>
+<li><code>message</code>：子进程通过 <code>process.send()</code> 发送消息时触发</li>
+<li><code>spawn</code>：子进程成功创建时触发</li>
+</ul>
+<p><code>exec</code>、<code>execFile</code> 方法额外提供了一个回调函数，在子进程终止时触发：</p>
+<h3><code>exec</code></h3>
+<p><code>exec</code>方法用于执行 <code>base</code> 命令，它的参数是一个命令字符串。</p>
+<pre><code class="language-js">// 统计当前目录下的文件数量
+const { exec } = reqwuire(&#39;child_process&#39;);
+exec(&#39;find . -type f | wc -l&#39;, (err, stdout, stderr) =&gt; {});
+</code></pre>
+<p><code>exec</code> 会新建一个子进程，然后缓存它的运行结果，运行结束后调用回调函数。</p>
+<p><strong>由于 <code>exec</code> 会在内存中缓存全部的输出结果，当数据比较大时，<code>spawn</code> 会是更好的选择。</strong></p>
+<p><strong><code>execFile</code></strong></p>
+<p><code>execFile</code> 和 <code>exec</code> 的区别：不会创建 <code>shell</code>，直接执行命令，更高效。参数作为数据传入，具有较高安全性。</p>
+<pre><code class="language-js">const { execFile } = require(&#39;child_process&#39;);
+const child = execFile(&#39;node&#39;, [&#39;--version&#39;], (err, stdout, stderr) =&gt; {});
+</code></pre>
+<h3><code>spawn</code></h3>
+<p><code>spawn</code> 函数默认不开启 <code>shell</code>，<code>execFile</code> 会缓存命令行的输出，然后把结果传入回调函数中，而 <code>spawn</code> 则是以流的方式输出。</p>
+<pre><code class="language-js">const { spawn } = require(&#39;child_process&#39;);
+const child = spawn(&#39;wc&#39;);
+process.stdin.pipe(child.stdin);
+child.stdout.on(&#39;on&#39;, (data) =&gt; {});
+
+// 统计当前目录下的文件数量
+const find = spawn(&#39;find&#39;, [&#39;.&#39;, &#39;-type&#39;, &#39;f&#39;]);
+const wc = spawn(&#39;wc&#39;, [&#39;-l&#39;]);
+find.stdout.pipe(wc.stdin);
+wc.stdout.on(&#39;data&#39;, (data) =&gt; {});
+
+// spawn 自定义配置
+const options = {
+  stdio: &#39;inherit&#39;, // 继承父进程的输入输出流 stdio
+  shell: true, // 开启命令行模式
+  cwd: &#39;/User/xxx/code&#39;, // 指定执行目录
+  env: { ANSWER: 42 }, // 指定环境变量（默认是 process.env ）
+  detached: true, // 作为独立进程存在
+};
+</code></pre>
+<h3><code>fork</code></h3>
+<p><code>fork</code>函数是 <code>spawn</code> 函数的变体，使用 <code>fork</code> 创建的子进程和父进程之间会自动创建一个通信通道，子进程的全局对象 <code>process</code> 上面会挂载 <code>send</code> 方法。</p>
+<pre><code class="language-js">// 父进程 parent.js
+const { fork } = require(&#39;child_process&#39;);
+const forked = fork(&#39;./child.js&#39;);
+
+forked.on(&#39;message&#39;, (msg) =&gt; {});
+forked.send(&#39;hello&#39;);
+</code></pre>
+<p>当调用 <code>fork(./child.js)</code> 时，就是用 <code>node</code> 执行该文件中的代码，相当于 <code>spawn(&#39;node&#39;, [&#39;./child.js&#39;])</code>。</p>
+<pre><code class="language-js">// 用 Node.js 创建一个 http 服务，当路由为 `compute` 时，执行一个耗时的运算
+const http = require(&#39;http&#39;);
+const { fork } = require(&#39;child_process&#39;);
+const server = http.createServer((req, res) =&gt; {});
+server.on(&#39;request&#39;, (req, res) =&gt; {
+  if (req.url === &#39;/compute&#39;) {
+    const compute = fork(&#39;./computer.js&#39;);
+    compute.send(&#39;start&#39;);
+    compute.on(&#39;message&#39;, (sum) =&gt; {
+      res.end(`Sum is ${sum}`);
+    });
+  } else {
+    res.end(&#39;ok&#39;);
+  }
+});
+server.listen(3000);
+
+// 解决 耗时运算占用 CPU，用户其他请求被阻塞
+// 解决方案：把耗时运算放到子进程中去处理 compute.js
+process.on(&#39;message&#39;, (msg) =&gt; {
+  const sum = longComputation();
+  process.send(sum);
+});
+</code></pre>
+<p>更简单的处理方式是利用 <code>cluster</code> 模块。</p>
+</div></noscript>
+      <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
+      <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
+           data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
+    </div>
+    <aside class="sidebar-area">
+      <div class="sidebar-title">文章目录</div>
+      <nav id="toc-nav" class="toc-nav"></nav>
+    </aside>
+  </div>
+  <script src="/src/components/loading/index.js"></script>
+  <script src="/src/components/banner/index.js"></script>
+  <script src="/src/components/navigation/index.js"></script>
+  <script src="/src/js/highlight.min.js"></script>
+  <script src="/src/js/marked.min.js"></script>
+  <script src="/src/js/marked-highlight.min.js"></script>
+  <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/scroll/index.js"></script>
+  <script src="/src/components/cookie-consent/index.js"></script>
+  <script>
+    (function () {
+      /* 静态页滚动容器抗注入：部分预览环境会对 .layout-container/.content-area 整段 setAttribute style 为
+         "height: auto !important"，使内部滚动容器按内容高度解析、滚不到底。
+         用 MutationObserver 侦测 style 属性变化，一旦出现 auto 即用 JS 计算的视口像素高度（window.innerHeight，
+         不受 100vh 被内容撑大的影响）重新施加，恢复 631 内部滚动。生产正常浏览器无注入时不触发。 */
+      var l = document.querySelector('.layout-container');
+      var ca = document.querySelector('.content-area');
+      if (!l || !ca) return;
+      function fixedH() {
+        var b = parseInt(window.getComputedStyle(document.body).getPropertyValue('--banner-height')) || 0;
+        return (window.innerHeight - b) + 'px';
+      }
+      function force() {
+        var h = fixedH();
+        var changed = false;
+        if ((l.getAttribute('style') || '').indexOf('auto') !== -1) {
+          l.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        if ((ca.getAttribute('style') || '').indexOf('auto') !== -1) {
+          ca.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        return changed;
+      }
+      var timer = null;
+      var mo = new MutationObserver(function () {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(force, 50);
+      });
+      mo.observe(l, { attributes: true, attributeFilter: ['style'] });
+      mo.observe(ca, { attributes: true, attributeFilter: ['style'] });
+      window.addEventListener('resize', force);
+      force();
+    })();
+  </script>
+  <script>
+    (function () {
+      // 运行时从相邻 .md 渲染：md 改动后刷新即更新；保留预渲染正文作为 no-JS / 爬虫回退
+      var mdUrl = '../Node.js%E8%BF%9B%E9%98%B6.md';
+      function finish() {
+        try {
+          if (typeof generateTOC === 'function') generateTOC();
+          var blocks = document.querySelectorAll('#markdown-content pre code');
+          if (window.hljs && blocks.length) {
+            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
+          }
+          document.querySelectorAll('#markdown-content a').forEach(function (a) {
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener noreferrer');
+          });
+        } catch (e) {}
+        if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
+        if (typeof hideLoading === 'function') hideLoading();
+      }
+      try {
+        if (typeof handler === 'function') {
+          handler('markdown-content', mdUrl, finish);
+        } else {
+          finish();
+        }
+      } catch (e) { finish(); }
+    })();
+  </script>
+</body>
+</html>

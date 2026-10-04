@@ -190,12 +190,23 @@
       const isObj = typeof tg === 'object' && tg !== null;
       const name = isObj ? tg.name : tg;
       const url = isObj ? tg.url : null;
+      if (url) {
+        // 带跳转的标签：渲染为真实链接，新标签打开（a target=_blank，利于 SEO 与可访问性）
+        const a = document.createElement('a');
+        a.className = 'sb-tag sb-tag-link';
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.dataset.key = name;
+        a.textContent = '#' + name;
+        wrap.appendChild(a);
+        return;
+      }
       const b = document.createElement('span');
-      b.className = 'sb-tag' + (url ? ' sb-tag-link' : '');
+      b.className = 'sb-tag';
       b.dataset.key = name;
       b.textContent = '#' + name;
       b.addEventListener('click', () => {
-        if (url) { window.location.href = url; return; }
         if (window.HomeFeed && window.HomeFeed.setCategory) window.HomeFeed.setCategory(name);
         applyActiveTag();
       });
@@ -372,5 +383,5 @@
     }
   }
 
-  window.HomeSidebar = { init };
+  window.HomeSidebar = { init, applyActiveTag };
 })();

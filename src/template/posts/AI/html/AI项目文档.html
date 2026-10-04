@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="吴华锦" />
+  <title>AI项目文档 « 吴华锦</title>
+  <meta name="description" content="Next.js框架 - 零配置：自动编译并打包 - 混合模式SSG 和 SSr：在一个项目中同时支持构建时预渲染页面 SSG 和请求时渲染页面 SSR - 增量静态生成：在构建之后以增量的方式添加并更新静态预渲染的页面 - 基于文件系统的路由：每个 pages 目录下的组件都是一个路由 - API路由：创建 API 端点以提供后端功能 - 内置支持 CSS：使用 CSS 模块创建组件级样式，内置对 Sass 支持 - 代码拆分和打包：采用 Google Chrome 优化打包和拆分算法 内置功能 - 基于页面的路由系统，支持动态路由 - 预渲染，支持在页面级静态生成 SSG 和服务端渲染 SS" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wuhuajin.com/src/template/posts/AI/html/AI%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Wu Huajin" />
+  <meta property="og:title" content="AI项目文档" />
+  <meta property="og:description" content="Next.js框架 - 零配置：自动编译并打包 - 混合模式SSG 和 SSr：在一个项目中同时支持构建时预渲染页面 SSG 和请求时渲染页面 SSR - 增量静态生成：在构建之后以增量的方式添加并更新静态预渲染的页面 - 基于文件系统的路由：每个 pages 目录下的组件都是一个路由 - API路由：创建 API 端点以提供后端功能 - 内置支持 CSS：使用 CSS 模块创建组件级样式，内置对 Sass 支持 - 代码拆分和打包：采用 Google Chrome 优化打包和拆分算法 内置功能 - 基于页面的路由系统，支持动态路由 - 预渲染，支持在页面级静态生成 SSG 和服务端渲染 SS" />
+  <meta property="og:url" content="https://wuhuajin.com/src/template/posts/AI/html/AI%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3.html" />
+  <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="AI项目文档" />
+  <meta name="twitter:description" content="Next.js框架 - 零配置：自动编译并打包 - 混合模式SSG 和 SSr：在一个项目中同时支持构建时预渲染页面 SSG 和请求时渲染页面 SSR - 增量静态生成：在构建之后以增量的方式添加并更新静态预渲染的页面 - 基于文件系统的路由：每个 pages 目录下的组件都是一个路由 - API路由：创建 API 端点以提供后端功能 - 内置支持 CSS：使用 CSS 模块创建组件级样式，内置对 Sass 支持 - 代码拆分和打包：采用 Google Chrome 优化打包和拆分算法 内置功能 - 基于页面的路由系统，支持动态路由 - 预渲染，支持在页面级静态生成 SSG 和服务端渲染 SS" />
+  <link rel="icon" href="/src/images/favicon.png" />
+  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/src/css/github-dark.min.css" />
+  <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/loading/index.css" />
+  <link rel="stylesheet" href="/src/components/navigation/index.css" />
+  <link rel="stylesheet" href="/src/components/banner/index.css" />
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI项目文档",
+  "description": "Next.js框架 - 零配置：自动编译并打包 - 混合模式SSG 和 SSr：在一个项目中同时支持构建时预渲染页面 SSG 和请求时渲染页面 SSR - 增量静态生成：在构建之后以增量的方式添加并更新静态预渲染的页面 - 基于文件系统的路由：每个 pages 目录下的组件都是一个路由 - API路由：创建 API 端点以提供后端功能 - 内置支持 CSS：使用 CSS 模块创建组件级样式，内置对 Sass 支持 - 代码拆分和打包：采用 Google Chrome 优化打包和拆分算法 内置功能 - 基于页面的路由系统，支持动态路由 - 预渲染，支持在页面级静态生成 SSG 和服务端渲染 SS",
+  "author": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "datePublished": "2026-09-11",
+  "inLanguage": "zh-CN",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wuhuajin.com/src/template/posts/AI/html/AI%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3.html"
+  }
+}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
+  <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+</head>
+<body>
+  <div class="layout-container">
+    <div class="nav-container"></div>
+    <div class="content-area">
+      <div id="markdown-content" class="markdown-content viewer"></div>
+      <noscript><div class="markdown-content viewer" style="padding:1em"><h2><code>Next.js</code>框架</h2>
+<ul>
+<li><strong>零配置</strong>：自动编译并打包</li>
+<li><strong>混合模式<code>SSG</code> 和 <code>SSr</code></strong>：在一个项目中同时支持构建时预渲染页面 <code>SSG</code> 和请求时渲染页面 <code>SSR</code></li>
+<li><strong>增量静态生成</strong>：在构建之后以增量的方式添加并更新静态预渲染的页面</li>
+<li><strong>基于文件系统的路由</strong>：每个 <code>pages</code> 目录下的组件都是一个路由</li>
+<li><strong><code>API</code>路由</strong>：创建 <code>API</code> 端点以提供后端功能</li>
+<li><strong>内置支持 <code>CSS</code></strong>：使用 <code>CSS</code> 模块创建组件级样式，内置对 <code>Sass</code> 支持</li>
+<li><strong>代码拆分和打包</strong>：采用 <code>Google Chrome</code> 优化打包和拆分算法</li>
+</ul>
+<p><strong>内置功能</strong></p>
+<ul>
+<li>基于页面的路由系统，支持动态路由</li>
+<li>预渲染，支持在页面级静态生成 <code>SSG</code> 和服务端渲染 <code>SSR</code></li>
+<li>自动代码拆分，提升页面加载速度</li>
+<li>经过优化的预取功能的客户端路由</li>
+<li>内置 <code>CSS</code> 和 <code>Sass</code> 支持，支持任何 <code>CSS-in-JS</code> 库</li>
+<li><code>Serverless Function</code> 及 <code>API</code> 路由构建 <code>API</code> 功能</li>
+</ul>
+</div></noscript>
+      <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
+      <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
+           data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
+    </div>
+    <aside class="sidebar-area">
+      <div class="sidebar-title">文章目录</div>
+      <nav id="toc-nav" class="toc-nav"></nav>
+    </aside>
+  </div>
+  <script src="/src/components/loading/index.js"></script>
+  <script src="/src/components/banner/index.js"></script>
+  <script src="/src/components/navigation/index.js"></script>
+  <script src="/src/js/highlight.min.js"></script>
+  <script src="/src/js/marked.min.js"></script>
+  <script src="/src/js/marked-highlight.min.js"></script>
+  <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/scroll/index.js"></script>
+  <script src="/src/components/cookie-consent/index.js"></script>
+  <script>
+    (function () {
+      /* 静态页滚动容器抗注入：部分预览环境会对 .layout-container/.content-area 整段 setAttribute style 为
+         "height: auto !important"，使内部滚动容器按内容高度解析、滚不到底。
+         用 MutationObserver 侦测 style 属性变化，一旦出现 auto 即用 JS 计算的视口像素高度（window.innerHeight，
+         不受 100vh 被内容撑大的影响）重新施加，恢复 631 内部滚动。生产正常浏览器无注入时不触发。 */
+      var l = document.querySelector('.layout-container');
+      var ca = document.querySelector('.content-area');
+      if (!l || !ca) return;
+      function fixedH() {
+        var b = parseInt(window.getComputedStyle(document.body).getPropertyValue('--banner-height')) || 0;
+        return (window.innerHeight - b) + 'px';
+      }
+      function force() {
+        var h = fixedH();
+        var changed = false;
+        if ((l.getAttribute('style') || '').indexOf('auto') !== -1) {
+          l.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        if ((ca.getAttribute('style') || '').indexOf('auto') !== -1) {
+          ca.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        return changed;
+      }
+      var timer = null;
+      var mo = new MutationObserver(function () {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(force, 50);
+      });
+      mo.observe(l, { attributes: true, attributeFilter: ['style'] });
+      mo.observe(ca, { attributes: true, attributeFilter: ['style'] });
+      window.addEventListener('resize', force);
+      force();
+    })();
+  </script>
+  <script>
+    (function () {
+      // 运行时从相邻 .md 渲染：md 改动后刷新即更新；保留预渲染正文作为 no-JS / 爬虫回退
+      var mdUrl = '../AI%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3.md';
+      function finish() {
+        try {
+          if (typeof generateTOC === 'function') generateTOC();
+          var blocks = document.querySelectorAll('#markdown-content pre code');
+          if (window.hljs && blocks.length) {
+            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
+          }
+          document.querySelectorAll('#markdown-content a').forEach(function (a) {
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener noreferrer');
+          });
+        } catch (e) {}
+        if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
+        if (typeof hideLoading === 'function') hideLoading();
+      }
+      try {
+        if (typeof handler === 'function') {
+          handler('markdown-content', mdUrl, finish);
+        } else {
+          finish();
+        }
+      } catch (e) { finish(); }
+    })();
+  </script>
+</body>
+</html>

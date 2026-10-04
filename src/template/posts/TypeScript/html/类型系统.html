@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="吴华锦" />
+  <title>类型系统 « 吴华锦</title>
+  <meta name="description" content="概要 summary - 类型安全：强类型 弱类型 - 类型检查：静态类型 动态类型 - 标准库：内置对象对应的声明 类型 type - 类型注解 let a:string = &#39;hello&#39; 类型推断 - 联合类型 let a:string number = &#39;hello&#39; 类型之间进行 或 操作 - 交叉类型 类型之间进行 与 操作 - never类型 永不存在值的类型 - any类型 任意类型 不进行检测 - unknown类型 any类型对应的安全类型 默认会进行检测 - 类型断言 a as string - 非空断言 a!.length - 数组类型 - 类型 []：let a:(n" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wuhuajin.com/src/template/posts/TypeScript/html/%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Wu Huajin" />
+  <meta property="og:title" content="类型系统" />
+  <meta property="og:description" content="概要 summary - 类型安全：强类型 弱类型 - 类型检查：静态类型 动态类型 - 标准库：内置对象对应的声明 类型 type - 类型注解 let a:string = &#39;hello&#39; 类型推断 - 联合类型 let a:string number = &#39;hello&#39; 类型之间进行 或 操作 - 交叉类型 类型之间进行 与 操作 - never类型 永不存在值的类型 - any类型 任意类型 不进行检测 - unknown类型 any类型对应的安全类型 默认会进行检测 - 类型断言 a as string - 非空断言 a!.length - 数组类型 - 类型 []：let a:(n" />
+  <meta property="og:url" content="https://wuhuajin.com/src/template/posts/TypeScript/html/%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F.html" />
+  <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="类型系统" />
+  <meta name="twitter:description" content="概要 summary - 类型安全：强类型 弱类型 - 类型检查：静态类型 动态类型 - 标准库：内置对象对应的声明 类型 type - 类型注解 let a:string = &#39;hello&#39; 类型推断 - 联合类型 let a:string number = &#39;hello&#39; 类型之间进行 或 操作 - 交叉类型 类型之间进行 与 操作 - never类型 永不存在值的类型 - any类型 任意类型 不进行检测 - unknown类型 any类型对应的安全类型 默认会进行检测 - 类型断言 a as string - 非空断言 a!.length - 数组类型 - 类型 []：let a:(n" />
+  <link rel="icon" href="/src/images/favicon.png" />
+  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/src/css/github-dark.min.css" />
+  <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/loading/index.css" />
+  <link rel="stylesheet" href="/src/components/navigation/index.css" />
+  <link rel="stylesheet" href="/src/components/banner/index.css" />
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "类型系统",
+  "description": "概要 summary - 类型安全：强类型 弱类型 - 类型检查：静态类型 动态类型 - 标准库：内置对象对应的声明 类型 type - 类型注解 let a:string = 'hello' 类型推断 - 联合类型 let a:string number = 'hello' 类型之间进行 或 操作 - 交叉类型 类型之间进行 与 操作 - never类型 永不存在值的类型 - any类型 任意类型 不进行检测 - unknown类型 any类型对应的安全类型 默认会进行检测 - 类型断言 a as string - 非空断言 a!.length - 数组类型 - 类型 []：let a:(n",
+  "author": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "datePublished": "2026-09-11",
+  "inLanguage": "zh-CN",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wuhuajin.com/src/template/posts/TypeScript/html/%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F.html"
+  }
+}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
+  <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+</head>
+<body>
+  <div class="layout-container">
+    <div class="nav-container"></div>
+    <div class="content-area">
+      <div id="markdown-content" class="markdown-content viewer"></div>
+      <noscript><div class="markdown-content viewer" style="padding:1em"><h2>概要 <code>summary</code></h2>
+<ul>
+<li>类型安全：强类型 弱类型</li>
+<li>类型检查：静态类型 动态类型</li>
+<li>标准库：内置对象对应的声明</li>
+</ul>
+<h2>类型 <code>type</code></h2>
+<ul>
+<li><p>类型注解 <code>let a:string = &#39;hello&#39;</code> 类型推断</p>
+</li>
+<li><p>联合类型 <code>let a:string | number = &#39;hello&#39;</code> 类型之间进行 <strong>或</strong> 操作</p>
+</li>
+<li><p>交叉类型 类型之间进行 <strong>与</strong> 操作</p>
+</li>
+<li><p><code>never</code>类型 永不存在值的类型</p>
+</li>
+<li><p><code>any</code>类型 任意类型 不进行检测</p>
+</li>
+<li><p><code>unknown</code>类型 <code>any</code>类型对应的安全类型 默认会进行检测</p>
+</li>
+<li><p>类型断言 <code>a as string</code></p>
+</li>
+<li><p>非空断言 <code>a!.length</code></p>
+</li>
+<li><p>数组类型</p>
+<ul>
+<li>类型 <code>[]</code>：<code>let a:(number|string)[] = [1,2,3]</code></li>
+<li><code>Array</code>类型：<code>let a:Array&lt;number&gt; = [1,2,3]</code></li>
+</ul>
+</li>
+<li><p>元祖类型 <code>let arr:[number,string]=[1,&#39;hello&#39;]</code></p>
+</li>
+<li><p>对象类型 <code>type A = {name: string, age?: number}</code></p>
+</li>
+<li><p>索引签名 <code>type A = {name: string, age?: number, [index:string]: any}</code></p>
+</li>
+<li><p>函数重载和可调用注解</p>
+<pre><code class="language-typescript">type A = {
+  (n: number): number;
+  m?: string;
+};
+</code></pre>
+</li>
+<li><p>枚举类型和 <code>const</code>枚举 <code>const</code>编译后的优化</p>
+<pre><code class="language-typescript">enum Roles {
+  SUPER_ADMIN,
+  ADMIN = 3,
+  USER,
+}
+enum Roles1 {
+  SUPER_ADMIN = &#39;super_admin&#39;,
+  ADMIN = &#39;admin&#39;,
+  USER = &#39;user&#39;,
+}
+const enum Roles2 {
+  SUPER_ADMIN = &#39;super_admin&#39;,
+  ADMIN = &#39;admin&#39;,
+  USER = &#39;user&#39;,
+}
+</code></pre>
+</li>
+<li><p>字面量类型和 <code>keyof</code>关键字 <code>keyof A</code></p>
+</li>
+<li><p>类型保护和自定义类型保护 <code>typeof</code> <code>instanceof</code> <code>in</code> 字面量类型</p>
+</li>
+<li><p>泛型 <code>function fn&lt;T extends A&gt;(n:T){}</code> 泛型约束</p>
+<pre><code class="language-typescript">type A&lt;T&gt; = T;
+let a: A&lt;string&gt; = &#39;hello&#39;;
+let b: A&lt;number&gt; = 1;
+
+type MyArray&lt;T&gt; = T[];
+let d: MyArray&lt;number&gt; = [1, 2, 3];
+let e: number[] = [1, 2, 3];
+
+interface A&lt;T&gt; {
+  (n?: T): void;
+  default?: T;
+}
+let fn: A&lt;number&gt; = (n) =&gt; {};
+
+class A&lt;T&gt; {
+  n!: T;
+}
+let a = new A&lt;string&gt;();
+class B extends A&lt;string&gt; {}
+let b = new B();
+</code></pre>
+</li>
+<li><p>映射类型和内置工具类型</p>
+<ul>
+<li><code>Readonly</code> 只读 <code>type B = Readonly&lt;A&gt;</code></li>
+<li><code>Partial</code> 可选 <code>type B = Partial&lt;A&gt;</code></li>
+<li><code>Pick</code> 筛选 <code>type B = Pick&lt;A, &#39;name&#39;|&#39;age&#39;&gt;</code></li>
+<li><code>Omit</code> 排除 <code>type B = Omit&lt;A, &#39;name&#39;&gt;</code></li>
+<li><code>Record</code> 设定类型 <code>type B = Record&lt;keyof A, string&gt;</code></li>
+<li><code>Required</code> 移除可选 <code>type B = Required&lt;A&gt;</code></li>
+<li><code>Exclude</code> 移除 <code>type B = Exclude&lt;string|number|boolean, string&gt;</code></li>
+<li><code>Extract</code> 提取 <code>type B = Extract&lt;string|number|boolean, string&gt;</code></li>
+<li><code>NonNullable</code> 移除<code>null</code>和<code>undefined</code><pre><code class="language-typescript">type B = NonNullable&lt;string | number | null | undefined&gt;;
+</code></pre>
+</li>
+<li><code>Parameters</code> 把参数转为元祖类型<pre><code class="language-typescript">type Foo = (n: number, m: string) =&gt; void;
+type A = Parameters&lt;Foo&gt;;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>条件类型和 <code>infer</code>关键字</p>
+<pre><code class="language-typescript">type A&lt;T&gt; = T extends Array&lt;infer U&gt; ? U : T;
+type B = A&lt;Array&lt;number&gt;&gt;;
+type C = A&lt;string&gt;;
+</code></pre>
+</li>
+<li><p>类中使用类型 <code>class Foo implements A {}</code></p>
+</li>
+</ul>
+<h2>接口 <code>interface</code></h2>
+<p><strong>接口与类型别名区别</strong></p>
+<p>接口是一系列抽象方法的声明，是一些方法特征的集合。</p>
+<ul>
+<li>对象类型</li>
+<li>接口合并</li>
+<li>接口继承</li>
+<li>映射类型</li>
+</ul>
+<p><strong>动态接口</strong></p>
+<pre><code class="language-typescript">interface A {
+  [index: string]: any;
+}
+</code></pre>
+<h2>配置</h2>
+<ul>
+<li><strong><code>d.ts</code>声明文件和 <code>declare</code>关键字</strong>：在<code>tsconfig.json</code>中配置 <code>declaration: true</code></li>
+<li><code>@types</code>和 <code>DefinitelyTyped</code>仓库<ul>
+<li><code>DefinitelyTyped</code>是一个高质量的 <code>TypeScript</code>类型定义的仓库。通过 <code>@types</code>方式来安装常见的第三方 <code>JavaScript</code>库的声明适配模块</li>
+</ul>
+</li>
+<li><code>lib.d.ts</code>和 <code>global.d.ts</code>：<code>TypeScript</code>自带 <code>lib.d.ts</code>声明文件，包含</li>
+</ul>
+</div></noscript>
+      <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
+      <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
+           data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
+    </div>
+    <aside class="sidebar-area">
+      <div class="sidebar-title">文章目录</div>
+      <nav id="toc-nav" class="toc-nav"></nav>
+    </aside>
+  </div>
+  <script src="/src/components/loading/index.js"></script>
+  <script src="/src/components/banner/index.js"></script>
+  <script src="/src/components/navigation/index.js"></script>
+  <script src="/src/js/highlight.min.js"></script>
+  <script src="/src/js/marked.min.js"></script>
+  <script src="/src/js/marked-highlight.min.js"></script>
+  <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/scroll/index.js"></script>
+  <script src="/src/components/cookie-consent/index.js"></script>
+  <script>
+    (function () {
+      /* 静态页滚动容器抗注入：部分预览环境会对 .layout-container/.content-area 整段 setAttribute style 为
+         "height: auto !important"，使内部滚动容器按内容高度解析、滚不到底。
+         用 MutationObserver 侦测 style 属性变化，一旦出现 auto 即用 JS 计算的视口像素高度（window.innerHeight，
+         不受 100vh 被内容撑大的影响）重新施加，恢复 631 内部滚动。生产正常浏览器无注入时不触发。 */
+      var l = document.querySelector('.layout-container');
+      var ca = document.querySelector('.content-area');
+      if (!l || !ca) return;
+      function fixedH() {
+        var b = parseInt(window.getComputedStyle(document.body).getPropertyValue('--banner-height')) || 0;
+        return (window.innerHeight - b) + 'px';
+      }
+      function force() {
+        var h = fixedH();
+        var changed = false;
+        if ((l.getAttribute('style') || '').indexOf('auto') !== -1) {
+          l.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        if ((ca.getAttribute('style') || '').indexOf('auto') !== -1) {
+          ca.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        return changed;
+      }
+      var timer = null;
+      var mo = new MutationObserver(function () {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(force, 50);
+      });
+      mo.observe(l, { attributes: true, attributeFilter: ['style'] });
+      mo.observe(ca, { attributes: true, attributeFilter: ['style'] });
+      window.addEventListener('resize', force);
+      force();
+    })();
+  </script>
+  <script>
+    (function () {
+      // 运行时从相邻 .md 渲染：md 改动后刷新即更新；保留预渲染正文作为 no-JS / 爬虫回退
+      var mdUrl = '../%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F.md';
+      function finish() {
+        try {
+          if (typeof generateTOC === 'function') generateTOC();
+          var blocks = document.querySelectorAll('#markdown-content pre code');
+          if (window.hljs && blocks.length) {
+            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
+          }
+          document.querySelectorAll('#markdown-content a').forEach(function (a) {
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener noreferrer');
+          });
+        } catch (e) {}
+        if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
+        if (typeof hideLoading === 'function') hideLoading();
+      }
+      try {
+        if (typeof handler === 'function') {
+          handler('markdown-content', mdUrl, finish);
+        } else {
+          finish();
+        }
+      } catch (e) { finish(); }
+    })();
+  </script>
+</body>
+</html>
