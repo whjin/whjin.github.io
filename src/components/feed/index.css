@@ -2,7 +2,9 @@
 
 /* ---- 整页滚动（根 html 滚动，body 非滚动容器，保证 sticky 吸附视口）---- */
 html.home-page {
-  overflow: auto;
+  /* 纵向整页滚动保留；横向隐藏，窄屏/移动端不产生横向滚动条 */
+  overflow-x: hidden;
+  overflow-y: auto;
   height: auto;
 }
 

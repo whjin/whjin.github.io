@@ -161,17 +161,6 @@
     const cardCount = cards.length;
     if (cardCount === 0) return;
 
-    // 回到顶部按钮：悬浮定位，不占文档流，保证外层上下留白一致
-    const scrollTopEl = document.querySelector('.scroll-top');
-    if (scrollTopEl) {
-      scrollTopEl.style.position = 'fixed';
-      scrollTopEl.style.float = 'none';
-      scrollTopEl.style.margin = '0';
-      scrollTopEl.style.right = '20px';
-      scrollTopEl.style.bottom = '66px';
-      scrollTopEl.style.zIndex = '100';
-    }
-
     if (isMobile()) {
       container.style.gridTemplateColumns = '';
       container.style.gridTemplateRows = '';

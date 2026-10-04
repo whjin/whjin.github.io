@@ -6,6 +6,24 @@ function scrollControls() {
   const navContainer = document.querySelector('.nav-container');
   const contentArea = document.querySelector('.content-area');
 
+  // 回到顶部按钮定位：bottom 首页 66px、二级页 40px；
+  // right 无目录时贴视口最右（20px），有目录时贴目录左侧
+  function positionScrollTop() {
+    const btn = document.querySelector('.scroll-top');
+    if (!btn) return;
+    const isHome = document.body.classList.contains('home-page');
+    btn.style.bottom = isHome ? '66px' : '40px';
+    const sidebar = document.querySelector('.sidebar-area');
+    const hasToc =
+      sidebar && getComputedStyle(sidebar).display !== 'none' && sidebar.offsetWidth > 0;
+    if (hasToc) {
+      const left = sidebar.getBoundingClientRect().left;
+      btn.style.right = Math.max(0, window.innerWidth - left + 20) + 'px';
+    } else {
+      btn.style.right = '20px';
+    }
+  }
+
   // 实际滚动可能是 window（首页：.content-area overflow:visible）或 .content-area（二级页固定高度）
   // 同时监听两者，取最大滚动值，确保任意一种情况都生效
   function getScrollTop() {
@@ -151,6 +169,18 @@ function scrollControls() {
   }
 
   handleScroll();
+  positionScrollTop();
+  window.addEventListener('resize', positionScrollTop);
+  // 目录显隐变化（点「隐藏目录」按钮等）时重算按钮位置
+  const sidebarEl = document.querySelector('.sidebar-area');
+  if (sidebarEl && typeof MutationObserver !== 'undefined') {
+    new MutationObserver(positionScrollTop).observe(sidebarEl, {
+      attributes: true,
+      attributeFilter: ['style', 'class'],
+    });
+  }
+  // 等 viewer 处理完 sidebar 显示状态后再校准一次
+  setTimeout(positionScrollTop, 300);
 }
 
 document.addEventListener('DOMContentLoaded', scrollControls);

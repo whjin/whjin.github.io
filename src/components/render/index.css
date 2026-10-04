@@ -195,9 +195,8 @@ a:hover {
 
 .scroll-top {
   cursor: pointer;
-  position: sticky;
-  float: right;
-  margin-right: 20px;
+  position: fixed;
+  right: 20px;
   bottom: 66px;
   width: 40px;
   height: 40px;
@@ -213,6 +212,12 @@ a:hover {
 
 .scroll-top:hover {
   background-color: #0569d3;
+}
+
+/* AdSense 广告位自适应容器宽度，避免窄屏横向溢出产生滚动条 */
+ins.adsbygoogle {
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .markdown-content table {

@@ -112,8 +112,8 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  /* 全屏预览同样低于顶部导航栏，保证导航栏始终置顶可见 */
-  z-index: 28;
+  /* 全屏预览层级高于弹窗(28)，确保二维码不被弹窗盖住；仍低于 banner(30) 保持置顶 */
+  z-index: 29;
   display: none;
   align-items: center;
   justify-content: center;
