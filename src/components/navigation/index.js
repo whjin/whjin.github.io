@@ -37,7 +37,7 @@ function handleNavigation() {
 
   function checkIsLinkPage() {
     if (document.querySelector('.link-container')) return true;
-    return (pathname.includes('viewer.html') || pathname === '/view' || pathname.startsWith('/view')) && search.includes('&format=html');
+    return (pathname === '/viewer.html' || pathname.startsWith('/viewer.html')) && search.includes('&format=html');
   }
 
   const isLinkPage = checkIsLinkPage();

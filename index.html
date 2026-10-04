@@ -50,7 +50,7 @@
       'analytics_storage': 'denied'
     });
     gtag('set', 'ads_data_redaction', true);
-    gtag('set', 'url_passthrough', true);
+    // 注意：不启用 url_passthrough，避免 GA4 在链接 URL 上追加 _gl 追踪参数（影响 URL 美观与信任）
   </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VS7YFWL9M"></script>

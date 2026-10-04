@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', (e) => {
-  loadMarkdown('markdown-content', 'src/template/home.html')
+  loadMarkdown('markdown-content', 'home.html')
     .then(() => {
       if (window.HomeFeed && window.HomeFeed.init) window.HomeFeed.init();
       if (window.HomeSidebar && window.HomeSidebar.init) window.HomeSidebar.init();

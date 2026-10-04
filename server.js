@@ -37,11 +37,21 @@ const server = http.createServer((req, res) => {
   }
 
   const ALIASES = {
-    '/view': '/src/template/viewer.html',
+    // 查看器页统一为根 viewer.html；规范别名统一使用 /viewer
+    '/viewer': '/viewer.html',
   };
-  const ALIAS_BASES = {
-    '/view': '/src/template/',
-  };
+  const ALIAS_BASES = {};
+  // 重定向映射：冗余/旧路径 → 规范路径（301，合并 SEO 权重）。
+  // ⚠️ 不能把 /home.html 重定向到 / —— 它是首页内容模板，index.html 的 home.js 需要 fetch 它；
+  //    若 301 到 /，fetch 会拿到 index.html 自身内容当模板，导致首页正文空白、内容重复。
+  const REDIRECTS = {};
+  // 处理重定向（301），避免 SEO 重复内容
+  if (REDIRECTS[pathname]) {
+    res.writeHead(301, { Location: REDIRECTS[pathname] });
+    res.end();
+    return;
+  }
+
   // 构建请求的文件路径
   let filePath = path.join(
     rootDir,

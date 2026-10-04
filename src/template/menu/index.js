@@ -50,7 +50,7 @@
     aEl.innerHTML = item.marked ? `${MARKED_HTML}${item.title}` : item.title;
     aEl.title = item.description || item.title || '';
     aEl.href = item.url || '';
-    let isLinkPage = !!item.url && item.url.includes('viewer.html') && item.url.includes('&format=html');
+    let isLinkPage = !!item.url && item.url.includes('/viewer.html?') && item.url.includes('&format=html');
     if (isLinkPage) {
       aEl.addEventListener('click', () => {
         localStorage.setItem(STORAGE_KEYS.navigateToLink, true);

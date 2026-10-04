@@ -77,7 +77,8 @@ function generateSummary(body, maxChars = 300) {
 }
 
 function mdUrl(folder, fileBase) {
-  return `/src/template/posts/${folder}/${fileBase}.html`;
+  // 静态文章页统一输出在 html/ 子目录（与 build-articles.cjs 一致），feed url 必须指向该路径
+  return `/src/template/posts/${folder}/html/${fileBase}.html`;
 }
 
 // url → md 信息映射
@@ -108,7 +109,7 @@ function resolveMd(url) {
   const parts = q[1].split('_');
   const file = parts.pop();
   const folder = parts.join('/');
-  return urlToMd.get(`/src/template/posts/${folder}/${file}.html`) || null;
+  return urlToMd.get(`/src/template/posts/${folder}/html/${file}.html`) || null;
 }
 
 // 清理描述：去掉结尾省略号字符（…/...），保证 title 弹框完整显示、不出现省略号

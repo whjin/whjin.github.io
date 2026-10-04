@@ -7,7 +7,7 @@
     "items": [
       {
         "title": "一站式AI应用平台",
-        "url": "/view?path=友链_link&format=html",
+        "url": "/viewer.html?path=友链_link&format=html",
         "category": "核心推荐",
         "description": "AI应用集 - 一站式AI应用平台",
         "marked": true
@@ -265,7 +265,7 @@
     "items": [
       {
         "title": "原创诗词",
-        "url": "/view?path=文学_原创诗词",
+        "url": "/viewer.html?path=文学_原创诗词",
         "category": "文学",
         "date": "2026-09-11",
         "readTime": 57,
@@ -273,15 +273,8 @@
         "marked": true
       },
       {
-        "title": "Github",
-        "url": "https://github.com/whjin",
-        "category": "我的",
-        "description": "吴华锦（whjin）的开源主页，托管并持续维护多个个人项目与实战代码：Vue3 + TypeScript 的 GIS 可视化项目 gis-vue、基于 Next.js 的 AI 应用 next-ai-core、轻量实用的在线计算器 calculateApp 等。内容覆盖 Web 前端、Node.js 后端、GIS 可视化、AI 应用与工程化实践，是前端与全栈开发者可直接参考学习的开源代码仓库。",
-        "marked": true
-      },
-      {
         "title": "中文简历",
-        "url": "/view?path=简历_中文简历",
+        "url": "/viewer.html?path=简历_中文简历",
         "category": "简历",
         "date": "2026-09-11",
         "readTime": 10,
@@ -290,13 +283,13 @@
       },
       {
         "title": "中文简历PDF",
-        "url": "/view?path=简历_中文简历PDF&format=pdf",
+        "url": "/viewer.html?path=简历_中文简历PDF&format=pdf",
         "category": "我的",
         "description": "吴华锦中文简历（PDF 下载版）：深圳大学电子信息工程全日制本科，全栈开发工程师，专注公安司法监所领域软硬件产品研发，负责前端架构迭代、Node.js 服务开发、国产化适配与 AI 研发赋能；核心参与 20+ 省内外政企项目，完成 10 款安卓终端 APP，具备成熟的政企项目全流程交付经验。点击下载 PDF 查看完整履历。"
       },
       {
         "title": "英文简历",
-        "url": "/view?path=简历_英文简历",
+        "url": "/viewer.html?path=简历_英文简历",
         "category": "简历",
         "date": "2026-09-11",
         "readTime": 10,
@@ -304,7 +297,7 @@
       },
       {
         "title": "英文简历PDF",
-        "url": "/view?path=简历_英文简历PDF&format=pdf",
+        "url": "/viewer.html?path=简历_英文简历PDF&format=pdf",
         "category": "我的",
         "description": "Huajin Wu's English resume (PDF): a full-stack engineer with 7+ years of enterprise development experience and a B.Eng. in Electronic Information Engineering from Shenzhen University. Experienced in front-end architecture, Node.js backend services, cross-platform development and AI-enabled product R&D, with a proven record in government/enterprise project delivery. Download the PDF for the full English CV."
       }
@@ -318,21 +311,21 @@
     "items": [
       {
         "title": "技术文章",
-        "url": "/view?path=文章_article&format=html",
+        "url": "/viewer.html?path=文章_article&format=html",
         "category": "站点",
         "description": "本站技术文章精选，原创整理并持续更新，覆盖 Vue、React、Node.js、TypeScript、小程序、Web3 智能合约、WebRTC 音视频、工程化构建与网络安全加密等前后端核心知识，每篇辅以实战案例与可运行代码示例，为开发者提供系统化、易检索的技术学习资料库，帮助快速定位并掌握关键技术点。",
         "marked": true
       },
       {
         "title": "技术教程",
-        "url": "/view?path=教程_tutorial&format=html",
+        "url": "/viewer.html?path=教程_tutorial&format=html",
         "category": "站点",
         "description": "本站技术教程合集，提供从零到实战的进阶学习路线，涵盖 AI 应用开发、Node.js 工程化、GIS 可视化、Web3 智能合约、小程序实战等热门方向，配有完整项目源码、数据库设计、接口联调与部署上线流程，手把手带你完成真实项目，适合有一定基础、想提升实战能力的开发者。",
         "marked": true
       },
       {
         "title": "IT工具合集",
-        "url": "/view?path=工具_tool&format=html",
+        "url": "/viewer.html?path=工具_tool&format=html",
         "category": "站点",
         "description": "本站 IT 工具合集，汇总日常开发与办公常用的在线工具：包括代码格式化、JSON 校验、图片压缩、在线 HTML/JS 编辑、视频处理、进制转换与 AI 网址导航等，按类别分类整理、方便快速查找使用，显著提升开发与工作效率。",
         "marked": true

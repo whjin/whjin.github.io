@@ -37,7 +37,7 @@
       "i18n_title": "sb_tags",
       "title": "Popular tags",
       "tags": [
-        { "name": "最新资源", "url": "/view?path=资源_resource&format=html" }
+        { "name": "最新资源", "url": "/viewer.html?path=资源_resource&format=html" }
       ]
     },
     {
@@ -54,7 +54,7 @@
           "image": "/src/images/favicon.png",
           "title": "最新资源持续更新中...",
           "desc": "关注本站获取最新的前端与 AI 开发内容。",
-          "url": "/view?path=资源_resource&format=html"
+          "url": "/viewer.html?path=资源_resource&format=html"
         }
       ]
     },
@@ -67,19 +67,19 @@
           "image": "https://img4.kuwo.cn/star/albumcover/500/s4s14/74/267013878.jpg",
           "title": "AI 应用开发学习路线图",
           "desc": "从零到实战的 AI 应用开发学习路线图已上线：平台、模型、工程化与实战项目。",
-          "url": "/view?path=AI_AI应用开发学习路线图"
+          "url": "/viewer.html?path=AI_AI应用开发学习路线图"
         },
         {
           "image": "/src/images/favicon.png",
           "title": "Node.js 工程化实战持续更新",
           "desc": "Node.js 工程化实战系列持续更新，覆盖全栈图书管理系统与工程实践。",
-          "url": "/view?path=Node_Node.js实战"
+          "url": "/viewer.html?path=Node_Node.js实战"
         },
         {
           "image": "/src/images/favicon.png",
           "title": "Web3 / 智能合约系列新增",
           "desc": "Web3 与智能合约系列新增内容：从 Solidity 语法到链上应用开发。",
-          "url": "/view?path=Web3_智能合约"
+          "url": "/viewer.html?path=Web3_智能合约"
         }
       ]
     },
@@ -92,7 +92,7 @@
           "image": "/src/images/favicon.png",
           "title": "WebRTC 性能优化实战解析",
           "desc": "直播已上线，支持随时回放（On demand）：自适应码率、RTT 与丢包调优实战。",
-          "url": "/view?path=WebRTC_WebRTC性能优化"
+          "url": "/viewer.html?path=WebRTC_WebRTC性能优化"
         },
         {
           "image": "/src/images/favicon.png",
