@@ -12,7 +12,21 @@
     } catch (e) {
       choice = null;
     }
-    if (choice === 'accepted' || choice === 'declined') return;
+
+    // Consent Mode v2：把用户选择同步给 Google（gtag），用于广告/分析合规
+    function setConsent(granted) {
+      if (typeof gtag !== 'function') return;
+      gtag('consent', 'update', {
+        'ad_storage': granted ? 'granted' : 'denied',
+        'ad_user_data': granted ? 'granted' : 'denied',
+        'ad_personalization': granted ? 'granted' : 'denied',
+        'analytics_storage': granted ? 'granted' : 'denied'
+      });
+    }
+
+    // 已记录过选择：直接应用到 Consent Mode（不再弹窗），保留用户之前的选择
+    if (choice === 'accepted') { setConsent(true); return; }
+    if (choice === 'declined') { setConsent(false); return; }
 
     var css =
       '.cc-banner{position:fixed;left:0;right:0;bottom:0;z-index:9999;' +
@@ -56,9 +70,11 @@
       if (banner.parentNode) banner.parentNode.removeChild(banner);
     }
     banner.querySelector('.cc-accept').addEventListener('click', function () {
+      setConsent(true);
       close('accepted');
     });
     banner.querySelector('.cc-decline').addEventListener('click', function () {
+      setConsent(false);
       close('declined');
     });
 

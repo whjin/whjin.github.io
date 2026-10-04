@@ -39,9 +39,60 @@
   <link rel="stylesheet" href="src/components/banner/index.css" />
   <link rel="stylesheet" href="src/components/aplayer/index.css" />
   <link rel="stylesheet" href="src/components/feed/index.css" />
+  <!-- Consent Mode v2：默认拒绝，由 cookie banner 更新 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied'
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('set', 'url_passthrough', true);
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VS7YFWL9M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-0VS7YFWL9M');
+  </script>
+  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046"
           crossorigin="anonymous"></script>
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://wuhuajin.com/#person",
+        "name": "吴华锦",
+        "alternateName": ["Wu Huajin", "whjin", "Huajin Wu"],
+        "url": "https://wuhuajin.com/",
+        "jobTitle": "Front-end & Full-stack Engineer",
+        "email": "mailto:wuhuajin09@163.com",
+        "sameAs": [
+          "https://github.com/whjin",
+          "https://gitee.com/whjin"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://wuhuajin.com/#website",
+        "url": "https://wuhuajin.com/",
+        "name": "吴华锦 · 锦绣年华・写意人间 | 吴华锦的个人主页",
+        "description": "Wu Huajin's personal homepage & tech blog: JavaScript, Node.js, Vue/React, WebGIS, Web3, AI apps, tutorials, dev tools, original poetry & resumes.",
+        "inLanguage": ["en", "zh"],
+        "publisher": { "@id": "https://wuhuajin.com/#person" }
+      }
+    ]
+  }
   </script>
 </head>
 
