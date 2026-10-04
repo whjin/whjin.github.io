@@ -1,6 +1,9 @@
 (function () {
   'use strict';
 
+  // 付费会员订阅入口：跳转到 Ko-fi 会员页（替换为你的实际 Ko-fi 地址）
+  const KO_FI_URL = 'https://ko-fi.com/whjin';
+
   const HEADER_ICONS = [
     { name: 'subscribe', title: '订阅 / Subscribe', icon: 28 },
     { name: 'lang', title: '语言 / Language', icon: 28 },
@@ -126,7 +129,7 @@
       return;
     }
     if (className.includes('icon-subscribe')) {
-      window.location.href = 'mailto:wuhuajin09@163.com?subject=Subscribe';
+      window.open(KO_FI_URL, '_blank', 'noopener,noreferrer');
       return;
     }
     if (className.includes('icon-lang')) {

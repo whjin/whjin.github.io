@@ -2,7 +2,6 @@
   {
     "sticky": 1,
     "title": "核心推荐",
-    "show": true,
     "home": false,
     "tagName": "ol",
     "items": [
@@ -115,7 +114,6 @@
   {
     "sticky": 2,
     "title": "推荐",
-    "show": true,
     "home": false,
     "tagName": "ol",
     "items": [
@@ -262,7 +260,6 @@
   {
     "sticky": 3,
     "title": "我的",
-    "show": false,
     "home": true,
     "tagName": "ol",
     "items": [
@@ -279,7 +276,7 @@
         "title": "Github",
         "url": "https://github.com/whjin",
         "category": "我的",
-        "description": "github",
+        "description": "吴华锦（whjin）的开源主页，托管并持续维护多个个人项目与实战代码：Vue3 + TypeScript 的 GIS 可视化项目 gis-vue、基于 Next.js 的 AI 应用 next-ai-core、轻量实用的在线计算器 calculateApp 等。内容覆盖 Web 前端、Node.js 后端、GIS 可视化、AI 应用与工程化实践，是前端与全栈开发者可直接参考学习的开源代码仓库。",
         "marked": true
       },
       {
@@ -295,7 +292,7 @@
         "title": "中文简历PDF",
         "url": "/view?path=简历_中文简历PDF&format=pdf",
         "category": "我的",
-        "description": ""
+        "description": "吴华锦中文简历（PDF 下载版）：深圳大学电子信息工程全日制本科，全栈开发工程师，专注公安司法监所领域软硬件产品研发，负责前端架构迭代、Node.js 服务开发、国产化适配与 AI 研发赋能；核心参与 20+ 省内外政企项目，完成 10 款安卓终端 APP，具备成熟的政企项目全流程交付经验。点击下载 PDF 查看完整履历。"
       },
       {
         "title": "英文简历",
@@ -309,7 +306,7 @@
         "title": "英文简历PDF",
         "url": "/view?path=简历_英文简历PDF&format=pdf",
         "category": "我的",
-        "description": ""
+        "description": "Huajin Wu's English resume (PDF): a full-stack engineer with 7+ years of enterprise development experience and a B.Eng. in Electronic Information Engineering from Shenzhen University. Experienced in front-end architecture, Node.js backend services, cross-platform development and AI-enabled product R&D, with a proven record in government/enterprise project delivery. Download the PDF for the full English CV."
       }
     ]
   },
@@ -323,53 +320,53 @@
         "title": "技术文章",
         "url": "/view?path=文章_article&format=html",
         "category": "站点",
-        "description": "",
+        "description": "本站技术文章精选，原创整理并持续更新，覆盖 Vue、React、Node.js、TypeScript、小程序、Web3 智能合约、WebRTC 音视频、工程化构建与网络安全加密等前后端核心知识，每篇辅以实战案例与可运行代码示例，为开发者提供系统化、易检索的技术学习资料库，帮助快速定位并掌握关键技术点。",
         "marked": true
       },
       {
         "title": "技术教程",
         "url": "/view?path=教程_tutorial&format=html",
         "category": "站点",
-        "description": "",
+        "description": "本站技术教程合集，提供从零到实战的进阶学习路线，涵盖 AI 应用开发、Node.js 工程化、GIS 可视化、Web3 智能合约、小程序实战等热门方向，配有完整项目源码、数据库设计、接口联调与部署上线流程，手把手带你完成真实项目，适合有一定基础、想提升实战能力的开发者。",
         "marked": true
       },
       {
         "title": "IT工具合集",
         "url": "/view?path=工具_tool&format=html",
         "category": "站点",
-        "description": "",
+        "description": "本站 IT 工具合集，汇总日常开发与办公常用的在线工具：包括代码格式化、JSON 校验、图片压缩、在线 HTML/JS 编辑、视频处理、进制转换与 AI 网址导航等，按类别分类整理、方便快速查找使用，显著提升开发与工作效率。",
         "marked": true
       },
       {
         "title": "基金分析平台",
         "url": "https://fundscope.wuhuajin.com/",
         "category": "站点",
-        "description": "FundScope - 专业基金持仓分析平台",
+        "description": "FundScope 专业基金持仓分析平台，面向个人投资者的基金数据可视化分析工具，支持基金持仓跟踪、净值与收益走势、行业板块分布分析，帮助投资者清晰掌握投资组合动态、优化投资决策。",
         "marked": true
       },
       {
         "title": "whjin-Gitee.com",
         "url": "https://gitee.com/whjin",
         "category": "站点",
-        "description": "寒青 (whjin) - Gitee 码云"
+        "description": "寒青（whjin）在 Gitee 码云上的代码仓库主页，托管个人开源项目与实验性代码，与 GitHub 保持同步更新，包含 Web 前端、Node.js 服务、GIS 可视化等方向的实践项目与示例源码。"
       },
       {
         "title": "https://github.com/whjin/calculateApp",
         "url": "https://wuhuajin.com/calculateApp/",
         "category": "站点",
-        "description": "简易计算器"
+        "description": "简易计算器（calculateApp）在线应用，界面简洁、开箱即用，支持基础四则运算与常用计算功能，既是轻量实用的日常工具，也可作为前端与移动端技术实践与封装思路的参考示例。"
       },
       {
         "title": "https://github.com/whjin/gis-vue",
         "url": "https://wuhuajin.com/gis-vue/",
         "category": "站点",
-        "description": "GIS Vue3 项目"
+        "description": "GIS Vue3 项目（gis-vue）实践工程，基于 Vue 3 + TypeScript 构建 WebGIS 可视化应用，集成地图渲染、空间数据展示、图层控制与交互分析等能力，适合学习前端 GIS 开发与 Vue3 工程化实践。"
       },
       {
         "title": "https://github.com/whjin/next-ai-core",
-        "url": "https://next-ai-core.wuhuajin.com/",
+        "url": "https://nextai.wuhuajin.com/",
         "category": "站点",
-        "description": "Next AI Core"
+        "description": "Next AI Core（next-ai-core）AI 应用核心项目，基于 Next.js 构建，集成大模型能力调用与前后端一体化架构，演示从模型接入、业务逻辑到界面交付的完整 AI 应用开发实践。"
       }
     ]
   },
@@ -703,7 +700,7 @@
         "category": "GIS",
         "date": "2026-06-13",
         "readTime": 1,
-        "description": ""
+        "description": "Web GIS 文档系统讲解基于 Web 的地理信息系统开发知识，涵盖地图服务、空间数据处理、可视化渲染与前端 GIS 技术栈（如 Leaflet、OpenLayers、Cesium 等），帮助开发者掌握在浏览器中构建、发布与交互地理信息应用的完整方法与实践经验。"
       },
       {
         "title": "Taro小程序文档",
@@ -711,7 +708,7 @@
         "category": "小程序",
         "date": "2026-06-06",
         "readTime": 1,
-        "description": ""
+        "description": "Taro 小程序文档讲解基于 Taro 框架进行跨端小程序开发的要点，包括环境与项目配置、组件开发、状态管理、多端平台适配与工程化实践，实现一套代码同时支持微信、支付宝、H5 等平台，助力开发者高效完成小程序项目。"
       },
       {
         "title": "Cesium文档",
@@ -719,7 +716,7 @@
         "category": "GIS",
         "date": "2026-05-05",
         "readTime": 1,
-        "description": "",
+        "description": "Cesium 文档围绕三维地球引擎 Cesium 的实战笔记，覆盖三维场景加载、地形影像配置、空间数据可视化、模型添加与交互分析，结合 WebGIS 场景讲解三维可视化开发的核心流程，适合从事三维地图与可视化应用的开发者参考学习。",
         "tags": [
           "AI",
           "学习路线"

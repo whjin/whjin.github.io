@@ -27,7 +27,14 @@
     sb_tags: ['Popular tags', '热门标签'],
     sb_categories: ['Categories', '分类'],
     sb_social: ['Connect', '社交'],
-    sb_ads: ['Advertisement', '广告'],
+    sb_member: ['Subscribe', '订阅'],
+    sb_member_intro: ['Enjoy my content? Become a member to unlock exclusive articles and resources, and directly support my work.', '喜欢我的内容吗？成为会员，解锁专属文章与资源，直接支持我的创作。'],
+    sb_member_b1: ['Unlock all member-only articles', '解锁全部会员专属文章'],
+    sb_member_b2: ['Early access to tutorials & learning roadmaps', '抢先获取教程与学习路线图'],
+    sb_member_b3: ['Full source code collections', '获得完整源代码合集'],
+    sb_member_btn: ['Become a Member →', '成为会员 →'],
+    sb_ads: ['Advertisement', '广告位'],
+    sb_ad_placeholder: ['Advertisement', '虚位以待'],
     sb_links: ['Links', '链接'],
   };
 

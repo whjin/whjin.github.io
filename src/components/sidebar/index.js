@@ -29,7 +29,8 @@
     block.className = 'sb-block';
     const h = document.createElement('h3');
     h.dataset.i18n = section.i18n_title || '';
-    h.textContent = t(section.i18n_title || '', section.title || '');
+    // 有 i18n_title 才走翻译；否则直接用 title（避免 I18N.t('') 返回空覆盖标题）
+    h.textContent = section.i18n_title ? t(section.i18n_title, section.title || '') : (section.title || '');
     block.appendChild(h);
     return block;
   }
@@ -178,20 +179,24 @@
     return block;
   }
 
-  // 热门标签：menu 卡标题（同类查找，点击定位到该分组的文章）+ 文章标签
+  // 热门标签：固定标签（支持 {name,url} 带跳转，置顶） + menu 卡标题（同类查找） + 文章标签
   function renderTags(section, autoTags, menuTitles) {
     const block = makeBlock(section);
     const wrap = document.createElement('div');
     wrap.className = 'sb-tags';
-    const base = (section.tags && section.tags.length ? section.tags : autoTags);
-    const tags = (menuTitles || []).concat(base).slice(0, 16);
+    const fixed = section.tags && section.tags.length ? section.tags : [];
+    const tags = fixed.concat(menuTitles || []).concat(autoTags || []).slice(0, 16);
     tags.forEach((tg) => {
+      const isObj = typeof tg === 'object' && tg !== null;
+      const name = isObj ? tg.name : tg;
+      const url = isObj ? tg.url : null;
       const b = document.createElement('span');
-      b.className = 'sb-tag';
-      b.dataset.key = tg;
-      b.textContent = '#' + tg;
+      b.className = 'sb-tag' + (url ? ' sb-tag-link' : '');
+      b.dataset.key = name;
+      b.textContent = '#' + name;
       b.addEventListener('click', () => {
-        if (window.HomeFeed && window.HomeFeed.setCategory) window.HomeFeed.setCategory(tg);
+        if (url) { window.location.href = url; return; }
+        if (window.HomeFeed && window.HomeFeed.setCategory) window.HomeFeed.setCategory(name);
         applyActiveTag();
       });
       wrap.appendChild(b);
@@ -254,7 +259,8 @@
     } else {
       const ph = document.createElement('div');
       ph.className = 'sb-ad';
-      ph.textContent = 'Advertisement';
+      ph.dataset.i18n = 'sb_ad_placeholder';
+      ph.textContent = t('sb_ad_placeholder', 'Advertisement');
       block.appendChild(ph);
     }
     return block;
@@ -271,6 +277,54 @@
       wrap.appendChild(a);
     });
     block.appendChild(wrap);
+    return block;
+  }
+
+  // 支持/会员卡片：主标题 + 介绍文字 + 权益列表（无横线）+「成为会员」按钮；正文/列表/按钮均支持 i18n 切换
+  function renderMember(section) {
+    const block = makeBlock(section);
+    // 介绍文字（国际化）
+    const desc = document.createElement('p');
+    desc.className = 'sb-member-text';
+    if (section.i18n_text) {
+      desc.dataset.i18n = section.i18n_text;
+      desc.textContent = t(section.i18n_text, section.text || '');
+    } else {
+      desc.textContent = section.text || '';
+    }
+    block.appendChild(desc);
+    // 权益列表（国际化，无横线分隔）
+    if (Array.isArray(section.benefits) && section.benefits.length) {
+      const ul = document.createElement('ul');
+      ul.className = 'sb-member-list';
+      section.benefits.forEach((b, i) => {
+        const li = document.createElement('li');
+        const key = section.i18n_benefits && section.i18n_benefits[i];
+        if (key) {
+          li.dataset.i18n = key;
+          li.textContent = t(key, b);
+        } else {
+          li.textContent = b;
+        }
+        ul.appendChild(li);
+      });
+      block.appendChild(ul);
+    }
+    // 按钮（国际化）
+    if (section.url) {
+      const a = document.createElement('a');
+      a.className = 'sb-member-btn';
+      a.href = section.url;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      if (section.i18n_url_text) {
+        a.dataset.i18n = section.i18n_url_text;
+        a.textContent = t(section.i18n_url_text, section.url_text || '');
+      } else {
+        a.textContent = section.url_text || 'Support →';
+      }
+      block.appendChild(a);
+    }
     return block;
   }
 
@@ -310,6 +364,7 @@
         else if (sec.type === 'social') el = renderSocial(sec);
         else if (sec.type === 'ads') el = renderAd(sec);
         else if (sec.type === 'links') el = renderLinks(sec);
+        else if (sec.type === 'member') el = renderMember(sec);
         if (el) wrap.appendChild(el);
       });
     } catch (err) {
