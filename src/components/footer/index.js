@@ -40,10 +40,10 @@
   function loadGoatCount() {
     var el = document.querySelector('#goatcounter_total');
     if (!el) return;
-    fetch('https://whjin.goatcounter.com/counter/TOTAL.json')
+    fetch('https://stats.wuhuajin.com')
       .then(function (r) { return r.json(); })
       .then(function (d) {
-        if (d && d.count) el.textContent = d.count;
+        if (d && d.total) el.textContent = d.total;
       })
       .catch(function () {});
   }

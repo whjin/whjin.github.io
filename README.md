@@ -65,6 +65,7 @@
 46. 中英文国际化：新增 `src/components/i18n` 语言切换，导航、卡片、订阅、页脚等文案随 `lang.png` 语言图标切换中英文。
 47. 移动端布局优化：窄屏 / 平板下主体右侧区域上移，导航栏新增 **collapse** 收缩/展开侧栏图标（`collapse.png`），便于快速查看搜索结果与筛选结果。
 48. 海外网站出海 SEO 优化：扩写首页及各卡片 `meta description`（利于 Google AdSense 审核与爬虫抓取），新增静态 meta、Popular tags「最新资源」跳转链接等要素。
+49. 访问统计最终方案：**Cloudflare Web Analytics**（beacon 从 Cloudflare 全球边缘加载，国内与海外访问计入同一后台）+ **Cloudflare Worker**（绑定自定义域 `stats.wuhuajin.com`，GraphQL 代理隐藏 API token）返回总浏览量；footer「访问 N 次」改为从 Worker 读取。GoatCounter tracking pixel 保留为后台详情备份。
 
 # 兼容处理部署脚本
 

@@ -289,13 +289,16 @@
       new Image().src = 'https://whjin.goatcounter.com/count?p=' + encodeURIComponent(location.pathname + location.search);
     })();
   </script>
+  <!-- Cloudflare Web Analytics -->
+  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5d0359eb0b054372bc2d153bab40d1f6"}'></script>
+  <!-- End Cloudflare Web Analytics -->
   <script>
     (function () {
       var el = document.getElementById('goatcounter_total');
       if (!el) return;
-      fetch('https://whjin.goatcounter.com/counter/TOTAL.json')
+      fetch('https://stats.wuhuajin.com')
         .then(function (r) { return r.json(); })
-        .then(function (d) { if (d && d.count) el.textContent = d.count; })
+        .then(function (d) { if (d && d.total) el.textContent = d.total; })
         .catch(function () {});
     })();
   </script>
