@@ -596,11 +596,40 @@ p.sb-event-desc {
   background: #7c3aed;
 }
 
+/* ---- 移动端：侧栏收缩/展开按钮（位于导航栏社交图标区，仅窄屏显示） ---- */
+.icon-collapse {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  margin: 0 2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #667;
+  opacity: 0.92;
+  transition: color 0.2s;
+}
+
+.icon-collapse:hover {
+  color: #2563eb;
+}
+
+/* 收缩态：隐藏右侧侧栏，让文章区占满，便于快速浏览搜索结果/筛选结果 */
+body.home-page.sidebar-collapsed .home-sidebar {
+  display: none;
+}
+
 /* ---- 响应式 ---- */
 @media screen and (max-width: 1024px) {
   .home-two-col {
     grid-template-columns: minmax(0, 1fr);
     padding: 20px 16px 40px;
+  }
+
+  /* 窄屏：侧栏移到文章上方，显示收缩/展开按钮 */
+  .icon-collapse {
+    display: inline-flex;
   }
 
   /* 方案1：移动端右侧信息栏提前 → 头部→右侧→左侧→底部（order 重排） */

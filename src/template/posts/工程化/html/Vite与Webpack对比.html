@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="author" content="吴华锦" />
   <title>Vite与Webpack对比 « 吴华锦</title>
   <meta name="description" content="最本质的差异：Webpack 是 先打包，后服务 的 Bundle 驱动模式；Vite 是 先服务，按需编译 的 ESM 原生驱动模式。 一、开发启动速度 核心原因：Webpack必须先完成全量打包才能提供服务；Vite 利用现代浏览器原生支持的 ES Module 特性，把“打包”工作交给了浏览器，服务器只负责按需编译和转发。 维度 Webpack Vite -------- --------- ------ 冷启动原理 从入口文件开始，递归打包 所有依赖和业务代码，&lt;br生成完整 bundle 后再启动开发服务器 1. 仅对第三方依赖做 预编译（eslint加速）&lt;br2. 直接启动开发服" />
@@ -263,10 +263,8 @@
       function finish() {
         try {
           if (typeof generateTOC === 'function') generateTOC();
-          var blocks = document.querySelectorAll('#markdown-content pre code');
-          if (window.hljs && blocks.length) {
-            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
-          }
+          // markedHighlight 已在 handler 内完成代码高亮，此处不再重复 hljs.highlightElement，
+          // 否则 highlight.js 会把已高亮的 <span> 误判为未转义 HTML 而触发安全告警。
           document.querySelectorAll('#markdown-content a').forEach(function (a) {
             a.setAttribute('target', '_blank');
             a.setAttribute('rel', 'noopener noreferrer');

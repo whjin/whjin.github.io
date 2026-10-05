@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="author" content="吴华锦" />
   <title>基金持仓2026-7-23 « 吴华锦</title>
   <meta name="description" content="科技 永赢科技智选混合C中欧数字经济混合C 沪电股份中际旭创【重】 深南电路新易盛【重】 中际旭创寒武纪 新易盛沪电股份【重】 工业富联中芯国际 华大九天深南电路【重】 立讯精密建滔积层板 杰瑞股份鹏鼎股份【重】 锐科激光三环集团 鹏鼎控股联瑞新材 航天军工 永赢国证商用卫星通信产业ETF永赢高端装备智选混合C国泰国证航天军工指数(LOF)A 睿创微纳信维通信【重】中国船舶 航天电子航天电子【重】菲利华 中国卫星睿创微纳【重】紫光国微 复旦微电飞沃科技航天电子【重】 火炬电子国博电子【重】中航光电 上海瀚讯铖昌科技航发动力 信科移动天银机电光启技术 信维通信斯瑞新材【重】中国卫星【重】 国博电" />
@@ -338,10 +338,8 @@
       function finish() {
         try {
           if (typeof generateTOC === 'function') generateTOC();
-          var blocks = document.querySelectorAll('#markdown-content pre code');
-          if (window.hljs && blocks.length) {
-            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
-          }
+          // markedHighlight 已在 handler 内完成代码高亮，此处不再重复 hljs.highlightElement，
+          // 否则 highlight.js 会把已高亮的 <span> 误判为未转义 HTML 而触发安全告警。
           document.querySelectorAll('#markdown-content a').forEach(function (a) {
             a.setAttribute('target', '_blank');
             a.setAttribute('rel', 'noopener noreferrer');

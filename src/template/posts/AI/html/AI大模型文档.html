@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="author" content="吴华锦" />
   <title>AI大模型文档 « 吴华锦</title>
   <meta name="description" content="MCP 接口标准 MCP-Model Context Protocol，模型上下文协议 提升对大模型行为的控制能力：优化提问方式，设计输入环境，连接外部能力，形成可复用能力单元。 为模型提供可调用的能力（查询数据、执行操作或访问服务），通过标准化接口，让模型能够可靠地调用外部能力。 MCP 核心组件 - MCP Client - MCP Server - MCP Host MCP Server 1. Tools 执行动作 基于统一的协议标准定义和调用，具有更好的通用性和可复用行 2. Resources 提供信息 - MCP Server Resources 是一种数据源 - RAG 是一种数" />
@@ -255,10 +255,8 @@
       function finish() {
         try {
           if (typeof generateTOC === 'function') generateTOC();
-          var blocks = document.querySelectorAll('#markdown-content pre code');
-          if (window.hljs && blocks.length) {
-            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
-          }
+          // markedHighlight 已在 handler 内完成代码高亮，此处不再重复 hljs.highlightElement，
+          // 否则 highlight.js 会把已高亮的 <span> 误判为未转义 HTML 而触发安全告警。
           document.querySelectorAll('#markdown-content a').forEach(function (a) {
             a.setAttribute('target', '_blank');
             a.setAttribute('rel', 'noopener noreferrer');

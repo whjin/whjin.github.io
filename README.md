@@ -30,7 +30,7 @@
 14. 增加首页卡片置顶和日期排序功能
 15. 增加 `APlayer` 音乐播放器，通过社交导航音乐图标进行开关切换
 16. 增加文章赞赏功能和付费阅读功能
-17. 更换网站访问统计插件 `busuanzi` -> `vercount`
+17. 更换网站访问统计方案：`busuanzi` → `vercount` → **GoatCounter**（最终方案见 #40，海外隐私友好，国内海外同一后台）
 18. 增加 `Meting.js` 播放器插件，禁止首页手动缩放
 19. `APlayer`切换下一曲播放时报错 `classList`为 `undefined`，在 `APlayer.min.js`依赖查找`classList.add("aplayer-lrc-current")`改为 `?.classList.add("aplayer-lrc-current")`即可解决问题。
 20. 优化社交图标栏显示隐藏切换功能，适配移动端设计。
@@ -53,6 +53,18 @@
 37. 修改阿里云默认 DNS 解析为 `Cloudflare`，优化域名解析速度。
 38. 接入 **`Google AdSense`** 广告，增加文章页广告位。
 39. 增加 `ads.txt` 文件，优化广告展示。
+
+# 近期升级改造（2026-10 海外网站出海）
+
+40. 更换网站访问统计方案为 **GoatCounter**（海外隐私友好、无 `cookie`、GDPR 合规）：采用 **tracking pixel** 直连上报 `whjin.goatcounter.com/count`，绕开被限的 `gc.zgo.at` CDN，国内与海外访问计入**同一后台**；footer 显示「访问 N 次」。
+41. 文章静态化：`scripts/build-articles.cjs` 将 md 文章预渲染为静态 HTML（`src/template/posts/<分类>/html/*.html`），`feed/data.json` 中文章链接指向静态页，提升加载速度与搜索引擎抓取。
+42. 修复静态文章页 highlight.js **重复高亮**导致的控制台「unescaped HTML」警告：生成脚本不再对已高亮 `<code>` 二次 `highlightElement`。
+43. 接入 Google AdSense **Consent Mode v2**：Cookie 同意横幅按用户选择同步 `gtag('consent')` 状态（含 `ads_data_redaction` 等隐私参数），GDPR / CCPA 合规。
+44. 新增 Cookie Consent Banner 组件（`src/components/cookie-consent`），并配套隐私政策（`privacy.html`）、条款（`terms.html`）页面。
+45. 付费会员订阅：接入 **Ko-fi**（绑定 PayPal），首页右侧新增「订阅」卡片，实现**免费 + 付费会员**内容模式。
+46. 中英文国际化：新增 `src/components/i18n` 语言切换，导航、卡片、订阅、页脚等文案随 `lang.png` 语言图标切换中英文。
+47. 移动端布局优化：窄屏 / 平板下主体右侧区域上移，导航栏新增 **collapse** 收缩/展开侧栏图标（`collapse.png`），便于快速查看搜索结果与筛选结果。
+48. 海外网站出海 SEO 优化：扩写首页及各卡片 `meta description`（利于 Google AdSense 审核与爬虫抓取），新增静态 meta、Popular tags「最新资源」跳转链接等要素。
 
 # 兼容处理部署脚本
 

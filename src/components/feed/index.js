@@ -189,6 +189,8 @@
     });
   }
 
+  // 移动端：导航栏下方的收缩/展开条，切换侧栏(sidebar)显隐，便于快速浏览搜索结果/筛选结果
+
   async function init() {
     const wrap = document.getElementById('home-feed');
     if (!wrap) return;

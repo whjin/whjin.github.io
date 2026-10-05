@@ -159,10 +159,8 @@ function buildPage(it) {
       function finish() {
         try {
           if (typeof generateTOC === 'function') generateTOC();
-          var blocks = document.querySelectorAll('#markdown-content pre code');
-          if (window.hljs && blocks.length) {
-            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
-          }
+          // markedHighlight 已在 handler 内完成代码高亮，此处不再重复 hljs.highlightElement，
+          // 否则 highlight.js 会把已高亮的 <span> 误判为未转义 HTML 而触发安全告警。
           document.querySelectorAll('#markdown-content a').forEach(function (a) {
             a.setAttribute('target', '_blank');
             a.setAttribute('rel', 'noopener noreferrer');

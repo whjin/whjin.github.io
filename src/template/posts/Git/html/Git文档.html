@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="author" content="吴华锦" />
   <title>Git文档 « 吴华锦</title>
   <meta name="description" content="Git 提交规范 类型说明 :----::----: feat新特性 fix(scope)修复 scope 中的 Bug feat!:/feat(scope)!:breaking change / 重构 API build变更影响的是构建系统或者外部依赖 (如: gulp, npm) ci修改了 CI 配置文件或脚本 (如: Github Action, Travis) chore【重要】 变更不影响源代码或测试（如更新了辅助工具、库等) docs只修改了文档 feat【重要】 一个新特性 fix【重要】 修复了一个 Bug perf增强性能的代码变更 refactor并非修复 Bug 或添加" />
@@ -430,10 +430,8 @@ git branch --set-upsteam-to origin/newbranch
       function finish() {
         try {
           if (typeof generateTOC === 'function') generateTOC();
-          var blocks = document.querySelectorAll('#markdown-content pre code');
-          if (window.hljs && blocks.length) {
-            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
-          }
+          // markedHighlight 已在 handler 内完成代码高亮，此处不再重复 hljs.highlightElement，
+          // 否则 highlight.js 会把已高亮的 <span> 误判为未转义 HTML 而触发安全告警。
           document.querySelectorAll('#markdown-content a').forEach(function (a) {
             a.setAttribute('target', '_blank');
             a.setAttribute('rel', 'noopener noreferrer');

@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="author" content="吴华锦" />
   <title>AI应用开发学习路线图 « 吴华锦</title>
   <meta name="description" content="四、优质学习资源汇总 4.1 在线学习平台 平台 特色 推荐课程 价格 --------------------------------------------------- ------------ ------------------------------------- -------- DeepLearning.AI AI 专项课程 ChatGPT Prompt Engineering, AI Agents 部分免费 Coursera 大学合作课程 ML Specialization, Data Science 订阅制 Udemy 实用技能培训 React, Node.js, Pyth" />
@@ -554,10 +554,8 @@
       function finish() {
         try {
           if (typeof generateTOC === 'function') generateTOC();
-          var blocks = document.querySelectorAll('#markdown-content pre code');
-          if (window.hljs && blocks.length) {
-            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
-          }
+          // markedHighlight 已在 handler 内完成代码高亮，此处不再重复 hljs.highlightElement，
+          // 否则 highlight.js 会把已高亮的 <span> 误判为未转义 HTML 而触发安全告警。
           document.querySelectorAll('#markdown-content a').forEach(function (a) {
             a.setAttribute('target', '_blank');
             a.setAttribute('rel', 'noopener noreferrer');

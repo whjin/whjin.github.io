@@ -338,12 +338,6 @@
         "marked": true
       },
       {
-        "title": "whjin-Gitee.com",
-        "url": "https://gitee.com/whjin",
-        "category": "站点",
-        "description": "寒青（whjin）在 Gitee 码云上的代码仓库主页，托管个人开源项目与实验性代码，与 GitHub 保持同步更新，包含 Web 前端、Node.js 服务、GIS 可视化等方向的实践项目与示例源码。"
-      },
-      {
         "title": "https://github.com/whjin/calculateApp",
         "url": "https://wuhuajin.com/calculateApp/",
         "category": "站点",

@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="author" content="吴华锦" />
   <title>实战项目文档 « 吴华锦</title>
   <meta name="description" content="技术架构 - 前端层：小程序 + Web管理后台 - SDK层：auth sdk + core sdk - 后端服务层：认证服务 + 核心服务 + 知识服务 - 数据存储层：云存储/本地存储 + 数据库（MongoDB/MySQL） 帮助文档 uniapp移动端输入监听键盘上正在输入的值 例如搜狗输入法的英文预测模式下，输入的字符不会马上赋给输入框。 input有个ignoreCompositionEvent属性，是否忽略组件内对文本合成系统事件的处理。为 false 时将触发 compositionstart、compositionend、compositionupdate 事件，且在文本合" />
@@ -132,10 +132,8 @@
       function finish() {
         try {
           if (typeof generateTOC === 'function') generateTOC();
-          var blocks = document.querySelectorAll('#markdown-content pre code');
-          if (window.hljs && blocks.length) {
-            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
-          }
+          // markedHighlight 已在 handler 内完成代码高亮，此处不再重复 hljs.highlightElement，
+          // 否则 highlight.js 会把已高亮的 <span> 误判为未转义 HTML 而触发安全告警。
           document.querySelectorAll('#markdown-content a').forEach(function (a) {
             a.setAttribute('target', '_blank');
             a.setAttribute('rel', 'noopener noreferrer');

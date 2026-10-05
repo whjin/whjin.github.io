@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="author" content="吴华锦" />
   <title>英文简历 « 吴华锦</title>
   <meta name="description" content="Huajin Wu Email: wuhuajin09@163.com GitHub: github.com/whjin Portfolio: wuhuajin.com Education Shenzhen University Bachelor of Engineering, Electronic Information Engineering Professional Summary Results-driven Full-Stack Engineer with 7+ years of enterprise development experience, focusing on cross" />
@@ -166,10 +166,8 @@ Domain Skills: Legacy system refactoring, domestic IT adaptation, full-cycle ent
       function finish() {
         try {
           if (typeof generateTOC === 'function') generateTOC();
-          var blocks = document.querySelectorAll('#markdown-content pre code');
-          if (window.hljs && blocks.length) {
-            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
-          }
+          // markedHighlight 已在 handler 内完成代码高亮，此处不再重复 hljs.highlightElement，
+          // 否则 highlight.js 会把已高亮的 <span> 误判为未转义 HTML 而触发安全告警。
           document.querySelectorAll('#markdown-content a').forEach(function (a) {
             a.setAttribute('target', '_blank');
             a.setAttribute('rel', 'noopener noreferrer');

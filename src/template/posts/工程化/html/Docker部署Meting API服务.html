@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="author" content="吴华锦" />
   <title>Docker部署Meting API服务 « 吴华锦</title>
   <meta name="description" content="Docker部署 1. 安装 Docker dnf 添加 docker-ce 阿里云源并安装，启停 2. 获取镜像 拉取 ghcr.io 官方镜像；拉不动则 git clone 后本地 docker build 3. 运行容器 -p 80:80，配置 METING_URL / METING_TOKEN 环境变量 4. 放行端口 阿里云安全组 + firewalld 放行 80 5. 验证 curl 访问 /api?server=netease&amp;type=search 第 1 步：安装 Docker（阿里云官方源） 第 2 步：获取镜像 拉取Github仓库代码本地构建 配置 Docker 镜像" />
@@ -260,10 +260,8 @@ docker run -d --name meting-api \
       function finish() {
         try {
           if (typeof generateTOC === 'function') generateTOC();
-          var blocks = document.querySelectorAll('#markdown-content pre code');
-          if (window.hljs && blocks.length) {
-            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
-          }
+          // markedHighlight 已在 handler 内完成代码高亮，此处不再重复 hljs.highlightElement，
+          // 否则 highlight.js 会把已高亮的 <span> 误判为未转义 HTML 而触发安全告警。
           document.querySelectorAll('#markdown-content a').forEach(function (a) {
             a.setAttribute('target', '_blank');
             a.setAttribute('rel', 'noopener noreferrer');

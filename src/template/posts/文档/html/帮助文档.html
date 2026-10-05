@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="author" content="吴华锦" />
   <title>帮助文档 « 吴华锦</title>
   <meta name="description" content="Prettier 注释指令对 Markdown 选定内容不格式化 1. 忽略单个代码块 在代码块前一行添加 注释 2. 忽略多行/整个区域 使用 和 包裹需要忽略的内容 3. 忽略整个 Markdown 文件 在项目根目录创建 .prettierignore 文件，并添加 .md 忽略代码块内的特定语言 只想禁用代码块内某一种语言的格式化，保留其他语言的格式化，可以在 .prettierrc 配置文件中添加： 个人介绍 生于1989年，广东省英德市人，现住在广州市。2013年毕业于深圳大学，专业电子信息工程。曾在深圳和广州工作，任职前端开发工程师岗位。技术栈包括Vue、React、Node.j" />
@@ -166,10 +166,8 @@ print(   &quot;hello&quot;   )
       function finish() {
         try {
           if (typeof generateTOC === 'function') generateTOC();
-          var blocks = document.querySelectorAll('#markdown-content pre code');
-          if (window.hljs && blocks.length) {
-            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
-          }
+          // markedHighlight 已在 handler 内完成代码高亮，此处不再重复 hljs.highlightElement，
+          // 否则 highlight.js 会把已高亮的 <span> 误判为未转义 HTML 而触发安全告警。
           document.querySelectorAll('#markdown-content a').forEach(function (a) {
             a.setAttribute('target', '_blank');
             a.setAttribute('rel', 'noopener noreferrer');

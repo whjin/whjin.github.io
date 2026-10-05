@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="author" content="吴华锦" />
   <title>小程序文档 « 吴华锦</title>
   <meta name="description" content="生命周期 应用维度 - onLaunch：小程序初次加载后执行，只在全局触发一次 - onShow：小程序启动，或者从后台进入前台时触发，监听小程序显示 - onHide：从前台进入后台时触发 - onError：发生错误时触发 - onThemeChange：主题切换时触发 - onUnhandledRejection：Promise 未处理的错误时触发 - 资源占用过高，销毁 页面维度 - onLoad：加载页面时执行 - onShow：显示页面元素时执行 - onReady：页面渲染完成时执行，render page 一个页面只会调用一次 - onHide：页面隐藏时执行 - onUnl" />
@@ -291,10 +291,8 @@
       function finish() {
         try {
           if (typeof generateTOC === 'function') generateTOC();
-          var blocks = document.querySelectorAll('#markdown-content pre code');
-          if (window.hljs && blocks.length) {
-            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
-          }
+          // markedHighlight 已在 handler 内完成代码高亮，此处不再重复 hljs.highlightElement，
+          // 否则 highlight.js 会把已高亮的 <span> 误判为未转义 HTML 而触发安全告警。
           document.querySelectorAll('#markdown-content a').forEach(function (a) {
             a.setAttribute('target', '_blank');
             a.setAttribute('rel', 'noopener noreferrer');

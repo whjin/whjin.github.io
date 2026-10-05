@@ -5,6 +5,7 @@
   const KO_FI_URL = 'https://ko-fi.com/whjin';
 
   const HEADER_ICONS = [
+    { name: 'collapse', title: '收起侧栏 / Collapse', icon: 28, toggle: true },
     { name: 'subscribe', title: '订阅 / Subscribe', icon: 28 },
     { name: 'lang', title: '语言 / Language', icon: 28 },
     { name: 'search', title: '搜索 / Search', icon: 28 },
@@ -36,26 +37,38 @@
   barsEl.width = barsEl.height = 26;
 
   function makeIcon(icon) {
-    const aEl = document.createElement('a');
+    const isToggle = !!icon.toggle;
+    const el = isToggle ? document.createElement('button') : document.createElement('a');
     const imgEl = document.createElement('img');
-    aEl.className = `icon-${icon.name}`;
+    el.className = `icon-${icon.name}`;
     imgEl.src = `src/images/icons/${icon.name}.png`;
     imgEl.alt = icon.title;
     imgEl.className = `img-${icon.name}`;
     imgEl.width = imgEl.height = icon.icon;
-    aEl.title = icon.title;
-    if (icon.href) {
-      aEl.href = icon.href;
-      aEl.rel = 'noopener noreferrer';
-      aEl.target = '_blank';
+    el.title = icon.title;
+    if (isToggle) {
+      el.type = 'button';
+      el.id = 'sidebar-toggle';
+      el.setAttribute('aria-expanded', 'true');
+      el.addEventListener('click', () => {
+        const collapsed = document.body.classList.toggle('sidebar-collapsed');
+        el.setAttribute('aria-expanded', String(!collapsed));
+        el.title = collapsed ? '展开侧栏 / Expand' : '收起侧栏 / Collapse';
+      });
     } else {
-      aEl.style.cursor = 'pointer';
+      if (icon.href) {
+        el.href = icon.href;
+        el.rel = 'noopener noreferrer';
+        el.target = '_blank';
+      } else {
+        el.style.cursor = 'pointer';
+      }
     }
-    aEl.appendChild(imgEl);
-    return aEl;
+    el.appendChild(imgEl);
+    return el;
   }
 
-  // 头部社交栏：搜索 / 订阅 / 语言
+  // 头部社交栏：折叠侧栏 / 订阅 / 语言 / 搜索
   const hf = document.createDocumentFragment();
   HEADER_ICONS.forEach((s) => hf.appendChild(makeIcon(s)));
   socialEl.appendChild(hf);

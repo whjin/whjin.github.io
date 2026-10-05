@@ -7,8 +7,7 @@
       return `
         <a href="https://wuhuajin.com" target="_blank" rel="noopener noreferrer" title="吴华锦的个人主页">吴华锦</a>
         |&nbsp;访问
-        <span id="vercount_value_site_uv" class="count"></span>人
-        <span id="vercount_value_site_pv" class="count"></span>次
+        <span id="goatcounter_total" class="count">0</span>&nbsp;次
       `;
     } else {
       return `
@@ -35,6 +34,18 @@
       </div>
     `;
     bindEvents();
+    loadGoatCount();
+  }
+
+  function loadGoatCount() {
+    var el = document.querySelector('#goatcounter_total');
+    if (!el) return;
+    fetch('https://whjin.goatcounter.com/counter/TOTAL.json')
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d && d.count) el.textContent = d.count;
+      })
+      .catch(function () {});
   }
 
   function bindEvents() {

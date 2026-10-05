@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="author" content="吴华锦" />
   <title>React文档 « 吴华锦</title>
   <meta name="description" content="核心技术 - JSX开发思想 - 虚拟 dom 渲染 - 单项数据流 - state 与 props - 类组件与组件的生命周期 - 函数式组件与副作用处理机制 - hooks - 事件处理 - 条件渲染 - 列表与数据塑形 - ajax异步处理 - 跨组件数据传递 Context - Provider - CSS in JS - 模块化样式加载 - UI渲染原理 JSX JSX = JavaScript + XML - {}模板语法 - 添加注释 - 属性渲染变量 - 事件渲染函数 - style渲染对象 - {}渲染 JSX Redux - Store 的连接与订阅 - Action -" />
@@ -209,10 +209,8 @@
       function finish() {
         try {
           if (typeof generateTOC === 'function') generateTOC();
-          var blocks = document.querySelectorAll('#markdown-content pre code');
-          if (window.hljs && blocks.length) {
-            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
-          }
+          // markedHighlight 已在 handler 内完成代码高亮，此处不再重复 hljs.highlightElement，
+          // 否则 highlight.js 会把已高亮的 <span> 误判为未转义 HTML 而触发安全告警。
           document.querySelectorAll('#markdown-content a').forEach(function (a) {
             a.setAttribute('target', '_blank');
             a.setAttribute('rel', 'noopener noreferrer');

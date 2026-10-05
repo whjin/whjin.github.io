@@ -241,8 +241,7 @@
 
       <footer class="site-footer">
         <div>&copy;2013-2026 Wu Huajin ｜ 访问
-          <span id="vercount_value_site_uv" class="count"></span>人
-          <span id="vercount_value_site_pv" class="count"></span>次
+          <span id="goatcounter_total" class="count">0</span>&nbsp;次
         </div>
         <div class="legal-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a
              href="about.html">About</a><a href="contact.html">Contact</a></div>
@@ -265,7 +264,21 @@
   <script src="src/components/banner/index.js"></script>
   <script src="src/components/navigation/index.js"></script>
   <script src="src/components/scroll/index.js"></script>
-  <script src="src/js/vercount.min.js"></script>
+  <script>
+    (function () {
+      new Image().src = 'https://whjin.goatcounter.com/count?p=' + encodeURIComponent(location.pathname + location.search);
+    })();
+  </script>
+  <script>
+    (function () {
+      var el = document.getElementById('goatcounter_total');
+      if (!el) return;
+      fetch('https://whjin.goatcounter.com/counter/TOTAL.json')
+        .then(function (r) { return r.json(); })
+        .then(function (d) { if (d && d.count) el.textContent = d.count; })
+        .catch(function () {});
+    })();
+  </script>
   <script>
     (function () {
       var scrollContainer = document.querySelector('.content-area');

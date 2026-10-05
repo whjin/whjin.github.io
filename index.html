@@ -129,7 +129,11 @@
              volume="1.0" autoplay="false" theme="#42b983"></meting-js>
   <script src="src/components/loading/index.js"></script>
   <script src="src/components/banner/index.js"></script>
-  <script src="src/js/vercount.min.js"></script>
+  <script>
+    (function () {
+      new Image().src = 'https://whjin.goatcounter.com/count?p=' + encodeURIComponent(location.pathname + location.search);
+    })();
+  </script>
   <script src="src/js/marked.min.js"></script>
   <script src="src/js/highlight.min.js"></script>
   <script src="src/js/marked-highlight.min.js"></script>

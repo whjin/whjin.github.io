@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="author" content="吴华锦" />
   <title>Web3钱包 « 吴华锦</title>
   <meta name="description" content="区块链 - 共识、trustless需要旷工的工作，旷工需要激励 - transaction的执行有成本 gas，gas费成为旷工的激励 - ether是这个经济生态系统的通行货币 gas和转账 - 转账是与函数调用一起发生，转账就是函数调用。 gaslimit与 gasleft()函数 - 交易发起者设定最多消耗多少 gaslimit - 合约之间调用，调用者可以设定 gaslimit - 区块本身有一个 gaslimit gasleft()是以上因素作为限定，与当前 gas消耗一起计算的结果 退款规则 - 剩下没用完的 gas会退款 - 如果可用 gas耗尽时，会终止交易执行 - 交易失败" />
@@ -166,10 +166,8 @@
       function finish() {
         try {
           if (typeof generateTOC === 'function') generateTOC();
-          var blocks = document.querySelectorAll('#markdown-content pre code');
-          if (window.hljs && blocks.length) {
-            blocks.forEach(function (b) { try { hljs.highlightElement(b); } catch (e) {} });
-          }
+          // markedHighlight 已在 handler 内完成代码高亮，此处不再重复 hljs.highlightElement，
+          // 否则 highlight.js 会把已高亮的 <span> 误判为未转义 HTML 而触发安全告警。
           document.querySelectorAll('#markdown-content a').forEach(function (a) {
             a.setAttribute('target', '_blank');
             a.setAttribute('rel', 'noopener noreferrer');
