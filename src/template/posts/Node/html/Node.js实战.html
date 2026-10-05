@@ -219,8 +219,17 @@ pm2 save
   <script src="/src/components/render/index.js"></script>
   <script src="/src/components/scroll/index.js"></script>
   <script src="/src/components/cookie-consent/index.js"></script>
-  <!-- Cloudflare Web Analytics -->
-  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5d0359eb0b054372bc2d153bab40d1f6"}'></script>
+  <!-- Cloudflare Web Analytics (本地跳过，线上加载) -->
+  <script>
+    (function () {
+      if (/^(localhost|127.0.0.1)$/.test(location.hostname)) return;
+      var s = document.createElement('script');
+      s.type = 'module';
+      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      s.setAttribute('data-cf-beacon', '{"token": "5d0359eb0b054372bc2d153bab40d1f6"}');
+      document.head.appendChild(s);
+    })();
+  </script>
   <!-- End Cloudflare Web Analytics -->
   <script>
     (function () {
