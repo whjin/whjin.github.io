@@ -66,6 +66,7 @@
 47. 移动端布局优化：窄屏 / 平板下主体右侧区域上移，导航栏新增 **collapse** 收缩/展开侧栏图标（`collapse.png`），便于快速查看搜索结果与筛选结果。
 48. 海外网站出海 SEO 优化：扩写首页及各卡片 `meta description`（利于 Google AdSense 审核与爬虫抓取），新增静态 meta、Popular tags「最新资源」跳转链接等要素。
 49. 访问统计最终方案：**Cloudflare Web Analytics**（beacon 从 Cloudflare 全球边缘加载，国内与海外访问计入同一后台）+ **Cloudflare Worker**（绑定自定义域 `stats.wuhuajin.com`，GraphQL 代理隐藏 API token）返回总浏览量；footer「访问 N 次」改为从 Worker 读取。GoatCounter tracking pixel 保留为后台详情备份。
+50. Cloudflare 统计落地踩坑（排障实录）：①Web Analytics（RUM/beacon）**数据无公开 GraphQL/REST 取数**——`rumGroups` 字段在账户 schema 不存在、`rum/site_info` 只做站点管理不返回 pageViews，前端显示改用 **`httpRequests1dGroups`**（zone 级 HTTP `pageViews`，需 Zone ID + token 权限 **Account Analytics Read + Zone Analytics Read** + 域名 proxied）；②`workers.dev` 国内超时 → Worker 绑定自定义域名走 Cloudflare 边缘；③GraphQL `Authentication failed (code 9106)` → CF_API_TOKEN 需填**专用 API token**（非 beacon 的 site token、非 build token）；④口径：边缘 pageViews **含爬虫、按天聚合、非实时**（比 beacon 偏大属正常）。
 
 # 兼容处理部署脚本
 

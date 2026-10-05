@@ -65,7 +65,7 @@ li,
 .markdown-content p,
 .markdown-content code,
 .markdown-content pre {
-  font-size: 14px;
+  font-size: 1em;
 }
 
 div object {
