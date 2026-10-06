@@ -69,6 +69,7 @@
 50. Cloudflare 统计落地踩坑（排障实录）：①Web Analytics（RUM/beacon）**数据无公开 GraphQL/REST 取数**——`rumGroups` 字段在账户 schema 不存在、`rum/site_info` 只做站点管理不返回 pageViews，前端显示改用 **`httpRequests1dGroups`**（zone 级 HTTP `pageViews`，需 Zone ID + token 权限 **Account Analytics Read + Zone Analytics Read** + 域名 proxied）；②`workers.dev` 国内超时 → Worker 绑定自定义域名走 Cloudflare 边缘；③GraphQL `Authentication failed (code 9106)` → CF_API_TOKEN 需填**专用 API token**（非 beacon 的 site token、非 build token）；④口径：边缘 pageViews **含爬虫、按天聚合、非实时**（比 beacon 偏大属正常）。
 51. 修复 Cloudflare beacon 本地控制台 CORS 报错：beacon 仅允许 origin http://localhost（无端口），本地 localhost:8000 不匹配被 CORS 拦截（线上 wuhuajin.com 不受影响）；改为**动态注入 + hostname 判断**（localhost/127.0.0.1 跳过），本地不加载 beacon、线上正常统计。
 52. 访问统计升级（方案 A）：**Cloudflare Worker + D1 自维护计数器** 统计「建站以来全部累计访问」。背景：`httpRequests1dGroups` 只能查近 1 年（52w1d1h），跨年超限报 quota 返回 0。做法：建 D1 库 `stats-db`（表 `stats(id INTEGER PRIMARY KEY CHECK(id=1), total INTEGER NOT NULL DEFAULT 0)`，`INSERT OR IGNORE INTO stats(id,total) VALUES(1,12167)` 初始化起点）、Worker 绑定 D1（变量名 `DB`）、替换 D1 版代码（`/hit` POST 执行 `UPDATE stats SET total=total+1 WHERE id=1`，GET 返回 `{total}`，`fetch(request, env)` 签名）；前端全站（footer + 5 根页 + 42 文章页 + viewer 资源页）调 `fetch('https://stats.wuhuajin.com/hit', {method:'POST'})` 累加，**本地 localhost/127.0.0.1 跳过**不污染。结果：footer 显示持续累计，不受 1 年限制、D1 持久保存。
+53. 修复首页/搜索出现重复卡片：同一文章在多分组（「我的」+文章分组）各存一条，导致搜"原创"出现两条相同"原创诗词"；在 `src/components/feed/index.js` `filtered()` 结果按「标题+分类」去重，优先保留静态页链接（顺带修复"中文简历/英文简历"同款重复，全量 94→91 无误删）。
 
 # 兼容处理部署脚本
 

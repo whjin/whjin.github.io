@@ -55,6 +55,23 @@
       list = scored.map(function (x) { return x.it; });
     }
     // 严格按 data.json 顺序渲染：sticky 置顶（数值小在前）已在 allItems 构建时排序，此处不再按日期/精选排序
+    // 方案 A：按 标题+分类 去重；同一文章在多分组重复时优先保留静态页链接（SEO），避免搜索/首页重复展示
+    const seenMap = new Map();
+    const deduped = [];
+    list.forEach((it) => {
+      const key = (it.title || '') + '|' + (it.category || '');
+      const isStatic = !!(it.url && /\/html\//.test(it.url));
+      const existing = seenMap.get(key);
+      if (!existing) {
+        seenMap.set(key, it);
+        deduped.push(it);
+      } else if (isStatic && !/\/html\//.test(existing.url || '')) {
+        const i = deduped.indexOf(existing);
+        deduped[i] = it;
+        seenMap.set(key, it);
+      }
+    });
+    list = deduped;
     return list;
   }
 
