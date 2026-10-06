@@ -40,7 +40,8 @@
   function loadGoatCount() {
     var el = document.querySelector('#goatcounter_total');
     if (!el) return;
-    fetch('https://stats.wuhuajin.com')
+    if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) return;
+    fetch('https://stats.wuhuajin.com/hit', { method: 'POST' })
       .then(function (r) { return r.json(); })
       .then(function (d) {
         if (d && d.total) el.textContent = d.total;
