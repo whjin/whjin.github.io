@@ -12,7 +12,7 @@
   ];
 
   const GRID_ICONS = [
-    { href: '/viewer.html?path=友链_link&format=html', title: 'AI应用', name: 'ai', icon: 28 },
+    { href: '/viewer.html?path=Link_友链_link&format=html', title: 'AI应用', name: 'ai', icon: 28 },
     { href: '', title: '微信', name: 'wechat', icon: 28, show: true },
     { href: '', title: '打赏', name: 'reward', icon: 28, show: true },
     { href: '', title: '我的音乐', name: 'music', icon: 30 },

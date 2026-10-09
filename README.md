@@ -74,6 +74,8 @@
 54. 复刻 **zhheo 赞赏功能**：文章底部 post-copyright **赞赏卡片**（浅灰底圆角 12px、66px 圆形头像探顶 + 黄环 + 白底、hover 内部回缩动效、打赏红/订阅绿按钮 + codesign 字体图标、作者名 hover 主题色圆角框新标签跳首页、卡片插在广告上方）+ 独立**赞赏页 `reward.html`**（Hero 形象、微信/支付宝二维码卡 + Ko-fi 方形图标按钮卡、表格式支持者记录 + 金额分级（红≥50/橙≥20）+ 分页（首页/上一页/下一页/尾页）+ 排序（按日期/按金额）、规则卡）。
 55. 项目审计清理：全项目 + git 历史扫描 **无真实泄密**（无 API key/token/密码/密钥/.env，命中均为教程示例、占位符、公开联系邮箱）；清理 ExFAT 自动生成的 6 个 `._` AppleDouble 文件与无引用图标 `src/images/icons/link.png`；确认全部 JS/CSS/组件在用、无死代码注释、无重复文件。
 
+56. 菜单模板页统一收纳到 **`src/template/posts/Link/`**：将 `文章/教程/工具/友链/资源` 五个非文章页分类目录移入 `Link/` 下统一管理（`Link/文章/article.html` 等），viewer 路径相应加 `Link_` 前缀（`path=Link_文章_article` 等），更新 i18n/sidebar/social/reward-tip/feed 共 6 文件 12 处引用；5 个菜单页经浏览器验证正常加载。**踩坑**：移入后菜单页目录深一层，`../../link/index.css|js`（共享资源在 `src/template/link|menu/`）会解析到 `posts/link/` 而 404，需加一级改为 `../../../link/`。
+
 # 兼容处理部署脚本
 
 ```bash

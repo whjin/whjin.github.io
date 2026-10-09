@@ -7,7 +7,7 @@
     "items": [
       {
         "title": "一站式AI应用平台",
-        "url": "/viewer.html?path=友链_link&format=html",
+        "url": "/viewer.html?path=Link_友链_link&format=html",
         "category": "核心推荐",
         "description": "AI应用集 - 一站式AI应用平台",
         "marked": true
@@ -311,21 +311,21 @@
     "items": [
       {
         "title": "技术文章",
-        "url": "/viewer.html?path=文章_article&format=html",
+        "url": "/viewer.html?path=Link_文章_article&format=html",
         "category": "站点",
         "description": "本站技术文章精选，原创整理并持续更新，覆盖 Vue、React、Node.js、TypeScript、小程序、Web3 智能合约、WebRTC 音视频、工程化构建与网络安全加密等前后端核心知识，每篇辅以实战案例与可运行代码示例，为开发者提供系统化、易检索的技术学习资料库，帮助快速定位并掌握关键技术点。",
         "marked": true
       },
       {
         "title": "技术教程",
-        "url": "/viewer.html?path=教程_tutorial&format=html",
+        "url": "/viewer.html?path=Link_教程_tutorial&format=html",
         "category": "站点",
         "description": "本站技术教程合集，提供从零到实战的进阶学习路线，涵盖 AI 应用开发、Node.js 工程化、GIS 可视化、Web3 智能合约、小程序实战等热门方向，配有完整项目源码、数据库设计、接口联调与部署上线流程，手把手带你完成真实项目，适合有一定基础、想提升实战能力的开发者。",
         "marked": true
       },
       {
         "title": "IT工具合集",
-        "url": "/viewer.html?path=工具_tool&format=html",
+        "url": "/viewer.html?path=Link_工具_tool&format=html",
         "category": "站点",
         "description": "本站 IT 工具合集，汇总日常开发与办公常用的在线工具：包括代码格式化、JSON 校验、图片压缩、在线 HTML/JS 编辑、视频处理、进制转换与 AI 网址导航等，按类别分类整理、方便快速查找使用，显著提升开发与工作效率。",
         "marked": true
@@ -365,6 +365,15 @@
     "tagName": "ol",
     "items": [
       {
+        "title": "._Docker部署Meting API服务",
+        "url": "/src/template/posts/工程化/html/._Docker部署Meting API服务.html",
+        "category": "工程化",
+        "date": "2026-10-09",
+        "readTime": 15,
+        "description": "\u0000\u0005\u0016\u0007\u0000\u0002\u0000\u0000Mac OS X \u0000\u0002\u0000\u0000\u0000 \u0000\u0000\u00002\u0000\u0000\u000e�\u0000\u0000\u0000\u0002\u0000\u0000\u000e�\u0000\u0000\u0001\u001e\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000ATTR\u0000\u0000\u0000\u0000\u0000\u0000\u000e�\u0000\u0000\u0000�\u0000\u0000\u0000 \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000�\u0000\u0000\u0000 \u0000\u0000\u0015com.apple.provenance\u0000\u0001\u0002\u0000ʮۄ���\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+        "reward": true
+      },
+      {
         "title": "Node.js进阶",
         "url": "/src/template/posts/Node/html/Node.js进阶.html",
         "category": "Node",
@@ -378,7 +387,7 @@
         "url": "/src/template/posts/工程化/html/Docker部署Meting API服务.html",
         "category": "工程化",
         "date": "2026-09-26",
-        "readTime": 11,
+        "readTime": 13,
         "description": "Docker部署 1. 安装 Docker dnf 添加 docker-ce 阿里云源并安装，启停 2. 获取镜像 拉取 ghcr.io 官方镜像；拉不动则 git clone 后本地 docker build 3. 运行容器 -p 80:80，配置 METING_URL / METING_TOKEN 环境变量 4. 放行端口 阿里云安全组 + firewalld 放行 80 5. 验证 curl 访问 /api?server=netease&type=search 第 1 步：安装 Docker（阿里云官方源） 第 2 步：获取镜像 拉取Github仓库代码本地构建 配置 Docker 镜像",
         "reward": true
       },

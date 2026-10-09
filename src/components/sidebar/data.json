@@ -22,7 +22,11 @@
       "title": "Subscribe",
       "i18n_text": "sb_member_intro",
       "text": "Enjoy my content? Become a member to unlock exclusive articles and resources, and directly support my work.",
-      "i18n_benefits": ["sb_member_b1", "sb_member_b2", "sb_member_b3"],
+      "i18n_benefits": [
+        "sb_member_b1",
+        "sb_member_b2",
+        "sb_member_b3"
+      ],
       "benefits": [
         "Unlock all member-only articles",
         "Early access to tutorials & learning roadmaps",
@@ -37,7 +41,10 @@
       "i18n_title": "sb_tags",
       "title": "Popular tags",
       "tags": [
-        { "name": "最新资源", "url": "/viewer.html?path=资源_resource&format=html" }
+        {
+          "name": "最新资源",
+          "url": "/viewer.html?path=Link_资源_resource&format=html"
+        }
       ]
     },
     {
@@ -54,7 +61,7 @@
           "image": "/src/images/favicon.png",
           "title": "最新资源持续更新中...",
           "desc": "关注本站获取最新的前端与 AI 开发内容。",
-          "url": "/viewer.html?path=资源_resource&format=html"
+          "url": "/viewer.html?path=Link_资源_resource&format=html"
         }
       ]
     },

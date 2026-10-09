@@ -18,7 +18,7 @@
     rewardUrl: '/reward.html',
     koFiUrl: 'https://ko-fi.com/whjin',
     // 头像点击跳转地址（默认首页，可自定义）
-    avatarUrl: '/viewer.html?path=资源_resource&format=html',
+    avatarUrl: '/viewer.html?path=Link_资源_resource&format=html',
     // 作者名点击跳转地址（网站首页，新标签打开）
     authorUrl: '/',
     // 主色（按钮 hover 变主色，参考 zhheo --heo-main）
