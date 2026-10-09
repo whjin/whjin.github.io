@@ -39,21 +39,28 @@ if [ -n "$commit_timestamp_str" ]; then
 fi
 
 echo "正在提交代码..."
-git pull
+git pull 2>/dev/null || echo "[WARN] pull 失败，跳过拉取直接提交"
 
 # 生成 feed 数据（feed 由文章 front matter 构建，发布前运行）
 node scripts/build-feed.cjs 2>/dev/null || echo "[WARN] build-feed 生成失败，跳过"
 
+# 生成 sitemap（依据 feed 同步更新 sitemap.xml，保证新文章可被搜索引擎收录）
+node scripts/build-sitemap.cjs 2>/dev/null || echo "[WARN] build-sitemap 生成失败，跳过"
+
 git add .
 
-# 4. 判断内容是否为空，若为空则使用默认提交信息
-if [ -n "$latest_commit" ]; then 
-    git commit -m "$latest_commit"
-else  
-    git commit -m "$DEFAULT_MESSAGE"
+# 4. 判断是否有变更，若无则跳过提交，避免空提交报错
+if ! git diff --cached --quiet; then
+    # 5. 判断内容是否为空，若为空则使用默认提交信息
+    if [ -n "$latest_commit" ]; then 
+        git commit -m "$latest_commit"
+    else  
+        git commit -m "$DEFAULT_MESSAGE"
+    fi
+    git push
+else
+    echo "[INFO] 无需要提交的文件变更"
 fi
-
-git push 
 
 echo "按任意键关闭"
 read -n 1

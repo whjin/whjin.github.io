@@ -93,6 +93,10 @@ git pull --quiet origin "${BRANCH}" 2>/dev/null || warn "pull 失败，跳过拉
 info "生成 feed 数据..."
 node scripts/build-feed.cjs || warn "build-feed 生成失败，跳过"
 
+# 生成 sitemap（依据 feed 同步更新 sitemap.xml，保证新文章可被搜索引擎收录）
+info "生成 sitemap..."
+node scripts/build-sitemap.cjs || warn "build-sitemap 生成失败，跳过"
+
 git add -A
 
 # 检查是否有暂存的变更（避免空 commit 报错）
