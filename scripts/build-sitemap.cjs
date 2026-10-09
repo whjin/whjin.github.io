@@ -15,6 +15,7 @@ const BASE = [
   { loc: SITE + '/contact.html', lastmod: '2026-09-19', freq: 'yearly', pri: '0.5' },
   { loc: SITE + '/privacy.html', lastmod: '2026-09-19', freq: 'yearly', pri: '0.3' },
   { loc: SITE + '/terms.html', lastmod: '2026-09-19', freq: 'yearly', pri: '0.3' },
+  { loc: SITE + '/reward.html', lastmod: '2026-10-09', freq: 'monthly', pri: '0.5' },
 ];
 
 const feed = JSON.parse(fs.readFileSync(FEED, 'utf8'));

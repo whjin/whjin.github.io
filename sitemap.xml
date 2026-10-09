@@ -31,6 +31,12 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://wuhuajin.com/reward.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://wuhuajin.com/src/template/posts/Node/html/Node.js%E8%BF%9B%E9%98%B6.html</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
@@ -109,13 +115,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/posts/React/html/React%E6%96%87%E6%A1%A3.html</loc>
+    <loc>https://wuhuajin.com/src/template/posts/RN/html/Hermes%E5%BC%95%E6%93%8E%E6%96%87%E6%A1%A3.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wuhuajin.com/src/template/posts/RN/html/Hermes%E5%BC%95%E6%93%8E%E6%96%87%E6%A1%A3.html</loc>
+    <loc>https://wuhuajin.com/src/template/posts/React/html/React%E6%96%87%E6%A1%A3.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
