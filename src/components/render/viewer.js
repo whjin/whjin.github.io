@@ -1,3 +1,18 @@
+// html 文章底部赞赏卡片：format=html 内容基于 .html，无 frontmatter，默认直接显示卡片。
+// （旧逻辑会额外请求同名 .md 读取 reward 开关，但项目里并无 md 定义 reward，且该请求在只有 .html 的内容上产生 404 控制台报错，故移除）
+function injectRewardCard(container) {
+  if (!container) return;
+  renderRewardTip(container);
+}
+
+function renderRewardTip(container) {
+  if (window.RewardTip) { window.RewardTip.renderInto(container); return; }
+  const s = document.createElement('script');
+  s.src = '/src/components/reward-tip/index.js';
+  s.onload = s.onerror = () => { if (window.RewardTip) window.RewardTip.renderInto(container); };
+  document.head.appendChild(s);
+}
+
 window.addEventListener('DOMContentLoaded', async (e) => {
   const { pathParam, formatType } = getSearchParams();
   const pathArr = pathParam.split('_');
@@ -49,6 +64,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
           link.setAttribute('rel', 'noopener noreferrer');
         });
 
+        injectRewardCard(contentEl);
         hideLoading();
       })
       .catch((err) => {

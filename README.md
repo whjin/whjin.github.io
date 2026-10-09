@@ -71,6 +71,9 @@
 52. 访问统计升级（方案 A）：**Cloudflare Worker + D1 自维护计数器** 统计「建站以来全部累计访问」。背景：`httpRequests1dGroups` 只能查近 1 年（52w1d1h），跨年超限报 quota 返回 0。做法：建 D1 库 `stats-db`（表 `stats(id INTEGER PRIMARY KEY CHECK(id=1), total INTEGER NOT NULL DEFAULT 0)`，`INSERT OR IGNORE INTO stats(id,total) VALUES(1,12167)` 初始化起点）、Worker 绑定 D1（变量名 `DB`）、替换 D1 版代码（`/hit` POST 执行 `UPDATE stats SET total=total+1 WHERE id=1`，GET 返回 `{total}`，`fetch(request, env)` 签名）；前端全站（footer + 5 根页 + 42 文章页 + viewer 资源页）调 `fetch('https://stats.wuhuajin.com/hit', {method:'POST'})` 累加，**本地 localhost/127.0.0.1 跳过**不污染。结果：footer 显示持续累计，不受 1 年限制、D1 持久保存。
 53. 修复首页/搜索出现重复卡片：同一文章在多分组（「我的」+文章分组）各存一条，导致搜"原创"出现两条相同"原创诗词"；在 `src/components/feed/index.js` `filtered()` 结果按「标题+分类」去重，优先保留静态页链接（顺带修复"中文简历/英文简历"同款重复，全量 94→91 无误删）。
 
+54. 复刻 **zhheo 赞赏功能**：文章底部 post-copyright **赞赏卡片**（浅灰底圆角 12px、66px 圆形头像探顶 + 黄环 + 白底、hover 内部回缩动效、打赏红/订阅绿按钮 + codesign 字体图标、作者名 hover 主题色圆角框新标签跳首页、卡片插在广告上方）+ 独立**赞赏页 `reward.html`**（Hero 形象、微信/支付宝二维码卡 + Ko-fi 方形图标按钮卡、表格式支持者记录 + 金额分级（红≥50/橙≥20）+ 分页（首页/上一页/下一页/尾页）+ 排序（按日期/按金额）、规则卡）。
+55. 项目审计清理：全项目 + git 历史扫描 **无真实泄密**（无 API key/token/密码/密钥/.env，命中均为教程示例、占位符、公开联系邮箱）；清理 ExFAT 自动生成的 6 个 `._` AppleDouble 文件与无引用图标 `src/images/icons/link.png`；确认全部 JS/CSS/组件在用、无死代码注释、无重复文件。
+
 # 兼容处理部署脚本
 
 ```bash

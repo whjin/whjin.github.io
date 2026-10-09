@@ -172,6 +172,8 @@ function buildFeed() {
     if (front && Array.isArray(front.tags) && front.tags.length) item.tags = front.tags;
     if (front && front.cover) item.cover = front.cover;
     if (front && (front.sticky || front.featured === 'true' || front.featured === true)) item.featured = true;
+    // reward：文章页底部赞赏卡片开关，默认显示；仅 reward:false 时隐藏
+    item.reward = !(front && (front.reward === 'false' || front.reward === false));
     items.push(item);
   }
   items.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
@@ -192,6 +194,9 @@ function normalizeLinkItem(it, cardTitle) {
     if (md.front && Array.isArray(md.front.tags) && md.front.tags.length) out.tags = md.front.tags;
     if (md.front && md.front.cover) out.cover = md.front.cover;
     if (md.front && (md.front.sticky || md.front.featured === 'true' || md.front.featured === true)) out.featured = true;
+    if (md.front && md.front.reward !== undefined) {
+      out.reward = !(md.front.reward === 'false' || md.front.reward === false);
+    }
   } else {
     out.category = cardTitle;
     out.description = cleanDesc(it.desc != null ? String(it.desc) : (it.description || ''));

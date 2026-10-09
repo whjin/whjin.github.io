@@ -79,6 +79,19 @@
       }
     ]
   },
+  "ai": {
+    "title": "AI工具",
+    "desc": "AI工具箱",
+    "mode": "recommend",
+    "list": [
+      {
+        "avatar": "https://picsum.photos/seed/ai/100",
+        "title": "HotBee：一站式 AI 内容创作平台",
+        "desc": "HotBee - AI图片生成、AI视频生成和内容工作流工具",
+        "url": "https://hotbee.cn"
+      }
+    ]
+  },
   "tools": {
     "title": "IT工具",
     "desc": "一站式IT工具合集",

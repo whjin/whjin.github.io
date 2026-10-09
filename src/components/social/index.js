@@ -157,10 +157,6 @@
     { src: 'src/images/social/wechat_oa.jpg', title: '微信公众号' },
     { src: 'src/images/social/wechat_video.jpg', title: '微信视频号' },
   ];
-  const rewardList = [
-    { src: 'src/images/social/wx_pay.jpg', title: '微信支付' },
-    { src: 'src/images/social/ali_pay.jpg', title: '支付宝' },
-  ];
 
   const overlayEl = document.createElement('div');
   overlayEl.className = 'modal-overlay';
@@ -275,7 +271,8 @@
           } else if (s.name === 'reward') {
             ev.preventDefault();
             ev.stopPropagation();
-            openQrModal(a, rewardList);
+            // 打赏：跳转到独立赞赏页（QR 弹窗保留微信渠道，赞赏统一走赞赏页）
+            window.location.href = '/reward.html';
           }
         });
         grid.appendChild(a);

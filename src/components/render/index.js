@@ -15,6 +15,46 @@ function handler(targetId, filePath, callback) {
     })
   );
 
+  // 解析文章 YAML front matter（返回 front 对象）
+  function parseFrontMatter(text) {
+    const front = {};
+    const m = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/.exec(text);
+    if (!m) return front;
+    m[1].split(/\r?\n/).forEach((line) => {
+      const kv = /^([A-Za-z_][\w]*)\s*:\s*(.*)$/.exec(line);
+      if (kv) front[kv[1]] = kv[2].trim().replace(/^["']|["']$/g, '');
+    });
+    return front;
+  }
+
+  function loadRewardTip(cb) {
+    if (window.RewardTip) return cb();
+    const s = document.createElement('script');
+    s.src = '/src/components/reward-tip/index.js';
+    s.onload = cb;
+    s.onerror = cb;
+    document.head.appendChild(s);
+  }
+
+  // 文章页底部赞赏卡片：默认显示，仅 frontmatter reward:false 时隐藏
+  function maybeRenderRewardTip(targetEl, content) {
+    if (!targetEl) return;
+    // 仅在文章页注入：filePath 或当前页面地址属于 /posts/（首页 home.html / 其它页面不注入）
+    const isPost =
+      filePath.includes('/posts/') ||
+      (typeof location !== 'undefined' && location.pathname && location.pathname.includes('/posts/'));
+    if (!isPost) return;
+    let rewardOn = true;
+    if (!filePath.endsWith('.html')) {
+      const front = parseFrontMatter(content);
+      rewardOn = !(front.reward === 'false' || front.reward === false);
+    }
+    if (!rewardOn) return;
+    loadRewardTip(() => {
+      if (window.RewardTip) window.RewardTip.renderInto(targetEl);
+    });
+  }
+
   function stripFrontMatter(text) {
     // 剥离文章顶部 YAML front matter（Hexo 式），避免渲染进正文
     if (/^---\r?\n/.test(text)) {
@@ -53,6 +93,9 @@ function handler(targetId, filePath, callback) {
         newScript.textContent = script.textContent;
         script.parentNode.replaceChild(newScript, script);
       });
+
+      // 文章底部赞赏卡片（可复用组件，受 reward 参数控制）
+      maybeRenderRewardTip(targetEl, content);
 
       callback && callback();
     })
