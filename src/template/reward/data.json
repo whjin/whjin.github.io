@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "mascot": "/src/images/reward/mascot.webp",
+    "title": "赞赏吴华锦的伙伴们",
+    "subtitle": "感谢你赐予我前进的力量。每一份支持，都会用于博客、项目与产品的持续迭代。"
+  },
+  "channels": [
+    {
+      "id": "wechat",
+      "type": "qr",
+      "title": "微信支付",
+      "label": "微信扫一扫",
+      "subtitle": "扫码赞赏 · 金额随心",
+      "src": "/src/images/social/wx_pay.jpg"
+    },
+    {
+      "id": "alipay",
+      "type": "qr",
+      "title": "支付宝",
+      "label": "支付宝扫一扫",
+      "subtitle": "扫码赞赏 · 金额随心",
+      "src": "/src/images/social/ali_pay.jpg"
+    },
+    {
+      "id": "kofi",
+      "type": "link",
+      "title": "Ko-fi 订阅",
+      "subtitle": "海外支持 · 订阅会员 / 一次性赞助",
+      "url": "https://ko-fi.com/whjin"
+    }
+  ],
+  "records": [
+    { "name": "来自微信的好心人", "amount": 100, "currency": "CNY", "time": "2026-10-08", "channel": "wechat" },
+    { "name": "来自支付宝的好心人", "amount": 30, "currency": "CNY", "time": "2026-10-05", "channel": "alipay" },
+    { "name": "示例支持者", "amount": 20, "currency": "USD", "time": "2026-10-03", "channel": "ko-fi" },
+    { "name": "来自微信的好心人", "amount": 10, "currency": "CNY", "time": "2026-09-28", "channel": "wechat" },
+    { "name": "匿名访客", "amount": 5, "currency": "CNY", "time": "2026-09-20", "channel": "alipay" },
+    { "name": "来自支付宝的好心人", "amount": 1, "currency": "CNY", "time": "2026-09-15", "channel": "alipay" },
+    { "name": "老支持者", "amount": 66, "currency": "CNY", "time": "2025-12-25", "channel": "wechat" },
+    { "name": "深夜听风", "amount": 88, "currency": "CNY", "time": "2026-10-07", "channel": "wechat" },
+    { "name": "蓝莓布丁", "amount": 52, "currency": "USD", "time": "2026-10-02", "channel": "ko-fi" },
+    { "name": "山间拾光", "amount": 50, "currency": "CNY", "time": "2026-09-30", "channel": "alipay" },
+    { "name": "半盏清茶", "amount": 26, "currency": "CNY", "time": "2026-09-22", "channel": "wechat" },
+    { "name": "向日葵", "amount": 15, "currency": "CNY", "time": "2026-09-18", "channel": "ko-fi" },
+    { "name": "云上的日子", "amount": 8, "currency": "CNY", "time": "2026-09-10", "channel": "alipay" },
+    { "name": "木棉", "amount": 45, "currency": "CNY", "time": "2026-08-30", "channel": "wechat" },
+    { "name": "星河入梦", "amount": 33, "currency": "USD", "time": "2026-08-21", "channel": "ko-fi" },
+    { "name": "一叶知秋", "amount": 12, "currency": "CNY", "time": "2026-08-12", "channel": "alipay" },
+    { "name": "安之若素", "amount": 3, "currency": "CNY", "time": "2026-07-30", "channel": "wechat" },
+    { "name": "沐风", "amount": 27, "currency": "CNY", "time": "2026-07-19", "channel": "ko-fi" },
+    { "name": "南山客", "amount": 9, "currency": "USD", "time": "2026-07-08", "channel": "alipay" },
+    { "name": "拾穗者", "amount": 21, "currency": "CNY", "time": "2026-06-28", "channel": "wechat" },
+    { "name": "微光", "amount": 6, "currency": "CNY", "time": "2026-06-15", "channel": "ko-fi" }
+  ],
+  "rules": {
+    "nickname": "如需修改昵称信息，您可以将您的赞赏截图和转账单号/支付单号和修改昵称发送到 wuhuajin09@163.com",
+    "threshold": "仅展示 ¥1 以上的赞赏，如需展示在博客发电位，请在赞赏时留言地址",
+    "update": "更新会有延迟，请耐心等待，感谢你的支持",
+    "dedication": "感谢你们支持吴华锦博客以及项目的发展",
+    "red": 50,
+    "orange": 20
+  }
+}

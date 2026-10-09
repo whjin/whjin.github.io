@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>支持吴华锦 · 赞赏 | 吴华锦的个人主页</title>
+  <meta name="description" content="支持吴华锦：微信支付、支付宝、Ko-fi 海外订阅三种方式赞赏 / 支持本站，查看支持者记录。吴华锦的个人主页与博客。" />
+  <meta name="author" content="吴华锦" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wuhuajin.com/reward.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Wu Huajin" />
+  <meta property="og:title" content="支持吴华锦 · 赞赏 | 吴华锦的个人主页" />
+  <meta property="og:description" content="微信支付、支付宝、Ko-fi 海外订阅三种方式支持本站，查看支持者记录。" />
+  <meta property="og:url" content="https://wuhuajin.com/reward.html" />
+  <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="支持吴华锦 · 赞赏 | 吴华锦的个人主页" />
+  <meta name="twitter:description" content="微信支付、支付宝、Ko-fi 海外订阅三种方式支持本站。" />
+  <meta name="twitter:image" content="https://wuhuajin.com/src/images/favicon.png" />
+  <link rel="icon" href="src/images/favicon.png" />
+  <link rel="stylesheet" href="src/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="src/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="src/components/render/index.css" />
+  <link rel="stylesheet" href="src/components/loading/index.css" />
+  <link rel="stylesheet" href="src/components/navigation/index.css" />
+  <link rel="stylesheet" href="src/components/banner/index.css" />
+  <style>
+    a {
+      color: #007bff;
+    }
+
+    .reward-wrap {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 24px 24px 32px;
+      box-sizing: border-box;
+    }
+
+    /* ---- Hero：白底大圆角卡 + 顶部感谢形象 + 大标题（复刻 zhheo rewards） ---- */
+    .hero {
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, .08);
+      border-radius: 28px;
+      padding: 42px 28px 36px;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .04);
+      box-sizing: border-box;
+    }
+
+    .hero-mascot {
+      height: 96px;
+      width: auto;
+      object-fit: contain;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .hero h2 {
+      font-size: 34px;
+      font-weight: 600;
+      color: #1d1d1f;
+      margin: 22px 0 0;
+      letter-spacing: -0.01em;
+      line-height: 1.08;
+    }
+
+    .hero p {
+      max-width: 672px;
+      margin: 12px auto 0;
+      color: #6e6e73;
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    /* ---- 渠道：微信 / 支付宝二维码卡 + Ko-fi 卡片（复刻 zhheo 二维码样式） ---- */
+    .channels {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .channel-card {
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, .08);
+      border-radius: 18px;
+      padding: 14px 14px 18px;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .04);
+      transition: transform .18s ease, box-shadow .18s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    .channel-card:hover {
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+    }
+
+    .channel-qr-link {
+      border-radius: 18px;
+      background: #fff;
+      padding: 10px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, .06);
+      transition: box-shadow .2s ease;
+      line-height: 0;
+      display: inline-block;
+    }
+
+    .channel-qr-link:hover {
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .1);
+    }
+
+    .channel-qr {
+      width: 160px;
+      height: 160px;
+      border-radius: 12px;
+      object-fit: cover;
+      cursor: zoom-in;
+      display: block;
+    }
+
+    .channel-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 16px;
+      font-size: 17px;
+      font-weight: 500;
+      color: #1d1d1f;
+    }
+
+    .channel-label svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .channel-label.wechat {
+      color: #07c160;
+    }
+
+    .channel-label.alipay {
+      color: #1677ff;
+    }
+
+    .channel-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1f2329;
+    }
+
+    .channel-sub {
+      font-size: 14px;
+      color: #6b7280;
+      margin-top: 2px;
+    }
+
+    .channel-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 180px;
+      height: 180px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, #7c3aed, #a855f7);
+      border: none;
+      border-radius: 16px !important;
+      cursor: pointer;
+      text-decoration: none;
+      transition: box-shadow .18s ease;
+    }
+
+    .channel-btn:hover {
+      box-shadow: 0 10px 22px rgba(124, 58, 237, .35);
+    }
+
+    .channel-btn-icon {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* ---- 排序区（复刻 zhheo：排序方式 + 胶囊 tab + 右侧感谢语） ---- */
+    .records-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, .08);
+      border-radius: 16px;
+      padding: 14px 20px;
+      margin-top: 28px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .04);
+      box-sizing: border-box;
+    }
+
+    .sort-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .sort-label {
+      font-size: 14px;
+      color: #6e6e73;
+    }
+
+    .sort-group {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: #f5f5f7;
+      padding: 4px;
+      gap: 4px;
+    }
+
+    .sort-btn {
+      border: none;
+      border-radius: 999px;
+      padding: 7px 15px;
+      font-size: 13px;
+      color: #6e6e73;
+      background: transparent;
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+
+    .sort-btn:hover {
+      color: #1d1d1f;
+    }
+
+    .sort-btn:focus {
+      outline: none;
+    }
+
+    .sort-btn.active {
+      background: #425AEF;
+      color: #fff;
+      box-shadow: none;
+      font-weight: 600;
+    }
+
+    .thanks {
+      font-size: 14px;
+      color: #6e6e73;
+      margin: 0;
+    }
+
+    /* ---- 记录表格（复刻 zhheo：昵称/金额/时间三列，金额分级，行背景交替） ---- */
+    .records-card {
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, .08);
+      border-radius: 16px;
+      background: #fff;
+      margin-top: 14px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .04);
+    }
+
+    .records-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .records-table thead th {
+      background: #f5f5f7;
+      color: #6e6e73;
+      font-weight: 600;
+      font-size: 13px;
+      padding: 12px 24px;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .records-table thead th.amt {
+      text-align: center;
+    }
+
+    .records-table thead th.time {
+      text-align: right;
+    }
+
+    .records-table tbody td {
+      padding: 12px 24px;
+      border-top: 1px solid #f0f0f2;
+      color: #1d1d1f;
+    }
+
+    .records-table tbody td.name {
+      max-width: 240px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .records-table tbody td.amt {
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .records-table tbody td.time {
+      text-align: right;
+      color: #6e6e73;
+      white-space: nowrap;
+    }
+
+    .records-table tbody tr.tier-red {
+      background: #fff0f0;
+    }
+
+    .records-table tbody tr.tier-red td.amt {
+      color: #dc2626;
+    }
+
+    .records-table tbody tr.tier-orange {
+      background: #fff8e6;
+    }
+
+    .records-table tbody tr.tier-orange td.amt {
+      color: #ea6a0b;
+    }
+
+    /* 空状态 */
+    .records-empty {
+      padding: 40px 0;
+      text-align: center;
+      color: #9ca3af;
+      font-size: 15px;
+      border-top: 1px solid #f0f0f2;
+    }
+
+    /* ---- 分页（复刻 zhheo：圆角胶囊按钮） ---- */
+    .pager {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .pager button {
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, .12);
+      color: #1d1d1f;
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+
+    .pager button:hover:not(:disabled) {
+      border-color: #425AEF;
+      color: #425AEF;
+    }
+
+    .pager button:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    .pager .pager-info {
+      color: #6e6e73;
+      font-size: 14px;
+      padding: 0 8px;
+    }
+
+    /* ---- 规则说明（复刻 zhheo） ---- */
+    .rules {
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, .08);
+      border-radius: 16px;
+      padding: 22px 24px;
+      font-size: 14px;
+      color: #6e6e73;
+      line-height: 1.8;
+      margin-top: 34px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .04);
+      box-sizing: border-box;
+    }
+
+    .rules p {
+      margin: 0 0 8px;
+    }
+
+    .rules p:last-child {
+      margin-bottom: 0;
+    }
+
+    .rules b {
+      color: #374151;
+    }
+
+    /* ---- 全屏预览二维码 ---- */
+    .fullscreen-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 29;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .fullscreen-modal-overlay.show {
+      display: flex;
+    }
+
+    .fullscreen-modal-img {
+      max-width: 356px;
+      max-height: 356px;
+      object-fit: contain;
+      cursor: zoom-out;
+    }
+
+    @media (max-width: 900px) {
+      .channels {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding: 32px 18px 28px;
+        border-radius: 20px;
+      }
+
+      .hero h2 {
+        font-size: 26px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .hero-mascot {
+        height: 76px;
+      }
+
+      .channel-qr {
+        width: 140px;
+        height: 140px;
+      }
+
+      .records-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .records-table thead th,
+      .records-table tbody td {
+        padding: 10px 14px;
+      }
+
+      .fullscreen-modal-img {
+        max-width: 320px;
+        max-height: 320px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout-container">
+    <div class="nav-container"></div>
+    <div class="content-area">
+      <div class="reward-wrap">
+        <!-- Hero（复刻 zhheo：白底大圆角卡 + 顶部感谢形象 + 大标题） -->
+        <section class="hero">
+          <img class="hero-mascot" id="hero-mascot" alt="形象" />
+          <h2 id="hero-title">赞赏吴华锦的伙伴们</h2>
+          <p id="hero-subtitle">感谢你赐予我前进的力量。每一份支持，都会用于博客、项目与产品的持续迭代。</p>
+        </section>
+
+        <!-- 渠道卡片（微信 / 支付宝二维码 + Ko-fi） -->
+        <div class="channels" id="channels"></div>
+
+        <!-- 排序区 -->
+        <div class="records-bar">
+          <div class="sort-area">
+            <span class="sort-label">排序方式</span>
+            <div class="sort-group">
+              <button class="sort-btn active" data-sort="date">按日期</button>
+              <button class="sort-btn" data-sort="amount">按金额</button>
+            </div>
+          </div>
+          <p class="thanks" id="thanks-line"></p>
+        </div>
+
+        <!-- 记录表格 -->
+        <div class="records-card">
+          <table class="records-table">
+            <thead>
+              <tr>
+                <th>昵称</th>
+                <th class="amt">金额</th>
+                <th class="time">时间</th>
+              </tr>
+            </thead>
+            <tbody id="records-body"></tbody>
+          </table>
+        </div>
+
+        <!-- 分页 -->
+        <div class="pager" id="pager"></div>
+
+        <!-- 规则 -->
+        <div class="rules" id="rules"></div>
+      </div>
+
+      <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
+    </div>
+
+    <aside class="sidebar-area" style="display:none">
+      <div class="sidebar-title">文章目录</div>
+      <nav class="toc-nav"></nav>
+    </aside>
+  </div>
+
+  <!-- 全屏预览二维码 -->
+  <div class="fullscreen-modal-overlay" id="qr-fullscreen">
+    <img class="fullscreen-modal-img" id="qr-fullscreen-img" alt="" />
+  </div>
+
+  <script src="src/components/loading/index.js"></script>
+  <script src="src/components/banner/index.js"></script>
+  <script src="src/components/navigation/index.js"></script>
+  <script src="src/components/scroll/index.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      const DATA_URL = '/src/template/reward/data.json';
+      const CURRENCY_SYMBOL = { CNY: '', USD: '$', EUR: '€', GBP: '£' };
+      // 金额分级阈值（复刻 zhheo：大额红+浅粉底、中等橙+浅黄底、其余黑+白底）
+      const DEFAULT_RED = 50;
+      const DEFAULT_ORANGE = 20;
+      const PAGE_SIZE = 10;
+
+      const fullscreenEl = document.getElementById('qr-fullscreen');
+      const fullscreenImg = document.getElementById('qr-fullscreen-img');
+      fullscreenEl.addEventListener('click', function (e) {
+        if (e.target === fullscreenEl || e.target === fullscreenImg) {
+          fullscreenEl.classList.remove('show');
+          document.body.style.overflow = '';
+        }
+      });
+
+      function openFullscreen(src, title) {
+        fullscreenImg.src = src;
+        fullscreenImg.alt = title || '';
+        fullscreenEl.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function escapeHtml(str) {
+        return String(str == null ? '' : str)
+          .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      }
+
+      // 渠道图标：微信 / 支付宝（remixicon 风格，无方形底）
+      const CHANNEL_ICON = {
+        wechat: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.271 14.669c-.318.162-.707.043-.88-.269l-.043-.095-1.818-3.998a.395.395 0 0 1 .334-.472.39.39 0 0 1 .265.066l2.181 1.526a.718.718 0 0 0 .546.168L20.176 7.03a8.964 8.964 0 0 0-8.17-3.53c-5.526 0-10.005 3.73-10.005 8.37a7.8 7.8 0 0 0 3.46 6.296.784.784 0 0 1 .437.727l-.451 1.7a.295.295 0 0 0 .434.335l2.18-1.265a.725.725 0 0 1 .823-.153A8.85 8.85 0 0 0 12.004 19.87c5.526 0 10-3.73 10-8.373 0-.9-.16-1.79-.462-2.65l-12.27 6.82Z"/></svg>',
+        alipay: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.422 15.358c-3.83-1.153-6.055-1.84-6.678-2.062.568-.976 1.024-2.096 1.32-3.32h-3.264V8.872h4V8.192h-4V6.344h-1.536c-.28 0-.312.248-.312.248v1.6h-3.752v.68h3.752v1.104H7.88v.616h6.224a11.2 11.2 0 0 1-.888 2.176c-1.408-.464-2.192-.784-3.912-.944-3.256-.312-4.008 1.48-4.128 2.576-.176 1.672 1.304 3.032 3.512 3.032 2.208 0 3.68-1.024 5.08-2.72 1.167.558 3.338 1.525 6.514 2.902A9.98 9.98 0 0 1 12 22 10 10 0 1 1 12 2a10 10 0 0 1 9.422 13.358Zm-12.99 1.01c-2.336 0-2.704-1.48-2.584-2.096.12-.616.8-1.416 2.104-1.416 1.496 0 2.832.384 4.44 1.16-1.136 1.48-2.52 2.352-3.96 2.352Z"/></svg>',
+        kofi: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 22a1 1 0 0 1-1-1v-6a1 1 0 0 0-1-1H6.5a4.5 4.5 0 0 1-.7-8.95A5.5 5.5 0 0 1 16 4.8a4.5 4.5 0 0 1 2 8.47c-.3.15-.6.23-.9.23H14a1 1 0 0 0-1 1v6a1 1 0 0 1-1 1z"/></svg>'
+      };
+
+      function renderHero(hero) {
+        if (!hero) return;
+        const mascot = document.getElementById('hero-mascot');
+        const title = document.getElementById('hero-title');
+        const sub = document.getElementById('hero-subtitle');
+        if (hero.mascot) mascot.src = hero.mascot;
+        mascot.onerror = function () { mascot.style.display = 'none'; };
+        if (hero.title) title.textContent = hero.title;
+        if (hero.subtitle) sub.textContent = hero.subtitle;
+      }
+
+      function renderChannels(channels) {
+        const wrap = document.getElementById('channels');
+        if (!Array.isArray(channels)) return;
+        const frag = document.createDocumentFragment();
+        channels.forEach(function (c) {
+          const card = document.createElement('div');
+          card.className = 'channel-card';
+          let inner;
+          if (c.type === 'qr') {
+            inner =
+              '<a class="channel-qr-link" href="javascript:void(0)" data-full="' + escapeHtml(c.src) + '">' +
+              '<img class="channel-qr" src="' + escapeHtml(c.src) + '" alt="' + escapeHtml(c.title) + '" loading="lazy" />' +
+              '</a>' +
+              '<div class="channel-label ' + escapeHtml(c.id) + '">' + (CHANNEL_ICON[c.id] || '') + '<span>' + escapeHtml(c.label || '') + '</span></div>';
+          } else {
+            // link（Ko-fi）：布局与二维码卡一致 —— 上面 160×160 方形按钮（仅大图标），下面文字说明
+            inner =
+              '<a class="channel-btn" href="' + escapeHtml(c.url) + '" target="_blank" rel="noopener noreferrer">' +
+              '<img class="channel-btn-icon" src="/src/images/reward/kofi.webp" alt="Ko-fi" />' +
+              '</a>' +
+              '<div class="channel-title">' + escapeHtml(c.title || '') + '</div>' +
+              '<div class="channel-sub">' + escapeHtml(c.subtitle || '') + '</div>';
+          }
+          card.innerHTML = inner;
+          frag.appendChild(card);
+        });
+        wrap.appendChild(frag);
+
+        // 二维码点击全屏预览
+        wrap.querySelectorAll('.channel-qr-link').forEach(function (link) {
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const img = link.querySelector('.channel-qr');
+            openFullscreen(img.src, img.alt);
+          });
+        });
+      }
+
+      function formatAmount(amount, currency) {
+        const n = Number(amount);
+        if (currency === 'CNY') return n + '元';
+        const sym = CURRENCY_SYMBOL[currency] || currency + ' ';
+        return sym + n;
+      }
+
+      // 时间：今年显示 MM-DD，跨年显示 YYYY-MM-DD（复刻 zhheo）
+      function formatTime(time) {
+        const t = String(time || '');
+        const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(t);
+        if (!m) return t;
+        const now = new Date().getFullYear();
+        if (Number(m[1]) === now) return m[2] + '-' + m[3];
+        return t;
+      }
+
+      // 金额分级：返回 tier class（red / orange / ''）
+      function tierFor(amount, red, orange) {
+        if (Number(amount) >= red) return 'tier-red';
+        if (Number(amount) >= orange) return 'tier-orange';
+        return '';
+      }
+
+      function renderRecords(records, sortKey, highlight, page, red, orange) {
+        const body = document.getElementById('records-body');
+        const pager = document.getElementById('pager');
+        const list = Array.isArray(records) ? records.slice() : [];
+        list.sort(function (a, b) {
+          if (sortKey === 'amount') return (b.amount - a.amount);
+          return (b.time || '').localeCompare(a.time || '');
+        });
+
+        const totalPages = Math.max(1, Math.ceil(list.length / PAGE_SIZE));
+        const cur = Math.min(page, totalPages);
+        const start = (cur - 1) * PAGE_SIZE;
+        const pageList = list.slice(start, start + PAGE_SIZE);
+
+        body.innerHTML = '';
+        if (pageList.length === 0) {
+          body.innerHTML = '<tr><td colspan="3" class="records-empty">暂无记录，成为第一个支持者吧</td></tr>';
+        } else {
+          const frag = document.createDocumentFragment();
+          pageList.forEach(function (r) {
+            const tr = document.createElement('tr');
+            const tier = tierFor(r.amount, red, orange);
+            if (tier) tr.className = tier;
+            const tdName = document.createElement('td');
+            tdName.className = 'name';
+            tdName.textContent = r.name || '匿名';
+            tdName.title = r.name || '匿名';
+            const tdAmt = document.createElement('td');
+            tdAmt.className = 'amt';
+            tdAmt.textContent = formatAmount(r.amount, r.currency);
+            const tdTime = document.createElement('td');
+            tdTime.className = 'time';
+            tdTime.textContent = formatTime(r.time);
+            tr.appendChild(tdName);
+            tr.appendChild(tdAmt);
+            tr.appendChild(tdTime);
+            frag.appendChild(tr);
+          });
+          body.appendChild(frag);
+        }
+
+        // 分页：首页 / 上一页 / 第N页 / 共N页 / 下一页 / 尾页
+        pager.innerHTML = '';
+        const mk = function (label, disabled, go) {
+          const b = document.createElement('button');
+          b.textContent = label;
+          b.disabled = disabled;
+          b.addEventListener('click', go);
+          return b;
+        };
+        const pageGo = function (p) {
+          if (p < 1 || p > totalPages) return;
+          renderRecords(records, sortKey, highlight, p, red, orange);
+        };
+        pager.appendChild(mk('首页', cur === 1, function () { pageGo(1); }));
+        pager.appendChild(mk('上一页', cur === 1, function () { pageGo(cur - 1); }));
+        const info = document.createElement('span');
+        info.className = 'pager-info';
+        info.textContent = '第' + cur + '页 / 共' + totalPages + '页';
+        pager.appendChild(info);
+        pager.appendChild(mk('下一页', cur === totalPages, function () { pageGo(cur + 1); }));
+        pager.appendChild(mk('尾页', cur === totalPages, function () { pageGo(totalPages); }));
+      }
+
+      function renderRules(rules) {
+        const el = document.getElementById('rules');
+        if (!rules) return;
+        const parts = [];
+        if (rules.nickname) parts.push('<p>' + escapeHtml(rules.nickname) + '</p>');
+        if (rules.threshold) parts.push('<p>' + escapeHtml(rules.threshold) + '</p>');
+        if (rules.update) parts.push('<p>' + escapeHtml(rules.update) + '</p>');
+        el.innerHTML = parts.join('');
+      }
+
+      fetch(DATA_URL)
+        .then(function (res) { if (!res.ok) throw new Error('data.json ' + res.status); return res.json(); })
+        .then(function (data) {
+          renderHero(data.hero);
+          renderChannels(data.channels);
+
+          // 金额分级阈值：优先取 data.rules 配置，否则用默认
+          const rules = data.rules || {};
+          const red = rules.red != null ? Number(rules.red) : DEFAULT_RED;
+          const orange = rules.orange != null ? Number(rules.orange) : DEFAULT_ORANGE;
+
+          if (rules.dedication) {
+            document.getElementById('thanks-line').textContent = rules.dedication;
+          }
+
+          renderRecords(data.records || [], 'date', rules.highlight, 1, red, orange);
+          renderRules(rules);
+
+          const buttons = document.querySelectorAll('.sort-btn');
+          buttons.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              buttons.forEach(function (b) { b.classList.remove('active'); });
+              btn.classList.add('active');
+              renderRecords(data.records || [], btn.getAttribute('data-sort'), rules.highlight, 1, red, orange);
+            });
+          });
+        })
+        .catch(function (err) {
+          console.error('赞赏数据加载失败：', err);
+          document.getElementById('records-body').innerHTML =
+            '<tr><td colspan="3" class="records-empty">记录加载失败</td></tr>';
+        });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      new Image().src = 'https://whjin.goatcounter.com/count?p=' + encodeURIComponent(location.pathname + location.search);
+    })();
+  </script>
+  <!-- Cloudflare Web Analytics (本地跳过，线上加载) -->
+  <script>
+    (function () {
+      if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) return;
+      var s = document.createElement('script');
+      s.type = 'module';
+      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      s.setAttribute('data-cf-beacon', '{"token": "5d0359eb0b054372bc2d153bab40d1f6"}');
+      document.head.appendChild(s);
+    })();
+  </script>
+  <script src="src/components/cookie-consent/index.js"></script>
+</body>
+
+</html>
