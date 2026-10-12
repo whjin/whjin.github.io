@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/image-viewer/index.css" />
   <link rel="stylesheet" href="/src/components/loading/index.css" />
   <link rel="stylesheet" href="/src/components/navigation/index.css" />
   <link rel="stylesheet" href="/src/components/banner/index.css" />
@@ -53,12 +54,11 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
-<body>
+<body data-reward="true">
   <div class="layout-container">
     <div class="nav-container"></div>
     <div class="content-area">
-      <div id="markdown-content" class="markdown-content viewer"></div>
-      <noscript><div class="markdown-content viewer" style="padding:1em"><blockquote>
+      <div id="markdown-content" class="markdown-content viewer" data-reward="true"><blockquote>
 <p><strong>AI的最大价值不是内容生产，而是内容生产+自动化</strong><br><strong>第二次API开发浪潮正在到来</strong></p>
 </blockquote>
 <p><strong>CSS原生能力</strong></p>
@@ -106,7 +106,7 @@
 <li>图形与可视化专家：精通 <code>WebGL</code> 、<code>Canvas</code> 、开发复杂的3D应用、游戏或大数据可视化系统</li>
 <li>跨栈与新技术探索：深入Node.js做全栈开发，或探索 <code>WebAssembly</code> 、<code>PWA</code> 、<code>WebGPU</code>等前沿技术，开辟新的可能性</li>
 </ul>
-</div></noscript>
+</div>
       <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
       <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
            data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
@@ -123,8 +123,10 @@
   <script src="/src/js/marked.min.js"></script>
   <script src="/src/js/marked-highlight.min.js"></script>
   <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/image-viewer/index.js"></script>
   <script src="/src/components/scroll/index.js"></script>
   <script src="/src/components/cookie-consent/index.js"></script>
+  <script src="/src/components/reward-tip/index.js"></script><script>(function(){var mc=document.getElementById('markdown-content');if(window.RewardTip&&mc)window.RewardTip.renderInto(mc);})();</script>
   <!-- Cloudflare Web Analytics (本地跳过，线上加载) -->
   <script>
     (function () {
@@ -183,13 +185,16 @@
   </script>
   <script>
     (function () {
-      // 运行时从相邻 .md 渲染：md 改动后刷新即更新；保留预渲染正文作为 no-JS / 爬虫回退
-      var mdUrl = '../%E6%96%B0%E8%B6%8B%E5%8A%BF.md';
+      // 正文已静态内联（利于爬虫收录），此处仅做增强：目录、代码高亮、外链新窗口、广告填充。
       function finish() {
         try {
           if (typeof generateTOC === 'function') generateTOC();
-          // markedHighlight 已在 handler 内完成代码高亮，此处不再重复 hljs.highlightElement，
-          // 否则 highlight.js 会把已高亮的 <span> 误判为未转义 HTML 而触发安全告警。
+          // 静态正文代码块尚未高亮，用 hljs 补充高亮（此时不存在重复高亮问题）
+          if (typeof hljs !== 'undefined') {
+            document.querySelectorAll('#markdown-content pre code').forEach(function (el) {
+              try { hljs.highlightElement(el); } catch (e) {}
+            });
+          }
           document.querySelectorAll('#markdown-content a').forEach(function (a) {
             a.setAttribute('target', '_blank');
             a.setAttribute('rel', 'noopener noreferrer');
@@ -198,13 +203,7 @@
         if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
         if (typeof hideLoading === 'function') hideLoading();
       }
-      try {
-        if (typeof handler === 'function') {
-          handler('markdown-content', mdUrl, finish);
-        } else {
-          finish();
-        }
-      } catch (e) { finish(); }
+      finish();
     })();
   </script>
 </body>

@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/image-viewer/index.css" />
   <link rel="stylesheet" href="/src/components/loading/index.css" />
   <link rel="stylesheet" href="/src/components/navigation/index.css" />
   <link rel="stylesheet" href="/src/components/banner/index.css" />
@@ -53,12 +54,148 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
-<body>
+<body data-reward="true">
   <div class="layout-container">
     <div class="nav-container"></div>
     <div class="content-area">
-      <div id="markdown-content" class="markdown-content viewer"></div>
-      <noscript><div class="markdown-content viewer" style="padding:1em"></div></noscript>
+      <div id="markdown-content" class="markdown-content viewer" data-reward="true"><h1>Web GIS 前端开发实践</h1>
+<h2>什么是 Web GIS</h2>
+<p>Web GIS 是指在浏览器端运行的地理信息系统，它让用户无需安装桌面软件，即可在地图上完成数据查看、查询、分析与可视化。随着前端性能与三维能力的提升，Web GIS 已经从简单的&quot;在线地图&quot;发展为企业数字化、城市治理、物流调度等业务的核心载体。</p>
+<p>一个典型的 Web GIS 应用由三部分组成：</p>
+<ul>
+<li><strong>地图底图</strong>：全球/区域的影像、矢量或地形底图。</li>
+<li><strong>业务图层</strong>：叠加在底图上的业务数据（设备、人员、事件、区域等）。</li>
+<li><strong>交互与分析</strong>：缩放、标注、查询、测距、热力等能力。</li>
+</ul>
+<h2>主流 Web 地图框架</h2>
+<p>根据需求选择合适的框架是项目成功的一半：</p>
+<table>
+<thead>
+<tr>
+<th>框架</th>
+<th>特点</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Leaflet</td>
+<td>轻量、插件生态丰富、上手快</td>
+<td>二维 Web GIS、快速原型</td>
+</tr>
+<tr>
+<td>OpenLayers</td>
+<td>功能全面、支持多种数据源与投影</td>
+<td>需要复杂交互与格式支持的项目</td>
+</tr>
+<tr>
+<td>MapLibre GL</td>
+<td>基于 WebGL 的矢量渲染、样式强大</td>
+<td>高性能矢量地图、自定义样式</td>
+</tr>
+<tr>
+<td>Cesium</td>
+<td>真三维、支持 3D Tiles</td>
+<td>三维地球、数字孪生</td>
+</tr>
+</tbody></table>
+<p>对于绝大多数二维业务场景，MapLibre GL 与 Leaflet 是性价比最高的选择；需要三维能力时再引入 Cesium。</p>
+<h2>数据源：瓦片与矢量</h2>
+<p>地图数据主要分为瓦片与矢量两大类。</p>
+<p><strong>栅格瓦片</strong>（Raster Tile）：按金字塔等级预渲染成图片，如 <code>png</code>/<code>jpg</code>，通过 <code>xyz</code> 规则或 <code>tms</code> 规则请求。优点是兼容性好，缺点是体积大、样式不可变。</p>
+<pre><code class="language-javascript">// MapLibre GL 加载栅格瓦片源
+map.addSource(&#39;raster&#39;, {
+  type: &#39;raster&#39;,
+  tiles: [&#39;https://tile.example.com/{z}/{x}/{y}.png&#39;],
+  tileSize: 256,
+});
+</code></pre>
+<p><strong>矢量瓦片</strong>（Vector Tile）：传输几何与属性数据，由客户端实时渲染。体积小、样式可动态切换，是现代地图的主流。</p>
+<pre><code class="language-javascript">// 加载矢量瓦片并配置样式
+map.addSource(&#39;poi&#39;, {
+  type: &#39;vector&#39;,
+  tiles: [&#39;https://vector.example.com/{z}/{x}/{y}.pbf&#39;],
+});
+map.addLayer({
+  id: &#39;poi-layer&#39;,
+  type: &#39;circle&#39;,
+  source: &#39;poi&#39;,
+  &#39;source-layer&#39;: &#39;poi&#39;,
+  paint: { &#39;circle-radius&#39;: 6, &#39;circle-color&#39;: &#39;#ff6600&#39; },
+});
+</code></pre>
+<h2>坐标系与投影</h2>
+<p>Web 地图中两个最常用的坐标系：</p>
+<ul>
+<li><strong>WGS84</strong>：经纬度坐标（<code>lon, lat</code>），GPS 与大多数 API 的默认坐标。</li>
+<li><strong>Web Mercator（EPSG:3857）</strong>：瓦片地图的投影坐标，全球以米为单位。</li>
+</ul>
+<p>前端框架通常自动处理投影转换，但在接入外部数据时需要留意坐标系是否一致：</p>
+<pre><code class="language-javascript">// proj4 自定义投影转换示例
+const transformed = proj4(&#39;EPSG:4326&#39;, &#39;EPSG:3857&#39;, [116.397, 39.909]);
+</code></pre>
+<ul>
+<li>经纬度顺序务必统一，避免 <code>[lat, lon]</code> 与 <code>[lon, lat]</code> 混淆。</li>
+<li>国内部分服务使用 <code>GCJ-02</code> 加密坐标，与 WGS84 存在偏移，需要转换后才能正确叠加。</li>
+</ul>
+<h2>图层叠加与样式</h2>
+<p>图层按类型分为点、线、面、符号、热力等，可叠加多个图层表达业务语义。</p>
+<pre><code class="language-javascript">// GeoJSON 数据源 + 面图层
+map.addSource(&#39;region&#39;, { type: &#39;geojson&#39;, data: regionGeoJson });
+map.addLayer({
+  id: &#39;region-fill&#39;,
+  type: &#39;fill&#39;,
+  source: &#39;region&#39;,
+  paint: {
+    &#39;fill-color&#39;: [&#39;case&#39;, [&#39;get&#39;, &#39;type&#39;], &#39;#3b82f6&#39;, &#39;#f59e0b&#39;],
+    &#39;fill-opacity&#39;: 0.5,
+  },
+});
+</code></pre>
+<p>图层顺序影响渲染层级，可通过 <code>map.moveLayer</code> 调整；需要点击交互时，在 <code>layer.on(&#39;click&#39;)</code> 中绑定事件。</p>
+<h2>要素查询与交互</h2>
+<p>在地图上做查询与点击是高价值功能。以 MapLibre GL 为例：</p>
+<pre><code class="language-javascript">// 点击查询图层上的要素
+map.on(&#39;click&#39;, &#39;poi-layer&#39;, (e) =&gt; {
+  const feature = e.features[0];
+  console.log(feature.properties);
+  // 弹出信息窗口
+});
+
+// 按属性过滤显示
+map.setFilter(&#39;poi-layer&#39;, [&#39;==&#39;, [&#39;get&#39;, &#39;category&#39;], &#39;school&#39;]);
+</code></pre>
+<p>空间查询（点是否在面内、缓冲区、最近邻）通常由后端空间数据库（PostGIS）完成，前端只负责展示结果。</p>
+<h2>空间分析与热力可视化</h2>
+<p>常见的前端空间可视化包括：</p>
+<ul>
+<li><strong>热力图</strong>：用 <code>heatmap</code> 类型表达密度分布。</li>
+<li><strong>聚合点</strong>：点数据多时用 <code>cluster</code> 聚合，避免卡顿。</li>
+<li><strong>等值线</strong>：用于高程、污染、气象等连续场表达。</li>
+</ul>
+<pre><code class="language-javascript">map.addLayer({
+  id: &#39;heat&#39;,
+  type: &#39;heatmap&#39;,
+  source: &#39;points&#39;,
+  paint: {
+    &#39;heatmap-weight&#39;: 1,
+    &#39;heatmap-intensity&#39;: [&#39;interpolate&#39;, [&#39;linear&#39;], [&#39;zoom&#39;], 0, 1, 15, 3],
+    &#39;heatmap-color&#39;: [
+      &#39;interpolate&#39;, [&#39;linear&#39;], [&#39;heatmap-density&#39;],
+      0, &#39;rgba(33,102,172,0)&#39;, 0.5, &#39;rgba(253,219,199,0.8)&#39;, 1, &#39;rgba(178,24,43,0.9)&#39;,
+    ],
+  },
+});
+</code></pre>
+<h2>工程实践要点</h2>
+<ol>
+<li><strong>性能</strong>：大数据量用矢量瓦片 + 聚合 + 分级加载，避免一次性渲染过多 DOM 或 canvas 对象。</li>
+<li><strong>体积</strong>：按需引入框架模块，Webpack/Vite 做 Tree Shaking，减小首屏体积。</li>
+<li><strong>异常处理</strong>：瓦片/接口失败时提供降级底图与重试机制。</li>
+<li><strong>移动端适配</strong>：注意触摸手势、屏幕密度（DPR）与横竖屏切换。</li>
+<li><strong>安全</strong>：对外部数据源做校验，防止 XSS 与恶意样式注入。</li>
+</ol>
+<p>Web GIS 将地理能力无缝融入前端应用，掌握框架、数据与坐标体系后，即可构建稳定、可交互、高性能的地图业务系统。</p>
+</div>
       <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
       <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
            data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
@@ -75,8 +212,10 @@
   <script src="/src/js/marked.min.js"></script>
   <script src="/src/js/marked-highlight.min.js"></script>
   <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/image-viewer/index.js"></script>
   <script src="/src/components/scroll/index.js"></script>
   <script src="/src/components/cookie-consent/index.js"></script>
+  <script src="/src/components/reward-tip/index.js"></script><script>(function(){var mc=document.getElementById('markdown-content');if(window.RewardTip&&mc)window.RewardTip.renderInto(mc);})();</script>
   <!-- Cloudflare Web Analytics (本地跳过，线上加载) -->
   <script>
     (function () {
@@ -135,13 +274,16 @@
   </script>
   <script>
     (function () {
-      // 运行时从相邻 .md 渲染：md 改动后刷新即更新；保留预渲染正文作为 no-JS / 爬虫回退
-      var mdUrl = '../Web%20GIS%E6%96%87%E6%A1%A3.md';
+      // 正文已静态内联（利于爬虫收录），此处仅做增强：目录、代码高亮、外链新窗口、广告填充。
       function finish() {
         try {
           if (typeof generateTOC === 'function') generateTOC();
-          // markedHighlight 已在 handler 内完成代码高亮，此处不再重复 hljs.highlightElement，
-          // 否则 highlight.js 会把已高亮的 <span> 误判为未转义 HTML 而触发安全告警。
+          // 静态正文代码块尚未高亮，用 hljs 补充高亮（此时不存在重复高亮问题）
+          if (typeof hljs !== 'undefined') {
+            document.querySelectorAll('#markdown-content pre code').forEach(function (el) {
+              try { hljs.highlightElement(el); } catch (e) {}
+            });
+          }
           document.querySelectorAll('#markdown-content a').forEach(function (a) {
             a.setAttribute('target', '_blank');
             a.setAttribute('rel', 'noopener noreferrer');
@@ -150,13 +292,7 @@
         if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
         if (typeof hideLoading === 'function') hideLoading();
       }
-      try {
-        if (typeof handler === 'function') {
-          handler('markdown-content', mdUrl, finish);
-        } else {
-          finish();
-        }
-      } catch (e) { finish(); }
+      finish();
     })();
   </script>
 </body>

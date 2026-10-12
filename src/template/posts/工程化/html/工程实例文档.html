@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/image-viewer/index.css" />
   <link rel="stylesheet" href="/src/components/loading/index.css" />
   <link rel="stylesheet" href="/src/components/navigation/index.css" />
   <link rel="stylesheet" href="/src/components/banner/index.css" />
@@ -53,12 +54,11 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
-<body>
+<body data-reward="true">
   <div class="layout-container">
     <div class="nav-container"></div>
     <div class="content-area">
-      <div id="markdown-content" class="markdown-content viewer"></div>
-      <noscript><div class="markdown-content viewer" style="padding:1em"><h2>接口设计</h2>
+      <div id="markdown-content" class="markdown-content viewer" data-reward="true"><h2>接口设计</h2>
 <ol>
 <li><strong>整体架构</strong><br>采用 <strong>SDK适配层</strong> + <strong>业务服务层</strong> 的两层结构</li>
 </ol>
@@ -122,7 +122,7 @@
 </tr>
 </tbody></table>
 <!-- prettier-ignore-end -->
-</div></noscript>
+</div>
       <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
       <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
            data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
@@ -139,8 +139,10 @@
   <script src="/src/js/marked.min.js"></script>
   <script src="/src/js/marked-highlight.min.js"></script>
   <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/image-viewer/index.js"></script>
   <script src="/src/components/scroll/index.js"></script>
   <script src="/src/components/cookie-consent/index.js"></script>
+  <script src="/src/components/reward-tip/index.js"></script><script>(function(){var mc=document.getElementById('markdown-content');if(window.RewardTip&&mc)window.RewardTip.renderInto(mc);})();</script>
   <!-- Cloudflare Web Analytics (本地跳过，线上加载) -->
   <script>
     (function () {
@@ -199,13 +201,16 @@
   </script>
   <script>
     (function () {
-      // 运行时从相邻 .md 渲染：md 改动后刷新即更新；保留预渲染正文作为 no-JS / 爬虫回退
-      var mdUrl = '../%E5%B7%A5%E7%A8%8B%E5%AE%9E%E4%BE%8B%E6%96%87%E6%A1%A3.md';
+      // 正文已静态内联（利于爬虫收录），此处仅做增强：目录、代码高亮、外链新窗口、广告填充。
       function finish() {
         try {
           if (typeof generateTOC === 'function') generateTOC();
-          // markedHighlight 已在 handler 内完成代码高亮，此处不再重复 hljs.highlightElement，
-          // 否则 highlight.js 会把已高亮的 <span> 误判为未转义 HTML 而触发安全告警。
+          // 静态正文代码块尚未高亮，用 hljs 补充高亮（此时不存在重复高亮问题）
+          if (typeof hljs !== 'undefined') {
+            document.querySelectorAll('#markdown-content pre code').forEach(function (el) {
+              try { hljs.highlightElement(el); } catch (e) {}
+            });
+          }
           document.querySelectorAll('#markdown-content a').forEach(function (a) {
             a.setAttribute('target', '_blank');
             a.setAttribute('rel', 'noopener noreferrer');
@@ -214,13 +219,7 @@
         if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
         if (typeof hideLoading === 'function') hideLoading();
       }
-      try {
-        if (typeof handler === 'function') {
-          handler('markdown-content', mdUrl, finish);
-        } else {
-          finish();
-        }
-      } catch (e) { finish(); }
+      finish();
     })();
   </script>
 </body>

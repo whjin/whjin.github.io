@@ -35,7 +35,16 @@ function parseFrontMatter(content) {
         if (items.length) { front[lastKey] = items; i = j; continue; }
         front[lastKey] = '';
       } else {
-        front[lastKey] = val.replace(/^["']|["']$/g, '');
+        // 支持单行数组：['a', 'b'] 或 ["a","b"] → 解析为数组（category/tags 用 [] 包裹写法）
+        const arrMatch = /^\[(.*)\]$/.exec(val);
+        if (arrMatch) {
+          front[lastKey] = arrMatch[1]
+            .split(',')
+            .map((x) => x.trim().replace(/^["']|["']$/g, ''))
+            .filter((x) => x !== '');
+        } else {
+          front[lastKey] = val.replace(/^["']|["']$/g, '');
+        }
       }
       i++;
     } else if (/^\s*-\s+/.test(lines[i]) && lastKey) {
@@ -164,19 +173,23 @@ function buildFeed() {
     const item = {
       title: (front && front.title) || fileBase,
       url: mdUrl(folder, fileBase),
-      category: (front && front.category) || folder,
+      category: (Array.isArray(front && front.category) ? front.category[0] : (front && front.category)) || folder,
       date: (front && front.date) || `${mt.getFullYear()}-${String(mt.getMonth() + 1).padStart(2, '0')}-${String(mt.getDate()).padStart(2, '0')}`,
       readTime: Math.max(1, Math.round(bodyChars / 280)),
       description: desc,
     };
-    if (front && Array.isArray(front.tags) && front.tags.length) item.tags = front.tags;
+    const fmTags = Array.isArray(front && front.tag) ? front.tag : (front && Array.isArray(front.tags) ? front.tags : null);
+    if (fmTags && fmTags.length) item.tags = fmTags;
     if (front && front.cover) item.cover = front.cover;
     if (front && (front.sticky || front.featured === 'true' || front.featured === true)) item.featured = true;
+    // top：置顶最高优先级，专门用于将某篇文章置顶
+    if (front && (front.top === 'true' || front.top === true)) item.top = true;
     // reward：文章页底部赞赏卡片开关，默认显示；仅 reward:false 时隐藏
     item.reward = !(front && (front.reward === 'false' || front.reward === false));
     items.push(item);
   }
-  items.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+  // 排序：top 置顶最高优先级，其次按日期倒序
+  items.sort((a, b) => (Number(!!b.top) - Number(!!a.top)) || (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
   return items;
 }
 
@@ -185,15 +198,17 @@ function normalizeLinkItem(it, cardTitle) {
   const md = resolveMd(it.url);
   const out = { title: it.title, url: it.url };
   if (md) {
-    out.category = (md.front && md.front.category) || cardTitle;
+    out.category = (Array.isArray(md.front && md.front.category) ? md.front.category[0] : (md.front && md.front.category)) || cardTitle;
     if (md.front && md.front.date) out.date = md.front.date;
     out.readTime = Math.max(1, Math.round(md.body.replace(/\s/g, '').length / 280));
     out.description = descriptionFor(md);
     const fd = md.front && md.front.description ? String(md.front.description).trim() : '';
     if (fd.length < DESC_MIN && out.description) setMdDescription(md, out.description);
-    if (md.front && Array.isArray(md.front.tags) && md.front.tags.length) out.tags = md.front.tags;
+    const fmTags2 = Array.isArray(md.front && md.front.tag) ? md.front.tag : (md.front && Array.isArray(md.front.tags) ? md.front.tags : null);
+    if (fmTags2 && fmTags2.length) out.tags = fmTags2;
     if (md.front && md.front.cover) out.cover = md.front.cover;
     if (md.front && (md.front.sticky || md.front.featured === 'true' || md.front.featured === true)) out.featured = true;
+    if (md.front && (md.front.top === 'true' || md.front.top === true)) out.top = true;
     if (md.front && md.front.reward !== undefined) {
       out.reward = !(md.front.reward === 'false' || md.front.reward === false);
     }

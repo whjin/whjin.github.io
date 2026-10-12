@@ -82,6 +82,12 @@ function handler(targetId, filePath, callback) {
         htmlContent = marked.parse(stripFrontMatter(content));
       }
 
+      // 外链图片加 no-referrer：绕过图床防盗链（如语雀 cdn.nlark.com），请求不携带站点 Referer
+      htmlContent = htmlContent.replace(
+        /<img\b(?![^>]*\breferrerpolicy\s*=)(?=[^>]*\bsrc\s*=\s*["'](?:https?:)?\/\/)/g,
+        '<img referrerpolicy="no-referrer"'
+      );
+
       targetEl.innerHTML = htmlContent;
 
       const scripts = targetEl.querySelectorAll('script');

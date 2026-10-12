@@ -279,6 +279,7 @@
         "date": "2026-09-11",
         "readTime": 10,
         "description": "基本信息 学历：深圳大学-电子信息工程-全日制本科 邮箱: wuhuajin09@163.com GitHub: github.com/whjin 博客: wuhuajin.com 工作经历 广州市高科通信技术股份有限公司 全栈开发工程师 2020.06 - 2026.02 岗位定位：专注公安司法监所领域软硬件产品研发，负责前端架构迭代、Node.js服务开发、国产化适配及AI研发赋能，全程主导产品研发、迭代优化与政企项目落地交付。全程支撑政企项目招投标、落地终验，负责全国警博会技术展示保障，具备成熟的政企项目全流程交付经验。 - 核心参与20+省内外监所政企项目，完成10款安卓终端APP、5",
+        "reward": true,
         "marked": true
       },
       {
@@ -364,6 +365,51 @@
     "home": true,
     "tagName": "ol",
     "items": [
+      {
+        "title": "JavaScript正则表达式手册",
+        "url": "/src/template/posts/JavaScript/html/JavaScript正则表达式手册.html",
+        "category": "JavaScript",
+        "date": "2026-10-12 14:45:11",
+        "readTime": 17,
+        "description": "面向JavaScript开发者与初学者的正则表达式速查手册，系统整理正则引擎核心知识与高频用法。第一部分为表达式全集，详解 \\\\d、\\\\w、\\\\s、\\\\b 等元字符，以及 ^ $ * + ? 量词、字符类、分组捕获、非获取匹配、正向反向预查、转义与 Unicode 编码等全部语法，每条均配直观示例。第二部分为常用正则，涵盖用户名、密码、邮箱、URL、IP 地址、HTML 标签、代码注释剔除、汉字范围校验等可直接复用的表达式。全文以表格呈现、即查即用，是处理字符串校验、文本提取与数据清洗的随手参考手册。",
+        "tags": [
+          "javascript",
+          "正则表达式",
+          "正则表达式手册"
+        ],
+        "top": true,
+        "reward": true
+      },
+      {
+        "title": "JavaScript 思维导图合集：8 张图系统吃透核心知识点",
+        "url": "/src/template/posts/JavaScript/html/JavaScript 思维导图合集：8 张图系统吃透核心知识点.html",
+        "category": "JavaScript",
+        "date": "2026-10-12 01:27:12",
+        "readTime": 3,
+        "description": "javascript变量 2. javascript运算符 3. javascript数组 4. javascript流程语句 5. javascript字符串函数 6. javascript函数基础 7. javascript基础DOM操作 8. javascript正则表达式 [1]: https://www.yuque.com/docs/share/c79ad556-e3f9-427d-a8dc-e1d91dd4d68d? [2]: https://whjin.github.io/frontend-dev-doc/",
+        "top": true,
+        "reward": true
+      },
+      {
+        "title": "Git命令思维导图",
+        "url": "/src/template/posts/Git/html/Git命令思维导图.html",
+        "category": "Git",
+        "date": "2026-10-12 01:25:07",
+        "readTime": 2,
+        "description": "Git 提交规范思维导图，系统梳理团队协作中最实用的提交信息书写方法。规范化的提交信息（Conventional Commits）能让每次变更一目了然，帮助团队快速定位功能、修复与重构，并自动生成变更日志。图中整理了核心类型：feat 新增功能、fix 修复 Bug、docs 文档、refactor 重构、perf 性能优化、build 构建系统、ci 持续集成、chore 辅助工具、test 测试、style 格式调整，同时介绍 scope 作用域与 ! 破坏性变更标记，说明如何通过规范的 type、scope、description 结构让提交历史清晰可读。适合前端、后端与全栈工程师作为团队提交规范的速查参考，配合 Git 分支管理与代码评审，能显著提升多人协作的透明度与可维护性。",
+        "top": true,
+        "reward": true
+      },
+      {
+        "title": "Node.js 技术文档：npm 命令、文件操作与事件循环速查手册",
+        "url": "/src/template/posts/Node/html/Node.js 技术文档：npm 命令、文件操作与事件循环速查手册.html",
+        "category": "Node",
+        "date": "2026-10-12 00:57:02",
+        "readTime": 9,
+        "description": "面向 Node.js 开发者与初学者的核心速查文档，系统梳理日常最常用、最易遗忘的知识点。内容包括 npm 包管理的常用命令与全局路径配置；fs 文件模块的读写参数、flag 标志位及同步 API 的 try...catch 异常处理；stats 文件状态判断与 path 路径模块常用方法；HTTP 无连接无状态特性与 OSI 七层模型；并深入讲解 Node.js 事件循环（Event Loop）的运行机制。全文以表格速查为主，是开发时随手可查的参考手册，帮助你在写文件、装依赖、处理路径、排查网络问题时快速定位答案。",
+        "top": true,
+        "reward": true
+      },
       {
         "title": "Node.js进阶",
         "url": "/src/template/posts/Node/html/Node.js进阶.html",
@@ -518,8 +564,8 @@
         "url": "/src/template/posts/Vue/html/Vue文档.html",
         "category": "Vue",
         "date": "2026-09-11",
-        "readTime": 1,
-        "description": "Vue-Router路由 - route获取路由对象 $route.params - router调用路由方法 $router.push()",
+        "readTime": 11,
+        "description": "Vue 3 开发文档 Vue 是什么 Vue 是一套用于构建用户界面的渐进式框架。它的核心专注于视图层，易学易用，同时也能通过官方生态（Vue Router、Pinia）与工具链支持构建复杂的单页应用（SPA）。Vue 3 引入了组合式 API（Composition API）、更快的虚拟 DOM 与更好的 TypeScript 支持，是目前主流的前端框架之一。 组件基础 组件是 Vue 应用的基本单元，一个组件由模板、脚本与样式组成： 使用 <script setup 是 Vue 3 推荐的写法，代码更简洁，且自动获得更好的类型推导。 响应式原理 Vue 的响应式系统让数据变化自动驱动视图更",
         "reward": true
       },
       {
@@ -644,8 +690,8 @@
         "url": "/src/template/posts/文档/html/操作系统文档.html",
         "category": "文档",
         "date": "2026-09-11",
-        "readTime": 1,
-        "description": "跨进程通信 IPC - 管道 pipe：单向数据流，适合父子进程间传递数据 - 共享内存：多个进程映射同一块内存区域，速度快，需配合同步机制 - 消息队列：进程间以消息为单位，收发数据，解耦发送与接收 - Socket：可跨网络通信，支持本机与远程进程交互，后端服务器与前端服务端交互",
+        "readTime": 9,
+        "description": "操作系统跨进程通信（IPC） 进程与线程基础 在深入 IPC 之前，先厘清两个基础概念： - 进程：操作系统资源分配的基本单位，拥有独立的地址空间、文件描述符与资源。进程间默认是相互隔离的，一个进程无法直接访问另一个进程的内存。 - 线程：进程内部执行任务的基本单位，同一进程内的线程共享地址空间与资源，可以通过共享内存直接通信。 正是因为进程之间地址空间相互隔离，才需要一套\\\"跨进程通信\\\"的机制（IPC，Inter-Process Communication）来完成数据交换与协作。 为什么需要 IPC 在实际系统中，多个进程协作的场景非常普遍： - 后端服务拆分后，各进程需要传递任务与结果。 -",
         "reward": true
       },
       {
@@ -689,8 +735,8 @@
         "url": "/src/template/posts/生活/html/育儿经.html",
         "category": "生活",
         "date": "2026-09-11",
-        "readTime": 1,
-        "description": "懂比爱更重要 理解与尊重 - 观察、认知、理解并充分尊重，达到一种和谐的状态 - 保持耐心，站在孩子的视角看待问题，真诚互动 -",
+        "readTime": 6,
+        "description": "育儿经：懂比爱更重要 引言：从\\\"爱\\\"到\\\"懂\\\" 很多父母都觉得自己很爱孩子，愿意为孩子付出一切。但在陪伴孩子成长的过程中我逐渐发现，仅仅有爱是不够的，更重要的是\\\"懂\\\"。懂得孩子此刻的真实需求，懂得他行为背后的情绪，懂得他看世界的角度，才能真正滋养他的内心。 爱是本能，而\\\"懂\\\"是需要学习和练习的能力。 理解与尊重：育儿的底色 亲子关系中最珍贵的东西，是理解与尊重。当我们把孩子当作一个独立的、有自己感受和想法的人，而不是\\\"我们的附属品\\\"时，关系才会真正健康。 - 观察：不急于评判，先看孩子做了什么、为什么这么做。 - 认知：站在发展阶段的角度理解他的局限，比如 3 岁的孩子还不能完全控制情绪。 -",
         "reward": true
       },
       {
@@ -725,7 +771,7 @@
         "url": "/src/template/posts/GIS/html/Web GIS文档.html",
         "category": "GIS",
         "date": "2026-06-13",
-        "readTime": 1,
+        "readTime": 10,
         "description": "Web GIS 是在浏览器中运行的地理信息系统技术文档，聚焦前端如何加载、渲染与交互地图数据。文档涵盖常见 Web 地图框架的接入方式、瓦片与矢量数据源的组织、空间坐标系的转换、地图图层的叠加与样式配置，以及点、线、面等地理要素的查询与可视化。面向需要把地理空间能力集成到 Web 应用中的开发者，帮助理解从地图底图到业务图层再到空间分析的基本链路，并给出在真实项目里落地 Web GIS 功能时的常见做法与注意事项，适合前端、GIS 工程师与相关产品技术人员快速建立 Web GIS 开发的知识框架。",
         "reward": true
       },
@@ -734,7 +780,7 @@
         "url": "/src/template/posts/小程序/html/Taro小程序文档.html",
         "category": "小程序",
         "date": "2026-06-06",
-        "readTime": 1,
+        "readTime": 10,
         "description": "Taro 是一套以类 React / Vue 语法编写、可一次开发多端运行的小程序跨端框架，帮助开发者用一套代码同时维护微信、支付宝等多个小程序端。本文档围绕 Taro 项目的工程实践展开，涵盖项目初始化与目录结构、页面与组件的编写、状态管理方案的选型、请求与数据层的封装、多端条件编译、打包配置优化，以及发布到各平台小程序时的差异处理。适合希望提升小程序开发效率与复用度的前端开发者，按工程化的思路组织从建项目到上线的完整流程，并整理了组件复用、跨端兼容、性能优化等常见坑点与解决方案，方便快速上手并在真实项目中稳定落地。",
         "reward": true
       },
@@ -743,11 +789,11 @@
         "url": "/src/template/posts/GIS/html/Cesium文档.html",
         "category": "GIS",
         "date": "2026-05-05",
-        "readTime": 1,
+        "readTime": 13,
         "description": "Cesium 是一个用于构建三维地球与真实世界场景的开源地理空间引擎，可在浏览器中渲染高精度的地形、影像、矢量与三维模型，广泛应用于三维 GIS 可视化与数字孪生。本文档介绍 Cesium 的基础用法，包括场景与视口的初始化、地图底图与图层数据的加载、相机视角的控制、实体与图形的绘制、地形与影像服务的接入，以及性能优化与常见问题的排查。面向需要在 Web 端实现三维地球、智慧城市或空间展示应用的开发者，从入门到工程落地给出可复用的配置与代码思路，帮助快速掌握三维地理空间应用的开发方法与调试技巧。",
         "tags": [
-          "AI",
-          "学习路线"
+          "GIS",
+          "三维"
         ],
         "reward": true
       }

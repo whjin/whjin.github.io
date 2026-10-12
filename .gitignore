@@ -7,7 +7,17 @@ dist
 dist-ssr
 *.local
 .DS_Store
+.AppleDouble
+.LSOverride
 ._*
+__MACOSX
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
 *.log
 *.tsbuildinfo
 Thumbs.db

@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/image-viewer/index.css" />
   <link rel="stylesheet" href="/src/components/loading/index.css" />
   <link rel="stylesheet" href="/src/components/navigation/index.css" />
   <link rel="stylesheet" href="/src/components/banner/index.css" />
@@ -53,12 +54,153 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
-<body>
+<body data-reward="true">
   <div class="layout-container">
     <div class="nav-container"></div>
     <div class="content-area">
-      <div id="markdown-content" class="markdown-content viewer"></div>
-      <noscript><div class="markdown-content viewer" style="padding:1em"></div></noscript>
+      <div id="markdown-content" class="markdown-content viewer" data-reward="true"><h1>Cesium 三维地球引擎实战指南</h1>
+<h2>什么是 Cesium</h2>
+<p>Cesium 是一个基于 WebGL 的开源三维地球与地图引擎，能够在浏览器中直接渲染高精度的三维地球、地形、影像、矢量数据和三维模型。它被广泛用于智慧城市、数字孪生、航天可视化、安防应急、能源管网等行业场景。</p>
+<p>相比传统的二维地图库，Cesium 的核心优势在于：</p>
+<ul>
+<li><strong>真三维</strong>：支持全球范围内的连续缩放，从宏观地球到微观街景无缝过渡。</li>
+<li><strong>高性能</strong>：基于 WebGL 硬件加速，配合 <code>3D Tiles</code> 流式加载海量数据。</li>
+<li><strong>开源可定制</strong>：MIT 协议，社区活跃，官方文档完善，支持二次开发。</li>
+<li><strong>多数据格式</strong>：原生支持 GeoJSON、KML、CZML、glTF、3D Tiles、WMS、WMTS 等。</li>
+</ul>
+<h2>快速开始：场景初始化</h2>
+<p>Cesium 的入口是 <code>Viewer</code>，它创建了包含地球、相机、时间轴、图层的完整三维场景。一个最小的初始化如下：</p>
+<pre><code class="language-javascript">import { Viewer } from &#39;cesium&#39;;
+import &#39;cesium/Build/Cesium/Widgets/widgets.css&#39;;
+
+const viewer = new Viewer(&#39;cesiumContainer&#39;, {
+  baseLayerPicker: false,   // 关闭底图选择器
+  timeline: false,          // 关闭时间轴
+  animation: false,         // 关闭动画控件
+  geocoder: false,          // 关闭地理搜索
+  homeButton: false,
+  infoBox: false,           // 关闭信息框
+  selectionIndicator: false,
+  shouldAnimate: true,
+});
+</code></pre>
+<p>在实际项目中，通常会通过 <code>new Viewer</code> 传入的 <code>options</code> 关闭不需要的控件，以保持界面简洁、提升性能。</p>
+<p>如果只需要地球而不需要完整的 UI 控件，可以使用 <code>CesiumWidget</code>：</p>
+<pre><code class="language-javascript">import { CesiumWidget } from &#39;cesium&#39;;
+const widget = new CesiumWidget(&#39;cesiumContainer&#39;);
+</code></pre>
+<h2>加载地图底图与图层</h2>
+<p>Cesium 默认使用在线影像服务作为底图，也可以通过 <code>ImageryProvider</code> 接入自定义瓦片服务（如天地图、ArcGIS、高德、自己发布的 TMS/WMTS）。</p>
+<pre><code class="language-javascript">import { WebMapTileServiceImageryProvider, Ion } from &#39;cesium&#39;;
+
+// 使用天地图 WMTS 服务
+const provider = new WebMapTileServiceImageryProvider({
+  url: &#39;https://t0.tianditu.gov.cn/img_w/wmts&#39;,
+  layer: &#39;img&#39;,
+  style: &#39;default&#39;,
+  format: &#39;tiles&#39;,
+  tileMatrixSetID: &#39;w&#39;,
+  maximumLevel: 18,
+  credit: new Credit(&#39;天地图&#39;),
+});
+viewer.imageryLayers.addImageryProvider(provider);
+</code></pre>
+<p>图层可以动态添加、移除和调整透明度：</p>
+<pre><code class="language-javascript">const layer = viewer.imageryLayers.addImageryProvider(provider);
+layer.alpha = 0.6; // 设置透明度，便于叠加对比
+</code></pre>
+<h2>相机控制</h2>
+<p>相机是三维场景的&quot;眼睛&quot;，Cesium 提供了 <code>flyTo</code>、<code>setView</code>、<code>lookAt</code> 等方法来控制视角。</p>
+<pre><code class="language-javascript">import { Cartesian3, HeadingPitchRoll, Transforms } from &#39;cesium&#39;;
+
+// 飞到某个经纬度并设定高度
+viewer.camera.flyTo({
+  destination: Cartesian3.fromDegrees(116.397, 39.909, 5000),
+  orientation: {
+    heading: 0,
+    pitch: -Math.PI / 2, // 垂直向下
+    roll: 0,
+  },
+  duration: 3, // 飞行时长（秒）
+});
+
+// 围绕某个实体看向它
+const position = Cartesian3.fromDegrees(116.397, 39.909, 200);
+const hpr = new HeadingPitchRoll(0, -0.5, 0);
+viewer.camera.lookAt(position, new Cartesian3(100, 100, 100));
+</code></pre>
+<h2>实体与图形绘制</h2>
+<p><code>Entity</code> 是 Cesium 中描述业务对象的高层 API，适合绘制点、线、面、标签、模型等。</p>
+<pre><code class="language-javascript">import { Cartesian3, Color, HeightReference, VerticalOrigin } from &#39;cesium&#39;;
+
+// 一个带有标签的点
+viewer.entities.add({
+  position: Cartesian3.fromDegrees(116.397, 39.909, 0),
+  point: { pixelSize: 10, color: Color.RED },
+  label: {
+    text: &#39;天安门&#39;,
+    font: &#39;14px sans-serif&#39;,
+    verticalOrigin: VerticalOrigin.BOTTOM,
+    heightReference: HeightReference.CLAMP_TO_GROUND,
+  },
+});
+
+// 一个多边形区域
+viewer.entities.add({
+  polygon: {
+    hierarchy: Cartesian3.fromDegreesArray([
+      116.35, 39.88, 116.42, 39.88, 116.42, 39.94, 116.35, 39.94,
+    ]),
+    material: Color.fromCssColorString(&#39;rgba(0, 128, 255, 0.4)&#39;),
+  },
+});
+
+// 加载 glTF 三维模型
+viewer.entities.add({
+  position: Cartesian3.fromDegrees(116.397, 39.909, 10),
+  model: { uri: &#39;/models/building.glb&#39;, scale: 1.0 },
+});
+</code></pre>
+<p>对于海量建筑、倾斜摄影等数据，应使用 <code>Cesium3DTileset</code> 加载，而不是逐个 Entity，以保证性能。</p>
+<h2>地形与影像服务接入</h2>
+<p>Cesium 支持加载全球高精度地形，用于山体、高程的逼真显示。</p>
+<pre><code class="language-javascript">import { createWorldTerrainAsync } from &#39;cesium&#39;;
+
+// 接入全球地形
+const terrainProvider = await createWorldTerrainAsync();
+viewer.terrainProvider = terrainProvider;
+</code></pre>
+<p>接入地形后，配合 <code>HeightReference.CLAMP_TO_GROUND</code>，可以让标注、点、线贴合地表，形成真实的三维效果。</p>
+<h2>性能优化实践</h2>
+<p>三维场景对性能敏感，以下做法可以显著提升流畅度：</p>
+<ol>
+<li><strong>数据分级加载</strong>：使用 3D Tiles 的 LOD（细节层次），避免一次性加载全部数据。</li>
+<li><strong>控制绘制数量</strong>：Entity 数量较多时改用 <code>CustomDataSource</code> 或批量合批。</li>
+<li><strong>合理设置最大屏幕空间误差</strong>：<code>tileset.maximumScreenSpaceError</code> 越大，渲染精度越低、性能越好，按需权衡。</li>
+<li><strong>关闭不用的功能</strong>：关闭阴影、抗锯齿、日志记录等。</li>
+<li><strong>使用 <code>requestRenderMode</code></strong>：静态场景开启按需渲染，避免持续重绘消耗 GPU。</li>
+<li><strong>瓦片缓存与预取</strong>：根据相机位置预取周边瓦片，减少卡顿。</li>
+</ol>
+<pre><code class="language-javascript">viewer.scene.requestRenderMode = true;
+viewer.scene.maximumRenderTimeChange = Infinity;
+</code></pre>
+<h2>常见问题排查</h2>
+<ul>
+<li><strong>白屏</strong>：检查容器是否有明确高度（<code>#cesiumContainer { height: 100vh }</code>），并确认 WebGL 可用。</li>
+<li><strong>跨域加载失败</strong>：确保地形、影像、3D Tiles 服务支持 CORS，配置 <code>Access-Control-Allow-Origin</code>。</li>
+<li><strong>模型不显示</strong>：确认 glTF/glb 文件路径正确，模型单位与坐标系（默认 WGS84）匹配。</li>
+<li><strong>内存持续增长</strong>：及时移除不再使用的 Entity 与图层，使用 <code>entities.removeById</code>。</li>
+</ul>
+<h2>应用场景</h2>
+<p>Cesium 的典型应用包括：</p>
+<ul>
+<li>智慧城市：建筑白模、人口热力、管网三维展示。</li>
+<li>数字孪生：将业务数据映射到三维空间，实现虚实联动。</li>
+<li>航天与卫星：轨道展示、遥感影像叠加。</li>
+<li>应急指挥：事件定位、资源调度、态势标绘。</li>
+</ul>
+<p>掌握 Cesium 的三维渲染能力，配合后端空间数据服务，可以构建出专业、可交互的三维地理信息应用。</p>
+</div>
       <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
       <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
            data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
@@ -75,8 +217,10 @@
   <script src="/src/js/marked.min.js"></script>
   <script src="/src/js/marked-highlight.min.js"></script>
   <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/image-viewer/index.js"></script>
   <script src="/src/components/scroll/index.js"></script>
   <script src="/src/components/cookie-consent/index.js"></script>
+  <script src="/src/components/reward-tip/index.js"></script><script>(function(){var mc=document.getElementById('markdown-content');if(window.RewardTip&&mc)window.RewardTip.renderInto(mc);})();</script>
   <!-- Cloudflare Web Analytics (本地跳过，线上加载) -->
   <script>
     (function () {
@@ -135,13 +279,16 @@
   </script>
   <script>
     (function () {
-      // 运行时从相邻 .md 渲染：md 改动后刷新即更新；保留预渲染正文作为 no-JS / 爬虫回退
-      var mdUrl = '../Cesium%E6%96%87%E6%A1%A3.md';
+      // 正文已静态内联（利于爬虫收录），此处仅做增强：目录、代码高亮、外链新窗口、广告填充。
       function finish() {
         try {
           if (typeof generateTOC === 'function') generateTOC();
-          // markedHighlight 已在 handler 内完成代码高亮，此处不再重复 hljs.highlightElement，
-          // 否则 highlight.js 会把已高亮的 <span> 误判为未转义 HTML 而触发安全告警。
+          // 静态正文代码块尚未高亮，用 hljs 补充高亮（此时不存在重复高亮问题）
+          if (typeof hljs !== 'undefined') {
+            document.querySelectorAll('#markdown-content pre code').forEach(function (el) {
+              try { hljs.highlightElement(el); } catch (e) {}
+            });
+          }
           document.querySelectorAll('#markdown-content a').forEach(function (a) {
             a.setAttribute('target', '_blank');
             a.setAttribute('rel', 'noopener noreferrer');
@@ -150,13 +297,7 @@
         if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
         if (typeof hideLoading === 'function') hideLoading();
       }
-      try {
-        if (typeof handler === 'function') {
-          handler('markdown-content', mdUrl, finish);
-        } else {
-          finish();
-        }
-      } catch (e) { finish(); }
+      finish();
     })();
   </script>
 </body>

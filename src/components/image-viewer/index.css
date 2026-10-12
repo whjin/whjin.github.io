@@ -1,0 +1,112 @@
+/* image-viewer/index.css
+ * 结构化「正文图片渲染 + 全屏查看」模块。
+ * 1) 正文图片：水平居中、宽度自适应、图片之间留间距、可点击放大提示
+ * 2) 全屏查看：黑色遮罩 lightbox，点击/Esc 关闭
+ */
+
+/* ---- 正文图片：居中 + 自适应 + 间距 ---- */
+.markdown-content p img {
+  display: block;           /* 块级以便 margin 居中 */
+  max-width: 100%;          /* 宽度自适应容器 */
+  height: auto;             /* 保持宽高比 */
+  margin: 20px auto;        /* 水平居中 + 上下间距 */
+  border-radius: 6px;
+  cursor: zoom-in;          /* 提示可点击放大 */
+  box-shadow: 0 1px 6px rgba(0, 0, 0, .08);
+}
+
+/* 表格内的图片保持行内展示，不居中、不加间距 */
+.markdown-content table img {
+  display: inline-block;
+  margin: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 独立的 img（不在 p 内，如直接作为块级）同样居中自适应 */
+.markdown-content > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto;
+  cursor: zoom-in;
+}
+
+/* ---- 全屏查看遮罩（lightbox） ---- */
+.img-viewer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .92);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.img-viewer-overlay.show {
+  display: flex;
+}
+
+/* 全屏查看图片：以原图 URL 渲染，支持 缩放(滚轮/点击) + 平移(拖动) 查看细节 */
+.img-viewer-overlay img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: none;
+  max-height: none;
+  width: auto;
+  height: auto;
+  transform-origin: center center;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, .6);
+  border-radius: 4px;
+  cursor: zoom-in;
+  user-select: none;
+  -webkit-user-drag: none;
+  will-change: transform;
+}
+
+.img-viewer-overlay .img-viewer-caption {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  color: #d0d0d0;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  max-width: 80vw;
+  word-break: break-word;
+}
+
+.img-viewer-close {
+  position: absolute;
+  top: 14px;
+  right: 24px;
+  color: #fff;
+  font-size: 40px;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  opacity: .9;
+  transition: opacity .2s ease;
+}
+
+.img-viewer-close:hover {
+  opacity: 1;
+}
+
+.img-viewer-hint {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #888;
+  font-size: 13px;
+}

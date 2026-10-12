@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/image-viewer/index.css" />
   <link rel="stylesheet" href="/src/components/loading/index.css" />
   <link rel="stylesheet" href="/src/components/navigation/index.css" />
   <link rel="stylesheet" href="/src/components/banner/index.css" />
@@ -53,33 +54,44 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
-<body>
+<body data-reward="true">
   <div class="layout-container">
     <div class="nav-container"></div>
     <div class="content-area">
-      <div id="markdown-content" class="markdown-content viewer"></div>
-      <noscript><div class="markdown-content viewer" style="padding:1em"><h1><code>Docker</code>部署</h1>
+      <div id="markdown-content" class="markdown-content viewer" data-reward="true"><h1>用 Docker 部署 Meting API：从阿里云到 HTTPS 域名的完整实操</h1>
 <blockquote>
-<ol>
-<li><strong>安装 <code>Docker</code></strong>
-<code>dnf</code> 添加 <code>docker-ce</code> 阿里云源并安装，启停</li>
-<li><strong>获取镜像</strong>
-拉取 <code>ghcr.io</code> 官方镜像；拉不动则 <code>git clone</code> 后本地 <code>docker build</code></li>
-<li><strong>运行容器</strong>
-<code>-p 80:80</code>，配置 <code>METING_URL / METING_TOKEN</code> 环境变量</li>
-<li><strong>放行端口</strong>
-阿里云安全组 + <code>firewalld</code> 放行 <code>80</code></li>
-<li><strong>验证</strong>
-<code>curl</code> 访问 <code>/api?server=netease&amp;type=search</code></li>
-</ol>
+<p>部署一套自己的音乐接口服务，最省心、可复现的方式就是用 Docker 跑 <code>Meting API</code>。本文基于我在阿里云 ECS 上的真实踩坑经验，把从安装 Docker、拉取镜像、运行容器，到最后用 Nginx + 证书把 IP 升级成 HTTPS 域名的<strong>完整命令</strong>一次性给你，照着复制即可。</p>
 </blockquote>
-<h2>第 1 步：安装 <code>Docker</code>（阿里云官方源）</h2>
+<p><strong>你将得到：</strong></p>
+<ul>
+<li>阿里云 <code>Alibaba Cloud Linux 3</code> 下安装 <code>docker-ce</code> 的正确姿势（含 <code>$releasever</code> 的坑）</li>
+<li>拉不动 <code>ghcr.io</code> 官方镜像时，<code>git clone</code> + 本地 <code>docker build</code> 的备用方案</li>
+<li>镜像加速器配置 + 运行容器 + 端口放行</li>
+<li>IP 地址 → 域名 → HTTPS 的完整升级路径</li>
+</ul>
+<h2>先讲清楚：为什么要用 Docker</h2>
+<p><code>Meting API</code> 本身是一个轻量的音乐接口服务（配合 APlayer 播放器使用）。用 Docker 部署的好处是<strong>环境隔离、一键起停、换服务器无缝迁移</strong>——不用在系统里装一堆依赖，也方便后续用 <code>docker-compose</code> 编排。</p>
+<blockquote>
+<p>想了解更完整的部署思路和细节，可参考我维护的完整教程：[Docker部署Meting API服务（完整版）](<a href="https://wuhuajin.com/src/template/posts/%E5%B7%A5%E7%A8%8B%E5%8C%96/html/Docker%E9%83%A8%E7%BD%B2Meting">https://wuhuajin.com/src/template/posts/工程化/html/Docker部署Meting</a> API服务.html)。</p>
+</blockquote>
+<h2>前置条件</h2>
+<ul>
+<li>一台<strong>阿里云 ECS</strong>（本文以 <code>Alibaba Cloud Linux 3</code> 为例，CentOS/其他发行版原理相同）</li>
+<li>一个域名（用于最后的 HTTPS 升级；只想要 IP 访问可以跳过）</li>
+<li><code>sudo</code> 权限</li>
+</ul>
+<hr>
+<h2>第 1 步：安装 Docker（阿里云官方源）</h2>
+<p>在阿里云机器上，最稳的方式是用<strong>阿里云内网镜像源</strong>。有两个容易踩的坑：</p>
+<ol>
+<li><code>mirrors.cloud.aliyuncs.com</code> 是内网地址，ECS 上用速度最快；</li>
+<li><code>Alibaba Cloud Linux 3</code> 的 <code>$releasever=3</code>，但 <code>docker-ce</code> 源是按 <strong>CentOS 8</strong> 组织的，所以要手动把变量替换成 <code>8</code>。</li>
+</ol>
 <pre><code class="language-sh"># 1) 添加 docker-ce 源（用 curl，阿里云内网镜像）
 sudo curl -o /etc/yum.repos.d/docker-ce.repo http://mirrors.cloud.aliyuncs.com/docker-ce/linux/centos/docker-ce.repo
 sudo sed -i &#39;s|https://mirrors.aliyun.com|http://mirrors.cloud.aliyuncs.com|g&#39; /etc/yum.repos.d/docker-ce.repo
 
-# 2) 关键：Alibaba Cloud Linux 3 的 $releasever=3，docker-ce 源按 CentOS 8 组织，
-#    手动把变量替换成 8（等价于 releasever-adapter 插件的作用）
+# 2) 关键：把 $releasever 替换成 8（等价于 releasever-adapter 插件的作用）
 sudo sed -i &#39;s|\$releasever|8|g&#39; /etc/yum.repos.d/docker-ce.repo
 
 # 3) 刷新缓存并安装
@@ -91,13 +103,17 @@ sudo systemctl enable --now docker
 docker --version
 </code></pre>
 <h2>第 2 步：获取镜像</h2>
-<p>拉取<a href="https://github.com/whjin/Meting-API">Github仓库代码</a>本地构建</p>
+<p>优先直接拉官方镜像；如果 <code>ghcr.io</code> 拉不动（国内常见），就用<strong>代码本地构建</strong>兜底。</p>
+<p><strong>方式 A：直接拉官方镜像</strong></p>
+<pre><code class="language-sh">docker pull ghcr.io/metowolf/meting-api:latest
+</code></pre>
+<p><strong>方式 B：git clone 后本地构建</strong></p>
 <pre><code class="language-sh">sudo dnf -y install git
 git clone https://github.com/whjin/Meting-API.git /opt/meting-api   # 慢可换 https://ghfast.top/https://github.com/...
 cd /opt/meting-api
 docker build -t meting-api .
 </code></pre>
-<p><strong>配置 <code>Docker</code> 镜像加速器</strong></p>
+<p><strong>配置 Docker 镜像加速器</strong>（拉镜像慢时很有用）：</p>
 <pre><code class="language-sh"># 1) 创建配置
 sudo mkdir -p /etc/docker
 sudo tee /etc/docker/daemon.json &lt;&lt;&#39;EOF&#39;
@@ -106,23 +122,23 @@ sudo tee /etc/docker/daemon.json &lt;&lt;&#39;EOF&#39;
 }
 EOF
 
-
-
 # 2) 重启 Docker 生效
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 
 # 3) 重新构建
-cd /opt/meting-api    # 或你 clone 的 meting-api 目录
+cd /opt/meting-api
 docker build -t meting-api .
 </code></pre>
-<p><strong>临时用公共加速器</strong>：<code>&quot;registry-mirrors&quot;: [&quot;https://docker.m.daocloud.io&quot;]</code></p>
-<p><strong><a href="https://cr.console.aliyun.com/cn-shenzhen/instances/mirrors">阿里云加速器地址</a>获取</strong> （ECS 用户最稳）：登录阿里云控制台 → 搜索 &quot;容器镜像服务 ACR&quot; → 左侧 &quot;镜像工具 → 镜像加速器&quot;，页面会显示你账号专属的加速地址（形如 <code>https://xxxx.mirror.aliyuncs.com</code>），复制填到上面配置里即可。</p>
+<blockquote>
+<p>想拿阿里云专属加速器地址（ECS 用户最稳）：阿里云控制台 → 搜索&quot;容器镜像服务 ACR&quot; → 左侧&quot;镜像工具 → 镜像加速器&quot;，页面会显示形如 <code>https://xxxx.mirror.aliyuncs.com</code> 的专属地址，替换 <code>registry-mirrors</code> 即可。</p>
+</blockquote>
 <h2>第 3 步：运行容器</h2>
+<p><code>METING_URL</code> 记得带上 <code>:8000</code>，<code>METING_TOKEN</code> 用随机密钥：</p>
 <pre><code class="language-sh"># 1) 删掉旧容器（-f 强制，保险）
 docker rm -f meting-api
 
-# 2) 重新运行（METING_URL 记得带 :8000）
+# 2) 重新运行
 docker run -d --name meting-api \
   -p 80:80 \
   -e METING_URL=http://你的服务器公网IP:8000 \
@@ -130,66 +146,45 @@ docker run -d --name meting-api \
   --restart unless-stopped \
   ghcr.io/metowolf/meting-api:latest
 </code></pre>
-<p><strong>随机密钥生成方式：</strong><code>openssl rand -hex 32</code></p>
+<p>生成随机密钥：</p>
+<pre><code class="language-sh">openssl rand -hex 32
+</code></pre>
 <h2>第 4 步：放行端口</h2>
 <ol>
-<li><strong>阿里云安全组</strong>：ECS 控制台 → 实例 → 安全组 → 入方向规则 → 添加 80 端口（或你自定义的端口, 例如 8000），授权对象 <code>0.0.0.0/0</code></li>
+<li><strong>阿里云安全组</strong>：ECS 控制台 → 实例 → 安全组 → 入方向规则 → 添加 80 端口（或自定义端口，如 8000），授权对象 <code>0.0.0.0/0</code>。</li>
 <li><strong>系统防火墙</strong>：</li>
 </ol>
 <pre><code class="language-sh">sudo firewall-cmd --permanent --add-port=8000/tcp &amp;&amp; sudo firewall-cmd --reload
 # 如果没开 firewalld 可忽略
 </code></pre>
-<p><code>80</code> 端口被占用，可尝试 <code>8000</code> 端口</p>
+<blockquote>
+<p>80 端口被占用时，可改用 8000 端口。</p>
+</blockquote>
 <h2>第 5 步：验证</h2>
-<pre><code class="language-sh"># 本机验证
-curl &quot;http://localhost:8000/api?server=netease&amp;type=search&amp;id=周杰伦&quot;
-# 公网验证（在本地电脑浏览器打开）
-http://你的公网IP:8000/api?server=netease&amp;type=search&amp;id=周杰伦
-</code></pre>
-<h1>完整命令</h1>
-<pre><code class="language-sh"># 1) 删掉这个从未运行的旧容器
-docker rm -f meting-api
-
-# 2) 重新运行（这次会真正启动）
-docker run -d --name meting-api \
-  -p 80:80 \
-  -e METING_URL=http://你的服务器公网IP:8000 \
-  -e METING_TOKEN=换成你自己的随机密钥 \
-  --restart unless-stopped \
-  ghcr.io/metowolf/meting-api:latest
-
-# 3) 确认状态（STATUS 必须是 Up，不能是 Created/Exited）
-docker ps | grep meting-api
-
-# 4) 本机测试（用 localhost，不要 curl 自己的公网 IP）
+<pre><code class="language-sh"># 本机验证（用 localhost，不要 curl 自己的公网 IP）
 curl &quot;http://localhost:8000/api?server=netease&amp;type=search&amp;id=周杰伦&quot;
 </code></pre>
-<h1>IP地址映射为域名地址</h1>
+<p>浏览器打开 <code>http://你的公网IP:8000/api?server=netease&amp;type=search&amp;id=周杰伦</code> 能返回 JSON，说明服务已经通了。</p>
+<hr>
+<h2>进阶：把 IP 升级为 HTTPS 域名</h2>
+<p>IP 直接访问不安全也不好记，升级到域名 + HTTPS 只需 4 步：</p>
 <ol>
-<li>在你的域名解析控制台添加一条 <strong>A 记录</strong></li>
-<li>在服务器 <code>/etc/nginx/conf.d/meting.conf</code> 中配置反向代理，包括 <code>HTTP</code> 和 <code>HTTPS</code></li>
-<li>重载 Nginx 配置</li>
+<li><strong>域名解析</strong>：在域名控制台添加一条 A 记录，指向服务器公网 IP；</li>
+<li><strong>Nginx 反向代理</strong>：在 <code>/etc/nginx/conf.d/meting.conf</code> 配置，同时包含 HTTP 和 HTTPS；</li>
+<li><strong>签发证书</strong>：用 <code>certbot</code> 自动申请并安装证书；</li>
+<li><strong>更新容器</strong>：把 <code>METING_URL</code> 改为域名地址并重启容器。</li>
 </ol>
-<pre><code class="language-sh">sudo systemctl -s reload nginx
-</code></pre>
-<ol start="4">
-<li>重新安装证书</li>
-</ol>
-<pre><code class="language-sh">certbot install --cert-name meting.wuhuajin.com
-</code></pre>
-<ol start="5">
-<li>验证</li>
-</ol>
-<pre><code class="language-sh"># 查看 Nginx 配置是否已经被 certbot 修改
-cat /etc/nginx/conf.d/meting.wuhuajin.com.conf
+<pre><code class="language-sh"># 重载 Nginx 配置
+sudo systemctl -s reload nginx
 
-# 测试 HTTPS 是否通
+# 重新安装证书
+sudo certbot install --cert-name meting.wuhuajin.com
+
+# 验证 HTTPS 是否通
 curl -I https://meting.wuhuajin.com/api?server=netease&amp;type=search&amp;id=周杰伦
-</code></pre>
-<ol start="6">
-<li>更新 Docker 容器的 <code>METING_URL</code></li>
-</ol>
-<pre><code class="language-sh">docker rm -f meting-api
+
+# 更新容器 METING_URL 为域名
+docker rm -f meting-api
 docker run -d --name meting-api \
   -p 8000:80 \
   -e METING_URL=https://meting.wuhuajin.com \
@@ -197,7 +192,19 @@ docker run -d --name meting-api \
   --restart unless-stopped \
   meting-api
 </code></pre>
-</div></noscript>
+<blockquote>
+<p>完整命令与更多细节（含 Nginx 配置写法），见 [完整版教程](<a href="https://wuhuajin.com/src/template/posts/%E5%B7%A5%E7%A8%8B%E5%8C%96/html/Docker%E9%83%A8%E7%BD%B2Meting">https://wuhuajin.com/src/template/posts/工程化/html/Docker部署Meting</a> API服务.html)。</p>
+</blockquote>
+<hr>
+<h2>小结</h2>
+<ul>
+<li>用 <strong>阿里云内网源</strong> 装 <code>docker-ce</code>，记得把 <code>$releasever</code> 替换成 <code>8</code>；</li>
+<li>拉不动镜像就 <strong>git clone + 本地 build</strong>，再配 <strong>镜像加速器</strong>；</li>
+<li>容器端口映射、安全组 + <code>firewalld</code> 放行缺一不可；</li>
+<li>要上 HTTPS，走 <strong>A 记录 + Nginx 反代 + certbot</strong> 三步。</li>
+</ul>
+<p>部署完成后，配合 APlayer 前端组件即可在前端页面播放音乐。如果你也在自建音乐 API 服务，欢迎收藏、转发这篇文章，也欢迎到原文评论区交流踩坑经验。</p>
+</div>
       <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
       <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
            data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
@@ -214,8 +221,10 @@ docker run -d --name meting-api \
   <script src="/src/js/marked.min.js"></script>
   <script src="/src/js/marked-highlight.min.js"></script>
   <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/image-viewer/index.js"></script>
   <script src="/src/components/scroll/index.js"></script>
   <script src="/src/components/cookie-consent/index.js"></script>
+  <script src="/src/components/reward-tip/index.js"></script><script>(function(){var mc=document.getElementById('markdown-content');if(window.RewardTip&&mc)window.RewardTip.renderInto(mc);})();</script>
   <!-- Cloudflare Web Analytics (本地跳过，线上加载) -->
   <script>
     (function () {
@@ -274,13 +283,16 @@ docker run -d --name meting-api \
   </script>
   <script>
     (function () {
-      // 运行时从相邻 .md 渲染：md 改动后刷新即更新；保留预渲染正文作为 no-JS / 爬虫回退
-      var mdUrl = '../Docker%E9%83%A8%E7%BD%B2Meting%20API%E6%9C%8D%E5%8A%A1.md';
+      // 正文已静态内联（利于爬虫收录），此处仅做增强：目录、代码高亮、外链新窗口、广告填充。
       function finish() {
         try {
           if (typeof generateTOC === 'function') generateTOC();
-          // markedHighlight 已在 handler 内完成代码高亮，此处不再重复 hljs.highlightElement，
-          // 否则 highlight.js 会把已高亮的 <span> 误判为未转义 HTML 而触发安全告警。
+          // 静态正文代码块尚未高亮，用 hljs 补充高亮（此时不存在重复高亮问题）
+          if (typeof hljs !== 'undefined') {
+            document.querySelectorAll('#markdown-content pre code').forEach(function (el) {
+              try { hljs.highlightElement(el); } catch (e) {}
+            });
+          }
           document.querySelectorAll('#markdown-content a').forEach(function (a) {
             a.setAttribute('target', '_blank');
             a.setAttribute('rel', 'noopener noreferrer');
@@ -289,13 +301,7 @@ docker run -d --name meting-api \
         if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
         if (typeof hideLoading === 'function') hideLoading();
       }
-      try {
-        if (typeof handler === 'function') {
-          handler('markdown-content', mdUrl, finish);
-        } else {
-          finish();
-        }
-      } catch (e) { finish(); }
+      finish();
     })();
   </script>
 </body>

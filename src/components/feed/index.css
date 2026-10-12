@@ -221,6 +221,22 @@ a.feed-card:hover {
   z-index: 2;
 }
 
+/* 置顶 tag：左上角小号标识，用于标记 front matter 配置了 top:true 的文章（比右上角分类徽标更小巧） */
+.feed-card .fc-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2px 8px;
+  border-bottom-right-radius: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  color: #fff;
+  background: #e8590c;
+  z-index: 3;
+}
+
 .feed-card .fc-featured {
   background: #fff1cc;
   color: #b8860b;

@@ -20,6 +20,7 @@
     reactions: ['reactions', '次反应'],
     comments: ['comments', '条评论'],
     feed_empty: ['No articles found. 没有找到相关文章。', '没有找到相关文章。'],
+    fc_top: ['Top', '置顶'],
     sb_about: ['About', '关于'],
     sb_happening: ["What's happening", '近期动态'],
     sb_live: ['Livestreams', '直播'],

@@ -208,15 +208,15 @@ if (IS_DEV) {
   const triggerReload = (filePath) => {
     clearTimeout(reloadTimer);
     reloadTimer = setTimeout(() => {
-      // .md 文章变化 → 先重建 feed（data.json），再刷新，实时看到文章更新效果
+      // .md 文章变化 → 重建完整构建链（feed + 文章静态页 + 首页 + sitemap），刷新后即可看到最新正文
       if (/\.md$/i.test(filePath)) {
         try {
           const { execSync } = require('child_process');
-          execSync('node "' + path.join(rootDir, 'scripts', 'build-feed.cjs') + '"', {
+          execSync('node "' + path.join(rootDir, 'scripts', 'build-all.cjs') + '"', {
             stdio: 'pipe',
           });
         } catch (err) {
-          console.error('[Live] build-feed 失败:', err.message);
+          console.error('[Live] build-all 失败:', err.message);
         }
       }
       if (path.extname(filePath).match(/\.(html|md|js|css|json)$/)) {

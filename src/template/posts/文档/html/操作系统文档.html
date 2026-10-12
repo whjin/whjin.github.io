@@ -5,24 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="author" content="吴华锦" />
   <title>操作系统文档 « 吴华锦</title>
-  <meta name="description" content="跨进程通信 IPC - 管道 pipe：单向数据流，适合父子进程间传递数据 - 共享内存：多个进程映射同一块内存区域，速度快，需配合同步机制 - 消息队列：进程间以消息为单位，收发数据，解耦发送与接收 - Socket：可跨网络通信，支持本机与远程进程交互，后端服务器与前端服务端交互" />
+  <meta name="description" content="操作系统跨进程通信（IPC） 进程与线程基础 在深入 IPC 之前，先厘清两个基础概念： - 进程：操作系统资源分配的基本单位，拥有独立的地址空间、文件描述符与资源。进程间默认是相互隔离的，一个进程无法直接访问另一个进程的内存。 - 线程：进程内部执行任务的基本单位，同一进程内的线程共享地址空间与资源，可以通过共享内存直接通信。 正是因为进程之间地址空间相互隔离，才需要一套\&quot;跨进程通信\&quot;的机制（IPC，Inter-Process Communication）来完成数据交换与协作。 为什么需要 IPC 在实际系统中，多个进程协作的场景非常普遍： - 后端服务拆分后，各进程需要传递任务与结果。 -" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://wuhuajin.com/src/template/posts/%E6%96%87%E6%A1%A3/html/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%96%87%E6%A1%A3.html" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Wu Huajin" />
   <meta property="og:title" content="操作系统文档" />
-  <meta property="og:description" content="跨进程通信 IPC - 管道 pipe：单向数据流，适合父子进程间传递数据 - 共享内存：多个进程映射同一块内存区域，速度快，需配合同步机制 - 消息队列：进程间以消息为单位，收发数据，解耦发送与接收 - Socket：可跨网络通信，支持本机与远程进程交互，后端服务器与前端服务端交互" />
+  <meta property="og:description" content="操作系统跨进程通信（IPC） 进程与线程基础 在深入 IPC 之前，先厘清两个基础概念： - 进程：操作系统资源分配的基本单位，拥有独立的地址空间、文件描述符与资源。进程间默认是相互隔离的，一个进程无法直接访问另一个进程的内存。 - 线程：进程内部执行任务的基本单位，同一进程内的线程共享地址空间与资源，可以通过共享内存直接通信。 正是因为进程之间地址空间相互隔离，才需要一套\&quot;跨进程通信\&quot;的机制（IPC，Inter-Process Communication）来完成数据交换与协作。 为什么需要 IPC 在实际系统中，多个进程协作的场景非常普遍： - 后端服务拆分后，各进程需要传递任务与结果。 -" />
   <meta property="og:url" content="https://wuhuajin.com/src/template/posts/%E6%96%87%E6%A1%A3/html/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%96%87%E6%A1%A3.html" />
   <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
   <meta property="og:locale" content="zh_CN" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="操作系统文档" />
-  <meta name="twitter:description" content="跨进程通信 IPC - 管道 pipe：单向数据流，适合父子进程间传递数据 - 共享内存：多个进程映射同一块内存区域，速度快，需配合同步机制 - 消息队列：进程间以消息为单位，收发数据，解耦发送与接收 - Socket：可跨网络通信，支持本机与远程进程交互，后端服务器与前端服务端交互" />
+  <meta name="twitter:description" content="操作系统跨进程通信（IPC） 进程与线程基础 在深入 IPC 之前，先厘清两个基础概念： - 进程：操作系统资源分配的基本单位，拥有独立的地址空间、文件描述符与资源。进程间默认是相互隔离的，一个进程无法直接访问另一个进程的内存。 - 线程：进程内部执行任务的基本单位，同一进程内的线程共享地址空间与资源，可以通过共享内存直接通信。 正是因为进程之间地址空间相互隔离，才需要一套\&quot;跨进程通信\&quot;的机制（IPC，Inter-Process Communication）来完成数据交换与协作。 为什么需要 IPC 在实际系统中，多个进程协作的场景非常普遍： - 后端服务拆分后，各进程需要传递任务与结果。 -" />
   <link rel="icon" href="/src/images/favicon.png" />
   <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
   <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/image-viewer/index.css" />
   <link rel="stylesheet" href="/src/components/loading/index.css" />
   <link rel="stylesheet" href="/src/components/navigation/index.css" />
   <link rel="stylesheet" href="/src/components/banner/index.css" />
@@ -31,7 +32,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "操作系统文档",
-  "description": "跨进程通信 IPC - 管道 pipe：单向数据流，适合父子进程间传递数据 - 共享内存：多个进程映射同一块内存区域，速度快，需配合同步机制 - 消息队列：进程间以消息为单位，收发数据，解耦发送与接收 - Socket：可跨网络通信，支持本机与远程进程交互，后端服务器与前端服务端交互",
+  "description": "操作系统跨进程通信（IPC） 进程与线程基础 在深入 IPC 之前，先厘清两个基础概念： - 进程：操作系统资源分配的基本单位，拥有独立的地址空间、文件描述符与资源。进程间默认是相互隔离的，一个进程无法直接访问另一个进程的内存。 - 线程：进程内部执行任务的基本单位，同一进程内的线程共享地址空间与资源，可以通过共享内存直接通信。 正是因为进程之间地址空间相互隔离，才需要一套\\\"跨进程通信\\\"的机制（IPC，Inter-Process Communication）来完成数据交换与协作。 为什么需要 IPC 在实际系统中，多个进程协作的场景非常普遍： - 后端服务拆分后，各进程需要传递任务与结果。 -",
   "author": {
     "@type": "Person",
     "name": "吴华锦",
@@ -53,19 +54,188 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
-<body>
+<body data-reward="true">
   <div class="layout-container">
     <div class="nav-container"></div>
     <div class="content-area">
-      <div id="markdown-content" class="markdown-content viewer"></div>
-      <noscript><div class="markdown-content viewer" style="padding:1em"><h2>跨进程通信 <code>IPC</code></h2>
+      <div id="markdown-content" class="markdown-content viewer" data-reward="true"><h1>操作系统跨进程通信（IPC）</h1>
+<h2>进程与线程基础</h2>
+<p>在深入 IPC 之前，先厘清两个基础概念：</p>
 <ul>
-<li>管道 <code>pipe</code>：单向数据流，适合父子进程间传递数据</li>
-<li>共享内存：多个进程映射同一块内存区域，速度快，需配合同步机制</li>
-<li>消息队列：进程间以消息为单位，收发数据，解耦发送与接收</li>
-<li><code>Socket</code>：可跨网络通信，支持本机与远程进程交互，后端服务器与前端服务端交互</li>
+<li><strong>进程</strong>：操作系统资源分配的基本单位，拥有独立的地址空间、文件描述符与资源。进程间默认是相互隔离的，一个进程无法直接访问另一个进程的内存。</li>
+<li><strong>线程</strong>：进程内部执行任务的基本单位，同一进程内的线程共享地址空间与资源，可以通过共享内存直接通信。</li>
 </ul>
-</div></noscript>
+<p>正是因为进程之间地址空间相互隔离，才需要一套&quot;跨进程通信&quot;的机制（IPC，Inter-Process Communication）来完成数据交换与协作。</p>
+<h2>为什么需要 IPC</h2>
+<p>在实际系统中，多个进程协作的场景非常普遍：</p>
+<ul>
+<li>后端服务拆分后，各进程需要传递任务与结果。</li>
+<li>客户端与服务端（前后端）通过网络接口通信。</li>
+<li>父进程需要把数据、信号传递给子进程。</li>
+<li>多个进程同时访问共享资源时需要进行同步。</li>
+</ul>
+<p><strong>IPC 要解决的核心问题</strong>有两个：一是<strong>数据传输</strong>（如何在进程间传递信息），二是<strong>同步与互斥</strong>（如何保证并发访问的一致与安全）。</p>
+<h2>管道（Pipe）</h2>
+<p>管道是最古老、最简单的 IPC 方式，本质是内核提供的一块缓冲区，进程通过读写文件描述符来传递数据。</p>
+<p><strong>特点</strong>：</p>
+<ul>
+<li><strong>单向数据流</strong>：数据从写端流向读端，一个方向。</li>
+<li>适合<strong>父子进程</strong>或<strong>有亲缘关系</strong>的进程间通信。</li>
+<li>匿名管道只能用于亲缘进程；命名管道（FIFO）可用于无亲缘关系的进程。</li>
+</ul>
+<pre><code class="language-c">// 匿名管道示例（C）
+int fd[2];
+pipe(fd);          // fd[0] 读端，fd[1] 写端
+if (fork() == 0) {
+  // 子进程：关闭读端，写数据
+  close(fd[0]);
+  write(fd[1], &quot;hello&quot;, 6);
+} else {
+  // 父进程：关闭写端，读数据
+  close(fd[1]);
+  read(fd[0], buf, sizeof(buf));
+}
+</code></pre>
+<p><strong>适用场景</strong>：Shell 管道（<code>cmd1 | cmd2</code>）、父子进程间传递流式数据。缺点是单向、无格式、不适合大数据量随机访问。</p>
+<h2>消息队列</h2>
+<p>消息队列以&quot;消息&quot;为单位在进程间传递数据，发送方与接收方解耦。</p>
+<p><strong>特点</strong>：</p>
+<ul>
+<li>进程间以消息为单位<strong>收发数据</strong>，天然带边界与类型。</li>
+<li><strong>解耦发送与接收</strong>：发送方不必等待接收方，消息由内核队列缓存。</li>
+<li>支持多对多通信，比管道更灵活。</li>
+</ul>
+<pre><code class="language-c">// 发送消息（POSIX 消息队列示例）
+mqd_t mq = mq_open(&quot;/myqueue&quot;, O_CREAT | O_WRONLY, 0644, &amp;attr);
+mq_send(mq, &quot;data&quot;, 4, 0);
+</code></pre>
+<p><strong>适用场景</strong>：需要异步、松耦合、带优先级的进程通信，如任务队列。缺点是消息有大小限制，性能低于共享内存。</p>
+<h2>共享内存</h2>
+<p>共享内存是<strong>速度最快</strong>的 IPC 方式，因为它让多个进程<strong>映射同一块内存区域</strong>，数据写入后其他进程立即可见，无需经过内核拷贝。</p>
+<p><strong>特点</strong>：</p>
+<ul>
+<li>速度快，接近直接内存访问。</li>
+<li>但多个进程同时读写时需要<strong>配合同步机制</strong>（如信号量、互斥锁）保证数据一致性。</li>
+</ul>
+<pre><code class="language-c">// 映射共享内存（System V 示例）
+int shmid = shmget(IPC_PRIVATE, 4096, IPC_CREAT | 0666);
+char *addr = shmat(shmid, NULL, 0);
+strcpy(addr, &quot;hello&quot;);   // 写入共享区，其他进程立即可读
+</code></pre>
+<p><strong>适用场景</strong>：大数据量、高频读写，如进程间共享配置、图像帧、日志缓冲区。是高性能系统的首选。</p>
+<h2>信号量（Semaphore）</h2>
+<p>信号量本身<strong>不传递数据</strong>，而是用于<strong>进程间同步与互斥</strong>，解决共享资源并发访问的问题。</p>
+<p><strong>特点</strong>：</p>
+<ul>
+<li>计数型同步原语，控制同时访问资源的进程数量。</li>
+<li>配合共享内存使用，保证读写安全。</li>
+</ul>
+<pre><code class="language-c">// 信号量 P/V 操作示意
+sem_wait(&amp;sem);   // P：申请资源，资源不足则阻塞
+// ... 访问共享资源 ...
+sem_post(&amp;sem);   // V：释放资源
+</code></pre>
+<p><strong>适用场景</strong>：生产者-消费者模型、多进程保护临界区、限制并发连接数。</p>
+<h2>信号（Signal）</h2>
+<p>信号用于<strong>异步通知</strong>进程某个事件发生，是一种轻量级的进程间通知机制。</p>
+<p><strong>特点</strong>：</p>
+<ul>
+<li>只能传递事件通知，<strong>不携带数据</strong>。</li>
+<li>用于通知进程&quot;某件事发生了&quot;，如终止、挂起、闹钟到期。</li>
+</ul>
+<pre><code class="language-c">signal(SIGINT, handler);   // 注册处理函数
+kill(pid, SIGTERM);        // 向进程发送终止信号
+</code></pre>
+<p><strong>适用场景</strong>：进程终止、异常处理、心跳监控。因为不携带数据，不适合业务数据传递。</p>
+<h2>Socket</h2>
+<p>Socket 是<strong>跨网络</strong>的 IPC 方式，支持本机进程之间（Unix Domain Socket）以及<strong>远程主机之间</strong>的通信，是网络应用的基础。</p>
+<p><strong>特点</strong>：</p>
+<ul>
+<li>可跨网络通信，支持 TCP/UDP。</li>
+<li>本机使用 Unix Domain Socket 时，性能远高于 TCP，且无网络开销。</li>
+<li>后端服务器与前端/客户端之间的大量交互，本质都是 Socket。</li>
+</ul>
+<pre><code class="language-python"># Python TCP Server 示意
+import socket
+s = socket.socket()
+s.bind((&#39;0.0.0.0&#39;, 8000))
+s.listen(5)
+while True:
+    conn, addr = s.accept()
+    conn.send(b&#39;hello&#39;)
+    conn.close()
+</code></pre>
+<p><strong>适用场景</strong>：分布式系统、前后端服务、跨主机微服务通信。是应用最广泛的 IPC 方式。</p>
+<h2>IPC 方式对比与选型</h2>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>数据量</th>
+<th>速度</th>
+<th>复杂度</th>
+<th>是否跨机</th>
+<th>典型用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>管道</td>
+<td>小</td>
+<td>中</td>
+<td>低</td>
+<td>否</td>
+<td>父子进程流式数据</td>
+</tr>
+<tr>
+<td>消息队列</td>
+<td>中</td>
+<td>中</td>
+<td>中</td>
+<td>否</td>
+<td>异步解耦、任务队列</td>
+</tr>
+<tr>
+<td>共享内存</td>
+<td>大</td>
+<td>高</td>
+<td>高（需同步）</td>
+<td>否</td>
+<td>高频大数据共享</td>
+</tr>
+<tr>
+<td>信号量</td>
+<td>无数据</td>
+<td>-</td>
+<td>中</td>
+<td>否</td>
+<td>同步与互斥</td>
+</tr>
+<tr>
+<td>信号</td>
+<td>无数据</td>
+<td>高</td>
+<td>低</td>
+<td>否</td>
+<td>事件通知、异常</td>
+</tr>
+<tr>
+<td>Socket</td>
+<td>大</td>
+<td>中</td>
+<td>中</td>
+<td><strong>是</strong></td>
+<td>网络与分布式通信</td>
+</tr>
+</tbody></table>
+<p><strong>选型建议</strong>：</p>
+<ul>
+<li>单机内、<strong>性能优先</strong> → 共享内存 + 信号量。</li>
+<li>单机内、<strong>简单可靠</strong> → 管道或消息队列。</li>
+<li><strong>跨主机 / 前后端</strong> → Socket（TCP/Unix Domain Socket）。</li>
+<li>只需<strong>通知事件</strong> → 信号。</li>
+</ul>
+<p>理解各种 IPC 的原理与取舍，是写出稳定、高性能多进程与分布式系统的关键能力。根据数据量、性能需求与是否跨机，选择最合适的通信方式，才能做到既高效又可控。</p>
+</div>
       <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
       <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
            data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
@@ -82,8 +252,10 @@
   <script src="/src/js/marked.min.js"></script>
   <script src="/src/js/marked-highlight.min.js"></script>
   <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/image-viewer/index.js"></script>
   <script src="/src/components/scroll/index.js"></script>
   <script src="/src/components/cookie-consent/index.js"></script>
+  <script src="/src/components/reward-tip/index.js"></script><script>(function(){var mc=document.getElementById('markdown-content');if(window.RewardTip&&mc)window.RewardTip.renderInto(mc);})();</script>
   <!-- Cloudflare Web Analytics (本地跳过，线上加载) -->
   <script>
     (function () {
@@ -142,13 +314,16 @@
   </script>
   <script>
     (function () {
-      // 运行时从相邻 .md 渲染：md 改动后刷新即更新；保留预渲染正文作为 no-JS / 爬虫回退
-      var mdUrl = '../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%96%87%E6%A1%A3.md';
+      // 正文已静态内联（利于爬虫收录），此处仅做增强：目录、代码高亮、外链新窗口、广告填充。
       function finish() {
         try {
           if (typeof generateTOC === 'function') generateTOC();
-          // markedHighlight 已在 handler 内完成代码高亮，此处不再重复 hljs.highlightElement，
-          // 否则 highlight.js 会把已高亮的 <span> 误判为未转义 HTML 而触发安全告警。
+          // 静态正文代码块尚未高亮，用 hljs 补充高亮（此时不存在重复高亮问题）
+          if (typeof hljs !== 'undefined') {
+            document.querySelectorAll('#markdown-content pre code').forEach(function (el) {
+              try { hljs.highlightElement(el); } catch (e) {}
+            });
+          }
           document.querySelectorAll('#markdown-content a').forEach(function (a) {
             a.setAttribute('target', '_blank');
             a.setAttribute('rel', 'noopener noreferrer');
@@ -157,13 +332,7 @@
         if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
         if (typeof hideLoading === 'function') hideLoading();
       }
-      try {
-        if (typeof handler === 'function') {
-          handler('markdown-content', mdUrl, finish);
-        } else {
-          finish();
-        }
-      } catch (e) { finish(); }
+      finish();
     })();
   </script>
 </body>

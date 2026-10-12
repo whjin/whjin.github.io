@@ -254,6 +254,11 @@
         "avatar": "https://picsum.photos/seed/Git文档/100",
         "title": "Git文档",
         "url": "/viewer.html?path=Git_Git文档"
+      },
+      {
+        "avatar": "https://picsum.photos/seed/git/100",
+        "title": "Git命令思维导图",
+        "url": "/viewer.html?path=Git_Git命令思维导图"
       }
     ]
   },

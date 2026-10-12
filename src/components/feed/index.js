@@ -80,6 +80,8 @@
   // 卡片模板（Dev.to 风格，单数据集）：各区块按字段是否存在条件渲染
   // 封面(cover)存在 → 左图右文；标题行右侧为「分类+精选」标识；摘要(description)→标签→互动统计+阅读时长
   function cardHTML(it) {
+    const topText = t('fc_top'); // 国际化：英文 Top / 中文 置顶
+    const topTag = it.top ? '<span class="fc-top" title="' + esc(topText) + '">' + esc(topText) + '</span>' : '';
     const hasCover = !!it.cover;
     const cover = hasCover
       ? '<div class="fc-cover"><img src="' + esc(it.cover) + '" alt="' + esc(it.title) + '" loading="lazy" onerror="this.parentNode.style.display=\'none\'"></div>'
@@ -98,6 +100,7 @@
     if (it.comments != null) stats += '<span class="fc-stat">' + it.comments + ' <span data-i18n="comments">comments</span></span>';
     const readtime = it.readTime ? '<span class="fc-readtime">' + it.readTime + ' min read</span>' : '';
     return (
+      topTag +
       cover +
       '<div class="fc-body">' +
       '<div class="fc-title-row">' +
@@ -232,6 +235,16 @@
           it._group = c.title;
           allItems.push(it);
         });
+      });
+      // top 全局置顶：top:true 的文章提升到整个首页 feed 流最前（最高优先级）；
+      // 多个 top 之间按 date 倒序（date 越新越靠前）；其余非 top 保持 data.json 顺序（稳定排序）
+      allItems.sort(function (a, b) {
+        const ta = Number(!!a.top), tb = Number(!!b.top);
+        if (tb !== ta) return tb - ta;          // top 优先
+        if (ta === 1 && a.date && b.date) {     // 同为 top 时按 date 倒序，date 越新越前
+          return (a.date < b.date ? 1 : a.date > b.date ? -1 : 0);
+        }
+        return 0;                                // 其余保持原顺序
       });
       render();
       bindSearch();

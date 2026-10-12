@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="吴华锦" />
+  <title>JavaScript正则表达式手册 « 吴华锦</title>
+  <meta name="description" content="面向JavaScript开发者与初学者的正则表达式速查手册，系统整理正则引擎核心知识与高频用法。第一部分为表达式全集，详解 \\d、\\w、\\s、\\b 等元字符，以及 ^ $ * + ? 量词、字符类、分组捕获、非获取匹配、正向反向预查、转义与 Unicode 编码等全部语法，每条均配直观示例。第二部分为常用正则，涵盖用户名、密码、邮箱、URL、IP 地址、HTML 标签、代码注释剔除、汉字范围校验等可直接复用的表达式。全文以表格呈现、即查即用，是处理字符串校验、文本提取与数据清洗的随手参考手册。" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wuhuajin.com/src/template/posts/JavaScript/html/JavaScript%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%89%8B%E5%86%8C.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Wu Huajin" />
+  <meta property="og:title" content="JavaScript正则表达式手册" />
+  <meta property="og:description" content="面向JavaScript开发者与初学者的正则表达式速查手册，系统整理正则引擎核心知识与高频用法。第一部分为表达式全集，详解 \\d、\\w、\\s、\\b 等元字符，以及 ^ $ * + ? 量词、字符类、分组捕获、非获取匹配、正向反向预查、转义与 Unicode 编码等全部语法，每条均配直观示例。第二部分为常用正则，涵盖用户名、密码、邮箱、URL、IP 地址、HTML 标签、代码注释剔除、汉字范围校验等可直接复用的表达式。全文以表格呈现、即查即用，是处理字符串校验、文本提取与数据清洗的随手参考手册。" />
+  <meta property="og:url" content="https://wuhuajin.com/src/template/posts/JavaScript/html/JavaScript%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%89%8B%E5%86%8C.html" />
+  <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="JavaScript正则表达式手册" />
+  <meta name="twitter:description" content="面向JavaScript开发者与初学者的正则表达式速查手册，系统整理正则引擎核心知识与高频用法。第一部分为表达式全集，详解 \\d、\\w、\\s、\\b 等元字符，以及 ^ $ * + ? 量词、字符类、分组捕获、非获取匹配、正向反向预查、转义与 Unicode 编码等全部语法，每条均配直观示例。第二部分为常用正则，涵盖用户名、密码、邮箱、URL、IP 地址、HTML 标签、代码注释剔除、汉字范围校验等可直接复用的表达式。全文以表格呈现、即查即用，是处理字符串校验、文本提取与数据清洗的随手参考手册。" />
+  <link rel="icon" href="/src/images/favicon.png" />
+  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/src/css/github-dark.min.css" />
+  <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/image-viewer/index.css" />
+  <link rel="stylesheet" href="/src/components/loading/index.css" />
+  <link rel="stylesheet" href="/src/components/navigation/index.css" />
+  <link rel="stylesheet" href="/src/components/banner/index.css" />
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "JavaScript正则表达式手册",
+  "description": "面向JavaScript开发者与初学者的正则表达式速查手册，系统整理正则引擎核心知识与高频用法。第一部分为表达式全集，详解 \\\\d、\\\\w、\\\\s、\\\\b 等元字符，以及 ^ $ * + ? 量词、字符类、分组捕获、非获取匹配、正向反向预查、转义与 Unicode 编码等全部语法，每条均配直观示例。第二部分为常用正则，涵盖用户名、密码、邮箱、URL、IP 地址、HTML 标签、代码注释剔除、汉字范围校验等可直接复用的表达式。全文以表格呈现、即查即用，是处理字符串校验、文本提取与数据清洗的随手参考手册。",
+  "author": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "datePublished": "2026-10-12 14:45:11",
+  "inLanguage": "zh-CN",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wuhuajin.com/src/template/posts/JavaScript/html/JavaScript%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%89%8B%E5%86%8C.html"
+  }
+}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
+  <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+</head>
+<body data-reward="true">
+  <div class="layout-container">
+    <div class="nav-container"></div>
+    <div class="content-area">
+      <div id="markdown-content" class="markdown-content viewer" data-reward="true"><h1>表达式全集</h1>
+<!-- prettier-ignore-start -->
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>\</code></td>
+<td>将下一个字符标记为一个特殊字符、或一个原义字符、或一个向后引用、或一个八进制转义符。例如，“<code>n</code>”匹配字符“<code>n</code>”。“<code>\n</code>”匹配一个换行符。串行“<code>\\</code>”匹配“<code>\</code>”而“<code>\(</code>”则匹配“<code>(</code>”。</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>匹配输入字符串的开始位置。如果设置了<code>RegExp</code>对象的<code>Multiline</code>属性，<code>^</code>也匹配“<code>\n</code>”或“<code>\r</code>”之后的位置。</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>匹配输入字符串的结束位置。如果设置了<code>RegExp</code>对象的<code>Multiline</code>属性，<code>$</code>也匹配“<code>\n</code>”或“<code>\r</code>”之前的位置。</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>匹配前面的子表达式零次或多次。例如，<code>zo*</code>能匹配“<code>z</code>”以及“<code>zoo</code>”。<code>*</code>等价于<code>{0,}</code>。</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>匹配前面的子表达式一次或多次。例如，“<code>zo+</code>”能匹配“<code>zo</code>”以及“<code>zoo</code>”，但不能匹配“<code>z</code>”。<code>+</code>等价于<code>{1,}</code>。</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>匹配前面的子表达式零次或一次。例如，“<code>do(es)?</code>”可以匹配“<code>does</code>”或“<code>does</code>”中的“<code>do</code>”。<code>?</code>等价于<code>{0,1}</code>。</td>
+</tr>
+<tr>
+<td><code>{n}</code></td>
+<td><code>n</code>是一个非负整数。匹配确定的<code>n</code>次。例如，“<code>o{2}</code>”不能匹配“<code>Bob</code>”中的“<code>o</code>”，但是能匹配“<code>food</code>”中的两个<code>o</code>。</td>
+</tr>
+<tr>
+<td><code>{n,}</code></td>
+<td><code>n</code>是一个非负整数。至少匹配<code>n</code>次。例如，“<code>o{2,}</code>”不能匹配“<code>Bob</code>”中的“<code>o</code>”，但能匹配“<code>foooood</code>”中的所有<code>o</code>。“<code>o{1,}</code>”等价于“<code>o+</code>”。“<code>o{0,}</code>”则等价于“<code>o*</code>”。</td>
+</tr>
+<tr>
+<td><code>{n,m}</code></td>
+<td><code>m</code>和<code>n</code>均为非负整数，其中<code>n&lt;=m</code>。最少匹配<code>n</code>次且最多匹配<code>m</code>次。例如，“<code>o{1,3}</code>”将匹配“<code>fooooood</code>”中的前三个<code>o</code>。“<code>o{0,1}</code>”等价于“<code>o?</code>”。请注意在逗号和两个数之间不能有空格。</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>当该字符紧跟在任何一个其他限制符（<code>*</code>,<code>+</code>,<code>?</code>，<code>{n}</code>，<code>{n,}</code>，<code>{n,m}</code>）后面时，匹配模式是非贪婪的。非贪婪模式尽可能少的匹配所搜索的字符串，而默认的贪婪模式则尽可能多的匹配所搜索的字符串。例如，对于字符串“<code>oooo</code>”，“<code>o+?</code>”将匹配单个“<code>o</code>”，而“<code>o+</code>”将匹配所有“<code>o</code>”。</td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td>匹配除“<code>\n</code>”之外的任何单个字符。要匹配包括“<code>\n</code>”在内的任何字符，请使用像“<code>(.\n)</code>”的模式。</td>
+</tr>
+<tr>
+<td><code>(pattern)</code></td>
+<td>匹配<code>pattern</code>并获取这一匹配。所获取的匹配可以从产生的<code>Matches</code>集合得到，在<code>VBScript</code>中使用<code>SubMatches</code>集合，在<code>JScript</code>中则使用<code>$0…$9</code>属性。要匹配圆括号字符，请使用“<code>\(</code>”或“<code>&#124;&lt;/code>”。</td>
+</tr>
+<tr>
+<td><code>(?:pattern)</code></td>
+<td>匹配<code>pattern</code>但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用或字符“<code>(&#124;)</code>”来组合一个模式的各个部分是很有用。例如“<code>industr(?:y&#124;ies)</code>”就是一个比“<code>industry&#124;industries</code>”更简略的表达式。</td>
+</tr>
+<tr>
+<td><code>(?=pattern)</code></td>
+<td>正向肯定预查，在任何匹配<code>pattern</code>的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如，“<code>Windows(?=95&#124;98&#124;NT&#124;2000)</code>”能匹配“<code>Windows2000</code>”中的“<code>Windows</code>”，但不能匹配“<code>Windows3.1</code>”中的“<code>Windows</code>”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
+</tr>
+<tr>
+<td><code>(?!pattern)</code></td>
+<td>正向否定预查，在任何不匹配<code>pattern</code>的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如“<code>Windows(?!95&#124;98&#124;NT&#124;2000)</code>”能匹配“<code>Windows3.1</code>”中的“<code>Windows</code>”，但不能匹配“<code>Windows2000</code>”中的“<code>Windows</code>”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
+</tr>
+<tr>
+<td><code>(?&lt;=pattern)</code></td>
+<td>反向肯定预查，与正向肯定预查类拟，只是方向相反。例如，“<code>(?<=95&#124;98&#124;NT&#124;2000)Windows</code>”能匹配“<code>2000Windows</code>”中的“<code>Windows</code>”，但不能匹配“<code>3.1Windows</code>”中的“<code>Windows</code>”。</td>
+</tr>
+<tr>
+<td><code>(?&lt;!pattern)</code></td>
+<td>反向否定预查，与正向否定预查类拟，只是方向相反。例如“<code>(?<!95&#124;98&#124;NT&#124;2000)Windows</code>”能匹配“<code>3.1Windows</code>”中的“<code>Windows</code>”，但不能匹配“<code>2000Windows</code>”中的“<code>Windows</code>”。</td>
+</tr>
+<tr>
+<td><code>x&#124;y</code></td>
+<td>匹配<code>x</code>或<code>y</code>。例如，“<code>z&#124;food</code>”能匹配“<code>z</code>”或“<code>food</code>”。“<code>(z&#124;f)ood</code>”则匹配“<code>zood</code>”或“<code>food</code>”。</td>
+</tr>
+<tr>
+<td><code>[xyz]</code></td>
+<td>字符集合。匹配所包含的任意一个字符。例如，“<code>[abc]</code>”可以匹配“<code>plain</code>”中的“<code>a</code>”。</td>
+</tr>
+<tr>
+<td><code>[^xyz]</code></td>
+<td>负值字符集合。匹配未包含的任意字符。例如，“<code>[^abc]</code>”可以匹配“<code>plain</code>”中的“<code>p</code>”。</td>
+</tr>
+<tr>
+<td><code>[a-z]</code></td>
+<td>字符范围。匹配指定范围内的任意字符。例如，“<code>[a-z]</code>”可以匹配“<code>a</code>”到“<code>z</code>”范围内的任意小写字母字符。</td>
+</tr>
+<tr>
+<td><code>[^a-z]</code></td>
+<td>负值字符范围。匹配任何不在指定范围内的任意字符。例如，“<code>[^a-z]</code>”可以匹配任何不在“<code>a</code>”到“<code>z</code>”范围内的任意字符。</td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>匹配一个单词边界，也就是指单词和空格间的位置。例如，“<code>er\b</code>”可以匹配“<code>never</code>”中的“<code>er</code>”，但不能匹配“<code>verb</code>”中的“<code>er</code>”。</td>
+</tr>
+<tr>
+<td><code>\B</code></td>
+<td>匹配非单词边界。“<code>er\B</code>”能匹配“<code>verb</code>”中的“<code>er</code>”，但不能匹配“<code>never</code>”中的“<code>er</code>”。</td>
+</tr>
+<tr>
+<td><code>\cx</code></td>
+<td>匹配由<code>x</code>指明的控制字符。例如，<code>\cM</code>匹配一个<code>Control-M</code>或回车符。<code>x</code>的值必须为<code>A-Z</code>或<code>a-z</code>之一。否则，将c视为一个原义的“<code>c</code>”字符。</td>
+</tr>
+<tr>
+<td><code>\d</code></td>
+<td>匹配一个数字字符。等价于<code>[0-9]</code>。</td>
+</tr>
+<tr>
+<td><code>\D</code></td>
+<td>匹配一个非数字字符。等价于<code>[^0-9]</code>。</td>
+</tr>
+<tr>
+<td><code>\f</code></td>
+<td>匹配一个换页符。等价于<code>\x0c</code>和<code>\cL</code>。</td>
+</tr>
+<tr>
+<td><code>\n</code></td>
+<td>匹配一个换行符。等价于<code>\x0a</code>和<code>\cJ</code>。</td>
+</tr>
+<tr>
+<td><code>\r</code></td>
+<td>匹配一个回车符。等价于<code>\x0d</code>和<code>\cM</code>。</td>
+</tr>
+<tr>
+<td><code>\s</code></td>
+<td>匹配任何空白字符，包括空格、制表符、换页符等等。等价于<code>[\f\n\r\t\v]</code>。</td>
+</tr>
+<tr>
+<td><code>\S</code></td>
+<td>匹配任何非空白字符。等价于<code>[^\f\n\r\t\v]</code>。</td>
+</tr>
+<tr>
+<td><code>\t</code></td>
+<td>匹配一个制表符。等价于<code>\x09</code>和<code>\cI</code>。</td>
+</tr>
+<tr>
+<td><code>\v</code></td>
+<td>匹配一个垂直制表符。等价于<code>\x0b</code>和<code>\cK</code>。</td>
+</tr>
+<tr>
+<td><code>\w</code></td>
+<td>匹配包括下划线的任何单词字符。等价于“<code>[A-Za-z0-9_]</code>”。</td>
+</tr>
+<tr>
+<td><code>\W</code></td>
+<td>匹配任何非单词字符。等价于“<code>[^A-Za-z0-9_]</code>”。</td>
+</tr>
+<tr>
+<td><code>\xn</code></td>
+<td>匹配<code>n</code>，其中<code>n</code>为十六进制转义值。十六进制转义值必须为确定的两个数字长。例如，“<code>\x41</code>”匹配“<code>A</code>”。“<code>\x041</code>”则等价于“<code>\x04&amp;1</code>”。正则表达式中可以使用<code>ASCII</code>编码。</td>
+</tr>
+<tr>
+<td><code>\num</code></td>
+<td>匹配<code>num</code>，其中<code>num</code>是一个正整数。对所获取的匹配的引用。例如，“<code>(.)\1</code>”匹配两个连续的相同字符。</td>
+</tr>
+<tr>
+<td><code>\n</code></td>
+<td>标识一个八进制转义值或一个向后引用。如果<code>\n</code>之前至少<code>n</code>个获取的子表达式，则<code>n</code>为向后引用。否则，如果<code>n</code>为八进制数字（<code>0-7</code>），则<code>n</code>为一个八进制转义值。</td>
+</tr>
+<tr>
+<td><code>\nm</code></td>
+<td>标识一个八进制转义值或一个向后引用。如果<code>\nm</code>之前至少有<code>nm</code>个获得子表达式，则<code>nm</code>为向后引用。如果<code>\nm</code>之前至少有<code>n</code>个获取，则<code>n</code>为一个后跟文字<code>m</code>的向后引用。如果前面的条件都不满足，若<code>n</code>和<code>m</code>均为八进制数字（<code>0-7</code>），则<code>\nm</code>将匹配八进制转义值<code>nm</code>。</td>
+</tr>
+<tr>
+<td><code>\nml</code></td>
+<td>如果<code>n</code>为八进制数字（<code>0-3</code>），且<code>m</code>和<code>l</code>均为八进制数字（<code>0-7</code>），则匹配八进制转义值<code>nml</code>。</td>
+</tr>
+<tr>
+<td><code>\un</code></td>
+<td>匹配<code>n</code>，其中<code>n</code>是一个用四个十六进制数字表示的<code>Unicode</code>字符。例如，<code>\u00A9</code>匹配版权符号（<code>©</code>）。</td>
+</tr>
+</tbody></table>
+<!-- prettier-ignore-end -->
+
+<h1>常用正则表达式</h1>
+<!-- prettier-ignore-start -->
+<table>
+<thead>
+<tr>
+<th>匹配内容</th>
+<th>正则表达式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>用户名</td>
+<td><code>/^[a-z0-9_-]{3,16}$/</code></td>
+</tr>
+<tr>
+<td>密码</td>
+<td><code>/^[a-z0-9_-]{6,18}$/</code></td>
+</tr>
+<tr>
+<td>十六进制值</td>
+<td><code>/^#?([a-f0-9]{6}&#124;[a-f0-9]{3})$/</code></td>
+</tr>
+<tr>
+<td>电子邮箱</td>
+<td><code>/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/</code><br><code>/^[a-z\d]+(\.[a-z\d]+)*@([\da-z](-[\da-z])?)+(\.{1,2}[a-z]+)+$/</code></td>
+</tr>
+<tr>
+<td>URL</td>
+<td><code>/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/</code></td>
+</tr>
+<tr>
+<td>IP 地址</td>
+<td><code>/((2[0-4]\d&#124;25[0-5]&#124;[01]?\d\d?).){3}(2[0-4]\d&#124;25[0-5]&#124;[01]?\d\d?)/</code><br><code>/^(?:(?:25[0-5]&#124;2[0-4][0-9]&#124;[01]?[0-9][0-9]?).){3}(?:25[0-5]&#124;2[0-4][0-9]&#124;[01]?[0-9][0-9]?)$/</code></td>
+</tr>
+<tr>
+<td>HTML标签</td>
+<td><code>/^<([a-z]+)([^<]+)<em>(?:>(.</em>)</\1>&#124;\s+/>)$/</code></td>
+</tr>
+<tr>
+<td>删除代码\注释</td>
+<td><code>(?<!\http:&#124;\S)//.*$</code></td>
+</tr>
+<tr>
+<td><code>Unicode</code>编码中的汉字范围</td>
+<td><code>/^[\u2E80-\u9FFF]+$/</code></td>
+</tr>
+</tbody></table>
+<!-- prettier-ignore-end -->
+</div>
+      <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
+      <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
+           data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
+    </div>
+    <aside class="sidebar-area">
+      <div class="sidebar-title">文章目录</div>
+      <nav id="toc-nav" class="toc-nav"></nav>
+    </aside>
+  </div>
+  <script src="/src/components/loading/index.js"></script>
+  <script src="/src/components/banner/index.js"></script>
+  <script src="/src/components/navigation/index.js"></script>
+  <script src="/src/js/highlight.min.js"></script>
+  <script src="/src/js/marked.min.js"></script>
+  <script src="/src/js/marked-highlight.min.js"></script>
+  <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/image-viewer/index.js"></script>
+  <script src="/src/components/scroll/index.js"></script>
+  <script src="/src/components/cookie-consent/index.js"></script>
+  <script src="/src/components/reward-tip/index.js"></script><script>(function(){var mc=document.getElementById('markdown-content');if(window.RewardTip&&mc)window.RewardTip.renderInto(mc);})();</script>
+  <!-- Cloudflare Web Analytics (本地跳过，线上加载) -->
+  <script>
+    (function () {
+      if (/^(localhost|127.0.0.1)$/.test(location.hostname)) return;
+      var s = document.createElement('script');
+      s.type = 'module';
+      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      s.setAttribute('data-cf-beacon', '{"token": "5d0359eb0b054372bc2d153bab40d1f6"}');
+      document.head.appendChild(s);
+    })();
+  </script>
+  <!-- End Cloudflare Web Analytics -->
+  <!-- 访问计数上报（D1 累计，本地跳过） -->
+  <script>
+    (function () {
+      if (/^(localhost|127.0.0.1)$/.test(location.hostname)) return;
+      fetch('https://stats.wuhuajin.com/hit', { method: 'POST' }).catch(function () {});
+    })();
+  </script>
+  <script>
+    (function () {
+      /* 静态页滚动容器抗注入：部分预览环境会对 .layout-container/.content-area 整段 setAttribute style 为
+         "height: auto !important"，使内部滚动容器按内容高度解析、滚不到底。
+         用 MutationObserver 侦测 style 属性变化，一旦出现 auto 即用 JS 计算的视口像素高度（window.innerHeight，
+         不受 100vh 被内容撑大的影响）重新施加，恢复 631 内部滚动。生产正常浏览器无注入时不触发。 */
+      var l = document.querySelector('.layout-container');
+      var ca = document.querySelector('.content-area');
+      if (!l || !ca) return;
+      function fixedH() {
+        var b = parseInt(window.getComputedStyle(document.body).getPropertyValue('--banner-height')) || 0;
+        return (window.innerHeight - b) + 'px';
+      }
+      function force() {
+        var h = fixedH();
+        var changed = false;
+        if ((l.getAttribute('style') || '').indexOf('auto') !== -1) {
+          l.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        if ((ca.getAttribute('style') || '').indexOf('auto') !== -1) {
+          ca.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        return changed;
+      }
+      var timer = null;
+      var mo = new MutationObserver(function () {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(force, 50);
+      });
+      mo.observe(l, { attributes: true, attributeFilter: ['style'] });
+      mo.observe(ca, { attributes: true, attributeFilter: ['style'] });
+      window.addEventListener('resize', force);
+      force();
+    })();
+  </script>
+  <script>
+    (function () {
+      // 正文已静态内联（利于爬虫收录），此处仅做增强：目录、代码高亮、外链新窗口、广告填充。
+      function finish() {
+        try {
+          if (typeof generateTOC === 'function') generateTOC();
+          // 静态正文代码块尚未高亮，用 hljs 补充高亮（此时不存在重复高亮问题）
+          if (typeof hljs !== 'undefined') {
+            document.querySelectorAll('#markdown-content pre code').forEach(function (el) {
+              try { hljs.highlightElement(el); } catch (e) {}
+            });
+          }
+          document.querySelectorAll('#markdown-content a').forEach(function (a) {
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener noreferrer');
+          });
+        } catch (e) {}
+        if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
+        if (typeof hideLoading === 'function') hideLoading();
+      }
+      finish();
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="吴华锦" />
+  <title>Git命令思维导图 « 吴华锦</title>
+  <meta name="description" content="Git 提交规范思维导图，系统梳理团队协作中最实用的提交信息书写方法。规范化的提交信息（Conventional Commits）能让每次变更一目了然，帮助团队快速定位功能、修复与重构，并自动生成变更日志。图中整理了核心类型：feat 新增功能、fix 修复 Bug、docs 文档、refactor 重构、perf 性能优化、build 构建系统、ci 持续集成、chore 辅助工具、test 测试、style 格式调整，同时介绍 scope 作用域与 ! 破坏性变更标记，说明如何通过规范的 type、scope、description 结构让提交历史清晰可读。适合前端、后端与全栈工程师作为团队提交规范的速查参考，配合 Git 分支管理与代码评审，能显著提升多人协作的透明度与可维护性。" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wuhuajin.com/src/template/posts/Git/html/Git%E5%91%BD%E4%BB%A4%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Wu Huajin" />
+  <meta property="og:title" content="Git命令思维导图" />
+  <meta property="og:description" content="Git 提交规范思维导图，系统梳理团队协作中最实用的提交信息书写方法。规范化的提交信息（Conventional Commits）能让每次变更一目了然，帮助团队快速定位功能、修复与重构，并自动生成变更日志。图中整理了核心类型：feat 新增功能、fix 修复 Bug、docs 文档、refactor 重构、perf 性能优化、build 构建系统、ci 持续集成、chore 辅助工具、test 测试、style 格式调整，同时介绍 scope 作用域与 ! 破坏性变更标记，说明如何通过规范的 type、scope、description 结构让提交历史清晰可读。适合前端、后端与全栈工程师作为团队提交规范的速查参考，配合 Git 分支管理与代码评审，能显著提升多人协作的透明度与可维护性。" />
+  <meta property="og:url" content="https://wuhuajin.com/src/template/posts/Git/html/Git%E5%91%BD%E4%BB%A4%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE.html" />
+  <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Git命令思维导图" />
+  <meta name="twitter:description" content="Git 提交规范思维导图，系统梳理团队协作中最实用的提交信息书写方法。规范化的提交信息（Conventional Commits）能让每次变更一目了然，帮助团队快速定位功能、修复与重构，并自动生成变更日志。图中整理了核心类型：feat 新增功能、fix 修复 Bug、docs 文档、refactor 重构、perf 性能优化、build 构建系统、ci 持续集成、chore 辅助工具、test 测试、style 格式调整，同时介绍 scope 作用域与 ! 破坏性变更标记，说明如何通过规范的 type、scope、description 结构让提交历史清晰可读。适合前端、后端与全栈工程师作为团队提交规范的速查参考，配合 Git 分支管理与代码评审，能显著提升多人协作的透明度与可维护性。" />
+  <link rel="icon" href="/src/images/favicon.png" />
+  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/src/css/github-dark.min.css" />
+  <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/image-viewer/index.css" />
+  <link rel="stylesheet" href="/src/components/loading/index.css" />
+  <link rel="stylesheet" href="/src/components/navigation/index.css" />
+  <link rel="stylesheet" href="/src/components/banner/index.css" />
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Git命令思维导图",
+  "description": "Git 提交规范思维导图，系统梳理团队协作中最实用的提交信息书写方法。规范化的提交信息（Conventional Commits）能让每次变更一目了然，帮助团队快速定位功能、修复与重构，并自动生成变更日志。图中整理了核心类型：feat 新增功能、fix 修复 Bug、docs 文档、refactor 重构、perf 性能优化、build 构建系统、ci 持续集成、chore 辅助工具、test 测试、style 格式调整，同时介绍 scope 作用域与 ! 破坏性变更标记，说明如何通过规范的 type、scope、description 结构让提交历史清晰可读。适合前端、后端与全栈工程师作为团队提交规范的速查参考，配合 Git 分支管理与代码评审，能显著提升多人协作的透明度与可维护性。",
+  "author": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "吴华锦",
+    "url": "https://wuhuajin.com/"
+  },
+  "datePublished": "2026-10-12 01:25:07",
+  "inLanguage": "zh-CN",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wuhuajin.com/src/template/posts/Git/html/Git%E5%91%BD%E4%BB%A4%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE.html"
+  }
+}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
+  <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+</head>
+<body data-reward="true">
+  <div class="layout-container">
+    <div class="nav-container"></div>
+    <div class="content-area">
+      <div id="markdown-content" class="markdown-content viewer" data-reward="true"><p><img referrerpolicy="no-referrer" src="https://s1.imagehub.cc/images/2026/10/11/f973f47c4b8e2aa5d50d0317d4689799.md.webp" alt=""><br><img referrerpolicy="no-referrer" src="https://s1.imagehub.cc/images/2026/10/11/4ea3172e1cffd9daa568358e6eefc035.md.webp" alt=""><br><img referrerpolicy="no-referrer" src="https://s1.imagehub.cc/images/2026/10/11/09cc0ee7256a7d1370eba525505df2e4.md.webp" alt=""><br><img referrerpolicy="no-referrer" src="https://s1.imagehub.cc/images/2026/10/11/8a59bddb0378c308e7c2c1a92ba48b92.md.webp" alt=""><br><img referrerpolicy="no-referrer" src="https://s1.imagehub.cc/images/2026/10/11/235531f0e325c9c557aa31ff7691ff8b.md.webp" alt=""><br><img referrerpolicy="no-referrer" src="https://s1.imagehub.cc/images/2026/10/11/a18530b781aa22d95ad2a8cf88aa4a5b.md.webp" alt=""><br><img referrerpolicy="no-referrer" src="https://s1.imagehub.cc/images/2026/10/11/7efbc6eaf5a293618f47ff711db3dc36.md.webp" alt=""></p>
+</div>
+      <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
+      <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
+           data-ad-client="ca-pub-3179609405594046" data-ad-slot="8781436700"></ins>
+    </div>
+    <aside class="sidebar-area">
+      <div class="sidebar-title">文章目录</div>
+      <nav id="toc-nav" class="toc-nav"></nav>
+    </aside>
+  </div>
+  <script src="/src/components/loading/index.js"></script>
+  <script src="/src/components/banner/index.js"></script>
+  <script src="/src/components/navigation/index.js"></script>
+  <script src="/src/js/highlight.min.js"></script>
+  <script src="/src/js/marked.min.js"></script>
+  <script src="/src/js/marked-highlight.min.js"></script>
+  <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/image-viewer/index.js"></script>
+  <script src="/src/components/scroll/index.js"></script>
+  <script src="/src/components/cookie-consent/index.js"></script>
+  <script src="/src/components/reward-tip/index.js"></script><script>(function(){var mc=document.getElementById('markdown-content');if(window.RewardTip&&mc)window.RewardTip.renderInto(mc);})();</script>
+  <!-- Cloudflare Web Analytics (本地跳过，线上加载) -->
+  <script>
+    (function () {
+      if (/^(localhost|127.0.0.1)$/.test(location.hostname)) return;
+      var s = document.createElement('script');
+      s.type = 'module';
+      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      s.setAttribute('data-cf-beacon', '{"token": "5d0359eb0b054372bc2d153bab40d1f6"}');
+      document.head.appendChild(s);
+    })();
+  </script>
+  <!-- End Cloudflare Web Analytics -->
+  <!-- 访问计数上报（D1 累计，本地跳过） -->
+  <script>
+    (function () {
+      if (/^(localhost|127.0.0.1)$/.test(location.hostname)) return;
+      fetch('https://stats.wuhuajin.com/hit', { method: 'POST' }).catch(function () {});
+    })();
+  </script>
+  <script>
+    (function () {
+      /* 静态页滚动容器抗注入：部分预览环境会对 .layout-container/.content-area 整段 setAttribute style 为
+         "height: auto !important"，使内部滚动容器按内容高度解析、滚不到底。
+         用 MutationObserver 侦测 style 属性变化，一旦出现 auto 即用 JS 计算的视口像素高度（window.innerHeight，
+         不受 100vh 被内容撑大的影响）重新施加，恢复 631 内部滚动。生产正常浏览器无注入时不触发。 */
+      var l = document.querySelector('.layout-container');
+      var ca = document.querySelector('.content-area');
+      if (!l || !ca) return;
+      function fixedH() {
+        var b = parseInt(window.getComputedStyle(document.body).getPropertyValue('--banner-height')) || 0;
+        return (window.innerHeight - b) + 'px';
+      }
+      function force() {
+        var h = fixedH();
+        var changed = false;
+        if ((l.getAttribute('style') || '').indexOf('auto') !== -1) {
+          l.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        if ((ca.getAttribute('style') || '').indexOf('auto') !== -1) {
+          ca.setAttribute('style', 'height:' + h + ';');
+          changed = true;
+        }
+        return changed;
+      }
+      var timer = null;
+      var mo = new MutationObserver(function () {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(force, 50);
+      });
+      mo.observe(l, { attributes: true, attributeFilter: ['style'] });
+      mo.observe(ca, { attributes: true, attributeFilter: ['style'] });
+      window.addEventListener('resize', force);
+      force();
+    })();
+  </script>
+  <script>
+    (function () {
+      // 正文已静态内联（利于爬虫收录），此处仅做增强：目录、代码高亮、外链新窗口、广告填充。
+      function finish() {
+        try {
+          if (typeof generateTOC === 'function') generateTOC();
+          // 静态正文代码块尚未高亮，用 hljs 补充高亮（此时不存在重复高亮问题）
+          if (typeof hljs !== 'undefined') {
+            document.querySelectorAll('#markdown-content pre code').forEach(function (el) {
+              try { hljs.highlightElement(el); } catch (e) {}
+            });
+          }
+          document.querySelectorAll('#markdown-content a').forEach(function (a) {
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener noreferrer');
+          });
+        } catch (e) {}
+        if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
+        if (typeof hideLoading === 'function') hideLoading();
+      }
+      finish();
+    })();
+  </script>
+</body>
+</html>

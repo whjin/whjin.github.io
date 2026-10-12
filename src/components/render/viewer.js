@@ -1,7 +1,11 @@
-// html 文章底部赞赏卡片：format=html 内容基于 .html，无 frontmatter，默认直接显示卡片。
+// html 文章底部赞赏卡片：format=html 内容基于 .html，无 frontmatter。
+// reward 开关随静态 html 输出为 #markdown-content[data-reward]，此处据此决定是否显示。
 // （旧逻辑会额外请求同名 .md 读取 reward 开关，但项目里并无 md 定义 reward，且该请求在只有 .html 的内容上产生 404 控制台报错，故移除）
 function injectRewardCard(container) {
   if (!container) return;
+  // 尊重文章 reward 配置：容器或嵌套元素 data-reward="false" 则不显示卡片（true/缺省默认显示）
+  const rEl = (container.querySelector && container.querySelector('[data-reward]')) || container;
+  if (rEl && rEl.getAttribute('data-reward') === 'false') return;
   renderRewardTip(container);
 }
 
@@ -91,6 +95,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
       if (headings.length === 0 || isMobile()) {
         navContainer.classList.add('hide-toc');
       }
+      // 赞赏卡片由 render/index.js 的 maybeRenderRewardTip 按 md front matter 的 reward 控制注入
       hideLoading();
     });
   }

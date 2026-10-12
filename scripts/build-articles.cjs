@@ -38,12 +38,19 @@ function buildPage(it) {
   if (!fs.existsSync(mdPath)) return { title: it.title, error: 'md 不存在: ' + mdPath };
 
   const md = fs.readFileSync(mdPath, 'utf8');
-  const bodyHtml = marked.parse(stripFrontMatter(md));
+  let bodyHtml = marked.parse(stripFrontMatter(md));
+  // 外链图片加 no-referrer：绕过图床防盗链（如语雀 cdn.nlark.com），请求不携带站点 Referer
+  bodyHtml = bodyHtml.replace(
+    /<img\b(?![^>]*\breferrerpolicy\s*=)(?=[^>]*\bsrc\s*=\s*["'](?:https?:)?\/\/)/g,
+    '<img referrerpolicy="no-referrer"'
+  );
   const rel = '/src/template/posts/' + folder + '/html/' + file + '.html';
   const url = SITE + '/src/template/posts/' + encodeURIComponent(folder) + '/html/' + encodeURIComponent(file) + '.html';
   const title = it.title;
   const desc = String(it.description || '').replace(/\s+/g, ' ').trim();
   const date = it.date || '';
+  // feed 已按 md front matter 计算 reward：true/缺省默认显示卡片，仅 reward:false 隐藏
+  const rewardOn = it.reward !== false;
 
   const ld = {
     '@context': 'https://schema.org',
@@ -82,6 +89,7 @@ function buildPage(it) {
   <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
+  <link rel="stylesheet" href="/src/components/image-viewer/index.css" />
   <link rel="stylesheet" href="/src/components/loading/index.css" />
   <link rel="stylesheet" href="/src/components/navigation/index.css" />
   <link rel="stylesheet" href="/src/components/banner/index.css" />
@@ -91,12 +99,11 @@ function buildPage(it) {
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${AD_CLIENT}" crossorigin="anonymous"></script>
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
-<body>
+<body data-reward="${rewardOn ? 'true' : 'false'}">
   <div class="layout-container">
     <div class="nav-container"></div>
     <div class="content-area">
-      <div id="markdown-content" class="markdown-content viewer"></div>
-      <noscript><div class="markdown-content viewer" style="padding:1em">${bodyHtml}</div></noscript>
+      <div id="markdown-content" class="markdown-content viewer" data-reward="${rewardOn ? 'true' : 'false'}">${bodyHtml}</div>
       <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
       <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
            data-ad-client="${AD_CLIENT}" data-ad-slot="8781436700"></ins>
@@ -113,8 +120,10 @@ function buildPage(it) {
   <script src="/src/js/marked.min.js"></script>
   <script src="/src/js/marked-highlight.min.js"></script>
   <script src="/src/components/render/index.js"></script>
+  <script src="/src/components/image-viewer/index.js"></script>
   <script src="/src/components/scroll/index.js"></script>
   <script src="/src/components/cookie-consent/index.js"></script>
+  ${rewardOn ? '<script src="/src/components/reward-tip/index.js"></script><script>(function(){var mc=document.getElementById(\'markdown-content\');if(window.RewardTip&&mc)window.RewardTip.renderInto(mc);})();</script>' : ''}
   <!-- Cloudflare Web Analytics (本地跳过，线上加载) -->
   <script>
     (function () {
@@ -173,13 +182,16 @@ function buildPage(it) {
   </script>
   <script>
     (function () {
-      // 运行时从相邻 .md 渲染：md 改动后刷新即更新；保留预渲染正文作为 no-JS / 爬虫回退
-      var mdUrl = '../${encodeURIComponent(file)}.md';
+      // 正文已静态内联（利于爬虫收录），此处仅做增强：目录、代码高亮、外链新窗口、广告填充。
       function finish() {
         try {
           if (typeof generateTOC === 'function') generateTOC();
-          // markedHighlight 已在 handler 内完成代码高亮，此处不再重复 hljs.highlightElement，
-          // 否则 highlight.js 会把已高亮的 <span> 误判为未转义 HTML 而触发安全告警。
+          // 静态正文代码块尚未高亮，用 hljs 补充高亮（此时不存在重复高亮问题）
+          if (typeof hljs !== 'undefined') {
+            document.querySelectorAll('#markdown-content pre code').forEach(function (el) {
+              try { hljs.highlightElement(el); } catch (e) {}
+            });
+          }
           document.querySelectorAll('#markdown-content a').forEach(function (a) {
             a.setAttribute('target', '_blank');
             a.setAttribute('rel', 'noopener noreferrer');
@@ -188,13 +200,7 @@ function buildPage(it) {
         if (window.adsbygoogle) (window.adsbygoogle = window.adsbygoogle || []).push({});
         if (typeof hideLoading === 'function') hideLoading();
       }
-      try {
-        if (typeof handler === 'function') {
-          handler('markdown-content', mdUrl, finish);
-        } else {
-          finish();
-        }
-      } catch (e) { finish(); }
+      finish();
     })();
   </script>
 </body>

@@ -76,6 +76,13 @@
 
 56. 菜单模板页统一收纳到 **`src/template/posts/Link/`**：将 `文章/教程/工具/友链/资源` 五个非文章页分类目录移入 `Link/` 下统一管理（`Link/文章/article.html` 等），viewer 路径相应加 `Link_` 前缀（`path=Link_文章_article` 等），更新 i18n/sidebar/social/reward-tip/feed 共 6 文件 12 处引用；5 个菜单页经浏览器验证正常加载。**踩坑**：移入后菜单页目录深一层，`../../link/index.css|js`（共享资源在 `src/template/link|menu/`）会解析到 `posts/link/` 而 404，需加一级改为 `../../../link/`。
 
+57. 文章正文图片渲染 + 全屏查看：新增 `src/components/image-viewer` 模块——正文图片**水平居中、宽度自适应、图间留间距**，点击图片全屏查看**原图**（加载原图 URL，支持点击切换「原尺寸/适应屏幕」、滚轮缩放、拖动平移，Esc/遮罩/关闭按钮退出），事件委托对静态内联与动态渲染图片均生效。
+58. 赞赏卡片统一控制：md front matter `reward` 开关——`true`/缺省 → 显示赞赏卡片，`false` → 隐藏；静态文章页（`build-articles.cjs` 按 reward 条件注入 + `data-reward` 标记）与 viewer（html 分支尊重 `data-reward`、md 分支由 `render/index.js` 按 front matter 判断）三处口径一致。
+59. 文章置顶 `top`：md front matter `top:true` 为最高优先级；多篇 top 时按 `date` 倒序（date 越新越靠前）；落地于 feed 数据层（`build-feed.cjs`）与首页动态 feed（`feed/index.js`）；置顶卡片左上角显示小号 `TOP/置顶` 标签（`i18n` 新增 `fc_top`，随语言图标切换中英文）。
+60. 外链图片防盗链修复：图床（如语雀 `cdn.nlark.com`）拒绝携带站点 Referer 的图片请求，导致 gif/图片不显示（`naturalWidth=0`）；给外链 `<img>` 加 `referrerpolicy="no-referrer"`（`build-articles.cjs` 构建 + `render/index.js` 前端渲染两处），所有外链图片正常加载，动图可播放、可全屏查看。
+61. 文章静态页 404 修复：md **文件名与 front title 不一致**会导致构建用 title 找 md 失败、跳过该文章、静态页 404（正则表达式手册案例）；统一 md 文件名与 front title 后重建即恢复。
+62. 构建链统一：新增 `scripts/build-all.cjs`（feed→articles→home→sitemap 顺序敏感）、`scripts/watch.cjs`（md 变更自动 build-all）、package.json scripts 重写（`dev`/`build`/`build:watch`），实现 md → html 实时转换与浏览器自动刷新；统一 front matter 字段 `tag:`→`tags:`。
+
 # 兼容处理部署脚本
 
 ```bash
