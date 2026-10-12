@@ -4,19 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="author" content="吴华锦" />
-  <title>Node.js 技术文档：npm 命令、文件操作与事件循环速查手册 « 吴华锦</title>
+  <title>Node.js技术文档和速查手册 « 吴华锦</title>
   <meta name="description" content="面向 Node.js 开发者与初学者的核心速查文档，系统梳理日常最常用、最易遗忘的知识点。内容包括 npm 包管理的常用命令与全局路径配置；fs 文件模块的读写参数、flag 标志位及同步 API 的 try...catch 异常处理；stats 文件状态判断与 path 路径模块常用方法；HTTP 无连接无状态特性与 OSI 七层模型；并深入讲解 Node.js 事件循环（Event Loop）的运行机制。全文以表格速查为主，是开发时随手可查的参考手册，帮助你在写文件、装依赖、处理路径、排查网络问题时快速定位答案。" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://wuhuajin.com/src/template/posts/Node/html/Node.js%20%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%EF%BC%9Anpm%20%E5%91%BD%E4%BB%A4%E3%80%81%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E4%B8%8E%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.html" />
+  <link rel="canonical" href="https://wuhuajin.com/src/template/posts/Node/html/Node.js%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E5%92%8C%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.html" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Wu Huajin" />
-  <meta property="og:title" content="Node.js 技术文档：npm 命令、文件操作与事件循环速查手册" />
+  <meta property="og:title" content="Node.js技术文档和速查手册" />
   <meta property="og:description" content="面向 Node.js 开发者与初学者的核心速查文档，系统梳理日常最常用、最易遗忘的知识点。内容包括 npm 包管理的常用命令与全局路径配置；fs 文件模块的读写参数、flag 标志位及同步 API 的 try...catch 异常处理；stats 文件状态判断与 path 路径模块常用方法；HTTP 无连接无状态特性与 OSI 七层模型；并深入讲解 Node.js 事件循环（Event Loop）的运行机制。全文以表格速查为主，是开发时随手可查的参考手册，帮助你在写文件、装依赖、处理路径、排查网络问题时快速定位答案。" />
-  <meta property="og:url" content="https://wuhuajin.com/src/template/posts/Node/html/Node.js%20%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%EF%BC%9Anpm%20%E5%91%BD%E4%BB%A4%E3%80%81%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E4%B8%8E%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.html" />
+  <meta property="og:url" content="https://wuhuajin.com/src/template/posts/Node/html/Node.js%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E5%92%8C%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.html" />
   <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
   <meta property="og:locale" content="zh_CN" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Node.js 技术文档：npm 命令、文件操作与事件循环速查手册" />
+  <meta name="twitter:title" content="Node.js技术文档和速查手册" />
   <meta name="twitter:description" content="面向 Node.js 开发者与初学者的核心速查文档，系统梳理日常最常用、最易遗忘的知识点。内容包括 npm 包管理的常用命令与全局路径配置；fs 文件模块的读写参数、flag 标志位及同步 API 的 try...catch 异常处理；stats 文件状态判断与 path 路径模块常用方法；HTTP 无连接无状态特性与 OSI 七层模型；并深入讲解 Node.js 事件循环（Event Loop）的运行机制。全文以表格速查为主，是开发时随手可查的参考手册，帮助你在写文件、装依赖、处理路径、排查网络问题时快速定位答案。" />
   <link rel="icon" href="/src/images/favicon.png" />
   <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
@@ -31,7 +31,7 @@
   {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Node.js 技术文档：npm 命令、文件操作与事件循环速查手册",
+  "headline": "Node.js技术文档和速查手册",
   "description": "面向 Node.js 开发者与初学者的核心速查文档，系统梳理日常最常用、最易遗忘的知识点。内容包括 npm 包管理的常用命令与全局路径配置；fs 文件模块的读写参数、flag 标志位及同步 API 的 try...catch 异常处理；stats 文件状态判断与 path 路径模块常用方法；HTTP 无连接无状态特性与 OSI 七层模型；并深入讲解 Node.js 事件循环（Event Loop）的运行机制。全文以表格速查为主，是开发时随手可查的参考手册，帮助你在写文件、装依赖、处理路径、排查网络问题时快速定位答案。",
   "author": {
     "@type": "Person",
@@ -47,7 +47,7 @@
   "inLanguage": "zh-CN",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://wuhuajin.com/src/template/posts/Node/html/Node.js%20%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%EF%BC%9Anpm%20%E5%91%BD%E4%BB%A4%E3%80%81%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E4%B8%8E%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.html"
+    "@id": "https://wuhuajin.com/src/template/posts/Node/html/Node.js%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E5%92%8C%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.html"
   }
 }
   </script>

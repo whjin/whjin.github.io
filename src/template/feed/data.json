@@ -366,6 +366,35 @@
     "tagName": "ol",
     "items": [
       {
+        "title": "Webpack原理详解",
+        "url": "/src/template/posts/JavaScript/html/Webpack原理详解.html",
+        "category": "JavaScript",
+        "date": "2026-10-12 16:36:45",
+        "readTime": 16,
+        "description": "本篇文章系统讲解 Webpack 这一现代前端核心构建工具的工作原理。Webpack 本质上是一个静态模块打包工具，它会从配置的入口文件出发，自动构建项目的依赖图，将所有模块打包成浏览器可直接运行的静态资源。文章首先结合最新官方文档介绍 Webpack 的核心概念，包括入口 Entry、输出 Output、Loader 模块转换器、Plugin 插件、模式 Mode 以及浏览器兼容性与运行环境要求，并说明各概念的实际配置方式。随后深入剖析 Webpack 的三大构建阶段，即初始化、编译与输出，讲解 Compiler 与 Compilation 对象的职责、Loader 转换模块的流程以及依赖图递归构建的过程。最后通过分析输出文件 bundle 的源码结构，解释多个模块如何被合并为一个文件、浏览器端如何通过模拟 require 的加载函数运行模块，以及代码分割的原理，帮助读者真正理解 Webpack 的底层机制。",
+        "tags": [
+          "javascript",
+          "webpack",
+          "构建工具"
+        ],
+        "top": true,
+        "reward": true
+      },
+      {
+        "title": "计算机网络知识速览",
+        "url": "/src/template/posts/网络/html/计算机网络知识速览.html",
+        "category": "网络",
+        "date": "2026-10-12 16:28:59",
+        "readTime": 37,
+        "description": "本篇文章系统梳理计算机网络的必备基础知识，适合前后端开发者日常快速查阅。文章首先介绍 HTTP 响应常见状态码，按 1xx 至 5xx 分类讲解各段含义，并重点解析 200、302、304、403、404、500 等高频状态码的使用场景。随后详细讲解 TCP 三次握手建立连接与四次挥手释放连接的完整过程，理解连接建立与关闭每一步的报文交换。接着展开计算机网络体系结构，从应用层、运输层、网络层、数据链路层到物理层，逐层说明各层职责与代表协议，并梳理 TCP 与 UDP 两大传输协议的差异，以及 TCP/IP 七层体系结构的协作关系。最后对比 HTTP 与 HTTPS 的区别，了解明文传输与加密传输的本质差异。全文以表格和图解呈现、即查即用，是理解网络原理与排查网络问题的实用参考。",
+        "tags": [
+          "网络",
+          "HTTP"
+        ],
+        "top": true,
+        "reward": true
+      },
+      {
         "title": "JavaScript正则表达式手册",
         "url": "/src/template/posts/JavaScript/html/JavaScript正则表达式手册.html",
         "category": "JavaScript",
@@ -381,8 +410,8 @@
         "reward": true
       },
       {
-        "title": "JavaScript 思维导图合集：8 张图系统吃透核心知识点",
-        "url": "/src/template/posts/JavaScript/html/JavaScript 思维导图合集：8 张图系统吃透核心知识点.html",
+        "title": "JavaScript思维导图合集",
+        "url": "/src/template/posts/JavaScript/html/JavaScript思维导图合集.html",
         "category": "JavaScript",
         "date": "2026-10-12 01:27:12",
         "readTime": 3,
@@ -401,8 +430,8 @@
         "reward": true
       },
       {
-        "title": "Node.js 技术文档：npm 命令、文件操作与事件循环速查手册",
-        "url": "/src/template/posts/Node/html/Node.js 技术文档：npm 命令、文件操作与事件循环速查手册.html",
+        "title": "Node.js技术文档和速查手册",
+        "url": "/src/template/posts/Node/html/Node.js技术文档和速查手册.html",
         "category": "Node",
         "date": "2026-10-12 00:57:02",
         "readTime": 9,

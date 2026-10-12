@@ -82,6 +82,10 @@
 60. 外链图片防盗链修复：图床（如语雀 `cdn.nlark.com`）拒绝携带站点 Referer 的图片请求，导致 gif/图片不显示（`naturalWidth=0`）；给外链 `<img>` 加 `referrerpolicy="no-referrer"`（`build-articles.cjs` 构建 + `render/index.js` 前端渲染两处），所有外链图片正常加载，动图可播放、可全屏查看。
 61. 文章静态页 404 修复：md **文件名与 front title 不一致**会导致构建用 title 找 md 失败、跳过该文章、静态页 404（正则表达式手册案例）；统一 md 文件名与 front title 后重建即恢复。
 62. 构建链统一：新增 `scripts/build-all.cjs`（feed→articles→home→sitemap 顺序敏感）、`scripts/watch.cjs`（md 变更自动 build-all）、package.json scripts 重写（`dev`/`build`/`build:watch`），实现 md → html 实时转换与浏览器自动刷新；统一 front matter 字段 `tag:`→`tags:`。
+63. feed 支持单行数组 front matter：`build-feed.cjs` 的 `parseFrontMatter` 支持 `category: ['JavaScript']`、`tag: ['a','b']` 单行数组写法（此前仅支持标量或 `- item` 多行列表），`category` 取数组第一项（首页卡片按字符串契约消费），同时兼容单数 `tag` 与复数 `tags` 两种字段名。
+64. 旧静态页自动清理：`build-articles.cjs` 生成后删除不再对应任何当前文章的旧 html（md 改名/删除后避免残留），仅作用于 `posts/<分类>/html/` 子目录，不触碰 `Link/` 菜单页等其他 html（首版清理曾误删菜单页，已限定范围修复）。
+65. 全项目标签优化：清理与标题完全重复的冗余 tag（如 `Webpack原理详解` 文章 tag 中的同名项），保留合理通用标签。
+66. 侧边栏广告位卡支持自定义广告：`src/components/sidebar/data.json` 的 Advertisement 卡（`type:ads`）配置 `items`（image/title/desc/url）即渲染为「图片+标题+描述」广告卡，未配置时回退 AdSense / 占位；已配置 PixTV 广告。
 
 # 兼容处理部署脚本
 

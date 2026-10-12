@@ -223,6 +223,30 @@ articles.forEach((it) => {
 console.log('--- 生成完成: ' + ok + '/' + articles.length + ' | 失败: ' + errs.length);
 errs.forEach((e) => console.log('ERR ' + e));
 
+// 清理冗余 html：md 改名/删除后，删除不再对应任何当前文章的旧静态页，避免残留。
+// 仅清理 build-articles 自己的输出目录（posts/<分类>/html/），绝不触碰 Link/ 等菜单页等其他 html。
+const validHtml = new Set();
+articles.forEach((it) => { if (it && it.category && it.title) validHtml.add(it.category + '\u0000' + it.title); });
+function walkCleanHtml(dir, inHtmlSubdir) {
+  if (!fs.existsSync(dir)) return;
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    const p = path.join(dir, e.name);
+    if (e.isDirectory()) {
+      walkCleanHtml(p, e.name === 'html');
+    } else if (/\.html$/.test(e.name) && inHtmlSubdir) {
+      const rel = path.relative(POSTS, path.dirname(p));
+      const folder = rel.split(path.sep)[0];
+      const base = e.name.replace(/\.html$/, '');
+      if (!validHtml.has(folder + '\u0000' + base)) {
+        try { fs.unlinkSync(p); console.log('RM  ' + path.relative(POSTS, p)); }
+        catch (e2) { console.log('RMERR ' + p + ' ' + e2.message); }
+      }
+    }
+  }
+}
+walkCleanHtml(POSTS, false);
+
+
 // 更新 feed 中「原创文章」url 统一指向 html 子目录静态页（/posts/<分类>/html/<标题>.html）
 let feedText = fs.readFileSync(FEED, 'utf8');
 let changed = 0;

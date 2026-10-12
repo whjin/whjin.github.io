@@ -1,5 +1,5 @@
 ---
-title: JavaScript 思维导图合集：8 张图系统吃透核心知识点
+title: JavaScript思维导图合集
 date: 2026-10-12 01:27:12
 category: JavaScript
 description: 'javascript变量 2. javascript运算符 3. javascript数组 4. javascript流程语句 5. javascript字符串函数 6. javascript函数基础 7. javascript基础DOM操作 8. javascript正则表达式 [1]: https://www.yuque.com/docs/share/c79ad556-e3f9-427d-a8dc-e1d91dd4d68d? [2]: https://whjin.github.io/frontend-dev-doc/'

@@ -135,12 +135,22 @@
       <!--HOME-STATIC-START-->
       <div class="static-home-feed" aria-label="文章列表">
 <article class="static-post">
+  <h3 class="static-post-title"><a href="/src/template/posts/JavaScript/html/Webpack原理详解.html">Webpack原理详解</a></h3>
+  <p class="static-post-meta"><time datetime="2026-10-12 16:36:45">2026-10-12 16:36:45</time> · JavaScript</p>
+  <p class="static-post-desc">本篇文章系统讲解 Webpack 这一现代前端核心构建工具的工作原理。Webpack 本质上是一个静态模块打包工具，它会从配置的入口文件出发，自动构建项目的依赖图，将所有模块打包成浏览器可直接运行的静态资源。文章首先结合最新官方文档介绍 Webpack 的核心概念，包括入口 Entry、输出 Output、Loader 模块转换器、Plugin 插件、模式 Mode 以及浏览器兼容性与运行环境要求，并说明各概念的实际配置方式。随后深入剖析 Webpack 的三大构建阶段，即初始化、编译与输出，讲解 Compiler 与 Compilation 对象的职责、Loader 转换模块的流程以及依赖图递归构建的过程。最后通过分析输出文件 bundle 的源码结构，解释多个模块如何被合并为一个文件、浏览器端如何通过模拟 require 的加载函数运行模块，以及代码分割的原理，帮助读者真正理解 Webpack 的底层机制。</p>
+</article>
+<article class="static-post">
+  <h3 class="static-post-title"><a href="/src/template/posts/网络/html/计算机网络知识速览.html">计算机网络知识速览</a></h3>
+  <p class="static-post-meta"><time datetime="2026-10-12 16:28:59">2026-10-12 16:28:59</time> · 网络</p>
+  <p class="static-post-desc">本篇文章系统梳理计算机网络的必备基础知识，适合前后端开发者日常快速查阅。文章首先介绍 HTTP 响应常见状态码，按 1xx 至 5xx 分类讲解各段含义，并重点解析 200、302、304、403、404、500 等高频状态码的使用场景。随后详细讲解 TCP 三次握手建立连接与四次挥手释放连接的完整过程，理解连接建立与关闭每一步的报文交换。接着展开计算机网络体系结构，从应用层、运输层、网络层、数据链路层到物理层，逐层说明各层职责与代表协议，并梳理 TCP 与 UDP 两大传输协议的差异，以及 TCP/IP 七层体系结构的协作关系。最后对比 HTTP 与 HTTPS 的区别，了解明文传输与加密传输的本质差异。全文以表格和图解呈现、即查即用，是理解网络原理与排查网络问题的实用参考。</p>
+</article>
+<article class="static-post">
   <h3 class="static-post-title"><a href="/src/template/posts/JavaScript/html/JavaScript正则表达式手册.html">JavaScript正则表达式手册</a></h3>
   <p class="static-post-meta"><time datetime="2026-10-12 14:45:11">2026-10-12 14:45:11</time> · JavaScript</p>
   <p class="static-post-desc">面向JavaScript开发者与初学者的正则表达式速查手册，系统整理正则引擎核心知识与高频用法。第一部分为表达式全集，详解 \\d、\\w、\\s、\\b 等元字符，以及 ^ $ * + ? 量词、字符类、分组捕获、非获取匹配、正向反向预查、转义与 Unicode 编码等全部语法，每条均配直观示例。第二部分为常用正则，涵盖用户名、密码、邮箱、URL、IP 地址、HTML 标签、代码注释剔除、汉字范围校验等可直接复用的表达式。全文以表格呈现、即查即用，是处理字符串校验、文本提取与数据清洗的随手参考手册。</p>
 </article>
 <article class="static-post">
-  <h3 class="static-post-title"><a href="/src/template/posts/JavaScript/html/JavaScript 思维导图合集：8 张图系统吃透核心知识点.html">JavaScript 思维导图合集：8 张图系统吃透核心知识点</a></h3>
+  <h3 class="static-post-title"><a href="/src/template/posts/JavaScript/html/JavaScript思维导图合集.html">JavaScript思维导图合集</a></h3>
   <p class="static-post-meta"><time datetime="2026-10-12 01:27:12">2026-10-12 01:27:12</time> · JavaScript</p>
   <p class="static-post-desc">javascript变量 2. javascript运算符 3. javascript数组 4. javascript流程语句 5. javascript字符串函数 6. javascript函数基础 7. javascript基础DOM操作 8. javascript正则表达式 [1]: https://www.yuque.com/docs/share/c79ad556-e3f9-427d-a8dc-e1d91dd4d68d? [2]: https://whjin.github.io/frontend-dev-doc/</p>
 </article>
@@ -150,7 +160,7 @@
   <p class="static-post-desc">Git 提交规范思维导图，系统梳理团队协作中最实用的提交信息书写方法。规范化的提交信息（Conventional Commits）能让每次变更一目了然，帮助团队快速定位功能、修复与重构，并自动生成变更日志。图中整理了核心类型：feat 新增功能、fix 修复 Bug、docs 文档、refactor 重构、perf 性能优化、build 构建系统、ci 持续集成、chore 辅助工具、test 测试、style 格式调整，同时介绍 scope 作用域与 ! 破坏性变更标记，说明如何通过规范的 type、scope、description 结构让提交历史清晰可读。适合前端、后端与全栈工程师作为团队提交规范的速查参考，配合 Git 分支管理与代码评审，能显著提升多人协作的透明度与可维护性。</p>
 </article>
 <article class="static-post">
-  <h3 class="static-post-title"><a href="/src/template/posts/Node/html/Node.js 技术文档：npm 命令、文件操作与事件循环速查手册.html">Node.js 技术文档：npm 命令、文件操作与事件循环速查手册</a></h3>
+  <h3 class="static-post-title"><a href="/src/template/posts/Node/html/Node.js技术文档和速查手册.html">Node.js技术文档和速查手册</a></h3>
   <p class="static-post-meta"><time datetime="2026-10-12 00:57:02">2026-10-12 00:57:02</time> · Node</p>
   <p class="static-post-desc">面向 Node.js 开发者与初学者的核心速查文档，系统梳理日常最常用、最易遗忘的知识点。内容包括 npm 包管理的常用命令与全局路径配置；fs 文件模块的读写参数、flag 标志位及同步 API 的 try...catch 异常处理；stats 文件状态判断与 path 路径模块常用方法；HTTP 无连接无状态特性与 OSI 七层模型；并深入讲解 Node.js 事件循环（Event Loop）的运行机制。全文以表格速查为主，是开发时随手可查的参考手册，帮助你在写文件、装依赖、处理路径、排查网络问题时快速定位答案。</p>
 </article>
