@@ -10,7 +10,8 @@
     "build:feed": "node scripts/build-feed.cjs",
     "build:frontmatter": "node scripts/add-front-matter.cjs",
     "build:articles": "node scripts/build-articles.cjs",
-    "build:sitemap": "node scripts/build-sitemap.cjs"
+    "build:sitemap": "node scripts/build-sitemap.cjs",
+    "build:links": "node scripts/build-links.cjs"
   },
   "repository": {
     "type": "git",

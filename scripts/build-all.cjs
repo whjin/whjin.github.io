@@ -8,7 +8,7 @@ const { execSync } = require('child_process');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const STEPS = ['build-feed.cjs', 'build-articles.cjs', 'build-home.cjs', 'build-sitemap.cjs'];
+const STEPS = ['build-feed.cjs', 'build-articles.cjs', 'build-home.cjs', 'build-sitemap.cjs', 'build-links.cjs'];
 
 for (const s of STEPS) {
   const file = path.join(ROOT, 'scripts', s);

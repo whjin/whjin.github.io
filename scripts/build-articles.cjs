@@ -72,7 +72,7 @@ function buildPage(it) {
   <meta name="author" content="吴华锦" />
   <title>${escHtml(title)} « 吴华锦</title>
   <meta name="description" content="${escHtml(desc)}" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="${folder === '简历' ? 'noindex, follow' : 'index, follow'}" />
   <link rel="canonical" href="${escHtml(url)}" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Wu Huajin" />

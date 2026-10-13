@@ -136,6 +136,10 @@ node scripts/build-feed.cjs || warn "build-feed 生成失败，跳过"
 info "生成 sitemap..."
 node scripts/build-sitemap.cjs || warn "build-sitemap 生成失败，跳过"
 
+# 为 Link 导航页注入静态 SEO 内容（把 data.json 渲染成静态 HTML，避免 AdSense 判定为空壳页）
+info "生成 Link 导航页静态内容..."
+node scripts/build-links.cjs || warn "build-links 生成失败，跳过"
+
 bypass_locks
 git_safe add -A
 
