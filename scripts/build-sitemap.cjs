@@ -24,7 +24,7 @@ const articles = (feed.find((c) => c.type === 'articles') || { items: [] }).item
 const urls = BASE.concat(
   articles.map((a) => ({
     loc: SITE + '/src/template/posts/' + encodeURIComponent(a.category) + '/html/' + encodeURIComponent(a.title) + '.html',
-    lastmod: a.date || '2026-09-19',
+    lastmod: (a.date || '2026-09-19').split(' ')[0],
     freq: 'monthly',
     pri: '0.6',
   }))
