@@ -47,6 +47,24 @@ bypass_locks() {
     find .git/refs -name '*.lock' -delete 2>/dev/null || true
 }
 
+# ========== 清理 .git 内部的 macOS AppleDouble 元数据文件 ==========
+# exFAT 卷上，git 每写一个 loose object / pack / ref，macOS fskit 驱动都会
+# 自动在同目录生成一个 ._<原名> AppleDouble 伴生文件存扩展属性。
+# git 扫描 .git/objects/pack/ 时会把 ._pack-*.idx 当 pack 索引解析 → "non-monotonic index"；
+# 扫描 .git/objects/xx/ 时会把 ._<sha> 当 loose object 解析 → "bad sha1 file"；
+# 扫描 .git/refs/ 时会把 ._main 当分支引用解析 → "badRefName: invalid refname format"。
+# 关键：只读操作不会生成 ._*，但写操作（pull 拉取写 pack、commit 写 loose object）一定会。
+# 因此每次跑 git 读操作前都必须先清一遍，否则上一次 git 写留下的 ._* 会被本次读到。
+clean_git_meta() {
+    find .git -name '._*' -delete 2>/dev/null || true
+}
+
+# 包装 git：先清 .git 内的 AppleDouble，再执行 git 命令
+git_safe() {
+    clean_git_meta
+    git "$@"
+}
+
 # ========== 1. 读取 Commit.md 提交备注 ==========
 if [ ! -f "${COMMIT_FILE}" ]; then
     touch "${COMMIT_FILE}"
@@ -88,12 +106,12 @@ fi
 info "提交信息：${latest_commit}"
 
 # ========== 3. Git 校验与提交推送 ==========
-if ! git rev-parse --is-inside-work-tree &>/dev/null; then
+if ! git_safe rev-parse --is-inside-work-tree &>/dev/null; then
     error "当前目录不是 Git 仓库！脚本目录：${SCRIPT_DIR}"
     exit 1
 fi
 
-BRANCH=$(git rev-parse --abbrev-ref HEAD)
+BRANCH=$(git_safe rev-parse --abbrev-ref HEAD)
 info "当前分支：${BRANCH}"
 
 # 绕过残留锁后再操作 git（见 bypass_locks 说明）
@@ -101,14 +119,13 @@ bypass_locks
 
 # 拉取远程更新（静默，屏蔽 Already up to date / 进度条等输出）
 info "拉取远程更新..."
-git pull --quiet origin "${BRANCH}" 2>/dev/null || warn "pull 失败，跳过拉取直接提交"
+git_safe pull --quiet origin "${BRANCH}" 2>/dev/null || warn "pull 失败，跳过拉取直接提交"
 
-# 清理 macOS 系统元数据文件（AppleDouble ._* / .DS_Store），防止误提交
-# 注意：必须连同 .git 内部的 ._* 一起清理——exFAT 卷上 macOS 会给 .git 里每个 git 对象/ref
-# 都生成一个 ._* AppleDouble 文件，git 会把它们当成坏对象/坏ref/坏pack索引，刷屏报
-# "non-monotonic index" / "bad sha1 file" / "badRefName: ._xxx"。只删 ._*，不碰 .git 其他文件。
+# 清理 macOS 系统元数据文件（AppleDouble ._* / .DS_Store），防止误提交到工作区
+# 注意：.git/ 内部的 ._* 不需要在这里手动清——git_safe 会在每次跑 git 前自动清。
+# 这里只清工作区的 ._*/.DS_Store，保持目录干净（.gitignore 已忽略它们，不清也不会提交）。
 info "清理 OS 元数据文件..."
-find . \( -name '._*' -o -name '.DS_Store' \) -delete 2>/dev/null \
+find . \( -name '._*' -o -name '.DS_Store' \) -not -path './.git/*' -delete 2>/dev/null \
     || warn "清理元数据文件失败（可能是文件系统限制），跳过"
 
 # 生成 feed 数据（feed 由文章 front matter 构建，发布前运行）
@@ -120,18 +137,18 @@ info "生成 sitemap..."
 node scripts/build-sitemap.cjs || warn "build-sitemap 生成失败，跳过"
 
 bypass_locks
-git add -A
+git_safe add -A
 
 # 检查是否有暂存的变更（避免空 commit 报错）
-if ! git diff --cached --quiet; then
-    CHANGED=$(git diff --cached --stat | tail -n 1)
+if ! git_safe diff --cached --quiet; then
+    CHANGED=$(git_safe diff --cached --stat | tail -n 1)
     info "变更概况：${CHANGED}"
 
     bypass_locks
-    git commit --quiet -m "${latest_commit}"
+    git_safe commit --quiet -m "${latest_commit}"
     info "推送到远程仓库..."
     bypass_locks
-    git push --quiet origin "${BRANCH}"
+    git_safe push --quiet origin "${BRANCH}"
     info "提交并推送成功！"
 else
     info "无需要提交的文件变更"
