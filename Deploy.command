@@ -40,7 +40,11 @@ to_timestamp() {
 # 在删除功能失效的卷（如 exFAT/fskit，例：/Volumes/移动硬盘）上，git 无法自动删除它创建的 *.lock，
 # 会残留并导致下一次 git 命令 "File exists" 失败。每次 git 写操作前先 rename 走。
 bypass_locks() {
-    find .git -maxdepth 2 -name '*.lock' -not -name '._*' -exec mv -f {} {}.stale \; 2>/dev/null || true
+    # index.lock 等不在 refs/ 下的锁：rename 成 .stale（exFAT 上 rm 偶发失败，mv 更可靠；
+    #  这些文件不在 refs/ 下，git 不会把 .stale 当 ref 读）
+    find .git -name '*.lock' -not -path '*/refs/*' -not -name '._*' -exec mv -f {} {}.stale \; 2>/dev/null || true
+    # refs/ 下的锁：必须直接删除——留在 refs/ 下任何文件都会被 git 当成坏 ref 扫描（rename 成 .stale 也没用）
+    find .git/refs -name '*.lock' -delete 2>/dev/null || true
 }
 
 # ========== 1. 读取 Commit.md 提交备注 ==========
@@ -100,8 +104,11 @@ info "拉取远程更新..."
 git pull --quiet origin "${BRANCH}" 2>/dev/null || warn "pull 失败，跳过拉取直接提交"
 
 # 清理 macOS 系统元数据文件（AppleDouble ._* / .DS_Store），防止误提交
+# 注意：必须连同 .git 内部的 ._* 一起清理——exFAT 卷上 macOS 会给 .git 里每个 git 对象/ref
+# 都生成一个 ._* AppleDouble 文件，git 会把它们当成坏对象/坏ref/坏pack索引，刷屏报
+# "non-monotonic index" / "bad sha1 file" / "badRefName: ._xxx"。只删 ._*，不碰 .git 其他文件。
 info "清理 OS 元数据文件..."
-find . \( -name '._*' -o -name '.DS_Store' \) -not -path './.git/*' -delete 2>/dev/null \
+find . \( -name '._*' -o -name '.DS_Store' \) -delete 2>/dev/null \
     || warn "清理元数据文件失败（可能是文件系统限制），跳过"
 
 # 生成 feed 数据（feed 由文章 front matter 构建，发布前运行）
