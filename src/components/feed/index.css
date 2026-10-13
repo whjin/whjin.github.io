@@ -361,7 +361,19 @@ a.feed-card:hover {
   /* 边框仅当显示多于1条内容时呈现（sb-events-multi 由 JS 控制），布局不变 */
   border: 2px solid transparent;
   border-radius: 8px;
-  transition: border-color 0.2s ease, padding 0.2s ease;
+  transition: border-color 0.2s ease, padding 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 整张卡片可点击时的指针与 hover 反馈 */
+.sb-event.sb-event-link {
+  cursor: pointer;
+}
+
+.sb-event.sb-event-link:hover {
+  background: rgba(139, 92, 246, 0.04);
+  box-shadow: 0 4px 14px rgba(139, 92, 246, 0.12);
 }
 
 .sb-events-multi .sb-event {
@@ -389,12 +401,10 @@ a.feed-card:hover {
   font-weight: 600;
   font-size: 14px;
   line-height: 1.4;
-  text-decoration: none;
 }
 
-.sb-event-title:hover {
+.sb-event.sb-event-link:hover .sb-event-title {
   color: #2563eb;
-  background: transparent;
 }
 
 p.sb-event-desc {

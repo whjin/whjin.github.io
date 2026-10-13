@@ -15,8 +15,8 @@ importers:
         specifier: ^10.1.0
         version: 10.1.0
       ws:
-        specifier: ^8.20.0
-        version: 8.21.0
+        specifier: ^8.22.0
+        version: 8.22.0
 
 packages:
 
@@ -43,8 +43,8 @@ packages:
     resolution: {integrity: sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==}
     engines: {node: '>=8'}
 
-  readdirp@5.0.0:
-    resolution: {integrity: sha512-9u/XQ1pvrQtYyMpZe7DXKv2p5CNvyVwzUB6uhLAnQwHMSgKMBR62lc7AHljaeteeHXn11XTAaLLUVZYVZyuRBQ==}
+  readdirp@5.1.1:
+    resolution: {integrity: sha512-Kko+Y5XQ6fM+Ce3dq3m9YGxnacYZYl9cA1wZjaF3Vbry2L3i1qVg8+CAgNPsXRArPMUMCaOR7oa9Nqntc43JKA==}
     engines: {node: '>= 20.19.0'}
 
   shebang-command@2.0.0:
@@ -60,8 +60,8 @@ packages:
     engines: {node: '>= 8'}
     hasBin: true
 
-  ws@8.21.0:
-    resolution: {integrity: sha512-Vsp28b7DRcimFQvrqu2Wek3z1iYxDCWqHYB8Qsnk/S4RfaCQzPGPyBNuVjJV3cd6UiKtUtp6sNM77gWvzcCH+g==}
+  ws@8.22.0:
+    resolution: {integrity: sha512-Ydggc987+RO0AnWtZ/7Wq9FtNvcrL1b/RO0ud9mWjUPgDrsAAwQSF51sm2hm1XofbU/4jkpGEsLFsZZxU+1DOg==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
@@ -78,7 +78,7 @@ snapshots:
 
   chokidar@5.0.0:
     dependencies:
-      readdirp: 5.0.0
+      readdirp: 5.1.1
 
   cross-env@10.1.0:
     dependencies:
@@ -95,7 +95,7 @@ snapshots:
 
   path-key@3.1.1: {}
 
-  readdirp@5.0.0: {}
+  readdirp@5.1.1: {}
 
   shebang-command@2.0.0:
     dependencies:
@@ -107,4 +107,4 @@ snapshots:
     dependencies:
       isexe: 2.0.0
 
-  ws@8.21.0: {}
+  ws@8.22.0: {}

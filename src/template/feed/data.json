@@ -544,21 +544,21 @@
         "reward": true
       },
       {
-        "title": "Node.js文档",
-        "url": "/src/template/posts/Node/html/Node.js文档.html",
-        "category": "Node",
-        "date": "2026-09-11",
-        "readTime": 16,
-        "description": "非阻塞 IO - 开源的 JS 运行环境 - Chrome V8引擎 非阻塞 异步 IO 服务端 - 事件驱动：事件队列 异步事件 任务队列 - 适合处理高并发请求 优缺点 - 高并发 - IO 密集型 - 单线程 不适合 CPU 密集型应用 单核 CPU - 代码发生问题，系统会崩溃 应用场景 - IO 更适合 - IO 内部不需要做非常复杂的逻辑 - WebSocket - 后台管理 实时交互系统 高并发 - canvas 多人协作 - 单页面浏览器应用创建服务 - 开发服务器端的中间层（BFF） - 开发前端方向的各种工具 fs 模块 - fs: filesystem 操作文档文件夹 -",
-        "reward": true
-      },
-      {
         "title": "Node.js实战",
         "url": "/src/template/posts/Node/html/Node.js实战.html",
         "category": "Node",
         "date": "2026-09-11",
         "readTime": 8,
         "description": "全栈图书管理系统 项目地址：book-management-system 1. 完整项目的需求分析和架构设计（需求规划、目录结构设计、接口设计） 2. 后端接口开发和数据库设计（Express + MongoDB 开发接口，设计数据模型，认证授权） 3. 前后端联调方法和解决跨域问题（Apifox 测试接口，cors和代理解决跨域问题） 4. 项目部署流程，使用 PM2 管理应用进程（搭建服务器环境、上传项目、PM2 启动、管理项目） 5. 项目优化与迭代（性能优化、功能扩展） 一、需求分析 1. 功能规划：分角色、分模块 - 公共功能：用户注册、用户登录（JWT认证）、图书借阅（模糊查询、分",
+        "reward": true
+      },
+      {
+        "title": "Node.js文档",
+        "url": "/src/template/posts/Node/html/Node.js文档.html",
+        "category": "Node",
+        "date": "2026-09-11",
+        "readTime": 16,
+        "description": "非阻塞 IO - 开源的 JS 运行环境 - Chrome V8引擎 非阻塞 异步 IO 服务端 - 事件驱动：事件队列 异步事件 任务队列 - 适合处理高并发请求 优缺点 - 高并发 - IO 密集型 - 单线程 不适合 CPU 密集型应用 单核 CPU - 代码发生问题，系统会崩溃 应用场景 - IO 更适合 - IO 内部不需要做非常复杂的逻辑 - WebSocket - 后台管理 实时交互系统 高并发 - canvas 多人协作 - 单页面浏览器应用创建服务 - 开发服务器端的中间层（BFF） - 开发前端方向的各种工具 fs 模块 - fs: filesystem 操作文档文件夹 -",
         "reward": true
       },
       {
@@ -715,6 +715,15 @@
         "reward": true
       },
       {
+        "title": "操作系统文档",
+        "url": "/src/template/posts/文档/html/操作系统文档.html",
+        "category": "文档",
+        "date": "2026-09-11",
+        "readTime": 9,
+        "description": "操作系统跨进程通信（IPC） 进程与线程基础 在深入 IPC 之前，先厘清两个基础概念： - 进程：操作系统资源分配的基本单位，拥有独立的地址空间、文件描述符与资源。进程间默认是相互隔离的，一个进程无法直接访问另一个进程的内存。 - 线程：进程内部执行任务的基本单位，同一进程内的线程共享地址空间与资源，可以通过共享内存直接通信。 正是因为进程之间地址空间相互隔离，才需要一套\\\"跨进程通信\\\"的机制（IPC，Inter-Process Communication）来完成数据交换与协作。 为什么需要 IPC 在实际系统中，多个进程协作的场景非常普遍： - 后端服务拆分后，各进程需要传递任务与结果。 -",
+        "reward": true
+      },
+      {
         "title": "新趋势",
         "url": "/src/template/posts/文档/html/新趋势.html",
         "category": "文档",
@@ -730,15 +739,6 @@
         "date": "2026-09-11",
         "readTime": 4,
         "description": "领域分析 1. 前端 AI 开发 - 音视频（WebRTC、流媒体）、数据可视化 Echarts、Node.js 后端服务 - 智能行为分析、AI身份核验、AI运维 - AI能力前端集成 + AI硬件对接 + AI交付 - 基础：TensorFlow.js轻量化模型部署、主流大模型 API 调用 - 核心：AI 音视频处理（降噪/增强/行为识别）、AI 硬件 SDK 封装、AI 分析结果可视化 - 差异化：国产化 AI 框架对接（华为昇腾/百度飞桨）、离线 AI 推理 1. Node.js + Python 全栈开发 - 全栈能力：前端（React/Vue） + Node.js(实时服务、信令",
-        "reward": true
-      },
-      {
-        "title": "操作系统文档",
-        "url": "/src/template/posts/文档/html/操作系统文档.html",
-        "category": "文档",
-        "date": "2026-09-11",
-        "readTime": 9,
-        "description": "操作系统跨进程通信（IPC） 进程与线程基础 在深入 IPC 之前，先厘清两个基础概念： - 进程：操作系统资源分配的基本单位，拥有独立的地址空间、文件描述符与资源。进程间默认是相互隔离的，一个进程无法直接访问另一个进程的内存。 - 线程：进程内部执行任务的基本单位，同一进程内的线程共享地址空间与资源，可以通过共享内存直接通信。 正是因为进程之间地址空间相互隔离，才需要一套\\\"跨进程通信\\\"的机制（IPC，Inter-Process Communication）来完成数据交换与协作。 为什么需要 IPC 在实际系统中，多个进程协作的场景非常普遍： - 后端服务拆分后，各进程需要传递任务与结果。 -",
         "reward": true
       },
       {
@@ -769,21 +769,21 @@
         "reward": true
       },
       {
-        "title": "英文简历",
-        "url": "/src/template/posts/简历/html/英文简历.html",
-        "category": "简历",
-        "date": "2026-09-11",
-        "readTime": 10,
-        "description": "Huajin Wu Email: wuhuajin09@163.com GitHub: github.com/whjin Portfolio: wuhuajin.com Education Shenzhen University Bachelor of Engineering, Electronic Information Engineering Professional Summary Results-driven Full-Stack Engineer with 7+ years of enterprise development experience, focusing on cross",
-        "reward": true
-      },
-      {
         "title": "中文简历",
         "url": "/src/template/posts/简历/html/中文简历.html",
         "category": "简历",
         "date": "2026-09-11",
         "readTime": 10,
         "description": "基本信息 学历：深圳大学-电子信息工程-全日制本科 邮箱: wuhuajin09@163.com GitHub: github.com/whjin 博客: wuhuajin.com 工作经历 广州市高科通信技术股份有限公司 全栈开发工程师 2020.06 - 2026.02 岗位定位：专注公安司法监所领域软硬件产品研发，负责前端架构迭代、Node.js服务开发、国产化适配及AI研发赋能，全程主导产品研发、迭代优化与政企项目落地交付。全程支撑政企项目招投标、落地终验，负责全国警博会技术展示保障，具备成熟的政企项目全流程交付经验。 - 核心参与20+省内外监所政企项目，完成10款安卓终端APP、5",
+        "reward": true
+      },
+      {
+        "title": "英文简历",
+        "url": "/src/template/posts/简历/html/英文简历.html",
+        "category": "简历",
+        "date": "2026-09-11",
+        "readTime": 10,
+        "description": "Huajin Wu Email: wuhuajin09@163.com GitHub: github.com/whjin Portfolio: wuhuajin.com Education Shenzhen University Bachelor of Engineering, Electronic Information Engineering Professional Summary Results-driven Full-Stack Engineer with 7+ years of enterprise development experience, focusing on cross",
         "reward": true
       },
       {

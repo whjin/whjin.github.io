@@ -36,6 +36,13 @@ to_timestamp() {
     echo ""
 }
 
+# ========== 绕过 git 残留锁 ==========
+# 在删除功能失效的卷（如 exFAT/fskit，例：/Volumes/移动硬盘）上，git 无法自动删除它创建的 *.lock，
+# 会残留并导致下一次 git 命令 "File exists" 失败。每次 git 写操作前先 rename 走。
+bypass_locks() {
+    find .git -maxdepth 2 -name '*.lock' -not -name '._*' -exec mv -f {} {}.stale \; 2>/dev/null || true
+}
+
 # ========== 1. 读取 Commit.md 提交备注 ==========
 if [ ! -f "${COMMIT_FILE}" ]; then
     touch "${COMMIT_FILE}"
@@ -85,9 +92,17 @@ fi
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 info "当前分支：${BRANCH}"
 
+# 绕过残留锁后再操作 git（见 bypass_locks 说明）
+bypass_locks
+
 # 拉取远程更新（静默，屏蔽 Already up to date / 进度条等输出）
 info "拉取远程更新..."
 git pull --quiet origin "${BRANCH}" 2>/dev/null || warn "pull 失败，跳过拉取直接提交"
+
+# 清理 macOS 系统元数据文件（AppleDouble ._* / .DS_Store），防止误提交
+info "清理 OS 元数据文件..."
+find . \( -name '._*' -o -name '.DS_Store' \) -not -path './.git/*' -delete 2>/dev/null \
+    || warn "清理元数据文件失败（可能是文件系统限制），跳过"
 
 # 生成 feed 数据（feed 由文章 front matter 构建，发布前运行）
 info "生成 feed 数据..."
@@ -97,6 +112,7 @@ node scripts/build-feed.cjs || warn "build-feed 生成失败，跳过"
 info "生成 sitemap..."
 node scripts/build-sitemap.cjs || warn "build-sitemap 生成失败，跳过"
 
+bypass_locks
 git add -A
 
 # 检查是否有暂存的变更（避免空 commit 报错）
@@ -104,8 +120,10 @@ if ! git diff --cached --quiet; then
     CHANGED=$(git diff --cached --stat | tail -n 1)
     info "变更概况：${CHANGED}"
 
+    bypass_locks
     git commit --quiet -m "${latest_commit}"
     info "推送到远程仓库..."
+    bypass_locks
     git push --quiet origin "${BRANCH}"
     info "提交并推送成功！"
 else

@@ -48,28 +48,34 @@
     return block;
   }
 
-  // 单条事件卡：图片 + 标题 + 描述（dev.to Happening Now 式），图片与标题均可跳转，描述3行省略+悬停title全文
+  // 单条事件卡：图片 + 标题 + 描述（dev.to Happening Now 式），整张卡片可点击跳转，描述3行省略+悬停title全文
   function makeEventCard(it) {
-    const card = document.createElement('div');
-    card.className = 'sb-event';
-    const href = it.url || '#';
+    const href = it.url || '';
+    const hasLink = !!href && href !== '#';
+    // 有有效 url → 整张卡片渲染为 <a>；无 url（如"即将上线"占位）→ 渲染为 <div> 不可点击
+    const card = document.createElement(hasLink ? 'a' : 'div');
+    card.className = 'sb-event' + (hasLink ? ' sb-event-link' : '');
+    if (hasLink) {
+      card.href = href;
+      // 外链新标签打开（广告/推荐位均为外链），内链（/viewer.html...）也保持新标签以减少跳出
+      card.target = '_blank';
+      card.rel = 'noopener noreferrer';
+    }
     if (it.image) {
-      const a = document.createElement('a');
-      a.className = 'sb-event-img';
-      a.href = href;
+      const imgWrap = document.createElement('div');
+      imgWrap.className = 'sb-event-img';
       const img = document.createElement('img');
       img.src = it.image;
       img.alt = it.title || '';
       img.loading = 'lazy';
-      a.appendChild(img);
-      card.appendChild(a);
+      imgWrap.appendChild(img);
+      card.appendChild(imgWrap);
     }
     if (it.title) {
-      const at = document.createElement('a');
-      at.className = 'sb-event-title';
-      at.href = href;
-      at.textContent = it.title;
-      card.appendChild(at);
+      const t = document.createElement('div');
+      t.className = 'sb-event-title';
+      t.textContent = it.title;
+      card.appendChild(t);
     }
     if (it.desc) {
       const p = document.createElement('p');

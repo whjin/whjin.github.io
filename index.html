@@ -12,6 +12,10 @@
   <meta name="author" content="吴华锦" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>吴华锦 · 锦绣年华・写意人间 | 吴华锦的个人主页</title>
+  <!-- 防首屏闪烁：有 JS 时立即隐藏 SEO 静态列表（.static-home-feed），由 home.js 用真实两栏卡片布局替换；无 JS 时 noscript 兜底保留静态内容供爬虫抓取 -->
+  <script>document.documentElement.classList.add('js');</script>
+  <style>html.js .static-home-feed{display:none!important}</style>
+  <noscript><style>.static-home-feed{display:block!important}</style></noscript>
   <link rel="canonical" href="https://wuhuajin.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Wu Huajin" />
@@ -230,14 +234,14 @@
   <p class="static-post-desc">非阻塞 IO - 开源的 JS 运行环境 - Chrome V8引擎 非阻塞 异步 IO 服务端 - 事件驱动：事件队列 异步事件 任务队列 - 适合处理高并发请求 优缺点 - 高并发 - IO 密集型 - 单线程 不适合 CPU 密集型应用 单核 CPU - 代码发生问题，系统会崩溃 应用场景 - IO 更适合 - IO 内部不需要做非常复杂的逻辑 - WebSocket - 后台管理 实时交互系统 高并发 - canvas 多人协作 - 单页面浏览器应用创建服务 - 开发服务器端的中间层（BFF） - 开发前端方向的各种工具 fs 模块 - fs: filesystem 操作文档文件夹 -</p>
 </article>
 <article class="static-post">
-  <h3 class="static-post-title"><a href="/src/template/posts/React/html/React文档.html">React文档</a></h3>
-  <p class="static-post-meta"><time datetime="2026-09-11">2026-09-11</time> · React</p>
-  <p class="static-post-desc">核心技术 - JSX开发思想 - 虚拟 dom 渲染 - 单项数据流 - state 与 props - 类组件与组件的生命周期 - 函数式组件与副作用处理机制 - hooks - 事件处理 - 条件渲染 - 列表与数据塑形 - ajax异步处理 - 跨组件数据传递 Context - Provider - CSS in JS - 模块化样式加载 - UI渲染原理 JSX JSX = JavaScript + XML - {}模板语法 - 添加注释 - 属性渲染变量 - 事件渲染函数 - style渲染对象 - {}渲染 JSX Redux - Store 的连接与订阅 - Action - </p>
-</article>
-<article class="static-post">
   <h3 class="static-post-title"><a href="/src/template/posts/RN/html/Hermes引擎文档.html">Hermes引擎文档</a></h3>
   <p class="static-post-meta"><time datetime="2026-09-11">2026-09-11</time> · RN</p>
   <p class="static-post-desc">核心工作原理 Hermes 从 React Native 0.70 版本开始已成为 Android 和 IOS 双平台的默认 JavaScript 引擎 提升 React Native 应用启动速度、内存占用和包体积。 - AOT（Ahead-Of-Time） 预编译策略 - 构建时打包 - Hermes 编译器介入 - 直接将 JS 代码编译为紧凑的字节码（.hbc 文件） - 在 App 启动时，Hermes 虚拟机直接加载并执行这些字节码，完全 绕过运行时解析与 JIT 编译环节 - V8 JSC 采用 JIT（Just-In-Time） 编译模式 - 运行时解析 - 解析执行 - 动态</p>
+</article>
+<article class="static-post">
+  <h3 class="static-post-title"><a href="/src/template/posts/React/html/React文档.html">React文档</a></h3>
+  <p class="static-post-meta"><time datetime="2026-09-11">2026-09-11</time> · React</p>
+  <p class="static-post-desc">核心技术 - JSX开发思想 - 虚拟 dom 渲染 - 单项数据流 - state 与 props - 类组件与组件的生命周期 - 函数式组件与副作用处理机制 - hooks - 事件处理 - 条件渲染 - 列表与数据塑形 - ajax异步处理 - 跨组件数据传递 Context - Provider - CSS in JS - 模块化样式加载 - UI渲染原理 JSX JSX = JavaScript + XML - {}模板语法 - 添加注释 - 属性渲染变量 - 事件渲染函数 - style渲染对象 - {}渲染 JSX Redux - Store 的连接与订阅 - Action - </p>
 </article>
 <article class="static-post">
   <h3 class="static-post-title"><a href="/src/template/posts/TypeScript/html/类型系统.html">类型系统</a></h3>
