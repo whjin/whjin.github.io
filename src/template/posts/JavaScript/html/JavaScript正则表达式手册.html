@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="author" content="吴华锦" />
   <title>JavaScript正则表达式手册 « 吴华锦</title>
-  <meta name="description" content="面向JavaScript开发者与初学者的正则表达式速查手册，系统整理正则引擎核心知识与高频用法。第一部分为表达式全集，详解 \\d、\\w、\\s、\\b 等元字符，以及 ^ $ * + ? 量词、字符类、分组捕获、非获取匹配、正向反向预查、转义与 Unicode 编码等全部语法，每条均配直观示例。第二部分为常用正则，涵盖用户名、密码、邮箱、URL、IP 地址、HTML 标签、代码注释剔除、汉字范围校验等可直接复用的表达式。全文以表格呈现、即查即用，是处理字符串校验、文本提取与数据清洗的随手参考手册。" />
+  <meta name="description" content="正则表达式是处理字符串最强大的工具，但也是最容易写错、最难调试的工具。本手册分为四部分：JS 正则怎么用 → 语法速查 → 常用表达式合集 → 常见坑，收藏后随查随用。 官方参考：完整的 RegExp 语法定义见 MDN Regular Expressions 文档，本文是其实战提炼。 一、JavaScript 正则的四种用法 创建正则 四种核心方法 方法 所属对象 返回值 适用场景 regex.test(str) RegExp true / false 只判断是否匹配，如表单校验 str.match(regex) String 匹配结果数组或 null 提取匹配内容，最简单 str.matc" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://wuhuajin.com/src/template/posts/JavaScript/html/JavaScript%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%89%8B%E5%86%8C.html" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Wu Huajin" />
   <meta property="og:title" content="JavaScript正则表达式手册" />
-  <meta property="og:description" content="面向JavaScript开发者与初学者的正则表达式速查手册，系统整理正则引擎核心知识与高频用法。第一部分为表达式全集，详解 \\d、\\w、\\s、\\b 等元字符，以及 ^ $ * + ? 量词、字符类、分组捕获、非获取匹配、正向反向预查、转义与 Unicode 编码等全部语法，每条均配直观示例。第二部分为常用正则，涵盖用户名、密码、邮箱、URL、IP 地址、HTML 标签、代码注释剔除、汉字范围校验等可直接复用的表达式。全文以表格呈现、即查即用，是处理字符串校验、文本提取与数据清洗的随手参考手册。" />
+  <meta property="og:description" content="正则表达式是处理字符串最强大的工具，但也是最容易写错、最难调试的工具。本手册分为四部分：JS 正则怎么用 → 语法速查 → 常用表达式合集 → 常见坑，收藏后随查随用。 官方参考：完整的 RegExp 语法定义见 MDN Regular Expressions 文档，本文是其实战提炼。 一、JavaScript 正则的四种用法 创建正则 四种核心方法 方法 所属对象 返回值 适用场景 regex.test(str) RegExp true / false 只判断是否匹配，如表单校验 str.match(regex) String 匹配结果数组或 null 提取匹配内容，最简单 str.matc" />
   <meta property="og:url" content="https://wuhuajin.com/src/template/posts/JavaScript/html/JavaScript%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%89%8B%E5%86%8C.html" />
   <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
   <meta property="og:locale" content="zh_CN" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="JavaScript正则表达式手册" />
-  <meta name="twitter:description" content="面向JavaScript开发者与初学者的正则表达式速查手册，系统整理正则引擎核心知识与高频用法。第一部分为表达式全集，详解 \\d、\\w、\\s、\\b 等元字符，以及 ^ $ * + ? 量词、字符类、分组捕获、非获取匹配、正向反向预查、转义与 Unicode 编码等全部语法，每条均配直观示例。第二部分为常用正则，涵盖用户名、密码、邮箱、URL、IP 地址、HTML 标签、代码注释剔除、汉字范围校验等可直接复用的表达式。全文以表格呈现、即查即用，是处理字符串校验、文本提取与数据清洗的随手参考手册。" />
+  <meta name="twitter:description" content="正则表达式是处理字符串最强大的工具，但也是最容易写错、最难调试的工具。本手册分为四部分：JS 正则怎么用 → 语法速查 → 常用表达式合集 → 常见坑，收藏后随查随用。 官方参考：完整的 RegExp 语法定义见 MDN Regular Expressions 文档，本文是其实战提炼。 一、JavaScript 正则的四种用法 创建正则 四种核心方法 方法 所属对象 返回值 适用场景 regex.test(str) RegExp true / false 只判断是否匹配，如表单校验 str.match(regex) String 匹配结果数组或 null 提取匹配内容，最简单 str.matc" />
   <link rel="icon" href="/src/images/favicon.png" />
   <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
   <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
@@ -32,7 +32,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "JavaScript正则表达式手册",
-  "description": "面向JavaScript开发者与初学者的正则表达式速查手册，系统整理正则引擎核心知识与高频用法。第一部分为表达式全集，详解 \\\\d、\\\\w、\\\\s、\\\\b 等元字符，以及 ^ $ * + ? 量词、字符类、分组捕获、非获取匹配、正向反向预查、转义与 Unicode 编码等全部语法，每条均配直观示例。第二部分为常用正则，涵盖用户名、密码、邮箱、URL、IP 地址、HTML 标签、代码注释剔除、汉字范围校验等可直接复用的表达式。全文以表格呈现、即查即用，是处理字符串校验、文本提取与数据清洗的随手参考手册。",
+  "description": "正则表达式是处理字符串最强大的工具，但也是最容易写错、最难调试的工具。本手册分为四部分：JS 正则怎么用 → 语法速查 → 常用表达式合集 → 常见坑，收藏后随查随用。 官方参考：完整的 RegExp 语法定义见 MDN Regular Expressions 文档，本文是其实战提炼。 一、JavaScript 正则的四种用法 创建正则 四种核心方法 方法 所属对象 返回值 适用场景 regex.test(str) RegExp true / false 只判断是否匹配，如表单校验 str.match(regex) String 匹配结果数组或 null 提取匹配内容，最简单 str.matc",
   "author": {
     "@type": "Person",
     "name": "吴华锦",
@@ -58,8 +58,299 @@
   <div class="layout-container">
     <div class="nav-container"></div>
     <div class="content-area">
-      <div id="markdown-content" class="markdown-content viewer" data-reward="true"><h1>表达式全集</h1>
-<!-- prettier-ignore-start -->
+      <div id="markdown-content" class="markdown-content viewer" data-reward="true"><p>正则表达式是处理字符串最强大的工具，但也是最容易写错、最难调试的工具。本手册分为四部分：<strong>JS 正则怎么用 → 语法速查 → 常用表达式合集 → 常见坑</strong>，收藏后随查随用。</p>
+<blockquote>
+<p>官方参考：完整的 RegExp 语法定义见 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_expressions">MDN Regular Expressions 文档</a>，本文是其实战提炼。</p>
+</blockquote>
+<h2>一、JavaScript 正则的四种用法</h2>
+<h3>创建正则</h3>
+<pre><code class="language-js">// 字面量（推荐，性能更好）
+const re = /\d{4}-\d{2}-\d{2}/
+
+// 构造函数（需要动态拼接正则时用）
+const re = new RegExp(&#39;\\d{4}-&#39; + month + &#39;-\\d{2}&#39;)
+</code></pre>
+<h3>四种核心方法</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>所属对象</th>
+<th>返回值</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>regex.test(str)</code></td>
+<td>RegExp</td>
+<td><code>true</code> / <code>false</code></td>
+<td>只判断是否匹配，如表单校验</td>
+</tr>
+<tr>
+<td><code>str.match(regex)</code></td>
+<td>String</td>
+<td>匹配结果数组或 <code>null</code></td>
+<td>提取匹配内容，最简单</td>
+</tr>
+<tr>
+<td><code>str.matchAll(regex)</code></td>
+<td>String</td>
+<td>可迭代对象</td>
+<td>需要遍历所有匹配项（必须加 <code>g</code> 标志）</td>
+</tr>
+<tr>
+<td><code>regex.exec(str)</code></td>
+<td>RegExp</td>
+<td>匹配详情或 <code>null</code></td>
+<td>需要获取捕获组位置、全局遍历</td>
+</tr>
+<tr>
+<td><code>str.replace(regex, newStr)</code></td>
+<td>String</td>
+<td>替换后的新字符串</td>
+<td>文本替换、格式化</td>
+</tr>
+<tr>
+<td><code>str.split(regex)</code></td>
+<td>String</td>
+<td>数组</td>
+<td>按正则分割字符串</td>
+</tr>
+</tbody></table>
+<p><strong>示例：提取日期中的年、月、日</strong></p>
+<pre><code class="language-js">const str = &#39;发布于 2026-10-13&#39;
+const re = /(\d{4})-(\d{2})-(\d{2})/
+
+str.match(re)
+// [&#39;2026-10-13&#39;, &#39;2026&#39;, &#39;10&#39;, &#39;13&#39;, index: 3, input: &#39;发布于 2026-10-13&#39;]
+
+// exec 配合 g 标志可以遍历所有匹配：
+while ((m = re.exec(str)) !== null) {
+  console.log(m[1], m[2], m[3]) // 2026 10 13
+}
+</code></pre>
+<h3>六个标志位</h3>
+<table>
+<thead>
+<tr>
+<th>标志</th>
+<th>名称</th>
+<th>作用</th>
+<th>常见坑</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>g</code></td>
+<td>global</td>
+<td>匹配所有，不遇第一个就停</td>
+<td>不加 <code>g</code> 时 <code>exec</code> 不会遍历</td>
+</tr>
+<tr>
+<td><code>i</code></td>
+<td>ignoreCase</td>
+<td>忽略大小写</td>
+<td><code>/ABC/i</code> 匹配 <code>abc</code></td>
+</tr>
+<tr>
+<td><code>m</code></td>
+<td>multiline</td>
+<td><code>^</code> <code>$</code> 匹配每行首尾，而非整个字符串首尾</td>
+<td>多行文本处理时必加</td>
+</tr>
+<tr>
+<td><code>s</code></td>
+<td>dotAll</td>
+<td><code>.</code> 匹配包括换行符 <code>\n</code> 在内的任意字符</td>
+<td>默认 <code>.</code> 不匹配换行</td>
+</tr>
+<tr>
+<td><code>u</code></td>
+<td>unicode</td>
+<td>正确处理 Unicode 码点（如 emoji）</td>
+<td>匹配中文/emoji 建议加</td>
+</tr>
+<tr>
+<td><code>y</code></td>
+<td>sticky</td>
+<td>从 <code>lastIndex</code> 指定位置精确匹配</td>
+<td>较少使用</td>
+</tr>
+</tbody></table>
+<p><strong>示例：多行匹配</strong></p>
+<pre><code class="language-js">const text = &#39;line1\nline2\nline3&#39;
+
+// 不加 m：只匹配整个字符串开头
+/^line/.test(text) // false
+
+// 加 m：匹配每一行开头
+/^line/m.test(text) // true
+</code></pre>
+<h2>二、元字符全集速查</h2>
+<h3>字符类与简写</h3>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>\d</code></td>
+<td>数字，等价 <code>[0-9]</code></td>
+<td><code>/\d+/</code> 匹配 <code>2026</code></td>
+</tr>
+<tr>
+<td><code>\D</code></td>
+<td>非数字，等价 <code>[^0-9]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>\w</code></td>
+<td>单词字符：字母、数字、下划线，等价 <code>[A-Za-z0-9_]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>\W</code></td>
+<td>非单词字符</td>
+<td></td>
+</tr>
+<tr>
+<td><code>\s</code></td>
+<td>空白字符：空格、Tab、换行等</td>
+<td></td>
+</tr>
+<tr>
+<td><code>\S</code></td>
+<td>非空白字符</td>
+<td></td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td>除换行符外任意字符（加 <code>s</code> 标志后含换行）</td>
+<td></td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>单词边界</td>
+<td><code>/\ber\b/</code> 匹配 <code>never</code> 中的 <code>er</code>，不匹配 <code>verb</code></td>
+</tr>
+<tr>
+<td><code>\B</code></td>
+<td>非单词边界</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3>量词</h3>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>*</code></td>
+<td>零次或多次，等价 <code>{0,}</code></td>
+<td><code>/zo*/</code> 匹配 <code>z</code>、<code>zoo</code></td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>一次或多次，等价 <code>{1,}</code></td>
+<td><code>/zo+/</code> 匹配 <code>zo</code>、<code>zoo</code>，不匹配 <code>z</code></td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>零次或一次，等价 <code>{0,1}</code></td>
+<td><code>/colou?r/</code> 匹配 <code>color</code>、<code>colour</code></td>
+</tr>
+<tr>
+<td><code>{n}</code></td>
+<td>恰好 n 次</td>
+<td><code>\d{11}</code> 匹配 11 位数字</td>
+</tr>
+<tr>
+<td><code>{n,}</code></td>
+<td>至少 n 次</td>
+<td></td>
+</tr>
+<tr>
+<td><code>{n,m}</code></td>
+<td>n 到 m 次</td>
+<td></td>
+</tr>
+<tr>
+<td><code>+?</code> <code>*?</code> <code>??</code></td>
+<td>非贪婪模式（尽量少匹配）</td>
+<td><code>/&quot;.+?&quot;/</code> 匹配 <code>&quot;a&quot; b&quot;</code> 中的 <code>&quot;a&quot;</code></td>
+</tr>
+</tbody></table>
+<h3>分组与捕获</h3>
+<table>
+<thead>
+<tr>
+<th>语法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>(pattern)</code></td>
+<td>捕获分组，匹配结果存入 <code>$1</code>、<code>$2</code>...</td>
+</tr>
+<tr>
+<td><code>(?:pattern)</code></td>
+<td>非捕获分组，只分组不存储。如 <code>/(?:http)s?/</code></td>
+</tr>
+<tr>
+<td><code>(?&lt;name&gt;pattern)</code></td>
+<td>命名捕获组，<code>/(?&lt;year&gt;\d{4})/</code>，用 <code>m.groups.year</code> 读取</td>
+</tr>
+<tr>
+<td><code>\1</code> <code>\2</code></td>
+<td>反向引用，引用前面第 n 个分组</td>
+</tr>
+</tbody></table>
+<p><strong>示例：匹配重复单词</strong></p>
+<pre><code class="language-js">const re = /(\w+)\s+\1/gi
+&#39;the the cat&#39;.match(re) // [&#39;the the&#39;]
+</code></pre>
+<h3>预查（断言）</h3>
+<p>预查不消耗字符，只判断&quot;后面/前面是否跟着某个模式&quot;。</p>
+<table>
+<thead>
+<tr>
+<th>语法</th>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>(?=pattern)</code></td>
+<td>正向肯定预查</td>
+<td>后面跟着 pattern 才匹配</td>
+</tr>
+<tr>
+<td><code>(?!pattern)</code></td>
+<td>正向否定预查</td>
+<td>后面不跟着 pattern 才匹配</td>
+</tr>
+<tr>
+<td><code>(?&lt;=pattern)</code></td>
+<td>反向肯定预查</td>
+<td>前面是 pattern 才匹配</td>
+</tr>
+<tr>
+<td><code>(?&lt;!pattern)</code></td>
+<td>反向否定预查</td>
+<td>前面不是 pattern 才匹配</td>
+</tr>
+</tbody></table>
+<p><strong>示例：匹配金额数字（前面有 ¥ 符号）</strong></p>
+<pre><code class="language-js">const re = /(?&lt;=¥)\d+(\.\d{2})?/
+&#39;¥99.00&#39;.match(re) // [&#39;99.00&#39;]
+</code></pre>
+<h3>锚点与其他</h3>
 <table>
 <thead>
 <tr>
@@ -68,223 +359,226 @@
 </tr>
 </thead>
 <tbody><tr>
-<td><code>\</code></td>
-<td>将下一个字符标记为一个特殊字符、或一个原义字符、或一个向后引用、或一个八进制转义符。例如，“<code>n</code>”匹配字符“<code>n</code>”。“<code>\n</code>”匹配一个换行符。串行“<code>\\</code>”匹配“<code>\</code>”而“<code>\(</code>”则匹配“<code>(</code>”。</td>
-</tr>
-<tr>
 <td><code>^</code></td>
-<td>匹配输入字符串的开始位置。如果设置了<code>RegExp</code>对象的<code>Multiline</code>属性，<code>^</code>也匹配“<code>\n</code>”或“<code>\r</code>”之后的位置。</td>
+<td>字符串开头（加 <code>m</code> 后匹配每行开头）</td>
 </tr>
 <tr>
 <td><code>$</code></td>
-<td>匹配输入字符串的结束位置。如果设置了<code>RegExp</code>对象的<code>Multiline</code>属性，<code>$</code>也匹配“<code>\n</code>”或“<code>\r</code>”之前的位置。</td>
-</tr>
-<tr>
-<td><code>*</code></td>
-<td>匹配前面的子表达式零次或多次。例如，<code>zo*</code>能匹配“<code>z</code>”以及“<code>zoo</code>”。<code>*</code>等价于<code>{0,}</code>。</td>
-</tr>
-<tr>
-<td><code>+</code></td>
-<td>匹配前面的子表达式一次或多次。例如，“<code>zo+</code>”能匹配“<code>zo</code>”以及“<code>zoo</code>”，但不能匹配“<code>z</code>”。<code>+</code>等价于<code>{1,}</code>。</td>
-</tr>
-<tr>
-<td><code>?</code></td>
-<td>匹配前面的子表达式零次或一次。例如，“<code>do(es)?</code>”可以匹配“<code>does</code>”或“<code>does</code>”中的“<code>do</code>”。<code>?</code>等价于<code>{0,1}</code>。</td>
-</tr>
-<tr>
-<td><code>{n}</code></td>
-<td><code>n</code>是一个非负整数。匹配确定的<code>n</code>次。例如，“<code>o{2}</code>”不能匹配“<code>Bob</code>”中的“<code>o</code>”，但是能匹配“<code>food</code>”中的两个<code>o</code>。</td>
-</tr>
-<tr>
-<td><code>{n,}</code></td>
-<td><code>n</code>是一个非负整数。至少匹配<code>n</code>次。例如，“<code>o{2,}</code>”不能匹配“<code>Bob</code>”中的“<code>o</code>”，但能匹配“<code>foooood</code>”中的所有<code>o</code>。“<code>o{1,}</code>”等价于“<code>o+</code>”。“<code>o{0,}</code>”则等价于“<code>o*</code>”。</td>
-</tr>
-<tr>
-<td><code>{n,m}</code></td>
-<td><code>m</code>和<code>n</code>均为非负整数，其中<code>n&lt;=m</code>。最少匹配<code>n</code>次且最多匹配<code>m</code>次。例如，“<code>o{1,3}</code>”将匹配“<code>fooooood</code>”中的前三个<code>o</code>。“<code>o{0,1}</code>”等价于“<code>o?</code>”。请注意在逗号和两个数之间不能有空格。</td>
-</tr>
-<tr>
-<td><code>?</code></td>
-<td>当该字符紧跟在任何一个其他限制符（<code>*</code>,<code>+</code>,<code>?</code>，<code>{n}</code>，<code>{n,}</code>，<code>{n,m}</code>）后面时，匹配模式是非贪婪的。非贪婪模式尽可能少的匹配所搜索的字符串，而默认的贪婪模式则尽可能多的匹配所搜索的字符串。例如，对于字符串“<code>oooo</code>”，“<code>o+?</code>”将匹配单个“<code>o</code>”，而“<code>o+</code>”将匹配所有“<code>o</code>”。</td>
-</tr>
-<tr>
-<td><code>.</code></td>
-<td>匹配除“<code>\n</code>”之外的任何单个字符。要匹配包括“<code>\n</code>”在内的任何字符，请使用像“<code>(.\n)</code>”的模式。</td>
-</tr>
-<tr>
-<td><code>(pattern)</code></td>
-<td>匹配<code>pattern</code>并获取这一匹配。所获取的匹配可以从产生的<code>Matches</code>集合得到，在<code>VBScript</code>中使用<code>SubMatches</code>集合，在<code>JScript</code>中则使用<code>$0…$9</code>属性。要匹配圆括号字符，请使用“<code>\(</code>”或“<code>&#124;&lt;/code>”。</td>
-</tr>
-<tr>
-<td><code>(?:pattern)</code></td>
-<td>匹配<code>pattern</code>但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用或字符“<code>(&#124;)</code>”来组合一个模式的各个部分是很有用。例如“<code>industr(?:y&#124;ies)</code>”就是一个比“<code>industry&#124;industries</code>”更简略的表达式。</td>
-</tr>
-<tr>
-<td><code>(?=pattern)</code></td>
-<td>正向肯定预查，在任何匹配<code>pattern</code>的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如，“<code>Windows(?=95&#124;98&#124;NT&#124;2000)</code>”能匹配“<code>Windows2000</code>”中的“<code>Windows</code>”，但不能匹配“<code>Windows3.1</code>”中的“<code>Windows</code>”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
-</tr>
-<tr>
-<td><code>(?!pattern)</code></td>
-<td>正向否定预查，在任何不匹配<code>pattern</code>的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如“<code>Windows(?!95&#124;98&#124;NT&#124;2000)</code>”能匹配“<code>Windows3.1</code>”中的“<code>Windows</code>”，但不能匹配“<code>Windows2000</code>”中的“<code>Windows</code>”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
-</tr>
-<tr>
-<td><code>(?&lt;=pattern)</code></td>
-<td>反向肯定预查，与正向肯定预查类拟，只是方向相反。例如，“<code>(?<=95&#124;98&#124;NT&#124;2000)Windows</code>”能匹配“<code>2000Windows</code>”中的“<code>Windows</code>”，但不能匹配“<code>3.1Windows</code>”中的“<code>Windows</code>”。</td>
-</tr>
-<tr>
-<td><code>(?&lt;!pattern)</code></td>
-<td>反向否定预查，与正向否定预查类拟，只是方向相反。例如“<code>(?<!95&#124;98&#124;NT&#124;2000)Windows</code>”能匹配“<code>3.1Windows</code>”中的“<code>Windows</code>”，但不能匹配“<code>2000Windows</code>”中的“<code>Windows</code>”。</td>
-</tr>
-<tr>
-<td><code>x&#124;y</code></td>
-<td>匹配<code>x</code>或<code>y</code>。例如，“<code>z&#124;food</code>”能匹配“<code>z</code>”或“<code>food</code>”。“<code>(z&#124;f)ood</code>”则匹配“<code>zood</code>”或“<code>food</code>”。</td>
+<td>字符串结尾（加 <code>m</code> 后匹配每行结尾）</td>
 </tr>
 <tr>
 <td><code>[xyz]</code></td>
-<td>字符集合。匹配所包含的任意一个字符。例如，“<code>[abc]</code>”可以匹配“<code>plain</code>”中的“<code>a</code>”。</td>
+<td>字符集合，匹配其中任意一个字符</td>
 </tr>
 <tr>
 <td><code>[^xyz]</code></td>
-<td>负值字符集合。匹配未包含的任意字符。例如，“<code>[^abc]</code>”可以匹配“<code>plain</code>”中的“<code>p</code>”。</td>
+<td>排除集合，匹配不在其中的字符</td>
 </tr>
 <tr>
 <td><code>[a-z]</code></td>
-<td>字符范围。匹配指定范围内的任意字符。例如，“<code>[a-z]</code>”可以匹配“<code>a</code>”到“<code>z</code>”范围内的任意小写字母字符。</td>
+<td>字符范围</td>
 </tr>
 <tr>
-<td><code>[^a-z]</code></td>
-<td>负值字符范围。匹配任何不在指定范围内的任意字符。例如，“<code>[^a-z]</code>”可以匹配任何不在“<code>a</code>”到“<code>z</code>”范围内的任意字符。</td>
+<td><code>x&#124;y</code></td>
+<td>匹配 x 或 y</td>
 </tr>
 <tr>
-<td><code>\b</code></td>
-<td>匹配一个单词边界，也就是指单词和空格间的位置。例如，“<code>er\b</code>”可以匹配“<code>never</code>”中的“<code>er</code>”，但不能匹配“<code>verb</code>”中的“<code>er</code>”。</td>
+<td><code>\uXXXX</code></td>
+<td>Unicode 字符，如 <code>\u4e2d</code> 匹配&quot;中&quot;</td>
 </tr>
 <tr>
-<td><code>\B</code></td>
-<td>匹配非单词边界。“<code>er\B</code>”能匹配“<code>verb</code>”中的“<code>er</code>”，但不能匹配“<code>never</code>”中的“<code>er</code>”。</td>
-</tr>
-<tr>
-<td><code>\cx</code></td>
-<td>匹配由<code>x</code>指明的控制字符。例如，<code>\cM</code>匹配一个<code>Control-M</code>或回车符。<code>x</code>的值必须为<code>A-Z</code>或<code>a-z</code>之一。否则，将c视为一个原义的“<code>c</code>”字符。</td>
-</tr>
-<tr>
-<td><code>\d</code></td>
-<td>匹配一个数字字符。等价于<code>[0-9]</code>。</td>
-</tr>
-<tr>
-<td><code>\D</code></td>
-<td>匹配一个非数字字符。等价于<code>[^0-9]</code>。</td>
-</tr>
-<tr>
-<td><code>\f</code></td>
-<td>匹配一个换页符。等价于<code>\x0c</code>和<code>\cL</code>。</td>
-</tr>
-<tr>
-<td><code>\n</code></td>
-<td>匹配一个换行符。等价于<code>\x0a</code>和<code>\cJ</code>。</td>
-</tr>
-<tr>
-<td><code>\r</code></td>
-<td>匹配一个回车符。等价于<code>\x0d</code>和<code>\cM</code>。</td>
-</tr>
-<tr>
-<td><code>\s</code></td>
-<td>匹配任何空白字符，包括空格、制表符、换页符等等。等价于<code>[\f\n\r\t\v]</code>。</td>
-</tr>
-<tr>
-<td><code>\S</code></td>
-<td>匹配任何非空白字符。等价于<code>[^\f\n\r\t\v]</code>。</td>
-</tr>
-<tr>
-<td><code>\t</code></td>
-<td>匹配一个制表符。等价于<code>\x09</code>和<code>\cI</code>。</td>
-</tr>
-<tr>
-<td><code>\v</code></td>
-<td>匹配一个垂直制表符。等价于<code>\x0b</code>和<code>\cK</code>。</td>
-</tr>
-<tr>
-<td><code>\w</code></td>
-<td>匹配包括下划线的任何单词字符。等价于“<code>[A-Za-z0-9_]</code>”。</td>
-</tr>
-<tr>
-<td><code>\W</code></td>
-<td>匹配任何非单词字符。等价于“<code>[^A-Za-z0-9_]</code>”。</td>
-</tr>
-<tr>
-<td><code>\xn</code></td>
-<td>匹配<code>n</code>，其中<code>n</code>为十六进制转义值。十六进制转义值必须为确定的两个数字长。例如，“<code>\x41</code>”匹配“<code>A</code>”。“<code>\x041</code>”则等价于“<code>\x04&amp;1</code>”。正则表达式中可以使用<code>ASCII</code>编码。</td>
-</tr>
-<tr>
-<td><code>\num</code></td>
-<td>匹配<code>num</code>，其中<code>num</code>是一个正整数。对所获取的匹配的引用。例如，“<code>(.)\1</code>”匹配两个连续的相同字符。</td>
-</tr>
-<tr>
-<td><code>\n</code></td>
-<td>标识一个八进制转义值或一个向后引用。如果<code>\n</code>之前至少<code>n</code>个获取的子表达式，则<code>n</code>为向后引用。否则，如果<code>n</code>为八进制数字（<code>0-7</code>），则<code>n</code>为一个八进制转义值。</td>
-</tr>
-<tr>
-<td><code>\nm</code></td>
-<td>标识一个八进制转义值或一个向后引用。如果<code>\nm</code>之前至少有<code>nm</code>个获得子表达式，则<code>nm</code>为向后引用。如果<code>\nm</code>之前至少有<code>n</code>个获取，则<code>n</code>为一个后跟文字<code>m</code>的向后引用。如果前面的条件都不满足，若<code>n</code>和<code>m</code>均为八进制数字（<code>0-7</code>），则<code>\nm</code>将匹配八进制转义值<code>nm</code>。</td>
-</tr>
-<tr>
-<td><code>\nml</code></td>
-<td>如果<code>n</code>为八进制数字（<code>0-3</code>），且<code>m</code>和<code>l</code>均为八进制数字（<code>0-7</code>），则匹配八进制转义值<code>nml</code>。</td>
-</tr>
-<tr>
-<td><code>\un</code></td>
-<td>匹配<code>n</code>，其中<code>n</code>是一个用四个十六进制数字表示的<code>Unicode</code>字符。例如，<code>\u00A9</code>匹配版权符号（<code>©</code>）。</td>
+<td><code>\xXX</code></td>
+<td>十六进制 ASCII，如 <code>\x41</code> 匹配 <code>A</code></td>
 </tr>
 </tbody></table>
-<!-- prettier-ignore-end -->
-
-<h1>常用正则表达式</h1>
-<!-- prettier-ignore-start -->
+<h2>三、常用正则合集</h2>
+<h3>表单校验类</h3>
 <table>
 <thead>
 <tr>
-<th>匹配内容</th>
-<th>正则表达式</th>
+<th>场景</th>
+<th>正则</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>用户名</td>
-<td><code>/^[a-z0-9_-]{3,16}$/</code></td>
+<td><code>/^[a-zA-Z0-9_-]{3,16}$/</code></td>
+<td>3-16 位字母数字下划线短横线</td>
 </tr>
 <tr>
-<td>密码</td>
-<td><code>/^[a-z0-9_-]{6,18}$/</code></td>
+<td>强密码</td>
+<td><code>/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/</code></td>
+<td>至少 8 位，含大小写字母和数字</td>
 </tr>
 <tr>
-<td>十六进制值</td>
-<td><code>/^#?([a-f0-9]{6}&#124;[a-f0-9]{3})$/</code></td>
+<td>邮箱</td>
+<td><code>/^[\w.-]+@[\w-]+(\.[\w-]+)*\.[a-zA-Z]{2,}$/</code></td>
+<td>通用邮箱格式</td>
 </tr>
 <tr>
-<td>电子邮箱</td>
-<td><code>/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/</code><br><code>/^[a-z\d]+(\.[a-z\d]+)*@([\da-z](-[\da-z])?)+(\.{1,2}[a-z]+)+$/</code></td>
+<td>中国大陆手机号</td>
+<td><code>/^1[3-9]\d{9}$/</code></td>
+<td>11 位，1 开头，第二位 3-9</td>
+</tr>
+<tr>
+<td>身份证号</td>
+<td><code>/^\d{17}[\dXx]$/</code></td>
+<td>18 位，末位可为 X</td>
 </tr>
 <tr>
 <td>URL</td>
-<td><code>/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/</code></td>
+<td><code>/^https?:\/\/[\w-]+(\.[\w-]+)+([\/\w\-._~:?#[\]@!$&amp;&#39;()*+,;=%]*)*$/</code></td>
+<td>匹配 http/https 链接</td>
 </tr>
 <tr>
-<td>IP 地址</td>
-<td><code>/((2[0-4]\d&#124;25[0-5]&#124;[01]?\d\d?).){3}(2[0-4]\d&#124;25[0-5]&#124;[01]?\d\d?)/</code><br><code>/^(?:(?:25[0-5]&#124;2[0-4][0-9]&#124;[01]?[0-9][0-9]?).){3}(?:25[0-5]&#124;2[0-4][0-9]&#124;[01]?[0-9][0-9]?)$/</code></td>
+<td>IPv4 地址</td>
+<td><code>/^((25[0-5]&#124;2[0-4]\d&#124;1?\d?\d).){3}(25[0-5]&#124;2[0-4]\d&#124;1?\d?\d)$/</code></td>
+<td>每段 0-255</td>
 </tr>
 <tr>
-<td>HTML标签</td>
-<td><code>/^<([a-z]+)([^<]+)<em>(?:>(.</em>)</\1>&#124;\s+/>)$/</code></td>
+<td>十六进制颜色</td>
+<td><code>/^#([0-9a-fA-F]{3}&#124;[0-9a-fA-F]{6})$/</code></td>
+<td><code>#fff</code> 或 <code>#ffffff</code></td>
 </tr>
 <tr>
-<td>删除代码\注释</td>
-<td><code>(?<!\http:&#124;\S)//.*$</code></td>
+<td>QQ 号</td>
+<td><code>/^[1-9]\d{4,10}$/</code></td>
+<td>5-11 位，非 0 开头</td>
 </tr>
 <tr>
-<td><code>Unicode</code>编码中的汉字范围</td>
-<td><code>/^[\u2E80-\u9FFF]+$/</code></td>
+<td>邮政编码</td>
+<td><code>/^[1-9]\d{5}$/</code></td>
+<td>6 位</td>
 </tr>
 </tbody></table>
-<!-- prettier-ignore-end -->
+<h3>文本处理类</h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>正则</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>提取 HTML 标签内文本</td>
+<td><code>/&lt;[^&gt;]+&gt;(.*?)&lt;\/[^&gt;]+&gt;/g</code></td>
+<td>配合 <code>m[1]</code> 获取内容</td>
+</tr>
+<tr>
+<td>去除 HTML 标签</td>
+<td><code>/&lt;[^&gt;]+&gt;/g</code></td>
+<td><code>str.replace(re, &#39;&#39;)</code></td>
+</tr>
+<tr>
+<td>匹配中文</td>
+<td><code>/[\u4e00-\u9fa5]/g</code></td>
+<td>匹配所有汉字</td>
+</tr>
+<tr>
+<td>压缩连续空格</td>
+<td><code>/\s+/g</code></td>
+<td><code>str.replace(re, &#39; &#39;)</code></td>
+</tr>
+<tr>
+<td>去除首尾空白</td>
+<td><code>/^\s+&#124;\s+$/g</code></td>
+<td>或直接用 <code>str.trim()</code></td>
+</tr>
+<tr>
+<td>匹配文件扩展名</td>
+<td><code>/\.(\w+)$/</code></td>
+<td>从 <code>photo.jpg</code> 提取 <code>jpg</code></td>
+</tr>
+<tr>
+<td>匹配 Markdown 图片</td>
+<td><code>/!\[([^\]]*)\]\(([^)]+)\)/g</code></td>
+<td>提取 alt 和 src</td>
+</tr>
+<tr>
+<td>匹配 Markdown 链接</td>
+<td><code>/\[([^\]]+)\]\(([^)]+)\)/g</code></td>
+<td>提取链接文字和 URL</td>
+</tr>
+</tbody></table>
+<h3>数字处理类</h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>正则</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>整数</td>
+<td><code>/^-?\d+$/</code></td>
+</tr>
+<tr>
+<td>浮点数</td>
+<td><code>/^-?\d+(\.\d+)?$/</code></td>
+</tr>
+<tr>
+<td>千分位分隔</td>
+<td><code>str.replace(/\B(?=(\d{3})+(?!\d))/g, &#39;,&#39;)</code></td>
+</tr>
+<tr>
+<td>匹配日期 YYYY-MM-DD</td>
+<td><code>/^\d{4}-(0[1-9]&#124;1[0-2])-(0[1-9]&#124;[12]\d&#124;3[01])$/</code></td>
+</tr>
+</tbody></table>
+<h2>四、常见坑与最佳实践</h2>
+<h3>1. 别用正则解析 HTML</h3>
+<blockquote>
+<p>&quot;Some people, when confronted with a problem, think &#39;I know, I&#39;ll use regular expressions.&#39; Now they have two problems.&quot;</p>
+</blockquote>
+<p>正则无法正确处理嵌套标签。复杂 HTML 解析请用 <code>DOMParser</code> 或 cheerio。</p>
+<h3>2. 贪婪 vs 非贪婪</h3>
+<pre><code class="language-js">const str = &#39;&lt;div&gt;hello&lt;/div&gt;&lt;div&gt;world&lt;/div&gt;&#39;
+
+// 贪婪：匹配到最后一个 &lt;/div&gt;
+str.match(/&lt;div&gt;.*&lt;\/div&gt;/) // [&#39;&lt;div&gt;hello&lt;/div&gt;&lt;div&gt;world&lt;/div&gt;&#39;]
+
+// 非贪婪：只匹配第一个完整 div
+str.match(/&lt;div&gt;.*?&lt;\/div&gt;/) // [&#39;&lt;div&gt;hello&lt;/div&gt;&#39;]
+</code></pre>
+<h3>3. <code>g</code> 标志下的 <code>test</code> 陷阱</h3>
+<pre><code class="language-js">const re = /\d/g
+re.test(&#39;1&#39;) // true
+re.test(&#39;1&#39;) // false ← 意外？
+re.test(&#39;1&#39;) // true
+</code></pre>
+<p><strong>原因</strong>：加了 <code>g</code> 标志后，<code>test</code> 和 <code>exec</code> 会在正则对象上维护 <code>lastIndex</code>，下次调用从上次结束位置继续。</p>
+<p><strong>解决</strong>：不要在循环里复用同一个带 <code>g</code> 的正则，或者每次新建正则：</p>
+<pre><code class="language-js">// 正确做法：每次新建正则对象
+/\d/g.test(&#39;1&#39;) // true
+/\d/g.test(&#39;1&#39;) // true
+</code></pre>
+<h3>4. 转义特殊字符</h3>
+<p>正则里 <code>. * + ? ^ $ { } ( ) | [ ] \</code> 都是特殊字符。要匹配字面量，必须加 <code>\</code>：</p>
+<pre><code class="language-js">// 错误：匹配 .com 实际会匹配任意字符 + com
+/^.com/.test(&#39;xcom&#39;) // true
+
+// 正确
+/^\.com/.test(&#39;xcom&#39;) // false
+/^\.com/.test(&#39;.com&#39;) // true
+</code></pre>
+<h3>5. 调试工具推荐</h3>
+<p>写正则时善用在线可视化工具：</p>
+<ul>
+<li><strong>regex101.com</strong>：实时高亮匹配结果，解释每个符号的含义</li>
+<li><strong>regexr.com</strong>：社区收藏的正则合集</li>
+</ul>
+<p>先在工具里调试好，再复制到代码里。</p>
+<hr>
+<p>这份手册建议收藏。遇到字符串处理问题时，先想想&quot;正则能不能解决&quot;，再查对应的语法。写好正则的关键不是记住所有语法，而是<strong>知道有这个语法存在，用时再查</strong>。</p>
+<h2>相关阅读</h2>
+<ul>
+<li><a href="https://wuhuajin.com/src/template/posts/JavaScript/html/%E5%8A%9F%E8%83%BD%E4%BB%A3%E7%A0%81%E9%9B%86%E5%90%88.html">JavaScript功能代码集合</a> — 常用 JS 工具函数与代码片段</li>
+<li><a href="https://wuhuajin.com/src/template/posts/JavaScript/html/ECMAScript%E6%96%87%E6%A1%A3.html">ECMAScript文档</a> — ES6+ 新特性速查</li>
+<li><a href="https://wuhuajin.com/src/template/posts/JavaScript/html/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%96%87%E6%A1%A3.html">设计模式文档</a> — JS 常用设计模式</li>
+<li>在线工具：<a href="https://regex101.com/">regex101</a> · <a href="https://regexr.com/">regexr</a></li>
+</ul>
 </div>
       <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
       <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"

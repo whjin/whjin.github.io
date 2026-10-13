@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="author" content="吴华锦" />
   <title>Vite与Webpack对比 « 吴华锦</title>
-  <meta name="description" content="最本质的差异：Webpack 是 先打包，后服务 的 Bundle 驱动模式；Vite 是 先服务，按需编译 的 ESM 原生驱动模式。 一、开发启动速度 核心原因：Webpack必须先完成全量打包才能提供服务；Vite 利用现代浏览器原生支持的 ES Module 特性，把“打包”工作交给了浏览器，服务器只负责按需编译和转发。 维度 Webpack Vite -------- --------- ------ 冷启动原理 从入口文件开始，递归打包 所有依赖和业务代码，&lt;br生成完整 bundle 后再启动开发服务器 1. 仅对第三方依赖做 预编译（eslint加速）&lt;br2. 直接启动开发服" />
+  <meta name="description" content="最本质的差异：Webpack 是先打包、后服务的 Bundle 驱动模式；Vite 是先服务、按需编译的 ESM 原生驱动模式。 这一个架构差异，决定了两者在启动速度、热更新、生产构建、配置复杂度上的所有区别。 延伸阅读：想深入理解 Webpack 的内部打包机制，可参考我之前写的 Webpack原理详解。 一、架构原理：为什么 Vite 启动这么快 Webpack 的工作方式 Webpack 从入口文件 index.js 开始，递归分析所有 import 和 require，把整个依赖树打包成一个或多个 bundle.js。这个过程必须在启动开发服务器之前完成。项目越大，依赖越多，打包时间越" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://wuhuajin.com/src/template/posts/%E5%B7%A5%E7%A8%8B%E5%8C%96/html/Vite%E4%B8%8EWebpack%E5%AF%B9%E6%AF%94.html" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Wu Huajin" />
   <meta property="og:title" content="Vite与Webpack对比" />
-  <meta property="og:description" content="最本质的差异：Webpack 是 先打包，后服务 的 Bundle 驱动模式；Vite 是 先服务，按需编译 的 ESM 原生驱动模式。 一、开发启动速度 核心原因：Webpack必须先完成全量打包才能提供服务；Vite 利用现代浏览器原生支持的 ES Module 特性，把“打包”工作交给了浏览器，服务器只负责按需编译和转发。 维度 Webpack Vite -------- --------- ------ 冷启动原理 从入口文件开始，递归打包 所有依赖和业务代码，&lt;br生成完整 bundle 后再启动开发服务器 1. 仅对第三方依赖做 预编译（eslint加速）&lt;br2. 直接启动开发服" />
+  <meta property="og:description" content="最本质的差异：Webpack 是先打包、后服务的 Bundle 驱动模式；Vite 是先服务、按需编译的 ESM 原生驱动模式。 这一个架构差异，决定了两者在启动速度、热更新、生产构建、配置复杂度上的所有区别。 延伸阅读：想深入理解 Webpack 的内部打包机制，可参考我之前写的 Webpack原理详解。 一、架构原理：为什么 Vite 启动这么快 Webpack 的工作方式 Webpack 从入口文件 index.js 开始，递归分析所有 import 和 require，把整个依赖树打包成一个或多个 bundle.js。这个过程必须在启动开发服务器之前完成。项目越大，依赖越多，打包时间越" />
   <meta property="og:url" content="https://wuhuajin.com/src/template/posts/%E5%B7%A5%E7%A8%8B%E5%8C%96/html/Vite%E4%B8%8EWebpack%E5%AF%B9%E6%AF%94.html" />
   <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
   <meta property="og:locale" content="zh_CN" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Vite与Webpack对比" />
-  <meta name="twitter:description" content="最本质的差异：Webpack 是 先打包，后服务 的 Bundle 驱动模式；Vite 是 先服务，按需编译 的 ESM 原生驱动模式。 一、开发启动速度 核心原因：Webpack必须先完成全量打包才能提供服务；Vite 利用现代浏览器原生支持的 ES Module 特性，把“打包”工作交给了浏览器，服务器只负责按需编译和转发。 维度 Webpack Vite -------- --------- ------ 冷启动原理 从入口文件开始，递归打包 所有依赖和业务代码，&lt;br生成完整 bundle 后再启动开发服务器 1. 仅对第三方依赖做 预编译（eslint加速）&lt;br2. 直接启动开发服" />
+  <meta name="twitter:description" content="最本质的差异：Webpack 是先打包、后服务的 Bundle 驱动模式；Vite 是先服务、按需编译的 ESM 原生驱动模式。 这一个架构差异，决定了两者在启动速度、热更新、生产构建、配置复杂度上的所有区别。 延伸阅读：想深入理解 Webpack 的内部打包机制，可参考我之前写的 Webpack原理详解。 一、架构原理：为什么 Vite 启动这么快 Webpack 的工作方式 Webpack 从入口文件 index.js 开始，递归分析所有 import 和 require，把整个依赖树打包成一个或多个 bundle.js。这个过程必须在启动开发服务器之前完成。项目越大，依赖越多，打包时间越" />
   <link rel="icon" href="/src/images/favicon.png" />
   <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
   <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
@@ -32,7 +32,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Vite与Webpack对比",
-  "description": "最本质的差异：Webpack 是 先打包，后服务 的 Bundle 驱动模式；Vite 是 先服务，按需编译 的 ESM 原生驱动模式。 一、开发启动速度 核心原因：Webpack必须先完成全量打包才能提供服务；Vite 利用现代浏览器原生支持的 ES Module 特性，把“打包”工作交给了浏览器，服务器只负责按需编译和转发。 维度 Webpack Vite -------- --------- ------ 冷启动原理 从入口文件开始，递归打包 所有依赖和业务代码，<br生成完整 bundle 后再启动开发服务器 1. 仅对第三方依赖做 预编译（eslint加速）<br2. 直接启动开发服",
+  "description": "最本质的差异：Webpack 是先打包、后服务的 Bundle 驱动模式；Vite 是先服务、按需编译的 ESM 原生驱动模式。 这一个架构差异，决定了两者在启动速度、热更新、生产构建、配置复杂度上的所有区别。 延伸阅读：想深入理解 Webpack 的内部打包机制，可参考我之前写的 Webpack原理详解。 一、架构原理：为什么 Vite 启动这么快 Webpack 的工作方式 Webpack 从入口文件 index.js 开始，递归分析所有 import 和 require，把整个依赖树打包成一个或多个 bundle.js。这个过程必须在启动开发服务器之前完成。项目越大，依赖越多，打包时间越",
   "author": {
     "@type": "Person",
     "name": "吴华锦",
@@ -59,146 +59,249 @@
     <div class="nav-container"></div>
     <div class="content-area">
       <div id="markdown-content" class="markdown-content viewer" data-reward="true"><blockquote>
-<p>最本质的差异：<code>Webpack</code> 是 <strong>先打包，后服务</strong> 的 <code>Bundle</code> 驱动模式；<code>Vite</code> 是 <strong>先服务，按需编译</strong> 的 <code>ESM</code> 原生驱动模式。</p>
+<p>最本质的差异：<strong>Webpack 是先打包、后服务的 Bundle 驱动模式；Vite 是先服务、按需编译的 ESM 原生驱动模式。</strong> 这一个架构差异，决定了两者在启动速度、热更新、生产构建、配置复杂度上的所有区别。</p>
+<p>延伸阅读：想深入理解 Webpack 的内部打包机制，可参考我之前写的 <a href="https://wuhuajin.com/src/template/posts/JavaScript/html/Webpack%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3.html">Webpack原理详解</a>。</p>
 </blockquote>
-<h2>一、开发启动速度</h2>
-<p><strong>核心原因</strong>：<strong>Webpack</strong>必须先完成全量打包才能提供服务；<code>Vite</code> 利用现代浏览器原生支持的 <code>ES Module</code> 特性，把“打包”工作交给了浏览器，服务器只负责按需编译和转发。</p>
-<!-- prettier-ignore-start -->
+<h2>一、架构原理：为什么 Vite 启动这么快</h2>
+<h3>Webpack 的工作方式</h3>
+<p>Webpack 从入口文件 <code>index.js</code> 开始，递归分析所有 <code>import</code> 和 <code>require</code>，把整个依赖树打包成一个或多个 <code>bundle.js</code>。这个过程必须在<strong>启动开发服务器之前</strong>完成。项目越大，依赖越多，打包时间越长。</p>
+<p>一个中等规模的 React 项目（300+ 模块），Webpack 冷启动通常需要 <strong>10 秒到 1 分钟</strong>。大型 monorepo 项目甚至要几分钟。</p>
+<h3>Vite 的工作方式</h3>
+<p>Vite 利用现代浏览器原生支持的 <strong>ES Module（ESM）</strong> 特性，把&quot;打包&quot;这件事拆成了两步：</p>
+<ol>
+<li><strong>预构建依赖</strong>：用 <code>esbuild</code>（Go 编写，比 JS 快 10-100 倍）把第三方 npm 包预编译成 ESM 格式。这一步只在 <code>node_modules</code> 变化时执行一次。</li>
+<li><strong>按需编译源码</strong>：浏览器请求哪个模块（比如 <code>/src/App.jsx</code>），Vite 才即时编译那个文件并返回。未被请求的模块完全不处理。</li>
+</ol>
+<p>这就是为什么 Vite 冷启动几乎与项目规模无关——<strong>不管你有 10 个文件还是 10000 个文件，启动时间都是 1-3 秒。</strong></p>
+<pre><code>Webpack:  打包全部 → 启动服务器 → 浏览器加载 bundle
+Vite:     预构建依赖 → 启动服务器 → 浏览器请求哪个文件，编译哪个文件
+</code></pre>
+<h2>二、开发体验对比</h2>
+<h3>冷启动与二次启动</h3>
 <table>
 <thead>
 <tr>
-<th><strong>维度</strong></th>
-<th><code>Webpack</code></th>
-<th><code>Vite</code></th>
+<th>维度</th>
+<th>Webpack</th>
+<th>Vite</th>
 </tr>
 </thead>
 <tbody><tr>
-<td><strong>冷启动原理</strong></td>
-<td>从入口文件开始，递归打包 <strong>所有依赖和业务代码</strong>，<br>生成完整 <code>bundle</code> 后再启动开发服务器</td>
-<td>1. 仅对第三方依赖做 <strong>预编译</strong>（<code>eslint</code>加速）<br>2. 直接启动开发服务器<br>3. 浏览器请求哪个模块，才 <strong>实时编译</strong> 哪个模块</td>
+<td>冷启动耗时</td>
+<td>与项目规模正相关，中型项目 10-60s，大型项目 1-5min</td>
+<td>几乎与规模无关，通常 1-3s</td>
 </tr>
 <tr>
-<td><strong>启动耗时</strong></td>
-<td>与项目规模 <strong>正相关</strong>，大型项目可达 <code>30s-5min</code></td>
-<td>几乎与项目规模 <strong>无关</strong>，通常 <code>1-3s</code>完成启动</td>
-</tr>
-<tr>
-<td><strong>二次启动</strong></td>
+<td>二次启动</td>
 <td>依赖缓存优化，但仍需重新打包变更的依赖树</td>
-<td>预构建结果强缓存，二次启动几乎瞬时</td>
+<td>预构建结果强缓存（<code>node_modules/.vite</code>），二次启动几乎瞬时</td>
+</tr>
+<tr>
+<td>首次 <code>npm run dev</code></td>
+<td>需完整打包，无缓存可用</td>
+<td>esbuild 预构建依赖后即可启动</td>
 </tr>
 </tbody></table>
-<!-- prettier-ignore-end -->
-
-<h2>二、热更新（<code>HMR</code>）</h2>
-<!-- prettier-ignore-start -->
+<h3>热更新（HMR）</h3>
+<p>HMR（Hot Module Replacement）是开发体验的核心——改一行代码，浏览器只替换变更模块而不刷新整个页面。</p>
 <table>
 <thead>
 <tr>
-<th><strong>维度</strong></th>
-<th><code>Webpack</code></th>
-<th><code>Vite</code></th>
+<th>维度</th>
+<th>Webpack</th>
+<th>Vite</th>
 </tr>
 </thead>
 <tbody><tr>
-<td><strong>更新原理</strong></td>
-<td>重新打包 <strong>变更模块及其所有依赖</strong>，替换整个 <code>chunk</code></td>
-<td>基于 <code>ESM</code> 精确更新 <strong>变更的单个模块</strong>，不影响其他模块</td>
+<td>更新原理</td>
+<td>重新打包变更模块及其所有依赖，替换整个 chunk</td>
+<td>基于 ESM 精确更新变更的单个模块，不影响其他模块</td>
 </tr>
 <tr>
-<td><strong>更新耗时</strong></td>
-<td>与项目规模正相关，大型项目可达 <code>5-10s</code></td>
+<td>更新耗时</td>
+<td>与项目规模正相关，大型项目 5-10s</td>
 <td>毫秒级，与项目规模完全无关</td>
 </tr>
 <tr>
-<td><strong>状态保留</strong></td>
-<td>部分框架需要额外插件支持，容易出现状态丢失</td>
-<td>原生支持更好，状态保留稳定</td>
+<td>状态保留</td>
+<td>部分框架需要额外插件支持，容易状态丢失</td>
+<td>原生支持更好，React/Vue 状态保留稳定</td>
 </tr>
 <tr>
-<td><strong>页面刷新</strong></td>
+<td>整页刷新</td>
 <td>复杂变更可能触发整页刷新</td>
 <td>极少触发整页刷新</td>
 </tr>
 </tbody></table>
-<!-- prettier-ignore-end -->
-
-<h2>三、生产构建流程</h2>
-<!-- prettier-ignore-start -->
+<p><strong>实际感受</strong>：Webpack 项目改完代码，切到浏览器要等几秒才能看到效果；Vite 项目几乎是&quot;打字即所见&quot;。</p>
+<h2>三、生产构建对比</h2>
+<p>开发时 Vite 快，但生产环境才是真正决定用户体验的环节。</p>
 <table>
 <thead>
 <tr>
-<th><strong>维度</strong></th>
-<th><code>Webpack</code></th>
-<th><code>Vite</code></th>
+<th>维度</th>
+<th>Webpack</th>
+<th>Vite</th>
 </tr>
 </thead>
 <tbody><tr>
-<td><strong>构建工具</strong></td>
-<td>自身完全全流程打包</td>
-<td>开发用 <code>esbuild</code> 预构建，生产用 <code>Rollup</code> 打包</td>
+<td>构建工具</td>
+<td>自身全流程打包</td>
+<td>开发用 esbuild 预构建，生产用 Rollup 打包</td>
 </tr>
 <tr>
-<td><strong>构建原理</strong></td>
-<td>基于 <code>CommonJS/ESM</code> 混合打包，兼容性优先</td>
-<td>纯 <code>ESM</code> 打包，<code>Tree Shaking</code> 更彻底</td>
-</tr>
-<tr>
-<td><strong>构建速度</strong></td>
+<td>构建速度</td>
 <td>中等，大型项目耗时较长</td>
-<td>比 <code>Webpack</code> 快 <code>2-10</code> 倍（<code>esbuild + Rollup</code> 双重加速）</td>
+<td>比 Webpack 快 2-5 倍</td>
 </tr>
 <tr>
-<td><strong>产物优化</strong></td>
-<td>优化手段丰富，但配置复杂</td>
-<td>内置代码分割、压缩、懒加载，默认优化效果更好</td>
+<td>Tree Shaking</td>
+<td>支持，但需正确配置 <code>sideEffects</code></td>
+<td>Rollup 天然支持，默认更彻底</td>
 </tr>
 <tr>
-<td><strong>产物体积</strong></td>
+<td>代码分割</td>
+<td>需手动配置 <code>optimization.splitChunks</code></td>
+<td>内置自动代码分割，动态 <code>import()</code> 自动分包</td>
+</tr>
+<tr>
+<td>产物体积</td>
 <td>通常更大（冗余代码多）</td>
-<td>通常更小（<code>Rollup</code> 更优的 <code>Tree Shaking</code>）</td>
+<td>通常更小（Rollup 优化更激进）</td>
 </tr>
 <tr>
-<td><strong>兼容性</strong></td>
-<td>原生支持低版本浏览器</td>
-<td>默认仅支持现代浏览器，需 <code>@vitejs/plugin-legacy</code> 兼容低版本</td>
+<td>CSS 处理</td>
+<td>需 <code>mini-css-extract-plugin</code> 等插件</td>
+<td>内置 CSS 代码分割、压缩</td>
+</tr>
+<tr>
+<td>浏览器兼容</td>
+<td>原生支持低版本浏览器（IE11 等）</td>
+<td>默认仅支持现代浏览器，需 <code>@vitejs/plugin-legacy</code></td>
 </tr>
 </tbody></table>
-<!-- prettier-ignore-end -->
+<blockquote>
+<p><strong>关键提醒</strong>：Vite 生产构建用的是 <a href="https://rollupjs.org/">Rollup</a> 而非 <a href="https://esbuild.github.io/">esbuild</a>，因为 Rollup 在代码分割、Tree Shaking、产物体积优化上更成熟。esbuild 目前不支持代码分割，不适合生产打包。</p>
+</blockquote>
+<h2>四、配置复杂度与生态</h2>
+<h3>配置方式</h3>
+<pre><code class="language-js">// Webpack: 一个完整的 React 配置可能需要 200+ 行
+module.exports = {
+  entry: &#39;./src/index.js&#39;,
+  output: { filename: &#39;bundle.js&#39;, path: &#39;/dist&#39; },
+  module: {
+    rules: [
+      { test: /\.jsx?$/, use: &#39;babel-loader&#39;, exclude: /node_modules/ },
+      { test: /\.css$/, use: [&#39;style-loader&#39;, &#39;css-loader&#39;] },
+      { test: /\.(png|jpg)$/, type: &#39;asset&#39; },
+    ]
+  },
+  plugins: [new HtmlWebpackPlugin({ template: &#39;./public/index.html&#39; })],
+  optimization: { splitChunks: { chunks: &#39;all&#39; } }
+}
 
-<h2>四、其他关键区别</h2>
+// Vite: 大部分需求零配置，vite.config.js 通常不到 20 行
+import { defineConfig } from &#39;vite&#39;
+import react from &#39;@vitejs/plugin-react&#39;
+export default defineConfig({
+  plugins: [react()],
+  server: { port: 3000 }
+})
+</code></pre>
+<p>Vite 内置了 TypeScript、JSX、CSS Modules、JSON、静态资源处理，不需要装 loader。配置量比 Webpack 减少约 70%。</p>
+<h3>生态成熟度</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>Webpack</th>
+<th>Vite</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Loader/Plugin 数量</td>
+<td>极其丰富，几乎任何构建需求都有现成方案</td>
+<td>主流框架官方支持，小众场景插件仍在增长</td>
+</tr>
+<tr>
+<td>文档与社区</td>
+<td>十余年积累，问题搜索命中率极高</td>
+<td>文档完善，社区活跃但案例相对少</td>
+</tr>
+<tr>
+<td>企业级项目存量</td>
+<td>大量老项目仍在使用</td>
+<td>新项目首选</td>
+</tr>
+<tr>
+<td>自定义构建逻辑</td>
+<td>通过 plugin API 可以深度介入打包流程</td>
+<td>Rollup 插件 API，能力稍弱但够用</td>
+</tr>
+</tbody></table>
+<h2>五、什么时候选 Vite，什么时候选 Webpack</h2>
+<h3>选 Vite 的情况</h3>
+<ul>
+<li><strong>新项目</strong>：React、Vue、Svelte、Solid 等主流框架的新项目</li>
+<li><strong>追求开发体验</strong>：每天大量时间在 <code>npm run dev</code> 上</li>
+<li><strong>现代浏览器为主</strong>：不需要兼容 IE11 及以下</li>
+<li><strong>中小型应用</strong>：SPA、中后台管理系统、文档站</li>
+</ul>
+<h3>仍需 Webpack 的情况</h3>
+<ul>
+<li><strong>需要兼容 IE11</strong>：Vite 的 legacy 插件虽能解决，但配置成本高，不如 Webpack 直接</li>
+<li><strong>极其复杂的自定义构建</strong>：比如需要在打包流程中做深度定制的企业级项目</li>
+<li><strong>老项目迁移成本高</strong>：已有大量 Webpack 定制 plugin，迁移收益不大</li>
+<li><strong>模块联邦（Module Federation）</strong>：Webpack 的微前端方案生态更成熟，Vite 虽有支持但案例较少</li>
+</ul>
+<h2>六、从 Webpack 迁移到 Vite 的步骤</h2>
 <ol>
-<li><strong>配置复杂度</strong></li>
+<li><strong>安装依赖</strong>：<code>npm install vite @vitejs/plugin-react -D</code></li>
+<li><strong>调整入口</strong>：把 <code>public/index.html</code> 移到项目根目录，改成 Vite 的入口 HTML（用 <code>&lt;script type=&quot;module&quot; src=&quot;/src/index.jsx&quot;&gt;</code> 引入）</li>
+<li><strong>创建 <code>vite.config.js</code></strong>：按需配置别名、代理、环境变量</li>
+<li><strong>替换 require</strong>：Webpack 的 <code>require.context</code> 改成 Vite 的 <code>import.meta.glob</code></li>
+<li><strong>处理 <code>process.env</code></strong>：改成 <code>import.meta.env.VITE_XXX</code></li>
+<li><strong>删除 webpack 相关配置</strong>：移除 <code>webpack.config.js</code>、loader、plugin</li>
+<li><strong>更新 scripts</strong>：<code>&quot;dev&quot;: &quot;vite&quot;</code>, <code>&quot;build&quot;: &quot;vite build&quot;</code>, <code>&quot;preview&quot;: &quot;vite preview&quot;</code></li>
 </ol>
+<h3>常见迁移坑</h3>
 <ul>
-<li><code>Webpack</code>：配置及其灵活但复杂，需要手动配置 <code>entry</code>、<code>output</code>、<code>loader</code>、<code>plugin</code>、<code>optimization</code> 等。</li>
-<li><code>Vite</code>：遵循“约定大于配置”，内置对 <code>TypeScript</code>、<code>JSX</code>、<code>CSS</code>、<code>JSON</code>、静态资源等支持，开箱即用，配置量减少 <code>70%</code> 以上。</li>
+<li><strong><code>require()</code> 写法</strong>：Vite 不支持 CommonJS 的 <code>require</code>，全部改成 <code>import</code></li>
+<li><strong>静态资源路径</strong>：Webpack 里 <code>require(&#39;./image.png&#39;)</code> 改成 <code>import image from &#39;./image.png&#39;</code> 或用 <code>new URL(&#39;./image.png&#39;, import.meta.url).href</code></li>
+<li><strong>环境变量</strong>：<code>process.env.NODE_ENV</code> 改成 <code>import.meta.env.MODE</code>，自定义变量必须以 <code>VITE_</code> 开头</li>
+<li><strong>CSS 预处理器</strong>：Vite 内置支持 Sass/Less/Stylus，装对应的 npm 包即可</li>
 </ul>
-<ol start="2">
-<li><strong>依赖处理</strong></li>
-</ol>
+<h2>总结</h2>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>推荐选择</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>新项目、现代浏览器、追求开发速度</td>
+<td><strong>Vite</strong></td>
+</tr>
+<tr>
+<td>需要兼容老浏览器、复杂定制构建、模块联邦</td>
+<td><strong>Webpack</strong></td>
+</tr>
+<tr>
+<td>老项目维护</td>
+<td>继续 Webpack，不急着迁移</td>
+</tr>
+<tr>
+<td>学习目的</td>
+<td>两个都学，理解打包原理比工具本身重要</td>
+</tr>
+</tbody></table>
+<p>Vite 不是 Webpack 的替代品，而是<strong>面向现代浏览器的新一代构建工具</strong>。它用架构创新解决了 Webpack 的核心痛点——慢。但工具的选择始终服务于项目需求，没有银弹。</p>
+<h2>相关阅读</h2>
 <ul>
-<li><code>Webpack</code>：打包时统一处理所有依赖，支持 <code>CommonJS</code>、<code>AMD</code>、<code>UMD</code>、<code>ESM</code> 等所有模块规范。</li>
-<li><code>Vite</code>：<ul>
-<li>开发时：用 <code>esbuild</code> 预构建第三方依赖（将 <code>CommonJS/UMD</code> 转为 <code>ESM</code>，合并小模块减少请求）</li>
-<li>生产时：<code>Rollup</code> 处理所有依赖，纯 <code>ESM</code> 输出</li>
-<li>对非 <code>ESM</code> 规范的依赖兼容性稍差，部分老旧库可能需要额外配置。</li>
-</ul>
-</li>
-</ul>
-<ol start="3">
-<li><strong>生态系统</strong></li>
-</ol>
-<ul>
-<li><code>Webpack</code>：生态及其成熟，拥有海量 <code>loader</code> 和 <code>plugin</code>，几乎能满足任何构建需求。</li>
-<li><code>Vite</code>：生态发展迅猛，主流框架（<code>React</code>、<code>Vue</code>、<code>Svelte</code>）均官方支持，但小众场景的插件数量仍小于 <code>Webpack</code>。</li>
-</ul>
-<ol start="4">
-<li><strong>多页面应用支持</strong></li>
-</ol>
-<ul>
-<li><code>Webpack</code>：需要手动配置多个 <code>entry</code> 和 <code>HtmlWebpackPlugin</code> 。</li>
-<li><code>Vite</code>：原生支持多页面，只需在 <code>pages</code> 目录下创建对应 <code>HTML</code> 文件即可。</li>
+<li><a href="https://wuhuajin.com/src/template/posts/JavaScript/html/Webpack%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3.html">Webpack原理详解</a> — 深入 Webpack 打包机制、Loader、Plugin</li>
+<li><a href="https://wuhuajin.com/src/template/posts/%E5%B7%A5%E7%A8%8B%E5%8C%96/html/Docker%E9%83%A8%E7%BD%B2Meting%20API%E6%9C%8D%E5%8A%A1.html">Docker部署Meting API服务</a> — 自托管服务的完整部署流程</li>
+<li>官方文档：<a href="https://vitejs.dev/guide/">Vite</a> · <a href="https://webpack.js.org/concepts/">Webpack</a> · <a href="https://esbuild.github.io/">esbuild</a> · <a href="https://rollupjs.org/">Rollup</a></li>
 </ul>
 </div>
       <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>

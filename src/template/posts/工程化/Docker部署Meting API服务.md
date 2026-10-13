@@ -20,7 +20,7 @@ description: 'Docker部署 1. 安装 Docker dnf 添加 docker-ce 阿里云源并
 
 `Meting API` 本身是一个轻量的音乐接口服务（配合 APlayer 播放器使用）。用 Docker 部署的好处是**环境隔离、一键起停、换服务器无缝迁移**——不用在系统里装一堆依赖，也方便后续用 `docker-compose` 编排。
 
-> 想了解更完整的部署思路和细节，可参考我维护的完整教程：[Docker部署Meting API服务（完整版）](https://wuhuajin.com/src/template/posts/工程化/html/Docker部署Meting API服务.html)。
+> 想了解更完整的部署思路和细节，可参考我维护的完整教程：[Docker部署Meting API服务（完整版）](https://wuhuajin.com/src/template/posts/工程化/html/Docker部署Meting%20API服务.html)。
 
 ## 前置条件
 
@@ -170,7 +170,7 @@ docker run -d --name meting-api \
   meting-api
 ```
 
-> 完整命令与更多细节（含 Nginx 配置写法），见 [完整版教程](https://wuhuajin.com/src/template/posts/工程化/html/Docker部署Meting API服务.html)。
+> 完整命令与更多细节（含 Nginx 配置写法），见 [完整版教程](https://wuhuajin.com/src/template/posts/工程化/html/Docker部署Meting%20API服务.html)。
 
 ---
 

@@ -2,54 +2,88 @@
 title: Web3钱包
 date: 2026-09-11
 category: Web3
-description: "区块链 - 共识、trustless需要旷工的工作，旷工需要激励 - transaction的执行有成本 gas，gas费成为旷工的激励 - ether是这个经济生态系统的通行货币 gas和转账 - 转账是与函数调用一起发生，转账就是函数调用。 gaslimit与 gasleft()函数 - 交易发起者设定最多消耗多少 gaslimit - 合约之间调用，调用者可以设定 gaslimit - 区块本身有一个 gaslimit gasleft()是以上因素作为限定，与当前 gas消耗一起计算的结果 退款规则 - 剩下没用完的 gas会退款 - 如果可用 gas耗尽时，会终止交易执行 - 交易失败…"
+description: "这篇文章梳理以太坊开发中最核心的几个概念：gas 费怎么算、合约怎么接收转账、前端怎么连接钱包。不需要有 Solidity 基础也能看懂。 一、gas 是什么 区块链上每笔交易的执行都需要消耗计算资源，矿工（验证者）执行这些工作需要激励。gas 就是支付给矿工的费用，ETH 是这个生态系统的通行货币。 关键点：转账就是函数调用。在以太坊上，你向地址转 ETH 和调用合约函数本质上是同一回事——都是发送一笔交易。 二、gaslimit 与 gasleft() 概念 说明 gaslimit（交易级） 交易发起者设定最多愿意消耗多少 gas gaslimit（合约间调用） 合约之间调用时，调用者可以"
 ---
 
-# 区块链
+这篇文章梳理以太坊开发中最核心的几个概念：gas 费怎么算、合约怎么接收转账、前端怎么连接钱包。不需要有 Solidity 基础也能看懂。
 
-- 共识、`trustless`需要旷工的工作，旷工需要激励
-- `transaction`的执行有成本 `gas`，`gas`费成为旷工的激励
-- `ether`是这个经济生态系统的通行货币
+## 一、gas 是什么
 
-## `gas`和转账
+区块链上每笔交易的执行都需要消耗计算资源，矿工（验证者）执行这些工作需要激励。**gas 就是支付给矿工的费用**，ETH 是这个生态系统的通行货币。
 
-- 转账是与函数调用一起发生，转账就是函数调用。
+关键点：**转账就是函数调用**。在以太坊上，你向地址转 ETH 和调用合约函数本质上是同一回事——都是发送一笔交易。
 
-### `gaslimit`与 `gasleft()`函数
+## 二、gaslimit 与 gasleft()
 
-- 交易发起者设定最多消耗多少 `gaslimit`
-- 合约之间调用，调用者可以设定 `gaslimit`
-- 区块本身有一个 `gaslimit`
+| 概念 | 说明 |
+|------|------|
+| gaslimit（交易级） | 交易发起者设定最多愿意消耗多少 gas |
+| gaslimit（合约间调用） | 合约之间调用时，调用者可以设定本次调用的 gas 上限 |
+| gaslimit（区块级） | 每个区块本身有 gas 上限，限制区块大小 |
+| gasleft() | 合约中查看当前还剩多少可用 gas |
 
-**`gasleft()`是以上因素作为限定，与当前 `gas`消耗一起计算的结果**
+**退款规则**：
+- 没用完的 gas 会**原路退回**给发起者
+- 如果 gas 耗尽（out of gas），交易立即终止，已消耗的 gas 不退
+- 交易执行失败时，已用的 gas 也不退（因为矿工确实执行了工作）
 
-### 退款规则
+## 三、receive() 与 fallback() 函数
 
-- 剩下没用完的 `gas`会退款
-- 如果可用 `gas`耗尽时，会终止交易执行
-- 交易失败时，已经用了的 `gas`不退
+当你向合约地址转账 ETH 时，合约需要特殊函数来接收：
 
-## `receive()`函数
+### 调用解析逻辑
 
-### 被调用函数解析逻辑
+当一笔交易发给合约时，EVM 按以下顺序匹配：
 
-1. 自定义函数匹配 `selector`
-2. `receive`函数匹配为空的 `calldata`
-3. `fallback`函数兜底
-4. 除了 `fallback`必须在尾部，其他元素顺序无关
+1. 自定义函数匹配 `selector`（函数签名哈希）
+2. `receive()` 函数——当 calldata 为空时匹配
+3. `fallback()` 函数——兜底
+4. 如果都不匹配，交易回退
 
-### 检查逻辑
+> 注意：除了 `fallback` 必须在尾部，其他顺序无关。
 
-**`payable`修饰符在函数定义中的作用**：解析逻辑如果成功则会输出一个函数，检查逻辑就是检查一个情况：**`value > 0`并且这个函数没有被 `payable`修饰**。如果出现这个情况，调用失败终止，否则执行函数逻辑。
+### payable 修饰符
 
-### 地址的 `checksum`
+解析成功后还会检查：**如果发送了 ETH（value > 0）但函数没有 `payable` 修饰符，交易直接失败**。这是防止误转账的安全机制。
 
-- `checksum`保证了输入错误能够被检查出来
-- `checksum`检查是在链下完成的，比如在 `ethersjs`这种 `js`包中完成，链上并不会检查 `checksum`
+## 四、地址的 checksum
 
-## 连接钱包
+以太坊地址有 40 个十六进制字符，大小写混合的 **checksum 格式**是一种校验机制：
 
-1. 连接成功，检查是否为所支持的网络
-2. 如果没有工作在所支持的网络上，通过配置参数向钱包推送配置，切换到合适的网络
-3. 如果是 `Transation`一定是连接钱包；如果是读操作并且需要当前 `account`，从 `signer`中获取，否则直接使用 `jsonRpcProvider`
-4. 重构代码，将合约访问业务组织在 `service`中
+- checksum 在**链下**完成（比如 ethers.js 这类前端库自动处理）
+- 链上**不会**校验 checksum
+- 作用是防止你复制粘贴地址时出错（大小写错了会被库提前发现）
+
+## 五、前端连接钱包的流程
+
+以 MetaMask 为例，前端连接钱包的标准流程：
+
+```js
+// 1. 请求连接钱包
+const accounts = await window.ethereum.request({
+  method: 'eth_requestAccounts'
+});
+// 返回 ['0x123...'] 当前连接的地址
+
+// 2. 检查当前网络是否正确
+const chainId = await window.ethereum.request({ method: 'eth_chainId' });
+if (chainId !== '0x1') { // 1 = 主网
+  // 3. 提示用户切换网络
+  await window.ethereum.request({
+    method: 'wallet_switchEthereumChain',
+    params: [{ chainId: '0x1' }]
+  });
+}
+```
+
+### 代码组织建议
+
+- **写操作**（发交易、签消息）：必须连接钱包
+- **读操作**（查合约数据）：如果不需要当前账户，可以直接用 `JsonRpcProvider` 连公共节点，不用弹窗请求钱包
+- 把合约访问逻辑封装在 `service` 层组件中，UI 层只调用
+
+## 相关阅读
+
+- [Solidity文档](https://wuhuajin.com/src/template/posts/Web3/html/Solidity文档.html) — Solidity 语法速查
+- [Web3文档](https://wuhuajin.com/src/template/posts/Web3/html/Web3文档.html) — Web3 前端开发入门
+- [以太坊官方文档](https://ethereum.org/zh/developers/docs/) — 权威资料

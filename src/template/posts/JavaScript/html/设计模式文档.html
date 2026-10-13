@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="author" content="吴华锦" />
   <title>设计模式文档 « 吴华锦</title>
-  <meta name="description" content="面向对象 - 不需要关注使用过程 - 易维护、易扩展、易复用 - 特征：继承、封装、多台 2. 设计原则 - 单一职责 - 开放封闭 - 里氏替换 - 依赖倒置 - 接口分离 3. 工厂模式、抽象工厂模式 - 工厂模式：通过传入不同的短参数，达到实例化不同的对象的目的 - 优势：关注当前产品的创建，具有良好的封装 - 劣势：增加系统复杂性 - 抽象工厂模式：关注当前抽象类，不需要知道产品具体细节，只需要关注当前抽象方法 4. 状态模式 - 提高代码可维护性 - 添加了很多类，每个类都有自己的方法和状态，增加了系统的负载 5. 单例模式 - 不用重复去构建实例，直接取保存在内存中的实例 - 优势" />
+  <meta name="description" content="设计模式不是八股文，而是前人总结的解决常见问题的最优方案。这篇文章用 JavaScript 实现最常用的设计模式，配代码示例和适用场景。 一、五大设计原则（SOLID） 原则 含义 单一职责（SRP） 一个类只做一件事 开放封闭（OCP） 对扩展开放，对修改封闭 里氏替换（LSP） 子类必须能替换父类 接口分离（ISP） 不依赖不需要的接口 依赖倒置（DIP） 依赖抽象，不依赖具体实现 二、工厂模式 通过参数决定创建哪个对象，不用直接 new。 适用场景：根据配置或用户选择创建不同类型的对象，如弹窗、按钮、支付方式。 三、单例模式 确保一个类只有一个实例。 适用场景：全局配置、数据库连接池、全" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://wuhuajin.com/src/template/posts/JavaScript/html/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%96%87%E6%A1%A3.html" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Wu Huajin" />
   <meta property="og:title" content="设计模式文档" />
-  <meta property="og:description" content="面向对象 - 不需要关注使用过程 - 易维护、易扩展、易复用 - 特征：继承、封装、多台 2. 设计原则 - 单一职责 - 开放封闭 - 里氏替换 - 依赖倒置 - 接口分离 3. 工厂模式、抽象工厂模式 - 工厂模式：通过传入不同的短参数，达到实例化不同的对象的目的 - 优势：关注当前产品的创建，具有良好的封装 - 劣势：增加系统复杂性 - 抽象工厂模式：关注当前抽象类，不需要知道产品具体细节，只需要关注当前抽象方法 4. 状态模式 - 提高代码可维护性 - 添加了很多类，每个类都有自己的方法和状态，增加了系统的负载 5. 单例模式 - 不用重复去构建实例，直接取保存在内存中的实例 - 优势" />
+  <meta property="og:description" content="设计模式不是八股文，而是前人总结的解决常见问题的最优方案。这篇文章用 JavaScript 实现最常用的设计模式，配代码示例和适用场景。 一、五大设计原则（SOLID） 原则 含义 单一职责（SRP） 一个类只做一件事 开放封闭（OCP） 对扩展开放，对修改封闭 里氏替换（LSP） 子类必须能替换父类 接口分离（ISP） 不依赖不需要的接口 依赖倒置（DIP） 依赖抽象，不依赖具体实现 二、工厂模式 通过参数决定创建哪个对象，不用直接 new。 适用场景：根据配置或用户选择创建不同类型的对象，如弹窗、按钮、支付方式。 三、单例模式 确保一个类只有一个实例。 适用场景：全局配置、数据库连接池、全" />
   <meta property="og:url" content="https://wuhuajin.com/src/template/posts/JavaScript/html/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%96%87%E6%A1%A3.html" />
   <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
   <meta property="og:locale" content="zh_CN" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="设计模式文档" />
-  <meta name="twitter:description" content="面向对象 - 不需要关注使用过程 - 易维护、易扩展、易复用 - 特征：继承、封装、多台 2. 设计原则 - 单一职责 - 开放封闭 - 里氏替换 - 依赖倒置 - 接口分离 3. 工厂模式、抽象工厂模式 - 工厂模式：通过传入不同的短参数，达到实例化不同的对象的目的 - 优势：关注当前产品的创建，具有良好的封装 - 劣势：增加系统复杂性 - 抽象工厂模式：关注当前抽象类，不需要知道产品具体细节，只需要关注当前抽象方法 4. 状态模式 - 提高代码可维护性 - 添加了很多类，每个类都有自己的方法和状态，增加了系统的负载 5. 单例模式 - 不用重复去构建实例，直接取保存在内存中的实例 - 优势" />
+  <meta name="twitter:description" content="设计模式不是八股文，而是前人总结的解决常见问题的最优方案。这篇文章用 JavaScript 实现最常用的设计模式，配代码示例和适用场景。 一、五大设计原则（SOLID） 原则 含义 单一职责（SRP） 一个类只做一件事 开放封闭（OCP） 对扩展开放，对修改封闭 里氏替换（LSP） 子类必须能替换父类 接口分离（ISP） 不依赖不需要的接口 依赖倒置（DIP） 依赖抽象，不依赖具体实现 二、工厂模式 通过参数决定创建哪个对象，不用直接 new。 适用场景：根据配置或用户选择创建不同类型的对象，如弹窗、按钮、支付方式。 三、单例模式 确保一个类只有一个实例。 适用场景：全局配置、数据库连接池、全" />
   <link rel="icon" href="/src/images/favicon.png" />
   <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
   <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
@@ -32,7 +32,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "设计模式文档",
-  "description": "面向对象 - 不需要关注使用过程 - 易维护、易扩展、易复用 - 特征：继承、封装、多台 2. 设计原则 - 单一职责 - 开放封闭 - 里氏替换 - 依赖倒置 - 接口分离 3. 工厂模式、抽象工厂模式 - 工厂模式：通过传入不同的短参数，达到实例化不同的对象的目的 - 优势：关注当前产品的创建，具有良好的封装 - 劣势：增加系统复杂性 - 抽象工厂模式：关注当前抽象类，不需要知道产品具体细节，只需要关注当前抽象方法 4. 状态模式 - 提高代码可维护性 - 添加了很多类，每个类都有自己的方法和状态，增加了系统的负载 5. 单例模式 - 不用重复去构建实例，直接取保存在内存中的实例 - 优势",
+  "description": "设计模式不是八股文，而是前人总结的解决常见问题的最优方案。这篇文章用 JavaScript 实现最常用的设计模式，配代码示例和适用场景。 一、五大设计原则（SOLID） 原则 含义 单一职责（SRP） 一个类只做一件事 开放封闭（OCP） 对扩展开放，对修改封闭 里氏替换（LSP） 子类必须能替换父类 接口分离（ISP） 不依赖不需要的接口 依赖倒置（DIP） 依赖抽象，不依赖具体实现 二、工厂模式 通过参数决定创建哪个对象，不用直接 new。 适用场景：根据配置或用户选择创建不同类型的对象，如弹窗、按钮、支付方式。 三、单例模式 确保一个类只有一个实例。 适用场景：全局配置、数据库连接池、全",
   "author": {
     "@type": "Person",
     "name": "吴华锦",
@@ -58,97 +58,230 @@
   <div class="layout-container">
     <div class="nav-container"></div>
     <div class="content-area">
-      <div id="markdown-content" class="markdown-content viewer" data-reward="true"><ol>
-<li><strong>面向对象</strong></li>
-</ol>
+      <div id="markdown-content" class="markdown-content viewer" data-reward="true"><p>设计模式不是八股文，而是前人总结的解决常见问题的最优方案。这篇文章用 JavaScript 实现最常用的设计模式，配代码示例和适用场景。</p>
+<h2>一、五大设计原则（SOLID）</h2>
+<table>
+<thead>
+<tr>
+<th>原则</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>单一职责（SRP）</td>
+<td>一个类只做一件事</td>
+</tr>
+<tr>
+<td>开放封闭（OCP）</td>
+<td>对扩展开放，对修改封闭</td>
+</tr>
+<tr>
+<td>里氏替换（LSP）</td>
+<td>子类必须能替换父类</td>
+</tr>
+<tr>
+<td>接口分离（ISP）</td>
+<td>不依赖不需要的接口</td>
+</tr>
+<tr>
+<td>依赖倒置（DIP）</td>
+<td>依赖抽象，不依赖具体实现</td>
+</tr>
+</tbody></table>
+<h2>二、工厂模式</h2>
+<p>通过参数决定创建哪个对象，不用直接 <code>new</code>。</p>
+<pre><code class="language-js">class User {
+  constructor(name) { this.name = name; }
+  sayHi() { console.log(`Hi, ${this.name}`); }
+}
+
+class Admin {
+  constructor(name) { this.name = name; }
+  deleteUser(id) { console.log(`${this.name} deleted user ${id}`); }
+}
+
+function createUser(type, name) {
+  if (type === &#39;admin&#39;) return new Admin(name);
+  return new User(name);
+}
+
+const admin = createUser(&#39;admin&#39;, &#39;Tom&#39;);
+admin.deleteUser(1);
+</code></pre>
+<p><strong>适用场景</strong>：根据配置或用户选择创建不同类型的对象，如弹窗、按钮、支付方式。</p>
+<h2>三、单例模式</h2>
+<p>确保一个类只有一个实例。</p>
+<pre><code class="language-js">class Config {
+  static instance;
+  constructor() {
+    if (Config.instance) return Config.instance;
+    this.apiUrl = &#39;/api&#39;;
+    Config.instance = this;
+  }
+}
+
+const c1 = new Config();
+const c2 = new Config();
+console.log(c1 === c2); // true
+</code></pre>
+<p><strong>适用场景</strong>：全局配置、数据库连接池、全局状态管理。</p>
+<h2>四、观察者模式</h2>
+<p>一对多依赖，状态变化时自动通知所有观察者。</p>
+<pre><code class="language-js">class Subject {
+  constructor() { this.observers = []; }
+  subscribe(fn) { this.observers.push(fn); }
+  notify(data) { this.observers.forEach(fn =&gt; fn(data)); }
+}
+
+const topic = new Subject();
+topic.subscribe(data =&gt; console.log(&#39;订阅者1:&#39;, data));
+topic.subscribe(data =&gt; console.log(&#39;订阅者2:&#39;, data));
+topic.notify(&#39;新消息！&#39;);
+</code></pre>
+<p><strong>实际应用</strong>：Vue 的响应式系统、DOM 事件监听、Redux 的 subscribe。</p>
+<h2>五、代理模式</h2>
+<p>不直接访问目标对象，通过代理控制访问。</p>
+<pre><code class="language-js">const api = {
+  getUser: (id) =&gt; fetch(`/api/users/${id}`).then(r =&gt; r.json())
+};
+
+// 缓存代理
+const apiProxy = new Proxy(api, {
+  cache: {},
+  get(target, prop) {
+    return async (id) =&gt; {
+      if (this.cache[prop + id]) return this.cache[prop + id];
+      const result = await target[prop](id);
+      this.cache[prop + id] = result;
+      return result;
+    };
+  }
+});
+</code></pre>
+<p><strong>适用场景</strong>：缓存、权限校验、日志记录、防抖节流。</p>
+<h2>六、策略模式</h2>
+<p>把可互换的算法封装成策略，运行时切换。</p>
+<pre><code class="language-js">const strategies = {
+  normal: price =&gt; price,
+  vip: price =&gt; price * 0.8,
+  holiday: price =&gt; price * 0.5
+};
+
+function calculatePrice(price, type) {
+  return strategies[type](price);
+}
+
+console.log(calculatePrice(100, &#39;vip&#39;)); // 80
+console.log(calculatePrice(100, &#39;holiday&#39;)); // 50
+</code></pre>
+<p><strong>适用场景</strong>：多种折扣计算、表单验证规则、排序算法切换。</p>
+<h2>七、装饰器模式</h2>
+<p>不修改原对象，动态添加功能。</p>
+<pre><code class="language-js">function withLogging(fn) {
+  return function(...args) {
+    console.log(`调用 ${fn.name}，参数：`, args);
+    const result = fn.apply(this, args);
+    console.log(`返回值：`, result);
+    return result;
+  };
+}
+
+const add = (a, b) =&gt; a + b;
+const loggedAdd = withLogging(add);
+loggedAdd(1, 2);
+</code></pre>
+<p><strong>实际应用</strong>：TypeScript 装饰器、React HOC（高阶组件）。</p>
+<h2>八、适配器模式</h2>
+<p>把不兼容的接口转换成可用的接口。</p>
+<pre><code class="language-js">// 旧系统返回的数据格式
+const oldSystem = { getData: () =&gt; ({ user_name: &#39;Tom&#39;, user_age: 20 }) };
+
+// 新系统需要的格式
+function displayUser({ name, age }) {
+  console.log(`${name}, ${age}岁`);
+}
+
+// 适配器
+function adaptOldData(data) {
+  return { name: data.user_name, age: data.user_age };
+}
+
+displayUser(adaptOldData(oldSystem.getData()));
+</code></pre>
+<p><strong>适用场景</strong>：对接第三方 API、迁移旧系统、兼容不同数据格式。</p>
+<h2>九、状态模式</h2>
+<p>对象状态改变时改变行为，避免大量 if/else。</p>
+<pre><code class="language-js">class Order {
+  constructor() { this.state = &#39;pending&#39;; }
+  next() {
+    if (this.state === &#39;pending&#39;) this.state = &#39;paid&#39;;
+    else if (this.state === &#39;paid&#39;) this.state = &#39;shipped&#39;;
+    else if (this.state === &#39;shipped&#39;) this.state = &#39;completed&#39;;
+    console.log(&#39;当前状态：&#39;, this.state);
+  }
+}
+</code></pre>
+<p><strong>适用场景</strong>：订单流转、播放器状态（播放/暂停/停止）、表单状态。</p>
+<h2>十、迭代器模式</h2>
+<p>统一遍历不同数据结构的方式。</p>
+<pre><code class="language-js">// ES6 原生迭代器协议
+const arr = [1, 2, 3];
+const map = new Map([[&#39;a&#39;, 1]]);
+
+for (const item of arr) console.log(item);
+for (const [key, value] of map) console.log(key, value);
+</code></pre>
+<p><strong>适用场景</strong>：遍历数组、Set、Map、自定义集合。</p>
+<h2>总结</h2>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>一句话记忆</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>工厂</td>
+<td>根据参数创建对象</td>
+</tr>
+<tr>
+<td>单例</td>
+<td>全局唯一实例</td>
+</tr>
+<tr>
+<td>观察者</td>
+<td>状态变化自动通知</td>
+</tr>
+<tr>
+<td>代理</td>
+<td>控制访问，加缓存/日志</td>
+</tr>
+<tr>
+<td>策略</td>
+<td>算法可互换</td>
+</tr>
+<tr>
+<td>装饰器</td>
+<td>动态加功能不改原代码</td>
+</tr>
+<tr>
+<td>适配器</td>
+<td>接口转换</td>
+</tr>
+<tr>
+<td>状态</td>
+<td>状态驱动行为</td>
+</tr>
+<tr>
+<td>迭代器</td>
+<td>统一遍历接口</td>
+</tr>
+</tbody></table>
+<h2>相关阅读</h2>
 <ul>
-<li>不需要关注使用过程</li>
-<li>易维护、易扩展、易复用</li>
-<li>特征：继承、封装、多台</li>
-</ul>
-<ol start="2">
-<li><strong>设计原则</strong></li>
-</ol>
-<ul>
-<li>单一职责</li>
-<li>开放封闭</li>
-<li>里氏替换</li>
-<li>依赖倒置</li>
-<li>接口分离</li>
-</ul>
-<ol start="3">
-<li><strong>工厂模式、抽象工厂模式</strong></li>
-</ol>
-<ul>
-<li>工厂模式：通过传入不同的短参数，达到实例化不同的对象的目的<ul>
-<li>优势：关注当前产品的创建，具有良好的封装</li>
-<li>劣势：增加系统复杂性</li>
-</ul>
-</li>
-<li>抽象工厂模式：关注当前抽象类，不需要知道产品具体细节，只需要关注当前抽象方法</li>
-</ul>
-<ol start="4">
-<li><strong>状态模式</strong></li>
-</ol>
-<ul>
-<li>提高代码可维护性</li>
-<li>添加了很多类，每个类都有自己的方法和状态，增加了系统的负载</li>
-</ul>
-<ol start="5">
-<li><strong>单例模式</strong></li>
-</ol>
-<ul>
-<li>不用重复去构建实例，直接取保存在内存中的实例</li>
-<li>优势：只有一个实例，内存占用少，提高性能</li>
-<li>劣势：不常用，扩展性差</li>
-</ul>
-<ol start="6">
-<li><strong>代理模式</strong></li>
-</ol>
-<ul>
-<li>不能直接访问源对象，通过访问代理对象访问源对象</li>
-</ul>
-<ol start="7">
-<li><strong>观察者模式</strong></li>
-</ol>
-<ul>
-<li>对象之间一对多依赖关系，当一个对象的状态发生变化，所有依赖它的对象都得到通知并被自动更新</li>
-<li>事件通信，<code>Vue</code>、<code>React</code>、<code>DOM</code> 事件、<code>Vue</code>-<code>watch</code></li>
-</ul>
-<ol start="8">
-<li><strong>装饰器模式</strong></li>
-</ol>
-<ul>
-<li>为对象添加新功能，不改变原有的结构和功能</li>
-</ul>
-<ol start="9">
-<li><strong>适配器模式</strong></li>
-</ol>
-<ul>
-<li>原有接口格式不兼容，加一层适配转换接口</li>
-</ul>
-<ol start="10">
-<li><strong>策略模式</strong></li>
-</ol>
-<ul>
-<li>策略组，可复用、可扩展、可维护</li>
-<li>方便在运行时切换算法和策略</li>
-<li>代码更简洁，避免大量的条件判断</li>
-<li>关注分离，每个 <code>strategy</code> 控制自己的算法逻辑，<code>strategy</code> 和使用者之间独立</li>
-</ul>
-<ol start="11">
-<li><strong>迭代器模式</strong></li>
-</ol>
-<ul>
-<li><code>ES6</code> <code>Iterator</code>，迭代器用于遍历容器，并且访问容器中的元素 <code>array</code>、<code>set</code>、<code>map</code>、<code>string</code></li>
-<li>接口都是一样的，迭代器协议</li>
-<li>解决问题：<ul>
-<li>提供了一致的遍历各种数据结构方式，不用了解数据的内部结构</li>
-<li>提供了遍历容器的能力，无需改变接口</li>
-<li><code>hasNext()</code>：判断迭代是否结束</li>
-<li><code>next()</code>查找并返回下一个元素</li>
-</ul>
-</li>
+<li><a href="https://wuhuajin.com/src/template/posts/JavaScript/html/ECMAScript%E6%96%87%E6%A1%A3.html">ECMAScript文档</a> — ES6+ 语法速查</li>
+<li><a href="https://wuhuajin.com/src/template/posts/JavaScript/html/JavaScript%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%89%8B%E5%86%8C.html">JavaScript正则表达式手册</a> — 正则速查</li>
+<li><a href="https://refactoringguru.cn/design-patterns">Refactoring Guru 设计模式</a> — 图解设计模式</li>
 </ul>
 </div>
       <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>

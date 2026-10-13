@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="author" content="吴华锦" />
   <title>ADB命令集合 « 吴华锦</title>
-  <meta name="description" content="设备基础 命令说明 adb devices列出已连接设备 adb devices -l列出已连接设备和种类 adb connect/disconnect [ip:port]连接到指定IP和端口的设备/断开连接 adb root以root权限重新启动adb adb remount重新挂载具有读/写访问权限的文件系统 adb start-server启动adb服务 adb kill-server停止adb服务 adb reboot重启设备 adb reboot bootloader将设备重启到fastboot模式 adb reboot recovery将设备重启到恢复模式 adb disable-" />
+  <meta name="description" content="ADB（Android Debug Bridge）是 Android 开发和调试最核心的命令行工具。不管是安装 APK、抓日志、截屏、模拟点击，还是调试真机问题，都离不开它。本手册按使用场景分类整理，收藏后随查随用。 官方文档：完整的 ADB 参数说明见 Android Developers · Debug Your App，本文是实战命令速查。 一、环境准备 ADB 包含在 Android SDK Platform-Tools 中，独立安装即可，不需要下载完整 SDK： 真机调试前提：手机 → 设置 → 关于手机 → 连续点击\&quot;版本号\&quot;7 次开启开发者选项 → 开启\&quot;USB 调试\&quot;。 二、设" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://wuhuajin.com/src/template/posts/Android/html/ADB%E5%91%BD%E4%BB%A4%E9%9B%86%E5%90%88.html" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Wu Huajin" />
   <meta property="og:title" content="ADB命令集合" />
-  <meta property="og:description" content="设备基础 命令说明 adb devices列出已连接设备 adb devices -l列出已连接设备和种类 adb connect/disconnect [ip:port]连接到指定IP和端口的设备/断开连接 adb root以root权限重新启动adb adb remount重新挂载具有读/写访问权限的文件系统 adb start-server启动adb服务 adb kill-server停止adb服务 adb reboot重启设备 adb reboot bootloader将设备重启到fastboot模式 adb reboot recovery将设备重启到恢复模式 adb disable-" />
+  <meta property="og:description" content="ADB（Android Debug Bridge）是 Android 开发和调试最核心的命令行工具。不管是安装 APK、抓日志、截屏、模拟点击，还是调试真机问题，都离不开它。本手册按使用场景分类整理，收藏后随查随用。 官方文档：完整的 ADB 参数说明见 Android Developers · Debug Your App，本文是实战命令速查。 一、环境准备 ADB 包含在 Android SDK Platform-Tools 中，独立安装即可，不需要下载完整 SDK： 真机调试前提：手机 → 设置 → 关于手机 → 连续点击\&quot;版本号\&quot;7 次开启开发者选项 → 开启\&quot;USB 调试\&quot;。 二、设" />
   <meta property="og:url" content="https://wuhuajin.com/src/template/posts/Android/html/ADB%E5%91%BD%E4%BB%A4%E9%9B%86%E5%90%88.html" />
   <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
   <meta property="og:locale" content="zh_CN" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="ADB命令集合" />
-  <meta name="twitter:description" content="设备基础 命令说明 adb devices列出已连接设备 adb devices -l列出已连接设备和种类 adb connect/disconnect [ip:port]连接到指定IP和端口的设备/断开连接 adb root以root权限重新启动adb adb remount重新挂载具有读/写访问权限的文件系统 adb start-server启动adb服务 adb kill-server停止adb服务 adb reboot重启设备 adb reboot bootloader将设备重启到fastboot模式 adb reboot recovery将设备重启到恢复模式 adb disable-" />
+  <meta name="twitter:description" content="ADB（Android Debug Bridge）是 Android 开发和调试最核心的命令行工具。不管是安装 APK、抓日志、截屏、模拟点击，还是调试真机问题，都离不开它。本手册按使用场景分类整理，收藏后随查随用。 官方文档：完整的 ADB 参数说明见 Android Developers · Debug Your App，本文是实战命令速查。 一、环境准备 ADB 包含在 Android SDK Platform-Tools 中，独立安装即可，不需要下载完整 SDK： 真机调试前提：手机 → 设置 → 关于手机 → 连续点击\&quot;版本号\&quot;7 次开启开发者选项 → 开启\&quot;USB 调试\&quot;。 二、设" />
   <link rel="icon" href="/src/images/favicon.png" />
   <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
   <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
@@ -32,7 +32,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "ADB命令集合",
-  "description": "设备基础 命令说明 adb devices列出已连接设备 adb devices -l列出已连接设备和种类 adb connect/disconnect [ip:port]连接到指定IP和端口的设备/断开连接 adb root以root权限重新启动adb adb remount重新挂载具有读/写访问权限的文件系统 adb start-server启动adb服务 adb kill-server停止adb服务 adb reboot重启设备 adb reboot bootloader将设备重启到fastboot模式 adb reboot recovery将设备重启到恢复模式 adb disable-",
+  "description": "ADB（Android Debug Bridge）是 Android 开发和调试最核心的命令行工具。不管是安装 APK、抓日志、截屏、模拟点击，还是调试真机问题，都离不开它。本手册按使用场景分类整理，收藏后随查随用。 官方文档：完整的 ADB 参数说明见 Android Developers · Debug Your App，本文是实战命令速查。 一、环境准备 ADB 包含在 Android SDK Platform-Tools 中，独立安装即可，不需要下载完整 SDK： 真机调试前提：手机 → 设置 → 关于手机 → 连续点击\\\"版本号\\\"7 次开启开发者选项 → 开启\\\"USB 调试\\\"。 二、设",
   "author": {
     "@type": "Person",
     "name": "吴华锦",
@@ -58,8 +58,20 @@
   <div class="layout-container">
     <div class="nav-container"></div>
     <div class="content-area">
-      <div id="markdown-content" class="markdown-content viewer" data-reward="true"><h2>设备基础</h2>
-<!--prettier-ignore-start-->
+      <div id="markdown-content" class="markdown-content viewer" data-reward="true"><p>ADB（Android Debug Bridge）是 Android 开发和调试最核心的命令行工具。不管是安装 APK、抓日志、截屏、模拟点击，还是调试真机问题，都离不开它。本手册按使用场景分类整理，收藏后随查随用。</p>
+<blockquote>
+<p>官方文档：完整的 ADB 参数说明见 <a href="https://developer.android.com/studio/command-line/adb">Android Developers · Debug Your App</a>，本文是实战命令速查。</p>
+</blockquote>
+<h2>一、环境准备</h2>
+<p>ADB 包含在 Android SDK Platform-Tools 中，独立安装即可，不需要下载完整 SDK：</p>
+<pre><code class="language-bash"># macOS（用 Homebrew）
+brew install android-platform-tools
+
+# 验证安装
+adb version
+</code></pre>
+<p><strong>真机调试前提</strong>：手机 → 设置 → 关于手机 → 连续点击&quot;版本号&quot;7 次开启开发者选项 → 开启&quot;USB 调试&quot;。</p>
+<h2>二、设备管理</h2>
 <table>
 <thead>
 <tr>
@@ -73,27 +85,23 @@
 </tr>
 <tr>
 <td><code>adb devices -l</code></td>
-<td>列出已连接设备和种类</td>
+<td>列出设备详细信息（型号、序列号等）</td>
 </tr>
 <tr>
-<td><code>adb connect/disconnect [ip:port]</code></td>
-<td>连接到指定<code>IP</code>和端口的设备/断开连接</td>
+<td><code>adb connect &lt;ip&gt;:5555</code></td>
+<td>通过网络连接设备（无线调试）</td>
 </tr>
 <tr>
-<td><code>adb root</code></td>
-<td>以<code>root</code>权限重新启动<code>adb</code></td>
-</tr>
-<tr>
-<td><code>adb remount</code></td>
-<td>重新挂载具有读/写访问权限的文件系统</td>
+<td><code>adb disconnect</code></td>
+<td>断开所有网络连接</td>
 </tr>
 <tr>
 <td><code>adb start-server</code></td>
-<td>启动<code>adb</code>服务</td>
+<td>启动 ADB 服务</td>
 </tr>
 <tr>
 <td><code>adb kill-server</code></td>
-<td>停止<code>adb</code>服务</td>
+<td>重启 ADB 服务（遇到设备异常时常用）</td>
 </tr>
 <tr>
 <td><code>adb reboot</code></td>
@@ -101,21 +109,46 @@
 </tr>
 <tr>
 <td><code>adb reboot bootloader</code></td>
-<td>将设备重启到<code>fastboot</code>模式</td>
+<td>重启到 Fastboot 模式</td>
 </tr>
 <tr>
 <td><code>adb reboot recovery</code></td>
-<td>将设备重启到恢复模式</td>
+<td>重启到 Recovery 模式</td>
 </tr>
 <tr>
-<td><code>adb disable-verify</code></td>
-<td>禁用设备的<code>dm-verity</code>安全特性</td>
+<td><code>adb root</code></td>
+<td>以 root 权限重启 adbd（需 userdebug 版本系统）</td>
+</tr>
+<tr>
+<td><code>adb remount</code></td>
+<td>重新挂载 <code>/system</code> 为可读写（需 root）</td>
 </tr>
 </tbody></table>
-<!--prettier-ignore-end-->
+<h3>多设备操作</h3>
+<p>同时连接多台设备时，用 <code>-s</code> 指定目标设备：</p>
+<pre><code class="language-bash"># 查看所有设备序列号
+adb devices
+# List of devices attached
+# emulator-5554   device
+# 7f1c864e        device
 
-<h2>logcat</h2>
-<!--prettier-ignore-start-->
+# 指定设备执行命令
+adb -s 7f1c864e shell pm list packages
+adb -s emulator-5554 install app.apk
+</code></pre>
+<h3>无线调试（Android 11+）</h3>
+<p>Android 11 以后支持无需 USB 的无线调试：</p>
+<pre><code class="language-bash"># 方法一：手机上「开发者选项 → 无线调试」配对后
+adb pair 192.168.1.100:30000
+adb connect 192.168.1.100:30001
+
+# 方法二：先用 USB 连接，再切换到网络模式
+adb tcpip 5555
+adb connect &lt;手机IP&gt;:5555
+# 然后拔掉 USB 线
+</code></pre>
+<h2>三、应用管理</h2>
+<h3>安装与卸载</h3>
 <table>
 <thead>
 <tr>
@@ -124,38 +157,58 @@
 </tr>
 </thead>
 <tbody><tr>
-<td><code>adb logcat</code></td>
-<td>将日志消息打印到标准输出</td>
+<td><code>adb install app.apk</code></td>
+<td>安装 APK</td>
 </tr>
 <tr>
-<td><code>adb logcat -g</code></td>
-<td>显示当前日志缓冲大小</td>
+<td><code>adb install -r app.apk</code></td>
+<td>覆盖安装（保留数据）</td>
 </tr>
 <tr>
-<td><code>adb logcat -G &lt;size&gt;</code></td>
-<td>设置缓冲区大小（<code>K</code>或<code>M</code>）</td>
+<td><code>adb install -d app.apk</code></td>
+<td>允许版本降级安装</td>
 </tr>
 <tr>
-<td><code>adb logcat -c</code></td>
-<td>清除日志缓冲区</td>
+<td><code>adb install -g app.apk</code></td>
+<td>自动授予所有运行时权限</td>
 </tr>
 <tr>
-<td><code>adb logcat *:V</code></td>
-<td>启用所有日志消息（详细）</td>
+<td><code>adb uninstall com.example.myapp</code></td>
+<td>卸载应用</td>
 </tr>
 <tr>
-<td><code>adb logcat *:W</code></td>
-<td>显示优先级不低于<strong>警告</strong>的所有标记的所有日志消息</td>
-</tr>
-<tr>
-<td><code>adb logcat -f &lt;filename&gt;</code></td>
-<td>将日志转储到指定文件</td>
+<td><code>adb uninstall -k com.example.myapp</code></td>
+<td>卸载但保留数据和缓存</td>
 </tr>
 </tbody></table>
-<!--prettier-ignore-end-->
+<h3>查询应用</h3>
+<pre><code class="language-bash"># 列出所有已安装包名
+adb shell pm list packages
 
-<h2>文件管理</h2>
-<!--prettier-ignore-start-->
+# 只看第三方应用
+adb shell pm list packages -3
+
+# 只看系统应用
+adb shell pm list packages -s
+
+# 按名称搜索（如找微信）
+adb shell pm list packages | grep tencent
+
+# 查看某个应用 APK 的路径
+adb shell pm path com.example.myapp
+# package:/data/app/.../base.apk
+</code></pre>
+<h3>启动与停止应用</h3>
+<pre><code class="language-bash"># 启动应用（通过包名找 launcher activity）
+adb shell monkey -p com.example.myapp -c android.intent.category.LAUNCHER 1
+
+# 强制停止应用
+adb shell am force-stop com.example.myapp
+
+# 清除应用数据
+adb shell pm clear com.example.myapp
+</code></pre>
+<h2>四、文件传输</h2>
 <table>
 <thead>
 <tr>
@@ -164,18 +217,44 @@
 </tr>
 </thead>
 <tbody><tr>
-<td><code>adb push &lt;local&gt; &lt;remote&gt;</code></td>
-<td>将本地文件复制到远程设备</td>
+<td><code>adb push local.txt /sdcard/Download/</code></td>
+<td>电脑 → 手机</td>
 </tr>
 <tr>
-<td><code>adb pull &lt;remote&gt; &lt;local&gt;</code></td>
-<td>将远程设备文件复制到本地</td>
+<td><code>adb pull /sdcard/Download/photo.jpg ./</code></td>
+<td>手机 → 电脑</td>
 </tr>
 </tbody></table>
-<!--prettier-ignore-end-->
+<p><strong>示例：把日志文件从手机拉到电脑</strong></p>
+<pre><code class="language-bash">adb pull /sdcard/Android/data/com.example.myapp/logs ./logs/
+</code></pre>
+<h2>五、日志抓取</h2>
+<p><code>logcat</code> 是调试最常用的命令。</p>
+<pre><code class="language-bash"># 实时打印全部日志
+adb logcat
 
-<h2>远程shell</h2>
-<!--prettier-ignore-start-->
+# 只看某个应用的日志（按 PID 过滤）
+adb shell pidof com.example.myapp
+# 输出: 12345
+adb logcat --pid=12345
+
+# 按优先级过滤：只看 Warning 及以上
+adb logcat *:W
+
+# 按标签过滤
+adb logcat -s &quot;AndroidRuntime:E&quot; &quot;WebView:I&quot;
+
+# 清空日志缓冲区
+adb logcat -c
+
+# 保存日志到文件
+adb logcat -d &gt; log.txt
+
+# 只看崩溃信息
+adb logcat -b crash
+</code></pre>
+<p><strong>日志级别</strong>（从低到高）：<code>V</code>（Verbose）→ <code>D</code>（Debug）→ <code>I</code>（Info）→ <code>W</code>（Warning）→ <code>E</code>（Error）→ <code>F</code>（Fatal）。</p>
+<h2>六、模拟输入与操作</h2>
 <table>
 <thead>
 <tr>
@@ -184,367 +263,147 @@
 </tr>
 </thead>
 <tbody><tr>
-<td><code>adb shell &lt;command&gt;</code></td>
-<td>在设备上运行指定的命令</td>
+<td><code>adb shell input tap 500 800</code></td>
+<td>点击屏幕坐标 (500, 800)</td>
 </tr>
 <tr>
-<td><code>adb shell wm size</code></td>
-<td>显示当前屏幕分辨率</td>
+<td><code>adb shell input swipe 300 800 800 800 300</code></td>
+<td>滑动：从 (300,800) 到 (800,800)，耗时 300ms</td>
 </tr>
 <tr>
-<td><code>adb shell wm size WxH</code></td>
-<td>将分辨率设置为<code>WxH</code></td>
+<td><code>adb shell input text &quot;hello&quot;</code></td>
+<td>输入文本（仅支持 ASCII）</td>
 </tr>
 <tr>
-<td><code>adb shell pm list packages</code></td>
-<td>列出所有已安装的应用包</td>
+<td><code>adb shell input keyevent 26</code></td>
+<td>按电源键</td>
 </tr>
 <tr>
-<td><code>adb shell pm list packages -3</code></td>
-<td>列出所有已安装的第三方的应用包</td>
+<td><code>adb shell input keyevent 3</code></td>
+<td>按 Home 键</td>
 </tr>
 <tr>
-<td><code>adb shell monkey -p app.package.name &lt;count&gt;</code></td>
-<td>启动指定包名的应用程序，并执行测试</td>
-</tr>
-<tr>
-<td><code>adb shell ls</code></td>
-<td>列出目录内容</td>
-</tr>
-<tr>
-<td><code>adb shell ls -s</code></td>
-<td>每个文件的打印尺寸</td>
-</tr>
-<tr>
-<td><code>adb shell ls -R</code></td>
-<td>递归列出子目录</td>
-</tr>
-</tbody></table>
-<!--prettier-ignore-end-->
-
-<h2>包安装</h2>
-<!--prettier-ignore-start-->
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>adb install &lt;apk&gt;</code></td>
-<td>安装应用程序</td>
-</tr>
-<tr>
-<td><code>adb install &lt;path&gt;</code></td>
-<td>从手机路径安装应用</td>
-</tr>
-<tr>
-<td><code>adb install -r &lt;path&gt;</code></td>
-<td>从手机路径安装应用（允许覆盖安装）</td>
-</tr>
-<tr>
-<td><code>adb uninstall &lt;name&gt;</code></td>
-<td>卸载应用程序</td>
-</tr>
-</tbody></table>
-<!--prettier-ignore-end-->
-
-<h2>包信息</h2>
-<!--prettier-ignore-start-->
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>adb shell pm list packages</code></td>
-<td>列出包名称</td>
-</tr>
-<tr>
-<td><code>adb shell pm list packages -f</code></td>
-<td>列出包+<code>apks</code>的路径</td>
-</tr>
-<tr>
-<td><code>adb shell pm list packages -3</code></td>
-<td>列出第三方包名称</td>
-</tr>
-<tr>
-<td><code>adb shell pm list packages -s</code></td>
-<td>仅列出系统包</td>
-</tr>
-<tr>
-<td><code>adb shell pm list packages -u</code></td>
-<td>列出包和未安装包</td>
-</tr>
-<tr>
-<td><code>adb shell pm list packages -i</code></td>
-<td>列出包名称+安装来源</td>
-</tr>
-<tr>
-<td><code>adb shell pm list packages -e</code></td>
-<td>列出启用的包</td>
-</tr>
-<tr>
-<td><code>adb shell pm list packages -d</code></td>
-<td>列出禁用的包</td>
-</tr>
-<tr>
-<td><code>adb shell dumpsys package packages</code></td>
-<td>列出所有应用程序的信息</td>
-</tr>
-<tr>
-<td><code>adb shell dumpsys package &lt;name&gt;</code></td>
-<td>列出一个包的信息</td>
-</tr>
-<tr>
-<td><code>adb shell pm path &lt;package&gt;</code></td>
-<td>列出<code>APK</code>文件的路径</td>
-</tr>
-</tbody></table>
-<!--prettier-ignore-end-->
-
-<h2>手机信息</h2>
-<!--prettier-ignore-start-->
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>adb get-state</code></td>
-<td>打印设备状态</td>
-</tr>
-<tr>
-<td><code>adb get-serialno</code></td>
-<td>获取设备的序列号</td>
-</tr>
-<tr>
-<td><code>adb shell dumpsys iphonesybinfo</code></td>
-<td>获取设备的<code>IMEI</code>信息</td>
-</tr>
-<tr>
-<td><code>adb shell netstat</code></td>
-<td>列出设备上的所有<code>TCP</code>连接</td>
-</tr>
-<tr>
-<td><code>adb shell pwd</code></td>
-<td>打印当前工作目录</td>
-</tr>
-<tr>
-<td><code>adb shell dumpsys dattery</code></td>
-<td>获取设备电池状态</td>
-</tr>
-<tr>
-<td><code>adb shell pm list features</code></td>
-<td>列出设备支持的所有功能</td>
-</tr>
-<tr>
-<td><code>adb shell service list</code></td>
-<td>列出设备上运行的所有服务</td>
-</tr>
-<tr>
-<td><code>adb shell dumpsys activity &lt;package&gt;/&lt;activity&gt;</code></td>
-<td>获取指定包和活动的信息</td>
-</tr>
-<tr>
-<td><code>adb shell ps</code></td>
-<td>打印设备上所有运行的进程状态</td>
-</tr>
-<tr>
-<td><code>adb shell wm size</code></td>
-<td>显示当前设备的屏幕分辨率</td>
-</tr>
-</tbody></table>
-<!--prettier-ignore-end-->
-
-<h2>设备相关</h2>
-<!--prettier-ignore-start-->
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>adb reboot recovery</code></td>
-<td>重启设备进入恢复模式</td>
-</tr>
-<tr>
-<td><code>adb reboot fastboot</code></td>
-<td>重启设备进入恢复模式</td>
-</tr>
-<tr>
-<td><code>adb reboot screencap -p &quot;/path/to/screenshot.png&quot;</code></td>
-<td>截图</td>
-</tr>
-<tr>
-<td><code>adb reboot screenrecord &quot;/path/to/record.mp4&quot;</code></td>
-<td>录制设备屏幕</td>
-</tr>
-<tr>
-<td><code>adb backup -apk -all -f backup.ab</code></td>
-<td>备份设置和应用程序</td>
-</tr>
-<tr>
-<td><code>adb backup -apk -shared -all -f backup.ab</code></td>
-<td>备份设置、应用程序和共享存储</td>
-</tr>
-<tr>
-<td><code>adb backup -apk -nosystem -all -f backup.ab</code></td>
-<td>仅备份非系统应用程序</td>
-</tr>
-<tr>
-<td><code>adb restore backup.ab</code></td>
-<td>恢复以前的备份</td>
-</tr>
-<tr>
-<td><code>adb shell am start -a android.intent.action.VIEW -d URL</code></td>
-<td>打开网址</td>
-</tr>
-<tr>
-<td><code>adb shell am start -t image/* -a android.intent.action.VIEW</code></td>
-<td>打开画廊</td>
-</tr>
-</tbody></table>
-<!--prettier-ignore-end-->
-
-<h2>权限</h2>
-<!--prettier-ignore-start-->
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>adb shell permissions groups</code></td>
-<td>列出所有已定义的权限组</td>
-</tr>
-<tr>
-<td><code>adb shell list permissions -g -r</code></td>
-<td>列出所有权限的详细信息</td>
-</tr>
-</tbody></table>
-<!--prettier-ignore-end-->
-
-<h2>logs</h2>
-<!--prettier-ignore-start-->
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>adb logcat [options][filter][filter]</code></td>
-<td>查看设备日志</td>
-</tr>
-<tr>
-<td><code>adb bugreport</code></td>
-<td>打印错误报告</td>
-</tr>
-</tbody></table>
-<!--prettier-ignore-end-->
-
-<h2>常见命令</h2>
-<!--prettier-ignore-start-->
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>adb push example.apk /sdcard/Download/</code></td>
-<td>将文件推送到<code>Android</code>设备的下载文件夹</td>
-</tr>
-<tr>
-<td><code>adb install example.apk</code></td>
-<td>从主机安装<code>APK</code>到<code>Android</code>设备</td>
-</tr>
-<tr>
-<td><code>adb shell settings put global http_proxy :0</code></td>
-<td>禁用网络代理</td>
-</tr>
-<tr>
-<td><code>adb shell pm list packages -f</code></td>
-<td>列出所有已安装的包并获取完整路径</td>
-</tr>
-<tr>
-<td><code>adb install /sdcard/Download/example.apk</code></td>
-<td>从<code>Android</code>设备存储安装<code>APK</code></td>
-</tr>
-<tr>
-<td><code>adb devices</code><br/><code>adb -s 7f1c864e shell</code></td>
-<td>显示连接的设备并指定一个设备进行<code>shell</code></td>
-</tr>
-<tr>
-<td><code>adb install /Users/dev/projects/myapp.apk</code></td>
-<td>将计算机上的<code>APK</code>文件安装到设备</td>
-</tr>
-<tr>
-<td><code>adb shell pm list packages | grep app_name</code></td>
-<td>通过名称查找应用的包名</td>
-</tr>
-<tr>
-<td><code>adb push path/to/local/file /sdcard/foo.txt</code></td>
-<td>将文件从计算机复制到设备</td>
-</tr>
-<tr>
-<td><code>adb shell input text &quot;Hello World&quot;</code></td>
-<td>使用虚拟键盘发送文本</td>
-</tr>
-<tr>
-<td><code>adb shell input tap x y</code></td>
-<td>点击屏幕发送点击</td>
-</tr>
-<tr>
-<td><code>adb pull /sdcard/Download/example.apk</code></td>
-<td>从安卓设备中提取文件</td>
-</tr>
-<tr>
-<td><code>adb shell settings put global http_proxy &lt;address&gt;:&lt;port&gt;</code></td>
-<td>设置网络代理</td>
-</tr>
-<tr>
-<td><code>adb connect 192.168.56.101:5555</code></td>
-<td>通过<code>IP</code>地址连接到设备</td>
-</tr>
-<tr>
-<td><code>adb shell pm path com.example.myapp</code></td>
-<td>查找应用的<code>APK</code>路径</td>
-</tr>
-<tr>
-<td><code>adb shell pm path com.example.myapp</code></td>
-<td>从设备提取<code>APK</code>到计算机</td>
-</tr>
-<tr>
-<td><code>adb shell input swipe 300 300 500 1000</code></td>
-<td>滚动屏幕</td>
+<td><code>adb shell input keyevent 4</code></td>
+<td>按返回键</td>
 </tr>
 <tr>
 <td><code>adb shell input keyevent 66</code></td>
-<td>发送按键事件</td>
-</tr>
-<tr>
-<td><code>adb shell &#39;logcat --pid=$(pidof -s &lt;package_name&gt;)&#39;</code></td>
-<td>查看包的日志</td>
-</tr>
-<tr>
-<td><code>adb devices</code><br/><code>adb shell ifconfig</code><br/><code>adb tcpip 5555</code><br/><code>adb connect 192.168.1.4:5555</code></td>
-<td>记下<code>inet addr</code>后的<code>IP</code>地址。<br/>断开<code>USB</code>线缆</td>
+<td>按回车键</td>
 </tr>
 </tbody></table>
-<!--prettier-ignore-end-->
+<p><strong>示例：模拟滑动解锁</strong></p>
+<pre><code class="language-bash">adb shell input swipe 540 1800 540 500 300
+</code></pre>
+<h2>七、截屏与录屏</h2>
+<pre><code class="language-bash"># 截屏并保存到手机
+adb shell screencap -p /sdcard/screenshot.png
+
+# 截屏直接保存到电脑
+adb exec-out screencap -p &gt; screenshot.png
+
+# 录屏（最长 180 秒）
+adb shell screenrecord /sdcard/demo.mp4
+# Ctrl+C 停止录制
+
+# 录屏并拉到电脑
+adb shell screenrecord --time-limit 30 /sdcard/demo.mp4
+adb pull /sdcard/demo.mp4 ./
+</code></pre>
+<h2>八、设备信息查询</h2>
+<pre><code class="language-bash"># 屏幕分辨率
+adb shell wm size
+# Physical size: 1080x2400
+
+# 屏幕密度
+adb shell wm density
+
+# 电池信息
+adb shell dumpsys battery
+
+# 当前前台 Activity
+adb shell dumpsys activity activities | grep mCurrentFocus
+
+# 已安装的所有包及 APK 路径
+adb shell pm list packages -f
+
+# 设备型号和 Android 版本
+adb shell getprop ro.product.model
+adb shell getprop ro.build.version.release
+
+# CPU 信息
+adb shell cat /proc/cpuinfo | head -5
+</code></pre>
+<h2>九、实用技巧</h2>
+<h3>打开网页</h3>
+<pre><code class="language-bash"># 用默认浏览器打开网址
+adb shell am start -a android.intent.action.VIEW -d https://wuhuajin.com
+</code></pre>
+<h3>设置网络代理</h3>
+<pre><code class="language-bash"># 设置代理（抓包时用）
+adb shell settings put global http_proxy 127.0.0.1:8888
+
+# 清除代理
+adb shell settings put global http_proxy :0
+</code></pre>
+<h3>备份应用数据</h3>
+<pre><code class="language-bash"># 备份应用 APK + 数据
+adb backup -apk -f backup.ab com.example.myapp
+
+# 恢复备份
+adb restore backup.ab
+</code></pre>
+<h3>常见问题排查</h3>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>解决方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>adb devices</code> 显示 <code>unauthorized</code></td>
+<td>手机上点&quot;允许 USB 调试&quot;弹窗，勾选&quot;始终允许&quot;</td>
+</tr>
+<tr>
+<td>设备不识别</td>
+<td>执行 <code>adb kill-server &amp;&amp; adb start-server</code>，或换数据线</td>
+</tr>
+<tr>
+<td>无线连接断连</td>
+<td>检查手机和电脑是否在同一网段，重新 <code>adb connect</code></td>
+</tr>
+<tr>
+<td><code>permission denied</code></td>
+<td>很多 <code>/data</code> 路径需要 root 权限</td>
+</tr>
+<tr>
+<td>中文输入失败</td>
+<td><code>adb shell input text</code> 不支持中文，用其他方式（如剪贴板）</td>
+</tr>
+</tbody></table>
+<h2>十、高频命令速记</h2>
+<pre><code class="language-bash"># 一键：连设备 → 装包 → 启动
+adb connect 192.168.1.100:5555
+adb install -r app.apk
+adb shell monkey -p com.example.myapp -c android.intent.category.LAUNCHER 1
+
+# 一键：抓崩溃日志
+adb logcat -b crash -d &gt; crash.txt
+
+# 一键：截屏到电脑
+adb exec-out screencap -p &gt; screen.png
+
+# 一键：通过名称找包名
+adb shell pm list packages | grep keyword
+</code></pre>
+<hr>
+<p>ADB 命令不需要全背，记住高频的十几个，其他的用时查这份手册即可。日常开发最常用的组合：<code>devices</code> → <code>install</code> → <code>logcat</code> → <code>screencap</code>，掌握这四个就能解决 80% 的调试需求。</p>
+<h2>相关阅读</h2>
+<ul>
+<li><a href="https://wuhuajin.com/src/template/posts/Git/html/Git%E5%91%BD%E4%BB%A4%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE.html">Git命令思维导图</a> — Git 常用命令速查图</li>
+<li><a href="https://wuhuajin.com/src/template/posts/%E5%B7%A5%E7%A8%8B%E5%8C%96/html/Docker%E9%83%A8%E7%BD%B2Meting%20API%E6%9C%8D%E5%8A%A1.html">Docker部署Meting API服务</a> — 用 Docker 部署后端服务的完整流程</li>
+<li>官方文档：<a href="https://developer.android.com/studio/command-line/adb">Android Debug Bridge</a> · <a href="https://developer.android.com/studio/command-line/shell.html">Shell 命令</a></li>
+</ul>
 </div>
       <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
       <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"

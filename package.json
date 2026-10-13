@@ -11,7 +11,8 @@
     "build:frontmatter": "node scripts/add-front-matter.cjs",
     "build:articles": "node scripts/build-articles.cjs",
     "build:sitemap": "node scripts/build-sitemap.cjs",
-    "build:links": "node scripts/build-links.cjs"
+    "build:links": "node scripts/build-links.cjs",
+    "clean": "find . \\( -name '._*' -o -name '.DS_Store' \\) -not -path './.git/*' -delete 2>/dev/null; echo 'cleaned'"
   },
   "repository": {
     "type": "git",

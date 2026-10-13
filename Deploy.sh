@@ -47,6 +47,9 @@ node scripts/build-feed.cjs 2>/dev/null || echo "[WARN] build-feed 生成失败�
 # 生成 sitemap（依据 feed 同步更新 sitemap.xml，保证新文章可被搜索引擎收录）
 node scripts/build-sitemap.cjs 2>/dev/null || echo "[WARN] build-sitemap 生成失败，跳过"
 
+# build 结束后清理 macOS AppleDouble 文件（build 新生成的文件会产生 ._* 伴生文件）
+find . \( -name '._*' -o -name '.DS_Store' \) -not -path './.git/*' -delete 2>/dev/null || true
+
 git add .
 
 # 4. 判断是否有变更，若无则跳过提交，避免空提交报错

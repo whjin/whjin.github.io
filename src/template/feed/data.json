@@ -399,8 +399,8 @@
         "url": "/src/template/posts/JavaScript/html/JavaScript正则表达式手册.html",
         "category": "JavaScript",
         "date": "2026-10-12 14:45:11",
-        "readTime": 17,
-        "description": "面向JavaScript开发者与初学者的正则表达式速查手册，系统整理正则引擎核心知识与高频用法。第一部分为表达式全集，详解 \\\\d、\\\\w、\\\\s、\\\\b 等元字符，以及 ^ $ * + ? 量词、字符类、分组捕获、非获取匹配、正向反向预查、转义与 Unicode 编码等全部语法，每条均配直观示例。第二部分为常用正则，涵盖用户名、密码、邮箱、URL、IP 地址、HTML 标签、代码注释剔除、汉字范围校验等可直接复用的表达式。全文以表格呈现、即查即用，是处理字符串校验、文本提取与数据清洗的随手参考手册。",
+        "readTime": 19,
+        "description": "正则表达式是处理字符串最强大的工具，但也是最容易写错、最难调试的工具。本手册分为四部分：JS 正则怎么用 → 语法速查 → 常用表达式合集 → 常见坑，收藏后随查随用。 官方参考：完整的 RegExp 语法定义见 MDN Regular Expressions 文档，本文是其实战提炼。 一、JavaScript 正则的四种用法 创建正则 四种核心方法 方法 所属对象 返回值 适用场景 regex.test(str) RegExp true / false 只判断是否匹配，如表单校验 str.match(regex) String 匹配结果数组或 null 提取匹配内容，最简单 str.matc",
         "tags": [
           "javascript",
           "正则表达式",
@@ -414,8 +414,8 @@
         "url": "/src/template/posts/JavaScript/html/JavaScript思维导图合集.html",
         "category": "JavaScript",
         "date": "2026-10-12 01:27:12",
-        "readTime": 3,
-        "description": "javascript变量 2. javascript运算符 3. javascript数组 4. javascript流程语句 5. javascript字符串函数 6. javascript函数基础 7. javascript基础DOM操作 8. javascript正则表达式 [1]: https://www.yuque.com/docs/share/c79ad556-e3f9-427d-a8dc-e1d91dd4d68d? [2]: https://whjin.github.io/frontend-dev-doc/",
+        "readTime": 10,
+        "description": "这里整理了 JavaScript 入门阶段最核心的 8 个知识点思维导图。每张图覆盖一个主题，图下附文字要点，方便快速回顾。 1. 变量 要点： - 声明方式：var（函数作用域）、let（块级）、const（常量） - 数据类型：原始类型（number、string、boolean、null、undefined、symbol、bigint）和引用类型（object、array、function） - 类型转换：隐式转换（==、+ 运算）和显式转换（Number()、String()、Boolean()） - 作用域：全局、函数、块级；作用域链查找规则 2. 运算符 要点： - 算术运算符：+",
         "top": true,
         "reward": true
       },
@@ -424,8 +424,8 @@
         "url": "/src/template/posts/Git/html/Git命令思维导图.html",
         "category": "Git",
         "date": "2026-10-12 01:25:07",
-        "readTime": 2,
-        "description": "Git 提交规范思维导图，系统梳理团队协作中最实用的提交信息书写方法。规范化的提交信息（Conventional Commits）能让每次变更一目了然，帮助团队快速定位功能、修复与重构，并自动生成变更日志。图中整理了核心类型：feat 新增功能、fix 修复 Bug、docs 文档、refactor 重构、perf 性能优化、build 构建系统、ci 持续集成、chore 辅助工具、test 测试、style 格式调整，同时介绍 scope 作用域与 ! 破坏性变更标记，说明如何通过规范的 type、scope、description 结构让提交历史清晰可读。适合前端、后端与全栈工程师作为团队提交规范的速查参考，配合 Git 分支管理与代码评审，能显著提升多人协作的透明度与可维护性。",
+        "readTime": 8,
+        "description": "Git 命令很多，但日常高频使用的集中在：提交规范、分支操作、远程协作、撤销回退这几类。下面整理了 7 张思维导图，每张附文字要点。 1. Conventional Commits 提交规范 规范化的提交信息让每次变更一目了然，还能自动生成 CHANGELOG。 格式：type(scope): description 核心 type 类型： type 含义 示例 feat 新功能 feat(login): 添加微信登录 fix 修复 Bug fix(home): 修复首页轮播图不自动播放 docs 文档变更 docs(readme): 更新安装说明 refactor 重构 refactor(a",
         "top": true,
         "reward": true
       },
@@ -494,8 +494,8 @@
         "url": "/src/template/posts/AI/html/AI项目文档.html",
         "category": "AI",
         "date": "2026-09-11",
-        "readTime": 2,
-        "description": "Next.js框架 - 零配置：自动编译并打包 - 混合模式SSG 和 SSr：在一个项目中同时支持构建时预渲染页面 SSG 和请求时渲染页面 SSR - 增量静态生成：在构建之后以增量的方式添加并更新静态预渲染的页面 - 基于文件系统的路由：每个 pages 目录下的组件都是一个路由 - API路由：创建 API 端点以提供后端功能 - 内置支持 CSS：使用 CSS 模块创建组件级样式，内置对 Sass 支持 - 代码拆分和打包：采用 Google Chrome 优化打包和拆分算法 内置功能 - 基于页面的路由系统，支持动态路由 - 预渲染，支持在页面级静态生成 SSG 和服务端渲染 SS",
+        "readTime": 5,
+        "description": "Next.js 是 React 生态最流行的服务端渲染框架。它把 React 项目需要自己配的 Webpack、路由、代码拆分、服务端渲染全部内置了。这篇文章快速过一遍它的核心特性。 一、零配置 开箱即用：自动编译、打包、热更新，不需要写 Webpack 配置。TypeScript、CSS、Sass、图片优化全部内置支持。 二、三种渲染模式 Next.js 最大的优势是在一个项目里同时支持三种渲染： 模式 全称 什么时候渲染 适用场景 SSG Static Site Generation 构建时预渲染成静态 HTML 博客、文档、营销页 SSR Server-Side Rendering 每次",
         "reward": true
       },
       {
@@ -503,8 +503,8 @@
         "url": "/src/template/posts/Android/html/ADB命令集合.html",
         "category": "Android",
         "date": "2026-09-11",
-        "readTime": 16,
-        "description": "设备基础 命令说明 adb devices列出已连接设备 adb devices -l列出已连接设备和种类 adb connect/disconnect [ip:port]连接到指定IP和端口的设备/断开连接 adb root以root权限重新启动adb adb remount重新挂载具有读/写访问权限的文件系统 adb start-server启动adb服务 adb kill-server停止adb服务 adb reboot重启设备 adb reboot bootloader将设备重启到fastboot模式 adb reboot recovery将设备重启到恢复模式 adb disable-",
+        "readTime": 17,
+        "description": "ADB（Android Debug Bridge）是 Android 开发和调试最核心的命令行工具。不管是安装 APK、抓日志、截屏、模拟点击，还是调试真机问题，都离不开它。本手册按使用场景分类整理，收藏后随查随用。 官方文档：完整的 ADB 参数说明见 Android Developers · Debug Your App，本文是实战命令速查。 一、环境准备 ADB 包含在 Android SDK Platform-Tools 中，独立安装即可，不需要下载完整 SDK： 真机调试前提：手机 → 设置 → 关于手机 → 连续点击\\\"版本号\\\"7 次开启开发者选项 → 开启\\\"USB 调试\\\"。 二、设",
         "reward": true
       },
       {
@@ -521,8 +521,8 @@
         "url": "/src/template/posts/JavaScript/html/ECMAScript文档.html",
         "category": "JavaScript",
         "date": "2026-09-11",
-        "readTime": 2,
-        "description": "var、let、const之间的区别 - var： - 声明变量可以重复声明 - 不受限于块级 - 会跟 window 相映射 - 声明上方访问变量 - let： - 不可以重复声明 - 受限制于块级 - 暂存死区 - const： - 声明后必须赋值 - 常量，不能修改 2. ES6 Module 与 CommonJS核心区别 特性CommonJSES6 Module 加载时机运行时同步加载编译时静态加载 导出特性值的拷贝（修改原变量不影响导出）值的只读引用（原变量修改会同步） 静态分析不支持（无法 tree-shaking）支持（可移除未使用代码） 浏览器支持不原生支持原生支持（<scri",
+        "readTime": 11,
+        "description": "ES6（ES2015）之后，JavaScript 每年都有新版本，语法变化很大。这篇文章把日常开发最常用的 ES6+ 特性整理成速查手册，配合代码示例，随时翻阅。 一、var / let / const 特性 var let const 重复声明 允许 不允许 不允许 块级作用域 不支持（函数级） 支持 支持 变量提升 提升并初始化为 undefined 提升但存在暂存死区 同 let 挂载到 window 是 否 否 重新赋值 允许 允许 不允许 最佳实践：默认用 const，需要重新赋值时用 let，永远不用 var。 二、ES6 Module 与 CommonJS 的区别 特性 Comm",
         "reward": true
       },
       {
@@ -539,8 +539,8 @@
         "url": "/src/template/posts/JavaScript/html/设计模式文档.html",
         "category": "JavaScript",
         "date": "2026-09-11",
-        "readTime": 3,
-        "description": "面向对象 - 不需要关注使用过程 - 易维护、易扩展、易复用 - 特征：继承、封装、多台 2. 设计原则 - 单一职责 - 开放封闭 - 里氏替换 - 依赖倒置 - 接口分离 3. 工厂模式、抽象工厂模式 - 工厂模式：通过传入不同的短参数，达到实例化不同的对象的目的 - 优势：关注当前产品的创建，具有良好的封装 - 劣势：增加系统复杂性 - 抽象工厂模式：关注当前抽象类，不需要知道产品具体细节，只需要关注当前抽象方法 4. 状态模式 - 提高代码可维护性 - 添加了很多类，每个类都有自己的方法和状态，增加了系统的负载 5. 单例模式 - 不用重复去构建实例，直接取保存在内存中的实例 - 优势",
+        "readTime": 12,
+        "description": "设计模式不是八股文，而是前人总结的解决常见问题的最优方案。这篇文章用 JavaScript 实现最常用的设计模式，配代码示例和适用场景。 一、五大设计原则（SOLID） 原则 含义 单一职责（SRP） 一个类只做一件事 开放封闭（OCP） 对扩展开放，对修改封闭 里氏替换（LSP） 子类必须能替换父类 接口分离（ISP） 不依赖不需要的接口 依赖倒置（DIP） 依赖抽象，不依赖具体实现 二、工厂模式 通过参数决定创建哪个对象，不用直接 new。 适用场景：根据配置或用户选择创建不同类型的对象，如弹窗、按钮、支付方式。 三、单例模式 确保一个类只有一个实例。 适用场景：全局配置、数据库连接池、全",
         "reward": true
       },
       {
@@ -567,7 +567,7 @@
         "category": "RN",
         "date": "2026-09-11",
         "readTime": 4,
-        "description": "核心工作原理 Hermes 从 React Native 0.70 版本开始已成为 Android 和 IOS 双平台的默认 JavaScript 引擎 提升 React Native 应用启动速度、内存占用和包体积。 - AOT（Ahead-Of-Time） 预编译策略 - 构建时打包 - Hermes 编译器介入 - 直接将 JS 代码编译为紧凑的字节码（.hbc 文件） - 在 App 启动时，Hermes 虚拟机直接加载并执行这些字节码，完全 绕过运行时解析与 JIT 编译环节 - V8 JSC 采用 JIT（Just-In-Time） 编译模式 - 运行时解析 - 解析执行 - 动态",
+        "description": "从 React Native 0.70 开始，Hermes 成为 Android 和 iOS 双平台的默认 JavaScript 引擎。它解决了 RN 长期被诟病的启动慢、内存高、包体积大三大问题。这篇文章讲清楚它为什么能做到。 核心工作原理 Hermes 采用 AOT（Ahead-Of-Time）预编译策略： - 构建时：Hermes 编译器介入，直接将 JS 代码编译为紧凑的字节码（.hbc 文件） - 运行时：App 启动时 Hermes 虚拟机直接加载并执行字节码，完全绕过运行时解析与 JIT 编译环节 对比传统引擎（V8/JSC）的 JIT（Just-In-Time）模式： - 运行",
         "reward": true
       },
       {
@@ -620,8 +620,8 @@
         "url": "/src/template/posts/Web3/html/Web3钱包.html",
         "category": "Web3",
         "date": "2026-09-11",
-        "readTime": 3,
-        "description": "区块链 - 共识、trustless需要旷工的工作，旷工需要激励 - transaction的执行有成本 gas，gas费成为旷工的激励 - ether是这个经济生态系统的通行货币 gas和转账 - 转账是与函数调用一起发生，转账就是函数调用。 gaslimit与 gasleft()函数 - 交易发起者设定最多消耗多少 gaslimit - 合约之间调用，调用者可以设定 gaslimit - 区块本身有一个 gaslimit gasleft()是以上因素作为限定，与当前 gas消耗一起计算的结果 退款规则 - 剩下没用完的 gas会退款 - 如果可用 gas耗尽时，会终止交易执行 - 交易失败",
+        "readTime": 6,
+        "description": "这篇文章梳理以太坊开发中最核心的几个概念：gas 费怎么算、合约怎么接收转账、前端怎么连接钱包。不需要有 Solidity 基础也能看懂。 一、gas 是什么 区块链上每笔交易的执行都需要消耗计算资源，矿工（验证者）执行这些工作需要激励。gas 就是支付给矿工的费用，ETH 是这个生态系统的通行货币。 关键点：转账就是函数调用。在以太坊上，你向地址转 ETH 和调用合约函数本质上是同一回事——都是发送一笔交易。 二、gaslimit 与 gasleft() 概念 说明 gaslimit（交易级） 交易发起者设定最多愿意消耗多少 gas gaslimit（合约间调用） 合约之间调用时，调用者可以",
         "reward": true
       },
       {
@@ -647,8 +647,8 @@
         "url": "/src/template/posts/小程序/html/实战项目文档.html",
         "category": "小程序",
         "date": "2026-09-11",
-        "readTime": 1,
-        "description": "技术架构 - 前端层：小程序 + Web管理后台 - SDK层：auth sdk + core sdk - 后端服务层：认证服务 + 核心服务 + 知识服务 - 数据存储层：云存储/本地存储 + 数据库（MongoDB/MySQL） 帮助文档 uniapp移动端输入监听键盘上正在输入的值 例如搜狗输入法的英文预测模式下，输入的字符不会马上赋给输入框。 input有个ignoreCompositionEvent属性，是否忽略组件内对文本合成系统事件的处理。为 false 时将触发 compositionstart、compositionend、compositionupdate 事件，且在文本合",
+        "readTime": 6,
+        "description": "做小程序输入框时，你可能遇到过一个诡异的问题：用搜狗输入法打中文时，input 事件拿到的值和用户实际看到的不一样。这篇文章讲清楚原因和解决方法。 问题现象 在手机端使用搜狗输入法的英文预测模式或中文拼音模式时： - 用户输入 nihao，输入法候选栏显示\\\"你好\\\" - 但 input 事件回调里拿到的值可能是空的或不完整的 - 因为输入法在\\\"组词\\\"阶段，字符还没有确认，浏览器/小程序框架不触发 input 事件 这就是 composition（文本合成） 问题——输入法在组词过程中，文本处于\\\"未确认\\\"状态。 解决方案：ignoreCompositionEvent uniapp 的 input",
         "reward": true
       },
       {
@@ -665,8 +665,8 @@
         "url": "/src/template/posts/工程化/html/Vite与Webpack对比.html",
         "category": "工程化",
         "date": "2026-09-11",
-        "readTime": 7,
-        "description": "最本质的差异：Webpack 是 先打包，后服务 的 Bundle 驱动模式；Vite 是 先服务，按需编译 的 ESM 原生驱动模式。 一、开发启动速度 核心原因：Webpack必须先完成全量打包才能提供服务；Vite 利用现代浏览器原生支持的 ES Module 特性，把“打包”工作交给了浏览器，服务器只负责按需编译和转发。 维度 Webpack Vite -------- --------- ------ 冷启动原理 从入口文件开始，递归打包 所有依赖和业务代码，<br生成完整 bundle 后再启动开发服务器 1. 仅对第三方依赖做 预编译（eslint加速）<br2. 直接启动开发服",
+        "readTime": 16,
+        "description": "最本质的差异：Webpack 是先打包、后服务的 Bundle 驱动模式；Vite 是先服务、按需编译的 ESM 原生驱动模式。 这一个架构差异，决定了两者在启动速度、热更新、生产构建、配置复杂度上的所有区别。 延伸阅读：想深入理解 Webpack 的内部打包机制，可参考我之前写的 Webpack原理详解。 一、架构原理：为什么 Vite 启动这么快 Webpack 的工作方式 Webpack 从入口文件 index.js 开始，递归分析所有 import 和 require，把整个依赖树打包成一个或多个 bundle.js。这个过程必须在启动开发服务器之前完成。项目越大，依赖越多，打包时间越",
         "reward": true
       },
       {

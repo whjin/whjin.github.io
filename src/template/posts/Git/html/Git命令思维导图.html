@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="author" content="吴华锦" />
   <title>Git命令思维导图 « 吴华锦</title>
-  <meta name="description" content="Git 提交规范思维导图，系统梳理团队协作中最实用的提交信息书写方法。规范化的提交信息（Conventional Commits）能让每次变更一目了然，帮助团队快速定位功能、修复与重构，并自动生成变更日志。图中整理了核心类型：feat 新增功能、fix 修复 Bug、docs 文档、refactor 重构、perf 性能优化、build 构建系统、ci 持续集成、chore 辅助工具、test 测试、style 格式调整，同时介绍 scope 作用域与 ! 破坏性变更标记，说明如何通过规范的 type、scope、description 结构让提交历史清晰可读。适合前端、后端与全栈工程师作为团队提交规范的速查参考，配合 Git 分支管理与代码评审，能显著提升多人协作的透明度与可维护性。" />
+  <meta name="description" content="Git 命令很多，但日常高频使用的集中在：提交规范、分支操作、远程协作、撤销回退这几类。下面整理了 7 张思维导图，每张附文字要点。 1. Conventional Commits 提交规范 规范化的提交信息让每次变更一目了然，还能自动生成 CHANGELOG。 格式：type(scope): description 核心 type 类型： type 含义 示例 feat 新功能 feat(login): 添加微信登录 fix 修复 Bug fix(home): 修复首页轮播图不自动播放 docs 文档变更 docs(readme): 更新安装说明 refactor 重构 refactor(a" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://wuhuajin.com/src/template/posts/Git/html/Git%E5%91%BD%E4%BB%A4%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE.html" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Wu Huajin" />
   <meta property="og:title" content="Git命令思维导图" />
-  <meta property="og:description" content="Git 提交规范思维导图，系统梳理团队协作中最实用的提交信息书写方法。规范化的提交信息（Conventional Commits）能让每次变更一目了然，帮助团队快速定位功能、修复与重构，并自动生成变更日志。图中整理了核心类型：feat 新增功能、fix 修复 Bug、docs 文档、refactor 重构、perf 性能优化、build 构建系统、ci 持续集成、chore 辅助工具、test 测试、style 格式调整，同时介绍 scope 作用域与 ! 破坏性变更标记，说明如何通过规范的 type、scope、description 结构让提交历史清晰可读。适合前端、后端与全栈工程师作为团队提交规范的速查参考，配合 Git 分支管理与代码评审，能显著提升多人协作的透明度与可维护性。" />
+  <meta property="og:description" content="Git 命令很多，但日常高频使用的集中在：提交规范、分支操作、远程协作、撤销回退这几类。下面整理了 7 张思维导图，每张附文字要点。 1. Conventional Commits 提交规范 规范化的提交信息让每次变更一目了然，还能自动生成 CHANGELOG。 格式：type(scope): description 核心 type 类型： type 含义 示例 feat 新功能 feat(login): 添加微信登录 fix 修复 Bug fix(home): 修复首页轮播图不自动播放 docs 文档变更 docs(readme): 更新安装说明 refactor 重构 refactor(a" />
   <meta property="og:url" content="https://wuhuajin.com/src/template/posts/Git/html/Git%E5%91%BD%E4%BB%A4%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE.html" />
   <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
   <meta property="og:locale" content="zh_CN" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Git命令思维导图" />
-  <meta name="twitter:description" content="Git 提交规范思维导图，系统梳理团队协作中最实用的提交信息书写方法。规范化的提交信息（Conventional Commits）能让每次变更一目了然，帮助团队快速定位功能、修复与重构，并自动生成变更日志。图中整理了核心类型：feat 新增功能、fix 修复 Bug、docs 文档、refactor 重构、perf 性能优化、build 构建系统、ci 持续集成、chore 辅助工具、test 测试、style 格式调整，同时介绍 scope 作用域与 ! 破坏性变更标记，说明如何通过规范的 type、scope、description 结构让提交历史清晰可读。适合前端、后端与全栈工程师作为团队提交规范的速查参考，配合 Git 分支管理与代码评审，能显著提升多人协作的透明度与可维护性。" />
+  <meta name="twitter:description" content="Git 命令很多，但日常高频使用的集中在：提交规范、分支操作、远程协作、撤销回退这几类。下面整理了 7 张思维导图，每张附文字要点。 1. Conventional Commits 提交规范 规范化的提交信息让每次变更一目了然，还能自动生成 CHANGELOG。 格式：type(scope): description 核心 type 类型： type 含义 示例 feat 新功能 feat(login): 添加微信登录 fix 修复 Bug fix(home): 修复首页轮播图不自动播放 docs 文档变更 docs(readme): 更新安装说明 refactor 重构 refactor(a" />
   <link rel="icon" href="/src/images/favicon.png" />
   <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
   <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
@@ -32,7 +32,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Git命令思维导图",
-  "description": "Git 提交规范思维导图，系统梳理团队协作中最实用的提交信息书写方法。规范化的提交信息（Conventional Commits）能让每次变更一目了然，帮助团队快速定位功能、修复与重构，并自动生成变更日志。图中整理了核心类型：feat 新增功能、fix 修复 Bug、docs 文档、refactor 重构、perf 性能优化、build 构建系统、ci 持续集成、chore 辅助工具、test 测试、style 格式调整，同时介绍 scope 作用域与 ! 破坏性变更标记，说明如何通过规范的 type、scope、description 结构让提交历史清晰可读。适合前端、后端与全栈工程师作为团队提交规范的速查参考，配合 Git 分支管理与代码评审，能显著提升多人协作的透明度与可维护性。",
+  "description": "Git 命令很多，但日常高频使用的集中在：提交规范、分支操作、远程协作、撤销回退这几类。下面整理了 7 张思维导图，每张附文字要点。 1. Conventional Commits 提交规范 规范化的提交信息让每次变更一目了然，还能自动生成 CHANGELOG。 格式：type(scope): description 核心 type 类型： type 含义 示例 feat 新功能 feat(login): 添加微信登录 fix 修复 Bug fix(home): 修复首页轮播图不自动播放 docs 文档变更 docs(readme): 更新安装说明 refactor 重构 refactor(a",
   "author": {
     "@type": "Person",
     "name": "吴华锦",
@@ -58,7 +58,127 @@
   <div class="layout-container">
     <div class="nav-container"></div>
     <div class="content-area">
-      <div id="markdown-content" class="markdown-content viewer" data-reward="true"><p><img referrerpolicy="no-referrer" src="https://s1.imagehub.cc/images/2026/10/11/f973f47c4b8e2aa5d50d0317d4689799.md.webp" alt=""><br><img referrerpolicy="no-referrer" src="https://s1.imagehub.cc/images/2026/10/11/4ea3172e1cffd9daa568358e6eefc035.md.webp" alt=""><br><img referrerpolicy="no-referrer" src="https://s1.imagehub.cc/images/2026/10/11/09cc0ee7256a7d1370eba525505df2e4.md.webp" alt=""><br><img referrerpolicy="no-referrer" src="https://s1.imagehub.cc/images/2026/10/11/8a59bddb0378c308e7c2c1a92ba48b92.md.webp" alt=""><br><img referrerpolicy="no-referrer" src="https://s1.imagehub.cc/images/2026/10/11/235531f0e325c9c557aa31ff7691ff8b.md.webp" alt=""><br><img referrerpolicy="no-referrer" src="https://s1.imagehub.cc/images/2026/10/11/a18530b781aa22d95ad2a8cf88aa4a5b.md.webp" alt=""><br><img referrerpolicy="no-referrer" src="https://s1.imagehub.cc/images/2026/10/11/7efbc6eaf5a293618f47ff711db3dc36.md.webp" alt=""></p>
+      <div id="markdown-content" class="markdown-content viewer" data-reward="true"><p>Git 命令很多，但日常高频使用的集中在：提交规范、分支操作、远程协作、撤销回退这几类。下面整理了 7 张思维导图，每张附文字要点。</p>
+<h2>1. Conventional Commits 提交规范</h2>
+<p>规范化的提交信息让每次变更一目了然，还能自动生成 CHANGELOG。</p>
+<p><strong>格式</strong>：<code>type(scope): description</code></p>
+<p><strong>核心 type 类型</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>type</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>feat</code></td>
+<td>新功能</td>
+<td><code>feat(login): 添加微信登录</code></td>
+</tr>
+<tr>
+<td><code>fix</code></td>
+<td>修复 Bug</td>
+<td><code>fix(home): 修复首页轮播图不自动播放</code></td>
+</tr>
+<tr>
+<td><code>docs</code></td>
+<td>文档变更</td>
+<td><code>docs(readme): 更新安装说明</code></td>
+</tr>
+<tr>
+<td><code>refactor</code></td>
+<td>重构</td>
+<td><code>refactor(api): 重构用户接口参数校验</code></td>
+</tr>
+<tr>
+<td><code>perf</code></td>
+<td>性能优化</td>
+<td><code>perf(list): 优化长列表渲染性能</code></td>
+</tr>
+<tr>
+<td><code>build</code></td>
+<td>构建系统</td>
+<td><code>build(webpack): 升级 webpack 5</code></td>
+</tr>
+<tr>
+<td><code>ci</code></td>
+<td>持续集成</td>
+<td><code>ci(gitlab): 修改 CI 流水线配置</code></td>
+</tr>
+<tr>
+<td><code>chore</code></td>
+<td>杂项</td>
+<td><code>chore: 更新 .gitignore</code></td>
+</tr>
+<tr>
+<td><code>test</code></td>
+<td>测试</td>
+<td><code>test(utils): 补充工具函数单元测试</code></td>
+</tr>
+<tr>
+<td><code>style</code></td>
+<td>代码格式</td>
+<td><code>style: 统一缩进为 2 空格</code></td>
+</tr>
+</tbody></table>
+<p><img referrerpolicy="no-referrer" src="https://s1.imagehub.cc/images/2026/10/11/f973f47c4b8e2aa5d50d0317d4689799.md.webp" alt="Git提交规范"></p>
+<h2>2. 破坏性变更标记</h2>
+<p>在 type 后加 <code>!</code> 表示 BREAKING CHANGE：</p>
+<pre><code>feat!: 重构用户接口，不兼容旧版
+</code></pre>
+<p>或在 body 中写：</p>
+<pre><code>BREAKING CHANGE: /api/user 接口参数从 id 改为 userId
+</code></pre>
+<p><img referrerpolicy="no-referrer" src="https://s1.imagehub.cc/images/2026/10/11/4ea3172e1cffd9daa568358e6eefc035.md.webp" alt="Git破坏性变更"></p>
+<h2>3. 分支管理</h2>
+<p><strong>常用分支模型</strong>：</p>
+<ul>
+<li><code>main</code> / <code>master</code>：生产分支</li>
+<li><code>develop</code>：开发分支</li>
+<li><code>feature/*</code>：功能分支</li>
+<li><code>hotfix/*</code>：紧急修复分支</li>
+</ul>
+<p><strong>高频命令</strong>：</p>
+<pre><code class="language-bash">git branch feature/login    # 创建分支
+git checkout feature/login  # 切换分支
+git merge feature/login     # 合并分支
+git branch -d feature/login # 删除分支
+</code></pre>
+<p><img referrerpolicy="no-referrer" src="https://s1.imagehub.cc/images/2026/10/11/09cc0ee7256a7d1370eba525505df2e4.md.webp" alt="Git分支管理"></p>
+<h2>4. 远程协作</h2>
+<pre><code class="language-bash">git remote add origin &lt;url&gt;   # 添加远程仓库
+git push -u origin main       # 推送并设置上游
+git pull origin main          # 拉取远程更新
+git fetch origin              # 仅拉取不合并
+</code></pre>
+<p><img referrerpolicy="no-referrer" src="https://s1.imagehub.cc/images/2026/10/11/8a59bddb0378c308e7c2c1a92ba48b92.md.webp" alt="Git远程协作"></p>
+<h2>5. 撤销与回退</h2>
+<pre><code class="language-bash">git checkout -- file         # 撤销工作区修改
+git reset HEAD file          # 撤销暂存区
+git revert &lt;commit&gt;          # 创建反向提交（安全，不改历史）
+git reset --hard &lt;commit&gt;    # 强制回退（危险，改历史）
+</code></pre>
+<p><img referrerpolicy="no-referrer" src="https://s1.imagehub.cc/images/2026/10/11/235531f0e325c9c557aa31ff7691ff8b.md.webp" alt="Git撤销回退"></p>
+<h2>6. 暂存与储藏</h2>
+<pre><code class="language-bash">git stash                    # 临时储藏当前修改
+git stash list               # 查看储藏列表
+git stash pop                # 恢复最近一次储藏
+git stash drop               # 删除储藏
+</code></pre>
+<p><img referrerpolicy="no-referrer" src="https://s1.imagehub.cc/images/2026/10/11/a18530b781aa22d95ad2a8cf88aa4a5b.md.webp" alt="Git暂存储藏"></p>
+<h2>7. 标签与版本</h2>
+<pre><code class="language-bash">git tag v1.0.0               # 打轻量标签
+git tag -a v1.0.0 -m &quot;发布 1.0&quot;  # 打附注标签
+git push origin v1.0.0       # 推送标签
+</code></pre>
+<p><img referrerpolicy="no-referrer" src="https://s1.imagehub.cc/images/2026/10/11/7efbc6eaf5a293618f47ff711db3dc36.md.webp" alt="Git标签版本"></p>
+<h2>相关阅读</h2>
+<ul>
+<li><a href="https://wuhuajin.com/src/template/posts/Git/html/Git%E6%96%87%E6%A1%A3.html">Git文档</a> — Git 完整命令速查</li>
+<li><a href="https://wuhuajin.com/src/template/posts/Android/html/ADB%E5%91%BD%E4%BB%A4%E9%9B%86%E5%90%88.html">ADB命令集合</a> — Android 调试命令</li>
+<li><a href="https://www.conventionalcommits.org/zh-hans/v1.0.0/">Conventional Commits 官方规范</a></li>
+</ul>
 </div>
       <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
       <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"

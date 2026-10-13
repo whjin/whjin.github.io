@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="author" content="吴华锦" />
   <title>实战项目文档 « 吴华锦</title>
-  <meta name="description" content="技术架构 - 前端层：小程序 + Web管理后台 - SDK层：auth sdk + core sdk - 后端服务层：认证服务 + 核心服务 + 知识服务 - 数据存储层：云存储/本地存储 + 数据库（MongoDB/MySQL） 帮助文档 uniapp移动端输入监听键盘上正在输入的值 例如搜狗输入法的英文预测模式下，输入的字符不会马上赋给输入框。 input有个ignoreCompositionEvent属性，是否忽略组件内对文本合成系统事件的处理。为 false 时将触发 compositionstart、compositionend、compositionupdate 事件，且在文本合" />
+  <meta name="description" content="做小程序输入框时，你可能遇到过一个诡异的问题：用搜狗输入法打中文时，input 事件拿到的值和用户实际看到的不一样。这篇文章讲清楚原因和解决方法。 问题现象 在手机端使用搜狗输入法的英文预测模式或中文拼音模式时： - 用户输入 nihao，输入法候选栏显示\&quot;你好\&quot; - 但 input 事件回调里拿到的值可能是空的或不完整的 - 因为输入法在\&quot;组词\&quot;阶段，字符还没有确认，浏览器/小程序框架不触发 input 事件 这就是 composition（文本合成） 问题——输入法在组词过程中，文本处于\&quot;未确认\&quot;状态。 解决方案：ignoreCompositionEvent uniapp 的 input" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://wuhuajin.com/src/template/posts/%E5%B0%8F%E7%A8%8B%E5%BA%8F/html/%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3.html" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Wu Huajin" />
   <meta property="og:title" content="实战项目文档" />
-  <meta property="og:description" content="技术架构 - 前端层：小程序 + Web管理后台 - SDK层：auth sdk + core sdk - 后端服务层：认证服务 + 核心服务 + 知识服务 - 数据存储层：云存储/本地存储 + 数据库（MongoDB/MySQL） 帮助文档 uniapp移动端输入监听键盘上正在输入的值 例如搜狗输入法的英文预测模式下，输入的字符不会马上赋给输入框。 input有个ignoreCompositionEvent属性，是否忽略组件内对文本合成系统事件的处理。为 false 时将触发 compositionstart、compositionend、compositionupdate 事件，且在文本合" />
+  <meta property="og:description" content="做小程序输入框时，你可能遇到过一个诡异的问题：用搜狗输入法打中文时，input 事件拿到的值和用户实际看到的不一样。这篇文章讲清楚原因和解决方法。 问题现象 在手机端使用搜狗输入法的英文预测模式或中文拼音模式时： - 用户输入 nihao，输入法候选栏显示\&quot;你好\&quot; - 但 input 事件回调里拿到的值可能是空的或不完整的 - 因为输入法在\&quot;组词\&quot;阶段，字符还没有确认，浏览器/小程序框架不触发 input 事件 这就是 composition（文本合成） 问题——输入法在组词过程中，文本处于\&quot;未确认\&quot;状态。 解决方案：ignoreCompositionEvent uniapp 的 input" />
   <meta property="og:url" content="https://wuhuajin.com/src/template/posts/%E5%B0%8F%E7%A8%8B%E5%BA%8F/html/%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3.html" />
   <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
   <meta property="og:locale" content="zh_CN" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="实战项目文档" />
-  <meta name="twitter:description" content="技术架构 - 前端层：小程序 + Web管理后台 - SDK层：auth sdk + core sdk - 后端服务层：认证服务 + 核心服务 + 知识服务 - 数据存储层：云存储/本地存储 + 数据库（MongoDB/MySQL） 帮助文档 uniapp移动端输入监听键盘上正在输入的值 例如搜狗输入法的英文预测模式下，输入的字符不会马上赋给输入框。 input有个ignoreCompositionEvent属性，是否忽略组件内对文本合成系统事件的处理。为 false 时将触发 compositionstart、compositionend、compositionupdate 事件，且在文本合" />
+  <meta name="twitter:description" content="做小程序输入框时，你可能遇到过一个诡异的问题：用搜狗输入法打中文时，input 事件拿到的值和用户实际看到的不一样。这篇文章讲清楚原因和解决方法。 问题现象 在手机端使用搜狗输入法的英文预测模式或中文拼音模式时： - 用户输入 nihao，输入法候选栏显示\&quot;你好\&quot; - 但 input 事件回调里拿到的值可能是空的或不完整的 - 因为输入法在\&quot;组词\&quot;阶段，字符还没有确认，浏览器/小程序框架不触发 input 事件 这就是 composition（文本合成） 问题——输入法在组词过程中，文本处于\&quot;未确认\&quot;状态。 解决方案：ignoreCompositionEvent uniapp 的 input" />
   <link rel="icon" href="/src/images/favicon.png" />
   <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
   <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
@@ -32,7 +32,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "实战项目文档",
-  "description": "技术架构 - 前端层：小程序 + Web管理后台 - SDK层：auth sdk + core sdk - 后端服务层：认证服务 + 核心服务 + 知识服务 - 数据存储层：云存储/本地存储 + 数据库（MongoDB/MySQL） 帮助文档 uniapp移动端输入监听键盘上正在输入的值 例如搜狗输入法的英文预测模式下，输入的字符不会马上赋给输入框。 input有个ignoreCompositionEvent属性，是否忽略组件内对文本合成系统事件的处理。为 false 时将触发 compositionstart、compositionend、compositionupdate 事件，且在文本合",
+  "description": "做小程序输入框时，你可能遇到过一个诡异的问题：用搜狗输入法打中文时，input 事件拿到的值和用户实际看到的不一样。这篇文章讲清楚原因和解决方法。 问题现象 在手机端使用搜狗输入法的英文预测模式或中文拼音模式时： - 用户输入 nihao，输入法候选栏显示\\\"你好\\\" - 但 input 事件回调里拿到的值可能是空的或不完整的 - 因为输入法在\\\"组词\\\"阶段，字符还没有确认，浏览器/小程序框架不触发 input 事件 这就是 composition（文本合成） 问题——输入法在组词过程中，文本处于\\\"未确认\\\"状态。 解决方案：ignoreCompositionEvent uniapp 的 input",
   "author": {
     "@type": "Person",
     "name": "吴华锦",
@@ -58,17 +58,110 @@
   <div class="layout-container">
     <div class="nav-container"></div>
     <div class="content-area">
-      <div id="markdown-content" class="markdown-content viewer" data-reward="true"><h2>技术架构</h2>
+      <div id="markdown-content" class="markdown-content viewer" data-reward="true"><p>做小程序输入框时，你可能遇到过一个诡异的问题：用搜狗输入法打中文时，<code>input</code> 事件拿到的值和用户实际看到的不一样。这篇文章讲清楚原因和解决方法。</p>
+<h2>问题现象</h2>
+<p>在手机端使用搜狗输入法的英文预测模式或中文拼音模式时：</p>
 <ul>
-<li>前端层：小程序 + <code>Web</code>管理后台</li>
-<li><code>SDK</code>层：<code>auth sdk</code> + <code>core sdk</code></li>
-<li>后端服务层：认证服务 + 核心服务 + 知识服务</li>
-<li>数据存储层：云存储/本地存储 + 数据库（<code>MongoDB/MySQL</code>）</li>
+<li>用户输入 <code>nihao</code>，输入法候选栏显示&quot;你好&quot;</li>
+<li>但 <code>input</code> 事件回调里拿到的值可能是空的或不完整的</li>
+<li>因为输入法在&quot;组词&quot;阶段，字符还没有确认，浏览器/小程序框架不触发 <code>input</code> 事件</li>
 </ul>
-<h2>帮助文档</h2>
-<p><strong><code>uniapp</code>移动端输入监听键盘上正在输入的值</strong></p>
-<p>例如搜狗输入法的英文预测模式下，输入的字符不会马上赋给输入框。
-<code>input</code>有个<code>ignoreCompositionEvent</code>属性，是否忽略组件内对文本合成系统事件的处理。为 <code>false</code> 时将触发 <code>compositionstart、compositionend、compositionupdate</code> 事件，且在文本合成期间会触发 <code>input</code> 事件。添加该属性即可</p>
+<p>这就是 <strong>composition（文本合成）</strong> 问题——输入法在组词过程中，文本处于&quot;未确认&quot;状态。</p>
+<h2>解决方案：ignoreCompositionEvent</h2>
+<p>uniapp 的 <code>input</code> 组件有一个 <code>ignoreCompositionEvent</code> 属性：</p>
+<pre><code class="language-html">&lt;input
+  v-model=&quot;keyword&quot;
+  :ignoreCompositionEvent=&quot;false&quot;
+  @compositionstart=&quot;onCompositionStart&quot;
+  @compositionend=&quot;onCompositionEnd&quot;
+  @compositionupdate=&quot;onCompositionUpdate&quot;
+/&gt;
+</code></pre>
+<p><strong>设为 <code>false</code> 时</strong>，在文本合成期间会触发以下事件：</p>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>触发时机</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>compositionstart</code></td>
+<td>输入法开始组词（如按下第一个拼音字母）</td>
+</tr>
+<tr>
+<td><code>compositionupdate</code></td>
+<td>组词过程中每输入一个字符</td>
+</tr>
+<tr>
+<td><code>compositionend</code></td>
+<td>组词结束，用户选中候选词，文本确认</td>
+</tr>
+</tbody></table>
+<h2>正确监听输入值</h2>
+<p>如果你需要在输入法组词过程中实时拿到值（比如搜索联想），需要同时监听 <code>input</code> 和 composition 事件：</p>
+<pre><code class="language-js">export default {
+  data() {
+    return {
+      keyword: &#39;&#39;,
+      isComposing: false
+    };
+  },
+  methods: {
+    onCompositionStart() {
+      this.isComposing = true;
+    },
+    onCompositionUpdate(e) {
+      // 组词过程中实时拿到当前拼音
+      console.log(&#39;正在输入：&#39;, e.detail.value);
+    },
+    onCompositionEnd(e) {
+      this.isComposing = false;
+      // 组词结束，拿到最终确认的文本
+      this.keyword = e.detail.value;
+      this.search();
+    },
+    onInput(e) {
+      // 非组词阶段（英文、数字）直接更新
+      if (!this.isComposing) {
+        this.keyword = e.detail.value;
+      }
+    }
+  }
+}
+</code></pre>
+<h2>什么时候需要处理</h2>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>需要处理吗</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>普通表单输入框</td>
+<td>不需要，默认行为就行</td>
+</tr>
+<tr>
+<td>搜索联想 / 实时搜索</td>
+<td>需要，否则组词阶段没有联想结果</td>
+</tr>
+<tr>
+<td>聊天输入框</td>
+<td>一般不需要</td>
+</tr>
+<tr>
+<td>验证码输入</td>
+<td>不需要</td>
+</tr>
+</tbody></table>
+<p><strong>总结</strong>：默认 <code>ignoreCompositionEvent</code> 为 <code>true</code>（忽略 composition 事件），这是大多数场景的正确行为。只有需要在输入法组词阶段实时拿到值时，才设为 <code>false</code> 并处理 composition 事件。</p>
+<h2>相关阅读</h2>
+<ul>
+<li><a href="https://wuhuajin.com/src/template/posts/%E5%B0%8F%E7%A8%8B%E5%BA%8F/html/Taro%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%96%87%E6%A1%A3.html">Taro小程序文档</a> — Taro 跨端开发</li>
+<li><a href="https://wuhuajin.com/src/template/posts/%E5%B0%8F%E7%A8%8B%E5%BA%8F/html/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%96%87%E6%A1%A3.html">小程序文档</a> — 小程序基础</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Element/compositionstart_event">MDN composition 事件</a></li>
+</ul>
 </div>
       <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
       <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"

@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="author" content="吴华锦" />
   <title>Web3钱包 « 吴华锦</title>
-  <meta name="description" content="区块链 - 共识、trustless需要旷工的工作，旷工需要激励 - transaction的执行有成本 gas，gas费成为旷工的激励 - ether是这个经济生态系统的通行货币 gas和转账 - 转账是与函数调用一起发生，转账就是函数调用。 gaslimit与 gasleft()函数 - 交易发起者设定最多消耗多少 gaslimit - 合约之间调用，调用者可以设定 gaslimit - 区块本身有一个 gaslimit gasleft()是以上因素作为限定，与当前 gas消耗一起计算的结果 退款规则 - 剩下没用完的 gas会退款 - 如果可用 gas耗尽时，会终止交易执行 - 交易失败" />
+  <meta name="description" content="这篇文章梳理以太坊开发中最核心的几个概念：gas 费怎么算、合约怎么接收转账、前端怎么连接钱包。不需要有 Solidity 基础也能看懂。 一、gas 是什么 区块链上每笔交易的执行都需要消耗计算资源，矿工（验证者）执行这些工作需要激励。gas 就是支付给矿工的费用，ETH 是这个生态系统的通行货币。 关键点：转账就是函数调用。在以太坊上，你向地址转 ETH 和调用合约函数本质上是同一回事——都是发送一笔交易。 二、gaslimit 与 gasleft() 概念 说明 gaslimit（交易级） 交易发起者设定最多愿意消耗多少 gas gaslimit（合约间调用） 合约之间调用时，调用者可以" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://wuhuajin.com/src/template/posts/Web3/html/Web3%E9%92%B1%E5%8C%85.html" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Wu Huajin" />
   <meta property="og:title" content="Web3钱包" />
-  <meta property="og:description" content="区块链 - 共识、trustless需要旷工的工作，旷工需要激励 - transaction的执行有成本 gas，gas费成为旷工的激励 - ether是这个经济生态系统的通行货币 gas和转账 - 转账是与函数调用一起发生，转账就是函数调用。 gaslimit与 gasleft()函数 - 交易发起者设定最多消耗多少 gaslimit - 合约之间调用，调用者可以设定 gaslimit - 区块本身有一个 gaslimit gasleft()是以上因素作为限定，与当前 gas消耗一起计算的结果 退款规则 - 剩下没用完的 gas会退款 - 如果可用 gas耗尽时，会终止交易执行 - 交易失败" />
+  <meta property="og:description" content="这篇文章梳理以太坊开发中最核心的几个概念：gas 费怎么算、合约怎么接收转账、前端怎么连接钱包。不需要有 Solidity 基础也能看懂。 一、gas 是什么 区块链上每笔交易的执行都需要消耗计算资源，矿工（验证者）执行这些工作需要激励。gas 就是支付给矿工的费用，ETH 是这个生态系统的通行货币。 关键点：转账就是函数调用。在以太坊上，你向地址转 ETH 和调用合约函数本质上是同一回事——都是发送一笔交易。 二、gaslimit 与 gasleft() 概念 说明 gaslimit（交易级） 交易发起者设定最多愿意消耗多少 gas gaslimit（合约间调用） 合约之间调用时，调用者可以" />
   <meta property="og:url" content="https://wuhuajin.com/src/template/posts/Web3/html/Web3%E9%92%B1%E5%8C%85.html" />
   <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
   <meta property="og:locale" content="zh_CN" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Web3钱包" />
-  <meta name="twitter:description" content="区块链 - 共识、trustless需要旷工的工作，旷工需要激励 - transaction的执行有成本 gas，gas费成为旷工的激励 - ether是这个经济生态系统的通行货币 gas和转账 - 转账是与函数调用一起发生，转账就是函数调用。 gaslimit与 gasleft()函数 - 交易发起者设定最多消耗多少 gaslimit - 合约之间调用，调用者可以设定 gaslimit - 区块本身有一个 gaslimit gasleft()是以上因素作为限定，与当前 gas消耗一起计算的结果 退款规则 - 剩下没用完的 gas会退款 - 如果可用 gas耗尽时，会终止交易执行 - 交易失败" />
+  <meta name="twitter:description" content="这篇文章梳理以太坊开发中最核心的几个概念：gas 费怎么算、合约怎么接收转账、前端怎么连接钱包。不需要有 Solidity 基础也能看懂。 一、gas 是什么 区块链上每笔交易的执行都需要消耗计算资源，矿工（验证者）执行这些工作需要激励。gas 就是支付给矿工的费用，ETH 是这个生态系统的通行货币。 关键点：转账就是函数调用。在以太坊上，你向地址转 ETH 和调用合约函数本质上是同一回事——都是发送一笔交易。 二、gaslimit 与 gasleft() 概念 说明 gaslimit（交易级） 交易发起者设定最多愿意消耗多少 gas gaslimit（合约间调用） 合约之间调用时，调用者可以" />
   <link rel="icon" href="/src/images/favicon.png" />
   <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
   <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
@@ -32,7 +32,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Web3钱包",
-  "description": "区块链 - 共识、trustless需要旷工的工作，旷工需要激励 - transaction的执行有成本 gas，gas费成为旷工的激励 - ether是这个经济生态系统的通行货币 gas和转账 - 转账是与函数调用一起发生，转账就是函数调用。 gaslimit与 gasleft()函数 - 交易发起者设定最多消耗多少 gaslimit - 合约之间调用，调用者可以设定 gaslimit - 区块本身有一个 gaslimit gasleft()是以上因素作为限定，与当前 gas消耗一起计算的结果 退款规则 - 剩下没用完的 gas会退款 - 如果可用 gas耗尽时，会终止交易执行 - 交易失败",
+  "description": "这篇文章梳理以太坊开发中最核心的几个概念：gas 费怎么算、合约怎么接收转账、前端怎么连接钱包。不需要有 Solidity 基础也能看懂。 一、gas 是什么 区块链上每笔交易的执行都需要消耗计算资源，矿工（验证者）执行这些工作需要激励。gas 就是支付给矿工的费用，ETH 是这个生态系统的通行货币。 关键点：转账就是函数调用。在以太坊上，你向地址转 ETH 和调用合约函数本质上是同一回事——都是发送一笔交易。 二、gaslimit 与 gasleft() 概念 说明 gaslimit（交易级） 交易发起者设定最多愿意消耗多少 gas gaslimit（合约间调用） 合约之间调用时，调用者可以",
   "author": {
     "@type": "Person",
     "name": "吴华锦",
@@ -58,51 +58,93 @@
   <div class="layout-container">
     <div class="nav-container"></div>
     <div class="content-area">
-      <div id="markdown-content" class="markdown-content viewer" data-reward="true"><h1>区块链</h1>
+      <div id="markdown-content" class="markdown-content viewer" data-reward="true"><p>这篇文章梳理以太坊开发中最核心的几个概念：gas 费怎么算、合约怎么接收转账、前端怎么连接钱包。不需要有 Solidity 基础也能看懂。</p>
+<h2>一、gas 是什么</h2>
+<p>区块链上每笔交易的执行都需要消耗计算资源，矿工（验证者）执行这些工作需要激励。<strong>gas 就是支付给矿工的费用</strong>，ETH 是这个生态系统的通行货币。</p>
+<p>关键点：<strong>转账就是函数调用</strong>。在以太坊上，你向地址转 ETH 和调用合约函数本质上是同一回事——都是发送一笔交易。</p>
+<h2>二、gaslimit 与 gasleft()</h2>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>gaslimit（交易级）</td>
+<td>交易发起者设定最多愿意消耗多少 gas</td>
+</tr>
+<tr>
+<td>gaslimit（合约间调用）</td>
+<td>合约之间调用时，调用者可以设定本次调用的 gas 上限</td>
+</tr>
+<tr>
+<td>gaslimit（区块级）</td>
+<td>每个区块本身有 gas 上限，限制区块大小</td>
+</tr>
+<tr>
+<td>gasleft()</td>
+<td>合约中查看当前还剩多少可用 gas</td>
+</tr>
+</tbody></table>
+<p><strong>退款规则</strong>：</p>
 <ul>
-<li>共识、<code>trustless</code>需要旷工的工作，旷工需要激励</li>
-<li><code>transaction</code>的执行有成本 <code>gas</code>，<code>gas</code>费成为旷工的激励</li>
-<li><code>ether</code>是这个经济生态系统的通行货币</li>
+<li>没用完的 gas 会<strong>原路退回</strong>给发起者</li>
+<li>如果 gas 耗尽（out of gas），交易立即终止，已消耗的 gas 不退</li>
+<li>交易执行失败时，已用的 gas 也不退（因为矿工确实执行了工作）</li>
 </ul>
-<h2><code>gas</code>和转账</h2>
-<ul>
-<li>转账是与函数调用一起发生，转账就是函数调用。</li>
-</ul>
-<h3><code>gaslimit</code>与 <code>gasleft()</code>函数</h3>
-<ul>
-<li>交易发起者设定最多消耗多少 <code>gaslimit</code></li>
-<li>合约之间调用，调用者可以设定 <code>gaslimit</code></li>
-<li>区块本身有一个 <code>gaslimit</code></li>
-</ul>
-<p><strong><code>gasleft()</code>是以上因素作为限定，与当前 <code>gas</code>消耗一起计算的结果</strong></p>
-<h3>退款规则</h3>
-<ul>
-<li>剩下没用完的 <code>gas</code>会退款</li>
-<li>如果可用 <code>gas</code>耗尽时，会终止交易执行</li>
-<li>交易失败时，已经用了的 <code>gas</code>不退</li>
-</ul>
-<h2><code>receive()</code>函数</h2>
-<h3>被调用函数解析逻辑</h3>
+<h2>三、receive() 与 fallback() 函数</h2>
+<p>当你向合约地址转账 ETH 时，合约需要特殊函数来接收：</p>
+<h3>调用解析逻辑</h3>
+<p>当一笔交易发给合约时，EVM 按以下顺序匹配：</p>
 <ol>
-<li>自定义函数匹配 <code>selector</code></li>
-<li><code>receive</code>函数匹配为空的 <code>calldata</code></li>
-<li><code>fallback</code>函数兜底</li>
-<li>除了 <code>fallback</code>必须在尾部，其他元素顺序无关</li>
+<li>自定义函数匹配 <code>selector</code>（函数签名哈希）</li>
+<li><code>receive()</code> 函数——当 calldata 为空时匹配</li>
+<li><code>fallback()</code> 函数——兜底</li>
+<li>如果都不匹配，交易回退</li>
 </ol>
-<h3>检查逻辑</h3>
-<p><strong><code>payable</code>修饰符在函数定义中的作用</strong>：解析逻辑如果成功则会输出一个函数，检查逻辑就是检查一个情况：<strong><code>value &gt; 0</code>并且这个函数没有被 <code>payable</code>修饰</strong>。如果出现这个情况，调用失败终止，否则执行函数逻辑。</p>
-<h3>地址的 <code>checksum</code></h3>
+<blockquote>
+<p>注意：除了 <code>fallback</code> 必须在尾部，其他顺序无关。</p>
+</blockquote>
+<h3>payable 修饰符</h3>
+<p>解析成功后还会检查：<strong>如果发送了 ETH（value &gt; 0）但函数没有 <code>payable</code> 修饰符，交易直接失败</strong>。这是防止误转账的安全机制。</p>
+<h2>四、地址的 checksum</h2>
+<p>以太坊地址有 40 个十六进制字符，大小写混合的 <strong>checksum 格式</strong>是一种校验机制：</p>
 <ul>
-<li><code>checksum</code>保证了输入错误能够被检查出来</li>
-<li><code>checksum</code>检查是在链下完成的，比如在 <code>ethersjs</code>这种 <code>js</code>包中完成，链上并不会检查 <code>checksum</code></li>
+<li>checksum 在<strong>链下</strong>完成（比如 ethers.js 这类前端库自动处理）</li>
+<li>链上<strong>不会</strong>校验 checksum</li>
+<li>作用是防止你复制粘贴地址时出错（大小写错了会被库提前发现）</li>
 </ul>
-<h2>连接钱包</h2>
-<ol>
-<li>连接成功，检查是否为所支持的网络</li>
-<li>如果没有工作在所支持的网络上，通过配置参数向钱包推送配置，切换到合适的网络</li>
-<li>如果是 <code>Transation</code>一定是连接钱包；如果是读操作并且需要当前 <code>account</code>，从 <code>signer</code>中获取，否则直接使用 <code>jsonRpcProvider</code></li>
-<li>重构代码，将合约访问业务组织在 <code>service</code>中</li>
-</ol>
+<h2>五、前端连接钱包的流程</h2>
+<p>以 MetaMask 为例，前端连接钱包的标准流程：</p>
+<pre><code class="language-js">// 1. 请求连接钱包
+const accounts = await window.ethereum.request({
+  method: &#39;eth_requestAccounts&#39;
+});
+// 返回 [&#39;0x123...&#39;] 当前连接的地址
+
+// 2. 检查当前网络是否正确
+const chainId = await window.ethereum.request({ method: &#39;eth_chainId&#39; });
+if (chainId !== &#39;0x1&#39;) { // 1 = 主网
+  // 3. 提示用户切换网络
+  await window.ethereum.request({
+    method: &#39;wallet_switchEthereumChain&#39;,
+    params: [{ chainId: &#39;0x1&#39; }]
+  });
+}
+</code></pre>
+<h3>代码组织建议</h3>
+<ul>
+<li><strong>写操作</strong>（发交易、签消息）：必须连接钱包</li>
+<li><strong>读操作</strong>（查合约数据）：如果不需要当前账户，可以直接用 <code>JsonRpcProvider</code> 连公共节点，不用弹窗请求钱包</li>
+<li>把合约访问逻辑封装在 <code>service</code> 层组件中，UI 层只调用</li>
+</ul>
+<h2>相关阅读</h2>
+<ul>
+<li><a href="https://wuhuajin.com/src/template/posts/Web3/html/Solidity%E6%96%87%E6%A1%A3.html">Solidity文档</a> — Solidity 语法速查</li>
+<li><a href="https://wuhuajin.com/src/template/posts/Web3/html/Web3%E6%96%87%E6%A1%A3.html">Web3文档</a> — Web3 前端开发入门</li>
+<li><a href="https://ethereum.org/zh/developers/docs/">以太坊官方文档</a> — 权威资料</li>
+</ul>
 </div>
       <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
       <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"

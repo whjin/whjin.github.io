@@ -140,6 +140,11 @@ node scripts/build-sitemap.cjs || warn "build-sitemap 生成失败，跳过"
 info "生成 Link 导航页静态内容..."
 node scripts/build-links.cjs || warn "build-links 生成失败，跳过"
 
+# build 结束后再清一次（build 过程中新生成的文件会产生新的 ._* AppleDouble 文件）
+info "二次清理 OS 元数据文件..."
+find . \( -name '._*' -o -name '.DS_Store' \) -not -path './.git/*' -delete 2>/dev/null \
+    || warn "二次清理失败（可能是文件系统限制），跳过"
+
 bypass_locks
 git_safe add -A
 
