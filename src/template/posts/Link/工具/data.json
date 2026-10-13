@@ -22,12 +22,6 @@
         "url": "https://www.iconfont.cn/?spm=a313x.collections_index.i3.d4d0a486a.5e7a3a81TIxl6y"
       },
       {
-        "avatar": "https://picsum.photos/seed/AI工具集/100",
-        "title": "AI工具集",
-        "desc": "AI工具集官网 | 1000+ AI工具集合，国内外AI工具集导航大全",
-        "url": "https://ai-bot.cn/"
-      },
-      {
         "avatar": "https://picsum.photos/seed/TinyPNG/100",
         "title": "TinyPNG",
         "desc": "TinyPNG – 智能压缩您的WebP、JPEG和PNG图片",
@@ -38,6 +32,12 @@
         "title": "ImageHub 图仓",
         "desc": "ImageHub - 图仓 - 公益图床，提供免费图片托管服务",
         "url": "https://www.imagehub.cc/"
+      },
+      {
+        "avatar": "https://pics.molunerfinn.com/blog/logo-512x512.png",
+        "title": "PicGo",
+        "desc": "PicGo - 免费开源的图床工具，支持 Windows、Mac、Linux",
+        "url": "https://picgo.app/zh/"
       },
       {
         "avatar": "https://picsum.photos/seed/Icon图标制作/100",
@@ -89,6 +89,12 @@
         "title": "HotBee：一站式 AI 内容创作平台",
         "desc": "HotBee - AI图片生成、AI视频生成和内容工作流工具",
         "url": "https://hotbee.cn"
+      },
+      {
+        "avatar": "https://picsum.photos/seed/AI工具集/100",
+        "title": "AI工具集",
+        "desc": "AI工具集官网 | 1000+ AI工具集合，国内外AI工具集导航大全",
+        "url": "https://ai-bot.cn/"
       }
     ]
   },

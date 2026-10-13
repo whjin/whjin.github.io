@@ -109,7 +109,7 @@ function buildLinkPage(relPath, meta) {
   }
   let html = fs.readFileSync(htmlPath, 'utf8');
 
-  let staticHtml = `<div class="seo-content" style="max-width:900px;margin:0 auto;padding:20px;">\n`;
+  let staticHtml = `<noscript><div class="seo-content" style="max-width:900px;margin:0 auto;padding:20px;">\n`;
   staticHtml += `  <h1>${escapeHtml(meta.h1)}</h1>\n`;
   staticHtml += `  <p>${escapeHtml(meta.intro)}</p>\n`;
 
@@ -118,9 +118,10 @@ function buildLinkPage(relPath, meta) {
     staticHtml += renderLinkData(data);
   }
 
-  staticHtml += `</div>\n`;
+  staticHtml += `</div></noscript>\n`;
 
-  // 幂等：先移除上次注入的 seo-content 块（块内无嵌套 div，匹配到第一个 </div> 即可）
+  // 幂等：先移除上次注入的 seo-content 块（含 noscript 外壳）
+  html = html.replace(/<noscript><div class="seo-content"[\s\S]*?<\/div><\/noscript>\n?/g, '');
   html = html.replace(/<div class="seo-content"[\s\S]*?<\/div>\n?/g, '');
 
   // 把静态 HTML 注入到容器内（兼容 <div> 和 <main> 两种标签）
@@ -154,7 +155,7 @@ function buildResourcePage() {
       '本页是吴华锦博客 wuhuajin.com 的全站资源索引，按分类整理了技术文章、教程、工具推荐、原创内容与生活记录。所有链接均指向本站内页或外部推荐资源，持续更新。',
   };
 
-  let staticHtml = `<div class="seo-content" style="max-width:900px;margin:0 auto;padding:20px;">\n`;
+  let staticHtml = `<noscript><div class="seo-content" style="max-width:900px;margin:0 auto;padding:20px;">\n`;
   staticHtml += `  <h1>${escapeHtml(meta.h1)}</h1>\n`;
   staticHtml += `  <p>${escapeHtml(meta.intro)}</p>\n`;
 
@@ -162,9 +163,10 @@ function buildResourcePage() {
     const feed = JSON.parse(fs.readFileSync(feedPath, 'utf8'));
     staticHtml += renderFeedData(feed);
   }
-  staticHtml += `</div>\n`;
+  staticHtml += `</div></noscript>\n`;
 
   // 幂等：先移除上次注入的 seo-content 块
+  html = html.replace(/<noscript><div class="seo-content"[\s\S]*?<\/div><\/noscript>\n?/g, '');
   html = html.replace(/<div class="seo-content"[\s\S]*?<\/div>\n?/g, '');
 
   const containerPattern = /<(div|main) class="card-container">\s*<\/\1>/;
