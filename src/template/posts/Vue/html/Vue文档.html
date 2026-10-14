@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#007bff" />
   <meta name="author" content="吴华锦" />
   <title>Vue文档 « 吴华锦</title>
   <meta name="description" content="Vue 3 开发文档 Vue 是什么 Vue 是一套用于构建用户界面的渐进式框架。它的核心专注于视图层，易学易用，同时也能通过官方生态（Vue Router、Pinia）与工具链支持构建复杂的单页应用（SPA）。Vue 3 引入了组合式 API（Composition API）、更快的虚拟 DOM 与更好的 TypeScript 支持，是目前主流的前端框架之一。 组件基础 组件是 Vue 应用的基本单元，一个组件由模板、脚本与样式组成： 使用 &lt;script setup 是 Vue 3 推荐的写法，代码更简洁，且自动获得更好的类型推导。 响应式原理 Vue 的响应式系统让数据变化自动驱动视图更" />
@@ -19,8 +20,24 @@
   <meta name="twitter:title" content="Vue文档" />
   <meta name="twitter:description" content="Vue 3 开发文档 Vue 是什么 Vue 是一套用于构建用户界面的渐进式框架。它的核心专注于视图层，易学易用，同时也能通过官方生态（Vue Router、Pinia）与工具链支持构建复杂的单页应用（SPA）。Vue 3 引入了组合式 API（Composition API）、更快的虚拟 DOM 与更好的 TypeScript 支持，是目前主流的前端框架之一。 组件基础 组件是 Vue 应用的基本单元，一个组件由模板、脚本与样式组成： 使用 &lt;script setup 是 Vue 3 推荐的写法，代码更简洁，且自动获得更好的类型推导。 响应式原理 Vue 的响应式系统让数据变化自动驱动视图更" />
   <link rel="icon" href="/src/images/favicon.png" />
-  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <style>
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 8px;
+      z-index: 100;
+      padding: 8px 16px;
+      background: #007bff;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 14px;
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 8px;
+    }
+  </style>
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
   <link rel="stylesheet" href="/src/components/image-viewer/index.css" />
@@ -44,6 +61,8 @@
     "url": "https://wuhuajin.com/"
   },
   "datePublished": "2026-09-11",
+  "dateModified": "2026-09-11",
+  "articleSection": "Vue",
   "inLanguage": "zh-CN",
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -55,9 +74,10 @@
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
 <body data-reward="true">
+  <a href="#content" class="skip-link">跳到主内容</a>
   <div class="layout-container">
     <div class="nav-container"></div>
-    <div class="content-area">
+    <div class="content-area" id="content">
       <div id="markdown-content" class="markdown-content viewer" data-reward="true"><h1>Vue 3 开发文档</h1>
 <h2>Vue 是什么</h2>
 <p>Vue 是一套用于构建用户界面的<strong>渐进式框架</strong>。它的核心专注于视图层，易学易用，同时也能通过官方生态（Vue Router、Pinia）与工具链支持构建复杂的单页应用（SPA）。Vue 3 引入了组合式 API（Composition API）、更快的虚拟 DOM 与更好的 TypeScript 支持，是目前主流的前端框架之一。</p>

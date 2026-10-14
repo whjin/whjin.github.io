@@ -1,5 +1,14 @@
+/* Bootstrap 移除后的必要重置 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html,
 body {
+  margin: 0;
+  padding: 0;
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -118,9 +127,11 @@ pre {
 }
 
 code {
+  color: #e83e8c;
   background-color: #f8f8f9;
   padding: 2px 6px;
   border-radius: 6px;
+  font-size: 0.9em;
 }
 
 blockquote {
@@ -187,10 +198,15 @@ a:hover {
 
 .arrow-icon {
   background-image: url(../../images/top.png);
-  width: 30px;
-  height: 30px;
-  display: block;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .scroll-top {
@@ -200,7 +216,6 @@ a:hover {
   bottom: 66px;
   width: 40px;
   height: 40px;
-  padding: 5px;
   background-color: #007bff;
   border-radius: 50%;
   transition: all 0.3s ease;

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#007bff" />
   <meta name="author" content="吴华锦" />
   <title>ADB命令集合 « 吴华锦</title>
   <meta name="description" content="ADB（Android Debug Bridge）是 Android 开发和调试最核心的命令行工具。不管是安装 APK、抓日志、截屏、模拟点击，还是调试真机问题，都离不开它。本手册按使用场景分类整理，收藏后随查随用。 官方文档：完整的 ADB 参数说明见 Android Developers · Debug Your App，本文是实战命令速查。 一、环境准备 ADB 包含在 Android SDK Platform-Tools 中，独立安装即可，不需要下载完整 SDK： 真机调试前提：手机 → 设置 → 关于手机 → 连续点击\&quot;版本号\&quot;7 次开启开发者选项 → 开启\&quot;USB 调试\&quot;。 二、设" />
@@ -19,8 +20,24 @@
   <meta name="twitter:title" content="ADB命令集合" />
   <meta name="twitter:description" content="ADB（Android Debug Bridge）是 Android 开发和调试最核心的命令行工具。不管是安装 APK、抓日志、截屏、模拟点击，还是调试真机问题，都离不开它。本手册按使用场景分类整理，收藏后随查随用。 官方文档：完整的 ADB 参数说明见 Android Developers · Debug Your App，本文是实战命令速查。 一、环境准备 ADB 包含在 Android SDK Platform-Tools 中，独立安装即可，不需要下载完整 SDK： 真机调试前提：手机 → 设置 → 关于手机 → 连续点击\&quot;版本号\&quot;7 次开启开发者选项 → 开启\&quot;USB 调试\&quot;。 二、设" />
   <link rel="icon" href="/src/images/favicon.png" />
-  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <style>
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 8px;
+      z-index: 100;
+      padding: 8px 16px;
+      background: #007bff;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 14px;
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 8px;
+    }
+  </style>
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
   <link rel="stylesheet" href="/src/components/image-viewer/index.css" />
@@ -44,6 +61,8 @@
     "url": "https://wuhuajin.com/"
   },
   "datePublished": "2026-09-11",
+  "dateModified": "2026-09-11",
+  "articleSection": "Android",
   "inLanguage": "zh-CN",
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -55,9 +74,10 @@
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
 <body data-reward="true">
+  <a href="#content" class="skip-link">跳到主内容</a>
   <div class="layout-container">
     <div class="nav-container"></div>
-    <div class="content-area">
+    <div class="content-area" id="content">
       <div id="markdown-content" class="markdown-content viewer" data-reward="true"><p>ADB（Android Debug Bridge）是 Android 开发和调试最核心的命令行工具。不管是安装 APK、抓日志、截屏、模拟点击，还是调试真机问题，都离不开它。本手册按使用场景分类整理，收藏后随查随用。</p>
 <blockquote>
 <p>官方文档：完整的 ADB 参数说明见 <a href="https://developer.android.com/studio/command-line/adb">Android Developers · Debug Your App</a>，本文是实战命令速查。</p>

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#007bff" />
   <meta name="author" content="吴华锦" />
   <title>JavaScript正则表达式手册 « 吴华锦</title>
   <meta name="description" content="正则表达式是处理字符串最强大的工具，但也是最容易写错、最难调试的工具。本手册分为四部分：JS 正则怎么用 → 语法速查 → 常用表达式合集 → 常见坑，收藏后随查随用。 官方参考：完整的 RegExp 语法定义见 MDN Regular Expressions 文档，本文是其实战提炼。 一、JavaScript 正则的四种用法 创建正则 四种核心方法 方法 所属对象 返回值 适用场景 regex.test(str) RegExp true / false 只判断是否匹配，如表单校验 str.match(regex) String 匹配结果数组或 null 提取匹配内容，最简单 str.matc" />
@@ -19,8 +20,24 @@
   <meta name="twitter:title" content="JavaScript正则表达式手册" />
   <meta name="twitter:description" content="正则表达式是处理字符串最强大的工具，但也是最容易写错、最难调试的工具。本手册分为四部分：JS 正则怎么用 → 语法速查 → 常用表达式合集 → 常见坑，收藏后随查随用。 官方参考：完整的 RegExp 语法定义见 MDN Regular Expressions 文档，本文是其实战提炼。 一、JavaScript 正则的四种用法 创建正则 四种核心方法 方法 所属对象 返回值 适用场景 regex.test(str) RegExp true / false 只判断是否匹配，如表单校验 str.match(regex) String 匹配结果数组或 null 提取匹配内容，最简单 str.matc" />
   <link rel="icon" href="/src/images/favicon.png" />
-  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <style>
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 8px;
+      z-index: 100;
+      padding: 8px 16px;
+      background: #007bff;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 14px;
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 8px;
+    }
+  </style>
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
   <link rel="stylesheet" href="/src/components/image-viewer/index.css" />
@@ -44,6 +61,8 @@
     "url": "https://wuhuajin.com/"
   },
   "datePublished": "2026-10-12 14:45:11",
+  "dateModified": "2026-10-12 14:45:11",
+  "articleSection": "JavaScript",
   "inLanguage": "zh-CN",
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -55,9 +74,10 @@
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
 <body data-reward="true">
+  <a href="#content" class="skip-link">跳到主内容</a>
   <div class="layout-container">
     <div class="nav-container"></div>
-    <div class="content-area">
+    <div class="content-area" id="content">
       <div id="markdown-content" class="markdown-content viewer" data-reward="true"><p>正则表达式是处理字符串最强大的工具，但也是最容易写错、最难调试的工具。本手册分为四部分：<strong>JS 正则怎么用 → 语法速查 → 常用表达式合集 → 常见坑</strong>，收藏后随查随用。</p>
 <blockquote>
 <p>官方参考：完整的 RegExp 语法定义见 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_expressions">MDN Regular Expressions 文档</a>，本文是其实战提炼。</p>

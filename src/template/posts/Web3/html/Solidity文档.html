@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#007bff" />
   <meta name="author" content="吴华锦" />
   <title>Solidity文档 « 吴华锦</title>
   <meta name="description" content="Solidity面向合约、为实现智能合约而创建的高级编程语言。受到了 C++，Python 和 JavaScript 语言的影响，设计的目的是能在以太坊虚拟机（EVM）上运行。 Solidity 是静态类型语言，支持集成、库和复杂的用户定义类型等特性。 智能合约 关键字 pragma (编译指令)是告知编译器如何处理源代码的指令。Solidity 中的合约就是一组代码和数据，它们位于以太坊区块链的一个特定地址上。 所有的标识符（合约名、函数名和变量名）都只能使用 ASCII 字符集。UTF-8 编码的数据可以用字符串变量的形式存储。 数据类型 值类型 value type - 整数 枚举 布尔" />
@@ -19,8 +20,24 @@
   <meta name="twitter:title" content="Solidity文档" />
   <meta name="twitter:description" content="Solidity面向合约、为实现智能合约而创建的高级编程语言。受到了 C++，Python 和 JavaScript 语言的影响，设计的目的是能在以太坊虚拟机（EVM）上运行。 Solidity 是静态类型语言，支持集成、库和复杂的用户定义类型等特性。 智能合约 关键字 pragma (编译指令)是告知编译器如何处理源代码的指令。Solidity 中的合约就是一组代码和数据，它们位于以太坊区块链的一个特定地址上。 所有的标识符（合约名、函数名和变量名）都只能使用 ASCII 字符集。UTF-8 编码的数据可以用字符串变量的形式存储。 数据类型 值类型 value type - 整数 枚举 布尔" />
   <link rel="icon" href="/src/images/favicon.png" />
-  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <style>
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 8px;
+      z-index: 100;
+      padding: 8px 16px;
+      background: #007bff;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 14px;
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 8px;
+    }
+  </style>
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
   <link rel="stylesheet" href="/src/components/image-viewer/index.css" />
@@ -44,6 +61,8 @@
     "url": "https://wuhuajin.com/"
   },
   "datePublished": "2026-09-11",
+  "dateModified": "2026-09-11",
+  "articleSection": "Web3",
   "inLanguage": "zh-CN",
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -55,9 +74,10 @@
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
 <body data-reward="true">
+  <a href="#content" class="skip-link">跳到主内容</a>
   <div class="layout-container">
     <div class="nav-container"></div>
-    <div class="content-area">
+    <div class="content-area" id="content">
       <div id="markdown-content" class="markdown-content viewer" data-reward="true"><blockquote>
 <p><code>Solidity</code>面向合约、为实现智能合约而创建的高级编程语言。受到了 <code>C++</code>，<code>Python</code> 和 <code>JavaScript</code> 语言的影响，设计的目的是能在以太坊虚拟机（<code>EVM</code>）上运行。<br><code>Solidity</code> 是静态类型语言，支持集成、库和复杂的用户定义类型等特性。</p>
 </blockquote>

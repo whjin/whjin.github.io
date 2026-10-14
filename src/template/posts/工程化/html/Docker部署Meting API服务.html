@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#007bff" />
   <meta name="author" content="吴华锦" />
   <title>Docker部署Meting API服务 « 吴华锦</title>
   <meta name="description" content="Docker部署 1. 安装 Docker dnf 添加 docker-ce 阿里云源并安装，启停 2. 获取镜像 拉取 ghcr.io 官方镜像；拉不动则 git clone 后本地 docker build 3. 运行容器 -p 80:80，配置 METING_URL / METING_TOKEN 环境变量 4. 放行端口 阿里云安全组 + firewalld 放行 80 5. 验证 curl 访问 /api?server=netease&amp;type=search 第 1 步：安装 Docker（阿里云官方源） 第 2 步：获取镜像 拉取Github仓库代码本地构建 配置 Docker 镜像" />
@@ -19,8 +20,24 @@
   <meta name="twitter:title" content="Docker部署Meting API服务" />
   <meta name="twitter:description" content="Docker部署 1. 安装 Docker dnf 添加 docker-ce 阿里云源并安装，启停 2. 获取镜像 拉取 ghcr.io 官方镜像；拉不动则 git clone 后本地 docker build 3. 运行容器 -p 80:80，配置 METING_URL / METING_TOKEN 环境变量 4. 放行端口 阿里云安全组 + firewalld 放行 80 5. 验证 curl 访问 /api?server=netease&amp;type=search 第 1 步：安装 Docker（阿里云官方源） 第 2 步：获取镜像 拉取Github仓库代码本地构建 配置 Docker 镜像" />
   <link rel="icon" href="/src/images/favicon.png" />
-  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <style>
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 8px;
+      z-index: 100;
+      padding: 8px 16px;
+      background: #007bff;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 14px;
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 8px;
+    }
+  </style>
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
   <link rel="stylesheet" href="/src/components/image-viewer/index.css" />
@@ -44,6 +61,8 @@
     "url": "https://wuhuajin.com/"
   },
   "datePublished": "2026-09-26",
+  "dateModified": "2026-09-26",
+  "articleSection": "工程化",
   "inLanguage": "zh-CN",
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -55,9 +74,10 @@
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
 <body data-reward="true">
+  <a href="#content" class="skip-link">跳到主内容</a>
   <div class="layout-container">
     <div class="nav-container"></div>
-    <div class="content-area">
+    <div class="content-area" id="content">
       <div id="markdown-content" class="markdown-content viewer" data-reward="true"><h1>用 Docker 部署 Meting API：从阿里云到 HTTPS 域名的完整实操</h1>
 <blockquote>
 <p>部署一套自己的音乐接口服务，最省心、可复现的方式就是用 Docker 跑 <code>Meting API</code>。本文基于我在阿里云 ECS 上的真实踩坑经验，把从安装 Docker、拉取镜像、运行容器，到最后用 Nginx + 证书把 IP 升级成 HTTPS 域名的<strong>完整命令</strong>一次性给你，照着复制即可。</p>

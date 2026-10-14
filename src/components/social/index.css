@@ -105,6 +105,21 @@
   cursor: pointer;
 }
 
+/* 二维码项：图片 + 下方文字标签 */
+.qr-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.qr-label {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.2;
+  text-align: center;
+}
+
 .fullscreen-modal-overlay {
   position: fixed;
   top: 0;

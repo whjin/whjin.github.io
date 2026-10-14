@@ -1,9 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#007bff" />
   <title>About - Wu Huajin's Personal Website</title>
   <meta name="description"
         content="About Wu Huajin: front-end engineer, technical blogger, indie developer. About this website and how to reach me." />
@@ -22,13 +23,28 @@
         content="About Wu Huajin: front-end engineer, technical blogger, indie developer. About this website and how to reach me." />
   <meta name="twitter:image" content="https://wuhuajin.com/src/images/favicon.png" />
   <link rel="icon" href="src/images/favicon.png" />
-  <link rel="stylesheet" href="src/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="src/css/font-awesome.min.css" />
   <link rel="stylesheet" href="src/components/render/index.css" />
   <link rel="stylesheet" href="src/components/loading/index.css" />
   <link rel="stylesheet" href="src/components/navigation/index.css" />
   <link rel="stylesheet" href="src/components/banner/index.css" />
   <style>
+    /* Skip Link：键盘用户跳过导航直达主内容 */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 8px;
+      z-index: 100;
+      padding: 8px 16px;
+      background: #007bff;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 14px;
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 8px;
+    }
     a {
       color: #007bff;
     }
@@ -193,9 +209,10 @@
 </head>
 
 <body>
+  <a href="#content" class="skip-link">跳到主内容</a>
   <div class="layout-container">
     <div class="nav-container"></div>
-    <div class="content-area">
+    <div class="content-area" id="content">
       <div class="compliance-wrap">
         <div class="page-head">
           <h1>About Me / 关于我</h1>

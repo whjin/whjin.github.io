@@ -1,19 +1,22 @@
 function handler(targetId, filePath, callback) {
-  marked.use(
-    markedHighlight.markedHighlight({
-      langPrefix: 'hljs language-',
-      highlight(code, lang) {
-        if (lang && hljs.getLanguage(lang)) {
-          try {
-            return hljs.highlight(code, { language: lang }).value;
-          } catch (error) {
-            console.error(`高亮${lang}代码失败`, error);
+  // 只有 hljs 存在时才注册代码高亮（首页不加载 highlight.min.js）
+  if (typeof hljs !== 'undefined' && typeof markedHighlight !== 'undefined') {
+    marked.use(
+      markedHighlight.markedHighlight({
+        langPrefix: 'hljs language-',
+        highlight(code, lang) {
+          if (lang && hljs.getLanguage(lang)) {
+            try {
+              return hljs.highlight(code, { language: lang }).value;
+            } catch (error) {
+              console.error(`高亮${lang}代码失败`, error);
+            }
           }
-        }
-        return hljs.highlightAuto(code).value;
-      },
-    })
-  );
+          return hljs.highlightAuto(code).value;
+        },
+      })
+    );
+  }
 
   // 解析文章 YAML front matter（返回 front 对象）
   function parseFrontMatter(text) {

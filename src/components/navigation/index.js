@@ -16,7 +16,8 @@ function handleNavigation() {
   if (!navContainer) return;
 
   let isMobileDevice = isMobile();
-  const fragment = document.createDocumentFragment();
+  const inner = document.createElement('div');
+  inner.className = 'nav-inner';
 
   navImgs.forEach((img, index) => {
     const imgEl = document.createElement('img');
@@ -26,14 +27,23 @@ function handleNavigation() {
     if (index === 0) {
       imgEl.classList.add(isMobileDevice ? 'hide' : 'hidden');
     }
-    fragment.appendChild(imgEl);
+    inner.appendChild(imgEl);
   });
-  navContainer.appendChild(fragment);
+  navContainer.appendChild(inner);
 
   const navToc = document.querySelector('.nav-toc');
   const navBack = document.querySelector('.nav-back');
   const sidebarArea = document.querySelector('.sidebar-area');
   const { pathname, search } = handleDecodeURI();
+
+  // 只有文章页（有 markdown 渲染容器且不是 format=html 镜像页）才显示目录切换图标和侧边栏
+  const isFormatHtmlPage = search.includes('&format=html');
+  const hasArticleContent = document.querySelector('.markdown-content') && !isFormatHtmlPage;
+  if (!hasArticleContent) {
+    navContainer.classList.add('no-toc');
+    if (navToc) navToc.remove();
+    if (sidebarArea) sidebarArea.style.display = 'none';
+  }
 
   function checkIsLinkPage() {
     if (document.querySelector('.link-container')) return true;

@@ -162,12 +162,20 @@
   }
 
   // 事件委托：点击正文（.markdown-content）内的图片即可全屏查看
+  // 排除：被 <a> 或 <button> 包裹的图片（这些是交互元素，有自己的点击行为，不触发全屏预览）
+  // 也排除：小尺寸图标（小于 64px），小图标全屏看没有意义
   document.addEventListener('click', function (e) {
     var t = e.target;
-    if (t && t.tagName === 'IMG' && t.closest('.markdown-content')) {
-      e.preventDefault();
-      open(t);
-    }
+    if (!t || t.tagName !== 'IMG') return;
+    if (!t.closest('.markdown-content')) return;
+    // 被链接或按钮包裹的图片 → 不预览
+    if (t.closest('a, button')) return;
+    // 小尺寸图标（宽或高小于 64px）→ 不预览
+    var w = t.naturalWidth || t.width || 0;
+    var h = t.naturalHeight || t.height || 0;
+    if (w < 64 || h < 64) return;
+    e.preventDefault();
+    open(t);
   });
 
   window.ImageViewer = { open: open, close: close };

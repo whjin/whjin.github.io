@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#007bff" />
   <meta name="author" content="吴华锦" />
   <title>Cesium文档 « 吴华锦</title>
   <meta name="description" content="Cesium 是一个用于构建三维地球与真实世界场景的开源地理空间引擎，可在浏览器中渲染高精度的地形、影像、矢量与三维模型，广泛应用于三维 GIS 可视化与数字孪生。本文档介绍 Cesium 的基础用法，包括场景与视口的初始化、地图底图与图层数据的加载、相机视角的控制、实体与图形的绘制、地形与影像服务的接入，以及性能优化与常见问题的排查。面向需要在 Web 端实现三维地球、智慧城市或空间展示应用的开发者，从入门到工程落地给出可复用的配置与代码思路，帮助快速掌握三维地理空间应用的开发方法与调试技巧。" />
@@ -19,8 +20,24 @@
   <meta name="twitter:title" content="Cesium文档" />
   <meta name="twitter:description" content="Cesium 是一个用于构建三维地球与真实世界场景的开源地理空间引擎，可在浏览器中渲染高精度的地形、影像、矢量与三维模型，广泛应用于三维 GIS 可视化与数字孪生。本文档介绍 Cesium 的基础用法，包括场景与视口的初始化、地图底图与图层数据的加载、相机视角的控制、实体与图形的绘制、地形与影像服务的接入，以及性能优化与常见问题的排查。面向需要在 Web 端实现三维地球、智慧城市或空间展示应用的开发者，从入门到工程落地给出可复用的配置与代码思路，帮助快速掌握三维地理空间应用的开发方法与调试技巧。" />
   <link rel="icon" href="/src/images/favicon.png" />
-  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <style>
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 8px;
+      z-index: 100;
+      padding: 8px 16px;
+      background: #007bff;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 14px;
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 8px;
+    }
+  </style>
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
   <link rel="stylesheet" href="/src/components/image-viewer/index.css" />
@@ -44,6 +61,8 @@
     "url": "https://wuhuajin.com/"
   },
   "datePublished": "2026-05-05",
+  "dateModified": "2026-05-05",
+  "articleSection": "GIS",
   "inLanguage": "zh-CN",
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -55,9 +74,10 @@
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
 <body data-reward="true">
+  <a href="#content" class="skip-link">跳到主内容</a>
   <div class="layout-container">
     <div class="nav-container"></div>
-    <div class="content-area">
+    <div class="content-area" id="content">
       <div id="markdown-content" class="markdown-content viewer" data-reward="true"><h1>Cesium 三维地球引擎实战指南</h1>
 <h2>什么是 Cesium</h2>
 <p>Cesium 是一个基于 WebGL 的开源三维地球与地图引擎，能够在浏览器中直接渲染高精度的三维地球、地形、影像、矢量数据和三维模型。它被广泛用于智慧城市、数字孪生、航天可视化、安防应急、能源管网等行业场景。</p>

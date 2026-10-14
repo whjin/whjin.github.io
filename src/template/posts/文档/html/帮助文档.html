@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#007bff" />
   <meta name="author" content="吴华锦" />
   <title>帮助文档 « 吴华锦</title>
   <meta name="description" content="Prettier 注释指令对 Markdown 选定内容不格式化 1. 忽略单个代码块 在代码块前一行添加 注释 2. 忽略多行/整个区域 使用 和 包裹需要忽略的内容 3. 忽略整个 Markdown 文件 在项目根目录创建 .prettierignore 文件，并添加 .md 忽略代码块内的特定语言 只想禁用代码块内某一种语言的格式化，保留其他语言的格式化，可以在 .prettierrc 配置文件中添加： 个人介绍 生于1989年，广东省英德市人，现住在广州市。2013年毕业于深圳大学，专业电子信息工程。曾在深圳和广州工作，任职前端开发工程师岗位。技术栈包括Vue、React、Node.j" />
@@ -19,8 +20,24 @@
   <meta name="twitter:title" content="帮助文档" />
   <meta name="twitter:description" content="Prettier 注释指令对 Markdown 选定内容不格式化 1. 忽略单个代码块 在代码块前一行添加 注释 2. 忽略多行/整个区域 使用 和 包裹需要忽略的内容 3. 忽略整个 Markdown 文件 在项目根目录创建 .prettierignore 文件，并添加 .md 忽略代码块内的特定语言 只想禁用代码块内某一种语言的格式化，保留其他语言的格式化，可以在 .prettierrc 配置文件中添加： 个人介绍 生于1989年，广东省英德市人，现住在广州市。2013年毕业于深圳大学，专业电子信息工程。曾在深圳和广州工作，任职前端开发工程师岗位。技术栈包括Vue、React、Node.j" />
   <link rel="icon" href="/src/images/favicon.png" />
-  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <style>
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 8px;
+      z-index: 100;
+      padding: 8px 16px;
+      background: #007bff;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 14px;
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 8px;
+    }
+  </style>
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
   <link rel="stylesheet" href="/src/components/image-viewer/index.css" />
@@ -44,6 +61,8 @@
     "url": "https://wuhuajin.com/"
   },
   "datePublished": "2026-09-11",
+  "dateModified": "2026-09-11",
+  "articleSection": "文档",
   "inLanguage": "zh-CN",
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -55,9 +74,10 @@
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
 <body data-reward="true">
+  <a href="#content" class="skip-link">跳到主内容</a>
   <div class="layout-container">
     <div class="nav-container"></div>
-    <div class="content-area">
+    <div class="content-area" id="content">
       <div id="markdown-content" class="markdown-content viewer" data-reward="true"><h3><code>Prettier</code> 注释指令对 <code>Markdown</code> 选定内容不格式化</h3>
 <ol>
 <li><strong>忽略单个代码块</strong>

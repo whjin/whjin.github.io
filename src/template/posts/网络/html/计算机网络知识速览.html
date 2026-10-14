@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#007bff" />
   <meta name="author" content="吴华锦" />
   <title>计算机网络知识速览 « 吴华锦</title>
   <meta name="description" content="本篇文章系统梳理计算机网络的必备基础知识，适合前后端开发者日常快速查阅。文章首先介绍 HTTP 响应常见状态码，按 1xx 至 5xx 分类讲解各段含义，并重点解析 200、302、304、403、404、500 等高频状态码的使用场景。随后详细讲解 TCP 三次握手建立连接与四次挥手释放连接的完整过程，理解连接建立与关闭每一步的报文交换。接着展开计算机网络体系结构，从应用层、运输层、网络层、数据链路层到物理层，逐层说明各层职责与代表协议，并梳理 TCP 与 UDP 两大传输协议的差异，以及 TCP/IP 七层体系结构的协作关系。最后对比 HTTP 与 HTTPS 的区别，了解明文传输与加密传输的本质差异。全文以表格和图解呈现、即查即用，是理解网络原理与排查网络问题的实用参考。" />
@@ -19,8 +20,24 @@
   <meta name="twitter:title" content="计算机网络知识速览" />
   <meta name="twitter:description" content="本篇文章系统梳理计算机网络的必备基础知识，适合前后端开发者日常快速查阅。文章首先介绍 HTTP 响应常见状态码，按 1xx 至 5xx 分类讲解各段含义，并重点解析 200、302、304、403、404、500 等高频状态码的使用场景。随后详细讲解 TCP 三次握手建立连接与四次挥手释放连接的完整过程，理解连接建立与关闭每一步的报文交换。接着展开计算机网络体系结构，从应用层、运输层、网络层、数据链路层到物理层，逐层说明各层职责与代表协议，并梳理 TCP 与 UDP 两大传输协议的差异，以及 TCP/IP 七层体系结构的协作关系。最后对比 HTTP 与 HTTPS 的区别，了解明文传输与加密传输的本质差异。全文以表格和图解呈现、即查即用，是理解网络原理与排查网络问题的实用参考。" />
   <link rel="icon" href="/src/images/favicon.png" />
-  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <style>
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 8px;
+      z-index: 100;
+      padding: 8px 16px;
+      background: #007bff;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 14px;
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 8px;
+    }
+  </style>
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
   <link rel="stylesheet" href="/src/components/image-viewer/index.css" />
@@ -44,6 +61,8 @@
     "url": "https://wuhuajin.com/"
   },
   "datePublished": "2026-10-12 16:28:59",
+  "dateModified": "2026-10-12 16:28:59",
+  "articleSection": "网络",
   "inLanguage": "zh-CN",
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -55,9 +74,10 @@
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
 <body data-reward="true">
+  <a href="#content" class="skip-link">跳到主内容</a>
   <div class="layout-container">
     <div class="nav-container"></div>
-    <div class="content-area">
+    <div class="content-area" id="content">
       <div id="markdown-content" class="markdown-content viewer" data-reward="true"><h1><code>HTTP</code>响应常见状态码</h1>
 <!-- prettier-ignore-start -->
 <table>

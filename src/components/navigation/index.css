@@ -5,13 +5,10 @@
   width: 50px;
   height: 50px;
   box-sizing: border-box;
-  text-align: center;
-  line-height: 50px;
   border-radius: 0 0 0 100%;
   background-color: #007bff;
   cursor: pointer;
   color: #fff;
-  font-size: 1em;
   z-index: 9;
   margin: 0;
   padding: 0;
@@ -21,33 +18,43 @@
 .nav-container:hover {
   width: 80px;
   height: 50px;
-  line-height: 50px;
-  text-align: center;
   border-radius: 0 0 0 4px;
+}
+
+.nav-container.no-toc:hover {
+  width: 50px;
+  padding: 0;
+  border-radius: 0 0 0 100%;
+}
+
+/* 内层容器：默认适配弧形区域偏右上 */
+.nav-inner {
+  position: absolute;
+  top: 40%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  gap: 5px;
+}
+
+/* hover 且有两个图标时，整体在蓝色区域内水平垂直居中 */
+.nav-container:not(.no-toc):hover .nav-inner {
+  top: 50%;
+  left: 50%;
 }
 
 .nav-container .hidden {
   display: none;
 }
-.hide-toc:hover {
-  width: 50px;
-  border-radius: 0 0 0 100%;
-}
-.nav-toc {
-  margin-right: 6px;
-}
-.hide-toc .nav-toc {
-  display: none;
-}
 
-.hide-toc .nav-back,
-.hidden ~ .nav-back {
-  margin: 0 0 10px 10px;
-}
-
-.nav-container img {
+.nav-inner img {
   width: 30px;
   height: 30px;
+  display: block;
+  flex-shrink: 0;
 }
 
 .nav-toc.hide {
@@ -58,14 +65,11 @@
   .nav-container,
   .nav-container:hover {
     width: 50px;
+    padding: 0;
     border-radius: 0 0 0 100%;
   }
 
   .nav-toc {
     display: none;
-  }
-
-  .nav-back {
-    margin: 0 0 10px 10px;
   }
 }

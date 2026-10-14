@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#007bff" />
   <meta name="author" content="吴华锦" />
   <title>Web3文档 « 吴华锦</title>
   <meta name="description" content="技术路线 React + TypeScript + Viem + Wagmi + Foundry + Scaffold-ETH2 (2026年行业标准栈) 合约开发 1. 数据类型中拷贝方法判定 2. 合约上下文变量 3. ABI数据、接口与函数调用的底层逻辑 4. 函数调用机制中的过滤器链条模型 5. 委托调用与代理模式 6. 线性化、super关键字与虚函数覆盖 实战项目 1. 应用合约开发中 openzeppelin合约库 2. 钱包与应用的状态管理 3. 通过访问合约构建 DAPP业务逻辑 4. 使用 web3基础设施，特别是去中心化存储支持功能开发 5. 与生态的关系处理 6. 基本" />
@@ -19,8 +20,24 @@
   <meta name="twitter:title" content="Web3文档" />
   <meta name="twitter:description" content="技术路线 React + TypeScript + Viem + Wagmi + Foundry + Scaffold-ETH2 (2026年行业标准栈) 合约开发 1. 数据类型中拷贝方法判定 2. 合约上下文变量 3. ABI数据、接口与函数调用的底层逻辑 4. 函数调用机制中的过滤器链条模型 5. 委托调用与代理模式 6. 线性化、super关键字与虚函数覆盖 实战项目 1. 应用合约开发中 openzeppelin合约库 2. 钱包与应用的状态管理 3. 通过访问合约构建 DAPP业务逻辑 4. 使用 web3基础设施，特别是去中心化存储支持功能开发 5. 与生态的关系处理 6. 基本" />
   <link rel="icon" href="/src/images/favicon.png" />
-  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <style>
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 8px;
+      z-index: 100;
+      padding: 8px 16px;
+      background: #007bff;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 14px;
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 8px;
+    }
+  </style>
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
   <link rel="stylesheet" href="/src/components/image-viewer/index.css" />
@@ -44,6 +61,8 @@
     "url": "https://wuhuajin.com/"
   },
   "datePublished": "2026-09-11",
+  "dateModified": "2026-09-11",
+  "articleSection": "Web3",
   "inLanguage": "zh-CN",
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -55,9 +74,10 @@
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
 <body data-reward="true">
+  <a href="#content" class="skip-link">跳到主内容</a>
   <div class="layout-container">
     <div class="nav-container"></div>
-    <div class="content-area">
+    <div class="content-area" id="content">
       <div id="markdown-content" class="markdown-content viewer" data-reward="true"><h2>技术路线</h2>
 <blockquote>
 <p><code>React + TypeScript + Viem + Wagmi + Foundry + Scaffold-ETH2</code> (<code>2026</code>年行业标准栈)</p>

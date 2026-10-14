@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#007bff" />
   <meta name="author" content="吴华锦" />
   <title>AI项目文档 « 吴华锦</title>
   <meta name="description" content="Next.js 是 React 生态最流行的服务端渲染框架。它把 React 项目需要自己配的 Webpack、路由、代码拆分、服务端渲染全部内置了。这篇文章快速过一遍它的核心特性。 一、零配置 开箱即用：自动编译、打包、热更新，不需要写 Webpack 配置。TypeScript、CSS、Sass、图片优化全部内置支持。 二、三种渲染模式 Next.js 最大的优势是在一个项目里同时支持三种渲染： 模式 全称 什么时候渲染 适用场景 SSG Static Site Generation 构建时预渲染成静态 HTML 博客、文档、营销页 SSR Server-Side Rendering 每次" />
@@ -19,8 +20,24 @@
   <meta name="twitter:title" content="AI项目文档" />
   <meta name="twitter:description" content="Next.js 是 React 生态最流行的服务端渲染框架。它把 React 项目需要自己配的 Webpack、路由、代码拆分、服务端渲染全部内置了。这篇文章快速过一遍它的核心特性。 一、零配置 开箱即用：自动编译、打包、热更新，不需要写 Webpack 配置。TypeScript、CSS、Sass、图片优化全部内置支持。 二、三种渲染模式 Next.js 最大的优势是在一个项目里同时支持三种渲染： 模式 全称 什么时候渲染 适用场景 SSG Static Site Generation 构建时预渲染成静态 HTML 博客、文档、营销页 SSR Server-Side Rendering 每次" />
   <link rel="icon" href="/src/images/favicon.png" />
-  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <style>
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 8px;
+      z-index: 100;
+      padding: 8px 16px;
+      background: #007bff;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 14px;
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 8px;
+    }
+  </style>
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
   <link rel="stylesheet" href="/src/components/image-viewer/index.css" />
@@ -44,6 +61,8 @@
     "url": "https://wuhuajin.com/"
   },
   "datePublished": "2026-09-11",
+  "dateModified": "2026-09-11",
+  "articleSection": "AI",
   "inLanguage": "zh-CN",
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -55,9 +74,10 @@
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
 <body data-reward="true">
+  <a href="#content" class="skip-link">跳到主内容</a>
   <div class="layout-container">
     <div class="nav-container"></div>
-    <div class="content-area">
+    <div class="content-area" id="content">
       <div id="markdown-content" class="markdown-content viewer" data-reward="true"><p>Next.js 是 React 生态最流行的服务端渲染框架。它把 React 项目需要自己配的 Webpack、路由、代码拆分、服务端渲染全部内置了。这篇文章快速过一遍它的核心特性。</p>
 <h2>一、零配置</h2>
 <p>开箱即用：自动编译、打包、热更新，不需要写 Webpack 配置。TypeScript、CSS、Sass、图片优化全部内置支持。</p>

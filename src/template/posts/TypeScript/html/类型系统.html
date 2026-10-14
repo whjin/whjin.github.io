@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#007bff" />
   <meta name="author" content="吴华锦" />
   <title>类型系统 « 吴华锦</title>
   <meta name="description" content="概要 summary - 类型安全：强类型 弱类型 - 类型检查：静态类型 动态类型 - 标准库：内置对象对应的声明 类型 type - 类型注解 let a:string = &#39;hello&#39; 类型推断 - 联合类型 let a:string number = &#39;hello&#39; 类型之间进行 或 操作 - 交叉类型 类型之间进行 与 操作 - never类型 永不存在值的类型 - any类型 任意类型 不进行检测 - unknown类型 any类型对应的安全类型 默认会进行检测 - 类型断言 a as string - 非空断言 a!.length - 数组类型 - 类型 []：let a:(n" />
@@ -19,8 +20,24 @@
   <meta name="twitter:title" content="类型系统" />
   <meta name="twitter:description" content="概要 summary - 类型安全：强类型 弱类型 - 类型检查：静态类型 动态类型 - 标准库：内置对象对应的声明 类型 type - 类型注解 let a:string = &#39;hello&#39; 类型推断 - 联合类型 let a:string number = &#39;hello&#39; 类型之间进行 或 操作 - 交叉类型 类型之间进行 与 操作 - never类型 永不存在值的类型 - any类型 任意类型 不进行检测 - unknown类型 any类型对应的安全类型 默认会进行检测 - 类型断言 a as string - 非空断言 a!.length - 数组类型 - 类型 []：let a:(n" />
   <link rel="icon" href="/src/images/favicon.png" />
-  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <style>
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 8px;
+      z-index: 100;
+      padding: 8px 16px;
+      background: #007bff;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 14px;
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 8px;
+    }
+  </style>
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
   <link rel="stylesheet" href="/src/components/image-viewer/index.css" />
@@ -44,6 +61,8 @@
     "url": "https://wuhuajin.com/"
   },
   "datePublished": "2026-09-11",
+  "dateModified": "2026-09-11",
+  "articleSection": "TypeScript",
   "inLanguage": "zh-CN",
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -55,9 +74,10 @@
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
 <body data-reward="true">
+  <a href="#content" class="skip-link">跳到主内容</a>
   <div class="layout-container">
     <div class="nav-container"></div>
-    <div class="content-area">
+    <div class="content-area" id="content">
       <div id="markdown-content" class="markdown-content viewer" data-reward="true"><h2>概要 <code>summary</code></h2>
 <ul>
 <li>类型安全：强类型 弱类型</li>

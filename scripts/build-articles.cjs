@@ -60,6 +60,8 @@ function buildPage(it) {
     author: { '@type': 'Person', 'name': '吴华锦', 'url': SITE + '/' },
     publisher: { '@type': 'Person', 'name': '吴华锦', 'url': SITE + '/' },
     datePublished: date,
+    dateModified: date,
+    articleSection: folder,
     inLanguage: 'zh-CN',
     mainEntityOfPage: { '@type': 'WebPage', '@id': url }
   };
@@ -69,6 +71,7 @@ function buildPage(it) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#007bff" />
   <meta name="author" content="吴华锦" />
   <title>${escHtml(title)} « 吴华锦</title>
   <meta name="description" content="${escHtml(desc)}" />
@@ -85,8 +88,24 @@ function buildPage(it) {
   <meta name="twitter:title" content="${escHtml(title)}" />
   <meta name="twitter:description" content="${escHtml(desc)}" />
   <link rel="icon" href="/src/images/favicon.png" />
-  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <style>
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 8px;
+      z-index: 100;
+      padding: 8px 16px;
+      background: #007bff;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 14px;
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 8px;
+    }
+  </style>
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
   <link rel="stylesheet" href="/src/components/image-viewer/index.css" />
@@ -100,9 +119,10 @@ function buildPage(it) {
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
 <body data-reward="${rewardOn ? 'true' : 'false'}">
+  <a href="#content" class="skip-link">跳到主内容</a>
   <div class="layout-container">
     <div class="nav-container"></div>
-    <div class="content-area">
+    <div class="content-area" id="content">
       <div id="markdown-content" class="markdown-content viewer" data-reward="${rewardOn ? 'true' : 'false'}">${bodyHtml}</div>
       <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
       <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"

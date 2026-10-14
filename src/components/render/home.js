@@ -2,8 +2,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
   loadMarkdown('markdown-content', 'home.html')
     .then(() => {
       if (window.HomeFeed && window.HomeFeed.init) window.HomeFeed.init();
+      if (window.HomeFeed && window.HomeFeed.init) window.HomeFeed.init();
       if (window.HomeSidebar && window.HomeSidebar.init) window.HomeSidebar.init();
-      if (typeof generateAPlayer === 'function') generateAPlayer();
       // 触发 in-article 广告单元填充
       try {
         if (document.querySelector('.home-ad-in-article .adsbygoogle')) {

@@ -41,10 +41,13 @@
     const el = isToggle ? document.createElement('button') : document.createElement('a');
     const imgEl = document.createElement('img');
     el.className = `icon-${icon.name}`;
+    el.setAttribute('aria-label', icon.title); // 屏幕阅读器读按钮标签
     imgEl.src = `src/images/icons/${icon.name}.png`;
-    imgEl.alt = icon.title;
+    imgEl.alt = ''; // 装饰性图标，空 alt 避免重复读
+    imgEl.setAttribute('aria-hidden', 'true');
     imgEl.className = `img-${icon.name}`;
     imgEl.width = imgEl.height = icon.icon;
+    imgEl.loading = 'lazy'; // 统一懒加载，侧边栏/非首屏图标按需加载
     el.title = icon.title;
     if (isToggle) {
       el.type = 'button';
@@ -102,6 +105,7 @@
 
     playerConfigs.forEach(({ selector, pause }) => {
       const playerEl = document.querySelector(selector);
+      if (!playerEl) return; // 播放器未加载时跳过（懒加载）
       if (selector === activeSelector) {
         playerEl.classList.toggle('show');
         isActiveShow = playerEl.classList.contains('show');
@@ -161,11 +165,17 @@
   const overlayEl = document.createElement('div');
   overlayEl.className = 'modal-overlay';
   overlayEl.setAttribute('id', 'wechat-modal');
+  overlayEl.setAttribute('role', 'dialog');
+  overlayEl.setAttribute('aria-modal', 'true');
+  overlayEl.setAttribute('aria-label', '微信二维码');
   const containerEl = document.createElement('div');
   containerEl.className = 'modal-container';
   overlayEl.appendChild(containerEl);
   const fullscreenOverlayEl = document.createElement('div');
   fullscreenOverlayEl.className = 'fullscreen-modal-overlay';
+  fullscreenOverlayEl.setAttribute('role', 'dialog');
+  fullscreenOverlayEl.setAttribute('aria-modal', 'true');
+  fullscreenOverlayEl.setAttribute('aria-label', '二维码大图预览');
   const fullscreenImgEl = document.createElement('img');
   fullscreenImgEl.className = 'fullscreen-modal-img';
   fullscreenOverlayEl.appendChild(fullscreenImgEl);
@@ -176,11 +186,24 @@
     containerEl.innerHTML = '';
     const fragment1 = document.createDocumentFragment();
     list.forEach((q) => {
+      // 每个二维码用容器包裹，图片下方加文字标签
+      const itemEl = document.createElement('div');
+      itemEl.className = 'qr-item';
+
       const imgEl = document.createElement('img');
       imgEl.src = q.src;
       imgEl.alt = imgEl.title = q.title;
-      fragment1.appendChild(imgEl);
-      imgEl.addEventListener('click', (e) => {
+      imgEl.loading = 'lazy';
+
+      const labelEl = document.createElement('span');
+      labelEl.className = 'qr-label';
+      labelEl.textContent = q.title;
+
+      itemEl.appendChild(imgEl);
+      itemEl.appendChild(labelEl);
+      fragment1.appendChild(itemEl);
+
+      itemEl.addEventListener('click', (e) => {
         e.stopPropagation();
         fullscreenImgEl.src = q.src;
         fullscreenImgEl.alt = fullscreenImgEl.title = q.title;
@@ -233,6 +256,8 @@
     }
   });
   fullscreenOverlayEl.addEventListener('click', (e) => {
+    // 阻止冒泡到 document，避免关闭全屏时连带关闭下面的小弹窗
+    e.stopPropagation();
     if (e.target === fullscreenOverlayEl) {
       fullscreenOverlayEl.classList.remove('show');
       document.body.style.overflow = '';
@@ -252,18 +277,18 @@
       GRID_ICONS.forEach((s) => {
         const a = makeIcon(s);
         a.addEventListener('click', (ev) => {
-          if (s.name === 'music') {
+          if (s.name === 'music' || s.name === 'qqmusic' || s.name === 'netmusic') {
             ev.preventDefault();
             ev.stopPropagation();
-            togglePlayer('.aplayer-container');
-          } else if (s.name === 'qqmusic') {
-            ev.preventDefault();
-            ev.stopPropagation();
-            togglePlayer('.qqmusic-container');
-          } else if (s.name === 'netmusic') {
-            ev.preventDefault();
-            ev.stopPropagation();
-            togglePlayer('.netmusic-container');
+            var selectorMap = { music: '.aplayer-container', qqmusic: '.qqmusic-container', netmusic: '.netmusic-container' };
+            // 如果播放器还没加载，先触发懒加载按钮
+            const toggleBtn = document.getElementById('music-toggle');
+            if (toggleBtn) {
+              window.__pendingPlayer = selectorMap[s.name];
+              toggleBtn.click();
+            }
+            // 播放器可能已加载，直接 toggle
+            togglePlayer(selectorMap[s.name]);
           } else if (s.name === 'wechat') {
             ev.preventDefault();
             ev.stopPropagation();

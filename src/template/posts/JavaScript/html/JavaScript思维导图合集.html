@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#007bff" />
   <meta name="author" content="吴华锦" />
   <title>JavaScript思维导图合集 « 吴华锦</title>
   <meta name="description" content="这里整理了 JavaScript 入门阶段最核心的 8 个知识点思维导图。每张图覆盖一个主题，图下附文字要点，方便快速回顾。 1. 变量 要点： - 声明方式：var（函数作用域）、let（块级）、const（常量） - 数据类型：原始类型（number、string、boolean、null、undefined、symbol、bigint）和引用类型（object、array、function） - 类型转换：隐式转换（==、+ 运算）和显式转换（Number()、String()、Boolean()） - 作用域：全局、函数、块级；作用域链查找规则 2. 运算符 要点： - 算术运算符：+" />
@@ -19,8 +20,24 @@
   <meta name="twitter:title" content="JavaScript思维导图合集" />
   <meta name="twitter:description" content="这里整理了 JavaScript 入门阶段最核心的 8 个知识点思维导图。每张图覆盖一个主题，图下附文字要点，方便快速回顾。 1. 变量 要点： - 声明方式：var（函数作用域）、let（块级）、const（常量） - 数据类型：原始类型（number、string、boolean、null、undefined、symbol、bigint）和引用类型（object、array、function） - 类型转换：隐式转换（==、+ 运算）和显式转换（Number()、String()、Boolean()） - 作用域：全局、函数、块级；作用域链查找规则 2. 运算符 要点： - 算术运算符：+" />
   <link rel="icon" href="/src/images/favicon.png" />
-  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <style>
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 8px;
+      z-index: 100;
+      padding: 8px 16px;
+      background: #007bff;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 14px;
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 8px;
+    }
+  </style>
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
   <link rel="stylesheet" href="/src/components/image-viewer/index.css" />
@@ -44,6 +61,8 @@
     "url": "https://wuhuajin.com/"
   },
   "datePublished": "2026-10-12 01:27:12",
+  "dateModified": "2026-10-12 01:27:12",
+  "articleSection": "JavaScript",
   "inLanguage": "zh-CN",
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -55,9 +74,10 @@
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
 <body data-reward="true">
+  <a href="#content" class="skip-link">跳到主内容</a>
   <div class="layout-container">
     <div class="nav-container"></div>
-    <div class="content-area">
+    <div class="content-area" id="content">
       <div id="markdown-content" class="markdown-content viewer" data-reward="true"><p>这里整理了 JavaScript 入门阶段最核心的 8 个知识点思维导图。每张图覆盖一个主题，图下附文字要点，方便快速回顾。</p>
 <h2>1. 变量</h2>
 <p><strong>要点</strong>：</p>

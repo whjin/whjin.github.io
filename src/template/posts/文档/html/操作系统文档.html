@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#007bff" />
   <meta name="author" content="吴华锦" />
   <title>操作系统文档 « 吴华锦</title>
   <meta name="description" content="操作系统跨进程通信（IPC） 进程与线程基础 在深入 IPC 之前，先厘清两个基础概念： - 进程：操作系统资源分配的基本单位，拥有独立的地址空间、文件描述符与资源。进程间默认是相互隔离的，一个进程无法直接访问另一个进程的内存。 - 线程：进程内部执行任务的基本单位，同一进程内的线程共享地址空间与资源，可以通过共享内存直接通信。 正是因为进程之间地址空间相互隔离，才需要一套\&quot;跨进程通信\&quot;的机制（IPC，Inter-Process Communication）来完成数据交换与协作。 为什么需要 IPC 在实际系统中，多个进程协作的场景非常普遍： - 后端服务拆分后，各进程需要传递任务与结果。 -" />
@@ -19,8 +20,24 @@
   <meta name="twitter:title" content="操作系统文档" />
   <meta name="twitter:description" content="操作系统跨进程通信（IPC） 进程与线程基础 在深入 IPC 之前，先厘清两个基础概念： - 进程：操作系统资源分配的基本单位，拥有独立的地址空间、文件描述符与资源。进程间默认是相互隔离的，一个进程无法直接访问另一个进程的内存。 - 线程：进程内部执行任务的基本单位，同一进程内的线程共享地址空间与资源，可以通过共享内存直接通信。 正是因为进程之间地址空间相互隔离，才需要一套\&quot;跨进程通信\&quot;的机制（IPC，Inter-Process Communication）来完成数据交换与协作。 为什么需要 IPC 在实际系统中，多个进程协作的场景非常普遍： - 后端服务拆分后，各进程需要传递任务与结果。 -" />
   <link rel="icon" href="/src/images/favicon.png" />
-  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <style>
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 8px;
+      z-index: 100;
+      padding: 8px 16px;
+      background: #007bff;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 14px;
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 8px;
+    }
+  </style>
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
   <link rel="stylesheet" href="/src/components/image-viewer/index.css" />
@@ -44,6 +61,8 @@
     "url": "https://wuhuajin.com/"
   },
   "datePublished": "2026-09-11",
+  "dateModified": "2026-09-11",
+  "articleSection": "文档",
   "inLanguage": "zh-CN",
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -55,9 +74,10 @@
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
 <body data-reward="true">
+  <a href="#content" class="skip-link">跳到主内容</a>
   <div class="layout-container">
     <div class="nav-container"></div>
-    <div class="content-area">
+    <div class="content-area" id="content">
       <div id="markdown-content" class="markdown-content viewer" data-reward="true"><h1>操作系统跨进程通信（IPC）</h1>
 <h2>进程与线程基础</h2>
 <p>在深入 IPC 之前，先厘清两个基础概念：</p>

@@ -16,8 +16,9 @@
 }
 
 .footer-links {
+  margin: 0;
   font-size: 12px;
-  line-height: 2;
+  line-height: 1.6;
   color: #666;
 }
 
@@ -37,7 +38,9 @@
 }
 
 .footer-content {
+  margin: 0;
   cursor: pointer;
+  line-height: 1.5;
 }
 
 .footer-content .count {

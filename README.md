@@ -87,6 +87,44 @@
 65. 全项目标签优化：清理与标题完全重复的冗余 tag（如 `Webpack原理详解` 文章 tag 中的同名项），保留合理通用标签。
 66. 侧边栏广告位卡支持自定义广告：`src/components/sidebar/data.json` 的 Advertisement 卡（`type:ads`）配置 `items`（image/title/desc/url）即渲染为「图片+标题+描述」广告卡，未配置时回退 AdSense / 占位；已配置 PixTV 广告。
 
+# 性能 / 可访问性 / SEO 系统性优化（2026-10-14）
+
+67. **性能优化（9 项）**：
+    - 第三方域名 preconnect 预连接（Google Analytics、AdSense、GoatCounter、Cloudflare 等 5 个域名）
+    - 社交图标与二维码图片懒加载（`loading="lazy"`）
+    - 首页静态文章列表 HTML 瘦身（前 15 篇保留完整描述，后 38 篇省略，57KB → 34KB，减少 40%）
+    - 非关键 CSS 异步加载（代码高亮、markdown 渲染、图片查看器 3 个 CSS 不阻塞渲染）
+    - 社交二维码图片压缩（576KB → 262KB，减少 55%，宽度 400px、质量 70%）
+    - 图片加 width/height 属性减少 CLS（布局偏移）
+    - 首屏 logo 加 `fetchpriority="high"` 优先加载
+    - JS 脚本全部加 `defer` 延迟加载（13 个 JS 文件不阻塞 HTML 解析）
+    - 删除不用的 `.vercelignore`（项目部署在 GitHub Pages，非 Vercel）
+
+68. **可访问性优化（4 项）**：
+    - HTML `lang` 从 `en` 改为 `zh-CN`（与中文内容一致，屏幕阅读器正确读中文）
+    - 添加 Skip to Content 链接（键盘用户按 Tab 跳过导航直达正文）
+    - 图标按钮加 `aria-label`（屏幕阅读器读出按钮用途）
+    - 二维码弹窗加 ARIA 对话框标签（role="dialog" + aria-modal）
+
+69. **SEO 优化（3 项）**：
+    - 首页添加视觉隐藏的 h1 标签（搜索引擎明确页面主题：技术博客）
+    - 完善 Open Graph 标签（`theme-color` 移动端地址栏配色 + `og:image:width/height` 尺寸信息）
+    - JSON-LD 结构化数据增加 `WebPage` 类型（页面描述更清晰）
+
+70. **全页面同步优化**：
+    - about / contact / reward / privacy / terms / 404 共 6 个子页面同步：`lang=zh-CN`、`theme-color`、Skip Link、`content id`
+    - 全部 53 篇文章详情页同步：`articleSection` 分类、`dateModified`、`theme-color`、Skip Link
+
+71. **404 页面优化**：
+    - 添加视觉隐藏 h1 标签
+    - 增加「返回上一页」按钮（`history.back()`）
+    - 完善 visually-hidden CSS 样式
+
+72. **项目审计清理**：
+    - 清理 macOS AppleDouble 元数据文件（17 个 `._` 开头文件）
+    - 删除不用的 `.vercelignore`
+    - 重新生成 `sitemap.xml`（54 条 URL 与实际页面一致）
+
 # 兼容处理部署脚本
 
 ```bash

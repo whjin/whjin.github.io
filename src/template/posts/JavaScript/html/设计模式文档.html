@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#007bff" />
   <meta name="author" content="吴华锦" />
   <title>设计模式文档 « 吴华锦</title>
   <meta name="description" content="设计模式不是八股文，而是前人总结的解决常见问题的最优方案。这篇文章用 JavaScript 实现最常用的设计模式，配代码示例和适用场景。 一、五大设计原则（SOLID） 原则 含义 单一职责（SRP） 一个类只做一件事 开放封闭（OCP） 对扩展开放，对修改封闭 里氏替换（LSP） 子类必须能替换父类 接口分离（ISP） 不依赖不需要的接口 依赖倒置（DIP） 依赖抽象，不依赖具体实现 二、工厂模式 通过参数决定创建哪个对象，不用直接 new。 适用场景：根据配置或用户选择创建不同类型的对象，如弹窗、按钮、支付方式。 三、单例模式 确保一个类只有一个实例。 适用场景：全局配置、数据库连接池、全" />
@@ -19,8 +20,24 @@
   <meta name="twitter:title" content="设计模式文档" />
   <meta name="twitter:description" content="设计模式不是八股文，而是前人总结的解决常见问题的最优方案。这篇文章用 JavaScript 实现最常用的设计模式，配代码示例和适用场景。 一、五大设计原则（SOLID） 原则 含义 单一职责（SRP） 一个类只做一件事 开放封闭（OCP） 对扩展开放，对修改封闭 里氏替换（LSP） 子类必须能替换父类 接口分离（ISP） 不依赖不需要的接口 依赖倒置（DIP） 依赖抽象，不依赖具体实现 二、工厂模式 通过参数决定创建哪个对象，不用直接 new。 适用场景：根据配置或用户选择创建不同类型的对象，如弹窗、按钮、支付方式。 三、单例模式 确保一个类只有一个实例。 适用场景：全局配置、数据库连接池、全" />
   <link rel="icon" href="/src/images/favicon.png" />
-  <link rel="stylesheet" href="/src/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/src/css/font-awesome.min.css" />
+  <style>
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 8px;
+      z-index: 100;
+      padding: 8px 16px;
+      background: #007bff;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 14px;
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 8px;
+    }
+  </style>
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
   <link rel="stylesheet" href="/src/components/image-viewer/index.css" />
@@ -44,6 +61,8 @@
     "url": "https://wuhuajin.com/"
   },
   "datePublished": "2026-09-11",
+  "dateModified": "2026-09-11",
+  "articleSection": "JavaScript",
   "inLanguage": "zh-CN",
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -55,9 +74,10 @@
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
 <body data-reward="true">
+  <a href="#content" class="skip-link">跳到主内容</a>
   <div class="layout-container">
     <div class="nav-container"></div>
-    <div class="content-area">
+    <div class="content-area" id="content">
       <div id="markdown-content" class="markdown-content viewer" data-reward="true"><p>设计模式不是八股文，而是前人总结的解决常见问题的最优方案。这篇文章用 JavaScript 实现最常用的设计模式，配代码示例和适用场景。</p>
 <h2>一、五大设计原则（SOLID）</h2>
 <table>

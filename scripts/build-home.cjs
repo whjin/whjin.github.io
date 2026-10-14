@@ -28,20 +28,28 @@ if (!articles.length) {
   process.exit(1);
 }
 
+// 前 RECENT_COUNT 篇保留完整描述（SEO 最新内容权重最高），
+// 后续文章只保留标题/日期/分类，减少首页 HTML 体积。
+const RECENT_COUNT = 15;
+
 const items = articles
-  .map((a) => {
+  .map((a, idx) => {
     const title = escHtml(a.title || '');
     const url = escHtml(a.url || '');
     const date = escHtml(a.date || '');
     const category = escHtml(a.category || '');
     const desc = escHtml(a.description || '');
-    return [
+    const lines = [
       '<article class="static-post">',
       '  <h3 class="static-post-title"><a href="' + url + '">' + title + '</a></h3>',
       '  <p class="static-post-meta"><time datetime="' + date + '">' + date + '</time> · ' + category + '</p>',
-      '  <p class="static-post-desc">' + desc + '</p>',
-      '</article>',
-    ].join('\n');
+    ];
+    // 仅前 N 篇输出描述段，老文章省略描述以减小首屏 HTML 体积
+    if (idx < RECENT_COUNT && desc) {
+      lines.push('  <p class="static-post-desc">' + desc + '</p>');
+    }
+    lines.push('</article>');
+    return lines.join('\n');
   })
   .join('\n');
 
