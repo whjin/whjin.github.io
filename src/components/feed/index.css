@@ -176,6 +176,7 @@ a.feed-card:hover {
   max-width: 280px;
   flex-shrink: 0;
   display: flex;
+  aspect-ratio: 16 / 9;
 }
 
 .feed-card.fc-has-cover .fc-cover img {
