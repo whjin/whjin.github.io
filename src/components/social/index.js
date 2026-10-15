@@ -133,16 +133,16 @@
     const className = targetA.className;
 
     if (className.includes('icon-search')) {
-      // 搜索：宽度足够时默认显示；宽度不足时点击图标展开搜索框
-      if (isNarrow()) {
+      // 搜索：如果社交图标正在显示，先收起社交图标，再显示搜索框；否则直接 focus
+      if (isNarrow() && socialEl.classList.contains('show')) {
+        // 收起社交图标，恢复搜索框和三横杠
         socialEl.classList.remove('show');
         barsEl.style.display = 'block';
-        document.body.classList.add('search-open');
         syncSearchCollapse();
-      } else {
-        const input = document.getElementById('home-search');
-        if (input) input.focus();
       }
+      // focus 搜索框
+      const input = document.getElementById('home-search');
+      if (input) input.focus();
       return;
     }
     if (className.includes('icon-subscribe')) {

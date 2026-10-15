@@ -691,9 +691,9 @@ body.home-page.sidebar-collapsed .home-sidebar {
     max-height: 180px;
   }
 
-  /* 移动端：搜索框默认隐藏，点击社交区搜索图标（body.search-open）才显示；与 Logo 和右侧图标保持间距 */
+  /* 移动端：搜索框默认显示，与 Logo 和右侧图标保持间距 */
   .home-search-wrap {
-    display: none;
+    display: flex;
     flex: 1;
     min-width: 0;
     max-width: none;
@@ -701,11 +701,7 @@ body.home-page.sidebar-collapsed .home-sidebar {
     margin-left: 4px;
   }
 
-  body.search-open .home-search-wrap {
-    display: flex;
-  }
-
-  /* 移动端三横杠展示社交图标时，确保搜索框不与其冲突 */
+  /* 展开社交图标时，隐藏搜索框腾出空间 */
   body.search-collapsed .home-search-wrap {
     display: none;
   }
