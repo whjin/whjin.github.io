@@ -21,22 +21,6 @@
   <meta name="twitter:description" content="ES6（ES2015）之后，JavaScript 每年都有新版本，语法变化很大。这篇文章把日常开发最常用的 ES6+ 特性整理成速查手册，配合代码示例，随时翻阅。 一、var / let / const 特性 var let const 重复声明 允许 不允许 不允许 块级作用域 不支持（函数级） 支持 支持 变量提升 提升并初始化为 undefined 提升但存在暂存死区 同 let 挂载到 window 是 否 否 重新赋值 允许 允许 不允许 最佳实践：默认用 const，需要重新赋值时用 let，永远不用 var。 二、ES6 Module 与 CommonJS 的区别 特性 Comm" />
   <link rel="icon" href="/src/images/favicon.png" />
   <style>
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 8px;
-      z-index: 100;
-      padding: 8px 16px;
-      background: #007bff;
-      color: #fff;
-      border-radius: 4px;
-      font-size: 14px;
-      text-decoration: none;
-      transition: top 0.2s ease;
-    }
-    .skip-link:focus {
-      top: 8px;
-    }
   </style>
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
@@ -74,7 +58,6 @@
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
 <body data-reward="true">
-  <a href="#content" class="skip-link">跳到主内容</a>
   <div class="layout-container">
     <div class="nav-container"></div>
     <div class="content-area" id="content">

@@ -21,22 +21,6 @@
   <meta name="twitter:description" content="子进程 - 创建 node 子进程用 fork，自带通道方便通信 充分利用多核 CPU 的优势，用到 child_process 模块创建子进程，有四种方法可以创建子进程： - exec - execFile - spawn - fork 四个方法都会返回 ChildProcess 实例（继承自 EventEmitter），该实例拥有三个标准的 stdio 流： 1. child.stdin 2. child.stdout 3. child.stderr 子进程生命周期内可以注册监听的事件有： - exit：子进程结束时触发，参数 code 错误码和 signal 中断信号 - close：子" />
   <link rel="icon" href="/src/images/favicon.png" />
   <style>
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 8px;
-      z-index: 100;
-      padding: 8px 16px;
-      background: #007bff;
-      color: #fff;
-      border-radius: 4px;
-      font-size: 14px;
-      text-decoration: none;
-      transition: top 0.2s ease;
-    }
-    .skip-link:focus {
-      top: 8px;
-    }
   </style>
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
@@ -74,7 +58,6 @@
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
 <body data-reward="true">
-  <a href="#content" class="skip-link">跳到主内容</a>
   <div class="layout-container">
     <div class="nav-container"></div>
     <div class="content-area" id="content">

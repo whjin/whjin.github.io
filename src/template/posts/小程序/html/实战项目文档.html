@@ -21,22 +21,6 @@
   <meta name="twitter:description" content="做小程序输入框时，你可能遇到过一个诡异的问题：用搜狗输入法打中文时，input 事件拿到的值和用户实际看到的不一样。这篇文章讲清楚原因和解决方法。 问题现象 在手机端使用搜狗输入法的英文预测模式或中文拼音模式时： - 用户输入 nihao，输入法候选栏显示\&quot;你好\&quot; - 但 input 事件回调里拿到的值可能是空的或不完整的 - 因为输入法在\&quot;组词\&quot;阶段，字符还没有确认，浏览器/小程序框架不触发 input 事件 这就是 composition（文本合成） 问题——输入法在组词过程中，文本处于\&quot;未确认\&quot;状态。 解决方案：ignoreCompositionEvent uniapp 的 input" />
   <link rel="icon" href="/src/images/favicon.png" />
   <style>
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 8px;
-      z-index: 100;
-      padding: 8px 16px;
-      background: #007bff;
-      color: #fff;
-      border-radius: 4px;
-      font-size: 14px;
-      text-decoration: none;
-      transition: top 0.2s ease;
-    }
-    .skip-link:focus {
-      top: 8px;
-    }
   </style>
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
@@ -74,7 +58,6 @@
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
 <body data-reward="true">
-  <a href="#content" class="skip-link">跳到主内容</a>
   <div class="layout-container">
     <div class="nav-container"></div>
     <div class="content-area" id="content">

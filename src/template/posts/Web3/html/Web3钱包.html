@@ -21,22 +21,6 @@
   <meta name="twitter:description" content="这篇文章梳理以太坊开发中最核心的几个概念：gas 费怎么算、合约怎么接收转账、前端怎么连接钱包。不需要有 Solidity 基础也能看懂。 一、gas 是什么 区块链上每笔交易的执行都需要消耗计算资源，矿工（验证者）执行这些工作需要激励。gas 就是支付给矿工的费用，ETH 是这个生态系统的通行货币。 关键点：转账就是函数调用。在以太坊上，你向地址转 ETH 和调用合约函数本质上是同一回事——都是发送一笔交易。 二、gaslimit 与 gasleft() 概念 说明 gaslimit（交易级） 交易发起者设定最多愿意消耗多少 gas gaslimit（合约间调用） 合约之间调用时，调用者可以" />
   <link rel="icon" href="/src/images/favicon.png" />
   <style>
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 8px;
-      z-index: 100;
-      padding: 8px 16px;
-      background: #007bff;
-      color: #fff;
-      border-radius: 4px;
-      font-size: 14px;
-      text-decoration: none;
-      transition: top 0.2s ease;
-    }
-    .skip-link:focus {
-      top: 8px;
-    }
   </style>
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
@@ -74,7 +58,6 @@
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
 <body data-reward="true">
-  <a href="#content" class="skip-link">跳到主内容</a>
   <div class="layout-container">
     <div class="nav-container"></div>
     <div class="content-area" id="content">

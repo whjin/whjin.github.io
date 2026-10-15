@@ -21,22 +21,6 @@
   <meta name="twitter:description" content="Docker部署 1. 安装 Docker dnf 添加 docker-ce 阿里云源并安装，启停 2. 获取镜像 拉取 ghcr.io 官方镜像；拉不动则 git clone 后本地 docker build 3. 运行容器 -p 80:80，配置 METING_URL / METING_TOKEN 环境变量 4. 放行端口 阿里云安全组 + firewalld 放行 80 5. 验证 curl 访问 /api?server=netease&amp;type=search 第 1 步：安装 Docker（阿里云官方源） 第 2 步：获取镜像 拉取Github仓库代码本地构建 配置 Docker 镜像" />
   <link rel="icon" href="/src/images/favicon.png" />
   <style>
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 8px;
-      z-index: 100;
-      padding: 8px 16px;
-      background: #007bff;
-      color: #fff;
-      border-radius: 4px;
-      font-size: 14px;
-      text-decoration: none;
-      transition: top 0.2s ease;
-    }
-    .skip-link:focus {
-      top: 8px;
-    }
   </style>
   <link rel="stylesheet" href="/src/css/github-dark.min.css" />
   <link rel="stylesheet" href="/src/components/render/index.css" />
@@ -74,7 +58,6 @@
   <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
 <body data-reward="true">
-  <a href="#content" class="skip-link">跳到主内容</a>
   <div class="layout-container">
     <div class="nav-container"></div>
     <div class="content-area" id="content">
