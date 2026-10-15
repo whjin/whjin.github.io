@@ -66,7 +66,7 @@
 <p>Vue 是一套用于构建用户界面的<strong>渐进式框架</strong>。它的核心专注于视图层，易学易用，同时也能通过官方生态（Vue Router、Pinia）与工具链支持构建复杂的单页应用（SPA）。Vue 3 引入了组合式 API（Composition API）、更快的虚拟 DOM 与更好的 TypeScript 支持，是目前主流的前端框架之一。</p>
 <h2>组件基础</h2>
 <p>组件是 Vue 应用的基本单元，一个组件由模板、脚本与样式组成：</p>
-<pre><code class="language-vue">&lt;script setup&gt;
+<pre><code class="language-html">&lt;script setup&gt;
 import { ref } from &#39;vue&#39;;
 
 const count = ref(0);
@@ -115,7 +115,7 @@ export function useWindowSize() {
 <p>常用生命周期钩子：<code>onMounted</code>（挂载后）、<code>onUpdated</code>（更新后）、<code>onUnmounted</code>（卸载前）。在 <code>onUnmounted</code> 中清理事件监听与定时器，避免内存泄漏。</p>
 <h2>插槽与动态组件</h2>
 <p><strong>插槽（Slot）</strong> 用于组件内容分发，让父组件向子组件传入模板：</p>
-<pre><code class="language-vue">&lt;!-- 子组件 Card.vue --&gt;
+<pre><code class="language-html">&lt;!-- 子组件 Card.vue --&gt;
 &lt;template&gt;
   &lt;div class=&quot;card&quot;&gt;
     &lt;slot name=&quot;title&quot;&gt;默认标题&lt;/slot&gt;
@@ -130,7 +130,7 @@ export function useWindowSize() {
 &lt;/Card&gt;
 </code></pre>
 <p><strong>动态组件</strong> 通过 <code>&lt;component :is=&quot;...&quot;&gt;</code> 按需切换：</p>
-<pre><code class="language-vue">&lt;component :is=&quot;currentComponent&quot; /&gt;
+<pre><code class="language-html">&lt;component :is=&quot;currentComponent&quot; /&gt;
 </code></pre>
 <h2>Vue Router 路由</h2>
 <p>Vue Router 是 Vue 官方的路由解决方案。核心概念包括路由表、动态路由、导航守卫与传参。</p>
@@ -291,6 +291,14 @@ export const useUserStore = defineStore(&#39;user&#39;, () =&gt; {
             document.querySelectorAll('#markdown-content pre code').forEach(function (el) {
               try { hljs.highlightElement(el); } catch (e) {}
             });
+          }
+          // 给代码块添加复制按钮
+          if (typeof addCopyButtonsToCodeBlocks === 'function') {
+            addCopyButtonsToCodeBlocks(document.getElementById('markdown-content'));
+          }
+          // 给 blockquote 添加复制按钮（诗词文章）
+          if (typeof addCopyButtonsToBlockquotes === 'function') {
+            addCopyButtonsToBlockquotes(document.getElementById('markdown-content'));
           }
           document.querySelectorAll('#markdown-content a').forEach(function (a) {
             a.setAttribute('target', '_blank');

@@ -119,11 +119,164 @@ details summary {
 }
 
 pre {
-  height: fit-content;
-  max-height: 300px;
+  height: auto;
+  background: #2d2d2d;
   border-radius: 6px;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+  position: relative;
+  padding: 0;
+}
+
+/* 代码内容：带 padding，滚动条在 pre 的最右边 */
+pre code {
+  display: block;
+  padding: 1em;
+  background: transparent;
+  border-radius: 6px;
+}
+
+/* 代码块顶部工具栏（浮在右上角，不占据空间） */
+.code-toolbar {
+  position: absolute;
+  top: 0;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  z-index: 10;
+  padding: 8px;
+}
+
+/* 代码语言标签 */
+.code-lang {
+  font-size: 12px;
+  color: #999;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-transform: lowercase;
+  font-family: monospace;
+}
+
+/* 复制按钮样式 */
+.copy-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 4px;
+  padding: 6px;
+  cursor: pointer;
+  color: #ccc;
+  transition:
+    background 0.2s,
+    color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copy-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.copy-btn.copied {
+  color: #4ade80;
+}
+
+/* 折叠状态：code 元素可以滚动，工具栏浮在 pre 上不滚动 */
+pre.collapsed code {
+  display: block;
+  max-height: 300px;
+  overflow: auto;
+}
+
+/* 展开状态：高度由内容确定，没有滚动条 */
+pre:not(.collapsed) code {
+  max-height: none;
+  overflow: visible;
+}
+
+/* 展开/收起按钮 */
+.toggle-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 12px;
+  transition: background 0.2s;
+}
+
+.toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* blockquote 里的按钮样式（浅色背景） */
+blockquote .code-toolbar .toggle-btn {
+  background: rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+blockquote .code-toolbar .toggle-btn:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+blockquote .code-toolbar .copy-btn {
+  background: rgba(0, 0, 0, 0.1);
+  color: #666;
+}
+
+blockquote .code-toolbar .copy-btn:hover {
+  background: rgba(0, 0, 0, 0.2);
+  color: #333;
+}
+
+blockquote .code-toolbar .copy-btn.copied {
+  color: #16a34a;
+}
+
+/* 复制成功提示 */
+.copy-toast {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  z-index: 11;
+  pointer-events: none;
+  animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  font-size: 13px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 code {
@@ -135,13 +288,32 @@ code {
 }
 
 blockquote {
-  height: fit-content;
-  max-height: 500px;
+  width: 100%;
+  box-sizing: border-box;
+  height: auto;
   background: #f8f8f9;
   border-left: 6px solid #e83e8c;
   border-radius: 6px;
-  padding: 0.5em 0.8em;
+  margin: 1em 0;
+  overflow: visible;
+  position: relative;
+  padding: 0;
+}
+
+/* blockquote 内容包装层：带 padding，滚动条在 blockquote 的最右边 */
+.bq-content-wrapper {
+  padding: 0.8em 1em;
+}
+
+/* blockquote 内容包装层：折叠时滚动，展开时不滚动 */
+blockquote.collapsed .bq-content-wrapper {
+  max-height: 300px;
   overflow: auto;
+}
+
+blockquote:not(.collapsed) .bq-content-wrapper {
+  max-height: none;
+  overflow: visible;
 }
 
 ul li p,
@@ -172,13 +344,13 @@ blockquote p {
   margin-left: 0.6em;
 }
 
-li.fold-panel>ul,
-li.fold-panel>ol {
+li.fold-panel > ul,
+li.fold-panel > ol {
   display: none;
 }
 
-li.fold-panel:hover>ul,
-li.fold-panel:hover>ol {
+li.fold-panel:hover > ul,
+li.fold-panel:hover > ol {
   display: block;
 }
 
@@ -321,7 +493,7 @@ ins.adsbygoogle {
   line-height: 50px;
 }
 
-.entry~.sidebar-area {
+.entry ~ .sidebar-area {
   height: 100%;
   max-height: 100%;
   box-sizing: border-box;
@@ -416,6 +588,60 @@ ins.adsbygoogle {
   .sidebar-area {
     display: none;
   }
+
+  /* 移动端文章详情页字体优化 */
+  .markdown-content.viewer {
+    padding: 0.8em;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .markdown-content.viewer h1 {
+    font-size: 1.6em;
+    margin: 0.8em 0 0.6em;
+  }
+
+  .markdown-content.viewer h2 {
+    font-size: 1.4em;
+    margin: 1em 0 0.5em;
+  }
+
+  .markdown-content.viewer h3 {
+    font-size: 1.2em;
+    margin: 0.8em 0 0.4em;
+  }
+
+  .markdown-content.viewer p,
+  .markdown-content.viewer li {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* 代码块字体优化 */
+  .markdown-content.viewer pre,
+  .markdown-content.viewer code {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .markdown-content.viewer pre {
+    padding: 0.8em;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* 表格字体优化 */
+  .markdown-content.viewer table {
+    font-size: 13px;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .markdown-content.viewer table th,
+  .markdown-content.viewer table td {
+    padding: 0.5em;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -425,7 +651,6 @@ ins.adsbygoogle {
 }
 
 @media print {
-
   html,
   body {
     overflow: visible;

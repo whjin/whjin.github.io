@@ -111,6 +111,23 @@ This blog is specifically optimized for both **domestic (China)** and **overseas
 
 ---
 
+## 🎨 UI/UX Features
+
+Beyond raw performance, this blog focuses on polished user experience:
+
+- **Bilingual by default**: English first, one-click switch to Chinese (no duplicate pages)
+- **Mobile-first responsive**: Optimized typography, touch-friendly icons, adaptive layout
+- **Code block enhancements**:
+  - One-click copy button with visual feedback
+  - Language label badge (JavaScript, Python, HTML, etc.)
+  - Collapsible long code blocks (300px max-height, scrollable, expand on demand)
+  - Sticky toolbar that stays at the top right while scrolling
+- **Image viewer**: Click any image to view fullscreen, zoom, pan, and toggle between original/fit-to-screen
+- **Social proof**: Reward/donation section with QR codes for WeChat/Alipay + Ko-fi membership
+- **Accessibility**: Proper ARIA labels, semantic HTML, keyboard navigation support
+
+---
+
 ## 💡 What Makes This Project Different
 
 Most personal blogs are either:

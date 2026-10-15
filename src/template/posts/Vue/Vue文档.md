@@ -15,7 +15,7 @@ Vue 是一套用于构建用户界面的**渐进式框架**。它的核心专注
 
 组件是 Vue 应用的基本单元，一个组件由模板、脚本与样式组成：
 
-```vue
+```html
 <script setup>
 import { ref } from 'vue';
 
@@ -79,7 +79,7 @@ export function useWindowSize() {
 
 **插槽（Slot）** 用于组件内容分发，让父组件向子组件传入模板：
 
-```vue
+```html
 <!-- 子组件 Card.vue -->
 <template>
   <div class="card">
@@ -97,7 +97,7 @@ export function useWindowSize() {
 
 **动态组件** 通过 `<component :is="...">` 按需切换：
 
-```vue
+```html
 <component :is="currentComponent" />
 ```
 

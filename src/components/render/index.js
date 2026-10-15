@@ -1,3 +1,261 @@
+// 给代码块添加一键复制按钮 + 语言标签 + 折叠展开
+function addCopyButtonsToCodeBlocks(container) {
+  if (!container) return;
+  const codeBlocks = container.querySelectorAll('pre');
+  codeBlocks.forEach((pre) => {
+    // 避免重复添加
+    if (pre.querySelector('.copy-btn')) return;
+
+    // 提取语言
+    const code = pre.querySelector('code');
+    let lang = '';
+    if (code) {
+      const match = code.className.match(/language-(\w+)/);
+      if (match) lang = match[1];
+    }
+
+    // 顶部工具栏容器
+    const toolbar = document.createElement('div');
+    toolbar.className = 'code-toolbar';
+
+    // 折叠/展开按钮（先创建，后面根据高度决定是否显示）
+    const toggleBtn = document.createElement('button');
+    toggleBtn.className = 'toggle-btn';
+    toggleBtn.style.display = 'none';
+    toolbar.appendChild(toggleBtn);
+
+    // 复制按钮
+    const copyBtn = document.createElement('button');
+    copyBtn.className = 'copy-btn';
+    copyBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+    copyBtn.title = '复制代码';
+    copyBtn.setAttribute('aria-label', '复制代码');
+
+    copyBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const text = code ? code.textContent : pre.textContent;
+
+      navigator.clipboard.writeText(text).then(() => {
+        copyBtn.classList.add('copied');
+        copyBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+        copyBtn.title = '已复制';
+        showCopyToast(pre);
+        setTimeout(() => resetCopyBtn(copyBtn), 3000);
+      }).catch((err) => console.error('复制失败:', err));
+    });
+
+    toolbar.appendChild(copyBtn);
+
+    // 语言标签（最右边）
+    if (lang) {
+      const langLabel = document.createElement('span');
+      langLabel.className = 'code-lang';
+      langLabel.textContent = lang;
+      toolbar.appendChild(langLabel);
+    }
+
+    pre.insertBefore(toolbar, pre.firstChild);
+
+    // 折叠/展开逻辑
+    const setupToggle = () => {
+      if (pre.scrollHeight > 300) {
+        pre.classList.add('collapsed');
+        toggleBtn.textContent = '展开全部';
+        toggleBtn.dataset.expanded = 'false';
+        toggleBtn.style.display = 'block';
+
+        toggleBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isExpanded = toggleBtn.dataset.expanded === 'true';
+          if (isExpanded) {
+            // 收起
+            pre.classList.add('collapsed');
+            toggleBtn.textContent = '展开全部';
+            toggleBtn.dataset.expanded = 'false';
+          } else {
+            // 展开
+            pre.classList.remove('collapsed');
+            toggleBtn.textContent = '收起';
+            toggleBtn.dataset.expanded = 'true';
+          }
+        });
+      }
+    };
+
+    // 延迟检查，确保代码已经高亮完成
+    setTimeout(setupToggle, 100);
+  });
+}
+
+// 恢复复制按钮原状
+function resetCopyBtn(btn) {
+  btn.classList.remove('copied');
+  btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+  btn.title = '复制代码';
+}
+
+// 显示"已复制"提示
+function showCopyToast(pre) {
+  // 移除已有的提示
+  const existing = pre.querySelector('.copy-toast');
+  if (existing) existing.remove();
+
+  const toast = document.createElement('div');
+  toast.className = 'copy-toast';
+  toast.textContent = '已复制';
+  pre.appendChild(toast);
+
+  setTimeout(() => {
+    toast.remove();
+  }, 2000);
+}
+
+// 监听滚动，当代码块不在视口时恢复复制按钮状态
+window.addEventListener('scroll', () => {
+  const copyBtns = document.querySelectorAll('.copy-btn.copied');
+  copyBtns.forEach((btn) => {
+    const pre = btn.closest('pre') || btn.closest('blockquote');
+    if (!pre) return;
+    const rect = pre.getBoundingClientRect();
+    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+    if (!isVisible) {
+      resetCopyBtn(btn);
+    }
+  });
+}, { passive: true });
+
+// 递归提取文本，保留 <br> 换行
+function extractTextWithBreaks(element) {
+  let text = '';
+  element.childNodes.forEach((node) => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      text += node.textContent;
+    } else if (node.nodeType === Node.ELEMENT_NODE) {
+      if (node.tagName === 'BR') {
+        text += '\n';
+      } else if (node.tagName === 'P' || node.tagName === 'DIV' || node.tagName === 'H1' || node.tagName === 'H2' || node.tagName === 'H3' || node.tagName === 'LI') {
+        text += extractTextWithBreaks(node) + '\n';
+      } else {
+        text += extractTextWithBreaks(node);
+      }
+    }
+  });
+  return text;
+}
+
+// 给 blockquote 添加一键复制按钮 + 折叠展开（只复制诗词正文）
+function addCopyButtonsToBlockquotes(container) {
+  if (!container) return;
+  const blockquotes = container.querySelectorAll('blockquote');
+  blockquotes.forEach((bq) => {
+    // 避免重复添加
+    if (bq.querySelector('.copy-btn')) return;
+
+    // 把原有内容包裹一层 content-wrapper，让 wrapper 成为滚动容器
+    const wrapper = document.createElement('div');
+    wrapper.className = 'bq-content-wrapper';
+    // 移动所有子元素到 wrapper
+    while (bq.firstChild) {
+      wrapper.appendChild(bq.firstChild);
+    }
+    bq.appendChild(wrapper);
+
+    // 顶部工具栏容器
+    const toolbar = document.createElement('div');
+    toolbar.className = 'code-toolbar';
+
+    // 折叠/展开按钮（先创建，后面根据高度决定是否显示）
+    const toggleBtn = document.createElement('button');
+    toggleBtn.className = 'toggle-btn';
+    toggleBtn.style.display = 'none';
+    toolbar.appendChild(toggleBtn);
+
+    // 复制按钮
+    const copyBtn = document.createElement('button');
+    copyBtn.className = 'copy-btn';
+    copyBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+    copyBtn.title = '复制诗词';
+    copyBtn.setAttribute('aria-label', '复制诗词');
+
+    copyBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+
+      // 提取诗词正文：跳过第一个 p（视频地址），从 hr 后面开始
+      let text = '';
+      const hr = wrapper.querySelector('hr');
+      if (hr) {
+        // 从 hr 后面的兄弟节点开始收集
+        let node = hr.nextSibling;
+        while (node) {
+          if (node.nodeType === Node.TEXT_NODE) {
+            text += node.textContent;
+          } else if (node.nodeType === Node.ELEMENT_NODE) {
+            text += extractTextWithBreaks(node);
+            // 元素后面加换行
+            text += '\n';
+          }
+          node = node.nextSibling;
+        }
+      } else {
+        // 没有 hr，复制全部文本
+        text = extractTextWithBreaks(wrapper);
+      }
+
+      // 清理多余空行
+      text = text.trim().replace(/\n{3,}/g, '\n\n');
+
+      navigator.clipboard.writeText(text).then(() => {
+        // 复制成功，改变按钮状态
+        copyBtn.classList.add('copied');
+        copyBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+        copyBtn.title = '已复制';
+
+        // 显示提示
+        showCopyToast(bq);
+
+        // 3秒后恢复原状
+        setTimeout(() => {
+          resetCopyBtn(copyBtn);
+        }, 3000);
+      }).catch((err) => {
+        console.error('复制失败:', err);
+      });
+    });
+
+    toolbar.appendChild(copyBtn);
+    bq.insertBefore(toolbar, bq.firstChild);
+
+    // 折叠/展开逻辑
+    const setupToggle = () => {
+      if (wrapper.scrollHeight > 300) {
+        bq.classList.add('collapsed');
+        toggleBtn.textContent = '展开全部';
+        toggleBtn.dataset.expanded = 'false';
+        toggleBtn.style.display = 'block';
+
+        toggleBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isExpanded = toggleBtn.dataset.expanded === 'true';
+          if (isExpanded) {
+            // 收起
+            bq.classList.add('collapsed');
+            toggleBtn.textContent = '展开全部';
+            toggleBtn.dataset.expanded = 'false';
+          } else {
+            // 展开
+            bq.classList.remove('collapsed');
+            toggleBtn.textContent = '收起';
+            toggleBtn.dataset.expanded = 'true';
+          }
+        });
+      }
+    };
+
+    // 延迟检查高度
+    setTimeout(setupToggle, 100);
+  });
+}
+
 function handler(targetId, filePath, callback) {
   // 只有 hljs 存在时才注册代码高亮（首页不加载 highlight.min.js）
   if (typeof hljs !== 'undefined' && typeof markedHighlight !== 'undefined') {

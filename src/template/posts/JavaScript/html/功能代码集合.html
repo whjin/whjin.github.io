@@ -362,7 +362,7 @@ figure &gt; img {
 }
 </code></pre>
 <h2>iview封装菜单menu</h2>
-<pre><code class="language-vue">&lt;template&gt;
+<pre><code class="language-html">&lt;template&gt;
   &lt;i-submenu :name=&quot;menuList.name&quot;&gt;
     &lt;!-- 父级菜单 --&gt;
     &lt;template slot=&quot;title&quot;&gt;{{ menuList.title }}&lt;/template&gt;
@@ -435,11 +435,11 @@ images.forEach((image) =&gt; {
 }
 </code></pre>
 <h2>Vue字符串换行</h2>
-<pre><code class="language-vue">1. 添加`white-space:pre`
+<pre><code class="language-html">1. 添加`white-space:pre`
 2. 使用`&lt;pre&gt;`标签替换
 </code></pre>
 <h2>封装iView无限层级菜单</h2>
-<pre><code class="language-vue">// 子组件
+<pre><code class="language-html">// 子组件
 &lt;template&gt;
   &lt;i-submenu :name=&quot;menuList.name&quot;&gt;
     &lt;!-- 父级菜单 --&gt;
@@ -724,6 +724,14 @@ Child.prototype.constructor = Child;
             document.querySelectorAll('#markdown-content pre code').forEach(function (el) {
               try { hljs.highlightElement(el); } catch (e) {}
             });
+          }
+          // 给代码块添加复制按钮
+          if (typeof addCopyButtonsToCodeBlocks === 'function') {
+            addCopyButtonsToCodeBlocks(document.getElementById('markdown-content'));
+          }
+          // 给 blockquote 添加复制按钮（诗词文章）
+          if (typeof addCopyButtonsToBlockquotes === 'function') {
+            addCopyButtonsToBlockquotes(document.getElementById('markdown-content'));
           }
           document.querySelectorAll('#markdown-content a').forEach(function (a) {
             a.setAttribute('target', '_blank');

@@ -9,6 +9,84 @@ function injectRewardCard(container) {
   renderRewardTip(container);
 }
 
+// 给代码块添加一键复制按钮
+function addCopyButtonsToCodeBlocks(container) {
+  if (!container) return;
+  const codeBlocks = container.querySelectorAll('pre');
+  codeBlocks.forEach((pre) => {
+    // 避免重复添加
+    if (pre.querySelector('.copy-btn')) return;
+
+    const copyBtn = document.createElement('button');
+    copyBtn.className = 'copy-btn';
+    copyBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+    copyBtn.title = '复制代码';
+    copyBtn.setAttribute('aria-label', '复制代码');
+
+    copyBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+
+      navigator.clipboard.writeText(text).then(() => {
+        // 复制成功，改变按钮状态
+        copyBtn.classList.add('copied');
+        copyBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+        copyBtn.title = '已复制';
+
+        // 显示提示
+        showCopyToast(pre);
+
+        // 3秒后恢复原状
+        setTimeout(() => {
+          resetCopyBtn(copyBtn);
+        }, 3000);
+      }).catch((err) => {
+        console.error('复制失败:', err);
+      });
+    });
+
+    pre.appendChild(copyBtn);
+  });
+}
+
+// 恢复复制按钮原状
+function resetCopyBtn(btn) {
+  btn.classList.remove('copied');
+  btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+  btn.title = '复制代码';
+}
+
+// 显示"已复制"提示
+function showCopyToast(pre) {
+  // 移除已有的提示
+  const existing = pre.querySelector('.copy-toast');
+  if (existing) existing.remove();
+
+  const toast = document.createElement('div');
+  toast.className = 'copy-toast';
+  toast.textContent = '已复制';
+  pre.appendChild(toast);
+
+  setTimeout(() => {
+    toast.remove();
+  }, 2000);
+}
+
+// 监听滚动，当代码块不在视口时恢复复制按钮状态
+window.addEventListener('scroll', () => {
+  const copyBtns = document.querySelectorAll('.copy-btn.copied');
+  copyBtns.forEach((btn) => {
+    const pre = btn.closest('pre');
+    if (!pre) return;
+    const rect = pre.getBoundingClientRect();
+    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+    if (!isVisible) {
+      resetCopyBtn(btn);
+    }
+  });
+}, { passive: true });
+
 function renderRewardTip(container) {
   if (window.RewardTip) { window.RewardTip.renderInto(container); return; }
   const s = document.createElement('script');
@@ -68,6 +146,8 @@ window.addEventListener('DOMContentLoaded', async (e) => {
           link.setAttribute('rel', 'noopener noreferrer');
         });
 
+        addCopyButtonsToCodeBlocks(contentEl);
+
         injectRewardCard(contentEl);
         hideLoading();
       })
@@ -95,6 +175,8 @@ window.addEventListener('DOMContentLoaded', async (e) => {
       if (headings.length === 0 || isMobile()) {
         navContainer.classList.add('hide-toc');
       }
+      // 给 Markdown 格式的代码块也加复制按钮
+      addCopyButtonsToCodeBlocks(contentEl);
       // 赞赏卡片由 render/index.js 的 maybeRenderRewardTip 按 md front matter 的 reward 控制注入
       hideLoading();
     });

@@ -277,6 +277,14 @@ module.exports = {
               try { hljs.highlightElement(el); } catch (e) {}
             });
           }
+          // 给代码块添加复制按钮
+          if (typeof addCopyButtonsToCodeBlocks === 'function') {
+            addCopyButtonsToCodeBlocks(document.getElementById('markdown-content'));
+          }
+          // 给 blockquote 添加复制按钮（诗词文章）
+          if (typeof addCopyButtonsToBlockquotes === 'function') {
+            addCopyButtonsToBlockquotes(document.getElementById('markdown-content'));
+          }
           document.querySelectorAll('#markdown-content a').forEach(function (a) {
             a.setAttribute('target', '_blank');
             a.setAttribute('rel', 'noopener noreferrer');
