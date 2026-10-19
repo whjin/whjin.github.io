@@ -277,6 +277,19 @@
       }
     ]
   },
+  "help": {
+    "title": "帮助文档",
+    "desc": "帮助文档合集",
+    "mode": "recommend",
+    "list": [
+      {
+        "avatar": "https://picsum.photos/seed/help/100",
+        "title": "Mac使用Scrcpy无线投屏安卓手机",
+        "desc": "（安卓无线调试）ADB 无法连接及 Scrcpy 问题排查指南",
+        "url": "https://blog.csdn.net/m0_56366541/article/details/144962316"
+      }
+    ]
+  },
   "remote": {
     "title": "远程工作",
     "desc": "远程工作站点",
