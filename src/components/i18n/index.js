@@ -4,8 +4,6 @@
 
   const DICT = {
     nav_articles: ['Articles', '文章'],
-    nav_tutorials: ['Tutorials', '教程'],
-    nav_tools: ['Tools', '工具'],
     nav_ai: ['AI Apps', 'AI应用'],
     nav_poetry: ['Poetry', '诗词'],
     nav_about: ['About', '关于'],
@@ -29,7 +27,10 @@
     sb_categories: ['Categories', '分类'],
     sb_social: ['Connect', '社交'],
     sb_member: ['Subscribe', '订阅'],
-    sb_member_intro: ['Enjoy my content? Become a member to unlock exclusive articles and resources, and directly support my work.', '喜欢我的内容吗？成为会员，解锁专属文章与资源，直接支持我的创作。'],
+    sb_member_intro: [
+      'Enjoy my content? Become a member to unlock exclusive articles and resources, and directly support my work.',
+      '喜欢我的内容吗？成为会员，解锁专属文章与资源，直接支持我的创作。',
+    ],
     sb_member_b1: ['Unlock all member-only articles', '解锁全部会员专属文章'],
     sb_member_b2: ['Early access to tutorials & learning roadmaps', '抢先获取教程与学习路线图'],
     sb_member_b3: ['Full source code collections', '获得完整源代码合集'],
@@ -41,8 +42,6 @@
 
   const NAV_LINKS = [
     { key: 'nav_articles', url: '/viewer.html?path=Link_文章_article&format=html' },
-    { key: 'nav_tutorials', url: '/viewer.html?path=Link_教程_tutorial&format=html' },
-    { key: 'nav_tools', url: '/viewer.html?path=Link_工具_tool&format=html' },
     { key: 'nav_ai', url: '/viewer.html?path=Link_友链_link&format=html' },
     { key: 'nav_poetry', url: '/viewer.html?path=文学_原创诗词' },
     { key: 'nav_about', url: 'about.html' },

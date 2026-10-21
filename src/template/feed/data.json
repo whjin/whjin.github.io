@@ -318,20 +318,6 @@
         "marked": true
       },
       {
-        "title": "技术教程",
-        "url": "/viewer.html?path=Link_教程_tutorial&format=html",
-        "category": "站点",
-        "description": "本站技术教程合集，提供从零到实战的进阶学习路线，涵盖 AI 应用开发、Node.js 工程化、GIS 可视化、Web3 智能合约、小程序实战等热门方向，配有完整项目源码、数据库设计、接口联调与部署上线流程，手把手带你完成真实项目，适合有一定基础、想提升实战能力的开发者。",
-        "marked": true
-      },
-      {
-        "title": "IT工具合集",
-        "url": "/viewer.html?path=Link_工具_tool&format=html",
-        "category": "站点",
-        "description": "本站 IT 工具合集，汇总日常开发与办公常用的在线工具：包括代码格式化、JSON 校验、图片压缩、在线 HTML/JS 编辑、视频处理、进制转换与 AI 网址导航等，按类别分类整理、方便快速查找使用，显著提升开发与工作效率。",
-        "marked": true
-      },
-      {
         "title": "基金分析平台",
         "url": "https://fundscope.wuhuajin.com/",
         "category": "站点",

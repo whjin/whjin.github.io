@@ -24,16 +24,6 @@ const PAGE_META = {
     intro:
       '本页收录吴华锦亲测可用的优质 AI 工具、产品与友链资源，包括 AI 视频生成、AI 设计、电商配图等一站式在线服务。所有推荐均经实际使用验证，持续更新。',
   },
-  '工具/tool.html': {
-    h1: '在线工具集合',
-    intro:
-      '本页汇总吴华锦日常开发与设计中高频使用的在线工具，涵盖图片处理、图标资源、AI 工具集、开发辅助等类别，均为无需注册即可直接使用的免费网站。',
-  },
-  '教程/tutorial.html': {
-    h1: '技术教程导航',
-    intro:
-      '本页整理 JavaScript、Node.js、Vue、React 等主流技术栈的官方文档与社区中文教程，按语言/框架分类，方便开发者快速查阅权威资料。',
-  },
 };
 
 function escapeHtml(s) {
@@ -128,14 +118,20 @@ function buildLinkPage(relPath, meta) {
   // JS 运行后会覆盖 innerHTML 渲染卡片，但 Google 初始抓取时看到的是静态内容
   const containerPattern = /<(div|main) class="link-container">\s*<\/\1>/;
   if (containerPattern.test(html)) {
-    html = html.replace(containerPattern, (m, tag) => `<${tag} class="link-container">${staticHtml}</${tag}>`);
+    html = html.replace(
+      containerPattern,
+      (m, tag) => `<${tag} class="link-container">${staticHtml}</${tag}>`
+    );
   } else {
     // 兜底：插到 <body> 后面
     html = html.replace(/<body[^>]*>/, (m) => m + '\n' + staticHtml);
   }
 
   // robots: noindex, follow → index, follow
-  html = html.replace(/<meta name="robots" content="noindex, follow"\s*\/>/, '<meta name="robots" content="index, follow" />');
+  html = html.replace(
+    /<meta name="robots" content="noindex, follow"\s*\/>/,
+    '<meta name="robots" content="index, follow" />'
+  );
 
   fs.writeFileSync(htmlPath, html, 'utf8');
   console.log('[ok] ' + relPath + ' 已注入静态 SEO 内容');
@@ -171,12 +167,18 @@ function buildResourcePage() {
 
   const containerPattern = /<(div|main) class="card-container">\s*<\/\1>/;
   if (containerPattern.test(html)) {
-    html = html.replace(containerPattern, (m, tag) => `<${tag} class="card-container">${staticHtml}</${tag}>`);
+    html = html.replace(
+      containerPattern,
+      (m, tag) => `<${tag} class="card-container">${staticHtml}</${tag}>`
+    );
   } else {
     html = html.replace(/<body[^>]*>/, (m) => m + '\n' + staticHtml);
   }
 
-  html = html.replace(/<meta name="robots" content="noindex, follow"\s*\/>/, '<meta name="robots" content="index, follow" />');
+  html = html.replace(
+    /<meta name="robots" content="noindex, follow"\s*\/>/,
+    '<meta name="robots" content="index, follow" />'
+  );
 
   fs.writeFileSync(htmlPath, html, 'utf8');
   console.log('[ok] 资源/resource.html 已注入静态 SEO 内容');
