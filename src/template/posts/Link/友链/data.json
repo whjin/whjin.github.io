@@ -318,10 +318,22 @@
         "url": "https://ai-bot.cn/"
       },
       {
-        "avatar": "https://picsum.photos/seed/AI工具集/100",
-        "title": "Toolify - 最好的AI导航站和AI工具列表",
+        "avatar": "https://picsum.photos/seed/ainav/100",
+        "title": "AI导航网",
+        "desc": "AInav - AI导航网 | 发现AI,导航未来",
+        "url": "https://www.ainav.cn/"
+      },
+      {
+        "avatar": "https://picsum.photos/seed/toolify/100",
+        "title": "Toolify",
         "desc": "Toolify.ai 发现最好的AI网站和AI工具",
         "url": "https://www.toolify.ai/zh/"
+      },
+      {
+        "avatar": "https://picsum.photos/seed/gongke/100",
+        "title": "攻壳智能体",
+        "desc": "攻壳智能体 - 探索发现热门的智能体和AI工具",
+        "url": "https://gongke.net/"
       }
     ]
   },

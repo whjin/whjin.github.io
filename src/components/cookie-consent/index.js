@@ -53,10 +53,10 @@
     banner.setAttribute('aria-label', 'Cookie Consent');
     banner.innerHTML =
       '<div class="cc-text">' +
-      'We use cookies and similar technologies to improve your experience, analyze traffic, and serve ' +
-      'advertisements via Google AdSense. See our ' +
+      'We use cookies and similar technologies to improve your experience, analyze traffic, ' +
+      'record session interactions via Microsoft Clarity, and serve advertisements via Google AdSense. See our ' +
       '<a href="privacy.html">Privacy Policy</a> for details.' +
-      '<small>本站使用 Cookie 与 Google AdSense 广告，详见隐私政策。点击"接受"表示同意，"拒绝"仍可继续浏览。</small>' +
+      '<small>本站使用 Cookie、Microsoft Clarity 会话录屏分析与 Google AdSense 广告，详见隐私政策。点击"接受"表示同意，"拒绝"仍可继续浏览。</small>' +
       '</div>' +
       '<div class="cc-btns">' +
       '<button class="cc-btn cc-decline" type="button">Decline / 拒绝</button>' +
