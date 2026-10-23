@@ -4,110 +4,119 @@
     "title": "核心推荐",
     "home": false,
     "tagName": "ol",
-    "items": [
+    "list": [
       {
         "title": "一站式AI应用平台",
         "url": "/viewer.html?path=Link_友链_link&format=html",
         "category": "核心推荐",
-        "description": "AI应用集 - 一站式AI应用平台",
+        "desc": "AI应用集 - 一站式AI应用平台",
         "marked": true
+      },
+      {
+        "title": "超级麦吉",
+        "url": "https://letsmagic.cgref.cn/s/ogew5xvep2",
+        "category": "核心推荐",
+        "desc": "超级麦吉 - 一站式 AI 办公，覆盖全行业工作场景，让 AI 真正替你干活",
+        "marked": true,
+        "image": "https://oss.cakegrowth.cn/public/product/2026/10/665llc01000dm9l5rzm1pbgis0b37bqk.webp"
       },
       {
         "title": "PixTV",
         "url": "https://pixtv.cgref.cn/s/omkloo8k4d",
         "category": "核心推荐",
-        "description": "PixTV｜一站式 AI 视频生成与无限画布创作平台"
+        "desc": "PixTV｜一站式 AI 视频生成与无限画布创作平台",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/09/1xplh3q1000dlmi8yn7h9ywqqjbf27z0.webp"
       },
       {
         "title": "PixPix",
         "url": "https://pixpix.cgref.cn/s/p3kqddweol",
         "category": "核心推荐",
-        "description": "帧象创意 - PixPix官网_电商AI商品图生成器_AI视频_免费在线设计工具"
-      },
-      {
-        "title": "AionClaw",
-        "url": "https://aionclaw.cgref.cn/s/4onyj26njx",
-        "category": "核心推荐",
-        "description": "AionClaw-真正能做事的AI龙虾-基于OpenClaw深度升级"
-      },
-      {
-        "title": "Lovart 中文版",
-        "url": "https://lovart.cgref.cn/s/2znrl36nr7",
-        "category": "核心推荐",
-        "description": "Lovart 中文版- 新一代设计 Agent"
+        "desc": "帧象创意 - PixPix官网_电商AI商品图生成器_AI视频_免费在线设计工具",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/09/1afandb1000dlmi09bjzhmiz3564adqw.webp"
       },
       {
         "title": "AniShort",
         "url": "https://anishort.cgref.cn/s/9we2wzjego",
         "category": "核心推荐",
-        "description": "AniShort - AI影视剧协作平台"
+        "desc": "AniShort - AI影视剧协作平台",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/08/3iemyq01000dkskul1pry4721gst97w0.webp"
       },
       {
         "title": "Loomy",
         "url": "https://loomy.cgref.cn/s/59ngvmonr2",
         "category": "核心推荐",
-        "description": "Loomy-你的AI工作搭子"
+        "desc": "Loomy-你的AI工作搭子",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/07/6s46zl01000djxc4q9g5blj3f3bv6oau.webp"
       },
       {
         "title": "updream官网",
         "url": "https://updream.cgref.cn/s/2znrpo9er7",
         "category": "核心推荐",
-        "description": "updream官网-AI视频创作助手"
+        "desc": "updream官网-AI视频创作助手",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/07/wuu1lm01000dk9w92cashnhnpdzik9q0.webp"
       },
       {
         "title": "Laper",
         "url": "https://laper.cgref.cn/s/zdkjq78n1r",
         "category": "核心推荐",
-        "description": "剧作软件的进化终点。以剧为本。在 Laper 中协作制片。"
+        "desc": "剧作软件的进化终点。以剧为本。在 Laper 中协作制片。",
+        "image": "https://laper.ai/logo_png_public.png"
       },
       {
         "title": "蛙蛙写作",
         "url": "https://wawawriter.cgref.cn/s/59ngw1oer2",
         "category": "核心推荐",
-        "description": "蛙蛙写作——超级AI智能写作助手",
-        "marked": true
+        "desc": "蛙蛙写作——超级AI智能写作助手",
+        "image": "https://wawawriter.com/app/assets/wawa-qwUtEkkq.svg"
       },
       {
         "title": "Seko",
         "url": "https://seko.cgref.cn/s/2znr3vznr7",
         "category": "核心推荐",
-        "description": "Seko - World Class AI Video Generation Platform"
+        "desc": "Seko - World Class AI Video Generation Platform",
+        "image": "https://seko.sensetime.com/logo-48x48.svg"
       },
       {
         "title": "LiblibAI",
-        "url": "https://liblib.cgref.cn/s/4onyr06kjx",
+        "url": "https://www.liblib.art/?sourceid=005904&utm=cg&cgv=4onyr06kjx",
         "category": "核心推荐",
-        "description": "LiblibAI-哩布哩布AI - 中国领先的AI创作平台"
+        "desc": "LiblibAI-哩布哩布AI - 中国领先的AI创作平台",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/05/p67q3901000dij3oz5c1gns590cvu22e.png"
       },
       {
         "title": "Atoms",
         "url": "https://atoms.cgref.cn/s/20epqjjkw1",
         "category": "核心推荐",
-        "description": "Atoms：用 AI 构建网站与应用，无需编码"
+        "desc": "Atoms：用 AI 构建网站与应用，无需编码",
+        "image": "https://atoms.dev/favicon.ico"
       },
       {
         "title": "LibTV",
         "url": "https://libtv.cgref.cn/s/j7n63dqn1g",
         "category": "核心推荐",
-        "description": "LibTV - 专业视频创作工具"
+        "desc": "LibTV - 专业视频创作工具",
+        "image": "https://www.liblib.tv/favicon.ico"
       },
       {
         "title": "火山引擎",
         "url": "https://volcengine.cgref.cn/s/59ngwxoer2",
         "category": "核心推荐",
-        "description": "方舟 Agent Plan"
+        "desc": "方舟 Agent Plan",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/04/164qw2r1000di3tkojo3bvi7b10pfewm.png"
       },
       {
         "title": "爱派AiPy",
         "url": "https://aipyaipy.cgref.cn/s/3mnzz45no1",
         "category": "核心推荐",
-        "description": "AiPy，超级AI牛马智能体工厂，爱派AiPy软件官网"
+        "desc": "AiPy，超级AI牛马智能体工厂，爱派AiPy软件官网",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/03/1b0hko81000dhg0oniyq2la16ima2auh.png"
       },
       {
         "title": "码上飞",
         "url": "https://codeflying.cgref.cn/s/59ngw0xer2",
         "category": "核心推荐",
-        "description": "码上飞 - 说中文，做应用 | AI生成微信小程序/鸿蒙/APP/H5网站"
+        "desc": "码上飞 - 说中文，做应用 | AI生成微信小程序/鸿蒙/APP/H5网站",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/03/1b0hko81000dhfui1jw14zikq0rewpqf.webp"
       }
     ]
   },
@@ -116,144 +125,181 @@
     "title": "推荐",
     "home": false,
     "tagName": "ol",
-    "items": [
+    "list": [
+      {
+        "title": "创客贴",
+        "url": "https://chuangkit.cgref.cn/s/1oe7dlqe23",
+        "category": "推荐",
+        "desc": "创客贴AI在线设计平台，提供AI多模态能力与海量正版资源，支持一键生成图片、视频，覆盖海报/PPT/社媒等百余种场景。",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/10/64h2jb01000dm9hvkxeaeov1zhc5b8na.webp"
+      },
+      {
+        "title": "小橡皮AI",
+        "url": "https://xiangpiai.cgref.cn/s/xpn8mz6kzw",
+        "category": "推荐",
+        "desc": "帮 AI 创作者一键去机器味、查敏感表达，让内容更自然、更适合平台发布，也更容易获得传播与收录。",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/09/1dswy951000dlro948cfahe12nxkqisn.webp"
+      },
       {
         "title": "潮际好麦",
         "url": "https://chaojihaomai.cgref.cn/s/dqndm2rn2z",
         "category": "推荐",
-        "description": "潮际好麦，专业级AI电商营销内容创作平台"
+        "desc": "潮际好麦，专业级AI电商营销内容创作平台",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/05/lh3px401000diu3kvu0grzo4nqh8uk30.webp"
       },
       {
         "title": "星流",
         "url": "https://xingliu.cgref.cn/s/ogewx7wkp2",
         "category": "推荐",
-        "description": "星流 - 新一代设计Agent"
+        "desc": "星流 - 新一代设计Agent",
+        "image": "https://www.xingliu.art/favicon.ico"
       },
       {
         "title": "Agent Space",
         "url": "https://agentspace.cgref.cn/s/59ngrdjkr2",
         "category": "推荐",
-        "description": "Codex 与 Claude Code 的 AI Agent 工作空间 | Agent.Space"
+        "desc": "Codex 与 Claude Code 的 AI Agent 工作空间 | Agent.Space",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/08/19d709j1000dl2t7i311ww56w62r6imy.webp"
       },
       {
         "title": "剧云",
         "url": "https://jucloud.cgref.cn/s/qmnom6ye29",
         "category": "推荐",
-        "description": "剧云 - 免费专业中文剧本创作平台|AI智能编剧|智能改编|剧本医生"
-      },
-      {
-        "title": "vibeknow",
-        "url": "https://vibeknow.cgref.cn/s/4ony2gwejx",
-        "category": "推荐",
-        "description": "VibeKnow - AI知识视频创作平台|一键将文档/PPT/链接生成知识讲解视频"
+        "desc": "剧云 - 免费专业中文剧本创作平台|AI智能编剧|智能改编|剧本医生",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/08/1sdjizq1000dkruwfs4p07sja0jh5h24.webp"
       },
       {
         "title": "SkildArt",
         "url": "https://skildart.cgref.cn/s/5ln1lo5krw",
         "category": "推荐",
-        "description": "SkildArt 思可达 - 全球电商商家的AI视觉增长引擎"
+        "desc": "SkildArt 思可达 - 全球电商商家的AI视觉增长引擎",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/08/42k5p201000dkrvwv6ho6ak2a03sgwg0.webp"
+      },
+      {
+        "title": "vibeknow",
+        "url": "https://vibeknow.cgref.cn/s/4ony2gwejx",
+        "category": "推荐",
+        "desc": "首页 | Vibeknow – 全球首个AI知识视频创作平台",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/07/qcqzei01000dk4vx5v25pva8ez2vhtc8.webp"
       },
       {
         "title": "讯飞绘文",
         "url": "https://turbodesk.cgref.cn/s/5ln1rlgkrw",
         "category": "推荐",
-        "description": "讯飞绘文 - 科大讯飞一站式AIGC内容运营平台|AI智能选题·写作·配图·多平台发布"
+        "desc": "",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/07/wuu1lm01000dk9y03kh73xao0run6ecu.webp"
       },
       {
         "title": "立刻MV",
         "url": "https://lickmv.cgref.cn/s/rpe3j8jk05",
         "category": "推荐",
-        "description": "立刻MV（LickMV） - AI 音乐视频生成器与 MV 创作工具"
+        "desc": "立刻MV（LickMV） - AI 音乐视频生成器与 MV 创作工具",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/06/1nqhrdg1000dj68m7slix3g42tu6n6oy.webp"
       },
       {
         "title": "切问学术",
         "url": "https://qiewenpaper.cgref.cn/s/41evw43kv8",
         "category": "推荐",
-        "description": "切问学术搜索 - AI 文献发现与深度检索"
+        "desc": "切问学术搜索 - AI 文献发现与深度检索",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/07/6s46zl01000djxcdot8ri2w3i2kt6pke.webp"
       },
       {
         "title": "二狗PPT",
         "url": "https://2dogppt.cgref.cn/s/rpe3j29k05",
         "category": "推荐",
-        "description": "二狗PPT - DeepSeek驱动的AI PPT生成器｜国企汇报·乙方方案·无AI痕迹"
+        "desc": "二狗PPT - DeepSeek驱动的AI PPT生成器｜国企汇报·乙方方案·无AI痕迹",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/07/3fsfc301000djxbtunu24o53nr9efoxr.webp"
       },
       {
         "title": "咔片",
         "url": "https://cappt.cgref.cn/s/xpn8zrznzw",
         "category": "推荐",
-        "description": "咔片PPT-AI一键生成PPT-PPT在线智能制作网站"
+        "desc": "咔片PPT-AI一键生成PPT-PPT在线智能制作网站",
+        "image": "https://www.cappt.cc/favicon.ico"
       },
       {
         "title": "墨刀AI",
         "url": "https://modao.cgref.cn/s/5ln1o0mkrw",
         "category": "推荐",
-        "description": "墨刀AI - 激发无限创造力"
+        "desc": "墨刀AI - 激发无限创造力",
+        "image": "https://images.modao.cc/images/favicon.ico"
       },
       {
         "title": "超级简历WonderCV",
         "url": "https://wondercv.cgref.cn/s/50k9g23ng6",
         "category": "推荐",
-        "description": "超级简历WonderCV - AI智能简历制作工具,HR推荐专业中英文简历模板免费下载"
+        "desc": "超级简历WonderCV - AI智能简历制作工具,HR推荐专业中英文简历模板免费下载",
+        "image": "https://logo.wondercv.com/favicon.ico"
       },
       {
         "title": "UP 简历",
         "url": "https://upcv.cgref.cn/s/1zn5mdykqm",
         "category": "推荐",
-        "description": "AI简历生成在线制作工具_简历模板免费下载使用-UP简历"
+        "desc": "AI简历生成在线制作工具_简历模板免费下载使用-UP简历",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/04/1m56gzf1000di127lhoc4yl1b1xnxgcb.webp"
       },
       {
         "title": "讯飞智作",
         "url": "https://xfzhizuo.cgref.cn/s/rpexmw9k90",
         "category": "推荐",
-        "description": "讯飞智作-AI虚拟数字人视频制作-一键创作口播视频-文字转视频-数字分身定制"
+        "desc": "讯飞智作-AI虚拟数字人视频制作-一键创作口播视频-数字分身定制",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/04/1nakky01000di0dqcuoyrci2rb0vdf56.webp"
       },
       {
         "title": "音述AI",
         "url": "https://yinshu.cgref.cn/s/9qyk4xoe87",
         "category": "推荐",
-        "description": "音述 - 全球前沿专业级中文AI音乐创作平台 | 永久免费在线AI写歌 | 音述AI音乐社区"
+        "desc": "音述 - 全球前沿专业级中文AI音乐创作平台 | 永久免费在线AI写歌 | 音述AI音乐社区",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/04/4tbldy01000dhypafexwvf6692lj4vxd.webp"
       },
       {
         "title": "SpeedAI科研小助手",
         "url": "https://speedai.cgref.cn/s/q50k978ng6",
         "category": "推荐",
-        "description": "SpeedAI科研小助手【官网】- AI降重降AI率 | 知网维普万方"
+        "desc": "SpeedAI科研小助手【官网】- AI降重降AI率 | 知网维普万方",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/04/1xcsvvd1000dhxttpihimlr47g82gsiq.webp"
       },
       {
         "title": "白日梦AI",
         "url": "https://aibrm.cgref.cn/s/l41evd6ev8",
         "category": "推荐",
-        "description": "白日梦AI-领先的AI视频创作类AIGC创作平台"
+        "desc": "白日梦AI-领先的AI视频创作类AIGC创作平台",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/04/1xcsvvd1000dhxmd41lktbo3ij9lxaxb.png"
       },
       {
         "title": "AstronClaw",
         "url": "https://astron-claw.cgref.cn/s/20epq01kw1",
         "category": "推荐",
-        "description": "讯飞星辰Agent平台 - 一站式智能体开发平台"
+        "desc": "讯飞星辰Agent平台 - 一站式智能体开发平台",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/04/1wrrdrl1000dhrpaaoxvbs6dg5q7f29u.webp"
       },
       {
         "title": "AiPPT插件",
         "url": "https://aippt-plugin.cgref.cn/s/3rpe3p9k05",
         "category": "推荐",
-        "description": "AiPPT 插件-AI智能PPT制作软件，一键生成/美化/排版，高效PPT工具"
+        "desc": "AiPPT 插件-AI智能PPT制作软件，一键生成/美化/排版，高效PPT工具",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/04/1mnu9d61000dhnooxt9vxmn7gxdmg3hn.webp"
       },
       {
         "title": "iSlide PPT",
         "url": "https://islide.cgref.cn/s/dp3kqd7eol",
         "category": "推荐",
-        "description": "iSlide- 让PPT设计简单起来 | PPT模板下载平台"
+        "desc": "iSlide- 让PPT设计简单起来 | PPT模板下载平台",
+        "image": "https://www.islide.cc/favicon.ico"
       },
       {
         "title": "沁言学术",
         "url": "https://qinyanai.cgref.cn/s/rpexmw3k90",
         "category": "推荐",
-        "description": "学术超级智能体"
+        "desc": "学术超级智能体",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/04/1mnu9d61000dhj6u79bqap81fzyigk2f.jpeg"
       },
       {
         "title": "01Agent",
         "url": "https://01agent.cgref.cn/s/1oe7l5pn23",
         "category": "推荐",
-        "description": "01Agent - 会协作、能执行、可交付的 AI 创作智能体"
+        "desc": "01Agent - 会协作、能执行、可交付的 AI 创作智能体",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/01/1hc9b211000dfvp0q0ifgg9400927860.png"
       }
     ]
   },
@@ -262,14 +308,14 @@
     "title": "我的",
     "home": true,
     "tagName": "ol",
-    "items": [
+    "list": [
       {
         "title": "原创诗词",
         "url": "/viewer.html?path=文学_原创诗词",
         "category": "文学",
         "date": "2026-09-11",
         "readTime": 57,
-        "description": "蓝色盛夏 作者：吴华锦 视频地址： 视频号 B站 抖音 快手 小红书 <hr 蓝色盛夏，热浪裹青帐，山昏影更长。 泉水倚清涧，兰舟穿荷塘，绿荷如擎盖，芙蓉比高洁。 好风有劲意，欺云赶雨不停息。 吹皱一池淡墨，流远一行柔波，拂起千叶霓裳甚风情。 石阶轻弹珍珠落，回廊闻香挂雨帘。 三三两两，闲叙一二，不止良辰好景，更有赏心乐事。 山色空蒙笼烟纱，泼染水洗如画。 云销雨霁，明月均分千家院，一种情思谁家窗，点滴在心间。 最是酣梦能消除，无念且无主。 少年锦时 作者：吴华锦 视频地址： 视频号 B站 抖音 快手 小红书 <hr 北江之畔，山峦秀丽，川流清冽，风物俱美，人杰地灵。 性情随和，乐于助人，喜文",
+        "desc": "蓝色盛夏 作者：吴华锦 视频地址： 视频号 B站 抖音 快手 小红书 <hr 蓝色盛夏，热浪裹青帐，山昏影更长。 泉水倚清涧，兰舟穿荷塘，绿荷如擎盖，芙蓉比高洁。 好风有劲意，欺云赶雨不停息。 吹皱一池淡墨，流远一行柔波，拂起千叶霓裳甚风情。 石阶轻弹珍珠落，回廊闻香挂雨帘。 三三两两，闲叙一二，不止良辰好景，更有赏心乐事。 山色空蒙笼烟纱，泼染水洗如画。 云销雨霁，明月均分千家院，一种情思谁家窗，点滴在心间。 最是酣梦能消除，无念且无主。 少年锦时 作者：吴华锦 视频地址： 视频号 B站 抖音 快手 小红书 <hr 北江之畔，山峦秀丽，川流清冽，风物俱美，人杰地灵。 性情随和，乐于助人，喜文",
         "marked": true
       },
       {
@@ -278,7 +324,7 @@
         "category": "简历",
         "date": "2026-09-11",
         "readTime": 10,
-        "description": "基本信息 学历：深圳大学-电子信息工程-全日制本科 邮箱: wuhuajin09@163.com GitHub: github.com/whjin 博客: wuhuajin.com 工作经历 广州市高科通信技术股份有限公司 全栈开发工程师 2020.06 - 2026.02 岗位定位：专注公安司法监所领域软硬件产品研发，负责前端架构迭代、Node.js服务开发、国产化适配及AI研发赋能，全程主导产品研发、迭代优化与政企项目落地交付。全程支撑政企项目招投标、落地终验，负责全国警博会技术展示保障，具备成熟的政企项目全流程交付经验。 - 核心参与20+省内外监所政企项目，完成10款安卓终端APP、5",
+        "desc": "基本信息 学历：深圳大学-电子信息工程-全日制本科 邮箱: wuhuajin09@163.com GitHub: github.com/whjin 博客: wuhuajin.com 工作经历 广州市高科通信技术股份有限公司 全栈开发工程师 2020.06 - 2026.02 岗位定位：专注公安司法监所领域软硬件产品研发，负责前端架构迭代、Node.js服务开发、国产化适配及AI研发赋能，全程主导产品研发、迭代优化与政企项目落地交付。全程支撑政企项目招投标、落地终验，负责全国警博会技术展示保障，具备成熟的政企项目全流程交付经验。 - 核心参与20+省内外监所政企项目，完成10款安卓终端APP、5",
         "reward": true,
         "marked": true
       },
@@ -286,7 +332,7 @@
         "title": "中文简历PDF",
         "url": "/viewer.html?path=简历_中文简历PDF&format=pdf",
         "category": "我的",
-        "description": "吴华锦中文简历（PDF 下载版）：深圳大学电子信息工程全日制本科，全栈开发工程师，专注公安司法监所领域软硬件产品研发，负责前端架构迭代、Node.js 服务开发、国产化适配与 AI 研发赋能；核心参与 20+ 省内外政企项目，完成 10 款安卓终端 APP，具备成熟的政企项目全流程交付经验。点击下载 PDF 查看完整履历。"
+        "desc": "吴华锦中文简历（PDF 下载版）：深圳大学电子信息工程全日制本科，全栈开发工程师，专注公安司法监所领域软硬件产品研发，负责前端架构迭代、Node.js 服务开发、国产化适配与 AI 研发赋能；核心参与 20+ 省内外政企项目，完成 10 款安卓终端 APP，具备成熟的政企项目全流程交付经验。点击下载 PDF 查看完整履历。"
       },
       {
         "title": "英文简历",
@@ -294,13 +340,13 @@
         "category": "简历",
         "date": "2026-09-11",
         "readTime": 10,
-        "description": "Huajin Wu Email: wuhuajin09@163.com GitHub: github.com/whjin Portfolio: wuhuajin.com Education Shenzhen University Bachelor of Engineering, Electronic Information Engineering Professional Summary Results-driven Full-Stack Engineer with 7+ years of enterprise development experience, focusing on cross"
+        "desc": "Huajin Wu Email: wuhuajin09@163.com GitHub: github.com/whjin Portfolio: wuhuajin.com Education Shenzhen University Bachelor of Engineering, Electronic Information Engineering Professional Summary Results-driven Full-Stack Engineer with 7+ years of enterprise development experience, focusing on cross"
       },
       {
         "title": "英文简历PDF",
         "url": "/viewer.html?path=简历_英文简历PDF&format=pdf",
         "category": "我的",
-        "description": "Huajin Wu's English resume (PDF): a full-stack engineer with 7+ years of enterprise development experience and a B.Eng. in Electronic Information Engineering from Shenzhen University. Experienced in front-end architecture, Node.js backend services, cross-platform development and AI-enabled product R&D, with a proven record in government/enterprise project delivery. Download the PDF for the full English CV."
+        "desc": "Huajin Wu's English resume (PDF): a full-stack engineer with 7+ years of enterprise development experience and a B.Eng. in Electronic Information Engineering from Shenzhen University. Experienced in front-end architecture, Node.js backend services, cross-platform development and AI-enabled product R&D, with a proven record in government/enterprise project delivery. Download the PDF for the full English CV."
       }
     ]
   },
@@ -309,38 +355,38 @@
     "title": "站点",
     "home": true,
     "tagName": "ol",
-    "items": [
+    "list": [
       {
         "title": "技术文章",
         "url": "/viewer.html?path=Link_文章_article&format=html",
         "category": "站点",
-        "description": "本站技术文章精选，原创整理并持续更新，覆盖 Vue、React、Node.js、TypeScript、小程序、Web3 智能合约、WebRTC 音视频、工程化构建与网络安全加密等前后端核心知识，每篇辅以实战案例与可运行代码示例，为开发者提供系统化、易检索的技术学习资料库，帮助快速定位并掌握关键技术点。",
+        "desc": "本站技术文章精选，原创整理并持续更新，覆盖 Vue、React、Node.js、TypeScript、小程序、Web3 智能合约、WebRTC 音视频、工程化构建与网络安全加密等前后端核心知识，每篇辅以实战案例与可运行代码示例，为开发者提供系统化、易检索的技术学习资料库，帮助快速定位并掌握关键技术点。",
         "marked": true
       },
       {
         "title": "基金分析平台",
         "url": "https://fundscope.wuhuajin.com/",
         "category": "站点",
-        "description": "FundScope 专业基金持仓分析平台，面向个人投资者的基金数据可视化分析工具，支持基金持仓跟踪、净值与收益走势、行业板块分布分析，帮助投资者清晰掌握投资组合动态、优化投资决策。",
+        "desc": "FundScope 专业基金持仓分析平台，面向个人投资者的基金数据可视化分析工具，支持基金持仓跟踪、净值与收益走势、行业板块分布分析，帮助投资者清晰掌握投资组合动态、优化投资决策。",
         "marked": true
       },
       {
         "title": "https://github.com/whjin/calculateApp",
         "url": "https://wuhuajin.com/calculateApp/",
         "category": "站点",
-        "description": "简易计算器（calculateApp）在线应用，界面简洁、开箱即用，支持基础四则运算与常用计算功能，既是轻量实用的日常工具，也可作为前端与移动端技术实践与封装思路的参考示例。"
+        "desc": "简易计算器（calculateApp）在线应用，界面简洁、开箱即用，支持基础四则运算与常用计算功能，既是轻量实用的日常工具，也可作为前端与移动端技术实践与封装思路的参考示例。"
       },
       {
         "title": "https://github.com/whjin/gis-vue",
         "url": "https://wuhuajin.com/gis-vue/",
         "category": "站点",
-        "description": "GIS Vue3 项目（gis-vue）实践工程，基于 Vue 3 + TypeScript 构建 WebGIS 可视化应用，集成地图渲染、空间数据展示、图层控制与交互分析等能力，适合学习前端 GIS 开发与 Vue3 工程化实践。"
+        "desc": "GIS Vue3 项目（gis-vue）实践工程，基于 Vue 3 + TypeScript 构建 WebGIS 可视化应用，集成地图渲染、空间数据展示、图层控制与交互分析等能力，适合学习前端 GIS 开发与 Vue3 工程化实践。"
       },
       {
         "title": "https://github.com/whjin/next-ai-core",
         "url": "https://nextai.wuhuajin.com/",
         "category": "站点",
-        "description": "Next AI Core（next-ai-core）AI 应用核心项目，基于 Next.js 构建，集成大模型能力调用与前后端一体化架构，演示从模型接入、业务逻辑到界面交付的完整 AI 应用开发实践。"
+        "desc": "Next AI Core（next-ai-core）AI 应用核心项目，基于 Next.js 构建，集成大模型能力调用与前后端一体化架构，演示从模型接入、业务逻辑到界面交付的完整 AI 应用开发实践。"
       }
     ]
   },
@@ -350,14 +396,14 @@
     "type": "articles",
     "home": true,
     "tagName": "ol",
-    "items": [
+    "list": [
       {
         "title": "Webpack原理详解",
         "url": "/src/template/posts/JavaScript/html/Webpack原理详解.html",
         "category": "JavaScript",
         "date": "2026-10-12 16:36:45",
         "readTime": 16,
-        "description": "本篇文章系统讲解 Webpack 这一现代前端核心构建工具的工作原理。Webpack 本质上是一个静态模块打包工具，它会从配置的入口文件出发，自动构建项目的依赖图，将所有模块打包成浏览器可直接运行的静态资源。文章首先结合最新官方文档介绍 Webpack 的核心概念，包括入口 Entry、输出 Output、Loader 模块转换器、Plugin 插件、模式 Mode 以及浏览器兼容性与运行环境要求，并说明各概念的实际配置方式。随后深入剖析 Webpack 的三大构建阶段，即初始化、编译与输出，讲解 Compiler 与 Compilation 对象的职责、Loader 转换模块的流程以及依赖图递归构建的过程。最后通过分析输出文件 bundle 的源码结构，解释多个模块如何被合并为一个文件、浏览器端如何通过模拟 require 的加载函数运行模块，以及代码分割的原理，帮助读者真正理解 Webpack 的底层机制。",
+        "desc": "本篇文章系统讲解 Webpack 这一现代前端核心构建工具的工作原理。Webpack 本质上是一个静态模块打包工具，它会从配置的入口文件出发，自动构建项目的依赖图，将所有模块打包成浏览器可直接运行的静态资源。文章首先结合最新官方文档介绍 Webpack 的核心概念，包括入口 Entry、输出 Output、Loader 模块转换器、Plugin 插件、模式 Mode 以及浏览器兼容性与运行环境要求，并说明各概念的实际配置方式。随后深入剖析 Webpack 的三大构建阶段，即初始化、编译与输出，讲解 Compiler 与 Compilation 对象的职责、Loader 转换模块的流程以及依赖图递归构建的过程。最后通过分析输出文件 bundle 的源码结构，解释多个模块如何被合并为一个文件、浏览器端如何通过模拟 require 的加载函数运行模块，以及代码分割的原理，帮助读者真正理解 Webpack 的底层机制。",
         "tags": [
           "javascript",
           "webpack",
@@ -372,7 +418,7 @@
         "category": "网络",
         "date": "2026-10-12 16:28:59",
         "readTime": 37,
-        "description": "本篇文章系统梳理计算机网络的必备基础知识，适合前后端开发者日常快速查阅。文章首先介绍 HTTP 响应常见状态码，按 1xx 至 5xx 分类讲解各段含义，并重点解析 200、302、304、403、404、500 等高频状态码的使用场景。随后详细讲解 TCP 三次握手建立连接与四次挥手释放连接的完整过程，理解连接建立与关闭每一步的报文交换。接着展开计算机网络体系结构，从应用层、运输层、网络层、数据链路层到物理层，逐层说明各层职责与代表协议，并梳理 TCP 与 UDP 两大传输协议的差异，以及 TCP/IP 七层体系结构的协作关系。最后对比 HTTP 与 HTTPS 的区别，了解明文传输与加密传输的本质差异。全文以表格和图解呈现、即查即用，是理解网络原理与排查网络问题的实用参考。",
+        "desc": "本篇文章系统梳理计算机网络的必备基础知识，适合前后端开发者日常快速查阅。文章首先介绍 HTTP 响应常见状态码，按 1xx 至 5xx 分类讲解各段含义，并重点解析 200、302、304、403、404、500 等高频状态码的使用场景。随后详细讲解 TCP 三次握手建立连接与四次挥手释放连接的完整过程，理解连接建立与关闭每一步的报文交换。接着展开计算机网络体系结构，从应用层、运输层、网络层、数据链路层到物理层，逐层说明各层职责与代表协议，并梳理 TCP 与 UDP 两大传输协议的差异，以及 TCP/IP 七层体系结构的协作关系。最后对比 HTTP 与 HTTPS 的区别，了解明文传输与加密传输的本质差异。全文以表格和图解呈现、即查即用，是理解网络原理与排查网络问题的实用参考。",
         "tags": [
           "网络",
           "HTTP"
@@ -386,7 +432,7 @@
         "category": "JavaScript",
         "date": "2026-10-12 14:45:11",
         "readTime": 19,
-        "description": "正则表达式是处理字符串最强大的工具，但也是最容易写错、最难调试的工具。本手册分为四部分：JS 正则怎么用 → 语法速查 → 常用表达式合集 → 常见坑，收藏后随查随用。 官方参考：完整的 RegExp 语法定义见 MDN Regular Expressions 文档，本文是其实战提炼。 一、JavaScript 正则的四种用法 创建正则 四种核心方法 方法 所属对象 返回值 适用场景 regex.test(str) RegExp true / false 只判断是否匹配，如表单校验 str.match(regex) String 匹配结果数组或 null 提取匹配内容，最简单 str.matc",
+        "desc": "正则表达式是处理字符串最强大的工具，但也是最容易写错、最难调试的工具。本手册分为四部分：JS 正则怎么用 → 语法速查 → 常用表达式合集 → 常见坑，收藏后随查随用。 官方参考：完整的 RegExp 语法定义见 MDN Regular Expressions 文档，本文是其实战提炼。 一、JavaScript 正则的四种用法 创建正则 四种核心方法 方法 所属对象 返回值 适用场景 regex.test(str) RegExp true / false 只判断是否匹配，如表单校验 str.match(regex) String 匹配结果数组或 null 提取匹配内容，最简单 str.matc",
         "tags": [
           "javascript",
           "正则表达式",
@@ -401,7 +447,7 @@
         "category": "JavaScript",
         "date": "2026-10-12 01:27:12",
         "readTime": 10,
-        "description": "这里整理了 JavaScript 入门阶段最核心的 8 个知识点思维导图。每张图覆盖一个主题，图下附文字要点，方便快速回顾。 1. 变量 要点： - 声明方式：var（函数作用域）、let（块级）、const（常量） - 数据类型：原始类型（number、string、boolean、null、undefined、symbol、bigint）和引用类型（object、array、function） - 类型转换：隐式转换（==、+ 运算）和显式转换（Number()、String()、Boolean()） - 作用域：全局、函数、块级；作用域链查找规则 2. 运算符 要点： - 算术运算符：+",
+        "desc": "这里整理了 JavaScript 入门阶段最核心的 8 个知识点思维导图。每张图覆盖一个主题，图下附文字要点，方便快速回顾。 1. 变量 要点： - 声明方式：var（函数作用域）、let（块级）、const（常量） - 数据类型：原始类型（number、string、boolean、null、undefined、symbol、bigint）和引用类型（object、array、function） - 类型转换：隐式转换（==、+ 运算）和显式转换（Number()、String()、Boolean()） - 作用域：全局、函数、块级；作用域链查找规则 2. 运算符 要点： - 算术运算符：+",
         "top": true,
         "reward": true
       },
@@ -411,7 +457,7 @@
         "category": "Git",
         "date": "2026-10-12 01:25:07",
         "readTime": 8,
-        "description": "Git 命令很多，但日常高频使用的集中在：提交规范、分支操作、远程协作、撤销回退这几类。下面整理了 7 张思维导图，每张附文字要点。 1. Conventional Commits 提交规范 规范化的提交信息让每次变更一目了然，还能自动生成 CHANGELOG。 格式：type(scope): description 核心 type 类型： type 含义 示例 feat 新功能 feat(login): 添加微信登录 fix 修复 Bug fix(home): 修复首页轮播图不自动播放 docs 文档变更 docs(readme): 更新安装说明 refactor 重构 refactor(a",
+        "desc": "Git 命令很多，但日常高频使用的集中在：提交规范、分支操作、远程协作、撤销回退这几类。下面整理了 7 张思维导图，每张附文字要点。 1. Conventional Commits 提交规范 规范化的提交信息让每次变更一目了然，还能自动生成 CHANGELOG。 格式：type(scope): description 核心 type 类型： type 含义 示例 feat 新功能 feat(login): 添加微信登录 fix 修复 Bug fix(home): 修复首页轮播图不自动播放 docs 文档变更 docs(readme): 更新安装说明 refactor 重构 refactor(a",
         "top": true,
         "reward": true
       },
@@ -421,7 +467,7 @@
         "category": "Node",
         "date": "2026-10-12 00:57:02",
         "readTime": 9,
-        "description": "面向 Node.js 开发者与初学者的核心速查文档，系统梳理日常最常用、最易遗忘的知识点。内容包括 npm 包管理的常用命令与全局路径配置；fs 文件模块的读写参数、flag 标志位及同步 API 的 try...catch 异常处理；stats 文件状态判断与 path 路径模块常用方法；HTTP 无连接无状态特性与 OSI 七层模型；并深入讲解 Node.js 事件循环（Event Loop）的运行机制。全文以表格速查为主，是开发时随手可查的参考手册，帮助你在写文件、装依赖、处理路径、排查网络问题时快速定位答案。",
+        "desc": "面向 Node.js 开发者与初学者的核心速查文档，系统梳理日常最常用、最易遗忘的知识点。内容包括 npm 包管理的常用命令与全局路径配置；fs 文件模块的读写参数、flag 标志位及同步 API 的 try...catch 异常处理；stats 文件状态判断与 path 路径模块常用方法；HTTP 无连接无状态特性与 OSI 七层模型；并深入讲解 Node.js 事件循环（Event Loop）的运行机制。全文以表格速查为主，是开发时随手可查的参考手册，帮助你在写文件、装依赖、处理路径、排查网络问题时快速定位答案。",
         "top": true,
         "reward": true
       },
@@ -431,7 +477,7 @@
         "category": "Node",
         "date": "2026-09-26",
         "readTime": 8,
-        "description": "子进程 - 创建 node 子进程用 fork，自带通道方便通信 充分利用多核 CPU 的优势，用到 child_process 模块创建子进程，有四种方法可以创建子进程： - exec - execFile - spawn - fork 四个方法都会返回 ChildProcess 实例（继承自 EventEmitter），该实例拥有三个标准的 stdio 流： 1. child.stdin 2. child.stdout 3. child.stderr 子进程生命周期内可以注册监听的事件有： - exit：子进程结束时触发，参数 code 错误码和 signal 中断信号 - close：子",
+        "desc": "子进程 - 创建 node 子进程用 fork，自带通道方便通信 充分利用多核 CPU 的优势，用到 child_process 模块创建子进程，有四种方法可以创建子进程： - exec - execFile - spawn - fork 四个方法都会返回 ChildProcess 实例（继承自 EventEmitter），该实例拥有三个标准的 stdio 流： 1. child.stdin 2. child.stdout 3. child.stderr 子进程生命周期内可以注册监听的事件有： - exit：子进程结束时触发，参数 code 错误码和 signal 中断信号 - close：子",
         "reward": true
       },
       {
@@ -440,7 +486,7 @@
         "category": "工程化",
         "date": "2026-09-26",
         "readTime": 13,
-        "description": "Docker部署 1. 安装 Docker dnf 添加 docker-ce 阿里云源并安装，启停 2. 获取镜像 拉取 ghcr.io 官方镜像；拉不动则 git clone 后本地 docker build 3. 运行容器 -p 80:80，配置 METING_URL / METING_TOKEN 环境变量 4. 放行端口 阿里云安全组 + firewalld 放行 80 5. 验证 curl 访问 /api?server=netease&type=search 第 1 步：安装 Docker（阿里云官方源） 第 2 步：获取镜像 拉取Github仓库代码本地构建 配置 Docker 镜像",
+        "desc": "Docker部署 1. 安装 Docker dnf 添加 docker-ce 阿里云源并安装，启停 2. 获取镜像 拉取 ghcr.io 官方镜像；拉不动则 git clone 后本地 docker build 3. 运行容器 -p 80:80，配置 METING_URL / METING_TOKEN 环境变量 4. 放行端口 阿里云安全组 + firewalld 放行 80 5. 验证 curl 访问 /api?server=netease&type=search 第 1 步：安装 Docker（阿里云官方源） 第 2 步：获取镜像 拉取Github仓库代码本地构建 配置 Docker 镜像",
         "reward": true
       },
       {
@@ -449,7 +495,7 @@
         "category": "AI",
         "date": "2026-09-24",
         "readTime": 24,
-        "description": "四、优质学习资源汇总 4.1 在线学习平台 平台 特色 推荐课程 价格 --------------------------------------------------- ------------ ------------------------------------- -------- DeepLearning.AI AI 专项课程 ChatGPT Prompt Engineering, AI Agents 部分免费 Coursera 大学合作课程 ML Specialization, Data Science 订阅制 Udemy 实用技能培训 React, Node.js, Pyth",
+        "desc": "四、优质学习资源汇总 4.1 在线学习平台 平台 特色 推荐课程 价格 --------------------------------------------------- ------------ ------------------------------------- -------- DeepLearning.AI AI 专项课程 ChatGPT Prompt Engineering, AI Agents 部分免费 Coursera 大学合作课程 ML Specialization, Data Science 订阅制 Udemy 实用技能培训 React, Node.js, Pyth",
         "tags": [
           "AI",
           "学习路线"
@@ -463,7 +509,7 @@
         "category": "AI",
         "date": "2026-09-11",
         "readTime": 28,
-        "description": "模型侧 - LLM （大语言模型） - fine-tuning - 模型微调：成本较高，灾难性遗忘 - 多模态：输入：图片、音视频 输出：富媒体内容 - 模型效果评测：AI Code 实现场景（实现一个电商网站，是否有登录、是否有购物车），核心评测手段，依靠人工来评测 - 模型部署优化（模型压缩） - 数据蒸馏 - 推理加速优化：核心方法，模型提前按照高频的使用场景（query词）生成好模板 工程侧 - 领域能力 webview的IDE应用 LSP - 上下文管理 - 提示词工程：通过指令的方式，规范化模型的输出，让模型的回复（处理效果）更符合预期 - multi agent：工程分治的思想，",
+        "desc": "模型侧 - LLM （大语言模型） - fine-tuning - 模型微调：成本较高，灾难性遗忘 - 多模态：输入：图片、音视频 输出：富媒体内容 - 模型效果评测：AI Code 实现场景（实现一个电商网站，是否有登录、是否有购物车），核心评测手段，依靠人工来评测 - 模型部署优化（模型压缩） - 数据蒸馏 - 推理加速优化：核心方法，模型提前按照高频的使用场景（query词）生成好模板 工程侧 - 领域能力 webview的IDE应用 LSP - 上下文管理 - 提示词工程：通过指令的方式，规范化模型的输出，让模型的回复（处理效果）更符合预期 - multi agent：工程分治的思想，",
         "reward": true
       },
       {
@@ -472,7 +518,7 @@
         "category": "AI",
         "date": "2026-09-11",
         "readTime": 6,
-        "description": "MCP 接口标准 MCP-Model Context Protocol，模型上下文协议 提升对大模型行为的控制能力：优化提问方式，设计输入环境，连接外部能力，形成可复用能力单元。 为模型提供可调用的能力（查询数据、执行操作或访问服务），通过标准化接口，让模型能够可靠地调用外部能力。 MCP 核心组件 - MCP Client - MCP Server - MCP Host MCP Server 1. Tools 执行动作 基于统一的协议标准定义和调用，具有更好的通用性和可复用行 2. Resources 提供信息 - MCP Server Resources 是一种数据源 - RAG 是一种数",
+        "desc": "MCP 接口标准 MCP-Model Context Protocol，模型上下文协议 提升对大模型行为的控制能力：优化提问方式，设计输入环境，连接外部能力，形成可复用能力单元。 为模型提供可调用的能力（查询数据、执行操作或访问服务），通过标准化接口，让模型能够可靠地调用外部能力。 MCP 核心组件 - MCP Client - MCP Server - MCP Host MCP Server 1. Tools 执行动作 基于统一的协议标准定义和调用，具有更好的通用性和可复用行 2. Resources 提供信息 - MCP Server Resources 是一种数据源 - RAG 是一种数",
         "reward": true
       },
       {
@@ -481,7 +527,7 @@
         "category": "AI",
         "date": "2026-09-11",
         "readTime": 5,
-        "description": "Next.js 是 React 生态最流行的服务端渲染框架。它把 React 项目需要自己配的 Webpack、路由、代码拆分、服务端渲染全部内置了。这篇文章快速过一遍它的核心特性。 一、零配置 开箱即用：自动编译、打包、热更新，不需要写 Webpack 配置。TypeScript、CSS、Sass、图片优化全部内置支持。 二、三种渲染模式 Next.js 最大的优势是在一个项目里同时支持三种渲染： 模式 全称 什么时候渲染 适用场景 SSG Static Site Generation 构建时预渲染成静态 HTML 博客、文档、营销页 SSR Server-Side Rendering 每次",
+        "desc": "Next.js 是 React 生态最流行的服务端渲染框架。它把 React 项目需要自己配的 Webpack、路由、代码拆分、服务端渲染全部内置了。这篇文章快速过一遍它的核心特性。 一、零配置 开箱即用：自动编译、打包、热更新，不需要写 Webpack 配置。TypeScript、CSS、Sass、图片优化全部内置支持。 二、三种渲染模式 Next.js 最大的优势是在一个项目里同时支持三种渲染： 模式 全称 什么时候渲染 适用场景 SSG Static Site Generation 构建时预渲染成静态 HTML 博客、文档、营销页 SSR Server-Side Rendering 每次",
         "reward": true
       },
       {
@@ -490,7 +536,7 @@
         "category": "Android",
         "date": "2026-09-11",
         "readTime": 17,
-        "description": "ADB（Android Debug Bridge）是 Android 开发和调试最核心的命令行工具。不管是安装 APK、抓日志、截屏、模拟点击，还是调试真机问题，都离不开它。本手册按使用场景分类整理，收藏后随查随用。 官方文档：完整的 ADB 参数说明见 Android Developers · Debug Your App，本文是实战命令速查。 一、环境准备 ADB 包含在 Android SDK Platform-Tools 中，独立安装即可，不需要下载完整 SDK： 真机调试前提：手机 → 设置 → 关于手机 → 连续点击\\\"版本号\\\"7 次开启开发者选项 → 开启\\\"USB 调试\\\"。 二、设",
+        "desc": "ADB（Android Debug Bridge）是 Android 开发和调试最核心的命令行工具。不管是安装 APK、抓日志、截屏、模拟点击，还是调试真机问题，都离不开它。本手册按使用场景分类整理，收藏后随查随用。 官方文档：完整的 ADB 参数说明见 Android Developers · Debug Your App，本文是实战命令速查。 一、环境准备 ADB 包含在 Android SDK Platform-Tools 中，独立安装即可，不需要下载完整 SDK： 真机调试前提：手机 → 设置 → 关于手机 → 连续点击\\\"版本号\\\"7 次开启开发者选项 → 开启\\\"USB 调试\\\"。 二、设",
         "reward": true
       },
       {
@@ -499,7 +545,7 @@
         "category": "Git",
         "date": "2026-09-11",
         "readTime": 14,
-        "description": "Git 提交规范 类型说明 :----::----: feat新特性 fix(scope)修复 scope 中的 Bug feat!:/feat(scope)!:breaking change / 重构 API build变更影响的是构建系统或者外部依赖 (如: gulp, npm) ci修改了 CI 配置文件或脚本 (如: Github Action, Travis) chore【重要】 变更不影响源代码或测试（如更新了辅助工具、库等) docs只修改了文档 feat【重要】 一个新特性 fix【重要】 修复了一个 Bug perf增强性能的代码变更 refactor并非修复 Bug 或添加",
+        "desc": "Git 提交规范 类型说明 :----::----: feat新特性 fix(scope)修复 scope 中的 Bug feat!:/feat(scope)!:breaking change / 重构 API build变更影响的是构建系统或者外部依赖 (如: gulp, npm) ci修改了 CI 配置文件或脚本 (如: Github Action, Travis) chore【重要】 变更不影响源代码或测试（如更新了辅助工具、库等) docs只修改了文档 feat【重要】 一个新特性 fix【重要】 修复了一个 Bug perf增强性能的代码变更 refactor并非修复 Bug 或添加",
         "reward": true
       },
       {
@@ -508,7 +554,7 @@
         "category": "JavaScript",
         "date": "2026-09-11",
         "readTime": 11,
-        "description": "ES6（ES2015）之后，JavaScript 每年都有新版本，语法变化很大。这篇文章把日常开发最常用的 ES6+ 特性整理成速查手册，配合代码示例，随时翻阅。 一、var / let / const 特性 var let const 重复声明 允许 不允许 不允许 块级作用域 不支持（函数级） 支持 支持 变量提升 提升并初始化为 undefined 提升但存在暂存死区 同 let 挂载到 window 是 否 否 重新赋值 允许 允许 不允许 最佳实践：默认用 const，需要重新赋值时用 let，永远不用 var。 二、ES6 Module 与 CommonJS 的区别 特性 Comm",
+        "desc": "ES6（ES2015）之后，JavaScript 每年都有新版本，语法变化很大。这篇文章把日常开发最常用的 ES6+ 特性整理成速查手册，配合代码示例，随时翻阅。 一、var / let / const 特性 var let const 重复声明 允许 不允许 不允许 块级作用域 不支持（函数级） 支持 支持 变量提升 提升并初始化为 undefined 提升但存在暂存死区 同 let 挂载到 window 是 否 否 重新赋值 允许 允许 不允许 最佳实践：默认用 const，需要重新赋值时用 let，永远不用 var。 二、ES6 Module 与 CommonJS 的区别 特性 Comm",
         "reward": true
       },
       {
@@ -517,7 +563,7 @@
         "category": "JavaScript",
         "date": "2026-09-11",
         "readTime": 40,
-        "description": "两数之和 日期格式化 时间转换（秒数转时分秒） 计算时分秒差值 深拷贝和浅拷贝 浅拷贝 - 只拷贝一层 - 引用类型拷贝内存地址 深拷贝 数组去重 数组对象去重 数组对象排序 获取上/下个月日期 获取前/后7天日期 一周日期 点击内容切换 时分秒 当月第一天和最后一天 fetch接口请求 按键处理方法 返回顶部 自适应内部元素 iview封装菜单menu 图片懒加载 CSS多行文本省略 Vue字符串换行 封装iView无限层级菜单 上传文件 CSS控制禁止点击 pointer-events: none; //（禁止鼠标点击事件） 单行居中，多行顶部对齐 计算传入时间与当前时间相差的秒数 提取U",
+        "desc": "两数之和 日期格式化 时间转换（秒数转时分秒） 计算时分秒差值 深拷贝和浅拷贝 浅拷贝 - 只拷贝一层 - 引用类型拷贝内存地址 深拷贝 数组去重 数组对象去重 数组对象排序 获取上/下个月日期 获取前/后7天日期 一周日期 点击内容切换 时分秒 当月第一天和最后一天 fetch接口请求 按键处理方法 返回顶部 自适应内部元素 iview封装菜单menu 图片懒加载 CSS多行文本省略 Vue字符串换行 封装iView无限层级菜单 上传文件 CSS控制禁止点击 pointer-events: none; //（禁止鼠标点击事件） 单行居中，多行顶部对齐 计算传入时间与当前时间相差的秒数 提取U",
         "reward": true
       },
       {
@@ -526,7 +572,7 @@
         "category": "JavaScript",
         "date": "2026-09-11",
         "readTime": 12,
-        "description": "设计模式不是八股文，而是前人总结的解决常见问题的最优方案。这篇文章用 JavaScript 实现最常用的设计模式，配代码示例和适用场景。 一、五大设计原则（SOLID） 原则 含义 单一职责（SRP） 一个类只做一件事 开放封闭（OCP） 对扩展开放，对修改封闭 里氏替换（LSP） 子类必须能替换父类 接口分离（ISP） 不依赖不需要的接口 依赖倒置（DIP） 依赖抽象，不依赖具体实现 二、工厂模式 通过参数决定创建哪个对象，不用直接 new。 适用场景：根据配置或用户选择创建不同类型的对象，如弹窗、按钮、支付方式。 三、单例模式 确保一个类只有一个实例。 适用场景：全局配置、数据库连接池、全",
+        "desc": "设计模式不是八股文，而是前人总结的解决常见问题的最优方案。这篇文章用 JavaScript 实现最常用的设计模式，配代码示例和适用场景。 一、五大设计原则（SOLID） 原则 含义 单一职责（SRP） 一个类只做一件事 开放封闭（OCP） 对扩展开放，对修改封闭 里氏替换（LSP） 子类必须能替换父类 接口分离（ISP） 不依赖不需要的接口 依赖倒置（DIP） 依赖抽象，不依赖具体实现 二、工厂模式 通过参数决定创建哪个对象，不用直接 new。 适用场景：根据配置或用户选择创建不同类型的对象，如弹窗、按钮、支付方式。 三、单例模式 确保一个类只有一个实例。 适用场景：全局配置、数据库连接池、全",
         "reward": true
       },
       {
@@ -535,7 +581,7 @@
         "category": "Node",
         "date": "2026-09-11",
         "readTime": 8,
-        "description": "全栈图书管理系统 项目地址：book-management-system 1. 完整项目的需求分析和架构设计（需求规划、目录结构设计、接口设计） 2. 后端接口开发和数据库设计（Express + MongoDB 开发接口，设计数据模型，认证授权） 3. 前后端联调方法和解决跨域问题（Apifox 测试接口，cors和代理解决跨域问题） 4. 项目部署流程，使用 PM2 管理应用进程（搭建服务器环境、上传项目、PM2 启动、管理项目） 5. 项目优化与迭代（性能优化、功能扩展） 一、需求分析 1. 功能规划：分角色、分模块 - 公共功能：用户注册、用户登录（JWT认证）、图书借阅（模糊查询、分",
+        "desc": "全栈图书管理系统 项目地址：book-management-system 1. 完整项目的需求分析和架构设计（需求规划、目录结构设计、接口设计） 2. 后端接口开发和数据库设计（Express + MongoDB 开发接口，设计数据模型，认证授权） 3. 前后端联调方法和解决跨域问题（Apifox 测试接口，cors和代理解决跨域问题） 4. 项目部署流程，使用 PM2 管理应用进程（搭建服务器环境、上传项目、PM2 启动、管理项目） 5. 项目优化与迭代（性能优化、功能扩展） 一、需求分析 1. 功能规划：分角色、分模块 - 公共功能：用户注册、用户登录（JWT认证）、图书借阅（模糊查询、分",
         "reward": true
       },
       {
@@ -544,7 +590,7 @@
         "category": "Node",
         "date": "2026-09-11",
         "readTime": 16,
-        "description": "非阻塞 IO - 开源的 JS 运行环境 - Chrome V8引擎 非阻塞 异步 IO 服务端 - 事件驱动：事件队列 异步事件 任务队列 - 适合处理高并发请求 优缺点 - 高并发 - IO 密集型 - 单线程 不适合 CPU 密集型应用 单核 CPU - 代码发生问题，系统会崩溃 应用场景 - IO 更适合 - IO 内部不需要做非常复杂的逻辑 - WebSocket - 后台管理 实时交互系统 高并发 - canvas 多人协作 - 单页面浏览器应用创建服务 - 开发服务器端的中间层（BFF） - 开发前端方向的各种工具 fs 模块 - fs: filesystem 操作文档文件夹 -",
+        "desc": "非阻塞 IO - 开源的 JS 运行环境 - Chrome V8引擎 非阻塞 异步 IO 服务端 - 事件驱动：事件队列 异步事件 任务队列 - 适合处理高并发请求 优缺点 - 高并发 - IO 密集型 - 单线程 不适合 CPU 密集型应用 单核 CPU - 代码发生问题，系统会崩溃 应用场景 - IO 更适合 - IO 内部不需要做非常复杂的逻辑 - WebSocket - 后台管理 实时交互系统 高并发 - canvas 多人协作 - 单页面浏览器应用创建服务 - 开发服务器端的中间层（BFF） - 开发前端方向的各种工具 fs 模块 - fs: filesystem 操作文档文件夹 -",
         "reward": true
       },
       {
@@ -553,7 +599,7 @@
         "category": "RN",
         "date": "2026-09-11",
         "readTime": 4,
-        "description": "从 React Native 0.70 开始，Hermes 成为 Android 和 iOS 双平台的默认 JavaScript 引擎。它解决了 RN 长期被诟病的启动慢、内存高、包体积大三大问题。这篇文章讲清楚它为什么能做到。 核心工作原理 Hermes 采用 AOT（Ahead-Of-Time）预编译策略： - 构建时：Hermes 编译器介入，直接将 JS 代码编译为紧凑的字节码（.hbc 文件） - 运行时：App 启动时 Hermes 虚拟机直接加载并执行字节码，完全绕过运行时解析与 JIT 编译环节 对比传统引擎（V8/JSC）的 JIT（Just-In-Time）模式： - 运行",
+        "desc": "从 React Native 0.70 开始，Hermes 成为 Android 和 iOS 双平台的默认 JavaScript 引擎。它解决了 RN 长期被诟病的启动慢、内存高、包体积大三大问题。这篇文章讲清楚它为什么能做到。 核心工作原理 Hermes 采用 AOT（Ahead-Of-Time）预编译策略： - 构建时：Hermes 编译器介入，直接将 JS 代码编译为紧凑的字节码（.hbc 文件） - 运行时：App 启动时 Hermes 虚拟机直接加载并执行字节码，完全绕过运行时解析与 JIT 编译环节 对比传统引擎（V8/JSC）的 JIT（Just-In-Time）模式： - 运行",
         "reward": true
       },
       {
@@ -562,7 +608,7 @@
         "category": "React",
         "date": "2026-09-11",
         "readTime": 5,
-        "description": "核心技术 - JSX开发思想 - 虚拟 dom 渲染 - 单项数据流 - state 与 props - 类组件与组件的生命周期 - 函数式组件与副作用处理机制 - hooks - 事件处理 - 条件渲染 - 列表与数据塑形 - ajax异步处理 - 跨组件数据传递 Context - Provider - CSS in JS - 模块化样式加载 - UI渲染原理 JSX JSX = JavaScript + XML - {}模板语法 - 添加注释 - 属性渲染变量 - 事件渲染函数 - style渲染对象 - {}渲染 JSX Redux - Store 的连接与订阅 - Action - ",
+        "desc": "核心技术 - JSX开发思想 - 虚拟 dom 渲染 - 单项数据流 - state 与 props - 类组件与组件的生命周期 - 函数式组件与副作用处理机制 - hooks - 事件处理 - 条件渲染 - 列表与数据塑形 - ajax异步处理 - 跨组件数据传递 Context - Provider - CSS in JS - 模块化样式加载 - UI渲染原理 JSX JSX = JavaScript + XML - {}模板语法 - 添加注释 - 属性渲染变量 - 事件渲染函数 - style渲染对象 - {}渲染 JSX Redux - Store 的连接与订阅 - Action - ",
         "reward": true
       },
       {
@@ -571,7 +617,7 @@
         "category": "TypeScript",
         "date": "2026-09-11",
         "readTime": 8,
-        "description": "概要 summary - 类型安全：强类型 弱类型 - 类型检查：静态类型 动态类型 - 标准库：内置对象对应的声明 类型 type - 类型注解 let a:string = 'hello' 类型推断 - 联合类型 let a:string number = 'hello' 类型之间进行 或 操作 - 交叉类型 类型之间进行 与 操作 - never类型 永不存在值的类型 - any类型 任意类型 不进行检测 - unknown类型 any类型对应的安全类型 默认会进行检测 - 类型断言 a as string - 非空断言 a!.length - 数组类型 - 类型 []：let a:(n",
+        "desc": "概要 summary - 类型安全：强类型 弱类型 - 类型检查：静态类型 动态类型 - 标准库：内置对象对应的声明 类型 type - 类型注解 let a:string = 'hello' 类型推断 - 联合类型 let a:string number = 'hello' 类型之间进行 或 操作 - 交叉类型 类型之间进行 与 操作 - never类型 永不存在值的类型 - any类型 任意类型 不进行检测 - unknown类型 any类型对应的安全类型 默认会进行检测 - 类型断言 a as string - 非空断言 a!.length - 数组类型 - 类型 []：let a:(n",
         "reward": true
       },
       {
@@ -580,7 +626,7 @@
         "category": "Vue",
         "date": "2026-09-11",
         "readTime": 11,
-        "description": "Vue 3 开发文档 Vue 是什么 Vue 是一套用于构建用户界面的渐进式框架。它的核心专注于视图层，易学易用，同时也能通过官方生态（Vue Router、Pinia）与工具链支持构建复杂的单页应用（SPA）。Vue 3 引入了组合式 API（Composition API）、更快的虚拟 DOM 与更好的 TypeScript 支持，是目前主流的前端框架之一。 组件基础 组件是 Vue 应用的基本单元，一个组件由模板、脚本与样式组成： 使用 <script setup 是 Vue 3 推荐的写法，代码更简洁，且自动获得更好的类型推导。 响应式原理 Vue 的响应式系统让数据变化自动驱动视图更",
+        "desc": "Vue 3 开发文档 Vue 是什么 Vue 是一套用于构建用户界面的渐进式框架。它的核心专注于视图层，易学易用，同时也能通过官方生态（Vue Router、Pinia）与工具链支持构建复杂的单页应用（SPA）。Vue 3 引入了组合式 API（Composition API）、更快的虚拟 DOM 与更好的 TypeScript 支持，是目前主流的前端框架之一。 组件基础 组件是 Vue 应用的基本单元，一个组件由模板、脚本与样式组成： 使用 <script setup 是 Vue 3 推荐的写法，代码更简洁，且自动获得更好的类型推导。 响应式原理 Vue 的响应式系统让数据变化自动驱动视图更",
         "reward": true
       },
       {
@@ -589,7 +635,7 @@
         "category": "Web3",
         "date": "2026-09-11",
         "readTime": 20,
-        "description": "Solidity面向合约、为实现智能合约而创建的高级编程语言。受到了 C++，Python 和 JavaScript 语言的影响，设计的目的是能在以太坊虚拟机（EVM）上运行。 Solidity 是静态类型语言，支持集成、库和复杂的用户定义类型等特性。 智能合约 关键字 pragma (编译指令)是告知编译器如何处理源代码的指令。Solidity 中的合约就是一组代码和数据，它们位于以太坊区块链的一个特定地址上。 所有的标识符（合约名、函数名和变量名）都只能使用 ASCII 字符集。UTF-8 编码的数据可以用字符串变量的形式存储。 数据类型 值类型 value type - 整数 枚举 布尔",
+        "desc": "Solidity面向合约、为实现智能合约而创建的高级编程语言。受到了 C++，Python 和 JavaScript 语言的影响，设计的目的是能在以太坊虚拟机（EVM）上运行。 Solidity 是静态类型语言，支持集成、库和复杂的用户定义类型等特性。 智能合约 关键字 pragma (编译指令)是告知编译器如何处理源代码的指令。Solidity 中的合约就是一组代码和数据，它们位于以太坊区块链的一个特定地址上。 所有的标识符（合约名、函数名和变量名）都只能使用 ASCII 字符集。UTF-8 编码的数据可以用字符串变量的形式存储。 数据类型 值类型 value type - 整数 枚举 布尔",
         "reward": true
       },
       {
@@ -598,7 +644,7 @@
         "category": "Web3",
         "date": "2026-09-11",
         "readTime": 8,
-        "description": "技术路线 React + TypeScript + Viem + Wagmi + Foundry + Scaffold-ETH2 (2026年行业标准栈) 合约开发 1. 数据类型中拷贝方法判定 2. 合约上下文变量 3. ABI数据、接口与函数调用的底层逻辑 4. 函数调用机制中的过滤器链条模型 5. 委托调用与代理模式 6. 线性化、super关键字与虚函数覆盖 实战项目 1. 应用合约开发中 openzeppelin合约库 2. 钱包与应用的状态管理 3. 通过访问合约构建 DAPP业务逻辑 4. 使用 web3基础设施，特别是去中心化存储支持功能开发 5. 与生态的关系处理 6. 基本",
+        "desc": "技术路线 React + TypeScript + Viem + Wagmi + Foundry + Scaffold-ETH2 (2026年行业标准栈) 合约开发 1. 数据类型中拷贝方法判定 2. 合约上下文变量 3. ABI数据、接口与函数调用的底层逻辑 4. 函数调用机制中的过滤器链条模型 5. 委托调用与代理模式 6. 线性化、super关键字与虚函数覆盖 实战项目 1. 应用合约开发中 openzeppelin合约库 2. 钱包与应用的状态管理 3. 通过访问合约构建 DAPP业务逻辑 4. 使用 web3基础设施，特别是去中心化存储支持功能开发 5. 与生态的关系处理 6. 基本",
         "reward": true
       },
       {
@@ -607,7 +653,7 @@
         "category": "Web3",
         "date": "2026-09-11",
         "readTime": 6,
-        "description": "这篇文章梳理以太坊开发中最核心的几个概念：gas 费怎么算、合约怎么接收转账、前端怎么连接钱包。不需要有 Solidity 基础也能看懂。 一、gas 是什么 区块链上每笔交易的执行都需要消耗计算资源，矿工（验证者）执行这些工作需要激励。gas 就是支付给矿工的费用，ETH 是这个生态系统的通行货币。 关键点：转账就是函数调用。在以太坊上，你向地址转 ETH 和调用合约函数本质上是同一回事——都是发送一笔交易。 二、gaslimit 与 gasleft() 概念 说明 gaslimit（交易级） 交易发起者设定最多愿意消耗多少 gas gaslimit（合约间调用） 合约之间调用时，调用者可以",
+        "desc": "这篇文章梳理以太坊开发中最核心的几个概念：gas 费怎么算、合约怎么接收转账、前端怎么连接钱包。不需要有 Solidity 基础也能看懂。 一、gas 是什么 区块链上每笔交易的执行都需要消耗计算资源，矿工（验证者）执行这些工作需要激励。gas 就是支付给矿工的费用，ETH 是这个生态系统的通行货币。 关键点：转账就是函数调用。在以太坊上，你向地址转 ETH 和调用合约函数本质上是同一回事——都是发送一笔交易。 二、gaslimit 与 gasleft() 概念 说明 gaslimit（交易级） 交易发起者设定最多愿意消耗多少 gas gaslimit（合约间调用） 合约之间调用时，调用者可以",
         "reward": true
       },
       {
@@ -616,7 +662,7 @@
         "category": "Web3",
         "date": "2026-09-11",
         "readTime": 6,
-        "description": "合约开发 - 数据类型中拷贝方法判定 - 合约上下文变量 - ABI数据、接口与函数调用的底层逻辑 - 函数调用机制中的过滤器链条模型 - 委托调研与代理模式 - 线性化、super关键字与虚函数覆盖 合约外部调用原理 - ABI Application Binary Interface - 读操作与写操作的不同调用方式 合约的成员变量的特殊性 与一般的虚拟器或物理机不同，EVM的机器模型中引入了 storage，合约成员变量指向固定的持久化 storage数据块，它并能像一般引用类型变量一样切换它所指向的数据块，由于这个限制，对成员变量的赋值，引用拷贝从技术上变成不可能。 location对",
+        "desc": "合约开发 - 数据类型中拷贝方法判定 - 合约上下文变量 - ABI数据、接口与函数调用的底层逻辑 - 函数调用机制中的过滤器链条模型 - 委托调研与代理模式 - 线性化、super关键字与虚函数覆盖 合约外部调用原理 - ABI Application Binary Interface - 读操作与写操作的不同调用方式 合约的成员变量的特殊性 与一般的虚拟器或物理机不同，EVM的机器模型中引入了 storage，合约成员变量指向固定的持久化 storage数据块，它并能像一般引用类型变量一样切换它所指向的数据块，由于这个限制，对成员变量的赋值，引用拷贝从技术上变成不可能。 location对",
         "reward": true
       },
       {
@@ -625,7 +671,7 @@
         "category": "WebRTC",
         "date": "2026-09-11",
         "readTime": 12,
-        "description": "一、自适应码率调整（ABR）：根据网络状况动态调整编码码率 核心思路： 通过 WebRTC 的 getStats() API 实时获取网络状态（丢包率、RTT、可用带宽等），动态调整视频编码器的输出码率，避免因网络拥塞导致的卡顿。 实现步骤 - 步骤1：定时获取网络统计数据 通过 RTCPeerConnection.getStats() 定时采集发送端（或接收端）的网络指标，重点关注： - packetLost：丢包数 - roundTripTime：往返时间（RTT） - availableOutgotingBitrate：可用发送带宽（仅发送端） - 步骤2：分析网络状况，决策码率调整策略",
+        "desc": "一、自适应码率调整（ABR）：根据网络状况动态调整编码码率 核心思路： 通过 WebRTC 的 getStats() API 实时获取网络状态（丢包率、RTT、可用带宽等），动态调整视频编码器的输出码率，避免因网络拥塞导致的卡顿。 实现步骤 - 步骤1：定时获取网络统计数据 通过 RTCPeerConnection.getStats() 定时采集发送端（或接收端）的网络指标，重点关注： - packetLost：丢包数 - roundTripTime：往返时间（RTT） - availableOutgotingBitrate：可用发送带宽（仅发送端） - 步骤2：分析网络状况，决策码率调整策略",
         "reward": true
       },
       {
@@ -634,7 +680,7 @@
         "category": "小程序",
         "date": "2026-09-11",
         "readTime": 6,
-        "description": "做小程序输入框时，你可能遇到过一个诡异的问题：用搜狗输入法打中文时，input 事件拿到的值和用户实际看到的不一样。这篇文章讲清楚原因和解决方法。 问题现象 在手机端使用搜狗输入法的英文预测模式或中文拼音模式时： - 用户输入 nihao，输入法候选栏显示\\\"你好\\\" - 但 input 事件回调里拿到的值可能是空的或不完整的 - 因为输入法在\\\"组词\\\"阶段，字符还没有确认，浏览器/小程序框架不触发 input 事件 这就是 composition（文本合成） 问题——输入法在组词过程中，文本处于\\\"未确认\\\"状态。 解决方案：ignoreCompositionEvent uniapp 的 input",
+        "desc": "做小程序输入框时，你可能遇到过一个诡异的问题：用搜狗输入法打中文时，input 事件拿到的值和用户实际看到的不一样。这篇文章讲清楚原因和解决方法。 问题现象 在手机端使用搜狗输入法的英文预测模式或中文拼音模式时： - 用户输入 nihao，输入法候选栏显示\\\"你好\\\" - 但 input 事件回调里拿到的值可能是空的或不完整的 - 因为输入法在\\\"组词\\\"阶段，字符还没有确认，浏览器/小程序框架不触发 input 事件 这就是 composition（文本合成） 问题——输入法在组词过程中，文本处于\\\"未确认\\\"状态。 解决方案：ignoreCompositionEvent uniapp 的 input",
         "reward": true
       },
       {
@@ -643,7 +689,7 @@
         "category": "小程序",
         "date": "2026-09-11",
         "readTime": 8,
-        "description": "生命周期 应用维度 - onLaunch：小程序初次加载后执行，只在全局触发一次 - onShow：小程序启动，或者从后台进入前台时触发，监听小程序显示 - onHide：从前台进入后台时触发 - onError：发生错误时触发 - onThemeChange：主题切换时触发 - onUnhandledRejection：Promise 未处理的错误时触发 - 资源占用过高，销毁 页面维度 - onLoad：加载页面时执行 - onShow：显示页面元素时执行 - onReady：页面渲染完成时执行，render page 一个页面只会调用一次 - onHide：页面隐藏时执行 - onUnl",
+        "desc": "生命周期 应用维度 - onLaunch：小程序初次加载后执行，只在全局触发一次 - onShow：小程序启动，或者从后台进入前台时触发，监听小程序显示 - onHide：从前台进入后台时触发 - onError：发生错误时触发 - onThemeChange：主题切换时触发 - onUnhandledRejection：Promise 未处理的错误时触发 - 资源占用过高，销毁 页面维度 - onLoad：加载页面时执行 - onShow：显示页面元素时执行 - onReady：页面渲染完成时执行，render page 一个页面只会调用一次 - onHide：页面隐藏时执行 - onUnl",
         "reward": true
       },
       {
@@ -652,7 +698,7 @@
         "category": "工程化",
         "date": "2026-09-11",
         "readTime": 16,
-        "description": "最本质的差异：Webpack 是先打包、后服务的 Bundle 驱动模式；Vite 是先服务、按需编译的 ESM 原生驱动模式。 这一个架构差异，决定了两者在启动速度、热更新、生产构建、配置复杂度上的所有区别。 延伸阅读：想深入理解 Webpack 的内部打包机制，可参考我之前写的 Webpack原理详解。 一、架构原理：为什么 Vite 启动这么快 Webpack 的工作方式 Webpack 从入口文件 index.js 开始，递归分析所有 import 和 require，把整个依赖树打包成一个或多个 bundle.js。这个过程必须在启动开发服务器之前完成。项目越大，依赖越多，打包时间越",
+        "desc": "最本质的差异：Webpack 是先打包、后服务的 Bundle 驱动模式；Vite 是先服务、按需编译的 ESM 原生驱动模式。 这一个架构差异，决定了两者在启动速度、热更新、生产构建、配置复杂度上的所有区别。 延伸阅读：想深入理解 Webpack 的内部打包机制，可参考我之前写的 Webpack原理详解。 一、架构原理：为什么 Vite 启动这么快 Webpack 的工作方式 Webpack 从入口文件 index.js 开始，递归分析所有 import 和 require，把整个依赖树打包成一个或多个 bundle.js。这个过程必须在启动开发服务器之前完成。项目越大，依赖越多，打包时间越",
         "reward": true
       },
       {
@@ -661,7 +707,7 @@
         "category": "工程化",
         "date": "2026-09-11",
         "readTime": 5,
-        "description": "双 Token 认证系统 1. Access Token（访问令牌） - 用途：用于访问受保护的 API 资源，附加在每个请求的 Header 中 - 特点：生命周期短（1小时），无状态，服务器无需存储 - 存储：通常存储在客户端内存中，需要频繁读取 2. Refresh Token（刷新令牌） - 用途：当 Access Token 过期时，专门用于获取一个新的 Access Token - 特点：生命周期长（7天或30天），与特定用户绑定，服务器需要安全存储其有效性记录 - 存储：必须安全存储。最佳实践时存储在 HttpOnly Cookie 中，可以防止客户端 JavaScript（XS",
+        "desc": "双 Token 认证系统 1. Access Token（访问令牌） - 用途：用于访问受保护的 API 资源，附加在每个请求的 Header 中 - 特点：生命周期短（1小时），无状态，服务器无需存储 - 存储：通常存储在客户端内存中，需要频繁读取 2. Refresh Token（刷新令牌） - 用途：当 Access Token 过期时，专门用于获取一个新的 Access Token - 特点：生命周期长（7天或30天），与特定用户绑定，服务器需要安全存储其有效性记录 - 存储：必须安全存储。最佳实践时存储在 HttpOnly Cookie 中，可以防止客户端 JavaScript（XS",
         "reward": true
       },
       {
@@ -670,7 +716,7 @@
         "category": "工程化",
         "date": "2026-09-11",
         "readTime": 2,
-        "description": "接口设计 1. 整体架构 采用 SDK适配层 + 业务服务层 的两层结构 - SDK 适配层：直接调用厂商提供的原生 SDK，处理底层通信、数据格式转换。 - 业务服务层：对外暴露简洁的业务 API，封装权限校验、错误重试、日志记录等通用逻辑。 权限验证 基于 RBAC 的权限验证 权限验证的场景以及需求： - 特定的角色的用户才能操作特定的资源 - 不同的用户能操作同类资源的特定实体 - 不同的用户操作特定资源的不同属性 根据角色完成权限的控制-RBAC（Role-Based Access Control） CASL Docker <center命令</center<center作用</ce",
+        "desc": "接口设计 1. 整体架构 采用 SDK适配层 + 业务服务层 的两层结构 - SDK 适配层：直接调用厂商提供的原生 SDK，处理底层通信、数据格式转换。 - 业务服务层：对外暴露简洁的业务 API，封装权限校验、错误重试、日志记录等通用逻辑。 权限验证 基于 RBAC 的权限验证 权限验证的场景以及需求： - 特定的角色的用户才能操作特定的资源 - 不同的用户能操作同类资源的特定实体 - 不同的用户操作特定资源的不同属性 根据角色完成权限的控制-RBAC（Role-Based Access Control） CASL Docker <center命令</center<center作用</ce",
         "reward": true
       },
       {
@@ -679,7 +725,7 @@
         "category": "文学",
         "date": "2026-09-11",
         "readTime": 57,
-        "description": "蓝色盛夏 作者：吴华锦 视频地址： 视频号 B站 抖音 快手 小红书 <hr 蓝色盛夏，热浪裹青帐，山昏影更长。 泉水倚清涧，兰舟穿荷塘，绿荷如擎盖，芙蓉比高洁。 好风有劲意，欺云赶雨不停息。 吹皱一池淡墨，流远一行柔波，拂起千叶霓裳甚风情。 石阶轻弹珍珠落，回廊闻香挂雨帘。 三三两两，闲叙一二，不止良辰好景，更有赏心乐事。 山色空蒙笼烟纱，泼染水洗如画。 云销雨霁，明月均分千家院，一种情思谁家窗，点滴在心间。 最是酣梦能消除，无念且无主。 少年锦时 作者：吴华锦 视频地址： 视频号 B站 抖音 快手 小红书 <hr 北江之畔，山峦秀丽，川流清冽，风物俱美，人杰地灵。 性情随和，乐于助人，喜文",
+        "desc": "蓝色盛夏 作者：吴华锦 视频地址： 视频号 B站 抖音 快手 小红书 <hr 蓝色盛夏，热浪裹青帐，山昏影更长。 泉水倚清涧，兰舟穿荷塘，绿荷如擎盖，芙蓉比高洁。 好风有劲意，欺云赶雨不停息。 吹皱一池淡墨，流远一行柔波，拂起千叶霓裳甚风情。 石阶轻弹珍珠落，回廊闻香挂雨帘。 三三两两，闲叙一二，不止良辰好景，更有赏心乐事。 山色空蒙笼烟纱，泼染水洗如画。 云销雨霁，明月均分千家院，一种情思谁家窗，点滴在心间。 最是酣梦能消除，无念且无主。 少年锦时 作者：吴华锦 视频地址： 视频号 B站 抖音 快手 小红书 <hr 北江之畔，山峦秀丽，川流清冽，风物俱美，人杰地灵。 性情随和，乐于助人，喜文",
         "reward": true
       },
       {
@@ -688,7 +734,7 @@
         "category": "文档",
         "date": "2026-09-11",
         "readTime": 18,
-        "description": "菜鸟工具 2. Web 工具集 3. UU在线工具 4. 独特工具箱 5. 开发者武器库 6. UML图开源工具 7. 视频转链接工具 8. 在线视频压缩 9. IT工具箱 10. 在线JSON校验格式化工具 11. AI网址导航 12. AI菜鸟教程 13. 在线实时HTML和JavaScript编辑器 14. HTML代码压缩 15. JS压缩、解压、格式化、混淆加密、解密 16. 在线进制转换 17. 可批量编辑图片的所有工具 18. 跨平台多媒体播放器 19. 极简插件官网 20. GitHub Corners 21. YouTube视频下载器 22. Vysor安卓投屏工具 23. ",
+        "desc": "菜鸟工具 2. Web 工具集 3. UU在线工具 4. 独特工具箱 5. 开发者武器库 6. UML图开源工具 7. 视频转链接工具 8. 在线视频压缩 9. IT工具箱 10. 在线JSON校验格式化工具 11. AI网址导航 12. AI菜鸟教程 13. 在线实时HTML和JavaScript编辑器 14. HTML代码压缩 15. JS压缩、解压、格式化、混淆加密、解密 16. 在线进制转换 17. 可批量编辑图片的所有工具 18. 跨平台多媒体播放器 19. 极简插件官网 20. GitHub Corners 21. YouTube视频下载器 22. Vysor安卓投屏工具 23. ",
         "reward": true
       },
       {
@@ -697,7 +743,7 @@
         "category": "文档",
         "date": "2026-09-11",
         "readTime": 3,
-        "description": "Prettier 注释指令对 Markdown 选定内容不格式化 1. 忽略单个代码块 在代码块前一行添加 注释 2. 忽略多行/整个区域 使用 和 包裹需要忽略的内容 3. 忽略整个 Markdown 文件 在项目根目录创建 .prettierignore 文件，并添加 .md 忽略代码块内的特定语言 只想禁用代码块内某一种语言的格式化，保留其他语言的格式化，可以在 .prettierrc 配置文件中添加： 个人介绍 生于1989年，广东省英德市人，现住在广州市。2013年毕业于深圳大学，专业电子信息工程。曾在深圳和广州工作，任职前端开发工程师岗位。技术栈包括Vue、React、Node.j",
+        "desc": "Prettier 注释指令对 Markdown 选定内容不格式化 1. 忽略单个代码块 在代码块前一行添加 注释 2. 忽略多行/整个区域 使用 和 包裹需要忽略的内容 3. 忽略整个 Markdown 文件 在项目根目录创建 .prettierignore 文件，并添加 .md 忽略代码块内的特定语言 只想禁用代码块内某一种语言的格式化，保留其他语言的格式化，可以在 .prettierrc 配置文件中添加： 个人介绍 生于1989年，广东省英德市人，现住在广州市。2013年毕业于深圳大学，专业电子信息工程。曾在深圳和广州工作，任职前端开发工程师岗位。技术栈包括Vue、React、Node.j",
         "reward": true
       },
       {
@@ -706,7 +752,7 @@
         "category": "文档",
         "date": "2026-09-11",
         "readTime": 9,
-        "description": "操作系统跨进程通信（IPC） 进程与线程基础 在深入 IPC 之前，先厘清两个基础概念： - 进程：操作系统资源分配的基本单位，拥有独立的地址空间、文件描述符与资源。进程间默认是相互隔离的，一个进程无法直接访问另一个进程的内存。 - 线程：进程内部执行任务的基本单位，同一进程内的线程共享地址空间与资源，可以通过共享内存直接通信。 正是因为进程之间地址空间相互隔离，才需要一套\\\"跨进程通信\\\"的机制（IPC，Inter-Process Communication）来完成数据交换与协作。 为什么需要 IPC 在实际系统中，多个进程协作的场景非常普遍： - 后端服务拆分后，各进程需要传递任务与结果。 -",
+        "desc": "操作系统跨进程通信（IPC） 进程与线程基础 在深入 IPC 之前，先厘清两个基础概念： - 进程：操作系统资源分配的基本单位，拥有独立的地址空间、文件描述符与资源。进程间默认是相互隔离的，一个进程无法直接访问另一个进程的内存。 - 线程：进程内部执行任务的基本单位，同一进程内的线程共享地址空间与资源，可以通过共享内存直接通信。 正是因为进程之间地址空间相互隔离，才需要一套\\\"跨进程通信\\\"的机制（IPC，Inter-Process Communication）来完成数据交换与协作。 为什么需要 IPC 在实际系统中，多个进程协作的场景非常普遍： - 后端服务拆分后，各进程需要传递任务与结果。 -",
         "reward": true
       },
       {
@@ -715,7 +761,7 @@
         "category": "文档",
         "date": "2026-09-11",
         "readTime": 4,
-        "description": "AI的最大价值不是内容生产，而是内容生产+自动化 第二次API开发浪潮正在到来 CSS原生能力 主流框架演进 - Vue：Vue的核心进展 性能飞跃 - Vapor Mode：从“虚拟”到“直接” - 是什么：一种新的编译策略，它在编译时直接将Vue模板转换为高效的、直接操作真实DOM的指令代码，完全跳过虚拟DOM的创建与 Diff 过程 - 解决了什么：传统VDOM在高频更新场景（如大型数据表、实时图表）有额外开销。Vapor Mode消除了这部分开销，根据测试，在渲染万级列表时，时间可减少约40%，内存占用降低近一半。 - React： - 通过新API持续优化开发体验和应用性能 - 在推",
+        "desc": "AI的最大价值不是内容生产，而是内容生产+自动化 第二次API开发浪潮正在到来 CSS原生能力 主流框架演进 - Vue：Vue的核心进展 性能飞跃 - Vapor Mode：从“虚拟”到“直接” - 是什么：一种新的编译策略，它在编译时直接将Vue模板转换为高效的、直接操作真实DOM的指令代码，完全跳过虚拟DOM的创建与 Diff 过程 - 解决了什么：传统VDOM在高频更新场景（如大型数据表、实时图表）有额外开销。Vapor Mode消除了这部分开销，根据测试，在渲染万级列表时，时间可减少约40%，内存占用降低近一半。 - React： - 通过新API持续优化开发体验和应用性能 - 在推",
         "reward": true
       },
       {
@@ -724,7 +770,7 @@
         "category": "文档",
         "date": "2026-09-11",
         "readTime": 4,
-        "description": "领域分析 1. 前端 AI 开发 - 音视频（WebRTC、流媒体）、数据可视化 Echarts、Node.js 后端服务 - 智能行为分析、AI身份核验、AI运维 - AI能力前端集成 + AI硬件对接 + AI交付 - 基础：TensorFlow.js轻量化模型部署、主流大模型 API 调用 - 核心：AI 音视频处理（降噪/增强/行为识别）、AI 硬件 SDK 封装、AI 分析结果可视化 - 差异化：国产化 AI 框架对接（华为昇腾/百度飞桨）、离线 AI 推理 1. Node.js + Python 全栈开发 - 全栈能力：前端（React/Vue） + Node.js(实时服务、信令",
+        "desc": "领域分析 1. 前端 AI 开发 - 音视频（WebRTC、流媒体）、数据可视化 Echarts、Node.js 后端服务 - 智能行为分析、AI身份核验、AI运维 - AI能力前端集成 + AI硬件对接 + AI交付 - 基础：TensorFlow.js轻量化模型部署、主流大模型 API 调用 - 核心：AI 音视频处理（降噪/增强/行为识别）、AI 硬件 SDK 封装、AI 分析结果可视化 - 差异化：国产化 AI 框架对接（华为昇腾/百度飞桨）、离线 AI 推理 1. Node.js + Python 全栈开发 - 全栈能力：前端（React/Vue） + Node.js(实时服务、信令",
         "reward": true
       },
       {
@@ -733,7 +779,7 @@
         "category": "生活",
         "date": "2026-09-11",
         "readTime": 3,
-        "description": "科技 永赢科技智选混合C中欧数字经济混合C 中际旭创新易盛【重】 新易盛中际旭创【重】 沪电股份新泉股份 深南电路沪电股份【重】 东山精密长飞光纤光缆 腾景科技东山精密【重】 江丰电子阳光电源 博迁新材亨通光电【重】 中国巨石天孚通信 鼎泰高科潍柴动力 航天军工 永赢国证商用卫星通信产业ETF永赢高端装备智选混合C国泰国证航天军工指数(LOF)A 航天电子航天电子【重】中国船舶 中国卫星中国卫星【重】航发动力 睿创微纳天银机电光启技术 信维通信国博电子【重】航天电子【重】 ST臻镭中国卫通【重】中国卫星【重】 复旦微电信维通信【重】中航沈飞 乾照光电中科星图紫光国微 上海瀚讯乾照光电【重】中航",
+        "desc": "科技 永赢科技智选混合C中欧数字经济混合C 中际旭创新易盛【重】 新易盛中际旭创【重】 沪电股份新泉股份 深南电路沪电股份【重】 东山精密长飞光纤光缆 腾景科技东山精密【重】 江丰电子阳光电源 博迁新材亨通光电【重】 中国巨石天孚通信 鼎泰高科潍柴动力 航天军工 永赢国证商用卫星通信产业ETF永赢高端装备智选混合C国泰国证航天军工指数(LOF)A 航天电子航天电子【重】中国船舶 中国卫星中国卫星【重】航发动力 睿创微纳天银机电光启技术 信维通信国博电子【重】航天电子【重】 ST臻镭中国卫通【重】中国卫星【重】 复旦微电信维通信【重】中航沈飞 乾照光电中科星图紫光国微 上海瀚讯乾照光电【重】中航",
         "reward": true
       },
       {
@@ -742,7 +788,7 @@
         "category": "生活",
         "date": "2026-09-11",
         "readTime": 4,
-        "description": "科技 永赢科技智选混合C中欧数字经济混合C 沪电股份中际旭创【重】 深南电路新易盛【重】 中际旭创寒武纪 新易盛沪电股份【重】 工业富联中芯国际 华大九天深南电路【重】 立讯精密建滔积层板 杰瑞股份鹏鼎股份【重】 锐科激光三环集团 鹏鼎控股联瑞新材 航天军工 永赢国证商用卫星通信产业ETF永赢高端装备智选混合C国泰国证航天军工指数(LOF)A 睿创微纳信维通信【重】中国船舶 航天电子航天电子【重】菲利华 中国卫星睿创微纳【重】紫光国微 复旦微电飞沃科技航天电子【重】 火炬电子国博电子【重】中航光电 上海瀚讯铖昌科技航发动力 信科移动天银机电光启技术 信维通信斯瑞新材【重】中国卫星【重】 国博电",
+        "desc": "科技 永赢科技智选混合C中欧数字经济混合C 沪电股份中际旭创【重】 深南电路新易盛【重】 中际旭创寒武纪 新易盛沪电股份【重】 工业富联中芯国际 华大九天深南电路【重】 立讯精密建滔积层板 杰瑞股份鹏鼎股份【重】 锐科激光三环集团 鹏鼎控股联瑞新材 航天军工 永赢国证商用卫星通信产业ETF永赢高端装备智选混合C国泰国证航天军工指数(LOF)A 睿创微纳信维通信【重】中国船舶 航天电子航天电子【重】菲利华 中国卫星睿创微纳【重】紫光国微 复旦微电飞沃科技航天电子【重】 火炬电子国博电子【重】中航光电 上海瀚讯铖昌科技航发动力 信科移动天银机电光启技术 信维通信斯瑞新材【重】中国卫星【重】 国博电",
         "reward": true
       },
       {
@@ -751,7 +797,7 @@
         "category": "生活",
         "date": "2026-09-11",
         "readTime": 6,
-        "description": "育儿经：懂比爱更重要 引言：从\\\"爱\\\"到\\\"懂\\\" 很多父母都觉得自己很爱孩子，愿意为孩子付出一切。但在陪伴孩子成长的过程中我逐渐发现，仅仅有爱是不够的，更重要的是\\\"懂\\\"。懂得孩子此刻的真实需求，懂得他行为背后的情绪，懂得他看世界的角度，才能真正滋养他的内心。 爱是本能，而\\\"懂\\\"是需要学习和练习的能力。 理解与尊重：育儿的底色 亲子关系中最珍贵的东西，是理解与尊重。当我们把孩子当作一个独立的、有自己感受和想法的人，而不是\\\"我们的附属品\\\"时，关系才会真正健康。 - 观察：不急于评判，先看孩子做了什么、为什么这么做。 - 认知：站在发展阶段的角度理解他的局限，比如 3 岁的孩子还不能完全控制情绪。 -",
+        "desc": "育儿经：懂比爱更重要 引言：从\\\"爱\\\"到\\\"懂\\\" 很多父母都觉得自己很爱孩子，愿意为孩子付出一切。但在陪伴孩子成长的过程中我逐渐发现，仅仅有爱是不够的，更重要的是\\\"懂\\\"。懂得孩子此刻的真实需求，懂得他行为背后的情绪，懂得他看世界的角度，才能真正滋养他的内心。 爱是本能，而\\\"懂\\\"是需要学习和练习的能力。 理解与尊重：育儿的底色 亲子关系中最珍贵的东西，是理解与尊重。当我们把孩子当作一个独立的、有自己感受和想法的人，而不是\\\"我们的附属品\\\"时，关系才会真正健康。 - 观察：不急于评判，先看孩子做了什么、为什么这么做。 - 认知：站在发展阶段的角度理解他的局限，比如 3 岁的孩子还不能完全控制情绪。 -",
         "reward": true
       },
       {
@@ -760,7 +806,7 @@
         "category": "简历",
         "date": "2026-09-11",
         "readTime": 10,
-        "description": "基本信息 学历：深圳大学-电子信息工程-全日制本科 邮箱: wuhuajin09@163.com GitHub: github.com/whjin 博客: wuhuajin.com 工作经历 广州市高科通信技术股份有限公司 全栈开发工程师 2020.06 - 2026.02 岗位定位：专注公安司法监所领域软硬件产品研发，负责前端架构迭代、Node.js服务开发、国产化适配及AI研发赋能，全程主导产品研发、迭代优化与政企项目落地交付。全程支撑政企项目招投标、落地终验，负责全国警博会技术展示保障，具备成熟的政企项目全流程交付经验。 - 核心参与20+省内外监所政企项目，完成10款安卓终端APP、5",
+        "desc": "基本信息 学历：深圳大学-电子信息工程-全日制本科 邮箱: wuhuajin09@163.com GitHub: github.com/whjin 博客: wuhuajin.com 工作经历 广州市高科通信技术股份有限公司 全栈开发工程师 2020.06 - 2026.02 岗位定位：专注公安司法监所领域软硬件产品研发，负责前端架构迭代、Node.js服务开发、国产化适配及AI研发赋能，全程主导产品研发、迭代优化与政企项目落地交付。全程支撑政企项目招投标、落地终验，负责全国警博会技术展示保障，具备成熟的政企项目全流程交付经验。 - 核心参与20+省内外监所政企项目，完成10款安卓终端APP、5",
         "reward": true
       },
       {
@@ -769,7 +815,7 @@
         "category": "简历",
         "date": "2026-09-11",
         "readTime": 10,
-        "description": "Huajin Wu Email: wuhuajin09@163.com GitHub: github.com/whjin Portfolio: wuhuajin.com Education Shenzhen University Bachelor of Engineering, Electronic Information Engineering Professional Summary Results-driven Full-Stack Engineer with 7+ years of enterprise development experience, focusing on cross",
+        "desc": "Huajin Wu Email: wuhuajin09@163.com GitHub: github.com/whjin Portfolio: wuhuajin.com Education Shenzhen University Bachelor of Engineering, Electronic Information Engineering Professional Summary Results-driven Full-Stack Engineer with 7+ years of enterprise development experience, focusing on cross",
         "reward": true
       },
       {
@@ -778,7 +824,7 @@
         "category": "网络",
         "date": "2026-09-11",
         "readTime": 17,
-        "description": "OSI 模型 - Open Systems Interconnection 开放式通信互联系统 ISO - OSI 模型是国际组织 ISO 创建的，用于描述网络通信的协议，是 TCP/IP 模型的基础 1. 应用层：提供应用层服务，如 HTTP、FTP、SMTP、DNS 等 2. 表示层：提供数据格式转换，如 ASCII、UTF-8 等，数据压缩、数据加密、数据内容的描述 3. 会话层: 提供会话管理，如 Telnet、SSH 等 4. 传输层: 提供数据传输，如 TCP、UDP 等，不同主机进程间的通信 5. 网络层：提供网络通信，如 IP、UDP、TCP 等 6. 数据链路层：提供数据链路",
+        "desc": "OSI 模型 - Open Systems Interconnection 开放式通信互联系统 ISO - OSI 模型是国际组织 ISO 创建的，用于描述网络通信的协议，是 TCP/IP 模型的基础 1. 应用层：提供应用层服务，如 HTTP、FTP、SMTP、DNS 等 2. 表示层：提供数据格式转换，如 ASCII、UTF-8 等，数据压缩、数据加密、数据内容的描述 3. 会话层: 提供会话管理，如 Telnet、SSH 等 4. 传输层: 提供数据传输，如 TCP、UDP 等，不同主机进程间的通信 5. 网络层：提供网络通信，如 IP、UDP、TCP 等 6. 数据链路层：提供数据链路",
         "reward": true
       },
       {
@@ -787,7 +833,7 @@
         "category": "GIS",
         "date": "2026-06-13",
         "readTime": 10,
-        "description": "Web GIS 是在浏览器中运行的地理信息系统技术文档，聚焦前端如何加载、渲染与交互地图数据。文档涵盖常见 Web 地图框架的接入方式、瓦片与矢量数据源的组织、空间坐标系的转换、地图图层的叠加与样式配置，以及点、线、面等地理要素的查询与可视化。面向需要把地理空间能力集成到 Web 应用中的开发者，帮助理解从地图底图到业务图层再到空间分析的基本链路，并给出在真实项目里落地 Web GIS 功能时的常见做法与注意事项，适合前端、GIS 工程师与相关产品技术人员快速建立 Web GIS 开发的知识框架。",
+        "desc": "Web GIS 是在浏览器中运行的地理信息系统技术文档，聚焦前端如何加载、渲染与交互地图数据。文档涵盖常见 Web 地图框架的接入方式、瓦片与矢量数据源的组织、空间坐标系的转换、地图图层的叠加与样式配置，以及点、线、面等地理要素的查询与可视化。面向需要把地理空间能力集成到 Web 应用中的开发者，帮助理解从地图底图到业务图层再到空间分析的基本链路，并给出在真实项目里落地 Web GIS 功能时的常见做法与注意事项，适合前端、GIS 工程师与相关产品技术人员快速建立 Web GIS 开发的知识框架。",
         "reward": true
       },
       {
@@ -796,7 +842,7 @@
         "category": "小程序",
         "date": "2026-06-06",
         "readTime": 10,
-        "description": "Taro 是一套以类 React / Vue 语法编写、可一次开发多端运行的小程序跨端框架，帮助开发者用一套代码同时维护微信、支付宝等多个小程序端。本文档围绕 Taro 项目的工程实践展开，涵盖项目初始化与目录结构、页面与组件的编写、状态管理方案的选型、请求与数据层的封装、多端条件编译、打包配置优化，以及发布到各平台小程序时的差异处理。适合希望提升小程序开发效率与复用度的前端开发者，按工程化的思路组织从建项目到上线的完整流程，并整理了组件复用、跨端兼容、性能优化等常见坑点与解决方案，方便快速上手并在真实项目中稳定落地。",
+        "desc": "Taro 是一套以类 React / Vue 语法编写、可一次开发多端运行的小程序跨端框架，帮助开发者用一套代码同时维护微信、支付宝等多个小程序端。本文档围绕 Taro 项目的工程实践展开，涵盖项目初始化与目录结构、页面与组件的编写、状态管理方案的选型、请求与数据层的封装、多端条件编译、打包配置优化，以及发布到各平台小程序时的差异处理。适合希望提升小程序开发效率与复用度的前端开发者，按工程化的思路组织从建项目到上线的完整流程，并整理了组件复用、跨端兼容、性能优化等常见坑点与解决方案，方便快速上手并在真实项目中稳定落地。",
         "reward": true
       },
       {
@@ -805,7 +851,7 @@
         "category": "GIS",
         "date": "2026-05-05",
         "readTime": 13,
-        "description": "Cesium 是一个用于构建三维地球与真实世界场景的开源地理空间引擎，可在浏览器中渲染高精度的地形、影像、矢量与三维模型，广泛应用于三维 GIS 可视化与数字孪生。本文档介绍 Cesium 的基础用法，包括场景与视口的初始化、地图底图与图层数据的加载、相机视角的控制、实体与图形的绘制、地形与影像服务的接入，以及性能优化与常见问题的排查。面向需要在 Web 端实现三维地球、智慧城市或空间展示应用的开发者，从入门到工程落地给出可复用的配置与代码思路，帮助快速掌握三维地理空间应用的开发方法与调试技巧。",
+        "desc": "Cesium 是一个用于构建三维地球与真实世界场景的开源地理空间引擎，可在浏览器中渲染高精度的地形、影像、矢量与三维模型，广泛应用于三维 GIS 可视化与数字孪生。本文档介绍 Cesium 的基础用法，包括场景与视口的初始化、地图底图与图层数据的加载、相机视角的控制、实体与图形的绘制、地形与影像服务的接入，以及性能优化与常见问题的排查。面向需要在 Web 端实现三维地球、智慧城市或空间展示应用的开发者，从入门到工程落地给出可复用的配置与代码思路，帮助快速掌握三维地理空间应用的开发方法与调试技巧。",
         "tags": [
           "GIS",
           "三维"

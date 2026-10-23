@@ -21,7 +21,7 @@ function escHtml(s) {
 }
 
 const feed = JSON.parse(fs.readFileSync(FEED, 'utf8'));
-const articles = (feed.find((c) => c.type === 'articles') || { items: [] }).items || [];
+const articles = (feed.find((c) => c.type === 'articles') || { list: [] }).list || [];
 
 if (!articles.length) {
   console.error('feed 中无文章，请先运行 node scripts/build-feed.cjs');
@@ -38,7 +38,7 @@ const items = articles
     const url = escHtml(a.url || '');
     const date = escHtml(a.date || '');
     const category = escHtml(a.category || '');
-    const desc = escHtml(a.description || '');
+    const desc = escHtml(a.desc || '');
     const lines = [
       '<article class="static-post">',
       '  <h3 class="static-post-title"><a href="' + url + '">' + title + '</a></h3>',

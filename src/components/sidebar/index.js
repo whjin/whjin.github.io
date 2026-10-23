@@ -92,7 +92,7 @@
   function renderEvent(section) {
     const block = document.createElement('div');
     block.className = 'sb-block';
-    const items = section.items || [];
+    const items = section.list || [];
     const count = items.length;
     const showAll = section.all === true;
     // 标题行：标题 + （条目>1且非all时）右侧「更多 ›」按钮
@@ -149,7 +149,7 @@
     const block = makeBlock(section);
     const ul = document.createElement('ul');
     ul.className = 'sb-list';
-    (section.items || []).forEach((it) => {
+    (section.list || []).forEach((it) => {
       const li = document.createElement('li');
       if (it.url) {
         const a = document.createElement('a');
@@ -256,12 +256,12 @@
     return block;
   }
 
-  // 广告卡片：若配置了 items（图片+标题+描述，同正在进行/近期动态结构）则复用 event 渲染（支持收起/更多/all）；
+  // 广告卡片：若配置了 list（图片+标题+描述，同正在进行/近期动态结构）则复用 event 渲染（支持收起/更多/all）；
   // 图片和标题都为空 → 回退到当前广告位内容（AdSense 或占位）
   function renderAd(section) {
-    const adItems = (section.items || []).filter((it) => it.image || it.title);
+    const adItems = (section.list || []).filter((it) => it.image || it.title);
     if (adItems.length) {
-      return renderEvent(Object.assign({}, section, { items: adItems }));
+      return renderEvent(Object.assign({}, section, { list: adItems }));
     }
     const block = makeBlock(section);
     if (section.ad_slot) {
@@ -287,7 +287,7 @@
     const block = makeBlock(section);
     const wrap = document.createElement('div');
     wrap.className = 'sb-links';
-    (section.items || []).forEach((it) => {
+    (section.list || []).forEach((it) => {
       const a = document.createElement('a');
       a.href = it.url;
       a.textContent = it.text;
@@ -351,13 +351,14 @@
     let autoTags = [];
     let menuTitles = [];
     let catCounts = [];
+    let adsList = [];
     try {
       const menu = await (await fetch('src/template/feed/data.json')).json();
       menuTitles = (Array.isArray(menu) ? menu : [])
-        .filter((c) => c.show !== false && c.items && c.items.length > 0)
+        .filter((c) => c.show !== false && c.list && c.list.length > 0)
         .map((c) => c.title);
       const articleCard = (Array.isArray(menu) ? menu : []).find((c) => c.title === '原创文章');
-      const feedItems = (articleCard && Array.isArray(articleCard.items)) ? articleCard.items : [];
+      const feedItems = (articleCard && Array.isArray(articleCard.list)) ? articleCard.list : [];
       const tagCounts = new Map();
       feedItems.forEach((it) => (it.tags || []).forEach((g) => tagCounts.set(g, (tagCounts.get(g) || 0) + 1)));
       autoTags = [...tagCounts.keys()].sort((a, b) => tagCounts.get(b) - tagCounts.get(a)).slice(0, 10);
@@ -366,6 +367,22 @@
       feedItems.forEach((it) => catMap.set(it.category, (catMap.get(it.category) || 0) + 1));
       catCounts = [...catMap.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
     } catch (e) { /* 忽略 */ }
+    // 广告列表复用友链数据源：提取所有 type === "ads" 的条目
+    try {
+      const linkData = await (await fetch('src/template/posts/Link/友链/data.json')).json();
+      if (linkData && typeof linkData === 'object') {
+        Object.keys(linkData).forEach((key) => {
+          const sec = linkData[key];
+          if (!sec || !Array.isArray(sec.list)) return;
+          sec.list.forEach((it) => {
+            if (it && it.type === 'ads' && it.show !== false) {
+              // ads 条目：cover→image，adsTitle→title，adsDesc→desc，供下游统一渲染
+              adsList.push(Object.assign({}, it, { image: it.cover || it.image, title: it.adsTitle || it.title, desc: it.adsDesc || it.desc }));
+            }
+          });
+        });
+      }
+    } catch (e) { /* 忽略，广告位回退到 AdSense/占位 */ }
     try {
       const res = await fetch(DATA_URL);
       if (!res.ok) throw new Error('sidebar 加载失败');
@@ -379,7 +396,7 @@
         else if (sec.type === 'tags') el = renderTags(sec, autoTags, menuTitles);
         else if (sec.type === 'categories') el = renderCategories(sec, catCounts);
         else if (sec.type === 'social') el = renderSocial(sec);
-        else if (sec.type === 'ads') el = renderAd(sec);
+        else if (sec.type === 'ads') el = renderAd(Object.assign({}, sec, { list: adsList }));
         else if (sec.type === 'links') el = renderLinks(sec);
         else if (sec.type === 'member') el = renderMember(sec);
         if (el) wrap.appendChild(el);

@@ -48,7 +48,7 @@ function cleanPara(text) {
 
 const menu = JSON.parse(fs.readFileSync(MENU_PATH, 'utf8'));
 const card = menu.find((c) => c.type === ARTICLE_CARD_TYPE) || menu.find((c) => c.title === ARTICLE_CARD_FALLBACK_TITLE);
-const byUrl = new Map((card ? card.items : []).map((it) => [it.url, it]));
+const byUrl = new Map((card ? card.list : []).map((it) => [it.url, it]));
 
 let added = 0,
   skipped = 0,

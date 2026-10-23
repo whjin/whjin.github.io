@@ -105,7 +105,9 @@ body.home-page .footer {
   color: #333;
   outline: none;
   box-sizing: border-box;
-  transition: border-color 0.15s, background 0.15s;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
 }
 
 .home-search:focus {
@@ -155,14 +157,24 @@ a.feed-card {
   overflow: hidden;
   text-decoration: none;
   color: #1c1c1c;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 6px 16px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.18s, border-color 0.18s, background-color 0.18s, transform 0.18s;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.06),
+    0 6px 16px rgba(0, 0, 0, 0.05);
+  transition:
+    box-shadow 0.18s,
+    border-color 0.18s,
+    background-color 0.18s,
+    transform 0.18s;
 }
 
 a.feed-card:hover {
   background-color: var(--card-bg-hover, #fcfcfd);
   border-color: var(--card-border-hover, #d0d0d0);
-  box-shadow: var(--card-shadow-hover, 0 6px 16px rgba(0, 0, 0, 0.10), 0 14px 32px rgba(0, 0, 0, 0.09));
+  box-shadow: var(
+    --card-shadow-hover,
+    0 6px 16px rgba(0, 0, 0, 0.1),
+    0 14px 32px rgba(0, 0, 0, 0.09)
+  );
   color: var(--card-color-hover, #1c1c1c);
   transform: translateY(-2px);
 }
@@ -362,7 +374,11 @@ a.feed-card:hover {
   /* 边框仅当显示多于1条内容时呈现（sb-events-multi 由 JS 控制），布局不变 */
   border: 2px solid transparent;
   border-radius: 8px;
-  transition: border-color 0.2s ease, padding 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    padding 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
   text-decoration: none;
   color: inherit;
 }
@@ -378,8 +394,9 @@ a.feed-card:hover {
 }
 
 .sb-events-multi .sb-event {
-  padding: 12px;
+  padding: 8px;
   border-color: #8b5cf6;
+  border-radius: 4px;
 }
 
 .sb-event-img {
@@ -645,6 +662,36 @@ p.sb-event-desc {
 /* 收缩态：隐藏右侧侧栏，让文章区占满，便于快速浏览搜索结果/筛选结果 */
 body.home-page.sidebar-collapsed .home-sidebar {
   display: none;
+}
+
+/* 卡片内部内容块之间统一用虚线分隔（所有断点），去掉多卡片紫色边框 */
+.sb-events {
+  gap: 0;
+}
+.sb-events-extra {
+  gap: 0;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px dashed #cbd5e1;
+}
+.sb-events-multi .sb-event {
+  border-color: transparent;
+  padding: 0;
+}
+.sb-event + .sb-event {
+  border-top: 1px dashed #cbd5e1;
+  margin-top: 18px;
+  padding-top: 18px;
+}
+
+/* PC 两栏布局（>1024px）：额外隐藏「更多」按钮，默认展开全部内容 */
+@media screen and (min-width: 1025px) {
+  .home-sidebar .sb-event-more {
+    display: none;
+  }
+  .home-sidebar .sb-events-extra[hidden] {
+    display: flex !important;
+  }
 }
 
 /* ---- 响应式 ---- */

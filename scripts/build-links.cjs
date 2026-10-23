@@ -65,20 +65,20 @@ function renderLinkData(data) {
   return html;
 }
 
-// 渲染 resource.html 用的 feed/data.json：数组，每项 { title, tagName, items: [{title, url, description}] }
+// 渲染 resource.html 用的 feed/data.json：数组，每项 { title, tagName, list: [{title, url, desc}] }
 function renderFeedData(feed) {
   let html = '';
   feed.forEach((group) => {
-    if (!group || !group.items || group.items.length === 0) return;
+    if (!group || !group.list || group.list.length === 0) return;
     if (group.show === false) return;
     const title = group.title || '';
-    const items = group.items;
+    const items = group.list;
     html += `<section class="seo-section">\n`;
     html += `  <h2>${escapeHtml(title)} <span>(${items.length})</span></h2>\n`;
     html += `  <ul>\n`;
     items.forEach((item) => {
       const name = item.title || '';
-      const desc = item.description || '';
+      const desc = item.desc || '';
       const url = item.url || '#';
       html += `    <li><a href="${escapeHtml(url)}" rel="noopener">${escapeHtml(name)}</a>`;
       if (desc) html += ` — ${escapeHtml(desc)}`;

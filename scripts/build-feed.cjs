@@ -176,7 +176,7 @@ function buildFeed() {
       category: (Array.isArray(front && front.category) ? front.category[0] : (front && front.category)) || folder,
       date: (front && front.date) || `${mt.getFullYear()}-${String(mt.getMonth() + 1).padStart(2, '0')}-${String(mt.getDate()).padStart(2, '0')}`,
       readTime: Math.max(1, Math.round(bodyChars / 280)),
-      description: desc,
+      desc: desc,
     };
     const fmTags = Array.isArray(front && front.tag) ? front.tag : (front && Array.isArray(front.tags) ? front.tags : null);
     if (fmTags && fmTags.length) item.tags = fmTags;
@@ -201,9 +201,9 @@ function normalizeLinkItem(it, cardTitle) {
     out.category = (Array.isArray(md.front && md.front.category) ? md.front.category[0] : (md.front && md.front.category)) || cardTitle;
     if (md.front && md.front.date) out.date = md.front.date;
     out.readTime = Math.max(1, Math.round(md.body.replace(/\s/g, '').length / 280));
-    out.description = descriptionFor(md);
+    out.desc = descriptionFor(md);
     const fd = md.front && md.front.description ? String(md.front.description).trim() : '';
-    if (fd.length < DESC_MIN && out.description) setMdDescription(md, out.description);
+    if (fd.length < DESC_MIN && out.desc) setMdDescription(md, out.desc);
     const fmTags2 = Array.isArray(md.front && md.front.tag) ? md.front.tag : (md.front && Array.isArray(md.front.tags) ? md.front.tags : null);
     if (fmTags2 && fmTags2.length) out.tags = fmTags2;
     if (md.front && md.front.cover) out.cover = md.front.cover;
@@ -214,28 +214,80 @@ function normalizeLinkItem(it, cardTitle) {
     }
   } else {
     out.category = cardTitle;
-    out.description = cleanDesc(it.desc != null ? String(it.desc) : (it.description || ''));
+    out.desc = cleanDesc(it.desc != null ? String(it.desc) : '');
   }
   if (it.marked) out.marked = true;
   if (it.featured) out.featured = true;
+  if (it.image) out.image = it.image;
   return out;
 }
+
+// 友链数据源：核心推荐/推荐两节从友链 data.json 自动同步（避免手动维护两份）
+const LINK_DATA_PATH = path.join(ROOT, 'src/template/posts/Link/友链/data.json');
+// 友链 section key → feed 节标题
+const LINK_SECTION_MAP = {
+  recommend: '核心推荐',
+  recommend1: '推荐',
+};
 
 buildUrlMap();
 
 const menu = JSON.parse(fs.readFileSync(MENU_PATH, 'utf8'));
 
-// 1) 「原创文章」卡：重新生成 feed 字段（含 description）
+// 0) 从友链数据源增量同步「核心推荐」「推荐」两节
+//    - 已存在条目：覆盖 title/desc/image/marked
+//    - feed 独有条目：位置保持不动
+//    - 友链条目：按友链顺序排入原本属于友链条目的位置；友链新增条目追加到末尾
+if (fs.existsSync(LINK_DATA_PATH)) {
+  const linkData = JSON.parse(fs.readFileSync(LINK_DATA_PATH, 'utf8'));
+  Object.entries(LINK_SECTION_MAP).forEach(([linkKey, feedTitle]) => {
+    const linkSec = linkData[linkKey];
+    if (!linkSec || !Array.isArray(linkSec.list)) return;
+    const feedCard = menu.find((c) => c.title === feedTitle);
+    if (!feedCard) return;
+
+    // 友链有效条目（按友链顺序）
+    const linkItems = linkSec.list.filter((it) => it && it.show !== false && it.url);
+    const linkUrlSet = new Set(linkItems.map((it) => it.url));
+
+    // 1) 按 url 索引 feed 现有条目，先打补丁（覆盖 title/desc/image/marked）
+    const byUrl = new Map();
+    (feedCard.list || []).forEach((it) => { if (it.url) byUrl.set(it.url, it); });
+    linkItems.forEach((it) => {
+      const patch = { title: it.title, desc: it.desc || '', image: it.image || it.cover || '', marked: !!it.marked };
+      if (byUrl.has(it.url)) Object.assign(byUrl.get(it.url), patch);
+      else { const fresh = Object.assign({ url: it.url }, patch); byUrl.set(it.url, fresh); }
+    });
+
+    // 2) 重建顺序：feed 独有条目保持原位；友链条目按友链顺序填入原友链条目位置
+    const syncedQueue = linkItems.map((it) => byUrl.get(it.url));
+    const result = [];
+    (feedCard.list || []).forEach((it) => {
+      if (it.url && linkUrlSet.has(it.url)) {
+        // 原位置是友链条目 → 从友链队列取下一个
+        result.push(syncedQueue.shift());
+      } else {
+        // feed 独有 → 保持原位
+        result.push(it);
+      }
+    });
+    // 友链新增（原 feed 没有）的条目追加到末尾
+    while (syncedQueue.length) result.push(syncedQueue.shift());
+    feedCard.list = result;
+  });
+}
+
+// 1) 「原创文章」卡：重新生成 feed 字段（含 desc）
 const artCard = menu.find((c) => c.type === ARTICLE_CARD_TYPE) || menu.find((c) => c.title === ARTICLE_CARD_FALLBACK_TITLE);
 if (!artCard) { console.error('未找到 原创文章 卡'); process.exit(1); }
 const items = buildFeed();
-artCard.items = items;
+artCard.list = items;
 
 // 2) 其余卡：规范化条目为 feed 结构
 for (const c of menu) {
   if (c.type === ARTICLE_CARD_TYPE || c.title === ARTICLE_CARD_FALLBACK_TITLE) continue;
-  if (!Array.isArray(c.items)) continue;
-  c.items = c.items.map((it) => normalizeLinkItem(it, c.title));
+  if (!Array.isArray(c.list)) continue;
+  c.list = c.list.map((it) => normalizeLinkItem(it, c.title));
 }
 
 fs.writeFileSync(MENU_PATH, JSON.stringify(menu, null, 2) + '\n', 'utf8');

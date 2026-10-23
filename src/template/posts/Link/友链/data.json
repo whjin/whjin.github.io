@@ -9,93 +9,152 @@
   "recommend": {
     "title": "核心推荐",
     "desc": "一站式AI应用平台",
+    "link": "banner",
     "list": [
       {
-        "avatar": "https://www.pixtv.ai/favicon.ico?d2ce38df392d3833",
+        "marked": true,
+        "show": true,
+        "duration": 30,
+        "color": "white",
+        "cover": "https://cdn.jsdelivr.net/gh/whjin/blog-images@main/img/%E8%B6%85%E7%BA%A7%E9%BA%A6%E5%90%89.png",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/10/665llc01000dm9l5rzm1pbgis0b37bqk.webp",
+        "title": "超级麦吉",
+        "desc": "超级麦吉 - 一站式 AI 办公，覆盖全行业工作场景，让 AI 真正替你干活",
+        "url": "https://letsmagic.cgref.cn/s/ogew5xvep2",
+        "type": "ads",
+        "adsTitle": "超级麦吉｜用超级麦吉，做超级个体",
+        "adsDesc": "会聊天的 AI 很多，能把活真正干完的少。超级麦吉是「任务型」AI 办公平台——100+ 数字员工、100+ 原生技能随叫随到，AI PPT、录音转写、云存储一站配齐；任务派下去就在云端一直跑到完成，关电脑也不停，手机 APP 随手派活、随时看进度。高频办公刚需，用户用了离不开，好推、好转化！"
+      },
+      {
+        "show": true,
+        "duration": 30,
+        "color": "white",
+        "cover": "https://cdn.jsdelivr.net/gh/whjin/blog-images@main/img/pixtv.png",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/09/1xplh3q1000dlmi8yn7h9ywqqjbf27z0.webp",
         "title": "PixTV",
         "desc": "PixTV｜一站式 AI 视频生成与无限画布创作平台",
-        "url": "https://pixtv.cgref.cn/s/omkloo8k4d"
+        "url": "https://pixtv.cgref.cn/s/omkloo8k4d",
+        "type": "ads",
+        "adsTitle": "PixTV｜一站式 AI 视频生成与无限画布创作平台",
+        "adsDesc": "PixTV汇集全球顶尖图片/视频/对话大模型，有效降低AI视频创作门槛，一句话、一个想法，即可生成完整脚本到分镜到人物资产，让所有人都能成为AIGC内容创作者，抢占视频生产力风口。"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/09/1afandb1000dlmi09bjzhmiz3564adqw.webp",
+        "show": true,
+        "duration": 30,
+        "color": "white",
+        "cover": "https://cdn.jsdelivr.net/gh/whjin/blog-images@main/img/026b314f-c24c-4461-8bee-029f09f5e1bf.png",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/09/1afandb1000dlmi09bjzhmiz3564adqw.webp",
         "title": "PixPix",
         "desc": "帧象创意 - PixPix官网_电商AI商品图生成器_AI视频_免费在线设计工具",
-        "url": "https://pixpix.cgref.cn/s/p3kqddweol"
+        "url": "https://pixpix.cgref.cn/s/p3kqddweol",
+        "type": "ads",
+        "adsTitle": "帧象创意 - PixPix官网_电商AI商品图生成器_AI视频_免费在线设计工具",
+        "adsDesc": "你的 AI 创意工作台，为「AURA」 交付「一套社媒视觉」从策略、创意到成套素材，PixPix Agent 自动拆解任务、调用合适模型并完成交付。"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/08/19ylgtw1000dkunrvef59br87h5nu60f.gif",
-        "title": "Lovart 中文版",
-        "desc": "Lovart 中文版- 新一代设计 Agent",
-        "url": "https://lovart.cgref.cn/s/2znrl36nr7"
-      },
-      {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/08/3iemyq01000dkskul1pry4721gst97w0.webp",
+        "show": true,
+        "duration": 30,
+        "color": "white",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/08/3iemyq01000dkskul1pry4721gst97w0.webp",
         "title": "AniShort",
         "desc": "AniShort - AI影视剧协作平台",
         "url": "https://anishort.cgref.cn/s/9we2wzjego"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/07/6s46zl01000djxc4q9g5blj3f3bv6oau.webp",
+        "show": true,
+        "duration": 30,
+        "color": "white",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/07/6s46zl01000djxc4q9g5blj3f3bv6oau.webp",
         "title": "Loomy",
         "desc": "Loomy-你的AI工作搭子",
         "url": "https://loomy.cgref.cn/s/59ngvmonr2"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/07/wuu1lm01000dk9w92cashnhnpdzik9q0.webp",
+        "show": true,
+        "duration": 30,
+        "color": "white",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/07/wuu1lm01000dk9w92cashnhnpdzik9q0.webp",
         "title": "updream官网",
         "desc": "updream官网-AI视频创作助手",
         "url": "https://updream.cgref.cn/s/2znrpo9er7"
       },
       {
-        "avatar": "https://laper.ai/logo_png_public.png",
+        "show": true,
+        "duration": 30,
+        "color": "white",
+        "image": "https://laper.ai/logo_png_public.png",
         "title": "Laper",
         "desc": "剧作软件的进化终点。以剧为本。在 Laper 中协作制片。",
         "url": "https://laper.cgref.cn/s/zdkjq78n1r"
       },
       {
-        "avatar": "https://wawawriter.com/app/assets/wawa-qwUtEkkq.svg",
+        "show": true,
+        "duration": 30,
+        "color": "white",
+        "image": "https://wawawriter.com/app/assets/wawa-qwUtEkkq.svg",
         "title": "蛙蛙写作",
         "desc": "蛙蛙写作——超级AI智能写作助手",
         "url": "https://wawawriter.cgref.cn/s/59ngw1oer2"
       },
       {
-        "avatar": "https://seko.sensetime.com/logo-48x48.svg",
+        "show": true,
+        "duration": 30,
+        "color": "white",
+        "image": "https://seko.sensetime.com/logo-48x48.svg",
         "title": "Seko",
         "desc": "Seko - World Class AI Video Generation Platform",
         "url": "https://seko.cgref.cn/s/2znr3vznr7"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/05/p67q3901000dij3oz5c1gns590cvu22e.png",
+        "show": true,
+        "duration": 30,
+        "color": "white",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/05/p67q3901000dij3oz5c1gns590cvu22e.png",
         "title": "LiblibAI",
         "desc": "LiblibAI-哩布哩布AI - 中国领先的AI创作平台",
         "url": "https://www.liblib.art/?sourceid=005904&utm=cg&cgv=4onyr06kjx"
       },
       {
-        "avatar": "https://atoms.dev/favicon.ico",
+        "show": true,
+        "duration": 30,
+        "color": "white",
+        "image": "https://atoms.dev/favicon.ico",
         "title": "Atoms",
         "desc": "Atoms：用 AI 构建网站与应用，无需编码",
         "url": "https://atoms.cgref.cn/s/20epqjjkw1"
       },
       {
-        "avatar": "https://www.liblib.tv/favicon.ico",
+        "show": true,
+        "duration": 30,
+        "color": "white",
+        "image": "https://www.liblib.tv/favicon.ico",
         "title": "LibTV",
         "desc": "LibTV - 专业视频创作工具",
         "url": "https://libtv.cgref.cn/s/j7n63dqn1g"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/164qw2r1000di3tkojo3bvi7b10pfewm.png",
+        "show": true,
+        "duration": 30,
+        "color": "white",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/04/164qw2r1000di3tkojo3bvi7b10pfewm.png",
         "title": "火山引擎",
         "desc": "方舟 Agent Plan",
         "url": "https://volcengine.cgref.cn/s/59ngwxoer2"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/03/1b0hko81000dhg0oniyq2la16ima2auh.png",
+        "show": true,
+        "duration": 30,
+        "color": "white",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/03/1b0hko81000dhg0oniyq2la16ima2auh.png",
         "title": "爱派AiPy",
         "desc": "AiPy，超级AI牛马智能体工厂，爱派AiPy软件官网",
         "url": "https://aipyaipy.cgref.cn/s/3mnzz45no1"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/03/1b0hko81000dhfui1jw14zikq0rewpqf.webp",
+        "show": true,
+        "duration": 30,
+        "color": "white",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/03/1b0hko81000dhfui1jw14zikq0rewpqf.webp",
         "title": "码上飞",
         "desc": "码上飞 - 说中文，做应用 | AI生成微信小程序/鸿蒙/APP/H5网站",
         "url": "https://codeflying.cgref.cn/s/59ngw0xer2"
@@ -108,138 +167,150 @@
     "mode": "recommend",
     "list": [
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/05/lh3px401000diu3kvu0grzo4nqh8uk30.webp",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/10/64h2jb01000dm9hvkxeaeov1zhc5b8na.webp",
+        "title": "创客贴",
+        "desc": "创客贴AI在线设计平台，提供AI多模态能力与海量正版资源，支持一键生成图片、视频，覆盖海报/PPT/社媒等百余种场景。",
+        "url": "https://chuangkit.cgref.cn/s/1oe7dlqe23"
+      },
+      {
+        "image": "https://oss.cakegrowth.cn/public/product/2026/09/1dswy951000dlro948cfahe12nxkqisn.webp",
+        "title": "小橡皮AI",
+        "desc": "帮 AI 创作者一键去机器味、查敏感表达，让内容更自然、更适合平台发布，也更容易获得传播与收录。",
+        "url": "https://xiangpiai.cgref.cn/s/xpn8mz6kzw"
+      },
+      {
+        "image": "https://oss.cakegrowth.cn/public/product/2026/05/lh3px401000diu3kvu0grzo4nqh8uk30.webp",
         "title": "潮际好麦",
         "desc": "潮际好麦，专业级AI电商营销内容创作平台",
         "url": "https://chaojihaomai.cgref.cn/s/dqndm2rn2z"
       },
       {
-        "avatar": "https://www.xingliu.art/favicon.ico",
+        "image": "https://www.xingliu.art/favicon.ico",
         "title": "星流",
         "desc": "星流 - 新一代设计Agent",
         "url": "https://xingliu.cgref.cn/s/ogewx7wkp2"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/08/19d709j1000dl2t7i311ww56w62r6imy.webp",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/08/19d709j1000dl2t7i311ww56w62r6imy.webp",
         "title": "Agent Space",
         "desc": "Codex 与 Claude Code 的 AI Agent 工作空间 | Agent.Space",
         "url": "https://agentspace.cgref.cn/s/59ngrdjkr2"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/08/1sdjizq1000dkruwfs4p07sja0jh5h24.webp",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/08/1sdjizq1000dkruwfs4p07sja0jh5h24.webp",
         "title": "剧云",
         "desc": "剧云 - 免费专业中文剧本创作平台|AI智能编剧|智能改编|剧本医生",
         "url": "https://jucloud.cgref.cn/s/qmnom6ye29"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/08/42k5p201000dkrvwv6ho6ak2a03sgwg0.webp",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/08/42k5p201000dkrvwv6ho6ak2a03sgwg0.webp",
         "title": "SkildArt",
         "desc": "SkildArt 思可达 - 全球电商商家的AI视觉增长引擎",
         "url": "https://skildart.cgref.cn/s/5ln1lo5krw"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/07/qcqzei01000dk4vx5v25pva8ez2vhtc8.webp",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/07/qcqzei01000dk4vx5v25pva8ez2vhtc8.webp",
         "title": "vibeknow",
         "desc": "首页 | Vibeknow – 全球首个AI知识视频创作平台",
         "url": "https://vibeknow.cgref.cn/s/4ony2gwejx"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/07/wuu1lm01000dk9y03kh73xao0run6ecu.webp",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/07/wuu1lm01000dk9y03kh73xao0run6ecu.webp",
         "title": "讯飞绘文",
         "url": "https://turbodesk.cgref.cn/s/5ln1rlgkrw"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/06/1nqhrdg1000dj68m7slix3g42tu6n6oy.webp",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/06/1nqhrdg1000dj68m7slix3g42tu6n6oy.webp",
         "title": "立刻MV",
         "desc": "立刻MV（LickMV） - AI 音乐视频生成器与 MV 创作工具",
         "url": "https://lickmv.cgref.cn/s/rpe3j8jk05"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/07/6s46zl01000djxcdot8ri2w3i2kt6pke.webp",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/07/6s46zl01000djxcdot8ri2w3i2kt6pke.webp",
         "title": "切问学术",
         "desc": "切问学术搜索 - AI 文献发现与深度检索",
         "url": "https://qiewenpaper.cgref.cn/s/41evw43kv8"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/07/3fsfc301000djxbtunu24o53nr9efoxr.webp",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/07/3fsfc301000djxbtunu24o53nr9efoxr.webp",
         "title": "二狗PPT",
         "desc": "二狗PPT - DeepSeek驱动的AI PPT生成器｜国企汇报·乙方方案·无AI痕迹",
         "url": "https://2dogppt.cgref.cn/s/rpe3j29k05"
       },
       {
-        "avatar": "https://www.cappt.cc/favicon.ico",
+        "image": "https://www.cappt.cc/favicon.ico",
         "title": "咔片",
         "desc": "咔片PPT-AI一键生成PPT-PPT在线智能制作网站",
         "url": "https://cappt.cgref.cn/s/xpn8zrznzw"
       },
       {
-        "avatar": "https://images.modao.cc/images/favicon.ico",
+        "image": "https://images.modao.cc/images/favicon.ico",
         "title": "墨刀AI",
         "desc": "墨刀AI - 激发无限创造力",
         "url": "https://modao.cgref.cn/s/5ln1o0mkrw"
       },
       {
-        "avatar": "https://logo.wondercv.com/favicon.ico",
+        "image": "https://logo.wondercv.com/favicon.ico",
         "title": "超级简历WonderCV",
         "desc": "超级简历WonderCV - AI智能简历制作工具,HR推荐专业中英文简历模板免费下载",
         "url": "https://wondercv.cgref.cn/s/50k9g23ng6"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/1m56gzf1000di127lhoc4yl1b1xnxgcb.webp",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/04/1m56gzf1000di127lhoc4yl1b1xnxgcb.webp",
         "title": "UP 简历",
         "desc": "AI简历生成在线制作工具_简历模板免费下载使用-UP简历",
         "url": "https://upcv.cgref.cn/s/1zn5mdykqm"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/1nakky01000di0dqcuoyrci2rb0vdf56.webp",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/04/1nakky01000di0dqcuoyrci2rb0vdf56.webp",
         "title": "讯飞智作",
         "desc": "讯飞智作-AI虚拟数字人视频制作-一键创作口播视频-数字分身定制",
         "url": "https://xfzhizuo.cgref.cn/s/rpexmw9k90"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/4tbldy01000dhypafexwvf6692lj4vxd.webp",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/04/4tbldy01000dhypafexwvf6692lj4vxd.webp",
         "title": "音述AI",
         "desc": "音述 - 全球前沿专业级中文AI音乐创作平台 | 永久免费在线AI写歌 | 音述AI音乐社区",
         "url": "https://yinshu.cgref.cn/s/9qyk4xoe87"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/1xcsvvd1000dhxttpihimlr47g82gsiq.webp",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/04/1xcsvvd1000dhxttpihimlr47g82gsiq.webp",
         "title": "SpeedAI科研小助手",
         "desc": "SpeedAI科研小助手【官网】- AI降重降AI率 | 知网维普万方",
         "url": "https://speedai.cgref.cn/s/q50k978ng6"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/1xcsvvd1000dhxmd41lktbo3ij9lxaxb.png",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/04/1xcsvvd1000dhxmd41lktbo3ij9lxaxb.png",
         "title": "白日梦AI",
         "desc": "白日梦AI-领先的AI视频创作类AIGC创作平台",
         "url": "https://aibrm.cgref.cn/s/l41evd6ev8"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/1wrrdrl1000dhrpaaoxvbs6dg5q7f29u.webp",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/04/1wrrdrl1000dhrpaaoxvbs6dg5q7f29u.webp",
         "title": "AstronClaw",
         "desc": "讯飞星辰Agent平台 - 一站式智能体开发平台",
         "url": "https://astron-claw.cgref.cn/s/20epq01kw1"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/1mnu9d61000dhnooxt9vxmn7gxdmg3hn.webp",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/04/1mnu9d61000dhnooxt9vxmn7gxdmg3hn.webp",
         "title": "AiPPT插件",
         "desc": "AiPPT 插件-AI智能PPT制作软件，一键生成/美化/排版，高效PPT工具",
         "url": "https://aippt-plugin.cgref.cn/s/3rpe3p9k05"
       },
       {
-        "avatar": "https://www.islide.cc/favicon.ico",
+        "image": "https://www.islide.cc/favicon.ico",
         "title": "iSlide PPT",
         "desc": "iSlide- 让PPT设计简单起来 | PPT模板下载平台",
         "url": "https://islide.cgref.cn/s/dp3kqd7eol"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/04/1mnu9d61000dhj6u79bqap81fzyigk2f.jpeg",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/04/1mnu9d61000dhj6u79bqap81fzyigk2f.jpeg",
         "title": "沁言学术",
         "desc": "学术超级智能体",
         "url": "https://qinyanai.cgref.cn/s/rpexmw3k90"
       },
       {
-        "avatar": "https://oss.cakegrowth.cn/public/product/2026/01/1hc9b211000dfvp0q0ifgg9400927860.png",
+        "image": "https://oss.cakegrowth.cn/public/product/2026/01/1hc9b211000dfvp0q0ifgg9400927860.png",
         "title": "01Agent",
         "desc": "01Agent - 会协作、能执行、可交付的 AI 创作智能体",
         "url": "https://01agent.cgref.cn/s/1oe7l5pn23"
@@ -252,54 +323,54 @@
     "mode": "recommend",
     "list": [
       {
-        "avatar": "https://picsum.photos/seed/在线PS/100",
+        "image": "https://picsum.photos/seed/在线PS/100",
         "title": "在线PS",
         "desc": "在线PS - 在线照片处理编辑器 - 在线photoshop",
         "url": "https://ps.bmcx.com/"
       },
       {
-        "avatar": "https://picsum.photos/seed/iconfont-阿里巴巴矢量图标库/100",
+        "image": "https://picsum.photos/seed/iconfont-阿里巴巴矢量图标库/100",
         "title": "iconfont-阿里巴巴矢量图标库",
         "url": "https://www.iconfont.cn/?spm=a313x.collections_index.i3.d4d0a486a.5e7a3a81TIxl6y"
       },
       {
-        "avatar": "https://picsum.photos/seed/TinyPNG/100",
+        "image": "https://picsum.photos/seed/TinyPNG/100",
         "title": "TinyPNG",
         "desc": "TinyPNG – 智能压缩您的WebP、JPEG和PNG图片",
         "url": "https://tinify.cn/"
       },
       {
-        "avatar": "https://picsum.photos/seed/ImageHub 图仓/100",
+        "image": "https://picsum.photos/seed/ImageHub 图仓/100",
         "title": "ImageHub 图仓",
         "desc": "ImageHub - 图仓 - 公益图床，提供免费图片托管服务",
         "url": "https://www.imagehub.cc/"
       },
       {
-        "avatar": "https://pics.molunerfinn.com/blog/logo-512x512.png",
+        "image": "https://pics.molunerfinn.com/blog/logo-512x512.png",
         "title": "PicGo",
         "desc": "PicGo - 免费开源的图床工具，支持 Windows、Mac、Linux",
         "url": "https://picgo.app/zh/"
       },
       {
-        "avatar": "https://picsum.photos/seed/Icon图标制作/100",
+        "image": "https://picsum.photos/seed/Icon图标制作/100",
         "title": "Icon图标制作",
         "desc": "Icon Maker by Raycast",
         "url": "https://ray.so/icon"
       },
       {
-        "avatar": "https://picsum.photos/seed/易听音乐网/100",
+        "image": "https://picsum.photos/seed/易听音乐网/100",
         "title": "易听音乐网",
         "desc": "易听音乐网-MP3音乐免费下载,MP4下载,歌词大全,流行音乐,网络新歌",
         "url": "https://www.eev3.com/"
       },
       {
-        "avatar": "https://picsum.photos/seed/videotourl/100",
+        "image": "https://picsum.photos/seed/videotourl/100",
         "title": "视频转链接工具",
         "desc": "MP3/视频转在线链接工具",
         "url": "https://www.videotourl.com/zh/tools/mp3-to-url"
       },
       {
-        "avatar": "https://picsum.photos/seed/瓦特工具箱(Steam++官网) - Watt Toolkit/100",
+        "image": "https://picsum.photos/seed/瓦特工具箱(Steam++官网) - Watt Toolkit/100",
         "title": "瓦特工具箱(Steam++官网) - Watt Toolkit",
         "desc": "「Watt Toolkit」是一个开源跨平台的多功能 Steam 工具箱。",
         "url": "https://steampp.net/"
@@ -312,25 +383,25 @@
     "mode": "recommend",
     "list": [
       {
-        "avatar": "https://picsum.photos/seed/AI工具集/100",
+        "image": "https://picsum.photos/seed/AI工具集/100",
         "title": "AI工具集",
         "desc": "AI工具集官网 | 1000+ AI工具集合，国内外AI工具集导航大全",
         "url": "https://ai-bot.cn/"
       },
       {
-        "avatar": "https://picsum.photos/seed/ainav/100",
+        "image": "https://picsum.photos/seed/ainav/100",
         "title": "AI导航网",
         "desc": "AInav - AI导航网 | 发现AI,导航未来",
         "url": "https://www.ainav.cn/"
       },
       {
-        "avatar": "https://picsum.photos/seed/toolify/100",
+        "image": "https://picsum.photos/seed/toolify/100",
         "title": "Toolify",
         "desc": "Toolify.ai 发现最好的AI网站和AI工具",
         "url": "https://www.toolify.ai/zh/"
       },
       {
-        "avatar": "https://picsum.photos/seed/gongke/100",
+        "image": "https://picsum.photos/seed/gongke/100",
         "title": "攻壳智能体",
         "desc": "攻壳智能体 - 探索发现热门的智能体和AI工具",
         "url": "https://gongke.net/"
@@ -343,637 +414,637 @@
     "mode": "recommend",
     "list": [
       {
-        "avatar": "https://picsum.photos/seed/tool01/100",
+        "image": "https://picsum.photos/seed/tool01/100",
         "title": "菜鸟工具",
         "desc": "在线综合工具",
         "url": "https://www.jyshare.com/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool02/100",
+        "image": "https://picsum.photos/seed/tool02/100",
         "title": "Web 工具集",
         "desc": "前端网页工具合集",
         "url": "https://xianyu110.github.io/web-tools-suite/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool03/100",
+        "image": "https://picsum.photos/seed/tool03/100",
         "title": "UU在线工具",
         "desc": "多功能在线工具箱",
         "url": "https://uutool.cn/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool04/100",
+        "image": "https://picsum.photos/seed/tool04/100",
         "title": "独特工具箱",
         "desc": "开发者实用在线工具",
         "url": "https://www.dute.org/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool05/100",
+        "image": "https://picsum.photos/seed/tool05/100",
         "title": "开发者武器库",
         "desc": "面向程序员的工具集合",
         "url": "https://devtool.tech/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool06/100",
+        "image": "https://picsum.photos/seed/tool06/100",
         "title": "UML图开源工具",
         "desc": "PlantUML在线绘图工具",
         "url": "https://plantuml.com/zh/"
       },
       {
-        "avatar": "https://picsum.photos/seed/VideoCompress01/100",
+        "image": "https://picsum.photos/seed/VideoCompress01/100",
         "title": "免费在线视频压缩工具",
         "desc": "免费在线视频压缩工具 | 压缩 MP4、MOV、WebM | VideoCompress.io",
         "url": "https://videocompress.io/zh-cn"
       },
       {
-        "avatar": "https://picsum.photos/seed/metool01/100",
+        "image": "https://picsum.photos/seed/metool01/100",
         "title": "MeTool - 视频压缩",
         "desc": "MP4/MOV 视频压缩工具 · 浏览器硬件加速 秒级处理 | MeTool",
         "url": "https://metool.online/zh/videos/compress/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool08/100",
+        "image": "https://picsum.photos/seed/tool08/100",
         "title": "在线视频压缩",
         "desc": "网页端视频无损压缩工具",
         "url": "https://shipinyasuo.com/?2&b_scene_zt=1"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool09/100",
+        "image": "https://picsum.photos/seed/tool09/100",
         "title": "IT工具箱",
         "desc": "国外开源开发者工具站",
         "url": "https://it-tools.tech/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool10/100",
+        "image": "https://picsum.photos/seed/tool10/100",
         "title": "在线JSON校验格式化工具",
         "desc": "JSON格式化、校验、转义工具",
         "url": "https://bejson.com/"
       },
       {
-        "avatar": "https://picsum.photos/seed/在线PDF工具/100",
+        "image": "https://picsum.photos/seed/在线PDF工具/100",
         "title": "在线PDF工具",
         "desc": "PDF24 Tools: 免费且易于使用的在线PDF工具",
         "url": "https://tools.pdf24.org/zh/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool11/100",
+        "image": "https://picsum.photos/seed/tool11/100",
         "title": "AI网址导航",
         "desc": "AI工具导航汇总站",
         "url": "https://www.json.cn/ai123/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool12/100",
+        "image": "https://picsum.photos/seed/tool12/100",
         "title": "AI菜鸟教程",
         "desc": "AI相关入门学习教程",
         "url": "https://tutorial.json.cn/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool13/100",
+        "image": "https://picsum.photos/seed/tool13/100",
         "title": "在线实时HTML和JavaScript编辑器",
         "desc": "网页实时代码预览编辑器",
         "url": "https://zh.infobyip.com/htmlandjavascripteditor.php"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool14/100",
+        "image": "https://picsum.photos/seed/tool14/100",
         "title": "HTML代码压缩",
         "desc": "在线HTML压缩、混淆工具",
         "url": "https://kangax.github.io/html-minifier/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool15/100",
+        "image": "https://picsum.photos/seed/tool15/100",
         "title": "JS压缩、解压、格式化、混淆加密、解密",
         "desc": "前端JS代码处理工具箱",
         "url": "https://css-js.com/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool16/100",
+        "image": "https://picsum.photos/seed/tool16/100",
         "title": "在线进制转换",
         "desc": "二进制/十进制/十六进制互转",
         "url": "https://tool.oschina.net/hexconvert/"
       },
       {
-        "avatar": "https://picsum.photos/seed/soconvert/100",
+        "image": "https://picsum.photos/seed/soconvert/100",
         "title": "免费图片转换工具",
         "desc": "SoConvert.com - 免费批量在线转换图片",
         "url": "https://soconvert.com/cn"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool17/100",
+        "image": "https://picsum.photos/seed/tool17/100",
         "title": "可批量编辑图片的所有工具",
         "desc": "在线图片压缩、裁剪、格式转换",
         "url": "https://iloveimg.com/zh-cn"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool18/100",
+        "image": "https://picsum.photos/seed/tool18/100",
         "title": "跨平台多媒体播放器",
         "desc": "VLC开源多媒体播放器官网",
         "url": "https://www.videolan.org/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool19/100",
+        "image": "https://picsum.photos/seed/tool19/100",
         "title": "极简插件官网",
         "desc": "Chrome浏览器插件下载站",
         "url": "https://chrome.zzzmh.cn/index"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool20/100",
+        "image": "https://picsum.photos/seed/tool20/100",
         "title": "GitHub Corners",
         "desc": "页面GitHub角标开源组件",
         "url": "https://tholman.com/github-corners/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool21/100",
+        "image": "https://picsum.photos/seed/tool21/100",
         "title": "YouTube视频下载器",
         "desc": "在线油管视频解析下载工具",
         "url": "https://en.ssyoutube.com/1ab/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool22/100",
+        "image": "https://picsum.photos/seed/tool22/100",
         "title": "Vysor安卓投屏工具",
         "desc": "电脑无线投屏安卓设备",
         "url": "https://vysor.io/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool23/100",
+        "image": "https://picsum.photos/seed/tool23/100",
         "title": "Vysor_2.1.2破解及安装包",
         "desc": "Vysor旧版安装与破解教程",
         "url": "https://www.cnblogs.com/slade-sun/p10598209"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool24/100",
+        "image": "https://picsum.photos/seed/tool24/100",
         "title": "极限投屏",
         "desc": "飞书文档投屏方案教程",
         "url": "https://my.feishu.cn/docx/WuMld1xKvoT4H8xlZHdcMP53nMf"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool25/100",
+        "image": "https://picsum.photos/seed/tool25/100",
         "title": "证件照大师",
         "desc": "在线证件照换底色、裁剪",
         "url": "https://id-photo.cn/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool26/100",
+        "image": "https://picsum.photos/seed/tool26/100",
         "title": "CodePen代码托管平台",
         "desc": "前端在线代码演示分享平台",
         "url": "https://codepen.io/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool27/100",
+        "image": "https://picsum.photos/seed/tool27/100",
         "title": "JS在线编辑器",
         "desc": "JSRun实时代码运行工具",
         "url": "https://jsrun.net/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool28/100",
+        "image": "https://picsum.photos/seed/tool28/100",
         "title": "Share Icon",
         "desc": "海量免费图标素材下载站",
         "url": "https://www.shareicon.net/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool29/100",
+        "image": "https://picsum.photos/seed/tool29/100",
         "title": "Font图标大全",
         "desc": "网页字体图标合集导航",
         "url": "http://www.yinhuafeng.cn/daohang/font/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool30/100",
+        "image": "https://picsum.photos/seed/tool30/100",
         "title": "前端技术栈图标",
         "desc": "主流开发技术logo素材",
         "url": "https://devtool.tech/fe-logo"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool31/100",
+        "image": "https://picsum.photos/seed/tool31/100",
         "title": "在线制作ico图标",
         "desc": "图片一键生成ICO图标",
         "url": "https://www.bitbug.net/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool32/100",
+        "image": "https://picsum.photos/seed/tool32/100",
         "title": "Icon图标制作",
         "desc": "Ray.so极简图标生成工具",
         "url": "https://ray.so/icon"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool33/100",
+        "image": "https://picsum.photos/seed/tool33/100",
         "title": "Ionicons矢量图标",
         "desc": "移动端矢量图标库",
         "url": "https://ionic.io/ionicons"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool34/100",
+        "image": "https://picsum.photos/seed/tool34/100",
         "title": "Feather图标",
         "desc": "轻量简约线性图标库",
         "url": "https://feathericons.com/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool35/100",
+        "image": "https://picsum.photos/seed/tool35/100",
         "title": "React图标",
         "desc": "React专用图标组件库合集",
         "url": "https://react-icons.github.io/react-icons/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool36/100",
+        "image": "https://picsum.photos/seed/tool36/100",
         "title": "Emoji表情大全",
         "desc": "全量Emoji检索与复制工具",
         "url": "https://www.emojiall.com/zh-hans"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool37/100",
+        "image": "https://picsum.photos/seed/tool37/100",
         "title": "路过图床",
         "desc": "免费在线图片存储图床",
         "url": "https://imgchr.com/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool38/100",
+        "image": "https://picsum.photos/seed/tool38/100",
         "title": "Web安全色",
         "desc": "网页标准安全色卡参考",
         "url": "https://www.bootcss.com/p/websafecolors/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool39/100",
+        "image": "https://picsum.photos/seed/tool39/100",
         "title": "Cool Backgrounds",
         "desc": "渐变/纹理网页背景生成器",
         "url": "https://coolbackgrounds.io/"
       },
       {
-        "avatar": "https://picsum.photos/seed/color4Bg/100",
+        "image": "https://picsum.photos/seed/color4Bg/100",
         "title": "color4bg - 免费多彩抽象背景",
         "desc": "最佳多彩抽象背景生成器 - Color4Bg",
         "url": "https://www.color4bg.com/zh-hans"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool40/100",
+        "image": "https://picsum.photos/seed/tool40/100",
         "title": "Watt Toolkit加速器",
         "desc": "Steam开源网络加速工具",
         "url": "https://steampp.net/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool41/100",
+        "image": "https://picsum.photos/seed/tool41/100",
         "title": "CDN UNPKG",
         "desc": "npm包在线CDN加速",
         "url": "https://unpkg.com/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool42/100",
+        "image": "https://picsum.photos/seed/tool42/100",
         "title": "CDN cdnjs",
         "desc": "开源前端库公共CDN",
         "url": "https://cdnjs.com/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool43/100",
+        "image": "https://picsum.photos/seed/tool43/100",
         "title": "CDN BootCDN",
         "desc": "国内稳定前端静态资源CDN",
         "url": "https://www.bootcdn.cn/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool44/100",
+        "image": "https://picsum.photos/seed/tool44/100",
         "title": "CDN jsDelivr",
         "desc": "全球免费开源CDN服务",
         "url": "https://www.jsdelivr.com/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool45/100",
+        "image": "https://picsum.photos/seed/tool45/100",
         "title": "npmmirror镜像站",
         "desc": "淘宝npm国内镜像加速",
         "url": "https://www.npmmirror.com/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool46/100",
+        "image": "https://picsum.photos/seed/tool46/100",
         "title": "WebSocket在线测试",
         "desc": "在线WS连接调试工具",
         "url": "https://wstool.jackxiang.com/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool47/100",
+        "image": "https://picsum.photos/seed/tool47/100",
         "title": "websocket在线测试",
         "desc": "简易WebSocket在线调试页面",
         "url": "http://www.websocket-test.com/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool48/100",
+        "image": "https://picsum.photos/seed/tool48/100",
         "title": "文件转换工具",
         "desc": "多格式音视频文档互转",
         "url": "https://www.aconvert.com/cn/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool49/100",
+        "image": "https://picsum.photos/seed/tool49/100",
         "title": "Convertio文件转换",
         "desc": "云端全类型文件转换平台",
         "url": "https://convertio.co/zh/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool50/100",
+        "image": "https://picsum.photos/seed/tool50/100",
         "title": "PDF.js官网",
         "desc": "浏览器原生PDF开源渲染库",
         "url": "https://mozilla.github.io/pdf.js/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool51/100",
+        "image": "https://picsum.photos/seed/tool51/100",
         "title": "PDF24在线PDF工具",
         "desc": "PDF合并、拆分、编辑在线工具",
         "url": "https://tools.pdf24.org/zh/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool52/100",
+        "image": "https://picsum.photos/seed/tool52/100",
         "title": "PDF压缩工具",
         "desc": "无损在线PDF体积压缩",
         "url": "https://pdfcompressor.com/zh/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool53/100",
+        "image": "https://picsum.photos/seed/tool53/100",
         "title": "MD5在线加密",
         "desc": "字符串MD5哈希加密工具",
         "url": "https://tool.chinaz.com/tools/md5.aspx?qq-pf-to=pcqq.c2c"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool54/100",
+        "image": "https://picsum.photos/seed/tool54/100",
         "title": "加密JWT工具",
         "desc": "JWT在线生成与解析工具",
         "url": "https://www.jwt.io/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool55/100",
+        "image": "https://picsum.photos/seed/tool55/100",
         "title": "md5在线解密",
         "desc": "MD5哈希彩虹表查询解密",
         "url": "https://www.cmd5.com/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool56/100",
+        "image": "https://picsum.photos/seed/tool56/100",
         "title": "md5加密解密",
         "desc": "MD5/SHA加密解密工具箱",
         "url": "https://www.bejson.com/enc/md5/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool57/100",
+        "image": "https://picsum.photos/seed/tool57/100",
         "title": "Bcrypt校验工具",
         "desc": "Bcrypt密码哈希生成验证",
         "url": "https://config.net.cn/tools/BCrypt-Verify.html"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool58/100",
+        "image": "https://picsum.photos/seed/tool58/100",
         "title": "SVG查看编辑器",
         "desc": "SVG代码预览与在线编辑",
         "url": "https://www.rapidtables.org/zh-CN/web/tools/svg-view-editor.html"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool59/100",
+        "image": "https://picsum.photos/seed/tool59/100",
         "title": "ICO转SVG",
         "desc": "图标格式ICO转矢量SVG",
         "url": "https://cdkm.com/cn/ico-to-svg"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool60/100",
+        "image": "https://picsum.photos/seed/tool60/100",
         "title": "SVG转图片",
         "desc": "SVG矢量图转位图工具",
         "url": "https://tools.simonwillison.net/svg-render?url=https://gist.githubusercontent.com/simonw/aedecb93564af13ac1596810d40cac3c/raw/83e7f3be5b65bba61124684700fa7925d37c36c3/tiger.svg"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool61/100",
+        "image": "https://picsum.photos/seed/tool61/100",
         "title": "Mongoose中文网",
         "desc": "MongoDB ODM框架中文文档",
         "url": "https://mongoose.nodejs.cn/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool62/100",
+        "image": "https://picsum.photos/seed/tool62/100",
         "title": "Navicat激活教程",
         "desc": "Navicat数据库工具激活指南",
         "url": "https://baijiahao.baidu.com/s?id=1644169351506023288&wfr=spider&for=pc"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool63/100",
+        "image": "https://picsum.photos/seed/tool63/100",
         "title": "Sequelize中文网",
         "desc": "Node.js ORM中文文档",
         "url": "https://sequelize.nodejs.cn/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool64/100",
+        "image": "https://picsum.photos/seed/tool64/100",
         "title": "正则测试工具",
         "desc": "正则表达式在线测试",
         "url": "https://regexpal.com/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool65/100",
+        "image": "https://picsum.photos/seed/tool65/100",
         "title": "正则可视化",
         "desc": "正则流程图解析",
         "url": "https://jex.im/regulex/#!flags=&re=%5E(a%7Cb)*%3F%24"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool66/100",
+        "image": "https://picsum.photos/seed/tool66/100",
         "title": "随机图片接口",
         "desc": "Picsum随机占位图接口",
         "url": "https://picsum.photos/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool67/100",
+        "image": "https://picsum.photos/seed/tool67/100",
         "title": "免费API大全",
         "desc": "免费公开API汇总平台",
         "url": "https://www.free-api.com/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool68/100",
+        "image": "https://picsum.photos/seed/tool68/100",
         "title": "免费API站点",
         "desc": "开发者测试接口",
         "url": "https://api.aa1.cn/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool69/100",
+        "image": "https://picsum.photos/seed/tool69/100",
         "title": "Apifox工具",
         "desc": "接口一体化协作平台",
         "url": "https://apifox.com/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool70/100",
+        "image": "https://picsum.photos/seed/tool70/100",
         "title": "手机号生成器",
         "desc": "批量生成测试手机号",
         "url": "https://phonenumbertools.com/zh-cn/generator-cn/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool71/100",
+        "image": "https://picsum.photos/seed/tool71/100",
         "title": "身份证生成器",
         "desc": "合规测试身份证",
         "url": "https://zuoyinyun.com/tool/id-card"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool72/100",
+        "image": "https://picsum.photos/seed/tool72/100",
         "title": "JSONPlaceholder",
         "desc": "前端模拟假API",
         "url": "https://jsonplaceholder.typicode.com/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool73/100",
+        "image": "https://picsum.photos/seed/tool73/100",
         "title": "Dog API",
         "desc": "狗狗随机图片接口",
         "url": "https://dog.ceo/dog-api/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool74/100",
+        "image": "https://picsum.photos/seed/tool74/100",
         "title": "技术速查清单",
         "desc": "前后端开发手册",
         "url": "https://wangchujiang.com/reference/index.html"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool75/100",
+        "image": "https://picsum.photos/seed/tool75/100",
         "title": "egghead教程",
         "desc": "国外前端视频站",
         "url": "https://egghead.io/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool76/100",
+        "image": "https://picsum.photos/seed/tool76/100",
         "title": "CS自学指南",
         "desc": "计算机开源导航",
         "url": "https://csdiy.wiki/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool77/100",
+        "image": "https://picsum.photos/seed/tool77/100",
         "title": "HelloGitHub",
         "desc": "开源项目月刊",
         "url": "https://hellogithub.com/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool78/100",
+        "image": "https://picsum.photos/seed/tool78/100",
         "title": "现代JS教程",
         "desc": "JS官方中文教程",
         "url": "https://zh.javascript.info/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool79/100",
+        "image": "https://picsum.photos/seed/tool79/100",
         "title": "张鑫旭博客",
         "desc": "国内前端知名博客",
         "url": "https://www.zhangxinxu.com/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool80/100",
+        "image": "https://picsum.photos/seed/tool80/100",
         "title": "张洪Heo",
         "desc": "设计前端博客",
         "url": "https://blog.zhheo.com/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool81/100",
+        "image": "https://picsum.photos/seed/tool81/100",
         "title": "阮一峰博客",
         "desc": "技术科普博客",
         "url": "https://ruanyifeng.com/blog/index.html"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool82/100",
+        "image": "https://picsum.photos/seed/tool82/100",
         "title": "Arweave钱包",
         "desc": "区块链钱包",
         "url": "https://arweave.app/welcome"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool83/100",
+        "image": "https://picsum.photos/seed/tool83/100",
         "title": "Wagmi",
         "desc": "以太坊React工具库",
         "url": "https://2.x.wagmi.sh/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool84/100",
+        "image": "https://picsum.photos/seed/tool84/100",
         "title": "以太坊经典",
         "desc": "ETC中文官网",
         "url": "https://ethereumclassic.org/zh/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool85/100",
+        "image": "https://picsum.photos/seed/tool85/100",
         "title": "以太坊官网",
         "desc": "ETH官方站点",
         "url": "https://ethereum.org/zh/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool86/100",
+        "image": "https://picsum.photos/seed/tool86/100",
         "title": "BlockBeats",
         "desc": "区块链资讯",
         "url": "https://theblockbeats.info/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool87/100",
+        "image": "https://picsum.photos/seed/tool87/100",
         "title": "PinWeb3",
         "desc": "Web3导航",
         "url": "https://pinweb3.com/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool88/100",
+        "image": "https://picsum.photos/seed/tool88/100",
         "title": "ChainCatcher",
         "desc": "区块链深度资讯",
         "url": "https://chaincatcher.com/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool89/100",
+        "image": "https://picsum.photos/seed/tool89/100",
         "title": "吴说",
         "desc": "加密行情资讯",
         "url": "https://www.wublock123.com/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool90/100",
+        "image": "https://picsum.photos/seed/tool90/100",
         "title": "深潮TechFlow",
         "desc": "区块链产业报道",
         "url": "https://www.techflowpost.com/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool91/100",
+        "image": "https://picsum.photos/seed/tool91/100",
         "title": "Foresight News",
         "desc": "Web3全球媒体",
         "url": "https://foresightnews.pro/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool92/100",
+        "image": "https://picsum.photos/seed/tool92/100",
         "title": "Chainlink水龙头",
         "desc": "测试代币领取",
         "url": "https://faucets.chain.link/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool93/100",
+        "image": "https://picsum.photos/seed/tool93/100",
         "title": "以太坊学习资料",
         "desc": "以太坊生态合集",
         "url": "https://ethpanda.notion.site/32fbbd63be8780fdaa72ce556af4d5ec"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool94/100",
+        "image": "https://picsum.photos/seed/tool94/100",
         "title": "OpenZeppelin",
         "desc": "Solidity安全合约库",
         "url": "https://learnblockchain.cn/docs/openzeppelin/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool95/100",
+        "image": "https://picsum.photos/seed/tool95/100",
         "title": "Hardhat",
         "desc": "智能合约框架",
         "url": "https://hardhat.org/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool96/100",
+        "image": "https://picsum.photos/seed/tool96/100",
         "title": "Speedrun Ethereum",
         "desc": "合约实战教程",
         "url": "https://speedrunethereum.com/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool97/100",
+        "image": "https://picsum.photos/seed/tool97/100",
         "title": "Solidity教程",
         "desc": "Solidity中文开发文档",
         "url": "https://solidity-cn.readthedocs.io/zh/develop/index.html"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool98/100",
+        "image": "https://picsum.photos/seed/tool98/100",
         "title": "cesium中文网",
         "desc": "三维GIS教程",
         "url": "https://cesium.xin/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool99/100",
+        "image": "https://picsum.photos/seed/tool99/100",
         "title": "Mapbox案例",
         "desc": "地图开发手册",
         "url": "https://naivemap.com/mapbox-gl-js-cookbook/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool100/100",
+        "image": "https://picsum.photos/seed/tool100/100",
         "title": "WebGL基础",
         "desc": "Web图形底层教程",
         "url": "https://webglfundamentals.org/webgl/lessons/zh_cn/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool101/100",
+        "image": "https://picsum.photos/seed/tool101/100",
         "title": "Mermaid中文网",
         "desc": "Mermaid 图表工具\r\n基于 JavaScript 的图表工具，可渲染 Markdown 启发的文本定义以动态创建和修改图表。",
         "url": "https://mermaid.nodejs.cn/"
       },
       {
-        "avatar": "https://picsum.photos/seed/tool102/100",
+        "image": "https://picsum.photos/seed/tool102/100",
         "title": "Vercount - 网站流量计数器",
         "desc": "网站流量计数器，简单、快速、可靠 Go + Redis 驱动计数后端，Next.js 负责后台",
         "url": "https://www.vercount.one/"
@@ -987,7 +1058,7 @@
       {
         "category": "技术",
         "cover": "https://picsum.photos/seed/caodong/400/300",
-        "avatar": "https://picsum.photos/seed/caodong-avatar/100",
+        "image": "https://picsum.photos/seed/caodong-avatar/100",
         "title": "草东日记",
         "desc": "独立思考，勿乱引导",
         "url": "https://ifdian.net/a/whjin"
@@ -995,7 +1066,7 @@
       {
         "category": "技术",
         "cover": "https://picsum.photos/seed/adil/400/300",
-        "avatar": "https://picsum.photos/seed/adil-avatar/100",
+        "image": "https://picsum.photos/seed/adil-avatar/100",
         "title": "Adil",
         "desc": "BW/HANA顾问，BI工程师，数据分析",
         "url": "https://ifdian.net/a/whjin"
@@ -1003,7 +1074,7 @@
       {
         "category": "技术",
         "cover": "https://picsum.photos/seed/haoup/400/300",
-        "avatar": "https://picsum.photos/seed/haoup-avatar/100",
+        "image": "https://picsum.photos/seed/haoup-avatar/100",
         "title": "HaoUp",
         "desc": "学习网络知识、积累兴趣的地方",
         "url": "https://ifdian.net/a/whjin/haoup"
@@ -1011,7 +1082,7 @@
       {
         "category": "技术",
         "cover": "https://picsum.photos/seed/jizhi/400/300",
-        "avatar": "https://picsum.photos/seed/jizhi-avatar/100",
+        "image": "https://picsum.photos/seed/jizhi-avatar/100",
         "title": "极致本源",
         "desc": "一个 Key 接入 200+ 主流 API",
         "url": "https://ifdian.net/a/whjin/jizhi"
@@ -1019,7 +1090,7 @@
       {
         "category": "技术",
         "cover": "https://picsum.photos/seed/mystic/400/300",
-        "avatar": "https://picsum.photos/seed/mystic-avatar/100",
+        "image": "https://picsum.photos/seed/mystic-avatar/100",
         "title": "MysticStars",
         "desc": "Discover Infinity",
         "url": "https://ifdian.net/a/whjin/mystic"
@@ -1027,7 +1098,7 @@
       {
         "category": "技术",
         "cover": "https://picsum.photos/seed/tempmail/400",
-        "avatar": "https://picsum.photos/seed/tempmail-avatar/100",
+        "image": "https://picsum.photos/seed/tempmail-avatar/100",
         "title": "Temp Mail",
         "desc": "你的临时电子邮件地址",
         "url": "https://ifdian.net/a/whjin/tempmail"
@@ -1035,7 +1106,7 @@
       {
         "category": "技术",
         "cover": "https://picsum.photos/seed/haozhuji/400/300",
-        "avatar": "https://picsum.photos/seed/haozhuji-avatar/100",
+        "image": "https://picsum.photos/seed/haozhuji-avatar/100",
         "title": "好主机",
         "desc": "国内外虚拟主机",
         "url": "https://ifdian.net/a/whjin/haozhuji"
@@ -1043,7 +1114,7 @@
       {
         "category": "发电",
         "cover": "https://picsum.photos/seed/diyi/400/300",
-        "avatar": "https://picsum.photos/seed/diyi-avatar/100",
+        "image": "https://picsum.photos/seed/diyi-avatar/100",
         "title": "狄伊",
         "desc": "春至花如锦·夏近叶成帷",
         "url": "https://ifdian.net/a/whjin/diyi"
@@ -1051,7 +1122,7 @@
       {
         "category": "技术",
         "cover": "https://picsum.photos/seed/webfem/400/300",
-        "avatar": "https://picsum.photos/seed/webfem-avatar/100",
+        "image": "https://picsum.photos/seed/webfem-avatar/100",
         "title": "webfem",
         "desc": "做有价值的博客",
         "url": "https://ifdian.net/a/whjin/webfem"
@@ -1059,7 +1130,7 @@
       {
         "category": "生活",
         "cover": "https://picsum.photos/seed/lanyiyun/400/300",
-        "avatar": "https://picsum.photos/seed/lanyiyun-avatar/100",
+        "image": "https://picsum.photos/seed/lanyiyun-avatar/100",
         "title": "蓝易云CDN",
         "desc": "高防CDN 全球安全加速服务",
         "url": "https://ifdian.net/a/whjin/lanyiyun"
@@ -1067,7 +1138,7 @@
       {
         "category": "生活",
         "cover": "https://picsum.photos/seed/xifeng/400/300",
-        "avatar": "https://picsum.photos/seed/xifeng-avatar/100",
+        "image": "https://picsum.photos/seed/xifeng-avatar/100",
         "title": "西风往事",
         "desc": "永远相信 美好的事情即将发生",
         "url": "https://ifdian.net/a/whjin/xifeng"
@@ -1075,7 +1146,7 @@
       {
         "category": "生活",
         "cover": "https://picsum.photos/seed/blogagg/400/300",
-        "avatar": "https://picsum.photos/seed/blogagg-avatar/100",
+        "image": "https://picsum.photos/seed/blogagg-avatar/100",
         "title": "中文独立博主聚合",
         "desc": "又一个博客聚合站",
         "url": "https://ifdian.net/a/whjin/blogagg"

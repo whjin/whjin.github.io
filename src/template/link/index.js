@@ -26,20 +26,20 @@
     }
     return `scrollPosition_${pathPart}`;
   }
-  const defaultAvatar = 'https://picsum.photos/seed/jizhi-avatar/100';
+  const defaultImage = 'https://picsum.photos/seed/jizhi-avatar/100';
   const defaultCover = 'https://picsum.photos/seed/jizhi/400/300';
   const renderModes = {
     recommend: {
       gridClass: 'recommend-grid',
-      defaultFields: { url: 'url', avatar: 'avatar', name: 'title', desc: 'desc' },
+      defaultFields: { url: 'url', image: 'image', name: 'title', desc: 'desc' },
       template: (item) => {
-        const avatar = item.avatar || defaultAvatar;
+        const image = item.image || defaultImage;
         const name = item.name || '';
         const desc = item.desc || '';
         const url = item.url || '#';
         return `
           <div class="recommend-card" data-url="${url}">
-            <img src="${avatar}" alt="${name}" class="card-avatar">
+            <img src="${image}" alt="${name}" class="card-avatar">
             <div class="card-info">
               <div class="card-name" title="${name}">${name}</div>
               <div class="card-desc" title="${desc}">${desc}</div>
@@ -53,7 +53,7 @@
       defaultFields: {
         url: 'url',
         cover: 'cover',
-        avatar: 'avatar',
+        image: 'image',
         name: 'title',
         desc: 'desc',
         category: 'category',
@@ -61,7 +61,7 @@
       template: (item, categoryConfig) => {
         const url = item.url || '#';
         const cover = item.cover || defaultCover;
-        const avatar = item.avatar || defaultAvatar;
+        const image = item.image || defaultImage;
         const name = item.name || '';
         const desc = item.desc || '';
         let tagHtml = '';
@@ -74,7 +74,7 @@
             ${tagHtml}
             <img src="${cover}" alt="${name}" class="card-cover">
             <div class="card-footer">
-              <img src="${avatar}" alt="${name}" class="card-avatar">
+              <img src="${image}" alt="${name}" class="card-avatar">
               <div class="card-info">
                 <div class="card-name" title="${name}">${name}</div>
                 <div class="card-desc" title="${desc}">${desc}</div>

@@ -19,7 +19,7 @@ const BASE = [
 ];
 
 const feed = JSON.parse(fs.readFileSync(FEED, 'utf8'));
-const articles = (feed.find((c) => c.type === 'articles') || { items: [] }).items || [];
+const articles = (feed.find((c) => c.type === 'articles') || { list: [] }).list || [];
 
 const urls = BASE.concat(
   articles.map((a) => ({

@@ -4,8 +4,19 @@
 
   if (!BANNER_ENABLED) return;
 
-  const scriptSrc = document.currentScript ? document.currentScript.src : '';
-  const dataUrl = new URL('data.json', scriptSrc || window.location.href).href;
+  // 数据复用：统一从友链数据源读取 link === "banner" 的节点，避免双份维护
+  const dataUrl = new URL('/src/template/posts/Link/友链/data.json', location.origin).href;
+
+  function findBannerSection(data) {
+    if (!data || typeof data !== 'object') return null;
+    for (const key of Object.keys(data)) {
+      const node = data[key];
+      if (node && typeof node === 'object' && node.link === 'banner' && Array.isArray(node.list)) {
+        return node.list;
+      }
+    }
+    return null;
+  }
 
   function isValidItem(item) {
     return (
@@ -15,6 +26,13 @@
       typeof item.title === 'string' &&
       item.title.trim() !== ''
     );
+  }
+
+  // banner 展示文案：优先用长 slogan（desc），退回到 title，保持原条幅视觉长度
+  function itemText(item) {
+    if (typeof item.desc === 'string' && item.desc.trim()) return item.desc.trim();
+    if (typeof item.title === 'string' && item.title.trim()) return item.title.trim();
+    return '';
   }
 
   function getDuration(item) {
@@ -57,20 +75,20 @@
       slide.style.color = item.color.trim();
     }
 
-    const avatarSrc =
-      typeof item.avatar === 'string' && item.avatar.trim()
-        ? item.avatar.trim()
+    const imageSrc =
+      typeof item.image === 'string' && item.image.trim()
+        ? item.image.trim()
         : 'https://picsum.photos/seed/ai/100';
-    const avatar = document.createElement('img');
-    avatar.className = 'banner-avatar';
-    avatar.src = avatarSrc;
-    avatar.alt = '';
+    const image = document.createElement('img');
+    image.className = 'banner-avatar';
+    image.src = imageSrc;
+    image.alt = '';
 
     const text = document.createElement('span');
     text.className = 'banner-text';
-    text.textContent = item.title.trim();
+    text.textContent = itemText(item);
 
-    slide.appendChild(avatar);
+    slide.appendChild(image);
     slide.appendChild(text);
     slide.appendChild(createArrowIcon());
     return slide;
@@ -101,7 +119,7 @@
 
     function updateTitle() {
       if (currentSlide && currentItem) {
-        applyTitleIfOverflow(currentSlide, currentItem.title.trim());
+        applyTitleIfOverflow(currentSlide, itemText(currentItem));
       }
     }
 
@@ -163,8 +181,9 @@
       return response.json();
     })
     .then((data) => {
-      if (!Array.isArray(data)) return;
-      const bannerList = data.filter(isValidItem);
+      const list = findBannerSection(data);
+      if (!list) return;
+      const bannerList = list.filter(isValidItem);
       if (bannerList.length > 0) renderBanner(bannerList);
     })
     .catch((error) => {

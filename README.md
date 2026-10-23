@@ -25,7 +25,7 @@ With **53+ technical articles** covering full-stack development, FPGA hardware d
 | **Content** | Markdown → Static HTML (custom build scripts) |
 | **Build Tool** | Node.js + Custom scripts (no Webpack/Vite overhead) |
 | **Deployment** | GitHub Pages + Cloudflare CDN + Alibaba Cloud DNS |
-| **Analytics** | Cloudflare Web Analytics + Cloudflare Worker + D1 |
+| **Analytics** | Cloudflare Web Analytics + Microsoft Clarity + Google Analytics 4 + GoatCounter |
 | **Monetization** | Google AdSense + Ko-fi Membership |
 | **i18n** | Custom lightweight bilingual (Chinese / English) |
 
@@ -106,6 +106,7 @@ This blog is specifically optimized for both **domestic (China)** and **overseas
 
 - ✅ Cookie Consent Banner (GDPR / CCPA compliant)
 - ✅ Google AdSense Consent Mode v2 integration
+- ✅ Microsoft Clarity session recording & heatmaps (privacy redaction enabled)
 - ✅ Privacy Policy + Terms pages
 - ✅ No cross-site tracking cookies
 

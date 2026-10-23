@@ -28,7 +28,7 @@ function stripFrontMatter(text) {
 }
 
 const feed = JSON.parse(fs.readFileSync(FEED, 'utf8'));
-const articles = (feed.find((c) => c.type === 'articles') || { items: [] }).items || [];
+const articles = (feed.find((c) => c.type === 'articles') || { list: [] }).list || [];
 
 function buildPage(it) {
   const folder = it.category || '';
@@ -47,7 +47,7 @@ function buildPage(it) {
   const rel = '/src/template/posts/' + folder + '/html/' + file + '.html';
   const url = SITE + '/src/template/posts/' + encodeURIComponent(folder) + '/html/' + encodeURIComponent(file) + '.html';
   const title = it.title;
-  const desc = String(it.description || '').replace(/\s+/g, ' ').trim();
+  const desc = String(it.desc || '').replace(/\s+/g, ' ').trim();
   const date = it.date || '';
   // feed 已按 md front matter 计算 reward：true/缺省默认显示卡片，仅 reward:false 隐藏
   const rewardOn = it.reward !== false;

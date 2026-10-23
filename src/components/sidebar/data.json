@@ -54,9 +54,9 @@
     },
     {
       "type": "event",
-      "i18n_title": "sb_now",
-      "title": "Happening Now! 🚀",
-      "items": [
+      "i18n_title": "sb_updates",
+      "title": "Updates",
+      "list": [
         {
           "image": "/src/images/favicon.png",
           "title": "最新资源持续更新中...",
@@ -69,7 +69,7 @@
       "type": "event",
       "i18n_title": "sb_happening",
       "title": "What's happening",
-      "items": [
+      "list": [
         {
           "image": "https://img4.kuwo.cn/star/albumcover/500/s4s14/74/267013878.jpg",
           "title": "AI 应用开发学习路线图",
@@ -94,7 +94,7 @@
       "type": "event",
       "i18n_title": "sb_live",
       "title": "Livestreams",
-      "items": [
+      "list": [
         {
           "image": "/src/images/favicon.png",
           "title": "WebRTC 性能优化实战解析",
@@ -105,7 +105,7 @@
           "image": "/src/images/favicon.png",
           "title": "从零搭建前端 × AI 工作流",
           "desc": "即将上线（Coming soon）：前端与 AI 融合的完整工作流搭建直播。",
-          "url": "#"
+          "url": "https://wuhuajin.com/"
         }
       ]
     },
@@ -114,21 +114,13 @@
       "i18n_title": "sb_ads",
       "title": "Advertisement",
       "ad_client": "ca-pub-3179609405594046",
-      "ad_slot": "",
-      "items": [
-        {
-          "image": "https://cdn.jsdelivr.net/gh/whjin/blog-images@main//img/pixtv.png",
-          "title": "PixTV",
-          "desc": "PixTV汇集全球顶尖图片/视频/对话大模型，有效降低AI视频创作门槛，一句话、一个想法，即可生成完整脚本到分镜到人物资产，让所有人都能成为AIGC内容创作者，抢占视频生产力风口。",
-          "url": "https://pixtv.cgref.cn/s/omkloo8k4d"
-        }
-      ]
+      "ad_slot": ""
     },
     {
       "type": "links",
       "i18n_title": "sb_links",
       "title": "Links",
-      "items": [
+      "list": [
         {
           "text": "About 关于",
           "url": "about.html"

@@ -48,8 +48,11 @@
     const aEl = document.createElement('a');
     aEl.rel = 'noopener noreferrer';
     aEl.target = '_blank';
-    aEl.innerHTML = item.marked ? `${MARKED_HTML}${item.title}` : item.title;
-    aEl.title = item.description || item.title || '';
+    const thumb = item.image
+      ? '<img class="card-thumb" src="' + item.image + '" alt="" loading="lazy" />'
+      : '';
+    aEl.innerHTML = thumb + (item.marked ? MARKED_HTML : '') + item.title;
+    aEl.title = item.desc || item.title || '';
     aEl.href = item.url || '';
     let isLinkPage = !!item.url && item.url.includes('/viewer.html?') && item.url.includes('&format=html');
     if (isLinkPage) {
@@ -66,18 +69,18 @@
     const containerEl = document.querySelector('.card-container');
     const fragment = document.createDocumentFragment();
     finalMenuData.forEach((m) => {
-      if (m.show !== false && m.items.length > 0) {
+      if (m.show !== false && m.list.length > 0) {
         const cardEl = document.createElement('div');
         cardEl.className = 'card-item';
         cardEl.dataset.cardTitle = m.title;
         const headerEl = document.createElement('div');
         headerEl.className = 'card-title';
         headerEl.innerText = m.title;
-        if (m.items.length > 7) {
+        if (m.list.length > 7) {
           const countBadge = document.createElement('sup');
-          countBadge.textContent = m.items.length;
+          countBadge.textContent = m.list.length;
           countBadge.className = 'count-badge';
-          countBadge.classList.toggle('normal', m.items.length <= 99);
+          countBadge.classList.toggle('normal', m.list.length <= 99);
           headerEl.appendChild(countBadge);
           const expandBtn = document.createElement('span');
           expandBtn.className = 'card-expand-btn';
@@ -98,7 +101,7 @@
         const listEl = document.createElement(m.tagName || 'ul');
         listEl.className = 'card-list';
         listEl.dataset.cardListTitle = m.title;
-        m.items.forEach((item) => {
+        m.list.forEach((item) => {
           listEl.appendChild(createMenuItem(item));
         });
         cardEl.appendChild(headerEl);
@@ -274,7 +277,7 @@
     const listEl = modalMask.querySelector('.modal-list');
     titleEl.innerText = m.title;
     listEl.innerHTML = '';
-    m.items.forEach((item) => {
+    m.list.forEach((item) => {
       listEl.appendChild(createMenuItem(item));
     });
     modalMask.classList.add('show');

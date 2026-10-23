@@ -44,7 +44,7 @@
       list.forEach((it) => {
         const title = (it.title || '').toLowerCase();
         const cat = ((it.category || '') + ' ' + (it._group || '') + ' ' + (it.tags || []).join(' ')).toLowerCase();
-        const desc = (it.description || '').toLowerCase();
+        const desc = (it.desc || '').toLowerCase();
         let score = 0;
         if (title.includes(q)) score = 3;
         else if (cat.includes(q)) score = 2;
@@ -91,8 +91,8 @@
     const featured = it.featured ? '<span class="fc-featured">★ ' + esc(t('featured_badge', 'Featured')) + '</span>' : '';
     const category = (it.category || it._group) ? '<span class="fc-category">' + esc(it.category || it._group) + '</span>' : '';
     const badges = (category || featured) ? '<div class="fc-badges">' + category + featured + '</div>' : '';
-    const description = it.description
-      ? '<div class="fc-excerpt" title="' + esc(it.description) + '">' + esc(it.description) + '</div>'
+    const description = it.desc
+      ? '<div class="fc-excerpt" title="' + esc(it.desc) + '">' + esc(it.desc) + '</div>'
       : '';
     // 互动统计（可选字段，存在才渲染）
     let stats = '';
@@ -220,7 +220,7 @@
       const menu = await res.json();
       // 首页展示由 home 字段控制：home:true 显示，home:false 隐藏（show 只控制二级页/全站导航）
       const cards = (Array.isArray(menu) ? menu : []).filter(function (c) {
-        return c.home === true && c.items && c.items.length > 0;
+        return c.home === true && c.list && c.list.length > 0;
       });
       // 严格按 data.json 顺序：全部卡按 sticky 置顶（数值小在前），无 sticky 按数组序
       cards.sort(function (a, b) {
@@ -231,7 +231,7 @@
       // 扁平化所有卡的条目（保持 data.json 内顺序），卡标题作为链接条目的分类徽标（_group 始终记录所属分组）
       allItems = [];
       cards.forEach(function (c) {
-        (c.items || []).forEach(function (it) {
+        (c.list || []).forEach(function (it) {
           it._group = c.title;
           allItems.push(it);
         });

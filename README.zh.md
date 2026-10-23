@@ -25,7 +25,7 @@
 | **内容** | Markdown → 静态 HTML（自定义构建脚本） |
 | **构建工具** | Node.js + 自定义脚本（无 Webpack/Vite 开销） |
 | **部署** | GitHub Pages + Cloudflare CDN + 阿里云 DNS |
-| **统计** | Cloudflare Web Analytics + Cloudflare Worker + D1 |
+| **统计** | Cloudflare Web Analytics + Microsoft Clarity + Google Analytics 4 + GoatCounter |
 | **变现** | Google AdSense + Ko-fi 会员订阅 |
 | **国际化** | 自定义轻量双语（中文 / 英文） |
 
@@ -106,6 +106,7 @@
 
 - ✅ Cookie 同意横幅（GDPR / CCPA 合规）
 - ✅ Google AdSense Consent Mode v2 集成
+- ✅ Microsoft Clarity 会话录屏与热图（敏感字段自动遮蔽）
 - ✅ 隐私政策 + 条款页面
 - ✅ 无跨站追踪 Cookie
 

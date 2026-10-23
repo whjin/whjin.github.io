@@ -219,6 +219,17 @@ if (IS_DEV) {
           console.error('[Live] build-all 失败:', err.message);
         }
       }
+      // 友链 data.json 变化 → 增量同步到 feed/data.json，再刷新浏览器
+      if (/Link\/友链\/data\.json$/i.test(filePath)) {
+        try {
+          const { execSync } = require('child_process');
+          execSync('node "' + path.join(rootDir, 'scripts', 'build-feed.cjs') + '"', {
+            stdio: 'pipe',
+          });
+        } catch (err) {
+          console.error('[Live] build-feed 失败:', err.message);
+        }
+      }
       if (path.extname(filePath).match(/\.(html|md|js|css|json)$/)) {
         // 向所有已连接的 WebSocket 客户端发送刷新指令
         wss.clients.forEach((client) => {

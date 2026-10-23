@@ -208,10 +208,26 @@
   margin-bottom: 0.3em;
 }
 
-.card-list .marked {
+.card-list li a,
+.modal-list li a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-list .marked,
+.modal-list .marked {
   font-weight: bold;
   color: red;
-  margin-right: 2px;
+  flex-shrink: 0;
+}
+
+.card-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 @media screen and (max-width: 768px) {
