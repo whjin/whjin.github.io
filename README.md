@@ -13,7 +13,7 @@
 
 This is the source code of my personal tech blog, built from scratch without any heavy frameworks. It's a fully static site hosted on **GitHub Pages**, optimized for speed, SEO, and global accessibility.
 
-With **53+ technical articles** covering full-stack development, FPGA hardware design, AI tools, indie game development, and web performance optimization, it serves as my long-term knowledge base and public portfolio.
+With **49 technical articles** covering full-stack development, FPGA hardware design, AI tools, indie game development, and web performance optimization, it serves as my long-term knowledge base and public portfolio.
 
 ---
 
@@ -62,7 +62,7 @@ This blog has undergone **22+ systematic performance optimizations** to achieve 
 **HTML & Content**
 - ✅ Homepage static article list trimmed: full descriptions for top 15, summary for rest
 - ✅ All articles pre-rendered to static HTML by custom build scripts
-- ✅ Sitemap.xml auto-generated with 54 URLs
+- ✅ Sitemap.xml auto-generated with all URLs (49 articles + aggregation pages)
 
 ---
 
@@ -157,9 +157,20 @@ npm install
 # Start local dev server with live reload
 npm run dev
 
-# Build all static pages
+# Build all static pages (feed → articles → home → sitemap → links)
 npm run build
 ```
+
+### Build Pipeline
+
+| Script | What it does |
+|---|---|
+| `build-feed.cjs` | Parse all md front matter, sort by category buckets (top-first, date-desc), support `topic:` field for card assignment |
+| `build-articles.cjs` | Walk all md files → pre-render static HTML pages with inline content (SEO-friendly) |
+| `build-home.cjs` | Generate homepage card data from feed |
+| `build-sitemap.cjs` | Auto-generate sitemap.xml with all URLs |
+| `build-links.cjs` | Build Link aggregation pages (友链/文章/资源) |
+| `server.js` | Local dev server + 301 redirects from legacy `/viewer.html?path=...` to static pages |
 
 ---
 

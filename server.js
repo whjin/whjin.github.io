@@ -52,6 +52,43 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  // 旧 viewer.html 动态链接 301 重定向到对应静态预渲染页（兼容旧书签/外链）
+  if (pathname === '/viewer.html') {
+    const pathParam = parsedUrl.searchParams.get('path') || '';
+    const formatType = parsedUrl.searchParams.get('format') || '';
+    let target = null;
+    if (pathParam) {
+      // Link 聚合页：Link_友链_link → /src/template/posts/Link/友链/link.html
+      const linkMap = {
+        'Link_友链_link': '/src/template/posts/Link/友链/link.html',
+        'Link_文章_article': '/src/template/posts/Link/文章/article.html',
+        'Link_资源_resource': '/src/template/posts/Link/资源/resource.html',
+      };
+      // PDF 下载：简历_中文简历PDF → /src/template/posts/简历/中文简历PDF.pdf
+      const pdfMap = {
+        '简历_中文简历PDF': '/src/template/posts/简历/中文简历PDF.pdf',
+        '简历_英文简历PDF': '/src/template/posts/简历/英文简历PDF.pdf',
+      };
+      if (linkMap[pathParam]) target = linkMap[pathParam];
+      else if (formatType === 'pdf' && pdfMap[pathParam]) target = pdfMap[pathParam];
+      else {
+        // 普通 md 文章：分类_标题 → /src/template/posts/分类/html/标题.html
+        const idx = pathParam.indexOf('_');
+        if (idx > 0) {
+          const folder = pathParam.slice(0, idx);
+          const title = pathParam.slice(idx + 1);
+          target = `/src/template/posts/${folder}/html/${title}.html`;
+        }
+      }
+    }
+    if (target) {
+      // Location 头不允许原始中文字符，需要编码
+      res.writeHead(301, { Location: encodeURI(target) });
+      res.end();
+      return;
+    }
+  }
+
   // 构建请求的文件路径
   let filePath = path.join(
     rootDir,
@@ -89,6 +126,9 @@ const server = http.createServer((req, res) => {
       break;
     case '.json':
       contentType = 'application/json;charset=utf-8';
+      break;
+    case '.pdf':
+      contentType = 'application/pdf';
       break;
     // 补充SEO必备文件类型
     case '.xml':

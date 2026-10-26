@@ -28,13 +28,71 @@ function stripFrontMatter(text) {
 }
 
 const feed = JSON.parse(fs.readFileSync(FEED, 'utf8'));
-const articles = (feed.find((c) => c.type === 'articles') || { list: [] }).list || [];
+
+// 解析 md front matter（简化版，供 build-articles 自己读 md）
+function parseFrontMatter(content) {
+  const m = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/.exec(content);
+  if (!m) return { front: {}, body: content };
+  const front = {};
+  for (const line of m[1].split(/\r?\n/)) {
+    const kv = /^([A-Za-z_][\w]*)\s*:\s*(.*)$/.exec(line);
+    if (!kv) continue;
+    let val = kv[2].trim();
+    const arrMatch = /^\[(.*)\]$/.exec(val);
+    if (arrMatch) {
+      front[kv[1]] = arrMatch[1].split(',').map(x => x.trim().replace(/^["']|["']$/g, '')).filter(x => x);
+    } else {
+      front[kv[1]] = val.replace(/^["']|["']$/g, '');
+    }
+  }
+  return { front, body: content.slice(m[0].length) };
+}
+
+// walk 所有 md 文件（排除 Link 目录和 html 子目录），构造 it 对象
+function walkMd(dir, out = []) {
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (e.name === 'html' || e.name === 'Link') continue;
+    const p = path.join(dir, e.name);
+    if (e.isDirectory()) walkMd(p, out);
+    else if (/\.md$/.test(e.name)) out.push(p);
+  }
+  return out;
+}
+
+// 从正文提取摘要（用于 description）
+function genDesc(body) {
+  return body
+    .replace(/```[\s\S]*?```/g, ' ')
+    .replace(/<!--[\s\S]*?-->/g, ' ')
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+    .replace(/[`*#>|~]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim().slice(0, 300);
+}
+
+const articles = walkMd(POSTS).map((mdPath) => {
+  const raw = fs.readFileSync(mdPath, 'utf8');
+  const { front, body } = parseFrontMatter(raw);
+  const rel = path.relative(POSTS, mdPath);
+  const parts = rel.split(path.sep);
+  const folder = parts[0] || '';
+  const title = front.title || parts[parts.length - 1].replace(/\.md$/, '');
+  return {
+    title,
+    category: (Array.isArray(front.category) ? front.category[0] : front.category) || folder,
+    date: front.date || '',
+    desc: front.description || genDesc(body),
+    reward: !(front.reward === 'false' || front.reward === false),
+    mdPath,
+  };
+});
 
 function buildPage(it) {
   const folder = it.category || '';
   const file = it.title || '';
   if (!folder || !file) return { title: it.title, error: '缺 category/title' };
-  const mdPath = path.join(POSTS, folder, file + '.md');
+  const mdPath = it.mdPath || path.join(POSTS, folder, file + '.md');
   if (!fs.existsSync(mdPath)) return { title: it.title, error: 'md 不存在: ' + mdPath };
 
   const md = fs.readFileSync(mdPath, 'utf8');

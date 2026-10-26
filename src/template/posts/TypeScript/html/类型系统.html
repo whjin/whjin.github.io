@@ -6,19 +6,19 @@
   <meta name="theme-color" content="#007bff" />
   <meta name="author" content="吴华锦" />
   <title>类型系统 « 吴华锦</title>
-  <meta name="description" content="概要 summary - 类型安全：强类型 弱类型 - 类型检查：静态类型 动态类型 - 标准库：内置对象对应的声明 类型 type - 类型注解 let a:string = &#39;hello&#39; 类型推断 - 联合类型 let a:string number = &#39;hello&#39; 类型之间进行 或 操作 - 交叉类型 类型之间进行 与 操作 - never类型 永不存在值的类型 - any类型 任意类型 不进行检测 - unknown类型 any类型对应的安全类型 默认会进行检测 - 类型断言 a as string - 非空断言 a!.length - 数组类型 - 类型 []：let a:(n" />
+  <meta name="description" content="概要 summary - 类型安全：强类型 弱类型 - 类型检查：静态类型 动态类型 - 标准库：内置对象对应的声明 类型 type - 类型注解 let a:string = &#39;hello&#39; 类型推断 - 联合类型 let a:string number = &#39;hello&#39; 类型之间进行 或 操作 - 交叉类型 类型之间进行 与 操作 - never类型 永不存在值的类型 - any类型 任意类型 不进行检测 - unknown类型 any类型对应的安全类型 默认会进行检测 - 类型断言 a as string - 非空断言 a!.length - 数组类型 - 类型 []：let a:(n…" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://wuhuajin.com/src/template/posts/TypeScript/html/%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F.html" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Wu Huajin" />
   <meta property="og:title" content="类型系统" />
-  <meta property="og:description" content="概要 summary - 类型安全：强类型 弱类型 - 类型检查：静态类型 动态类型 - 标准库：内置对象对应的声明 类型 type - 类型注解 let a:string = &#39;hello&#39; 类型推断 - 联合类型 let a:string number = &#39;hello&#39; 类型之间进行 或 操作 - 交叉类型 类型之间进行 与 操作 - never类型 永不存在值的类型 - any类型 任意类型 不进行检测 - unknown类型 any类型对应的安全类型 默认会进行检测 - 类型断言 a as string - 非空断言 a!.length - 数组类型 - 类型 []：let a:(n" />
+  <meta property="og:description" content="概要 summary - 类型安全：强类型 弱类型 - 类型检查：静态类型 动态类型 - 标准库：内置对象对应的声明 类型 type - 类型注解 let a:string = &#39;hello&#39; 类型推断 - 联合类型 let a:string number = &#39;hello&#39; 类型之间进行 或 操作 - 交叉类型 类型之间进行 与 操作 - never类型 永不存在值的类型 - any类型 任意类型 不进行检测 - unknown类型 any类型对应的安全类型 默认会进行检测 - 类型断言 a as string - 非空断言 a!.length - 数组类型 - 类型 []：let a:(n…" />
   <meta property="og:url" content="https://wuhuajin.com/src/template/posts/TypeScript/html/%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F.html" />
   <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
   <meta property="og:locale" content="zh_CN" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="类型系统" />
-  <meta name="twitter:description" content="概要 summary - 类型安全：强类型 弱类型 - 类型检查：静态类型 动态类型 - 标准库：内置对象对应的声明 类型 type - 类型注解 let a:string = &#39;hello&#39; 类型推断 - 联合类型 let a:string number = &#39;hello&#39; 类型之间进行 或 操作 - 交叉类型 类型之间进行 与 操作 - never类型 永不存在值的类型 - any类型 任意类型 不进行检测 - unknown类型 any类型对应的安全类型 默认会进行检测 - 类型断言 a as string - 非空断言 a!.length - 数组类型 - 类型 []：let a:(n" />
+  <meta name="twitter:description" content="概要 summary - 类型安全：强类型 弱类型 - 类型检查：静态类型 动态类型 - 标准库：内置对象对应的声明 类型 type - 类型注解 let a:string = &#39;hello&#39; 类型推断 - 联合类型 let a:string number = &#39;hello&#39; 类型之间进行 或 操作 - 交叉类型 类型之间进行 与 操作 - never类型 永不存在值的类型 - any类型 任意类型 不进行检测 - unknown类型 any类型对应的安全类型 默认会进行检测 - 类型断言 a as string - 非空断言 a!.length - 数组类型 - 类型 []：let a:(n…" />
   <link rel="icon" href="/src/images/favicon.png" />
   <style>
   </style>
@@ -33,7 +33,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "类型系统",
-  "description": "概要 summary - 类型安全：强类型 弱类型 - 类型检查：静态类型 动态类型 - 标准库：内置对象对应的声明 类型 type - 类型注解 let a:string = 'hello' 类型推断 - 联合类型 let a:string number = 'hello' 类型之间进行 或 操作 - 交叉类型 类型之间进行 与 操作 - never类型 永不存在值的类型 - any类型 任意类型 不进行检测 - unknown类型 any类型对应的安全类型 默认会进行检测 - 类型断言 a as string - 非空断言 a!.length - 数组类型 - 类型 []：let a:(n",
+  "description": "概要 summary - 类型安全：强类型 弱类型 - 类型检查：静态类型 动态类型 - 标准库：内置对象对应的声明 类型 type - 类型注解 let a:string = 'hello' 类型推断 - 联合类型 let a:string number = 'hello' 类型之间进行 或 操作 - 交叉类型 类型之间进行 与 操作 - never类型 永不存在值的类型 - any类型 任意类型 不进行检测 - unknown类型 any类型对应的安全类型 默认会进行检测 - 类型断言 a as string - 非空断言 a!.length - 数组类型 - 类型 []：let a:(n…",
   "author": {
     "@type": "Person",
     "name": "吴华锦",

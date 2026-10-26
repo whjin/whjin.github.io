@@ -6,19 +6,19 @@
   <meta name="theme-color" content="#007bff" />
   <meta name="author" content="吴华锦" />
   <title>Node.js进阶 « 吴华锦</title>
-  <meta name="description" content="子进程 - 创建 node 子进程用 fork，自带通道方便通信 充分利用多核 CPU 的优势，用到 child_process 模块创建子进程，有四种方法可以创建子进程： - exec - execFile - spawn - fork 四个方法都会返回 ChildProcess 实例（继承自 EventEmitter），该实例拥有三个标准的 stdio 流： 1. child.stdin 2. child.stdout 3. child.stderr 子进程生命周期内可以注册监听的事件有： - exit：子进程结束时触发，参数 code 错误码和 signal 中断信号 - close：子" />
+  <meta name="description" content="子进程 - 创建 node 子进程用 fork，自带通道方便通信 充分利用多核 CPU 的优势，用到 child_process 模块创建子进程，有四种方法可以创建子进程： - exec - execFile - spawn - fork 四个方法都会返回 ChildProcess 实例（继承自 EventEmitter），该实例拥有三个标准的 stdio 流： 1. child.stdin 2. child.stdout 3. child.stderr 子进程生命周期内可以注册监听的事件有： - exit：子进程结束时触发，参数 code 错误码和 signal 中断信号 - close：子…" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://wuhuajin.com/src/template/posts/Node/html/Node.js%E8%BF%9B%E9%98%B6.html" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Wu Huajin" />
   <meta property="og:title" content="Node.js进阶" />
-  <meta property="og:description" content="子进程 - 创建 node 子进程用 fork，自带通道方便通信 充分利用多核 CPU 的优势，用到 child_process 模块创建子进程，有四种方法可以创建子进程： - exec - execFile - spawn - fork 四个方法都会返回 ChildProcess 实例（继承自 EventEmitter），该实例拥有三个标准的 stdio 流： 1. child.stdin 2. child.stdout 3. child.stderr 子进程生命周期内可以注册监听的事件有： - exit：子进程结束时触发，参数 code 错误码和 signal 中断信号 - close：子" />
+  <meta property="og:description" content="子进程 - 创建 node 子进程用 fork，自带通道方便通信 充分利用多核 CPU 的优势，用到 child_process 模块创建子进程，有四种方法可以创建子进程： - exec - execFile - spawn - fork 四个方法都会返回 ChildProcess 实例（继承自 EventEmitter），该实例拥有三个标准的 stdio 流： 1. child.stdin 2. child.stdout 3. child.stderr 子进程生命周期内可以注册监听的事件有： - exit：子进程结束时触发，参数 code 错误码和 signal 中断信号 - close：子…" />
   <meta property="og:url" content="https://wuhuajin.com/src/template/posts/Node/html/Node.js%E8%BF%9B%E9%98%B6.html" />
   <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
   <meta property="og:locale" content="zh_CN" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Node.js进阶" />
-  <meta name="twitter:description" content="子进程 - 创建 node 子进程用 fork，自带通道方便通信 充分利用多核 CPU 的优势，用到 child_process 模块创建子进程，有四种方法可以创建子进程： - exec - execFile - spawn - fork 四个方法都会返回 ChildProcess 实例（继承自 EventEmitter），该实例拥有三个标准的 stdio 流： 1. child.stdin 2. child.stdout 3. child.stderr 子进程生命周期内可以注册监听的事件有： - exit：子进程结束时触发，参数 code 错误码和 signal 中断信号 - close：子" />
+  <meta name="twitter:description" content="子进程 - 创建 node 子进程用 fork，自带通道方便通信 充分利用多核 CPU 的优势，用到 child_process 模块创建子进程，有四种方法可以创建子进程： - exec - execFile - spawn - fork 四个方法都会返回 ChildProcess 实例（继承自 EventEmitter），该实例拥有三个标准的 stdio 流： 1. child.stdin 2. child.stdout 3. child.stderr 子进程生命周期内可以注册监听的事件有： - exit：子进程结束时触发，参数 code 错误码和 signal 中断信号 - close：子…" />
   <link rel="icon" href="/src/images/favicon.png" />
   <style>
   </style>
@@ -33,7 +33,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Node.js进阶",
-  "description": "子进程 - 创建 node 子进程用 fork，自带通道方便通信 充分利用多核 CPU 的优势，用到 child_process 模块创建子进程，有四种方法可以创建子进程： - exec - execFile - spawn - fork 四个方法都会返回 ChildProcess 实例（继承自 EventEmitter），该实例拥有三个标准的 stdio 流： 1. child.stdin 2. child.stdout 3. child.stderr 子进程生命周期内可以注册监听的事件有： - exit：子进程结束时触发，参数 code 错误码和 signal 中断信号 - close：子",
+  "description": "子进程 - 创建 node 子进程用 fork，自带通道方便通信 充分利用多核 CPU 的优势，用到 child_process 模块创建子进程，有四种方法可以创建子进程： - exec - execFile - spawn - fork 四个方法都会返回 ChildProcess 实例（继承自 EventEmitter），该实例拥有三个标准的 stdio 流： 1. child.stdin 2. child.stdout 3. child.stderr 子进程生命周期内可以注册监听的事件有： - exit：子进程结束时触发，参数 code 错误码和 signal 中断信号 - close：子…",
   "author": {
     "@type": "Person",
     "name": "吴华锦",

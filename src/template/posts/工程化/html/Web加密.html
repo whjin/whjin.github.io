@@ -6,19 +6,19 @@
   <meta name="theme-color" content="#007bff" />
   <meta name="author" content="吴华锦" />
   <title>Web加密 « 吴华锦</title>
-  <meta name="description" content="双 Token 认证系统 1. Access Token（访问令牌） - 用途：用于访问受保护的 API 资源，附加在每个请求的 Header 中 - 特点：生命周期短（1小时），无状态，服务器无需存储 - 存储：通常存储在客户端内存中，需要频繁读取 2. Refresh Token（刷新令牌） - 用途：当 Access Token 过期时，专门用于获取一个新的 Access Token - 特点：生命周期长（7天或30天），与特定用户绑定，服务器需要安全存储其有效性记录 - 存储：必须安全存储。最佳实践时存储在 HttpOnly Cookie 中，可以防止客户端 JavaScript（XS" />
+  <meta name="description" content="双 Token 认证系统 1. Access Token（访问令牌） - 用途：用于访问受保护的 API 资源，附加在每个请求的 Header 中 - 特点：生命周期短（1小时），无状态，服务器无需存储 - 存储：通常存储在客户端内存中，需要频繁读取 2. Refresh Token（刷新令牌） - 用途：当 Access Token 过期时，专门用于获取一个新的 Access Token - 特点：生命周期长（7天或30天），与特定用户绑定，服务器需要安全存储其有效性记录 - 存储：必须安全存储。最佳实践时存储在 HttpOnly Cookie 中，可以防止客户端 JavaScript（XS…" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://wuhuajin.com/src/template/posts/%E5%B7%A5%E7%A8%8B%E5%8C%96/html/Web%E5%8A%A0%E5%AF%86.html" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Wu Huajin" />
   <meta property="og:title" content="Web加密" />
-  <meta property="og:description" content="双 Token 认证系统 1. Access Token（访问令牌） - 用途：用于访问受保护的 API 资源，附加在每个请求的 Header 中 - 特点：生命周期短（1小时），无状态，服务器无需存储 - 存储：通常存储在客户端内存中，需要频繁读取 2. Refresh Token（刷新令牌） - 用途：当 Access Token 过期时，专门用于获取一个新的 Access Token - 特点：生命周期长（7天或30天），与特定用户绑定，服务器需要安全存储其有效性记录 - 存储：必须安全存储。最佳实践时存储在 HttpOnly Cookie 中，可以防止客户端 JavaScript（XS" />
+  <meta property="og:description" content="双 Token 认证系统 1. Access Token（访问令牌） - 用途：用于访问受保护的 API 资源，附加在每个请求的 Header 中 - 特点：生命周期短（1小时），无状态，服务器无需存储 - 存储：通常存储在客户端内存中，需要频繁读取 2. Refresh Token（刷新令牌） - 用途：当 Access Token 过期时，专门用于获取一个新的 Access Token - 特点：生命周期长（7天或30天），与特定用户绑定，服务器需要安全存储其有效性记录 - 存储：必须安全存储。最佳实践时存储在 HttpOnly Cookie 中，可以防止客户端 JavaScript（XS…" />
   <meta property="og:url" content="https://wuhuajin.com/src/template/posts/%E5%B7%A5%E7%A8%8B%E5%8C%96/html/Web%E5%8A%A0%E5%AF%86.html" />
   <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
   <meta property="og:locale" content="zh_CN" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Web加密" />
-  <meta name="twitter:description" content="双 Token 认证系统 1. Access Token（访问令牌） - 用途：用于访问受保护的 API 资源，附加在每个请求的 Header 中 - 特点：生命周期短（1小时），无状态，服务器无需存储 - 存储：通常存储在客户端内存中，需要频繁读取 2. Refresh Token（刷新令牌） - 用途：当 Access Token 过期时，专门用于获取一个新的 Access Token - 特点：生命周期长（7天或30天），与特定用户绑定，服务器需要安全存储其有效性记录 - 存储：必须安全存储。最佳实践时存储在 HttpOnly Cookie 中，可以防止客户端 JavaScript（XS" />
+  <meta name="twitter:description" content="双 Token 认证系统 1. Access Token（访问令牌） - 用途：用于访问受保护的 API 资源，附加在每个请求的 Header 中 - 特点：生命周期短（1小时），无状态，服务器无需存储 - 存储：通常存储在客户端内存中，需要频繁读取 2. Refresh Token（刷新令牌） - 用途：当 Access Token 过期时，专门用于获取一个新的 Access Token - 特点：生命周期长（7天或30天），与特定用户绑定，服务器需要安全存储其有效性记录 - 存储：必须安全存储。最佳实践时存储在 HttpOnly Cookie 中，可以防止客户端 JavaScript（XS…" />
   <link rel="icon" href="/src/images/favicon.png" />
   <style>
   </style>
@@ -33,7 +33,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Web加密",
-  "description": "双 Token 认证系统 1. Access Token（访问令牌） - 用途：用于访问受保护的 API 资源，附加在每个请求的 Header 中 - 特点：生命周期短（1小时），无状态，服务器无需存储 - 存储：通常存储在客户端内存中，需要频繁读取 2. Refresh Token（刷新令牌） - 用途：当 Access Token 过期时，专门用于获取一个新的 Access Token - 特点：生命周期长（7天或30天），与特定用户绑定，服务器需要安全存储其有效性记录 - 存储：必须安全存储。最佳实践时存储在 HttpOnly Cookie 中，可以防止客户端 JavaScript（XS",
+  "description": "双 Token 认证系统 1. Access Token（访问令牌） - 用途：用于访问受保护的 API 资源，附加在每个请求的 Header 中 - 特点：生命周期短（1小时），无状态，服务器无需存储 - 存储：通常存储在客户端内存中，需要频繁读取 2. Refresh Token（刷新令牌） - 用途：当 Access Token 过期时，专门用于获取一个新的 Access Token - 特点：生命周期长（7天或30天），与特定用户绑定，服务器需要安全存储其有效性记录 - 存储：必须安全存储。最佳实践时存储在 HttpOnly Cookie 中，可以防止客户端 JavaScript（XS…",
   "author": {
     "@type": "Person",
     "name": "吴华锦",

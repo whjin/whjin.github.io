@@ -6,19 +6,19 @@
   <meta name="theme-color" content="#007bff" />
   <meta name="author" content="吴华锦" />
   <title>WebRTC性能优化 « 吴华锦</title>
-  <meta name="description" content="一、自适应码率调整（ABR）：根据网络状况动态调整编码码率 核心思路： 通过 WebRTC 的 getStats() API 实时获取网络状态（丢包率、RTT、可用带宽等），动态调整视频编码器的输出码率，避免因网络拥塞导致的卡顿。 实现步骤 - 步骤1：定时获取网络统计数据 通过 RTCPeerConnection.getStats() 定时采集发送端（或接收端）的网络指标，重点关注： - packetLost：丢包数 - roundTripTime：往返时间（RTT） - availableOutgotingBitrate：可用发送带宽（仅发送端） - 步骤2：分析网络状况，决策码率调整策略" />
+  <meta name="description" content="一、自适应码率调整（ABR）：根据网络状况动态调整编码码率 核心思路： 通过 WebRTC 的 getStats() API 实时获取网络状态（丢包率、RTT、可用带宽等），动态调整视频编码器的输出码率，避免因网络拥塞导致的卡顿。 实现步骤 - 步骤1：定时获取网络统计数据 通过 RTCPeerConnection.getStats() 定时采集发送端（或接收端）的网络指标，重点关注： - packetLost：丢包数 - roundTripTime：往返时间（RTT） - availableOutgotingBitrate：可用发送带宽（仅发送端） - 步骤2：分析网络状况，决策码率调整策略…" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://wuhuajin.com/src/template/posts/WebRTC/html/WebRTC%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Wu Huajin" />
   <meta property="og:title" content="WebRTC性能优化" />
-  <meta property="og:description" content="一、自适应码率调整（ABR）：根据网络状况动态调整编码码率 核心思路： 通过 WebRTC 的 getStats() API 实时获取网络状态（丢包率、RTT、可用带宽等），动态调整视频编码器的输出码率，避免因网络拥塞导致的卡顿。 实现步骤 - 步骤1：定时获取网络统计数据 通过 RTCPeerConnection.getStats() 定时采集发送端（或接收端）的网络指标，重点关注： - packetLost：丢包数 - roundTripTime：往返时间（RTT） - availableOutgotingBitrate：可用发送带宽（仅发送端） - 步骤2：分析网络状况，决策码率调整策略" />
+  <meta property="og:description" content="一、自适应码率调整（ABR）：根据网络状况动态调整编码码率 核心思路： 通过 WebRTC 的 getStats() API 实时获取网络状态（丢包率、RTT、可用带宽等），动态调整视频编码器的输出码率，避免因网络拥塞导致的卡顿。 实现步骤 - 步骤1：定时获取网络统计数据 通过 RTCPeerConnection.getStats() 定时采集发送端（或接收端）的网络指标，重点关注： - packetLost：丢包数 - roundTripTime：往返时间（RTT） - availableOutgotingBitrate：可用发送带宽（仅发送端） - 步骤2：分析网络状况，决策码率调整策略…" />
   <meta property="og:url" content="https://wuhuajin.com/src/template/posts/WebRTC/html/WebRTC%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html" />
   <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
   <meta property="og:locale" content="zh_CN" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="WebRTC性能优化" />
-  <meta name="twitter:description" content="一、自适应码率调整（ABR）：根据网络状况动态调整编码码率 核心思路： 通过 WebRTC 的 getStats() API 实时获取网络状态（丢包率、RTT、可用带宽等），动态调整视频编码器的输出码率，避免因网络拥塞导致的卡顿。 实现步骤 - 步骤1：定时获取网络统计数据 通过 RTCPeerConnection.getStats() 定时采集发送端（或接收端）的网络指标，重点关注： - packetLost：丢包数 - roundTripTime：往返时间（RTT） - availableOutgotingBitrate：可用发送带宽（仅发送端） - 步骤2：分析网络状况，决策码率调整策略" />
+  <meta name="twitter:description" content="一、自适应码率调整（ABR）：根据网络状况动态调整编码码率 核心思路： 通过 WebRTC 的 getStats() API 实时获取网络状态（丢包率、RTT、可用带宽等），动态调整视频编码器的输出码率，避免因网络拥塞导致的卡顿。 实现步骤 - 步骤1：定时获取网络统计数据 通过 RTCPeerConnection.getStats() 定时采集发送端（或接收端）的网络指标，重点关注： - packetLost：丢包数 - roundTripTime：往返时间（RTT） - availableOutgotingBitrate：可用发送带宽（仅发送端） - 步骤2：分析网络状况，决策码率调整策略…" />
   <link rel="icon" href="/src/images/favicon.png" />
   <style>
   </style>
@@ -33,7 +33,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "WebRTC性能优化",
-  "description": "一、自适应码率调整（ABR）：根据网络状况动态调整编码码率 核心思路： 通过 WebRTC 的 getStats() API 实时获取网络状态（丢包率、RTT、可用带宽等），动态调整视频编码器的输出码率，避免因网络拥塞导致的卡顿。 实现步骤 - 步骤1：定时获取网络统计数据 通过 RTCPeerConnection.getStats() 定时采集发送端（或接收端）的网络指标，重点关注： - packetLost：丢包数 - roundTripTime：往返时间（RTT） - availableOutgotingBitrate：可用发送带宽（仅发送端） - 步骤2：分析网络状况，决策码率调整策略",
+  "description": "一、自适应码率调整（ABR）：根据网络状况动态调整编码码率 核心思路： 通过 WebRTC 的 getStats() API 实时获取网络状态（丢包率、RTT、可用带宽等），动态调整视频编码器的输出码率，避免因网络拥塞导致的卡顿。 实现步骤 - 步骤1：定时获取网络统计数据 通过 RTCPeerConnection.getStats() 定时采集发送端（或接收端）的网络指标，重点关注： - packetLost：丢包数 - roundTripTime：往返时间（RTT） - availableOutgotingBitrate：可用发送带宽（仅发送端） - 步骤2：分析网络状况，决策码率调整策略…",
   "author": {
     "@type": "Person",
     "name": "吴华锦",

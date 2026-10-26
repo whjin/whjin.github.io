@@ -214,6 +214,14 @@ pre:not(.collapsed) code {
   background: rgba(255, 255, 255, 0.25);
 }
 
+/* blockquote 里的工具栏：不透明背景遮住下方横线，z-index 确保在最上层 */
+blockquote .code-toolbar {
+  background: #f8f8f9;
+  z-index: 20;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
 /* blockquote 里的按钮样式（浅色背景） */
 blockquote .code-toolbar .toggle-btn {
   background: rgba(0, 0, 0, 0.1);

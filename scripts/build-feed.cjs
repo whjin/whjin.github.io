@@ -126,11 +126,14 @@ function cleanDesc(s) {
   return String(s == null ? '' : s).trim().replace(/(?:…|\.\.\.)\s*$/g, '');
 }
 
-// 取描述：md 的 description 若合格则用，否则自动生成
+// 取描述：只要 md 里手动写了 description 行（不管长短），就尊重用户输入；
+// 只有完全没写这一行时，才从正文自动生成摘要。
 function descriptionFor(md) {
   if (!md) return '';
-  const fd = cleanDesc(md.front && md.front.description ? String(md.front.description) : '');
-  return fd.length >= DESC_MIN ? fd : generateSummary(md.body);
+  if (md.front && Object.prototype.hasOwnProperty.call(md.front, 'description')) {
+    return cleanDesc(String(md.front.description || ''));
+  }
+  return generateSummary(md.body);
 }
 
 // 把生成的 description 回写 md front matter（使其成为规范来源）
@@ -167,9 +170,9 @@ function buildFeed() {
     const mt = fs.statSync(file).mtime;
     const mdObj = { file, folder, fileBase, front, body, raw };
     const desc = descriptionFor(mdObj);
-    // 若 md 的 description 缺失/过短，把自动生成的摘要回写进 md front matter，保证两者一致
-    const mdDesc = front && front.description ? String(front.description).trim() : '';
-    if (mdDesc.length < DESC_MIN && desc) setMdDescription(mdObj, desc);
+    // 仅当 md 里完全没有 description 行时，才把自动生成的摘要回写进 front matter；
+    // 已有 description 行则尊重用户输入，绝不覆盖。
+    if (!(front && Object.prototype.hasOwnProperty.call(front, 'description')) && desc) setMdDescription(mdObj, desc);
     const item = {
       title: (front && front.title) || fileBase,
       url: mdUrl(folder, fileBase),
@@ -184,13 +187,43 @@ function buildFeed() {
     if (front && (front.sticky || front.featured === 'true' || front.featured === true)) item.featured = true;
     // top：置顶最高优先级，专门用于将某篇文章置顶
     if (front && (front.top === 'true' || front.top === true)) item.top = true;
+    // topic：归属到 data.json 里 title 等于该值的卡片（如 "我的"）；未配置则只进「原创文章」卡
+    if (front && front.topic) item._topic = String(front.topic).trim();
     // reward：文章页底部赞赏卡片开关，默认显示；仅 reward:false 时隐藏
     item.reward = !(front && (front.reward === 'false' || front.reward === false));
     items.push(item);
   }
-  // 排序：top 置顶最高优先级，其次按日期倒序
-  items.sort((a, b) => (Number(!!b.top) - Number(!!a.top)) || (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
-  return items;
+  // 排序规则（显式分组，避免 sort 比较函数的边界问题）：
+  // 1) 所有文章按 category 分桶，同分类的排在一起；
+  // 2) 桶内排序：top 文章优先（在本组内排最前），其余按日期倒序；
+  // 3) 桶之间按"该分类最新一篇文章的日期"倒序——最近有更新的分类排前面；
+  // 4) 日期相同时按分类名做稳定次序。
+  // 注意：top 不再跨分类强制置顶，只在自己分类组内优先，保证同分类聚拢。
+  const buckets = new Map(); // category -> items[]
+  for (const it of items) {
+    const c = it.category || '';
+    if (!buckets.has(c)) buckets.set(c, []);
+    buckets.get(c).push(it);
+  }
+  // 桶内排序：top 优先，再按日期倒序
+  for (const list of buckets.values()) {
+    list.sort((a, b) => {
+      if (!!a.top !== !!b.top) return a.top ? -1 : 1;
+      const ad = a.date || '', bd = b.date || '';
+      return ad < bd ? 1 : ad > bd ? -1 : 0;
+    });
+  }
+  // 桶间按桶内最新文章日期倒序
+  const bucketKeys = [...buckets.keys()].sort((ca, cb) => {
+    const la = buckets.get(ca)[0]?.date || '';
+    const lb = buckets.get(cb)[0]?.date || '';
+    if (la !== lb) return la < lb ? 1 : -1;
+    return ca < cb ? -1 : ca > cb ? 1 : 0;
+  });
+  // 拼接各桶
+  const sorted = [];
+  for (const k of bucketKeys) sorted.push(...buckets.get(k));
+  return sorted;
 }
 
 // 规范化其他卡条目为 feed 结构
@@ -202,8 +235,8 @@ function normalizeLinkItem(it, cardTitle) {
     if (md.front && md.front.date) out.date = md.front.date;
     out.readTime = Math.max(1, Math.round(md.body.replace(/\s/g, '').length / 280));
     out.desc = descriptionFor(md);
-    const fd = md.front && md.front.description ? String(md.front.description).trim() : '';
-    if (fd.length < DESC_MIN && out.desc) setMdDescription(md, out.desc);
+    // 仅当 md 里完全没有 description 行时才补写；已有则尊重用户输入，不回写。
+    if (!(md.front && Object.prototype.hasOwnProperty.call(md.front, 'description')) && out.desc) setMdDescription(md, out.desc);
     const fmTags2 = Array.isArray(md.front && md.front.tag) ? md.front.tag : (md.front && Array.isArray(md.front.tags) ? md.front.tags : null);
     if (fmTags2 && fmTags2.length) out.tags = fmTags2;
     if (md.front && md.front.cover) out.cover = md.front.cover;
@@ -278,16 +311,86 @@ if (fs.existsSync(LINK_DATA_PATH)) {
 }
 
 // 1) 「原创文章」卡：重新生成 feed 字段（含 desc）
+//    - md 里配置了 topic 的文章，不进「原创文章」卡，只进 topic 指定的卡片，避免跨卡重复。
 const artCard = menu.find((c) => c.type === ARTICLE_CARD_TYPE) || menu.find((c) => c.title === ARTICLE_CARD_FALLBACK_TITLE);
 if (!artCard) { console.error('未找到 原创文章 卡'); process.exit(1); }
 const items = buildFeed();
-artCard.list = items;
+artCard.list = items.filter((it) => !it._topic);
 
 // 2) 其余卡：规范化条目为 feed 结构
 for (const c of menu) {
   if (c.type === ARTICLE_CARD_TYPE || c.title === ARTICLE_CARD_FALLBACK_TITLE) continue;
   if (!Array.isArray(c.list)) continue;
   c.list = c.list.map((it) => normalizeLinkItem(it, c.title));
+}
+
+// 3) 按 md front matter 的 topic 字段，把文章归到对应卡片（如 topic: 我的 → "我的"卡）
+//    - 保留目标卡原有手动条目；
+//    - 按 url 去重：已存在的条目用 md 生成的基础字段覆盖，手动标记（marked/image/sticky 等）保留；
+//    - 不存在的新文章追加到末尾；
+//    - 未配置 topic、或找不到对应 title 卡片时，文章只留在「原创文章」卡。
+//    - 归属完成后，对被影响的卡片内部排序：top=true 的排前面，多条 top 按日期倒序（新的在前）；
+//      非 top 条目保持相对顺序稳定（手动条目不被打乱）。
+const cardByTitle = new Map();
+menu.forEach((c) => { if (c && c.title) cardByTitle.set(c.title, c); });
+const touchedCards = new Set();
+for (const it of items) {
+  const topic = it._topic;
+  if (!topic) continue;
+  const card = cardByTitle.get(topic);
+  if (!card || !Array.isArray(card.list)) continue;
+  const patch = {
+    title: it.title, url: it.url, category: it.category, date: it.date,
+    readTime: it.readTime, desc: it.desc, reward: it.reward,
+  };
+  if (it.tags) patch.tags = it.tags;
+  if (it.top) patch.top = true;
+  if (it.featured) patch.featured = true;
+  // 先按 url 精确匹配；找不到再按 title 匹配（兼容旧 viewer.html 链接与新静态 html 链接同文不同 url 的情况）
+  let idx = card.list.findIndex((x) => x && x.url === it.url);
+  if (idx < 0) idx = card.list.findIndex((x) => x && x.title === it.title);
+  if (idx >= 0) {
+    card.list[idx] = Object.assign({}, card.list[idx], patch);
+  } else {
+    card.list.push(patch);
+  }
+  touchedCards.add(card);
+}
+// 清理内部字段，不写入 data.json
+for (const it of items) delete it._topic;
+
+// 对被 topic 影响过的卡片做内部排序：
+// - 先按 title 去重（合并同 title 条目，保留字段更全的那条）；
+// - top=true 的排前面；多条 top 按日期倒序（新的在前）；
+// - 非 top 条目按稳定顺序保持原相对次序（不破坏手动排列）。
+for (const card of touchedCards) {
+  const list = card.list || [];
+  // 按 title 去重：同 title 只保留一条，后出现的补充缺失字段
+  const byTitle = new Map();
+  for (const it of list) {
+    const t = it.title || '';
+    if (!byTitle.has(t)) {
+      byTitle.set(t, Object.assign({}, it));
+    } else {
+      const exist = byTitle.get(t);
+      for (const k of Object.keys(it)) {
+        if (exist[k] == null || exist[k] === '') exist[k] = it[k];
+      }
+    }
+  }
+  card.list = [...byTitle.values()];
+
+  const indexed = card.list.map((it, i) => ({ it, i }));
+  indexed.sort((a, b) => {
+    const at = !!a.it.top, bt = !!b.it.top;
+    if (at !== bt) return at ? -1 : 1;
+    if (at && bt) {
+      const ad = a.it.date || '', bd = b.it.date || '';
+      if (ad !== bd) return ad < bd ? 1 : -1;
+    }
+    return a.i - b.i; // 稳定：同组内保持原始相对顺序
+  });
+  card.list = indexed.map((x) => x.it);
 }
 
 fs.writeFileSync(MENU_PATH, JSON.stringify(menu, null, 2) + '\n', 'utf8');

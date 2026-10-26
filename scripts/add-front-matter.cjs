@@ -64,7 +64,7 @@ for (const file of walk(POSTS)) {
     continue;
   }
 
-  const wantUrl = `/src/template/viewer.html?path=${folder}_${fileBase}`;
+  const wantUrl = `/src/template/posts/${folder}/html/${fileBase}.html`;
   const m = byUrl.get(wantUrl);
   const title = (m && m.title) || fileBase;
   const mt = fs.statSync(file).mtime;

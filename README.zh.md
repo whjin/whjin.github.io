@@ -13,7 +13,7 @@
 
 这是我的个人技术博客源码，从零开始构建，没有使用任何重量级框架。它是一个完全静态的站点，部署在 **GitHub Pages** 上，针对速度、SEO 和全球可访问性做了深度优化。
 
-目前有 **53+ 篇技术文章**，覆盖全栈开发、FPGA 硬件设计、AI 工具、独立游戏开发和 Web 性能优化，是我长期积累的知识库和公开作品集。
+目前有 **49 篇技术文章**，覆盖全栈开发、FPGA 硬件设计、AI 工具、独立游戏开发和 Web 性能优化，是我长期积累的知识库和公开作品集。
 
 ---
 
@@ -62,7 +62,7 @@
 **HTML 与内容**
 - ✅ 首页静态文章列表精简：前 15 篇保留完整描述，后面 38 篇只保留摘要
 - ✅ 所有文章通过自定义构建脚本预渲染为静态 HTML
-- ✅ `sitemap.xml` 自动生成，包含 54 个 URL
+- ✅ `sitemap.xml` 自动生成，包含全部 URL（49 篇文章 + 聚合页）
 
 ---
 
@@ -157,9 +157,20 @@ npm install
 # 启动本地开发服务器（带自动刷新）
 npm run dev
 
-# 构建所有静态页面
+# 构建所有静态页面（feed → articles → home → sitemap → links）
 npm run build
 ```
+
+### 构建流水线
+
+| 脚本 | 作用 |
+|---|---|
+| `build-feed.cjs` | 解析所有 md front matter，按分类分桶排序（top 优先 + 日期倒序），支持 `topic:` 字段指定卡片归属 |
+| `build-articles.cjs` | 遍历所有 md 文件 → 预渲染静态 HTML 页面（内容内联，利于 SEO） |
+| `build-home.cjs` | 从 feed 生成首页卡片数据 |
+| `build-sitemap.cjs` | 自动生成 sitemap.xml（全部 URL） |
+| `build-links.cjs` | 构建 Link 聚合页（友链/文章/资源） |
+| `server.js` | 本地开发服务器 + 旧 `/viewer.html?path=...` 链接 301 重定向到静态页 |
 
 ---
 
