@@ -73,6 +73,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://wuhuajin.com/src/template/posts/%E6%96%87%E5%AD%A6/html/%E3%80%8A%E5%A2%9F%E5%87%8C%E3%80%8B.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://wuhuajin.com/src/template/posts/Node/html/Node.js%E8%BF%9B%E9%98%B6.html</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
