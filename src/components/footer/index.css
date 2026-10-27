@@ -1,8 +1,5 @@
 .footer {
-  position: sticky;
   width: 100%;
-  bottom: 0px;
-  height: 66px;
   background: #f8f8f9;
   border-top: 1px solid #e6e6e6;
   display: flex;
@@ -10,44 +7,87 @@
   align-items: center;
   justify-content: center;
   row-gap: 2px;
-  padding: 5px 20px 6px;
-  white-space: nowrap;
+  padding: 8px 20px;
   box-sizing: border-box;
+}
+
+.footer-row {
+  width: 100%;
+  max-width: 880px;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.footer-copyright {
+  text-align: center;
+}
+
+.footer-copyright a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.footer-copyright .count {
+  color: #007bff;
+}
+
+.footer-beian-email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-beian-email .beian-text {
+  color: #666;
+  cursor: pointer;
+}
+
+.footer-beian-email .beian-text:hover {
+  color: #007bff;
+}
+
+.footer-beian-email a {
+  color: #666;
+  text-decoration: none;
+}
+
+.footer-beian-email a:hover {
+  color: #007bff;
 }
 
 .footer-links {
   margin: 0;
-  font-size: 12px;
-  line-height: 1.6;
+  font-size: 13px;
   color: #666;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 8px;
+  width: 100%;
+  max-width: 880px;
 }
 
 .footer-links a {
   color: #555;
   text-decoration: none;
-  padding: 0 6px;
+  white-space: nowrap;
 }
 
 .footer-links a:hover {
   color: #007bff;
-  background: transparent;
 }
 
 .footer-links .sep {
   color: #bbb;
 }
 
-.footer-content {
-  margin: 0;
-  cursor: pointer;
-  line-height: 1.5;
-}
-
-.footer-content .count {
-  color: #007bff;
-}
-
-.footer-content .beian-text {
-  color: #007bff;
-  cursor: pointer;
+@media (max-width: 768px) {
+  .footer-row {
+    font-size: 14px;
+  }
+  .footer-links {
+    font-size: 12px;
+  }
 }
