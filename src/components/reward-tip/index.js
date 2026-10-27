@@ -16,7 +16,7 @@
     name: '吴华锦',
     intro: '分享设计与科技生活',
     rewardUrl: '/reward.html',
-    koFiUrl: 'https://ko-fi.com/whjin',
+    koFiUrl: 'https://pancake.waffo.ai/store/静亭雅苑-wtqvnixi/checkout/cs_9fb6e9ff-6d8a-9bd0-3f75-8abd2d132eaf?pid=PROD_54U7EAdjVS3qPkFqB35gZ1',
     // 头像点击跳转地址（默认首页，可自定义）
     avatarUrl: '/src/template/posts/Link/资源/resource.html',
     // 作者名点击跳转地址（网站首页，新标签打开）

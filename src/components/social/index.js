@@ -1,8 +1,8 @@
 (function () {
   'use strict';
 
-  // 付费会员订阅入口：跳转到 Ko-fi 会员页（替换为你的实际 Ko-fi 地址）
-  const KO_FI_URL = 'https://ko-fi.com/whjin';
+  // 付费会员订阅入口：跳转到 Waffo 结账页
+  const KO_FI_URL = 'https://pancake.waffo.ai/store/静亭雅苑-wtqvnixi/checkout/cs_9fb6e9ff-6d8a-9bd0-3f75-8abd2d132eaf?pid=PROD_54U7EAdjVS3qPkFqB35gZ1';
 
   const HEADER_ICONS = [
     { name: 'collapse', title: '收起侧栏 / Collapse', icon: 28, toggle: true },
