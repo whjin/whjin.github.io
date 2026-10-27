@@ -3,9 +3,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 6px;
   margin-top: 20px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
 .pager button {
@@ -13,10 +14,11 @@
   border: 1px solid rgba(0, 0, 0, 0.12);
   color: #1d1d1f;
   border-radius: 999px;
-  padding: 8px 16px;
-  font-size: 14px;
+  padding: 6px 12px;
+  font-size: 13px;
   cursor: pointer;
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .pager button:hover:not(:disabled) {
@@ -31,6 +33,7 @@
 
 .pager .pager-info {
   color: #6e6e73;
-  font-size: 14px;
-  padding: 0 8px;
+  font-size: 13px;
+  padding: 0 4px;
+  white-space: nowrap;
 }

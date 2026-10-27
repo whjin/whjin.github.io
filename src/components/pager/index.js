@@ -40,7 +40,7 @@
 
     const info = document.createElement('span');
     info.className = 'pager-info';
-    info.textContent = '第' + current + '页 / 共' + totalPages + '页';
+    info.textContent = current + '/' + totalPages;
     container.appendChild(info);
 
     container.appendChild(mkBtn('下一页', current >= totalPages, () => current + 1));
