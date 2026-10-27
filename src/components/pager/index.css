@@ -1,0 +1,36 @@
+/* ===== 公共分页组件（复刻 reward.html 胶囊风格，全站统一） ===== */
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.pager button {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: #1d1d1f;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pager button:hover:not(:disabled) {
+  border-color: #425aef;
+  color: #425aef;
+}
+
+.pager button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pager .pager-info {
+  color: #6e6e73;
+  font-size: 14px;
+  padding: 0 8px;
+}

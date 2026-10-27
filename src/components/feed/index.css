@@ -132,14 +132,19 @@ body.home-page .footer {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 360px;
   gap: 28px;
+  align-items: start;
 }
 
 .home-feed {
   min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .home-sidebar {
   min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 #home-feed-list {
@@ -323,14 +328,7 @@ a.feed-card:hover {
   padding: 40px 0;
 }
 
-.feed-sentinel {
-  height: 1px;
-  margin: 0;
-  color: #aaa;
-  font-size: 12px;
-  text-align: center;
-  padding: 14px 0;
-}
+/* 分页控件样式统一见 src/components/pager/index.css（.pager），与 reward.html 共用 */
 
 .home-ad-in-article {
   width: 100%;
@@ -504,10 +502,37 @@ p.sb-event-desc {
 }
 
 .sb-intro .sb-text {
-  font-size: 14px;
-  color: #555;
-  line-height: 1.6;
+  font-size: 14.5px;
+  color: #444;
+  line-height: 1.75;
   white-space: pre-line;
+  font-family: 'Lora', Georgia, 'Times New Roman', serif;
+  letter-spacing: 0.01em;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+/* 通用艺术字体类：任何元素加 .art-font 即启用优雅衬线字体 */
+.art-font {
+  font-family: 'Lora', Georgia, 'Times New Roman', 'Songti SC', 'SimSun', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.015em;
+}
+
+.art-font em,
+.art-font i {
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* About 卡片：名字/身份那一句粗体（用 JS 把第一句包 <strong>，不随屏幕宽度漂移） */
+.sb-about-text {
+  color: #3a3a3a;
+}
+.sb-about-text strong {
+  font-weight: 600;
+  color: #1a1a2e;
 }
 
 .sb-list {
@@ -707,15 +732,15 @@ body.home-page.sidebar-collapsed .home-sidebar {
     display: inline-flex;
   }
 
-  /* 方案1：移动端右侧信息栏提前 → 头部→右侧→左侧→底部（order 重排） */
+  /* 移动端：文章列表在上，右侧卡片（赞赏/订阅/事件）在下，符合"读完再看转化卡片"的阅读流 */
   .home-sidebar {
-    order: -1;
-    margin-top: 0;
+    order: 2;
+    margin-top: 18px;
   }
 
   .home-feed {
     order: 1;
-    margin-top: 18px;
+    margin-top: 0;
   }
 }
 

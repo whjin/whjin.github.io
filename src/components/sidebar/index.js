@@ -39,11 +39,37 @@
     const block = makeBlock(section);
     const inner = document.createElement('div');
     inner.className = 'sb-intro';
-    inner.innerHTML =
-      '<img class="sb-avatar" src="' + esc(section.avatar) + '" alt="" />' +
-      '<div class="sb-text">' + esc(section.text) +
-      (section.link ? '<div style="margin-top:8px;"><a href="' + esc(section.link.url) + '">' + esc(section.link.text) + '</a></div>' : '') +
-      '</div>';
+    inner.innerHTML = '<img class="sb-avatar" src="' + esc(section.avatar) + '" alt="" />';
+    const textWrap = document.createElement('div');
+    textWrap.className = 'sb-text';
+    const introText = document.createElement('div');
+    introText.className = 'art-font sb-about-text';
+    if (section.i18n_text) {
+      introText.dataset.i18n = section.i18n_text;
+      const raw = t(section.i18n_text, section.text || '');
+      // About 卡片：固定把"名字 | 身份。"这一句包成 <strong>，后面描述文字常规字重
+      // （原来用 CSS ::first-line 做粗体，会随屏幕宽度漂移把描述也加粗）
+      if (section.i18n_text === 'sb_about_intro') {
+        const m = raw.match(/^([^.。]+[.。])/);
+        if (m) {
+          introText.innerHTML = '<strong>' + esc(m[1]) + '</strong><br>' + esc(raw.slice(m[1].length));
+        } else {
+          introText.textContent = raw;
+        }
+      } else {
+        introText.textContent = raw;
+      }
+    } else {
+      introText.textContent = section.text || '';
+    }
+    textWrap.appendChild(introText);
+    if (section.link) {
+      const linkDiv = document.createElement('div');
+      linkDiv.style.marginTop = '8px';
+      linkDiv.innerHTML = '<a href="' + esc(section.link.url) + '">' + esc(section.link.text) + '</a>';
+      textWrap.appendChild(linkDiv);
+    }
+    inner.appendChild(textWrap);
     block.appendChild(inner);
     return block;
   }

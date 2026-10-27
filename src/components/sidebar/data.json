@@ -5,7 +5,8 @@
       "i18n_title": "sb_about",
       "title": "About",
       "avatar": "/src/images/favicon.png",
-      "text": "吴华锦 | 锦绣年华・写意人间。\r\n雅致寓于高阁渔舟唱晚，古典悠然；\r\n格调外发园林绿树萦绕，馥郁清香。",
+      "i18n_text": "sb_about_intro",
+      "text": "Wu Huajin | Full-stack developer. Writing about web dev, AI tools, and the craft of building things online.",
       "link": {
         "text": "关于我 About →",
         "url": "about.html"

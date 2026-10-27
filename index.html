@@ -55,6 +55,10 @@
   <link rel="preconnect" href="https://cdn.ampproject.org" />
   <link rel="preconnect" href="https://whjin.goatcounter.com" />
   <link rel="preconnect" href="https://static.cloudflareinsights.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- 艺术衬线字体：用于 About 卡片等需要优雅排版的位置（.art-font 一键启用） -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" media="print" onload="this.media='all'" />
   <!-- 非关键 CSS：异步加载，不阻塞首屏渲染（代码高亮、markdown 渲染、图片查看器） -->
   <link rel="stylesheet" href="src/css/github-dark.min.css" media="print" onload="this.media='all'" />
   <link rel="stylesheet" href="src/components/render/index.css" media="print" onload="this.media='all'" />
@@ -69,6 +73,7 @@
   <link rel="stylesheet" href="src/components/loading/index.css" />
   <link rel="stylesheet" href="src/components/banner/index.css" />
   <link rel="stylesheet" href="src/components/feed/index.css" />
+  <link rel="stylesheet" href="src/components/pager/index.css" />
   <!-- Consent Mode v2：默认拒绝，由 cookie banner 更新 -->
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -492,6 +497,7 @@
     })();
   </script>
   <script defer src="src/components/cookie-consent/index.js"></script>
+  <script defer src="src/components/pager/index.js"></script>
   <script defer src="src/components/feed/index.js"></script>
   <script defer src="src/components/sidebar/index.js"></script>
   <script defer src="src/components/i18n/index.js"></script>

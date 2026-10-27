@@ -18,8 +18,13 @@
     reactions: ['reactions', '次反应'],
     comments: ['comments', '条评论'],
     feed_empty: ['No articles found. 没有找到相关文章。', '没有找到相关文章。'],
+    words_unit: ['words', '字'],
     fc_top: ['Top', '置顶'],
     sb_about: ['About', '关于'],
+    sb_about_intro: [
+      'Wu Huajin | Full-stack developer. Writing about web engineering, AI tooling, and the craft of building for the modern web.',
+      '吴华锦 | 锦绣年华・写意人间。\n雅致寓于高阁渔舟唱晚，古典悠然；\n格调外发园林绿树萦绕，馥郁清香。',
+    ],
     sb_happening: ["What's happening", '近期动态'],
     sb_live: ['Livestreams', '直播'],
     sb_now: ['Happening Now! 🚀', '正在进行 🚀'],

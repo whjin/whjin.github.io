@@ -1,17 +1,16 @@
 (function () {
   'use strict';
 
-  const PAGE = 10;
   const MENU_URL = 'src/template/feed/data.json';
 
   let allItems = [];
   let cat = 'all';
   let query = '';
-  let shown = PAGE;
+  let currentPage = 1;
+  let pageSize = 0;  // 0 = 不分页（全部展示）
   let feedList = null;
-  let sentinel = null;
-  let observer = null;
-  let loading = false;
+  let pagerEl = null;
+  let cardAvgH = 220;  // 文章卡片平均高度（含间距），全量渲染后实测缓存
 
   // i18n 助手：window.I18N 由 i18n/index.js 提供
   function t(key, zh) {
@@ -25,10 +24,6 @@
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;');
-  }
-
-  function activeFilter() {
-    return cat !== 'all' || !!query;
   }
 
   function filtered() {
@@ -98,7 +93,12 @@
     let stats = '';
     if (it.reactions != null) stats += '<span class="fc-stat">' + it.reactions + ' <span data-i18n="reactions">reactions</span></span>';
     if (it.comments != null) stats += '<span class="fc-stat">' + it.comments + ' <span data-i18n="comments">comments</span></span>';
-    const readtime = it.readTime ? '<span class="fc-readtime">' + it.readTime + ' min read</span>' : '';
+    // 字数统计（本地文章才有；外部 AI 工具链接不显示）
+    let readtime = '';
+    if (it.wordCount) {
+      const label = t('words_unit', 'words');
+      readtime = '<span class="fc-readtime">' + it.wordCount + ' ' + label + '</span>';
+    }
     return (
       topTag +
       cover +
@@ -118,12 +118,80 @@
     );
   }
 
+  // 测量左右总高度对比，按右侧侧边栏高度计算每页能放几张卡片
+  function decidePagination() {
+    const list = filtered();
+    if (list.length === 0) { pageSize = 0; return; }
+
+    const sidebar = document.querySelector('.home-sidebar');
+    const listEl = document.getElementById('home-feed-list');
+    if (!sidebar || !listEl) { pageSize = 0; return; }
+
+    const rightH = sidebar.offsetHeight;
+    const cards = listEl.querySelectorAll('.feed-card');
+    if (cards.length === 0) { pageSize = 0; return; }
+
+    const totalCardH = Array.from(cards).reduce((sum, c) => sum + c.offsetHeight, 0);
+    const cardAvgH = (totalCardH / cards.length) + 18;
+
+    const pagerH = 48;
+    const size = Math.floor((rightH - pagerH) / cardAvgH);
+    pageSize = Math.max(2, Math.min(size, list.length));
+  }
+
+  function renderPager(total) {
+    if (pageSize <= 0) {
+      // 不分页 → 移除分页控件
+      if (pagerEl) { pagerEl.remove(); pagerEl = null; }
+      return;
+    }
+    if (!pagerEl) {
+      pagerEl = document.createElement('div');
+      feedList.parentNode.appendChild(pagerEl);
+    }
+    const totalPages = Math.max(1, Math.ceil(total / pageSize));
+    const cur = Math.min(currentPage, totalPages);
+    // 统一使用公共 Pager 组件（样式与 reward.html 一致：胶囊按钮、"第N页 / 共M页"）
+    if (window.Pager && window.Pager.mount) {
+      window.Pager.mount(pagerEl, {
+        current: cur,
+        totalPages: totalPages,
+        onChange: goPage
+      });
+    }
+  }
+
+  function goPage(p) {
+    currentPage = p;
+    render();
+    // 翻页后从新一页第一张卡片开始看：滚动到卡片列表顶部，避开 sticky banner/header。
+    // 这样不管一页卡片高矮、多少，都从头顺次浏览；pager 自然在卡片流末尾，
+    // 不会出现顶部露半截卡片、尾页停在空白处的问题。
+    requestAnimationFrame(() => {
+      const listEl = document.getElementById('home-feed-list');
+      if (!listEl) return;
+      const headerH = document.querySelector('.header')?.offsetHeight || 0;
+      const bannerH = document.querySelector('.banner')?.offsetHeight || 0;
+      const top = listEl.getBoundingClientRect().top + window.scrollY - headerH - bannerH - 12;
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+    });
+  }
+
   function render() {
     if (!feedList) feedList = document.getElementById('home-feed-list');
     if (!feedList) return;
     const list = filtered();
-    // 筛选/搜索激活时一次性全量渲染所有匹配项（含未加载过的），保证"同类查找"能找到全部；默认浏览才分页触底加载
-    const slice = activeFilter() ? list : list.slice(0, shown);
+    const total = list.length;
+
+    // 分页：slice 当前页；不分页：全量
+    let slice;
+    if (pageSize > 0 && total > pageSize) {
+      const start = (currentPage - 1) * pageSize;
+      slice = list.slice(start, start + pageSize);
+    } else {
+      slice = list;
+    }
+
     feedList.innerHTML = '';
     if (!slice.length) {
       feedList.innerHTML = '<div class="feed-empty">' + esc(t('feed_empty', 'No articles found. 没有找到相关文章。')) + '</div>';
@@ -138,50 +206,135 @@
         feedList.appendChild(a);
       });
     }
-    setupInfiniteScroll();
+    renderPager(total);
   }
 
-  // 下拉触底加载更多（替代 Load More 按钮）
-  function teardownInfiniteScroll() {
-    if (observer) { observer.disconnect(); observer = null; }
-    if (sentinel) { sentinel.remove(); sentinel = null; }
+  // 测量左侧文章卡片平均高度（需在全量渲染后调用），结果缓存到模块变量
+  function measureCardAvg(listEl) {
+    const cards = listEl.querySelectorAll('.feed-card');
+    if (!cards.length) return cardAvgH;
+    const total = Array.from(cards).reduce((s, c) => s + c.offsetHeight, 0) + (cards.length - 1) * 18;
+    cardAvgH = total / cards.length;
+    return cardAvgH;
   }
 
-  function loadMore() {
-    if (loading) return;
-    if (activeFilter()) { teardownInfiniteScroll(); return; } // 筛选状态已全量渲染，不触底加载
-    const list = filtered();
-    if (shown >= list.length) { teardownInfiniteScroll(); return; }
-    loading = true;
-    shown += PAGE;
-    render();
-    loading = false;
-  }
+  // 移动端每页固定卡片数（单列布局不按右侧高度算，sidebar 在顶部高度不稳定）
+  const MOBILE_PAGE_SIZE = 6;
 
-  function setupInfiniteScroll() {
-    teardownInfiniteScroll();
-    if (activeFilter()) return; // 筛选状态一次性全量渲染，不启用触底加载
-    const list = filtered();
-    if (shown >= list.length) return; // 已全部加载
-    sentinel = document.createElement('div');
-    sentinel.className = 'feed-sentinel';
-    sentinel.setAttribute('data-i18n', 'loading');
-    sentinel.textContent = t('loading', 'Loading… 加载中…');
-    feedList.appendChild(sentinel);
-    if (typeof IntersectionObserver === 'function') {
-      observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) loadMore();
-      }, { rootMargin: '240px 0px' });
-      observer.observe(sentinel);
-    } else {
-      // 兜底：窗口滚动
-      window.addEventListener('scroll', function onScroll() {
-        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 240) {
-          loadMore();
-          if (shown >= filtered().length) window.removeEventListener('scroll', onScroll);
-        }
-      });
+  // 根据右侧实际高度决定分页（ResizeObserver 实测修正用）
+  function applyPaginationByRight(rightH, cardAvgH, total) {
+    // 移动端单列布局：固定每页 MOBILE_PAGE_SIZE 张；总数不足则不分页
+    if (!window.matchMedia('(min-width: 1025px)').matches) {
+      pageSize = total > MOBILE_PAGE_SIZE ? MOBILE_PAGE_SIZE : 0;
+      return;
     }
+    // 左侧总高 = 全部文章数 * 平均高度
+    const leftTotalH = total * cardAvgH;
+    if (leftTotalH <= rightH) { pageSize = 0; return; }
+    // 左 > 右：按右侧高度计算每页卡片数（预留分页控件 48px）。
+    // 向上取整：让左侧卡片流 + 分页条刚好撑满右侧高度，并自然略高出一点点（一张卡片的零头），
+    // 既不短一截留白，也不会多塞一整张卡片导致左侧突出太多。
+    const size = Math.ceil((rightH - 48) / cardAvgH);
+    pageSize = Math.max(1, Math.min(size, total));
+  }
+
+  // 根据 feed/data.json 数据预估右侧侧边栏高度（侧边栏还没渲染时先用）
+  // 侧边栏宽320px，卡片间距14px；下面的常量由 .sb-block 实际样式推算
+  function estimateSidebarHeight(menu) {
+    const GAP = 14;                 // 卡片间距
+    const BLOCK_HEAD = 74;          // 每个 sb-block 基础高度（padding + 标题 + margin）
+
+    // 复现 sidebar/index.js 中 tags 的生成逻辑
+    const visible = (Array.isArray(menu) ? menu : []).filter((c) => c.show !== false && c.list && c.list.length);
+    const menuTitles = visible.map((c) => c.title);
+    const articleCard = (Array.isArray(menu) ? menu : []).find((c) => c.title === '原创文章');
+    const feedItems = (articleCard && articleCard.list) ? articleCard.list : [];
+    const tagCounts = new Map();
+    feedItems.forEach((it) => (it.tags || []).forEach((g) => tagCounts.set(g, (tagCounts.get(g) || 0) + 1)));
+    const autoTags = [...tagCounts.keys()].sort((a, b) => tagCounts.get(b) - tagCounts.get(a)).slice(0, 10);
+    const tagCount = Math.min(1 + menuTitles.length + autoTags.length, 16);
+    // 分类数
+    const catSet = new Set(feedItems.map((it) => it.category).filter(Boolean));
+    const catCount = catSet.size;
+
+    // 标签云：侧边栏可用宽度约288px，每行约3个中文标签，每行36px
+    const tagRows = (n) => Math.ceil(n / 3) * 36;
+    // event 区块默认收起只显示1条（带图约200，无图约110）
+    const EVENT_H = 180;
+    // 广告区块（友链广告/AdSense fluid）预留高度
+    const ADS_H = 300;
+
+    const blocks = [
+      BLOCK_HEAD + 110,   // intro  About：头像+约4行文本+链接
+      BLOCK_HEAD + 80,    // social Connect：2行图标
+      BLOCK_HEAD + 200,   // member Subscribe：文本+3条权益+按钮
+      BLOCK_HEAD + tagRows(tagCount), // tags Popular tags
+      BLOCK_HEAD + tagRows(catCount), // categories
+      EVENT_H,            // Updates（1条）
+      EVENT_H,            // What's happening（默认1条）
+      EVENT_H,            // Livestreams（默认1条）
+      BLOCK_HEAD + ADS_H, // ads
+      BLOCK_HEAD + 40,    // links
+    ];
+    return blocks.reduce((s, h) => s + h, 0) + GAP * (blocks.length - 1);
+  }
+
+  // 首次渲染：用 data.json 预估高度立即分页，再用 ResizeObserver 等侧边栏实际渲染后修正
+  function afterFirstRender(menu) {
+    pageSize = 0;
+    render();
+
+    const listEl = document.getElementById('home-feed-list');
+    measureCardAvg(listEl);  // 实测并缓存文章卡片平均高度
+    const total = filtered().length;
+
+    // 1) 立即用预估高度设置初始分页（打开页面即有分页，无需等待滚动）
+    const estH = estimateSidebarHeight(menu);
+    applyPaginationByRight(estH, cardAvgH, total);
+    currentPage = 1;
+    render();
+
+    // 2) ResizeObserver 监听侧边栏实际高度，渲染完成 / 广告加载后自动修正；
+    //    侧边栏高度连续 2.5 秒无变化即视为稳定，自动断开，避免之后翻页/搜索被打断
+    const sidebar = document.getElementById('home-sidebar');
+    if (sidebar && typeof ResizeObserver !== 'undefined') {
+      let debounce = null;
+      let stableTimer = null;
+      const ro = new ResizeObserver(() => {
+        clearTimeout(debounce);
+        clearTimeout(stableTimer);
+        debounce = setTimeout(() => {
+          const rightH = sidebar.offsetHeight;
+          if (rightH < 50) return;  // 侧边栏还没渲染
+          const oldSize = pageSize;
+          applyPaginationByRight(rightH, cardAvgH, filtered().length);
+          if (pageSize !== oldSize) {
+            currentPage = 1;
+            render();
+          }
+        }, 300);
+        // 每次高度变化后重新计时，2.5 秒无变化则断开
+        stableTimer = setTimeout(() => {
+          ro.disconnect();
+        }, 2500);
+      });
+      ro.observe(sidebar);
+    }
+  }
+
+  // 基于右侧侧边栏实际高度重新计算分页（搜索/筛选/resize 时调用）
+  function decidePagination() {
+    // 移动端：固定每页 MOBILE_PAGE_SIZE 张，与 applyPaginationByRight 保持一致
+    if (!window.matchMedia('(min-width: 1025px)').matches) {
+      const total = filtered().length;
+      pageSize = total > MOBILE_PAGE_SIZE ? MOBILE_PAGE_SIZE : 0;
+      return;
+    }
+    const sidebar = document.querySelector('.home-sidebar');
+    if (!sidebar) { pageSize = 0; return; }
+    const rightH = sidebar.offsetHeight;
+    if (rightH < 50) { pageSize = 0; return; }
+    applyPaginationByRight(rightH, cardAvgH, filtered().length);
   }
 
   // 回顶：首页滚动容器为 window，兼容 content-area 容器（二级页）
@@ -199,10 +352,12 @@
       clearTimeout(timer);
       timer = setTimeout(() => {
         query = input.value.trim();
-        // 新搜索先重置分类/标签，避免与筛选叠加；并清除 sidebar 高亮
         cat = 'all';
-        shown = PAGE;
+        currentPage = 1;
+        // 筛选后先全量渲染，再测量决定是否分页
+        pageSize = 0;
         render();
+        setTimeout(() => { decidePagination(); render(); }, 200);
         scrollTop();
         if (window.HomeSidebar && window.HomeSidebar.applyActiveTag) window.HomeSidebar.applyActiveTag();
       }, 150);
@@ -246,7 +401,7 @@
         }
         return 0;                                // 其余保持原顺序
       });
-      render();
+      afterFirstRender(menu);
       bindSearch();
     } catch (err) {
       console.error('Feed 初始化失败：', err.message);
@@ -255,28 +410,41 @@
 
   window.HomeFeed = {
     init,
-    // 点击标签/分类：若点击的是当前筛选则重置为全部，否则应用筛选；切换时清空搜索词，避免筛选与搜索叠加；并回顶
     setCategory(name) {
       cat = (name === cat) ? 'all' : name;
       query = '';
       const input = document.getElementById('home-search');
       if (input) input.value = '';
-      shown = PAGE;
+      currentPage = 1;
+      pageSize = 0;
       render();
+      setTimeout(() => { decidePagination(); render(); }, 200);
       scrollTop();
     },
-    // 重置筛选：分类=全部、清空搜索，并回顶
     reset() {
       cat = 'all';
       query = '';
       const input = document.getElementById('home-search');
       if (input) input.value = '';
-      shown = PAGE;
+      currentPage = 1;
+      pageSize = 0;
       render();
+      setTimeout(() => { decidePagination(); render(); }, 200);
       scrollTop();
     },
     getCategory() { return cat; },
     scrollTop,
-    refresh() { shown = PAGE; render(); },
+    refresh() { currentPage = 1; pageSize = 0; render(); setTimeout(() => { decidePagination(); render(); }, 200); },
   };
+
+  // 窗口 resize 时重新测量决定是否分页（PC↔移动端切换）
+  let resizeTimer = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      currentPage = 1;
+      decidePagination();
+      render();
+    }, 200);
+  });
 })();

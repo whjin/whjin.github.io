@@ -23,7 +23,7 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  color: #8b5cf6;
 }
 
 .card-container {
@@ -31,7 +31,7 @@ a:hover {
   box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1em;
+  gap: 2em 1em;
   padding: 1em;
 }
 
@@ -233,7 +233,7 @@ a:hover {
 }
 
 .card-list li:not(:last-child) {
-  margin-bottom: 0.3em;
+  margin-bottom: 0.55em;
 }
 
 .card-list li a,
@@ -241,6 +241,16 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 6px;
+  border-radius: 4px;
+  transition: background 0.15s ease;
+}
+
+/* 列表链接 hover：文字变站点紫 #8b5cf6 + 极淡同色背景 tint（卡片 + 弹窗统一；
+   弹窗内 .modal-list a 单独设了 color，必须在 hover 规则里显式指定才能覆盖） */
+.card-list li a:hover,
+.modal-list li a:hover {
+  color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.08);
 }
 
 .card-list .marked,

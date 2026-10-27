@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="src/components/loading/index.css" />
   <link rel="stylesheet" href="src/components/navigation/index.css" />
   <link rel="stylesheet" href="src/components/banner/index.css" />
+  <link rel="stylesheet" href="src/components/pager/index.css" />
   <style>
     a {
       color: #007bff;
@@ -335,42 +336,7 @@
       border-top: 1px solid #f0f0f2;
     }
 
-    /* ---- 分页（复刻 zhheo：圆角胶囊按钮） ---- */
-    .pager {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 20px;
-      flex-wrap: wrap;
-    }
-
-    .pager button {
-      background: #fff;
-      border: 1px solid rgba(0, 0, 0, .12);
-      color: #1d1d1f;
-      border-radius: 999px;
-      padding: 8px 16px;
-      font-size: 14px;
-      cursor: pointer;
-      transition: all .2s ease;
-    }
-
-    .pager button:hover:not(:disabled) {
-      border-color: #425AEF;
-      color: #425AEF;
-    }
-
-    .pager button:disabled {
-      opacity: .5;
-      cursor: not-allowed;
-    }
-
-    .pager .pager-info {
-      color: #6e6e73;
-      font-size: 14px;
-      padding: 0 8px;
-    }
+    /* 分页组件样式统一见 src/components/pager/index.css（.pager），与首页 feed 共用 */
 
     /* ---- 规则说明（复刻 zhheo） ---- */
     .rules {
@@ -536,6 +502,7 @@
   <script src="src/components/banner/index.js"></script>
   <script src="src/components/navigation/index.js"></script>
   <script src="src/components/scroll/index.js"></script>
+  <script src="src/components/pager/index.js"></script>
   <script>
     (function () {
       'use strict';
@@ -691,27 +658,17 @@
           body.appendChild(frag);
         }
 
-        // 分页：首页 / 上一页 / 第N页 / 共N页 / 下一页 / 尾页
-        pager.innerHTML = '';
-        const mk = function (label, disabled, go) {
-          const b = document.createElement('button');
-          b.textContent = label;
-          b.disabled = disabled;
-          b.addEventListener('click', go);
-          return b;
-        };
-        const pageGo = function (p) {
-          if (p < 1 || p > totalPages) return;
-          renderRecords(records, sortKey, highlight, p, red, orange);
-        };
-        pager.appendChild(mk('首页', cur === 1, function () { pageGo(1); }));
-        pager.appendChild(mk('上一页', cur === 1, function () { pageGo(cur - 1); }));
-        const info = document.createElement('span');
-        info.className = 'pager-info';
-        info.textContent = '第' + cur + '页 / 共' + totalPages + '页';
-        pager.appendChild(info);
-        pager.appendChild(mk('下一页', cur === totalPages, function () { pageGo(cur + 1); }));
-        pager.appendChild(mk('尾页', cur === totalPages, function () { pageGo(totalPages); }));
+        // 分页：统一使用公共 Pager 组件（样式与首页 feed 共用 src/components/pager/）
+        if (window.Pager && window.Pager.mount) {
+          window.Pager.mount(pager, {
+            current: cur,
+            totalPages: totalPages,
+            onChange: function (p) {
+              if (p < 1 || p > totalPages) return;
+              renderRecords(records, sortKey, highlight, p, red, orange);
+            }
+          });
+        }
       }
 
       function renderRules(rules) {
