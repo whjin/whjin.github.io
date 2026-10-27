@@ -46,13 +46,17 @@
 - **零框架前端**：纯 HTML5 + CSS3 + 原生 JS，无 React/Vue/Next.js 包体积开销
 - **双语默认**：英文优先，轻量 i18n 字典一键切中文
 - **静态预渲染**：每篇 Markdown 在构建时渲染为独立 HTML，保证爬虫完整可读
-- **自适应分页**：桌面端两栏布局，右侧栏高度决定每页卡片数；移动端固定每页 6 张
+- **自适应分页**：桌面端两栏布局，右侧栏高度决定每页卡片数；移动端固定每页 6 张；公共 `pager` 组件统一胶囊样式
+- **数据同步流水线**：友链数据（`友链/data.json`）通过 title 匹配自动同步到 feed 卡片（`build-feed.cjs` 中的 `LINK_SECTION_MAP`）
+- **广告排序**：广告卡片支持 `sort` 字段（数字越小越靠前），统一控制侧边栏广告优先级
+- **产品与合规页面**：独立 `/product.html` 产品落地页、`/aigc-policy.html` AI 内容使用规范、退款政策与违约责任条款
 - **性能优先**：Core Web Vitals 调优（CLS < 0.1、LCP < 2.5s），通过 `defer`、图片 `aspect-ratio`、`preconnect`、懒加载实现
 - **GDPR 就绪**：Cookie 同意横幅、Google Consent Mode v2、隐私政策、无跨站追踪 Cookie
 - **无障碍**：语义化 HTML、图标按钮 ARIA 标签、focus-visible 轮廓、保留移动端双指缩放
 - **代码块增强**：一键复制、语言标签、长代码折叠、悬浮工具栏
 - **图片查看器**：点击全屏查看，支持缩放、拖动
 - **赞赏/会员**：Ko-fi 会员订阅 + 微信/支付宝二维码，独立赞赏页
+- **独立产品变现**：Waffo Pancake 订阅收款（$9.99/月，7 天免费试用）
 - **资源导航**：卡片式聚合页，汇集 AI 工具、开发者参考、精选链接
 
 ---
@@ -67,7 +71,7 @@
 | **开发服务器** | 原生 `http` 模块 + `chokidar` 文件监听 + WebSocket 热重载 |
 | **部署** | GitHub Pages + Cloudflare CDN + 阿里云 DNS |
 | **统计** | Cloudflare Web Analytics + Microsoft Clarity + Google Analytics 4 |
-| **变现** | Google AdSense + Ko-fi 会员 + 微信/支付宝赞赏 |
+| **变现** | Google AdSense + Ko-fi 会员 + 微信/支付宝赞赏 + Waffo Pancake 订阅收款 |
 | **国际化** | 自定义轻量双语字典（中文 / 英文） |
 
 ---
@@ -123,7 +127,10 @@ wuhuajin.github.io/
 ├── server.js                    # 本地开发服务器（端口 8000）
 ├── index.html                   # 首页入口
 ├── about.html / contact.html    # 合规页
-├── privacy.html / reward.html
+├── privacy.html / terms.html    # 法律页（含退款政策与违约责任）
+├── reward.html                   # 赞赏/会员页
+├── product.html                  # 产品落地页（Developer Tools Suite）
+├── aigc-policy.html              # AI 生成内容使用规范
 ├── 404.html
 ├── robots.txt / sitemap.xml / ads.txt / CNAME
 └── package.json

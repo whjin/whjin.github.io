@@ -393,7 +393,7 @@
       feedItems.forEach((it) => catMap.set(it.category, (catMap.get(it.category) || 0) + 1));
       catCounts = [...catMap.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
     } catch (e) { /* 忽略 */ }
-    // 广告列表复用友链数据源：提取所有 type === "ads" 的条目
+    // 广告列表复用友链数据源：提取所有 type === "ads" 的条目，按 sort 字段升序排序（数字越小越靠前）
     try {
       const linkData = await (await fetch('src/template/posts/Link/友链/data.json')).json();
       if (linkData && typeof linkData === 'object') {
@@ -406,6 +406,12 @@
               adsList.push(Object.assign({}, it, { image: it.cover || it.image, title: it.adsTitle || it.title, desc: it.adsDesc || it.desc }));
             }
           });
+        });
+        // 按 sort 字段升序排序（无 sort 字段的排最后）
+        adsList.sort((a, b) => {
+          const sa = a.sort == null ? 9999 : a.sort;
+          const sb = b.sort == null ? 9999 : b.sort;
+          return sa - sb;
         });
       }
     } catch (e) { /* 忽略，广告位回退到 AdSense/占位 */ }
@@ -422,7 +428,11 @@
         else if (sec.type === 'tags') el = renderTags(sec, autoTags, menuTitles);
         else if (sec.type === 'categories') el = renderCategories(sec, catCounts);
         else if (sec.type === 'social') el = renderSocial(sec);
-        else if (sec.type === 'ads') el = renderAd(Object.assign({}, sec, { list: adsList }));
+        else if (sec.type === 'ads') {
+          // 合并 section 自带 list（如产品卡片）和友链提取的广告列表，section.list 在前
+          const mergedList = (sec.list || []).concat(adsList);
+          el = renderAd(Object.assign({}, sec, { list: mergedList }));
+        }
         else if (sec.type === 'links') el = renderLinks(sec);
         else if (sec.type === 'member') el = renderMember(sec);
         if (el) wrap.appendChild(el);

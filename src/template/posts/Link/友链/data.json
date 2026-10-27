@@ -317,6 +317,28 @@
       }
     ]
   },
+  "product": {
+    "title": "商品",
+    "desc": "商品列表",
+    "mode": "recommend",
+    "list": [
+      {
+        "marked": true,
+        "show": true,
+        "duration": 30,
+        "color": "white",
+        "type": "ads",
+        "sort": 1,
+        "cover": "https://cdn.jsdelivr.net/gh/whjin/blog-images@main/img/%E8%B0%83%E6%95%B4%E9%AB%98%E5%BA%A6.jpg",
+        "image": "https://picsum.photos/seed/product/100",
+        "title": "Developer Tools Suite",
+        "adsTitle": "Developer Tools Suite",
+        "desc": "全栈开发工具集 + AI 代码补全 + 基金持仓分析 + 团队工作区，7 天免费试用。",
+        "adsDesc": "全栈开发工具集 + AI 代码补全 + 基金持仓分析 + 团队工作区，7 天免费试用。",
+        "url": "/product.html"
+      }
+    ]
+  },
   "commonTool": {
     "title": "常用工具",
     "desc": "常用工具",

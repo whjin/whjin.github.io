@@ -374,6 +374,22 @@
   },
   {
     "sticky": 4,
+    "title": "商品",
+    "home": true,
+    "tagName": "ol",
+    "list": [
+      {
+        "title": "Developer Tools Suite",
+        "url": "/product.html",
+        "category": "商品",
+        "desc": "全栈开发工具集 + AI 代码补全 + 基金持仓分析 + 团队工作区，7 天免费试用。",
+        "marked": true,
+        "image": "https://picsum.photos/seed/product/100"
+      }
+    ]
+  },
+  {
+    "sticky": 5,
     "title": "站点",
     "home": true,
     "tagName": "ol",
@@ -413,7 +429,7 @@
     ]
   },
   {
-    "sticky": 5,
+    "sticky": 6,
     "title": "原创文章",
     "type": "articles",
     "home": true,

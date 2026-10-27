@@ -110,3 +110,10 @@
   color: #888;
   font-size: 13px;
 }
+
+/* 移动端：只保留"点击查看原图"，隐藏桌面端操作提示 */
+@media (max-width: 768px) {
+  .img-viewer-hint .hint-desktop {
+    display: none;
+  }
+}

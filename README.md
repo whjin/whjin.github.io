@@ -46,13 +46,17 @@ With **50+ technical articles** covering full-stack development, AI tools, web p
 - **Zero-framework frontend**: Pure HTML5 + CSS3 + Vanilla JS, no React/Vue/Next.js bundle overhead
 - **Bilingual by default**: English-first, one-click switch to Chinese via a lightweight i18n dictionary
 - **Static prerendering**: Every Markdown article is built into a standalone HTML at build time for full SEO crawlability
-- **Adaptive pagination**: Two-column desktop layout with right-sidebar-driven page sizing; fixed 6-per-page on mobile
+- **Adaptive pagination**: Two-column desktop layout with right-sidebar-driven page sizing; fixed 6-per-page on mobile; shared `pager` component for consistent capsule-style UI
+- **Data sync pipeline**: Friend-link data (`友链/data.json`) auto-syncs to feed cards via title-matched mapping in `build-feed.cjs`
+- **Ad sorting**: Advertisement cards support `sort` field (lower = higher priority) across the sidebar
+- **Product & compliance pages**: Dedicated `/product.html` landing page, `/aigc-policy.html` content usage policy, refund & liability terms
 - **Performance-first**: Core Web Vitals tuned (CLS < 0.1, LCP < 2.5s) via `defer` loading, image `aspect-ratio`, `preconnect`, and lazy loading
 - **GDPR-ready**: Cookie consent banner, Google Consent Mode v2, privacy policy, no cross-site tracking cookies
 - **Accessibility**: Semantic HTML, ARIA labels on icon buttons, focus-visible outlines, mobile pinch-to-zoom preserved
 - **Code blocks**: One-click copy, language labels, collapsible long blocks with a floating toolbar
 - **Image viewer**: Click any image for fullscreen, zoom, and pan
 - **Reward / membership**: Ko-fi membership + WeChat/Alipay QR support, with a dedicated reward page
+- **Indie product monetization**: Waffo Pancake subscription checkout ($9.99/month, 7-day trial)
 - **Resource navigation**: Card-based aggregation pages for AI tools, developer references, and curated links
 
 ---
@@ -67,7 +71,7 @@ With **50+ technical articles** covering full-stack development, AI tools, web p
 | **Dev server** | Native `http` module + `chokidar` file watcher + WebSocket live reload |
 | **Deployment** | GitHub Pages + Cloudflare CDN + Alibaba Cloud DNS |
 | **Analytics** | Cloudflare Web Analytics + Microsoft Clarity + Google Analytics 4 |
-| **Monetization** | Google AdSense + Ko-fi membership + WeChat/Alipay tips |
+| **Monetization** | Google AdSense + Ko-fi membership + WeChat/Alipay tips + Waffo Pancake subscription |
 | **i18n** | Custom lightweight bilingual dictionary (Chinese / English) |
 
 ---
@@ -123,7 +127,10 @@ wuhuajin.github.io/
 ├── server.js                     # Local dev server (port 8000)
 ├── index.html                    # Homepage entry
 ├── about.html / contact.html    # Compliance pages
-├── privacy.html / reward.html
+├── privacy.html / terms.html     # Legal pages (with refund & liability clauses)
+├── reward.html                   # Reward / membership page
+├── product.html                  # Product landing page (Developer Tools Suite)
+├── aigc-policy.html              # AIGC content usage policy
 ├── 404.html
 ├── robots.txt / sitemap.xml / ads.txt / CNAME
 └── package.json

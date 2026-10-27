@@ -19,8 +19,26 @@
       color: #007bff;
     }
 
-    .layout404 {
+    html, body {
       height: 100%;
+      overflow: hidden;
+    }
+
+    .layout-container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .layout404 {
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -31,7 +49,7 @@
     }
 
     .code {
-      font-size: 88px;
+      font-size: 72px;
       font-weight: 800;
       color: #007bff;
       line-height: 1;
@@ -39,16 +57,16 @@
     }
 
     .msg {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
-      margin: 14px 0 6px;
+      margin: 10px 0 4px;
     }
 
     .desc {
-      font-size: 14px;
+      font-size: 13px;
       color: #666;
-      max-width: 520px;
-      margin: 6px 0 24px;
+      max-width: 480px;
+      margin: 4px 0 16px;
     }
 
     .btn {
@@ -139,22 +157,21 @@
           return to the home page or use the links below.<br /><span
             class="lang-zh">您访问的页面可能已被移动、重命名或不存在，请返回首页或使用下方链接。</span></p>
         <div>
-          <a class="btn" href="index.html">Back to Home / 返回首页</a>
-          <a class="btn ghost" href="javascript:history.back()">Go Back / 返回上一页</a>
-          <a class="btn ghost" href="contact.html">Contact Me / 联系我</a>
+          <a class="btn" href="/index.html">Back to Home / 返回首页</a>
+          <a class="btn ghost" href="/contact.html">Contact Me / 联系我</a>
         </div>
         <div class="quick">
-          <a href="about.html">About / 关于我</a>
-          <a href="privacy.html">Privacy / 隐私政策</a>
-          <a href="terms.html">Terms / 服务条款</a>
+          <a href="/about.html">About / 关于我</a>
+          <a href="/privacy.html">Privacy / 隐私政策</a>
+          <a href="/terms.html">Terms / 服务条款</a>
         </div>
       </div>
       <footer class="site-footer">
         <div>&copy;2013-2026 Wu Huajin ｜ 访问
           <span id="goatcounter_total" class="count">0</span>&nbsp;次
         </div>
-        <div class="legal-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a
-            href="about.html">About</a><a href="contact.html">Contact</a></div>
+        <div class="legal-links"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a
+            href="/about.html">About</a><a href="/contact.html">Contact</a></div>
       </footer>
     </div>
   </div>
@@ -199,7 +216,7 @@
       fetch('https://stats.wuhuajin.com/hit', { method: 'POST' })
         .then(function (r) { return r.json(); })
         .then(function (d) { if (d && d.total) el.textContent = d.total; })
-        .catch(function () {});
+        .catch(function () { });
     })();
   </script>
   <script src="src/components/cookie-consent/index.js"></script>

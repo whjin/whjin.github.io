@@ -51,7 +51,7 @@
       '<span class="img-viewer-close" title="关闭">&times;</span>' +
       '<img alt="" draggable="false" />' +
       '<p class="img-viewer-caption"></p>' +
-      '<p class="img-viewer-hint">Esc 关闭 · 滚轮缩放 · 拖动平移 · 点击查看原图</p>';
+      '<p class="img-viewer-hint"><span class="hint-desktop">Esc 关闭 · 滚轮缩放 · 拖动平移 · </span>点击查看原图</p>';
     big = overlay.querySelector('img');
 
     // 点击遮罩/关闭按钮 → 关闭

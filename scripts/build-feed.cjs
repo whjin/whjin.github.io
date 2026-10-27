@@ -261,6 +261,7 @@ const LINK_DATA_PATH = path.join(ROOT, 'src/template/posts/Link/友链/data.json
 const LINK_SECTION_MAP = {
   recommend: '核心推荐',
   recommend1: '推荐',
+  product: '商品',
 };
 
 buildUrlMap();

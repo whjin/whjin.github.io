@@ -612,15 +612,17 @@ p.sb-event-desc {
 }
 
 .sb-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 12px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-between;
+  gap: 6px 12px;
 }
 
 .sb-links a {
-  font-size: 12.5px;
+  font-size: 13px;
   color: #666;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .sb-links a:hover {

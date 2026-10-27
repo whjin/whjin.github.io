@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#007bff" />
+  <title>Developer Tools Suite - Wu Huajin's Products</title>
+  <meta name="description"
+    content="Developer Tools Suite: all-in-one full-stack dev toolkit with AI code completion, portfolio analytics, and team workspace. 7-day free trial, $9.99/month.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wuhuajin.com/product.html">
+  <meta property="og:type" content="product">
+  <meta property="og:site_name" content="Wu Huajin">
+  <meta property="og:title" content="Developer Tools Suite">
+  <meta property="og:description"
+    content="All-in-one full-stack dev toolkit with AI code completion, portfolio analytics, and team workspace.">
+  <meta property="og:url" content="https://wuhuajin.com/product.html">
+  <meta property="og:image" content="https://wuhuajin.com/src/images/banner-product.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Developer Tools Suite">
+  <meta name="twitter:description"
+    content="All-in-one full-stack dev toolkit with AI code completion, portfolio analytics, and team workspace.">
+  <meta name="twitter:image" content="https://wuhuajin.com/src/images/banner-product.png">
+  <link rel="icon" href="src/images/favicon.png">
+  <link rel="stylesheet" href="src/components/render/index.css">
+  <link rel="stylesheet" href="src/components/loading/index.css">
+  <link rel="stylesheet" href="src/components/navigation/index.css">
+  <link rel="stylesheet" href="src/components/banner/index.css">
+  <style>
+    a {
+      color: #8b5cf6;
+    }
+
+    .product-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 24px 48px;
+      box-sizing: border-box;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 40px 20px 32px;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin: 0 0 12px;
+      background: linear-gradient(135deg, #4f46e5, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero .tagline {
+      font-size: 16px;
+      color: #666;
+      margin: 0 auto 24px;
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    .hero .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.12), rgba(79, 70, 229, 0.12));
+      color: #8b5cf6;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    .hero .cta-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #4f46e5, #8b5cf6);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(139, 92, 246, 0.35);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: #8b5cf6;
+      border: 1px solid #e5e8ec;
+    }
+
+    .btn-secondary:hover {
+      background: #f8f7ff;
+      border-color: #8b5cf6;
+    }
+
+    /* Features */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin: 40px 0;
+    }
+
+    .feature-card {
+      background: #fff;
+      border: 1px solid #e5e8ec;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
+    }
+
+    .feature-card .icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .feature-card h3 {
+      font-size: 16px;
+      margin: 0 0 8px;
+      color: #1f2329;
+    }
+
+    .feature-card p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Pricing */
+    .pricing-section {
+      background: linear-gradient(135deg, #f8f7ff, #f0edff);
+      border-radius: 16px;
+      padding: 40px 32px;
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .pricing-section h2 {
+      font-size: 24px;
+      margin: 0 0 8px;
+      color: #1f2329;
+    }
+
+    .pricing-section .price {
+      font-size: 48px;
+      font-weight: 700;
+      color: #8b5cf6;
+      margin: 16px 0 4px;
+    }
+
+    .pricing-section .price small {
+      font-size: 16px;
+      font-weight: 400;
+      color: #999;
+    }
+
+    .pricing-section .trial-note {
+      font-size: 14px;
+      color: #666;
+      margin: 8px 0 24px;
+    }
+
+    .pricing-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto 28px;
+      max-width: 360px;
+      text-align: left;
+    }
+
+    .pricing-section li {
+      font-size: 14px;
+      color: #555;
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+    }
+
+    .pricing-section li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #8b5cf6;
+      font-weight: 700;
+    }
+
+    /* Models disclosure */
+    .models-note {
+      background: #fff;
+      border: 1px solid #e5e8ec;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 24px 0;
+      font-size: 13px;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    .models-note strong {
+      color: #333;
+    }
+
+    /* Footer */
+    .site-footer {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 12px 24px 28px;
+      box-sizing: border-box;
+      border-top: 1px solid #e5e8ec;
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+    }
+
+    .site-footer .count {
+      color: #8b5cf6;
+      font-weight: 600;
+    }
+
+    .site-footer .legal-links a {
+      color: #8b5cf6;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    .content-area {
+      scroll-behavior: smooth;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .pricing-section {
+        padding: 28px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout-container">
+    <div class="nav-container"></div>
+    <div class="content-area" id="content">
+      <div class="product-wrap">
+
+        <!-- Hero -->
+        <div class="hero">
+          <div class="badge">🆕 New Product</div>
+          <h1>Developer Tools Suite</h1>
+          <p class="tagline">
+            All-in-one toolkit for full-stack developers — AI code completion, real-time portfolio analytics, and
+            team workspace, built to help you ship faster.
+          </p>
+          <div class="cta-row">
+            <a href="https://pancake.waffo.ai/merchant/onboarding/STO_16b9U4Ukpr96xtAHSjxAEd/create-product"
+              class="btn btn-primary">Start 7-Day Free Trial</a>
+            <a href="#features" class="btn btn-secondary">See Features</a>
+          </div>
+        </div>
+
+        <!-- Features -->
+        <div class="features-grid" id="features">
+          <div class="feature-card">
+            <div class="icon">🛠️</div>
+            <h3>Full-Stack Dev Tools</h3>
+            <p>Frontend frameworks, backend APIs, deployment pipelines — everything you need to build and ship
+              production-ready apps in one place.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">📊</div>
+            <h3>Portfolio Analytics</h3>
+            <p>Real-time fund holdings visualization, performance tracking, and risk insights for your investment
+              portfolio.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">🤖</div>
+            <h3>AI Code Completion</h3>
+            <p>Context-aware AI that understands your entire codebase — cross-file edits, refactoring suggestions, and
+              intelligent auto-complete.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">👥</div>
+            <h3>Team Workspace</h3>
+            <p>Shared project templates, collaborative workspaces, and permission controls — built for teams that move
+              fast.</p>
+          </div>
+        </div>
+
+        <!-- Pricing -->
+        <div class="pricing-section" id="pricing">
+          <h2>Simple Pricing</h2>
+          <div class="price">$9.99<small>/month</small></div>
+          <p class="trial-note">7-day free trial — no credit card required to start</p>
+          <ul>
+            <li>All 4 feature modules included</li>
+            <li>Unlimited projects & team members</li>
+            <li>Priority email support</li>
+            <li>Cancel anytime — no lock-in</li>
+          </ul>
+          <a href="https://pancake.waffo.ai/merchant/onboarding/STO_16b9U4Ukpr96xtAHSjxAEd/create-product"
+            class="btn btn-primary">Start Free Trial</a>
+        </div>
+
+        <!-- AI Models Disclosure -->
+        <div class="models-note">
+          <strong>About AI Features:</strong> AI code completion and content generation features are powered by
+          mainstream third-party large language models (including GPT-4 / Claude-class models) and diffusion-class
+          image models. The specific underlying models may be updated over time. For details on content usage
+          restrictions, please see our <a href="aigc-policy.html">AIGC Usage Policy</a>.
+        </div>
+
+      </div>
+
+      <footer class="site-footer">
+        <div>&copy;2013-2026 Wu Huajin ｜ 访问 <span id="goatcounter_total" class="count">0</span>&nbsp;次</div>
+        <div class="legal-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a
+            href="aigc-policy.html">AIGC Policy</a><a href="product.html">Product</a><a href="about.html">About</a><a
+            href="contact.html">Contact</a></div>
+      </footer>
+      <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
+    </div>
+  </div>
+
+  <script src="src/components/loading/index.js"></script>
+  <script src="src/components/banner/index.js"></script>
+  <script src="src/components/navigation/index.js"></script>
+  <script src="src/components/scroll/index.js"></script>
+  <script>
+    (function () {
+      new Image().src = 'https://whjin.goatcounter.com/count?p=' + encodeURIComponent(location.pathname + location.search);
+    })();
+  </script>
+  <!-- Cloudflare Web Analytics (本地跳过，线上加载) -->
+  <script>
+    (function () {
+      if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) return;
+      var s = document.createElement('script');
+      s.type = 'module';
+      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      s.setAttribute('data-cf-beacon', '{"token": "5d0359eb0b054372bc2d153bab40d1f6"}');
+      document.head.appendChild(s);
+    })();
+  </script>
+  <!-- End Cloudflare Web Analytics -->
+
+  <!-- Microsoft Clarity (本地跳过，线上加载) -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      if (/^(localhost|127\.0\.0\.1)$/.test(l.location.hostname)) return;
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "z1fm0e3hsu");
+  </script>
+  <!-- End Microsoft Clarity -->
+  <script>
+    (function () {
+      var el = document.getElementById('goatcounter_total');
+      if (!el) return;
+      if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) return;
+      fetch('https://stats.wuhuajin.com/hit', { method: 'POST' })
+        .then(function (r) { return r.json(); })
+        .then(function (d) { if (d && d.total) el.textContent = d.total; })
+        .catch(function () { });
+    })();
+  </script>
+  <script src="src/components/cookie-consent/index.js"></script>
+</body>
+
+</html>

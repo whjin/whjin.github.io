@@ -41,6 +41,7 @@
     sb_member_b3: ['Full source code collections', '获得完整源代码合集'],
     sb_member_btn: ['Become a Member →', '成为会员 →'],
     sb_ads: ['Advertisement', '广告位'],
+    sb_resource: ['Resource', '资源导航'],
     sb_ad_placeholder: ['Advertisement', '虚位以待'],
     sb_links: ['Links', '链接'],
   };
