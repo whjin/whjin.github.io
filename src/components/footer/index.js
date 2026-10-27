@@ -28,6 +28,8 @@
         <span class="sep">&middot;</span>
         <a href="contact.html" title="联系我">Contact 联系</a>
         <span class="sep">&middot;</span>
+        <a href="mailto:wuhuajin09@163.com" title="客服邮箱">wuhuajin09@163.com</a>
+        <span class="sep">&middot;</span>
         <a href="privacy.html" title="隐私政策">Privacy 隐私</a>
         <span class="sep">&middot;</span>
         <a href="terms.html" title="服务条款">Terms 条款</a>
