@@ -6,7 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
   <title>资源导航 &laquo; 吴华锦</title>
+  <link rel="icon" href="/src/images/favicon.png" />
   <link rel="stylesheet" href="../../../menu/index.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
+  <style>
+    /* 赞赏卡片放在资源卡片 grid 之外，底部全宽块，与内容区同宽对齐 */
+    #reward-slot {
+      padding: 0 1em 1em;
+      box-sizing: border-box;
+    }
+    .adsbygoogle {
+      display: block;
+      padding: 0 1em 1.5em;
+      box-sizing: border-box;
+    }
+  </style>
 </head>
 
 <body>
@@ -136,6 +150,69 @@
   </ul>
 </section>
 </div></noscript>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+      </noscript>
+
+
+
+
+
+
+
+
 
 
 
@@ -353,14 +430,44 @@
 
 
   <noscript>
-      </noscript>
+  </noscript>
 
 
 
   <div class="card-container"><noscript>
     </noscript>
   </div>
+  <div id="reward-slot"></div>
+  <script src="../../../../components/loading/index.js"></script>
   <script src="../../../menu/index.js"></script>
+  <script src="/src/components/reward-tip/index.js"></script>
+  <script>(function(){
+    var slot = document.getElementById('reward-slot');
+    var container = document.querySelector('.card-container');
+    if (!window.RewardTip || !slot) return;
+    function render() {
+      if (slot.querySelector('.reward-tip-block')) return;
+      window.RewardTip.renderInto(slot);
+    }
+    // 等待 menu/index.js 异步渲染卡片完成后再注入赞赏卡片，避免布局跳动
+    if (container && 'MutationObserver' in window) {
+      var mo = new MutationObserver(function() {
+        if (container.querySelector('.card-item')) {
+          render();
+          mo.disconnect();
+        }
+      });
+      mo.observe(container, { childList: true, subtree: false });
+    }
+    setTimeout(render, 2000);
+    render();
+  })();</script>
+  <!-- Google AdSense -->
+  <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-3179609405594046"
+    data-ad-slot="3393378656"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
 </body>
 
 </html>

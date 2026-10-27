@@ -1,11 +1,47 @@
+/* 全局样式 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  background: #e7fbe9;
+  background: linear-gradient(90deg, rgba(231, 251, 233, 1) 0%, rgba(224, 238, 255, 1) 100%);
+  background-size: cover;
+  min-height: 100vh;
+}
+
+a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .link-container {
   width: 100%;
-  height: 100%;
+  box-sizing: border-box;
+  padding: 1em;
+}
+
+/* 赞赏卡片插槽：放在主内容容器外部，底部全宽对齐 */
+#reward-slot {
+  padding: 0 1em 1em;
   box-sizing: border-box;
 }
 
 .adsbygoogle {
   display: block;
+  padding: 0 1em 1.5em;
+  box-sizing: border-box;
 }
 
 

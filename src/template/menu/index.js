@@ -27,15 +27,14 @@
     connect();
   }
 
-  generateCard();
-  generateTOC();
-
   const MARKED_HTML = '<span class="marked">*</span>';
   const STORAGE_KEYS = {
     lastScrollCardTitle: 'lastScrollCardTitle',
     lastScrollCardTop: 'lastScrollCardTop',
     navigateToLink: 'navigateToLink',
   };
+
+  generateCard();
   function debounce(func, delay = 100) {
     let timer = null;
     return function (...args) {

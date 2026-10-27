@@ -236,7 +236,31 @@
 </section>
 </div></noscript>
 </main>
+  <div id="reward-slot"></div>
+  <script src="../../../../components/loading/index.js"></script>
   <script src="../../../link/index.js"></script>
+  <script src="/src/components/reward-tip/index.js"></script>
+  <script>(function(){
+    var slot = document.getElementById('reward-slot');
+    var container = document.querySelector('.link-container');
+    if (!window.RewardTip || !slot) return;
+    function render() {
+      if (slot.querySelector('.reward-tip-block')) return;
+      window.RewardTip.renderInto(slot);
+    }
+    // 等待 link/index.js 异步加载内容完成后再渲染赞赏卡片，避免被 innerHTML 清空
+    if (container && 'MutationObserver' in window) {
+      var mo = new MutationObserver(function() {
+        if (container.querySelector('.section, .card-grid')) {
+          render();
+          mo.disconnect();
+        }
+      });
+      mo.observe(container, { childList: true, subtree: false });
+    }
+    setTimeout(render, 2000);
+    render();
+  })();</script>
   <!-- Google AdSense 代码 -->
   <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-3179609405594046"
        data-ad-slot="3393378656"></ins>

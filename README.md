@@ -1,11 +1,32 @@
 # Personal Tech Blog — Full-Stack Performance Optimized
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D18-brightgreen.svg)](package.json)
+[![Website](https://img.shields.io/badge/site-wuhuajin.com-blue.svg)](https://wuhuajin.com)
+[![Blog Posts](https://img.shields.io/badge/articles-49+-orange.svg)](https://wuhuajin.com)
+
 **English** | [中文](README.zh.md)
 
 > A high-performance static personal blog built with pure HTML/CSS/JavaScript, optimized for global audiences, Google Core Web Vitals, and search engines.
 
-**Live Site**: [https://wuhuajin.com](https://wuhuajin.com)  
-**Author**: [Wu Huajin](https://wuhuajin.com/about.html) — Full-Stack Developer | FPGA Engineer | Indie Game Developer
+**Live Site**: [https://wuhuajin.com](https://wuhuajin.com)
+**Author**: [Wu Huajin](https://wuhuajin.com/about.html) — Full-Stack Developer | Indie Hacker
+
+---
+
+## Table of Contents
+
+- [About](#-about)
+- [Tech Stack](#-tech-stack)
+- [Project Structure](#-project-structure)
+- [Quick Start](#-quick-start)
+- [Build Pipeline](#-build-pipeline)
+- [Performance](#-performance-optimization-core-web-vitals)
+- [SEO & Global Deployment](#-seo--global-deployment)
+- [Features](#-uiux-features)
+- [Documentation](#-documentation)
+- [Contributing](#-contributing)
+- [License](#-license)
 
 ---
 
@@ -13,7 +34,7 @@
 
 This is the source code of my personal tech blog, built from scratch without any heavy frameworks. It's a fully static site hosted on **GitHub Pages**, optimized for speed, SEO, and global accessibility.
 
-With **49 technical articles** covering full-stack development, FPGA hardware design, AI tools, indie game development, and web performance optimization, it serves as my long-term knowledge base and public portfolio.
+With **49+ technical articles** covering full-stack development, AI tools, web performance optimization, and more, it serves as my long-term knowledge base and public portfolio.
 
 ---
 
@@ -25,9 +46,83 @@ With **49 technical articles** covering full-stack development, FPGA hardware de
 | **Content** | Markdown → Static HTML (custom build scripts) |
 | **Build Tool** | Node.js + Custom scripts (no Webpack/Vite overhead) |
 | **Deployment** | GitHub Pages + Cloudflare CDN + Alibaba Cloud DNS |
-| **Analytics** | Cloudflare Web Analytics + Microsoft Clarity + Google Analytics 4 + GoatCounter |
+| **Analytics** | Cloudflare Web Analytics + Microsoft Clarity + Google Analytics 4 |
 | **Monetization** | Google AdSense + Ko-fi Membership |
 | **i18n** | Custom lightweight bilingual (Chinese / English) |
+
+---
+
+## 📁 Project Structure
+
+```
+wuhuajin.github.io/
+├── src/
+│   ├── components/           # Reusable UI components
+│   │   ├── banner/          # Top carousel ads
+│   │   ├── cookie-consent/  # GDPR cookie consent banner
+│   │   ├── feed/             # Homepage article feed
+│   │   ├── image-viewer/    # Fullscreen image viewer
+│   │   ├── navigation/       # Top navigation bar
+│   │   ├── reward-tip/       # Donation card component
+│   │   ├── render/          # Markdown renderer
+│   │   ├── scroll/          # Back-to-top button
+│   │   └── sidebar/         # Table of contents / ads
+│   ├── template/
+│   │   ├── posts/           # Articles (by category)
+│   │   │   ├── JavaScript/
+│   │   │   ├── Node/
+│   │   │   ├── AI/
+│   │   │   └── Link/        # Aggregation pages (links/articles/resources)
+│   │   ├── link/            # Link/article navigation template
+│   │   └── menu/            # Resource navigation template
+│   ├── css/                 # Third-party CSS (highlight.js)
+│   ├── images/              # Image assets
+│   └── js/                  # Third-party JS (marked/highlight)
+├── scripts/                 # Build scripts
+│   ├── build-all.cjs        # Full build entry
+│   ├── build-feed.cjs       # Generate feed data
+│   ├── build-articles.cjs   # Pre-render articles to static HTML
+│   ├── build-home.cjs       # Generate homepage data
+│   ├── build-sitemap.cjs    # Generate sitemap.xml
+│   ├── build-links.cjs      # Build aggregation pages
+│   └── watch.cjs            # File watcher + live reload
+├── docs/                    # Project documentation
+├── server.js                # Local dev server
+├── index.html               # Homepage entry
+└── package.json
+```
+
+---
+
+## 🚀 Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/whjin/whjin.github.io.git
+
+# Install dependencies
+npm install
+
+# Start local dev server with live reload
+npm run dev
+
+# Build all static pages
+npm run build
+```
+
+---
+
+## 📦 Build Pipeline
+
+| Script | Command | What it does |
+|---|---|---|
+| Full build | `npm run build` | Runs all build scripts in sequence |
+| Dev mode | `npm run dev` | Build + dev server + live reload |
+| Feed data | `npm run build:feed` | Parse md front matter, generate feed JSON |
+| Articles | `npm run build:articles` | Pre-render all md → static HTML |
+| Sitemap | `npm run build:sitemap` | Auto-generate sitemap.xml |
+| Front matter | `npm run build:frontmatter` | Add missing front matter to md files |
+| Clean | `npm run clean` | Remove macOS metadata files |
 
 ---
 
@@ -50,63 +145,41 @@ This blog has undergone **22+ systematic performance optimizations** to achieve 
 **Network & Resource Loading**
 - ✅ `preconnect` to 5 third-party domains (Google Analytics, AdSense, Cloudflare, etc.)
 - ✅ Non-critical CSS async loaded (highlight.js, markdown renderer, image viewer)
-- ✅ All 13 JS scripts `defer`-loaded, non-blocking HTML parsing
+- ✅ All JS scripts `defer`-loaded, non-blocking HTML parsing
 - ✅ Above-the-fold logo `fetchpriority="high"` for faster LCP
 
 **Images & Media**
 - ✅ All images `width`/`height` attributes to prevent layout shifts
 - ✅ Lazy loading for below-the-fold images and social icons
-- ✅ Social QR codes compressed: 576 KB → 262 KB (width 400px, quality 70%)
 - ✅ Cover containers `aspect-ratio: 16/9` to eliminate CLS
 
 **HTML & Content**
-- ✅ Homepage static article list trimmed: full descriptions for top 15, summary for rest
 - ✅ All articles pre-rendered to static HTML by custom build scripts
-- ✅ Sitemap.xml auto-generated with all URLs (49 articles + aggregation pages)
+- ✅ Sitemap.xml auto-generated with all URLs
 
 ---
 
-## ♿ Accessibility
+## 🔍 SEO & Global Deployment
 
-We believe performance and accessibility go hand in hand.
+### SEO
 
-- ✅ Semantic HTML5 (`<article>`, `<nav>`, `<h1>`)
-- ✅ ARIA labels on all icon-only buttons
-- ✅ ARIA dialog labels on QR code modals (`role="dialog"`, `aria-modal="true"`)
-- ✅ Color contrast ratio ≥ 4.5:1 (WCAG AA)
-- ✅ Bilingual support (Chinese / English) with one-click toggle
-
----
-
-## 🔍 SEO & Discoverability
-
-Fully optimized for Google search and international audiences.
-
-- ✅ Semantic HTML with proper `lang="zh-CN"` attribute
-- ✅ Complete Open Graph tags (`og:title`, `og:description`, `og:image`, `theme-color`)
+- ✅ Semantic HTML with proper `lang` attribute
+- ✅ Complete Open Graph tags (`og:title`, `og:description`, `og:image`)
 - ✅ JSON-LD structured data (WebPage, Article types)
 - ✅ `sitemap.xml` + `robots.txt` auto-generated
 - ✅ 404 page with proper h1 and navigation
-- ✅ Cloudflare CDN for global low-latency access
 
----
-
-## 🌍 Global Deployment (Overseas Optimization)
-
-This blog is specifically optimized for both **domestic (China)** and **overseas** visitors.
-
-### Architecture
+### Global Architecture
 
 - **DNS**: Alibaba Cloud + Cloudflare dual resolution
 - **CDN**: Cloudflare global edge network
-- **Analytics**: Cloudflare Web Analytics (privacy-friendly, no cookies, GDPR compliant)
-- **Custom Domains**: `stats.wuhuajin.com` (Cloudflare Worker + D1), `meting.wuhuajin.com` (Meting API)
+- **Analytics**: Cloudflare Web Analytics (privacy-friendly, GDPR compliant)
+- **Custom Domains**: `stats.wuhuajin.com` (Cloudflare Worker + D1)
 
 ### Privacy & Compliance
 
 - ✅ Cookie Consent Banner (GDPR / CCPA compliant)
 - ✅ Google AdSense Consent Mode v2 integration
-- ✅ Microsoft Clarity session recording & heatmaps (privacy redaction enabled)
 - ✅ Privacy Policy + Terms pages
 - ✅ No cross-site tracking cookies
 
@@ -114,76 +187,19 @@ This blog is specifically optimized for both **domestic (China)** and **overseas
 
 ## 🎨 UI/UX Features
 
-Beyond raw performance, this blog focuses on polished user experience:
-
-- **Bilingual by default**: English first, one-click switch to Chinese (no duplicate pages)
-- **Mobile-first responsive**: Optimized typography, touch-friendly icons, adaptive layout
-- **Code block enhancements**:
-  - One-click copy button with visual feedback
-  - Language label badge (JavaScript, Python, HTML, etc.)
-  - Collapsible long code blocks (300px max-height, scrollable, expand on demand)
-  - Sticky toolbar that stays at the top right while scrolling
-- **Image viewer**: Click any image to view fullscreen, zoom, pan, and toggle between original/fit-to-screen
-- **Social proof**: Reward/donation section with QR codes for WeChat/Alipay + Ko-fi membership
-- **Accessibility**: Proper ARIA labels, semantic HTML, keyboard navigation support
+- **Bilingual by default**: English first, one-click switch to Chinese
+- **Mobile-first responsive**: Optimized typography, touch-friendly icons
+- **Code block enhancements**: One-click copy, language labels, collapsible blocks
+- **Image viewer**: Click any image to view fullscreen, zoom, pan
+- **Donation card**: Reward/donation section with QR codes + Ko-fi
+- **Resource navigation**: Card-based aggregation pages for links and tools
 
 ---
 
-## 💡 What Makes This Project Different
+## 📚 Documentation
 
-Most personal blogs are either:
-- **Too simple**: Just a static site generator template with no optimization
-- **Too complex**: Heavy frameworks, build tools, and dependencies that slow things down
-
-This project is different because it's built from the ground up with **performance as the primary constraint**:
-
-1. **Zero framework overhead**: Pure HTML/CSS/JS, no React/Vue bundle
-2. **Custom build pipeline**: Lightweight Node.js scripts tailored exactly to our needs
-3. **Full-stack understanding**: Not just frontend — includes backend API workers, database (D1), deployment automation
-4. **Hardware perspective**: As an FPGA engineer, I think in terms of resource constraints and parallel optimization
-5. **AI-native workflow**: Daily use of AI coding assistants (Cursor, Claude Code) to iterate faster
-
----
-
-## 🚀 Quick Start
-
-```bash
-# Clone the repository
-git clone https://github.com/whjin/whjin.github.io.git
-
-# Install dependencies
-npm install
-
-# Start local dev server with live reload
-npm run dev
-
-# Build all static pages (feed → articles → home → sitemap → links)
-npm run build
-```
-
-### Build Pipeline
-
-| Script | What it does |
-|---|---|
-| `build-feed.cjs` | Parse all md front matter, sort by category buckets (top-first, date-desc), support `topic:` field for card assignment |
-| `build-articles.cjs` | Walk all md files → pre-render static HTML pages with inline content (SEO-friendly) |
-| `build-home.cjs` | Generate homepage card data from feed |
-| `build-sitemap.cjs` | Auto-generate sitemap.xml with all URLs |
-| `build-links.cjs` | Build Link aggregation pages (友链/文章/资源) |
-| `server.js` | Local dev server + 301 redirects from legacy `/viewer.html?path=...` to static pages |
-
----
-
-## 📚 Featured Articles
-
-Explore some of the most popular articles:
-
-- [Webpack Module Bundling Explained: How It Works Under the Hood](https://wuhuajin.com)
-- [How I Reduced CLS from 0.37 to Under 0.1 — A Real-World Case Study](https://wuhuajin.com)
-- [Static Site Performance Optimization Checklist (2026)](https://wuhuajin.com)
-- [JavaScript Defer vs Async: A Complete Guide](https://wuhuajin.com)
-- [AI Coding Assistants 2026: A Full-Stack Developer's Honest Review](https://wuhuajin.com)
-- [Can AI Actually Write Verilog for FPGAs? My Real-World Test](https://wuhuajin.com)
+- [网站出海实操蓝本](docs/网站出海实操.md) — Full website launch playbook (Chinese)
+- [About](https://wuhuajin.com/about.html) — About this blog
 
 ---
 
@@ -197,16 +213,11 @@ You can also discuss on the [Issues page](https://github.com/whjin/whjin.github.
 
 ## 👨‍💻 About the Author
 
-**Wu Huajin** is a multi-disciplinary developer:
+**Wu Huajin** — Full-Stack Developer & Indie Hacker
 
-- **Full-Stack Developer**: JavaScript, Node.js, React, PostgreSQL
-- **FPGA Engineer**: Verilog, digital design, hardware-software co-design
-- **Indie Game Developer**: Browser games, Canvas, small game jam projects
-- **Tech Writer**: 50+ articles on web performance, tools, and best practices
-
-🌐 Blog: [https://wuhuajin.com](https://wuhuajin.com)  
-🐙 GitHub: [@whjin](https://github.com/whjin)  
-🐦 Twitter/X: [@whjin](https://x.com/whjin)
+- 🌐 Blog: [https://wuhuajin.com](https://wuhuajin.com)
+- 🐙 GitHub: [@whjin](https://github.com/whjin)
+- 🐦 Twitter/X: [@whjin](https://x.com/whjin)
 
 ---
 

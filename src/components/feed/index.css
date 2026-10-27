@@ -335,6 +335,7 @@ a.feed-card:hover {
 .home-ad-in-article {
   width: 100%;
   margin: 0;
+  padding: 0 20px 30px;
   box-sizing: border-box;
 }
 

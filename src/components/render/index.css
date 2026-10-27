@@ -413,6 +413,8 @@ a:hover {
 ins.adsbygoogle {
   max-width: 100%;
   overflow: hidden;
+  padding: 0 1em 1.5em;
+  box-sizing: border-box;
 }
 
 .markdown-content table {

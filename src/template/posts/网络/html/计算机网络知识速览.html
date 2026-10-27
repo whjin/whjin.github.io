@@ -195,8 +195,6 @@
 <li><p>在互联网使用的各种协中最重要和最著名的就是<code>TCP/IP</code>两个协议。</p>
 </li>
 </ul>
-<h3>计算机网络的七层体系结构图</h3>
-<p><img referrerpolicy="no-referrer" src="https://i.imgur.com/ejEC5nj.gif" alt=""></p>
 <h1><code>HTTP</code>与<code>HTTPS</code>的区别</h1>
 <p><code>HTTP</code>协议运行在<code>TCP</code>之上，明文传输，客户端与服务器端都无法验证对方的身份；<code>HTTPS</code>是身披<code>SSL</code>(<code>Secure Socket Layer</code>)外壳的<code>HTTP</code>，运行于<code>SSL</code>上，<code>SSL</code>运行于<code>TCP</code>之上，是添加了加密和认证机制的<code>HTTP</code>。二者之间存在如下不同：</p>
 <ul>
@@ -326,8 +324,6 @@
 <blockquote>
 <p><code>HTTP</code>协议是无状态的，指的是协议对于事务处理没有记忆能力，服务器不知道客户端是什么状态。也就是说，打开一个服务器上的网页和上一次打开这个服务器上的网页之间没有任何联系。<code>HTTP</code>是一个无状态的面向连接的协议，无状态不代表<code>HTTP</code>不能保持<code>TCP</code>连接，更不能代表<code>HTTP</code>使用的是<code>UDP</code>协议（无连接）。</p>
 </blockquote>
-<h1>各种协议与<code>HTTP</code>协议之间的关系</h1>
-<p><img referrerpolicy="no-referrer" src="https://i.imgur.com/I93D666.jpg" alt=""></p>
 <h1><code>Socket</code>连接与<code>HTTP</code>连接的联系与区别</h1>
 <ul>
 <li><p>通常情况下<code>Socket</code>连接就是<code>TCP</code>连接，因此<code>Socket</code>连接一旦建立，通信双方即可开始相互发送数据内容，直到双方连接断开。但在实际网络应用中，客户端到服务器之间的通信往往需要穿越多个中间节点，例如路由器、网关、防火墙等，大部分防火墙默认会关闭长时间处于非活跃状态的连接而导致<code>Socket</code>连接断连，因此需要通过轮询告诉网络，该连接处于活跃状态。</p>
@@ -341,7 +337,6 @@
 <blockquote>
 <p>例如一个<code>100kb</code>的<code>HTML</code>文档需要传送到另外一台计算机，并不会整个文档直接传送过去，可能会切割成几个部分，比如四个分别为<code>25kb</code>的数据段。而每个数据段再加上一个<code>TCP</code>首部，就组成了<code>TCP</code>报文。<code>TCP</code>报文 (<code>Segment</code>)，包括首部和数据部分。</p>
 </blockquote>
-<p><img referrerpolicy="no-referrer" src="https://i.imgur.com/1W2w8om.jpg" alt=""></p>
 <p><strong>首部：</strong></p>
 <ul>
 <li>源端口 <code>source port</code></li>
