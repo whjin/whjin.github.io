@@ -148,6 +148,13 @@ function addCopyButtonsToBlockquotes(container) {
   if (!container) return;
   const blockquotes = container.querySelectorAll('blockquote');
   blockquotes.forEach((bq) => {
+    // 空 blockquote（去掉空白/HTML 后无文本）直接移除，避免空白条 + 按钮
+    const text = bq.textContent.replace(/\s/g, '');
+    if (!text) {
+      bq.remove();
+      return;
+    }
+
     // 避免重复添加
     if (bq.querySelector('.copy-btn')) return;
 
@@ -225,25 +232,35 @@ function addCopyButtonsToBlockquotes(container) {
     toolbar.appendChild(copyBtn);
     bq.insertBefore(toolbar, bq.firstChild);
 
-    // 折叠/展开逻辑
+    // 折叠/展开逻辑：CSS 默认就是折叠状态（max-height:300px），JS 只负责：
+    // 1) 内容不够高时标记 expanded 去掉限制；2) 绑定展开/收起按钮
+    // 注意：details 收起时 scrollHeight=0，不能据此判断"内容不够高"，必须等可见后再测
+    let toggleBound = false;
     const setupToggle = () => {
-      if (wrapper.scrollHeight > 300) {
-        bq.classList.add('collapsed');
-        toggleBtn.textContent = '展开全部';
-        toggleBtn.dataset.expanded = 'false';
-        toggleBtn.style.display = 'block';
+      // 不可见（details 收起中）时跳过，等可见再测
+      if (wrapper.scrollHeight === 0) return;
+      if (toggleBtn.style.display === 'block') return; // 已初始化过
+      // 内容不超过 300px，不需要折叠，直接展开并隐藏按钮
+      if (wrapper.scrollHeight <= 300) {
+        bq.classList.add('expanded');
+        return;
+      }
+      // 内容超长，显示"展开全部"按钮，保持默认折叠状态（CSS 默认 max-height:300px）
+      toggleBtn.textContent = '展开全部';
+      toggleBtn.dataset.expanded = 'false';
+      toggleBtn.style.display = 'block';
 
+      if (!toggleBound) {
+        toggleBound = true;
         toggleBtn.addEventListener('click', (e) => {
           e.stopPropagation();
           const isExpanded = toggleBtn.dataset.expanded === 'true';
           if (isExpanded) {
-            // 收起
-            bq.classList.add('collapsed');
+            bq.classList.remove('expanded');
             toggleBtn.textContent = '展开全部';
             toggleBtn.dataset.expanded = 'false';
           } else {
-            // 展开
-            bq.classList.remove('collapsed');
+            bq.classList.add('expanded');
             toggleBtn.textContent = '收起';
             toggleBtn.dataset.expanded = 'true';
           }
@@ -253,6 +270,15 @@ function addCopyButtonsToBlockquotes(container) {
 
     // 延迟检查高度
     setTimeout(setupToggle, 100);
+
+    // blockquote 可能在 <details> 折叠内，初始收起时 scrollHeight=0；
+    // 监听 details 的 toggle 事件，展开后重新检查高度
+    const details = bq.closest('details');
+    if (details) {
+      details.addEventListener('toggle', () => {
+        if (details.open) setTimeout(setupToggle, 50);
+      });
+    }
   });
 }
 
@@ -350,6 +376,10 @@ function handler(targetId, filePath, callback) {
       );
 
       targetEl.innerHTML = htmlContent;
+
+      // 为代码块和 blockquote 注入复制/折叠按钮
+      addCopyButtonsToCodeBlocks(targetEl);
+      addCopyButtonsToBlockquotes(targetEl);
 
       const scripts = targetEl.querySelectorAll('script');
       scripts.forEach((script) => {
@@ -470,3 +500,13 @@ function generateTOC() {
     });
   });
 }
+
+// 静态预渲染页面：正文已内联在 HTML 里，不走 handler() 渲染流程；
+// 页面加载后直接为代码块和 blockquote 注入复制/折叠按钮（函数内部有去重，重复调用安全）
+document.addEventListener('DOMContentLoaded', () => {
+  const contentEl = document.getElementById('markdown-content');
+  if (contentEl) {
+    addCopyButtonsToCodeBlocks(contentEl);
+    addCopyButtonsToBlockquotes(contentEl);
+  }
+});

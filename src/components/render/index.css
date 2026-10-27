@@ -44,12 +44,25 @@ h1 {
   font-size: 2em;
 }
 
+/* 仅文章正文内的 h1 居中，不影响其他页面 */
+.markdown-content h1 {
+  text-align: center;
+}
+
 h2 {
   font-size: 1.5em;
 }
 
 h3 {
   font-size: 1.2em;
+}
+
+/* 章节折叠标题（summary 里的 h3）：与展开箭头同一行 */
+summary h3 {
+  display: inline;
+  margin: 0;
+  vertical-align: middle;
+  cursor: pointer;
 }
 
 h4 {
@@ -306,20 +319,19 @@ blockquote {
   overflow: visible;
   position: relative;
   padding: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-all;
 }
 
-/* blockquote 内容包装层：带 padding，滚动条在 blockquote 的最右边 */
+/* blockquote 内容包装层：默认折叠到 300px，expanded 才展开（避免 details 展开时闪动） */
 .bq-content-wrapper {
   padding: 0.8em 1em;
-}
-
-/* blockquote 内容包装层：折叠时滚动，展开时不滚动 */
-blockquote.collapsed .bq-content-wrapper {
   max-height: 300px;
   overflow: auto;
 }
 
-blockquote:not(.collapsed) .bq-content-wrapper {
+blockquote.expanded .bq-content-wrapper {
   max-height: none;
   overflow: visible;
 }
@@ -330,8 +342,12 @@ ol li p {
 }
 
 blockquote p {
-  margin: 0;
-  line-height: 1.6;
+  margin: 0 0 0.8em 0;
+  line-height: 1.9;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
 }
 
 .header {
