@@ -425,6 +425,12 @@
         "url": "https://nextai.wuhuajin.com/",
         "category": "站点",
         "desc": "Next AI Core（next-ai-core）AI 应用核心项目，基于 Next.js 构建，集成大模型能力调用与前后端一体化架构，演示从模型接入、业务逻辑到界面交付的完整 AI 应用开发实践。"
+      },
+      {
+        "title": "江山时序 · 中国历史地图时间轴",
+        "url": "https://deanchen.me/jiangshan-map/",
+        "category": "站点",
+        "desc": "江山时序 · 中国历史地图时间轴（战国至现代历代疆域、州郡政区与古今地名沿革）"
       }
     ]
   },

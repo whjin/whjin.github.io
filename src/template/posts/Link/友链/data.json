@@ -436,6 +436,12 @@
     "mode": "recommend",
     "list": [
       {
+        "image": "https://picsum.photos/seed/vocalremover/100",
+        "title": "分离人声",
+        "desc": "移除人声并隔离，用强大的人工智能算法将声音从音乐中分离出来。",
+        "url": "https://vocalremover.org/zh/"
+      },
+      {
         "image": "https://picsum.photos/seed/tool01/100",
         "title": "菜鸟工具",
         "desc": "在线综合工具",

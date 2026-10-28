@@ -32,6 +32,37 @@
       }
     ]
   },
+  "Github": {
+    "title": "Github项目",
+    "desc": "优秀Github项目汇总",
+    "mode": "recommend",
+    "list": [
+      {
+        "image": "https://picsum.photos/seed/artplayer/100",
+        "title": "ArtPlayer",
+        "desc": "ArtPlayer.js - HTML5 Video Player and Online Editor",
+        "url": "https://github.com/zhw2590582/ArtPlayer/tree/master"
+      },
+      {
+        "image": "https://picsum.photos/seed/opus/100",
+        "title": "awesome-opus5-5-videos",
+        "desc": "Viral Opus 5.5 videos, with their prompts.",
+        "url": "https://github.com/yihui-dev/awesome-opus5-5-videos"
+      },
+      {
+        "image": "https://picsum.photos/seed/MoneyPrinterTurbo/100",
+        "title": "MoneyPrinterTurbo",
+        "desc": "利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.",
+        "url": "https://github.com/harry0703/MoneyPrinterTurbo"
+      },
+      {
+        "image": "https://picsum.photos/seed/developer/100",
+        "title": "chinese-independent-developer",
+        "desc": "中国独立开发者项目列表·聚合所有中国独立开发者的项目",
+        "url": "https://github.com/1c7/chinese-independent-developer"
+      }
+    ]
+  },
   "部署": {
     "title": "部署技术文章",
     "desc": "部署技术文章列表",
