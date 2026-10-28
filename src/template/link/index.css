@@ -23,6 +23,12 @@ a {
 }
 
 a:hover {
+  text-decoration: none;
+}
+
+/* 仅普通文本链接 hover 加下划线；按钮/卡片类链接（赞赏卡按钮、头像、作者名、友链/推荐卡片）一律不加，
+   避免全局 a:hover 规则作用到按钮上（详见 reward-tip 组件注释） */
+a:hover:not(.rt-reward):not(.rt-subscribe):not(.rt-avatar-link):not(.rt-author-link):not(.powering-card):not(.recommend-card) {
   text-decoration: underline;
 }
 

@@ -22,11 +22,11 @@
       "src": "/src/images/social/ali_pay.jpg"
     },
     {
-      "id": "kofi",
+      "id": "waffo",
       "type": "link",
-      "title": "Ko-fi 订阅",
-      "subtitle": "海外支持 · 订阅会员 / 一次性赞助",
-      "url": "https://ko-fi.com/whjin"
+      "title": "Developer Tools Suite",
+      "subtitle": "海外订阅 · 7 天免费试用 · $9.99/月",
+      "url": "https://pancake.waffo.ai/store/wuhuajin-tshj54ck/product/PROD_54U7EAdjVS3qPkFqB35gZ1/unavailable?code=STORE_NOT_APPROVED"
     }
   ],
   "records": [
@@ -49,7 +49,7 @@
       "amount": 20,
       "currency": "USD",
       "time": "2026-10-03",
-      "channel": "ko-fi"
+      "channel": "waffo"
     },
     {
       "name": "来自微信的好心人",
@@ -91,7 +91,7 @@
       "amount": 52,
       "currency": "USD",
       "time": "2026-10-02",
-      "channel": "ko-fi"
+      "channel": "waffo"
     },
     {
       "name": "山间拾光",
@@ -112,7 +112,7 @@
       "amount": 15,
       "currency": "CNY",
       "time": "2026-09-18",
-      "channel": "ko-fi"
+      "channel": "waffo"
     },
     {
       "name": "云上的日子",
@@ -133,7 +133,7 @@
       "amount": 33,
       "currency": "USD",
       "time": "2026-08-21",
-      "channel": "ko-fi"
+      "channel": "waffo"
     },
     {
       "name": "一叶知秋",
@@ -154,7 +154,7 @@
       "amount": 27,
       "currency": "CNY",
       "time": "2026-07-19",
-      "channel": "ko-fi"
+      "channel": "waffo"
     },
     {
       "name": "南山客",
@@ -175,7 +175,7 @@
       "amount": 6,
       "currency": "CNY",
       "time": "2026-06-15",
-      "channel": "ko-fi"
+      "channel": "waffo"
     }
   ],
   "rules": {

@@ -41,8 +41,29 @@
 
     /* Hero */
     .hero {
+      position: relative;
       text-align: center;
       padding: 40px 20px 32px;
+    }
+
+    .top-right-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 10px 24px;
+      background: #fff;
+      color: #8b5cf6;
+      border: 1px solid #e5e8ec;
+      border-radius: 20px !important;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all .2s;
+    }
+
+    .top-right-btn:hover {
+      background: #f8f7ff;
+      border-color: #8b5cf6;
     }
 
     .hero h1 {
@@ -110,6 +131,51 @@
     .btn-secondary:hover {
       background: #f8f7ff;
       border-color: #8b5cf6;
+    }
+
+    /* Waitlist Form */
+    .waitlist-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .waitlist-form {
+      display: flex;
+      gap: 8px;
+      max-width: 480px;
+      width: 100%;
+    }
+
+    .waitlist-form input {
+      flex: 1;
+      padding: 14px 18px;
+      border: 1px solid #e5e8ec;
+      border-radius: 8px;
+      font-size: 15px;
+      outline: none;
+      transition: border-color .2s;
+    }
+
+    .waitlist-form input:focus {
+      border-color: #8b5cf6;
+    }
+
+    .waitlist-form button {
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .waitlist-note {
+      font-size: 13px;
+      color: #999;
+      margin: 12px 0 0;
+    }
+
+    .waitlist-success {
+      color: #22c55e;
+      font-weight: 500;
     }
 
     /* Features */
@@ -272,6 +338,7 @@
 
         <!-- Hero -->
         <div class="hero">
+          <a href="app.html" class="top-right-btn">Sign In / Sign Up</a>
           <div class="badge">🚧 Coming Soon</div>
           <h1>Developer Tools Suite</h1>
           <p class="tagline">
@@ -283,9 +350,13 @@
             try it when it launches. You can subscribe now and get notified on launch day.
           </p>
           <div class="cta-row">
-            <a href="https://pancake.waffo.ai/store/静亭雅苑-wtqvnixi/checkout/cs_9fb6e9ff-6d8a-9bd0-3f75-8abd2d132eaf?pid=PROD_54U7EAdjVS3qPkFqB35gZ1"
-              class="btn btn-primary">Join Waitlist — 7-Day Free Trial</a>
-            <a href="#features" class="btn btn-secondary">See Features</a>
+            <div class="waitlist-wrap">
+              <form class="waitlist-form" id="waitlist-form">
+                <input type="email" id="waitlist-email" placeholder="Enter your email" required />
+                <button type="submit" class="btn btn-primary">Join Waitlist</button>
+              </form>
+              <p class="waitlist-note" id="waitlist-note">Be the first to know when we launch. No spam, ever.</p>
+            </div>
           </div>
         </div>
 
@@ -334,7 +405,7 @@
           <p class="launch-note" style="margin-top:12px;font-size:13px;color:#888;">
             🚧 Product is currently in development. Subscribing now adds you to the early access list.
           </p>
-          <a href="https://pancake.waffo.ai/store/静亭雅苑-wtqvnixi/checkout/cs_9fb6e9ff-6d8a-9bd0-3f75-8abd2d132eaf?pid=PROD_54U7EAdjVS3qPkFqB35gZ1"
+          <a href="https://pancake.waffo.ai/store/wuhuajin-tshj54ck/product/PROD_54U7EAdjVS3qPkFqB35gZ1/unavailable?code=STORE_NOT_APPROVED"
             class="btn btn-primary">Join Waitlist</a>
         </div>
 
@@ -365,6 +436,27 @@
   <script>
     (function () {
       new Image().src = 'https://whjin.goatcounter.com/count?p=' + encodeURIComponent(location.pathname + location.search);
+    })();
+
+    // Waitlist form
+    (function () {
+      var form = document.getElementById('waitlist-form');
+      var note = document.getElementById('waitlist-note');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = document.getElementById('waitlist-email').value;
+        // 简单前端验证
+        if (!email || !email.includes('@')) {
+          note.textContent = 'Please enter a valid email address.';
+          note.style.color = '#ef4444';
+          return;
+        }
+        // 模拟提交成功（实际可接入 Mailchimp/ConvertKit 等）
+        form.style.display = 'none';
+        note.textContent = '🎉 Thanks! You\'re on the list. We\'ll email you when we launch.';
+        note.classList.add('waitlist-success');
+      });
     })();
   </script>
   <!-- Cloudflare Web Analytics (本地跳过，线上加载) -->

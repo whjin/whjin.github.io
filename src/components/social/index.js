@@ -2,7 +2,7 @@
   'use strict';
 
   // 付费会员订阅入口：跳转到 Waffo 结账页
-  const KO_FI_URL = 'https://pancake.waffo.ai/store/静亭雅苑-wtqvnixi/checkout/cs_9fb6e9ff-6d8a-9bd0-3f75-8abd2d132eaf?pid=PROD_54U7EAdjVS3qPkFqB35gZ1';
+  const KO_FI_URL = 'https://pancake.waffo.ai/store/wuhuajin-tshj54ck/product/PROD_54U7EAdjVS3qPkFqB35gZ1/unavailable?code=STORE_NOT_APPROVED';
 
   const HEADER_ICONS = [
     { name: 'collapse', title: '收起侧栏 / Collapse', icon: 28, toggle: true },
@@ -18,7 +18,6 @@
     { href: '', title: '我的音乐', name: 'music', icon: 30 },
     { href: '', title: 'QQ音乐', name: 'qqmusic', icon: 28 },
     { href: '', title: '网易云音乐', name: 'netmusic', icon: 28 },
-    { href: 'https://ifdian.net/a/whjin', title: '爱发电', name: 'aifadian', icon: 28 },
     { href: 'https://weibo.com/u/1710899102', title: '微博', name: 'weibo', icon: 28 },
     { href: 'https://wuhuajin.com', title: '博客', name: 'blog', icon: 28 },
     { href: 'mailto:wuhuajin09@163.com', title: '邮箱', name: 'email', icon: 28 },

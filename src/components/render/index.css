@@ -409,7 +409,7 @@ a:hover {
   cursor: pointer;
   position: fixed;
   right: 20px;
-  bottom: 66px;
+  bottom: 80px;
   width: 40px;
   height: 40px;
   background-color: #007bff;
@@ -607,7 +607,7 @@ ins.adsbygoogle {
 
   .scroll-top {
     right: 20px;
-    bottom: 66px;
+    bottom: 80px;
     z-index: 60;
   }
 

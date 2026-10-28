@@ -16,7 +16,7 @@
     name: '吴华锦',
     intro: '分享设计与科技生活',
     rewardUrl: '/reward.html',
-    koFiUrl: 'https://pancake.waffo.ai/store/静亭雅苑-wtqvnixi/checkout/cs_9fb6e9ff-6d8a-9bd0-3f75-8abd2d132eaf?pid=PROD_54U7EAdjVS3qPkFqB35gZ1',
+    waffoUrl: 'https://pancake.waffo.ai/store/wuhuajin-tshj54ck/product/PROD_54U7EAdjVS3qPkFqB35gZ1/unavailable?code=STORE_NOT_APPROVED',
     // 头像点击跳转地址（默认首页，可自定义）
     avatarUrl: '/src/template/posts/Link/资源/resource.html',
     // 作者名点击跳转地址（网站首页，新标签打开）
@@ -45,7 +45,7 @@
     '.rt-card{position:relative;width:100%;background:#f7f7f9;border:1px solid #e3e8f7;border-radius:12px;padding:34px 12px 20px;text-align:center;box-sizing:border-box}',
     /* 头像：负 margin 向上探出卡片顶部。整体圆形图标：黄色圆环 + 白色内圆 + 形象。overflow:hidden 强制圆形裁剪；border-radius 用 !important 免疫站点全局 a:link{border-radius:3px} 覆盖，确保始终正圆；hover 内部形象轻微回缩 */
     '.rt-avatar-wrap{position:relative;display:block;width:66px;height:66px;margin:-66px auto 0}',
-    '.rt-avatar-link{display:block;width:66px;height:66px;border-radius:50%!important;overflow:hidden;background:#fff;border:3px solid #ffc848;box-shadow:0 8px 12px -3px rgba(66,90,239,.35);text-decoration:none;box-sizing:border-box;transition:box-shadow .4s ease}',
+    '.rt-avatar-link{display:block;width:66px;height:66px;border-radius:50%!important;overflow:hidden;background:#fff;border:3px solid #ffc848;box-shadow:0 8px 12px -3px rgba(66,90,239,.35);text-decoration:none!important;box-sizing:border-box;transition:box-shadow .4s ease}',
     '.rt-avatar{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;cursor:pointer;transition:transform .4s cubic-bezier(.4,0,.2,1);transform:scale(1)}',
     '.rt-avatar-link:hover{box-shadow:0 8px 16px -3px rgba(66,90,239,.4);background:#fff!important}',
     '.rt-avatar-link:hover .rt-avatar{transform:scale(.9)}',
@@ -54,7 +54,7 @@
     '.rt-intro{font-size:15px;color:rgba(60,60,67,.8);margin:6px 0 0}',
     /* 按钮区：flex 居中，打赏(红) + 订阅(绿)，圆角胶囊，hover 变主色 */
     '.rt-actions{display:flex;justify-content:center;align-items:center;margin-top:14px;flex-wrap:wrap}',
-    '.rt-reward,.rt-subscribe{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 16px;font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;color:#fff!important;border:none;border-radius:20px!important;box-sizing:border-box;transition:color .4s,background-color .4s,box-shadow .4s}',
+    '.rt-reward,.rt-subscribe{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 16px;font-size:15px;font-weight:600;cursor:pointer;text-decoration:none!important;color:#fff!important;border:none;border-radius:20px!important;box-sizing:border-box;transition:color .4s,background-color .4s,box-shadow .4s}',
     '.rt-reward{background:#FF3842;box-shadow:0 8px 12px -3px rgba(238,125,121,.21)}',
     '.rt-subscribe{background:#57bd6a;box-shadow:0 8px 12px -3px rgba(135,238,121,.21);margin-left:8px}',
     /* 左侧滑入动画层（对应参考站 .button--animated::before） */
@@ -69,7 +69,7 @@
     '.rt-note strong{color:#363636;font-weight:600}',
     /* 作者名链接：常态为加粗深色，hover 主题色圆角框白字（参考 zhheo .post-copyright-info a:hover），点击新标签跳网站首页。
        注意：padding 固定（常态即预留 hover 空间），hover 仅变背景/颜色，不改变 padding，避免整行文本跳动 */
-    '.rt-author-link{font-weight:700;color:#363636;text-decoration:none;border-radius:4px!important;padding:0 4px;cursor:pointer;transition:background-color .3s,color .3s}',
+    '.rt-author-link{font-weight:700;color:#363636;text-decoration:none!important;border-radius:4px!important;padding:0 4px;cursor:pointer;transition:background-color .3s,color .3s}',
     '.rt-author-link:hover{background-color:#425AEF;color:#fff}',
     '@media (max-width:640px){.rt-card{padding:30px 12px 18px}.rt-name{font-size:20px}.rt-intro{font-size:14px}.rt-reward,.rt-subscribe{height:38px;padding:0 14px;font-size:14px}}',
   ].join('');
@@ -116,7 +116,7 @@
     intro.className = 'rt-intro';
     intro.textContent = CONFIG.intro;
 
-    // 按钮（打赏作者 → 赞赏页；订阅 → Ko-fi）
+    // 按钮（打赏作者 → 赞赏页；订阅 → Waffo）
     var actions = document.createElement('div');
     actions.className = 'rt-actions';
     var rewardBtn = document.createElement('a');
@@ -128,7 +128,7 @@
       '<span class="rt-btn-content"><i class="heoblogIcon icon-hand-heart-fill"></i> 打赏作者</span>';
     var subscribeBtn = document.createElement('a');
     subscribeBtn.className = 'rt-subscribe';
-    subscribeBtn.href = CONFIG.koFiUrl;
+    subscribeBtn.href = CONFIG.waffoUrl;
     subscribeBtn.target = '_blank';
     subscribeBtn.rel = 'noopener noreferrer';
     subscribeBtn.innerHTML =

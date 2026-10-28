@@ -12,7 +12,7 @@ function scrollControls() {
     const btn = document.querySelector('.scroll-top');
     if (!btn) return;
     const isHome = document.body.classList.contains('home-page');
-    btn.style.bottom = isHome ? '66px' : '40px';
+    btn.style.bottom = isHome ? '80px' : '60px';
     const sidebar = document.querySelector('.sidebar-area');
     const hasToc =
       sidebar && getComputedStyle(sidebar).display !== 'none' && sidebar.offsetWidth > 0;

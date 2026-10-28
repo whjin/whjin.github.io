@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#8b5cf6" />
+  <title>Sign In | Developer Tools Suite</title>
+  <meta name="description" content="Sign in to Developer Tools Suite — your all-in-one toolkit for full-stack developers." />
+  <link rel="canonical" href="https://wuhuajin.com/app.html" />
+  <link rel="icon" href="src/images/favicon.png" />
+  <link rel="stylesheet" href="src/components/render/index.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .auth-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(139, 92, 246, 0.15);
+      padding: 48px 40px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: #8b5cf6;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+    .coming-badge {
+      display: inline-block;
+      background: #f3e8ff;
+      color: #8b5cf6;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all .2s;
+      margin-bottom: 12px;
+    }
+    .btn-primary {
+      background: #8b5cf6;
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: #7c3aed;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(139, 92, 246, 0.35);
+    }
+    .btn-secondary {
+      background: #fff;
+      color: #8b5cf6;
+      border: 1px solid #e5e8ec;
+    }
+    .btn-secondary:hover {
+      background: #f8f7ff;
+      border-color: #8b5cf6;
+    }
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 24px 0;
+      color: #999;
+      font-size: 12px;
+    }
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e5e8ec;
+    }
+    .divider span {
+      padding: 0 12px;
+    }
+    .footer-note {
+      margin-top: 24px;
+      font-size: 12px;
+      color: #999;
+    }
+    .footer-note a {
+      color: #8b5cf6;
+      text-decoration: none;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 24px;
+      font-size: 13px;
+      color: #666;
+      text-decoration: none;
+    }
+    .back-link:hover {
+      color: #8b5cf6;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="auth-card">
+    <div class="logo">🛠️ Developer Tools Suite</div>
+    <div class="subtitle">All-in-one toolkit for full-stack developers</div>
+
+    <div class="coming-badge">🚧 Coming Soon</div>
+
+    <button class="btn btn-primary" onclick="showComingSoon('Sign In')">Sign In</button>
+    <button class="btn btn-secondary" onclick="showComingSoon('Create Account')">Create Account</button>
+
+    <div class="divider"><span>or</span></div>
+
+    <button class="btn btn-secondary" onclick="showComingSoon('Google')">Continue with Google</button>
+    <button class="btn btn-secondary" onclick="showComingSoon('GitHub')">Continue with GitHub</button>
+
+    <div class="footer-note">
+      By continuing, you agree to our <a href="terms.html">Terms</a> and <a href="aigc-policy.html">Privacy Policy</a>.
+    </div>
+
+    <a href="product.html" class="back-link">← Back to Product</a>
+  </div>
+
+  <script>
+    function showComingSoon(method) {
+      alert('🚧 ' + method + ' is coming soon!\n\nWe\'re working hard to launch. Join the waitlist at product.html to be notified when we go live.');
+    }
+  </script>
+</body>
+
+</html>

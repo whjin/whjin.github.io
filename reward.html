@@ -6,19 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#007bff" />
   <title>支持吴华锦 · 赞赏 | 吴华锦的个人主页</title>
-  <meta name="description" content="支持吴华锦：微信支付、支付宝、Ko-fi 海外订阅三种方式赞赏 / 支持本站，查看支持者记录。吴华锦的个人主页与博客。" />
+  <meta name="description" content="支持吴华锦：微信支付、支付宝、Waffo 海外订阅三种方式赞赏 / 支持本站，查看支持者记录。吴华锦的个人主页与博客。" />
   <meta name="author" content="吴华锦" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://wuhuajin.com/reward.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Wu Huajin" />
   <meta property="og:title" content="支持吴华锦 · 赞赏 | 吴华锦的个人主页" />
-  <meta property="og:description" content="微信支付、支付宝、Ko-fi 海外订阅三种方式支持本站，查看支持者记录。" />
+  <meta property="og:description" content="微信支付、支付宝、Waffo 海外订阅三种方式支持本站，查看支持者记录。" />
   <meta property="og:url" content="https://wuhuajin.com/reward.html" />
   <meta property="og:image" content="https://wuhuajin.com/src/images/favicon.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="支持吴华锦 · 赞赏 | 吴华锦的个人主页" />
-  <meta name="twitter:description" content="微信支付、支付宝、Ko-fi 海外订阅三种方式支持本站。" />
+  <meta name="twitter:description" content="微信支付、支付宝、Waffo 海外订阅三种方式支持本站。" />
   <meta name="twitter:image" content="https://wuhuajin.com/src/images/favicon.png" />
   <link rel="icon" href="src/images/favicon.png" />
   <link rel="stylesheet" href="src/components/render/index.css" />
@@ -74,7 +74,7 @@
       line-height: 1.5;
     }
 
-    /* ---- 渠道：微信 / 支付宝二维码卡 + Ko-fi 卡片（复刻 zhheo 二维码样式） ---- */
+    /* ---- 渠道：微信 / 支付宝二维码卡 + Waffo 卡片（复刻 zhheo 二维码样式） ---- */
     .channels {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -448,7 +448,7 @@
           <p id="hero-subtitle">感谢你赐予我前进的力量。每一份支持，都会用于博客、项目与产品的持续迭代。</p>
         </section>
 
-        <!-- 渠道卡片（微信 / 支付宝二维码 + Ko-fi） -->
+        <!-- 渠道卡片（微信 / 支付宝二维码 + Waffo） -->
         <div class="channels" id="channels"></div>
 
         <!-- 排序区 -->
@@ -540,7 +540,7 @@
       const CHANNEL_ICON = {
         wechat: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.271 14.669c-.318.162-.707.043-.88-.269l-.043-.095-1.818-3.998a.395.395 0 0 1 .334-.472.39.39 0 0 1 .265.066l2.181 1.526a.718.718 0 0 0 .546.168L20.176 7.03a8.964 8.964 0 0 0-8.17-3.53c-5.526 0-10.005 3.73-10.005 8.37a7.8 7.8 0 0 0 3.46 6.296.784.784 0 0 1 .437.727l-.451 1.7a.295.295 0 0 0 .434.335l2.18-1.265a.725.725 0 0 1 .823-.153A8.85 8.85 0 0 0 12.004 19.87c5.526 0 10-3.73 10-8.373 0-.9-.16-1.79-.462-2.65l-12.27 6.82Z"/></svg>',
         alipay: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.422 15.358c-3.83-1.153-6.055-1.84-6.678-2.062.568-.976 1.024-2.096 1.32-3.32h-3.264V8.872h4V8.192h-4V6.344h-1.536c-.28 0-.312.248-.312.248v1.6h-3.752v.68h3.752v1.104H7.88v.616h6.224a11.2 11.2 0 0 1-.888 2.176c-1.408-.464-2.192-.784-3.912-.944-3.256-.312-4.008 1.48-4.128 2.576-.176 1.672 1.304 3.032 3.512 3.032 2.208 0 3.68-1.024 5.08-2.72 1.167.558 3.338 1.525 6.514 2.902A9.98 9.98 0 0 1 12 22 10 10 0 1 1 12 2a10 10 0 0 1 9.422 13.358Zm-12.99 1.01c-2.336 0-2.704-1.48-2.584-2.096.12-.616.8-1.416 2.104-1.416 1.496 0 2.832.384 4.44 1.16-1.136 1.48-2.52 2.352-3.96 2.352Z"/></svg>',
-        kofi: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 22a1 1 0 0 1-1-1v-6a1 1 0 0 0-1-1H6.5a4.5 4.5 0 0 1-.7-8.95A5.5 5.5 0 0 1 16 4.8a4.5 4.5 0 0 1 2 8.47c-.3.15-.6.23-.9.23H14a1 1 0 0 0-1 1v6a1 1 0 0 1-1 1z"/></svg>'
+        waffo: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>'
       };
 
       function renderHero(hero) {
@@ -569,10 +569,10 @@
               '</a>' +
               '<div class="channel-label ' + escapeHtml(c.id) + '">' + (CHANNEL_ICON[c.id] || '') + '<span>' + escapeHtml(c.label || '') + '</span></div>';
           } else {
-            // link（Ko-fi）：布局与二维码卡一致 —— 上面 160×160 方形按钮（仅大图标），下面文字说明
+            // link（Waffo）：布局与二维码卡一致 —— 上面 160×160 方形按钮（仅大图标），下面文字说明
             inner =
               '<a class="channel-btn" href="' + escapeHtml(c.url) + '" target="_blank" rel="noopener noreferrer">' +
-              '<img class="channel-btn-icon" src="/src/images/reward/kofi.webp" alt="Ko-fi" />' +
+              '<img class="channel-btn-icon" src="/src/images/reward/waffo.svg" alt="Waffo" />' +
               '</a>' +
               '<div class="channel-title">' + escapeHtml(c.title || '') + '</div>' +
               '<div class="channel-sub">' + escapeHtml(c.subtitle || '') + '</div>';
