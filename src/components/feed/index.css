@@ -416,8 +416,8 @@ a.feed-card:hover {
 .sb-event-title {
   color: #3b82f6;
   font-weight: 600;
-  font-size: 14px;
-  line-height: 1.4;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .sb-event.sb-event-link:hover .sb-event-title {

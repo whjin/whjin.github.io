@@ -52,7 +52,9 @@
       if (section.i18n_text === 'sb_about_intro') {
         const m = raw.match(/^([^.。]+[.。])/);
         if (m) {
-          introText.innerHTML = '<strong>' + esc(m[1]) + '</strong><br>' + esc(raw.slice(m[1].length));
+          // 首句加粗后以 <br> 换行；剩余文本去除开头换行符，避免 pre-line 下与 <br> 叠加产生空行
+          const rest = raw.slice(m[1].length).replace(/^\n+/, '');
+          introText.innerHTML = '<strong>' + esc(m[1]) + '</strong><br>' + esc(rest);
         } else {
           introText.textContent = raw;
         }

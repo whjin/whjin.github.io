@@ -13,11 +13,6 @@
       }
     },
     {
-      "type": "social",
-      "i18n_title": "sb_social",
-      "title": "Connect 社交"
-    },
-    {
       "type": "member",
       "i18n_title": "sb_member",
       "title": "Subscribe",
@@ -38,11 +33,9 @@
       "url_text": "Join Waitlist →"
     },
     {
-      "type": "ads",
-      "i18n_title": "sb_ads",
-      "title": "Sponsored",
-      "ad_client": "ca-pub-3179609405594046",
-      "ad_slot": ""
+      "type": "social",
+      "i18n_title": "sb_social",
+      "title": "Connect 社交"
     },
     {
       "type": "event",
@@ -50,12 +43,19 @@
       "title": "Resource 资源导航",
       "list": [
         {
-          "image": "/src/images/favicon.png",
-          "title": "最新资源持续更新中...",
-          "desc": "关注本站获取最新的前端与 AI 开发内容。",
+          "image": "https://cdn.jsdelivr.net/gh/whjin/blog-images@main/img/Resource%20%E5%8D%A1%E7%89%87%E5%B0%81%E9%9D%A2.png",
+          "title": "最新资源导航持续更新",
+          "desc": "精选值得收藏的前端、Node.js 与 AI 开发资源，含实用工具、开源项目、原创文章与站点导航，持续更新，帮你少走弯路。",
           "url": "/src/template/posts/Link/资源/resource.html"
         }
       ]
+    },
+    {
+      "type": "ads",
+      "i18n_title": "sb_ads",
+      "title": "Sponsored",
+      "ad_client": "ca-pub-3179609405594046",
+      "ad_slot": ""
     },
     {
       "type": "tags",

@@ -60,6 +60,12 @@
         "title": "chinese-independent-developer",
         "desc": "中国独立开发者项目列表·聚合所有中国独立开发者的项目",
         "url": "https://github.com/1c7/chinese-independent-developer"
+      },
+      {
+        "image": "https://picsum.photos/seed/ppt/100",
+        "title": "ppt-master",
+        "desc": "PPT Master — AI generates natively editable PPTX from any document",
+        "url": "https://github.com/hugohe3/ppt-master"
       }
     ]
   },

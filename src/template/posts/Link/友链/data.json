@@ -16,6 +16,16 @@
         "show": true,
         "duration": 30,
         "color": "white",
+        "image": "https://voltlaunch.app/logo.svg",
+        "title": "VoltLaunch",
+        "desc": "Refer & Earn — VoltLaunch Dashboard",
+        "url": "https://www.creem.io/affiliate?code=AFF4VV65F73Y"
+      },
+      {
+        "marked": true,
+        "show": true,
+        "duration": 30,
+        "color": "white",
         "cover": "https://cdn.jsdelivr.net/gh/whjin/blog-images@main/img/%E8%B6%85%E7%BA%A7%E9%BA%A6%E5%90%89.png",
         "image": "https://oss.cakegrowth.cn/public/product/2026/10/665llc01000dm9l5rzm1pbgis0b37bqk.webp",
         "title": "超级麦吉",
