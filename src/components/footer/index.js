@@ -23,6 +23,12 @@
         <span class="sep">&middot;</span>
         <a href="terms.html" title="服务条款">Terms 条款</a>
       </div>
+      <!-- 新趣集徽章：所有权验证 + Featured on 展示（长期保留，勿删） -->
+      <div class="footer-badge">
+        <a href="https://xinquji.com" target="_blank" rel="noopener noreferrer">
+          <img src="https://xinquji.com/badge?theme=light&lang=zh" alt="Featured on 新趣集" style="width:200px;height:54px;" width="200" height="54" loading="lazy" />
+        </a>
+      </div>
     `;
     bindEvents();
     loadGoatCount();

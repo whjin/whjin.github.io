@@ -91,3 +91,22 @@
     font-size: 12px;
   }
 }
+
+/* 新趣集徽章：居中展示，与 footer 浅色风格协调 */
+.footer-badge {
+  margin: 8px 0 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.92;
+  transition: opacity 0.2s ease;
+}
+
+.footer-badge:hover {
+  opacity: 1;
+}
+
+.footer-badge img {
+  display: block;
+  border-radius: 4px;
+}
