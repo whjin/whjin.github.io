@@ -403,6 +403,13 @@
       });
       afterFirstRender(menu);
       bindSearch();
+      // 支持从 footer 分类链接跳转：?c=分类名 自动筛选
+      var urlCat = new URLSearchParams(location.search).get('c');
+      if (urlCat) {
+        cat = urlCat;
+        render();
+        setTimeout(function () { decidePagination(); render(); }, 200);
+      }
     } catch (err) {
       console.error('Feed 初始化失败：', err.message);
     }

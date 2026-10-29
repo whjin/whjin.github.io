@@ -36,9 +36,9 @@ body.home-page .header {
 }
 
 body.home-page .footer {
-  position: fixed;
-  bottom: 0;
-  z-index: 27;
+  position: static;
+  bottom: auto;
+  z-index: auto;
 }
 
 /* ---- 顶栏（覆盖 render/index.css 的 .header 默认样式）---- */
@@ -49,7 +49,7 @@ body.home-page .footer {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 0 20px;
+  padding: 0 2em;
   box-sizing: border-box;
 }
 
@@ -127,7 +127,7 @@ body.home-page .footer {
 .home-two-col {
   width: 100%;
   margin: 0;
-  padding: 24px 20px 50px;
+  padding: 24px 2em 50px;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 360px;

@@ -1,112 +1,363 @@
+/* ===== Footer 整体 ===== */
 .footer {
   width: 100%;
-  background: #f8f8f9;
-  border-top: 1px solid #e6e6e6;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  row-gap: 2px;
-  padding: 8px 20px;
+  background: #ffffff;
+  border-top: 1px solid #e8e8ec;
+  padding: 48px 0 24px;
+  box-sizing: border-box;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', sans-serif;
+  color: #64748b;
+}
+
+.ft-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
   box-sizing: border-box;
 }
 
-.footer-row {
-  width: 100%;
-  max-width: 880px;
-  font-size: 14px;
-  color: #666;
-  line-height: 1.5;
+/* ===== 5 列网格（宽屏 ≥1280px） ===== */
+.ft-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr 1fr;
+  gap: 32px 48px;
 }
 
-.footer-copyright {
+/* ===== 品牌区 ===== */
+.ft-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ft-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.ft-logo-img,
+.ft-logo img {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+}
+
+.ft-logo-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+}
+
+.ft-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #64748b;
+  margin: 0;
+  max-width: 320px;
+}
+
+/* FEATURED ON 徽章容器 */
+.ft-badge-wrap {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.ft-badge-wrap a {
+  display: block;
+  width: fit-content;
+}
+
+/* FEATURED ON 徽章链接 */
+.ft-badge-link {
+  display: block;
+  width: fit-content;
+  margin-top: 4px;
+}
+
+.ft-badge-link img {
+  display: block;
+}
+
+/* FEATURED ON 徽章卡片（旧样式，保留兼容） */
+.ft-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  text-decoration: none;
+  width: fit-content;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+  background: #ffffff;
+}
+
+.ft-badge:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.ft-badge-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+}
+
+.ft-badge-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.ft-badge-above {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.ft-badge-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* ===== 链接列 ===== */
+.ft-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ft-col-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #0f172a;
+  margin: 0 0 12px;
+}
+
+.ft-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  line-height: 2;
+}
+
+.ft-links a {
+  font-size: 14px;
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.ft-links a:hover {
+  color: #3b82f6;
+  background: transparent;
+}
+
+/* 分类链接带数量 */
+.ft-cat-count {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-left: 2px;
+}
+
+/* ===== 分隔线与版权栏 ===== */
+.ft-divider {
+  height: 1px;
+  background: #e8e8ec;
+  margin: 48px 0 24px;
+}
+
+.ft-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px 16px;
+  font-size: 14px;
+  color: #94a3b8;
   text-align: center;
 }
 
-.footer-copyright a {
-  color: #007bff;
-  text-decoration: none;
+.ft-bottom-row {
+  display: contents;
 }
 
-.footer-copyright .count {
-  color: #007bff;
+.ft-sep {
+  color: #cbd5e1;
+  display: none;
 }
 
-.footer-beian-email {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-}
-
-.footer-beian-email .beian-text {
-  color: #666;
-  cursor: pointer;
-}
-
-.footer-beian-email .beian-text:hover {
-  color: #007bff;
-}
-
-.footer-beian-email a {
-  color: #666;
-  text-decoration: none;
-}
-
-.footer-beian-email a:hover {
-  color: #007bff;
-}
-
-.footer-links {
-  margin: 0;
-  font-size: 13px;
-  color: #666;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 4px 8px;
-  width: 100%;
-  max-width: 880px;
-}
-
-.footer-links a {
-  color: #555;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.footer-links a:hover {
-  color: #007bff;
-}
-
-.footer-links .sep {
-  color: #bbb;
-}
-
-@media (max-width: 768px) {
-  .footer-row {
-    font-size: 14px;
+@media (max-width: 767px) {
+  .ft-sep {
+    display: inline;
   }
-  .footer-links {
+}
+
+.ft-email-bottom {
+  color: #94a3b8;
+  text-decoration: none;
+}
+
+.ft-email-bottom:hover {
+  color: #3b82f6;
+}
+
+.ft-copy {
+  color: #94a3b8;
+}
+
+.ft-count {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.ft-beian {
+  color: #94a3b8;
+  text-decoration: none;
+}
+
+.ft-beian:hover {
+  color: #3b82f6;
+}
+
+.ft-copy-link {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.ft-copy-link:hover {
+  color: #8b5cf6;
+}
+
+.ft-count {
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+.ft-email {
+  font-size: 14px;
+  color: #64748b;
+  text-decoration: none;
+  margin-top: -4px;
+}
+
+.ft-email:hover {
+  color: #3b82f6;
+  background: transparent;
+}
+
+/* ===== 中等宽度 (768px ~ 1279px)：上排3列 + 下排2列 ===== */
+@media (max-width: 1279px) {
+  .ft-grid {
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 32px 40px;
+  }
+  /* 站点链接和友情链接移到第二行 */
+  .ft-col-wide {
+    grid-column: auto;
+  }
+}
+
+/* ===== 平板适配 (768px ~ 1023px) ===== */
+@media (max-width: 1023px) {
+  .ft-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 24px;
+  }
+  /* 品牌区占满第一行 */
+  .ft-brand {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .ft-desc {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+  /* 站点/友链不再强制全宽，参与 2x2 网格 */
+  .ft-col-wide {
+    grid-column: auto;
+  }
+}
+
+/* ===== 移动端 (<768px) ===== */
+@media (max-width: 767px) {
+  .footer {
+    padding: 32px 20px 20px;
+  }
+
+  .ft-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 20px;
+  }
+
+  /* 品牌区全宽，垂直堆叠 */
+  .ft-brand {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: flex-start !important;
+    gap: 14px;
+  }
+
+  .ft-logo {
+    flex: 0 0 auto;
+  }
+
+  .ft-desc {
+    max-width: 100%;
+    flex-basis: auto !important;
+  }
+
+  .ft-badge-wrap {
+    flex-basis: auto !important;
+    margin-top: 4px;
+  }
+
+  /* 站点链接、友情链接全宽 */
+  .ft-col-wide {
+    grid-column: 1 / -1;
+  }
+
+  .ft-col-title {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .ft-links a {
+    font-size: 14px;
+    padding: 6px 0;
+  }
+
+  .ft-divider {
+    margin: 28px 0 16px;
+  }
+
+  /* 版权栏移动端两行居中 */
+  .ft-bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
     font-size: 12px;
   }
-}
 
-/* 新趣集徽章：居中展示，与 footer 浅色风格协调 */
-.footer-badge {
-  margin: 8px 0 4px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0.92;
-  transition: opacity 0.2s ease;
-}
-
-.footer-badge:hover {
-  opacity: 1;
-}
-
-.footer-badge img {
-  display: block;
-  border-radius: 4px;
+  .ft-bottom-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
 }

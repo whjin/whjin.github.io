@@ -23,7 +23,7 @@ body.has-banner {
 
 .banner-slide {
   width: 100%;
-  padding: 0 1em;
+  padding: 0 2em;
   animation: banner-fade-in 0.5s ease;
   display: flex;
   align-items: center;

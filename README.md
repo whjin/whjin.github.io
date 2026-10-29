@@ -75,6 +75,7 @@ With **50+ technical articles** covering full-stack development, AI tools, web p
 - **Reward / membership**: Waffo Pancake subscription + WeChat/Alipay QR support, with a dedicated reward page
 - **Indie product monetization**: Waffo Pancake subscription checkout ($9.99/month, 7-day trial)
 - **Resource navigation**: Card-based aggregation pages for AI tools, developer references, and curated links
+- **Directory listing & badge**: Listed on [新趣集](https://xinquji.com) (product + article), with the "Featured on 新趣集" ownership badge statically embedded in the footer (crawler-visible, no JS dependency)
 
 ---
 

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>吴华锦的博客</title>
+    <link>https://wuhuajin.com</link>
+    <description>锦绣年华・写意人间 — 全栈开发者记录前端技术、AI 工具与构建心得</description>
+    <language>zh-CN</language>
+    <atom:link href="https://wuhuajin.com/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Oct 2026 11:49:00 +0800</lastBuildDate>
+    <item>
+      <title>Webpack原理详解</title>
+      <link>https://wuhuajin.com/src/template/posts/JavaScript/html/Webpack原理详解.html</link>
+      <guid>https://wuhuajin.com/src/template/posts/JavaScript/html/Webpack原理详解.html</guid>
+      <description>本篇文章系统讲解 Webpack 这一现代前端核心构建工具的工作原理。Webpack 本质上是一个静态模块打包工具，它会从配置的入口文件出发，自动构建项目的依赖图，将所有模块打包成浏览器可直接运行的静态资源。文章首先结合最新官方文档介绍 Webpack 的核心概念，包括入口 Entry、输出 Output、Loader 模块转换器、Plugin 插件、模式 Mode 以及浏览器兼容性与运行环境要求，并说明各概念的实际配置方式。随后深入剖析 Webpack 的三大构建阶段，即初始化、编译与输出，讲解 Compiler 与 Compilation 对象的职责、Loader 转换模块的流程以及依赖图</description>
+      <pubDate>Mon, 12 Oct 2026 16:36:45 +0800</pubDate>
+      <category>JavaScript</category>
+    </item>
+    <item>
+      <title>计算机网络知识速览</title>
+      <link>https://wuhuajin.com/src/template/posts/网络/html/计算机网络知识速览.html</link>
+      <guid>https://wuhuajin.com/src/template/posts/网络/html/计算机网络知识速览.html</guid>
+      <description>本篇文章系统梳理计算机网络的必备基础知识，适合前后端开发者日常快速查阅。文章首先介绍 HTTP 响应常见状态码，按 1xx 至 5xx 分类讲解各段含义，并重点解析 200、302、304、403、404、500 等高频状态码的使用场景。随后详细讲解 TCP 三次握手建立连接与四次挥手释放连接的完整过程，理解连接建立与关闭每一步的报文交换。接着展开计算机网络体系结构，从应用层、运输层、网络层、数据链路层到物理层，逐层说明各层职责与代表协议，并梳理 TCP 与 UDP 两大传输协议的差异，以及 TCP/IP 七层体系结构的协作关系。最后对比 HTTP 与 HTTPS 的区别，了解明文传输与加密传</description>
+      <pubDate>Mon, 12 Oct 2026 16:28:59 +0800</pubDate>
+      <category>网络</category>
+    </item>
+    <item>
+      <title>JavaScript正则表达式手册</title>
+      <link>https://wuhuajin.com/src/template/posts/JavaScript/html/JavaScript正则表达式手册.html</link>
+      <guid>https://wuhuajin.com/src/template/posts/JavaScript/html/JavaScript正则表达式手册.html</guid>
+      <description>正则表达式是处理字符串最强大的工具，但也是最容易写错、最难调试的工具。本手册分为四部分：JS 正则怎么用 → 语法速查 → 常用表达式合集 → 常见坑，收藏后随查随用。 官方参考：完整的 RegExp 语法定义见 MDN Regular Expressions 文档，本文是其实战提炼。 一、JavaScript 正则的四种用法 创建正则 四种核心方法 方法 所属对象 返回值 适用场景 regex.test(str) RegExp true / false 只判断是否匹配，如表单校验 str.match(regex) String 匹配结果数组或 null 提取匹配内容，最简单 str.matc</description>
+      <pubDate>Mon, 12 Oct 2026 14:45:11 +0800</pubDate>
+      <category>JavaScript</category>
+    </item>
+    <item>
+      <title>JavaScript思维导图合集</title>
+      <link>https://wuhuajin.com/src/template/posts/JavaScript/html/JavaScript思维导图合集.html</link>
+      <guid>https://wuhuajin.com/src/template/posts/JavaScript/html/JavaScript思维导图合集.html</guid>
+      <description>这里整理了 JavaScript 入门阶段最核心的 8 个知识点思维导图。每张图覆盖一个主题，图下附文字要点，方便快速回顾。 1. 变量 要点： - 声明方式：var（函数作用域）、let（块级）、const（常量） - 数据类型：原始类型（number、string、boolean、null、undefined、symbol、bigint）和引用类型（object、array、function） - 类型转换：隐式转换（==、+ 运算）和显式转换（Number()、String()、Boolean()） - 作用域：全局、函数、块级；作用域链查找规则 2. 运算符 要点： - 算术运算符：+</description>
+      <pubDate>Mon, 12 Oct 2026 01:27:12 +0800</pubDate>
+      <category>JavaScript</category>
+    </item>
+    <item>
+      <title>Git命令思维导图</title>
+      <link>https://wuhuajin.com/src/template/posts/Git/html/Git命令思维导图.html</link>
+      <guid>https://wuhuajin.com/src/template/posts/Git/html/Git命令思维导图.html</guid>
+      <description>Git 命令很多，但日常高频使用的集中在：提交规范、分支操作、远程协作、撤销回退这几类。下面整理了 7 张思维导图，每张附文字要点。 1. Conventional Commits 提交规范 规范化的提交信息让每次变更一目了然，还能自动生成 CHANGELOG。 格式：type(scope): description 核心 type 类型： type 含义 示例 feat 新功能 feat(login): 添加微信登录 fix 修复 Bug fix(home): 修复首页轮播图不自动播放 docs 文档变更 docs(readme): 更新安装说明 refactor 重构 refactor(a</description>
+      <pubDate>Mon, 12 Oct 2026 01:25:07 +0800</pubDate>
+      <category>Git</category>
+    </item>
+    <item>
+      <title>Node.js技术文档和速查手册</title>
+      <link>https://wuhuajin.com/src/template/posts/Node/html/Node.js技术文档和速查手册.html</link>
+      <guid>https://wuhuajin.com/src/template/posts/Node/html/Node.js技术文档和速查手册.html</guid>
+      <description>面向 Node.js 开发者与初学者的核心速查文档，系统梳理日常最常用、最易遗忘的知识点。内容包括 npm 包管理的常用命令与全局路径配置；fs 文件模块的读写参数、flag 标志位及同步 API 的 try...catch 异常处理；stats 文件状态判断与 path 路径模块常用方法；HTTP 无连接无状态特性与 OSI 七层模型；并深入讲解 Node.js 事件循环（Event Loop）的运行机制。全文以表格速查为主，是开发时随手可查的参考手册，帮助你在写文件、装依赖、处理路径、排查网络问题时快速定位答案。</description>
+      <pubDate>Mon, 12 Oct 2026 00:57:02 +0800</pubDate>
+      <category>Node</category>
+    </item>
+    <item>
+      <title>ECMAScript文档</title>
+      <link>https://wuhuajin.com/src/template/posts/JavaScript/html/ECMAScript文档.html</link>
+      <guid>https://wuhuajin.com/src/template/posts/JavaScript/html/ECMAScript文档.html</guid>
+      <description>ES6（ES2015）之后，JavaScript 每年都有新版本，语法变化很大。这篇文章把日常开发最常用的 ES6+ 特性整理成速查手册，配合代码示例，随时翻阅。 一、var / let / const 特性 var let const 重复声明 允许 不允许 不允许 块级作用域 不支持（函数级） 支持 支持 变量提升 提升并初始化为 undefined 提升但存在暂存死区 同 let 挂载到 window 是 否 否 重新赋值 允许 允许 不允许 最佳实践：默认用 const，需要重新赋值时用 let，永远不用 var。 二、ES6 Module 与 CommonJS 的区别 特性 Comm</description>
+      <pubDate></pubDate>
+      <category>JavaScript</category>
+    </item>
+    <item>
+      <title>功能代码集合</title>
+      <link>https://wuhuajin.com/src/template/posts/JavaScript/html/功能代码集合.html</link>
+      <guid>https://wuhuajin.com/src/template/posts/JavaScript/html/功能代码集合.html</guid>
+      <description>两数之和 日期格式化 时间转换（秒数转时分秒） 计算时分秒差值 深拷贝和浅拷贝 浅拷贝 - 只拷贝一层 - 引用类型拷贝内存地址 深拷贝 数组去重 数组对象去重 数组对象排序 获取上/下个月日期 获取前/后7天日期 一周日期 点击内容切换 时分秒 当月第一天和最后一天 fetch接口请求 按键处理方法 返回顶部 自适应内部元素 iview封装菜单menu 图片懒加载 CSS多行文本省略 Vue字符串换行 封装iView无限层级菜单 上传文件 CSS控制禁止点击 pointer-events: none; //（禁止鼠标点击事件） 单行居中，多行顶部对齐 计算传入时间与当前时间相差的秒数 提取U</description>
+      <pubDate></pubDate>
+      <category>JavaScript</category>
+    </item>
+    <item>
+      <title>设计模式文档</title>
+      <link>https://wuhuajin.com/src/template/posts/JavaScript/html/设计模式文档.html</link>
+      <guid>https://wuhuajin.com/src/template/posts/JavaScript/html/设计模式文档.html</guid>
+      <description>设计模式不是八股文，而是前人总结的解决常见问题的最优方案。这篇文章用 JavaScript 实现最常用的设计模式，配代码示例和适用场景。 一、五大设计原则（SOLID） 原则 含义 单一职责（SRP） 一个类只做一件事 开放封闭（OCP） 对扩展开放，对修改封闭 里氏替换（LSP） 子类必须能替换父类 接口分离（ISP） 不依赖不需要的接口 依赖倒置（DIP） 依赖抽象，不依赖具体实现 二、工厂模式 通过参数决定创建哪个对象，不用直接 new。 适用场景：根据配置或用户选择创建不同类型的对象，如弹窗、按钮、支付方式。 三、单例模式 确保一个类只有一个实例。 适用场景：全局配置、数据库连接池、全</description>
+      <pubDate></pubDate>
+      <category>JavaScript</category>
+    </item>
+    <item>
+      <title>HTTP文档</title>
+      <link>https://wuhuajin.com/src/template/posts/网络/html/HTTP文档.html</link>
+      <guid>https://wuhuajin.com/src/template/posts/网络/html/HTTP文档.html</guid>
+      <description>OSI 模型 - Open Systems Interconnection 开放式通信互联系统 ISO - OSI 模型是国际组织 ISO 创建的，用于描述网络通信的协议，是 TCP/IP 模型的基础 1. 应用层：提供应用层服务，如 HTTP、FTP、SMTP、DNS 等 2. 表示层：提供数据格式转换，如 ASCII、UTF-8 等，数据压缩、数据加密、数据内容的描述 3. 会话层: 提供会话管理，如 Telnet、SSH 等 4. 传输层: 提供数据传输，如 TCP、UDP 等，不同主机进程间的通信 5. 网络层：提供网络通信，如 IP、UDP、TCP 等 6. 数据链路层：提供数据链路</description>
+      <pubDate></pubDate>
+      <category>网络</category>
+    </item>
+    <item>
+      <title>Git文档</title>
+      <link>https://wuhuajin.com/src/template/posts/Git/html/Git文档.html</link>
+      <guid>https://wuhuajin.com/src/template/posts/Git/html/Git文档.html</guid>
+      <description>Git 提交规范 类型说明 :----::----: feat新特性 fix(scope)修复 scope 中的 Bug feat!:/feat(scope)!:breaking change / 重构 API build变更影响的是构建系统或者外部依赖 (如: gulp, npm) ci修改了 CI 配置文件或脚本 (如: Github Action, Travis) chore【重要】 变更不影响源代码或测试（如更新了辅助工具、库等) docs只修改了文档 feat【重要】 一个新特性 fix【重要】 修复了一个 Bug perf增强性能的代码变更 refactor并非修复 Bug 或添加</description>
+      <pubDate></pubDate>
+      <category>Git</category>
+    </item>
+    <item>
+      <title>Node.js进阶</title>
+      <link>https://wuhuajin.com/src/template/posts/Node/html/Node.js进阶.html</link>
+      <guid>https://wuhuajin.com/src/template/posts/Node/html/Node.js进阶.html</guid>
+      <description>子进程 - 创建 node 子进程用 fork，自带通道方便通信 充分利用多核 CPU 的优势，用到 child_process 模块创建子进程，有四种方法可以创建子进程： - exec - execFile - spawn - fork 四个方法都会返回 ChildProcess 实例（继承自 EventEmitter），该实例拥有三个标准的 stdio 流： 1. child.stdin 2. child.stdout 3. child.stderr 子进程生命周期内可以注册监听的事件有： - exit：子进程结束时触发，参数 code 错误码和 signal 中断信号 - close：子</description>
+      <pubDate></pubDate>
+      <category>Node</category>
+    </item>
+    <item>
+      <title>Node.js实战</title>
+      <link>https://wuhuajin.com/src/template/posts/Node/html/Node.js实战.html</link>
+      <guid>https://wuhuajin.com/src/template/posts/Node/html/Node.js实战.html</guid>
+      <description>全栈图书管理系统 项目地址：book-management-system 1. 完整项目的需求分析和架构设计（需求规划、目录结构设计、接口设计） 2. 后端接口开发和数据库设计（Express + MongoDB 开发接口，设计数据模型，认证授权） 3. 前后端联调方法和解决跨域问题（Apifox 测试接口，cors和代理解决跨域问题） 4. 项目部署流程，使用 PM2 管理应用进程（搭建服务器环境、上传项目、PM2 启动、管理项目） 5. 项目优化与迭代（性能优化、功能扩展） 一、需求分析 1. 功能规划：分角色、分模块 - 公共功能：用户注册、用户登录（JWT认证）、图书借阅（模糊查询、分</description>
+      <pubDate></pubDate>
+      <category>Node</category>
+    </item>
+    <item>
+      <title>Node.js文档</title>
+      <link>https://wuhuajin.com/src/template/posts/Node/html/Node.js文档.html</link>
+      <guid>https://wuhuajin.com/src/template/posts/Node/html/Node.js文档.html</guid>
+      <description>非阻塞 IO - 开源的 JS 运行环境 - Chrome V8引擎 非阻塞 异步 IO 服务端 - 事件驱动：事件队列 异步事件 任务队列 - 适合处理高并发请求 优缺点 - 高并发 - IO 密集型 - 单线程 不适合 CPU 密集型应用 单核 CPU - 代码发生问题，系统会崩溃 应用场景 - IO 更适合 - IO 内部不需要做非常复杂的逻辑 - WebSocket - 后台管理 实时交互系统 高并发 - canvas 多人协作 - 单页面浏览器应用创建服务 - 开发服务器端的中间层（BFF） - 开发前端方向的各种工具 fs 模块 - fs: filesystem 操作文档文件夹 -</description>
+      <pubDate></pubDate>
+      <category>Node</category>
+    </item>
+    <item>
+      <title>Docker部署Meting API服务</title>
+      <link>https://wuhuajin.com/src/template/posts/工程化/html/Docker部署Meting API服务.html</link>
+      <guid>https://wuhuajin.com/src/template/posts/工程化/html/Docker部署Meting API服务.html</guid>
+      <description>Docker部署 1. 安装 Docker dnf 添加 docker-ce 阿里云源并安装，启停 2. 获取镜像 拉取 ghcr.io 官方镜像；拉不动则 git clone 后本地 docker build 3. 运行容器 -p 80:80，配置 METING_URL / METING_TOKEN 环境变量 4. 放行端口 阿里云安全组 + firewalld 放行 80 5. 验证 curl 访问 /api?server=netease&amp;type=search 第 1 步：安装 Docker（阿里云官方源） 第 2 步：获取镜像 拉取Github仓库代码本地构建 配置 Docker 镜像</description>
+      <pubDate></pubDate>
+      <category>工程化</category>
+    </item>
+    <item>
+      <title>Vite与Webpack对比</title>
+      <link>https://wuhuajin.com/src/template/posts/工程化/html/Vite与Webpack对比.html</link>
+      <guid>https://wuhuajin.com/src/template/posts/工程化/html/Vite与Webpack对比.html</guid>
+      <description>最本质的差异：Webpack 是先打包、后服务的 Bundle 驱动模式；Vite 是先服务、按需编译的 ESM 原生驱动模式。 这一个架构差异，决定了两者在启动速度、热更新、生产构建、配置复杂度上的所有区别。 延伸阅读：想深入理解 Webpack 的内部打包机制，可参考我之前写的 Webpack原理详解。 一、架构原理：为什么 Vite 启动这么快 Webpack 的工作方式 Webpack 从入口文件 index.js 开始，递归分析所有 import 和 require，把整个依赖树打包成一个或多个 bundle.js。这个过程必须在启动开发服务器之前完成。项目越大，依赖越多，打包时间越</description>
+      <pubDate></pubDate>
+      <category>工程化</category>
+    </item>
+    <item>
+      <title>Web加密</title>
+      <link>https://wuhuajin.com/src/template/posts/工程化/html/Web加密.html</link>
+      <guid>https://wuhuajin.com/src/template/posts/工程化/html/Web加密.html</guid>
+      <description>双 Token 认证系统 1. Access Token（访问令牌） - 用途：用于访问受保护的 API 资源，附加在每个请求的 Header 中 - 特点：生命周期短（1小时），无状态，服务器无需存储 - 存储：通常存储在客户端内存中，需要频繁读取 2. Refresh Token（刷新令牌） - 用途：当 Access Token 过期时，专门用于获取一个新的 Access Token - 特点：生命周期长（7天或30天），与特定用户绑定，服务器需要安全存储其有效性记录 - 存储：必须安全存储。最佳实践时存储在 HttpOnly Cookie 中，可以防止客户端 JavaScript（XS</description>
+      <pubDate></pubDate>
+      <category>工程化</category>
+    </item>
+    <item>
+      <title>工程实例文档</title>
+      <link>https://wuhuajin.com/src/template/posts/工程化/html/工程实例文档.html</link>
+      <guid>https://wuhuajin.com/src/template/posts/工程化/html/工程实例文档.html</guid>
+      <description>接口设计 1. 整体架构 采用 SDK适配层 + 业务服务层 的两层结构 - SDK 适配层：直接调用厂商提供的原生 SDK，处理底层通信、数据格式转换。 - 业务服务层：对外暴露简洁的业务 API，封装权限校验、错误重试、日志记录等通用逻辑。 权限验证 基于 RBAC 的权限验证 权限验证的场景以及需求： - 特定的角色的用户才能操作特定的资源 - 不同的用户能操作同类资源的特定实体 - 不同的用户操作特定资源的不同属性 根据角色完成权限的控制-RBAC（Role-Based Access Control） CASL Docker &lt;center命令&lt;/center&lt;center作用&lt;/ce</description>
+      <pubDate></pubDate>
+      <category>工程化</category>
+    </item>
+    <item>
+      <title>AI应用开发学习路线图</title>
+      <link>https://wuhuajin.com/src/template/posts/AI/html/AI应用开发学习路线图.html</link>
+      <guid>https://wuhuajin.com/src/template/posts/AI/html/AI应用开发学习路线图.html</guid>
+      <description>四、优质学习资源汇总 4.1 在线学习平台 平台 特色 推荐课程 价格 --------------------------------------------------- ------------ ------------------------------------- -------- DeepLearning.AI AI 专项课程 ChatGPT Prompt Engineering, AI Agents 部分免费 Coursera 大学合作课程 ML Specialization, Data Science 订阅制 Udemy 实用技能培训 React, Node.js, Pyth</description>
+      <pubDate></pubDate>
+      <category>AI</category>
+    </item>
+    <item>
+      <title>AI前端</title>
+      <link>https://wuhuajin.com/src/template/posts/AI/html/AI前端.html</link>
+      <guid>https://wuhuajin.com/src/template/posts/AI/html/AI前端.html</guid>
+      <description>模型侧 - LLM （大语言模型） - fine-tuning - 模型微调：成本较高，灾难性遗忘 - 多模态：输入：图片、音视频 输出：富媒体内容 - 模型效果评测：AI Code 实现场景（实现一个电商网站，是否有登录、是否有购物车），核心评测手段，依靠人工来评测 - 模型部署优化（模型压缩） - 数据蒸馏 - 推理加速优化：核心方法，模型提前按照高频的使用场景（query词）生成好模板 工程侧 - 领域能力 webview的IDE应用 LSP - 上下文管理 - 提示词工程：通过指令的方式，规范化模型的输出，让模型的回复（处理效果）更符合预期 - multi agent：工程分治的思想，</description>
+      <pubDate></pubDate>
+      <category>AI</category>
+    </item>
+  </channel>
+</rss>

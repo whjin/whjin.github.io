@@ -438,7 +438,8 @@
         "title": "江山时序 · 中国历史地图时间轴",
         "url": "https://deanchen.me/jiangshan-map/",
         "category": "站点",
-        "desc": "江山时序 · 中国历史地图时间轴（战国至现代历代疆域、州郡政区与古今地名沿革）"
+        "desc": "江山时序 · 中国历史地图时间轴（战国至现代历代疆域、州郡政区与古今地名沿革）",
+        "image": "https://deanchen.me/jiangshan-map/assets/icons/icon-192.png"
       }
     ]
   },
@@ -882,6 +883,28 @@
           "三维"
         ],
         "reward": true
+      }
+    ]
+  },
+  {
+    "sticky": 7,
+    "title": "友情链接",
+    "home": true,
+    "tagName": "ol",
+    "list": [
+      {
+        "title": "张鑫旭博客",
+        "url": "https://www.zhangxinxu.com/",
+        "category": "友情链接",
+        "desc": "张鑫旭的个人主页 » 张鑫旭-鑫空间-鑫生活",
+        "image": "https://picsum.photos/seed/tool79/100"
+      },
+      {
+        "title": "张洪Heo",
+        "url": "https://blog.zhheo.com/",
+        "category": "友情链接",
+        "desc": "设计前端博客",
+        "image": "https://blog.zhheo.com/img/favicon4.0.webp"
       }
     ]
   }

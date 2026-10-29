@@ -4,6 +4,7 @@ All notable changes to this project are documented here. The format is based on 
 
 ## [Unreleased]
 
+- Directory listing on 新趣集 (product + article), with ownership badge statically embedded in the footer (crawler-visible, no JS dependency).
 - Documentation overhaul: README (EN/ZH) aligned to open-source project standards, new `LICENSE`, `CONTRIBUTING.md`, `CHANGELOG.md`.
 - Removed macOS metadata files (AppleDouble `._*`).
 

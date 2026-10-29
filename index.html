@@ -69,6 +69,7 @@
     <link rel="stylesheet" href="src/components/image-viewer/index.css" />
   </noscript>
   <link rel="stylesheet" href="src/components/footer/index.css" />
+  <link rel="alternate" type="application/rss+xml" title="吴华锦的博客 RSS" href="/rss.xml" />
   <link rel="stylesheet" href="src/components/social/index.css" />
   <link rel="stylesheet" href="src/components/loading/index.css" />
   <link rel="stylesheet" href="src/components/banner/index.css" />
@@ -382,13 +383,7 @@
   <div class="scroll-top opacity">
     <span class="arrow-icon" title="回到顶部"></span>
   </div>
-  <footer class="footer"></footer>
-  <!-- 新趣集徽章：静态写入（不依赖 JS 渲染，确保检测爬虫在源码中可见）+ Featured on 展示 -->
-  <div class="footer-badge">
-    <a href="https://xinquji.com" target="_blank" rel="noopener noreferrer">
-      <img src="https://xinquji.com/badge?theme=light&lang=zh" alt="Featured on 新趣集" width="200" height="54" />
-    </a>
-  </div>
+  <footer class="footer"><!-- 新趣集收录链接由 footer JS 渲染在品牌区徽章卡片中 --></footer>
   <!-- 音乐播放器：点击音符按钮才动态加载 APlayer -->
   <button id="music-toggle" aria-label="打开音乐播放器"
           style="display:none;"></button>
