@@ -149,17 +149,30 @@ pre code {
   border-radius: 6px;
 }
 
-/* 代码块顶部工具栏（浮在右上角，不占据空间） */
+/* 代码块顶部工具栏（默认浮在右上角，不占据空间；blockquote 沿用此定位） */
 .code-toolbar {
   position: absolute;
   top: 0;
-  right: 24px;
+  right: 16px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 8px;
   z-index: 10;
   padding: 8px;
+}
+
+/* pre 代码块：工具栏独占一行（文档流），代码在其下方，避免窄屏时按钮与第一行代码重叠。
+   半透明底色 + 底部分隔线，与深色代码块协调。 */
+pre .code-toolbar {
+  position: relative;
+  top: auto;
+  right: auto;
+  justify-content: flex-end;
+  padding: 4px 0;
+  background: rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px 6px 0 0;
 }
 
 /* 代码语言标签 */
@@ -228,11 +241,17 @@ pre:not(.collapsed) code {
 }
 
 /* blockquote 里的工具栏：不透明背景遮住下方横线，z-index 确保在最上层 */
+/* blockquote 里的工具栏：与代码块一致，独占一行（文档流），内容在其下方，
+   不再浮在「视频地址」行右侧。浅色背景 + 底部分隔线。 */
 blockquote .code-toolbar {
+  position: relative;
+  top: auto;
+  right: auto;
   background: #f8f8f9;
   z-index: 20;
-  padding: 4px 8px;
-  border-radius: 4px;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 6px 6px 0 0;
 }
 
 /* blockquote 里的按钮样式（浅色背景） */

@@ -712,16 +712,6 @@ body.home-page.sidebar-collapsed .home-sidebar {
   padding-top: 18px;
 }
 
-/* PC 两栏布局（>1024px）：额外隐藏「更多」按钮，默认展开全部内容 */
-@media screen and (min-width: 1025px) {
-  .home-sidebar .sb-event-more {
-    display: none;
-  }
-  .home-sidebar .sb-events-extra[hidden] {
-    display: flex !important;
-  }
-}
-
 /* ---- 响应式 ---- */
 @media screen and (max-width: 1024px) {
   .home-two-col {

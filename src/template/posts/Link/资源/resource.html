@@ -8,8 +8,15 @@
   <title>资源导航 &laquo; 吴华锦</title>
   <link rel="icon" href="/src/images/favicon.png" />
   <link rel="stylesheet" href="../../../menu/index.css" />
+  <link rel="stylesheet" href="../../../../components/render/index.css" />
+  <link rel="stylesheet" href="../../../../components/navigation/index.css" />
+  <link rel="stylesheet" href="../../../../components/banner/index.css" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179609405594046" crossorigin="anonymous"></script>
   <style>
+    /* 卡片网格布局由 menu/index.js 的 adjustCardLayout() 动态控制：
+       ≤2 行时容器撑满、行高均分（列表项超出部分裁剪，点「展开」在弹窗查看）；
+       >2 行时卡片固定 300px、外层滚动。这里不要再用 height:auto/!important 覆盖，
+       否则 1fr 行会被内容撑高、卡片异常拉长。 */
     /* 赞赏卡片放在资源卡片 grid 之外，底部全宽块，与内容区同宽对齐 */
     #reward-slot {
       padding: 0 1em 1em;
@@ -31,7 +38,7 @@
   <h2>核心推荐 <span>(17)</span></h2>
   <ul>
     <li><a href="/src/template/posts/Link/友链/link.html" rel="noopener">一站式AI应用平台</a> — AI应用集 - 一站式AI应用平台</li>
-    <li><a href="https://www.creem.io/affiliate?code=AFF4VV65F73Y" rel="noopener">VoltLaunch</a> — Refer &amp; Earn — VoltLaunch Dashboard</li>
+    <li><a href="https://www.creem.io/affiliate?code=AFF4VV65F73Y" rel="noopener">VoltLaunch</a> — VoltLaunch — Build a Launch Site. Make Money Doing It.</li>
     <li><a href="https://letsmagic.cgref.cn/s/ogew5xvep2" rel="noopener">超级麦吉</a> — 超级麦吉 - 一站式 AI 办公，覆盖全行业工作场景，让 AI 真正替你干活</li>
     <li><a href="https://pixtv.cgref.cn/s/omkloo8k4d" rel="noopener">PixTV</a> — PixTV｜一站式 AI 视频生成与无限画布创作平台</li>
     <li><a href="https://pixpix.cgref.cn/s/p3kqddweol" rel="noopener">PixPix</a> — 帧象创意 - PixPix官网_电商AI商品图生成器_AI视频_免费在线设计工具</li>
@@ -158,6 +165,16 @@
   </ul>
 </section>
 </div></noscript>
+
+
+
+
+
+
+  <div class="layout-container">
+    <div class="nav-container"></div>
+    <div class="content-area">
+
 
 
 
@@ -766,8 +783,14 @@
   <div class="card-container"><noscript>
     </noscript>
   </div>
+  <div class="scroll-top opacity"><span class="arrow-icon" title="回到顶部"></span></div>
   <div id="reward-slot"></div>
+    </div><!-- /content-area -->
+  </div><!-- /layout-container -->
   <script src="../../../../components/loading/index.js"></script>
+  <script src="../../../../components/banner/index.js"></script>
+  <script src="../../../../components/navigation/index.js"></script>
+  <script src="../../../../components/scroll/index.js"></script>
   <script src="../../../menu/index.js"></script>
   <script src="/src/components/reward-tip/index.js"></script>
   <script>(function(){

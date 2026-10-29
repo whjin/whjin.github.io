@@ -14,11 +14,11 @@
       {
         "marked": true,
         "show": true,
-        "duration": 30,
+        "duration": 60,
         "color": "white",
         "image": "https://voltlaunch.app/logo.svg",
         "title": "VoltLaunch",
-        "desc": "Refer & Earn — VoltLaunch Dashboard",
+        "desc": "VoltLaunch — Build a Launch Site. Make Money Doing It.",
         "url": "https://www.creem.io/affiliate?code=AFF4VV65F73Y"
       },
       {
@@ -52,14 +52,10 @@
         "show": true,
         "duration": 30,
         "color": "white",
-        "cover": "https://cdn.jsdelivr.net/gh/whjin/blog-images@main/img/026b314f-c24c-4461-8bee-029f09f5e1bf.png",
         "image": "https://oss.cakegrowth.cn/public/product/2026/09/1afandb1000dlmi09bjzhmiz3564adqw.webp",
         "title": "PixPix",
         "desc": "帧象创意 - PixPix官网_电商AI商品图生成器_AI视频_免费在线设计工具",
-        "url": "https://pixpix.cgref.cn/s/p3kqddweol",
-        "type": "ads",
-        "adsTitle": "帧象创意 - PixPix官网_电商AI商品图生成器_AI视频_免费在线设计工具",
-        "adsDesc": "你的 AI 创意工作台，为「AURA」 交付「一套社媒视觉」从策略、创意到成套素材，PixPix Agent 自动拆解任务、调用合适模型并完成交付。"
+        "url": "https://pixpix.cgref.cn/s/p3kqddweol"
       },
       {
         "show": true,

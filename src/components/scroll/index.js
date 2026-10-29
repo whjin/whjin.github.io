@@ -51,7 +51,9 @@ function scrollControls() {
       element.style.opacity = '1';
     });
     const onEnd = () => {
-      element.style.opacity = '';
+      // 动画完成后保持可见（opacity=1）。不能清空 inline opacity，否则带有 .opacity 类的
+      // .scroll-top 会回到 opacity:0（约 0.5s 后凭空消失，早于下方 6s 闲置淡出）。
+      element.style.opacity = '1';
       element.style.transition = '';
       element.removeEventListener('transitionend', onEnd);
       element._fadeEndHandler = null;
